@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
+		21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */; };
+		21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3051ADF3B71003024B7 /* UIKit.framework */; };
+		21D1F30C1ADF3B71003024B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F30A1ADF3B71003024B7 /* InfoPlist.strings */; };
+		21D1F30E1ADF3B71003024B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F30D1ADF3B71003024B7 /* main.m */; };
+		21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3111ADF3B71003024B7 /* AppDelegate.m */; };
+		21D1F3151ADF3B71003024B7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F3131ADF3B71003024B7 /* Main_iPhone.storyboard */; };
+		21D1F3181ADF3B71003024B7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F3161ADF3B71003024B7 /* Main_iPad.storyboard */; };
+		21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F31A1ADF3B71003024B7 /* TripsViewController.m */; };
+		21D1F31E1ADF3B71003024B7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F31D1ADF3B71003024B7 /* SecondViewController.m */; };
+		21D1F3201ADF3B71003024B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F31F1ADF3B71003024B7 /* Images.xcassets */; };
+		21D1F3271ADF3B71003024B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3261ADF3B71003024B7 /* XCTest.framework */; };
+		21D1F3281ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
+		21D1F3291ADF3B71003024B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3051ADF3B71003024B7 /* UIKit.framework */; };
+		21D1F3311ADF3B71003024B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F32F1ADF3B71003024B7 /* InfoPlist.strings */; };
+		21D1F3331ADF3B71003024B7 /* PackManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3321ADF3B71003024B7 /* PackManagerTests.m */; };
+		21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F33D1ADF3EAC003024B7 /* NewTripViewController.m */; };
+		21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3401ADF4293003024B7 /* ProfileViewController.m */; };
+		21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3431ADF4933003024B7 /* PackingListViewController.m */; };
+		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
+		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21D1F32A1ADF3B71003024B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D1F2F61ADF3B71003024B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D1F2FD1ADF3B71003024B7;
+			remoteInfo = PackManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21D1F2FE1ADF3B71003024B7 /* PackManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D1F3011ADF3B71003024B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		21D1F3051ADF3B71003024B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		21D1F3091ADF3B71003024B7 /* PackManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PackManager-Info.plist"; sourceTree = "<group>"; };
+		21D1F30B1ADF3B71003024B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21D1F30D1ADF3B71003024B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21D1F30F1ADF3B71003024B7 /* PackManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PackManager-Prefix.pch"; sourceTree = "<group>"; };
+		21D1F3101ADF3B71003024B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		21D1F3111ADF3B71003024B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		21D1F3141ADF3B71003024B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		21D1F3171ADF3B71003024B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		21D1F3191ADF3B71003024B7 /* TripsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
+		21D1F31A1ADF3B71003024B7 /* TripsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
+		21D1F31C1ADF3B71003024B7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		21D1F31D1ADF3B71003024B7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		21D1F31F1ADF3B71003024B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21D1F3251ADF3B71003024B7 /* PackManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PackManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D1F3261ADF3B71003024B7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21D1F32E1ADF3B71003024B7 /* PackManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PackManagerTests-Info.plist"; sourceTree = "<group>"; };
+		21D1F3301ADF3B71003024B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21D1F3321ADF3B71003024B7 /* PackManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PackManagerTests.m; sourceTree = "<group>"; };
+		21D1F33C1ADF3EAC003024B7 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
+		21D1F33D1ADF3EAC003024B7 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
+		21D1F33F1ADF4293003024B7 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		21D1F3401ADF4293003024B7 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		21D1F3421ADF4933003024B7 /* PackingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingListViewController.h; sourceTree = "<group>"; };
+		21D1F3431ADF4933003024B7 /* PackingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListViewController.m; sourceTree = "<group>"; };
+		21D1F3451ADF49DF003024B7 /* WeatherReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherReportViewController.h; sourceTree = "<group>"; };
+		21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportViewController.m; sourceTree = "<group>"; };
+		21D1F3481ADF4A0E003024B7 /* TripSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSettingsViewController.h; sourceTree = "<group>"; };
+		21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripSettingsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D1F2FB1ADF3B71003024B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
+				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
+				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D1F3221ADF3B71003024B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F3271ADF3B71003024B7 /* XCTest.framework in Frameworks */,
+				21D1F3291ADF3B71003024B7 /* UIKit.framework in Frameworks */,
+				21D1F3281ADF3B71003024B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21D1F2F51ADF3B71003024B7 = {
+			isa = PBXGroup;
+			children = (
+				21D1F3071ADF3B71003024B7 /* PackManager */,
+				21D1F32C1ADF3B71003024B7 /* PackManagerTests */,
+				21D1F3001ADF3B71003024B7 /* Frameworks */,
+				21D1F2FF1ADF3B71003024B7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21D1F2FF1ADF3B71003024B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F2FE1ADF3B71003024B7 /* PackManager.app */,
+				21D1F3251ADF3B71003024B7 /* PackManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21D1F3001ADF3B71003024B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F3011ADF3B71003024B7 /* Foundation.framework */,
+				21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */,
+				21D1F3051ADF3B71003024B7 /* UIKit.framework */,
+				21D1F3261ADF3B71003024B7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21D1F3071ADF3B71003024B7 /* PackManager */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F3101ADF3B71003024B7 /* AppDelegate.h */,
+				21D1F3111ADF3B71003024B7 /* AppDelegate.m */,
+				21D1F3131ADF3B71003024B7 /* Main_iPhone.storyboard */,
+				21D1F3481ADF4A0E003024B7 /* TripSettingsViewController.h */,
+				21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */,
+				21D1F3451ADF49DF003024B7 /* WeatherReportViewController.h */,
+				21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */,
+				21D1F3421ADF4933003024B7 /* PackingListViewController.h */,
+				21D1F3431ADF4933003024B7 /* PackingListViewController.m */,
+				21D1F33F1ADF4293003024B7 /* ProfileViewController.h */,
+				21D1F3401ADF4293003024B7 /* ProfileViewController.m */,
+				21D1F33C1ADF3EAC003024B7 /* NewTripViewController.h */,
+				21D1F33D1ADF3EAC003024B7 /* NewTripViewController.m */,
+				21D1F3161ADF3B71003024B7 /* Main_iPad.storyboard */,
+				21D1F3191ADF3B71003024B7 /* TripsViewController.h */,
+				21D1F31A1ADF3B71003024B7 /* TripsViewController.m */,
+				21D1F31C1ADF3B71003024B7 /* SecondViewController.h */,
+				21D1F31D1ADF3B71003024B7 /* SecondViewController.m */,
+				21D1F31F1ADF3B71003024B7 /* Images.xcassets */,
+				21D1F3081ADF3B71003024B7 /* Supporting Files */,
+			);
+			path = PackManager;
+			sourceTree = "<group>";
+		};
+		21D1F3081ADF3B71003024B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F3091ADF3B71003024B7 /* PackManager-Info.plist */,
+				21D1F30A1ADF3B71003024B7 /* InfoPlist.strings */,
+				21D1F30D1ADF3B71003024B7 /* main.m */,
+				21D1F30F1ADF3B71003024B7 /* PackManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21D1F32C1ADF3B71003024B7 /* PackManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F3321ADF3B71003024B7 /* PackManagerTests.m */,
+				21D1F32D1ADF3B71003024B7 /* Supporting Files */,
+			);
+			path = PackManagerTests;
+			sourceTree = "<group>";
+		};
+		21D1F32D1ADF3B71003024B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21D1F32E1ADF3B71003024B7 /* PackManagerTests-Info.plist */,
+				21D1F32F1ADF3B71003024B7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21D1F2FD1ADF3B71003024B7 /* PackManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D1F3361ADF3B71003024B7 /* Build configuration list for PBXNativeTarget "PackManager" */;
+			buildPhases = (
+				21D1F2FA1ADF3B71003024B7 /* Sources */,
+				21D1F2FB1ADF3B71003024B7 /* Frameworks */,
+				21D1F2FC1ADF3B71003024B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PackManager;
+			productName = PackManager;
+			productReference = 21D1F2FE1ADF3B71003024B7 /* PackManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21D1F3241ADF3B71003024B7 /* PackManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D1F3391ADF3B71003024B7 /* Build configuration list for PBXNativeTarget "PackManagerTests" */;
+			buildPhases = (
+				21D1F3211ADF3B71003024B7 /* Sources */,
+				21D1F3221ADF3B71003024B7 /* Frameworks */,
+				21D1F3231ADF3B71003024B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21D1F32B1ADF3B71003024B7 /* PBXTargetDependency */,
+			);
+			name = PackManagerTests;
+			productName = PackManagerTests;
+			productReference = 21D1F3251ADF3B71003024B7 /* PackManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21D1F2F61ADF3B71003024B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "heather blockhus";
+				TargetAttributes = {
+					21D1F3241ADF3B71003024B7 = {
+						TestTargetID = 21D1F2FD1ADF3B71003024B7;
+					};
+				};
+			};
+			buildConfigurationList = 21D1F2F91ADF3B71003024B7 /* Build configuration list for PBXProject "PackManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21D1F2F51ADF3B71003024B7;
+			productRefGroup = 21D1F2FF1ADF3B71003024B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21D1F2FD1ADF3B71003024B7 /* PackManager */,
+				21D1F3241ADF3B71003024B7 /* PackManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21D1F2FC1ADF3B71003024B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F3181ADF3B71003024B7 /* Main_iPad.storyboard in Resources */,
+				21D1F3201ADF3B71003024B7 /* Images.xcassets in Resources */,
+				21D1F3151ADF3B71003024B7 /* Main_iPhone.storyboard in Resources */,
+				21D1F30C1ADF3B71003024B7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D1F3231ADF3B71003024B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F3311ADF3B71003024B7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21D1F2FA1ADF3B71003024B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F31E1ADF3B71003024B7 /* SecondViewController.m in Sources */,
+				21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */,
+				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
+				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
+				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
+				21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */,
+				21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */,
+				21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */,
+				21D1F30E1ADF3B71003024B7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D1F3211ADF3B71003024B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D1F3331ADF3B71003024B7 /* PackManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21D1F32B1ADF3B71003024B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D1F2FD1ADF3B71003024B7 /* PackManager */;
+			targetProxy = 21D1F32A1ADF3B71003024B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21D1F30A1ADF3B71003024B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D1F30B1ADF3B71003024B7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		21D1F3131ADF3B71003024B7 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D1F3141ADF3B71003024B7 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		21D1F3161ADF3B71003024B7 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D1F3171ADF3B71003024B7 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		21D1F32F1ADF3B71003024B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D1F3301ADF3B71003024B7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21D1F3341ADF3B71003024B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21D1F3351ADF3B71003024B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21D1F3371ADF3B71003024B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
+				INFOPLIST_FILE = "PackManager/PackManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		21D1F3381ADF3B71003024B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
+				INFOPLIST_FILE = "PackManager/PackManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		21D1F33A1ADF3B71003024B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PackManager.app/PackManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PackManagerTests/PackManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		21D1F33B1ADF3B71003024B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PackManager.app/PackManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
+				INFOPLIST_FILE = "PackManagerTests/PackManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21D1F2F91ADF3B71003024B7 /* Build configuration list for PBXProject "PackManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D1F3341ADF3B71003024B7 /* Debug */,
+				21D1F3351ADF3B71003024B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D1F3361ADF3B71003024B7 /* Build configuration list for PBXNativeTarget "PackManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D1F3371ADF3B71003024B7 /* Debug */,
+				21D1F3381ADF3B71003024B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21D1F3391ADF3B71003024B7 /* Build configuration list for PBXNativeTarget "PackManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D1F33A1ADF3B71003024B7 /* Debug */,
+				21D1F33B1ADF3B71003024B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21D1F2F61ADF3B71003024B7 /* Project object */;
+}
