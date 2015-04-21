@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A1546C1AE6FABB002F76BE /* UserPreferences.m */; };
 		21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
 		21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */; };
 		21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3051ADF3B71003024B7 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21A1546B1AE6FABB002F76BE /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
+		21A1546C1AE6FABB002F76BE /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
 		21D1F2FE1ADF3B71003024B7 /* PackManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D1F3011ADF3B71003024B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,6 +153,8 @@
 				21D1F31A1ADF3B71003024B7 /* TripsViewController.m */,
 				21D1F31C1ADF3B71003024B7 /* SecondViewController.h */,
 				21D1F31D1ADF3B71003024B7 /* SecondViewController.m */,
+				21A1546B1AE6FABB002F76BE /* UserPreferences.h */,
+				21A1546C1AE6FABB002F76BE /* UserPreferences.m */,
 				21D1F31F1ADF3B71003024B7 /* Images.xcassets */,
 				21D1F3081ADF3B71003024B7 /* Supporting Files */,
 			);
@@ -286,6 +291,7 @@
 				21D1F31E1ADF3B71003024B7 /* SecondViewController.m in Sources */,
 				21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */,
 				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
+				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
 				21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */,
@@ -506,6 +512,7 @@
 				21D1F3381ADF3B71003024B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21D1F3391ADF3B71003024B7 /* Build configuration list for PBXNativeTarget "PackManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +521,7 @@
 				21D1F33B1ADF3B71003024B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
