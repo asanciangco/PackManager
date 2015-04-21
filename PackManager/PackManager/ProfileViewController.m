@@ -52,7 +52,7 @@
     self.genderSegmentedControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getGender] == FEMALE ? 0 : 1);
     
     [self.tempUnitsSegControl addTarget:self action:@selector(tempUnitsChoiceChange:) forControlEvents:UIControlEventValueChanged];
-    self.tempUnitsSegControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getGender] == CELCIUS ? 0 : 1);
+    self.tempUnitsSegControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getTempFormat] == CELCIUS ? 0 : 1);
     
     //temp sliders and labels
     [self.hotTempSlider addTarget:self action:@selector(hotTempSliderChanged:) forControlEvents:UIControlEventValueChanged];
@@ -63,7 +63,7 @@
     [self refreshTemps];
     
     //trip preferences
-    [self.swimmingPreferenceSwitch addTarget:self action:@selector(swimmingSwitchChanged) forControlEvents:UIControlEventValueChanged];
+    [self.swimmingPreferenceSwitch addTarget:self action:@selector(swimmingSwitchChanged:) forControlEvents:UIControlEventValueChanged];
     [self.swimmingPreferenceSwitch setOn:[[UserPreferences sharedInstance] getSwimmingPreference]];
     
     [self.rewearJeansPreferenceSwitch addTarget:self action:@selector(rewearJeansSwitchChanged:) forControlEvents:UIControlEventValueChanged];
