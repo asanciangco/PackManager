@@ -18,8 +18,8 @@ typedef enum
 
 typedef enum
 {
-    CELCIUS = 0,
-    FARENHEIGHT = 1,
+    CELSIUS = 0,
+    FAHRENHEIT = 1,
 } TempFormat;
 
 // Get the shared instance //

@@ -52,7 +52,7 @@
     self.genderSegmentedControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getGender] == FEMALE ? 0 : 1);
     
     [self.tempUnitsSegControl addTarget:self action:@selector(tempUnitsChoiceChange:) forControlEvents:UIControlEventValueChanged];
-    self.tempUnitsSegControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getTempFormat] == CELCIUS ? 0 : 1);
+    self.tempUnitsSegControl.selectedSegmentIndex = ([[UserPreferences sharedInstance] getTempFormat] == CELSIUS ? 0 : 1);
     
     //temp sliders and labels
     [self.hotTempSlider addTarget:self action:@selector(hotTempSliderChanged:) forControlEvents:UIControlEventValueChanged];
@@ -184,7 +184,7 @@
 }
 
 -(void) tempUnitsChoiceChange:(id)sender{
-    TempFormat tempUnits = self.tempUnitsSegControl.selectedSegmentIndex ? CELCIUS : FARENHEIGHT;
+    TempFormat tempUnits = self.tempUnitsSegControl.selectedSegmentIndex == 0 ? CELSIUS : FAHRENHEIT;
     [[UserPreferences sharedInstance] setTempFormat:tempUnits];
     [self refreshTemps];
 }

@@ -36,11 +36,26 @@ NSInteger defaultColdTemp   = 50;
     
     if ((preferences = [[UserPreferences alloc] init]))
     {
-        [preferences setHotTemp:defaultHotTemp];
-        [preferences setWarmTemp:defaultWarmTemp];
-        [preferences setNormalTemp:defaultNormalTemp];
-        [preferences setCoolTemp:defaultCoolTemp];
-        [preferences setColdTemp:defaultColdTemp];
+        if ([preferences getHotTemp] == 0)
+            [[NSUserDefaults standardUserDefaults] setFloat:defaultHotTemp forKey:@"hotTemp"];
+        
+        if ([preferences getWarmTemp] == 0)
+            [[NSUserDefaults standardUserDefaults] setFloat:defaultWarmTemp forKey:@"warmTemp"];
+        
+        if ([preferences getNormalTemp] == 0)
+            [[NSUserDefaults standardUserDefaults] setFloat:defaultNormalTemp forKey:@"normalTemp"];
+        
+        if ([preferences getCoolTemp] == 0)
+            [[NSUserDefaults standardUserDefaults] setFloat:defaultCoolTemp forKey:@"coolTemp"];
+        
+        if ([preferences getColdTemp] == 0)
+            [[NSUserDefaults standardUserDefaults] setFloat:defaultColdTemp forKey:@"coldTemp"];
+        
+//        [preferences setHotTemp:defaultHotTemp];
+//        [preferences setWarmTemp:defaultWarmTemp];
+//        [preferences setNormalTemp:defaultNormalTemp];
+//        [preferences setCoolTemp:defaultCoolTemp];
+//        [preferences setColdTemp:defaultColdTemp];
         
         [preferences setSwimmingPreference:NO];
         [preferences setFormalPreference:NO];
@@ -55,47 +70,37 @@ NSInteger defaultColdTemp   = 50;
 //////////////////////////
 - (float) getHotTemp
 {
-    float hotTemp = [[NSUserDefaults standardUserDefaults] floatForKey:@"hotTemp"];
-    
-    return hotTemp;
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"hotTemp"];
 }
 
 - (float) getWarmTemp;
 {
-    float warmTemp = [[NSUserDefaults standardUserDefaults] floatForKey:@"warmTemp"];
-    
-    return warmTemp;
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"warmTemp"];
 }
 
 - (float) getNormalTemp
 {
-    float normalTemp = [[NSUserDefaults standardUserDefaults] floatForKey:@"normalTemp"];
-    
-    return normalTemp;
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"normalTemp"];
 }
 
 - (float) getCoolTemp
 {
-    float coolTemp = [[NSUserDefaults standardUserDefaults] floatForKey:@"coolTemp"];
-    
-    return coolTemp;
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"coolTemp"];
 }
 
 - (float) getColdTemp
 {
-    float coldTemp = [[NSUserDefaults standardUserDefaults] floatForKey:@"coldTemp"];
-    
-    return coldTemp;
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"coldTemp"];
 }
 
 - (BOOL) setHotTemp:(float)temp
 {
+    [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"hotTemp"];
     if (temp >= [self getWarmTemp]
         && temp >= [self getNormalTemp]
         && temp >= [self getCoolTemp]
         && temp >= [self getColdTemp])
     {
-        [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"hotTemp"];
         return YES;
     }
     else
@@ -106,12 +111,12 @@ NSInteger defaultColdTemp   = 50;
 
 - (BOOL) setWarmTemp:(float)temp
 {
+    [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"warmTemp"];
     if (temp <= [self getHotTemp]
         && temp >= [self getNormalTemp]
         && temp >= [self getCoolTemp]
         && temp >= [self getColdTemp])
     {
-        [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"warmTemp"];
         return YES;
     }
     else
@@ -122,12 +127,12 @@ NSInteger defaultColdTemp   = 50;
 
 - (BOOL) setNormalTemp:(float)temp
 {
+    [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"normalTemp"];
     if (temp <= [self getHotTemp]
         && temp <= [self getWarmTemp]
         && temp >= [self getCoolTemp]
         && temp >= [self getColdTemp])
     {
-        [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"normalTemp"];
         return YES;
     }
     else
@@ -138,12 +143,12 @@ NSInteger defaultColdTemp   = 50;
 
 - (BOOL) setCoolTemp:(float)temp
 {
+    [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"coolTemp"];
     if (temp <= [self getHotTemp]
         && temp <= [self getWarmTemp]
         && temp <= [self getNormalTemp]
         && temp >= [self getColdTemp])
     {
-        [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"coolTemp"];
         return YES;
     }
     else
@@ -154,12 +159,12 @@ NSInteger defaultColdTemp   = 50;
 
 - (BOOL) setColdTemp:(float)temp
 {
+    [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"coldTemp"];
     if (temp <= [self getHotTemp]
         && temp <= [self getWarmTemp]
         && temp <= [self getNormalTemp]
         && temp <= [self getCoolTemp])
     {
-        [[NSUserDefaults standardUserDefaults] setFloat:temp forKey:@"coldTemp"];
         return YES;
     }
     else
@@ -236,7 +241,7 @@ NSInteger defaultColdTemp   = 50;
 - (void) setTempFormat:(TempFormat)format
 {
     // Sanity check
-    if (format != FARENHEIGHT && format != CELCIUS)
+    if (format != FAHRENHEIT && format != CELSIUS)
         return;
     
     if([self getTempFormat] != format)
@@ -247,7 +252,7 @@ NSInteger defaultColdTemp   = 50;
 - (void) convertTempsToFormat:(TempFormat)format
 {
     switch (format) {
-        case CELCIUS:
+        case CELSIUS:
         {
             [self setHotTemp:(([self getHotTemp] - 32.0) * 5.0/9.0)];
             [self setWarmTemp:(([self getWarmTemp] - 32.0) * 5.0/9.0)];
@@ -256,7 +261,7 @@ NSInteger defaultColdTemp   = 50;
             [self setColdTemp:(([self getColdTemp] - 32.0) * 5.0/9.0)];
         }
             break;
-        case FARENHEIGHT:
+        case FAHRENHEIT:
         {
             [self setHotTemp:([self getHotTemp] * 9.0/5.0 + 32.0)];
             [self setWarmTemp:([self getWarmTemp] * 9.0/5.0 + 32.0)];
