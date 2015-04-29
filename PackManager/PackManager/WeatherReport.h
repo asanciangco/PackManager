@@ -1,13 +1,13 @@
 //
-//  Destination.h
+//  WeatherReport.h
 //  PackManager
 //
-//  Created by Alex Sanciangco on 4/21/15.
+//  Created by Alex Sanciangco on 4/29/15.
 //  Copyright (c) 2015 heather blockhus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Destination : NSObject <NSCoding>
+@interface WeatherReport : NSObject
 
 @end

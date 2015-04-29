@@ -21,6 +21,7 @@ NSInteger defaultColdTemp   = 50;
 
 // Get the shared instance //
 /////////////////////////////
+#pragma mark - Accessing sharedInstance
 + (instancetype) sharedInstance
 {
     if (!sharedInstance)

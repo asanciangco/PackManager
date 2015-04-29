@@ -8,18 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "Destination.h"
+#import "PackingList.h"
 
-@interface Trip : NSObject
+@interface Trip : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) Destination *destination;
+@property (nonatomic, strong) NSString *name;
 @property NSInteger duration;   // in days
 
-// Initializer //
-/////////////////
+@property (nonatomic, strong) PackingList *packingList;
+
+// Initializers //
+//////////////////
 - (instancetype) initWithStartDate:(NSDate *)start
                           duration:(NSInteger)numDays
-                       destination:(Destination *)dest;
+                       destination:(Destination *)dest
+                              name:(NSString *)name;
 
 // Helpers //
 /////////////

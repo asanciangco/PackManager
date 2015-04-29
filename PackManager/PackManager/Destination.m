@@ -10,4 +10,16 @@
 
 @implementation Destination
 
+#pragma mark - Encoding / Decoding
+// TODO: Implement these
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    return 0;
+}
+
 @end
