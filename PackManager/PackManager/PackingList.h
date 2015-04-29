@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "Trip.h"
 
 @interface PackingList : NSObject <NSCoding>
 
@@ -23,6 +24,9 @@ typedef enum PackingItems
     TIE,
     
 } PackingItems;
+
+// Initializer
+- (instancetype) initPackingListForTrip:(Trip *)trip;
 
 // Returns number of different types of items.
 //

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Destination.h"
 #import "PackingList.h"
+#import "WeatherReport.h"
 
 @interface Trip : NSObject <NSCoding>
 
@@ -18,6 +19,7 @@
 @property NSInteger duration;   // in days
 
 @property (nonatomic, strong) PackingList *packingList;
+@property (nonatomic, strong) WeatherReport *weatherReport;
 
 // Initializers //
 //////////////////
@@ -29,5 +31,14 @@
 // Helpers //
 /////////////
 - (NSDate *) endDate;
+
+// This is the big one. Returns true if everything went OK and
+// the packing list is created, false otherwise.
+//
+// Examples for why it might return false:
+//      - invalid destination
+//      - invalid or NULL weather report
+//      - start date / duration is NULL
+- (BOOL) generatePackingList;
 
 @end

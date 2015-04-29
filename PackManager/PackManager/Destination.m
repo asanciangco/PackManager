@@ -10,6 +10,13 @@
 
 @implementation Destination
 
+#pragma mark - Meta
+// TODO: Implement this
+- (BOOL) valid
+{
+    return YES;
+}
+
 #pragma mark - Encoding / Decoding
 // TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder

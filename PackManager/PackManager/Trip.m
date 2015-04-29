@@ -36,6 +36,28 @@
     return [NSDate dateWithTimeInterval:numSeconds sinceDate:self.startDate];
 }
 
+- (BOOL) generatePackingList
+{
+    // Sanity checks first:
+    //
+    // Check destination
+    if (!self.destination || ![self.destination valid])
+        return NO;
+    
+    // Check weather report
+    if (!self.weatherReport)
+        return NO;
+    
+    // check dates
+    if (!self.startDate || self.duration <=0)
+        return NO;
+    
+    // Have the packing list create itself based on the
+    self.packingList = [[PackingList alloc] initPackingListForTrip:self];
+
+    return (self.packingList != NULL);
+}
+
 #pragma mark - Encoding/Decoding
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {

@@ -10,4 +10,8 @@
 
 @interface Destination : NSObject <NSCoding>
 
+// Returns true if location is a valid place (i.e. it exists)
+// false otherwise
+- (BOOL) valid;
+
 @end

@@ -11,10 +11,21 @@
 @interface PackingList ()
 
 @property (nonatomic, strong) NSMutableDictionary *list;
+@property (nonatomic, strong) Trip* trip;
 
 @end
 
 @implementation PackingList
+
+#pragma mark - Initializer
+- (instancetype) initPackingListForTrip:(Trip *)trip
+{
+    if (self = [super init])
+    {
+        self.trip = trip;
+    }
+    return self;
+}
 
 #pragma mark - MetaData
 - (NSInteger) getNumberOfUniqueItems
