@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #include "Trip.h"
+#include "Packable.h"
 
 @class Trip;
 
@@ -35,6 +36,8 @@ typedef enum PackingItems
 
 // Initializer
 - (instancetype) initPackingListForTrip:(Trip *)trip;
+
+- (Packable *) getPackableForIndex:(NSInteger)index;
 
 // Returns number of different types of items.
 //

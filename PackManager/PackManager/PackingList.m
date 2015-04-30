@@ -27,11 +27,17 @@
     return self;
 }
 
-#pragma mark - MetaData
+#pragma mark - Getters
 - (NSInteger) getNumberOfUniqueItems
 {
     return [self.list count];
 }
+
+- (Packable *) getPackableForIndex:(NSInteger)index
+{
+    return NULL;
+}
+
 
 #pragma mark - Helpers
 
