@@ -75,7 +75,7 @@
     {
         static NSString *CellIdentifier = @"ListItemCell";
         PackingListItemCell *cell = [[PackingListItemCell alloc] initWithPackable:[self.trip.packingList getPackableForIndex:(indexPath.row-1)]
-                                                                            Style:UITableViewCellStyleDefault
+                                                                            style:UITableViewCellStyleDefault
                                                                   reuseIdentifier:CellIdentifier];
         return cell;
     }
