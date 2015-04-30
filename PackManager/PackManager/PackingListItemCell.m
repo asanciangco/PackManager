@@ -7,6 +7,7 @@
 //
 
 #import "PackingListItemCell.h"
+#import "Packable.h"
 
 @implementation PackingListItemCell
 
@@ -27,11 +28,11 @@
         if(item.quantity > 0)
         {
             self.itemTextLabel.text = item.name;
-            self.quantityTextLabel.text = item.quantity;
+            self.quantityTextLabel.text = [NSString stringWithFormat:@"x%i", item.quantity];
         }
         else
         {
-            self.hidden = TRUE;
+            self.hidden = YES;
         }
     }
     return self;

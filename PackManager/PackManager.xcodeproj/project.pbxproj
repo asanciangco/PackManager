@@ -60,6 +60,8 @@
 		2175AD071AF1A75B0033ECE4 /* PackingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingList.m; sourceTree = "<group>"; };
 		2175AD091AF1AB250033ECE4 /* PackingListItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingListItemCell.h; sourceTree = "<group>"; };
 		2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListItemCell.m; sourceTree = "<group>"; };
+		2175AD0C1AF1BF1B0033ECE4 /* Packable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packable.h; sourceTree = "<group>"; };
+		2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDay.h; sourceTree = "<group>"; };
 		21A1546B1AE6FABB002F76BE /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
 		21A1546C1AE6FABB002F76BE /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
 		21D1F2FE1ADF3B71003024B7 /* PackManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,8 @@
 		2127248F1AF18F2300F61AAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+				2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */,
 				212724891AF18F0C00F61AAA /* Destination.h */,
 				2127248A1AF18F0C00F61AAA /* Destination.m */,
 				2127248B1AF18F0C00F61AAA /* Trip.h */,

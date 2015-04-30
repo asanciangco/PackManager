@@ -10,6 +10,4 @@
 
 @interface WeatherReportViewController : UITableViewController
 
-@property (weak, nonatomic) 
-
 @end
