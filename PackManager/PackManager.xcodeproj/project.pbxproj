@@ -12,6 +12,7 @@
 		2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD011AF1A36F0033ECE4 /* TripsData.m */; };
 		2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD031AF1A36F0033ECE4 /* WeatherReport.m */; };
 		2175AD081AF1A75B0033ECE4 /* PackingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD071AF1A75B0033ECE4 /* PackingList.m */; };
+		2175AD0B1AF1AB250033ECE4 /* PackingListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */; };
 		21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A1546C1AE6FABB002F76BE /* UserPreferences.m */; };
 		21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
 		21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */; };
@@ -33,7 +34,7 @@
 		21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3431ADF4933003024B7 /* PackingListViewController.m */; };
 		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
-		21E432B71AF19F600092E333 /* LayeredRightDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E432B61AF19F600092E333 /* LayeredRightDetailTableViewCell.m */; };
+		21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		2175AD031AF1A36F0033ECE4 /* WeatherReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReport.m; sourceTree = "<group>"; };
 		2175AD061AF1A75B0033ECE4 /* PackingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingList.h; sourceTree = "<group>"; };
 		2175AD071AF1A75B0033ECE4 /* PackingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingList.m; sourceTree = "<group>"; };
+		2175AD091AF1AB250033ECE4 /* PackingListItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackingListItemCell.h; sourceTree = "<group>"; };
+		2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListItemCell.m; sourceTree = "<group>"; };
 		21A1546B1AE6FABB002F76BE /* UserPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
 		21A1546C1AE6FABB002F76BE /* UserPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPreferences.m; sourceTree = "<group>"; };
 		21D1F2FE1ADF3B71003024B7 /* PackManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,8 +92,8 @@
 		21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportViewController.m; sourceTree = "<group>"; };
 		21D1F3481ADF4A0E003024B7 /* TripSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSettingsViewController.h; sourceTree = "<group>"; };
 		21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripSettingsViewController.m; sourceTree = "<group>"; };
-		21E432B51AF19F600092E333 /* LayeredRightDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayeredRightDetailTableViewCell.h; path = ../LayeredRightDetailTableViewCell.h; sourceTree = "<group>"; };
-		21E432B61AF19F600092E333 /* LayeredRightDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayeredRightDetailTableViewCell.m; path = ../LayeredRightDetailTableViewCell.m; sourceTree = "<group>"; };
+		21E432B51AF19F600092E333 /* LayeredRightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayeredRightDetailCell.h; path = ../LayeredRightDetailCell.h; sourceTree = "<group>"; };
+		21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayeredRightDetailCell.m; path = ../LayeredRightDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +244,10 @@
 		21E432B81AF19F6F0092E333 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				21E432B51AF19F600092E333 /* LayeredRightDetailTableViewCell.h */,
-				21E432B61AF19F600092E333 /* LayeredRightDetailTableViewCell.m */,
+				21E432B51AF19F600092E333 /* LayeredRightDetailCell.h */,
+				21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */,
+				2175AD091AF1AB250033ECE4 /* PackingListItemCell.h */,
+				2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -353,7 +358,8 @@
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
 				21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */,
-				21E432B71AF19F600092E333 /* LayeredRightDetailTableViewCell.m in Sources */,
+				2175AD0B1AF1AB250033ECE4 /* PackingListItemCell.m in Sources */,
+				21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */,
 				21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */,
 				2127248E1AF18F0C00F61AAA /* Trip.m in Sources */,
 				2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */,

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 heather blockhus. All rights reserved.
 //
 
-#import "LayeredRightDetailTableViewCell.h"
+#import "LayeredRightDetailCell.h"
 
-@implementation LayeredRightDetailTableViewCell
+@implementation LayeredRightDetailCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
