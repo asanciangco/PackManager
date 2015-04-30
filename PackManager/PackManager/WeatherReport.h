@@ -11,5 +11,6 @@
 @interface WeatherReport : NSObject
 
 - (NSInteger) getOverallHigh;
+- (NSInteger) getOverallLow;
 
 @end

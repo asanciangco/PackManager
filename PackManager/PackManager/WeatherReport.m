@@ -17,4 +17,9 @@
     return 100;
 }
 
+- (NSInteger) getOverallLow
+{
+    return 0;
+}
+
 @end
