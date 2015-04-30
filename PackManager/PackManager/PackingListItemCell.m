@@ -7,7 +7,6 @@
 //
 
 #import "PackingListItemCell.h"
-#import "Packable.h"
 
 @implementation PackingListItemCell
 

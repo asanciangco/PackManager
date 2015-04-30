@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Packable.h"
 
 @interface PackingListItemCell : UITableViewCell
 
