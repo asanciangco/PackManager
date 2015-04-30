@@ -10,7 +10,12 @@
 
 @interface WeatherReport : NSObject
 
+// Returns highest temp for entire report
 - (NSInteger) getOverallHigh;
+
+// Returns lowest temp for entire report
 - (NSInteger) getOverallLow;
+
+
 
 @end

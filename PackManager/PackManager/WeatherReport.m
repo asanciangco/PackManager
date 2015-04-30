@@ -10,8 +10,13 @@
 
 @implementation WeatherReport
 
+#pragma mark - Initializer
+// TODO: need to be able to initialize a weather report object from
+// whatever the return type of the WeatherAPI is
+
 #pragma mark - Weather Info
 // TODO: Implement me
+
 - (NSInteger) getOverallHigh
 {
     return 100;

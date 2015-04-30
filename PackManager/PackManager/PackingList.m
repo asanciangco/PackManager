@@ -10,7 +10,7 @@
 
 @interface PackingList ()
 
-@property (nonatomic, strong) NSMutableDictionary *list;
+@property (nonatomic, strong) NSMutableArray *list; // of Packable
 @property (nonatomic, strong) Trip* trip;
 
 @end
@@ -34,7 +34,16 @@
 }
 
 #pragma mark - Helpers
-- (NSString *) stringForItemType:(PackingItems)item
+
+// TODO: need to finish design
+- (NSInteger) quantityForItemAtIndex:(NSInteger)index
+{
+    PackingItems itemEnum = (PackingItems)index;
+    NSNumber *key = [NSNumber numberWithInt:itemEnum];
+    return 0;
+}
+
++ (NSString *) stringForItemType:(PackingItems)item
 {
     NSString *itemName;
     
@@ -67,6 +76,8 @@
         case TIE:
             itemName = @"Tie";
             break;
+        default:
+            itemName = @"ITEM NOT FOUND";
     }
     
     return itemName;

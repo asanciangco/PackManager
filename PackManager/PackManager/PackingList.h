@@ -15,15 +15,21 @@
 
 typedef enum PackingItems
 {
-    SHORT_SLEEVE_SHIRT,
+    SHORT_SLEEVE_SHIRT = 0,
     LONG_SLEEVE_SHIRT,
     FORMAL_SHIRT,
     SHORT_PANT,
     LONG_PANT,
+    UNDERWEAR,
+    SOCKS,
+    SHOES,
+    SANDALS,
     SWIMSUIT,
     SUIT,
     DRESS,
     TIE,
+    UMBERELLA,
+    SUNSCREEN,
     
 } PackingItems;
 
@@ -36,10 +42,11 @@ typedef enum PackingItems
 // this will return 2 (shirts, pants)
 - (NSInteger) getNumberOfUniqueItems;
 
+- (NSInteger) quantityForItemAtIndex:(NSInteger)index;
 
 // Information Hiding! This class will convert it's items'
 // names into strings for you
-- (NSString *) stringForItemType:(PackingItems)item;
++ (NSString *) stringForItemType:(PackingItems)item;
 
 
 @end
