@@ -11,6 +11,8 @@
 #import "PackingList.h"
 #import "WeatherReport.h"
 
+@class PackingList;
+
 @interface Trip : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSDate *startDate;
