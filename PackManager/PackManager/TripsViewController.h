@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TripsViewController : UITableViewController
+@interface TripsViewController : UITableViewController 
 
 @end
