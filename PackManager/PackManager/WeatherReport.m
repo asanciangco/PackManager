@@ -10,4 +10,11 @@
 
 @implementation WeatherReport
 
+#pragma mark - Weather Info
+// TODO: Implement me
+- (NSInteger) getOverallHigh
+{
+    return 100;
+}
+
 @end

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #include "Trip.h"
 
+@class Trip;
+
 @interface PackingList : NSObject <NSCoding>
 
 typedef enum PackingItems

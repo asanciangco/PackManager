@@ -10,4 +10,6 @@
 
 @interface WeatherReport : NSObject
 
+- (NSInteger) getOverallHigh;
+
 @end
