@@ -19,6 +19,24 @@
     return self;
 }
 
+- (instancetype)initWithPackable:(Packable *)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+        if(item.quantity > 0)
+        {
+            self.itemTextLabel.text = item.name;
+            self.quantityTextLabel.text = item.quantity;
+        }
+        else
+        {
+            self.hidden = TRUE;
+        }
+    }
+    return self;
+}
+
 - (void)awakeFromNib
 {
     // Initialization code

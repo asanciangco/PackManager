@@ -63,10 +63,7 @@
     if(indexPath.row == 0)
     {
         static NSString *CellIdentifier = @"weatherReportCell";
-        LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if ( cell == nil ) {
-            cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
+        LayeredRightDetailCell *cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         cell.mainTextLabel.text = @"Weather Report";
         cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallHigh]];
@@ -77,12 +74,9 @@
     else
     {
         static NSString *CellIdentifier = @"ListItemCell";
-        PackingListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if ( cell == nil ) {
-            cell = [[PackingListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-        cell.itemTextLabel.text = [self.trip.packingList stringForItemAtIndex:indexPath.row];
-        cell.quantityTextLabel.text = [NSString stringWithFormat:@"x%i" [self.trip.packingList quantityForItemAtIndex:indexPath.row] ];
+        PackingListItemCell *cell = [[PackingListItemCell alloc] initWithPackable:[self.trip.packingList getPackableForIndex:(indexPath.row-1)]
+                                                                            Style:UITableViewCellStyleDefault
+                                                                  reuseIdentifier:CellIdentifier];
         return cell;
     }
 }
