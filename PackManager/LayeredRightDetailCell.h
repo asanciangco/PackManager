@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LayeredRightDetailTableViewCell : UITableViewCell
+@interface LayeredRightDetailCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mainTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *upperDetailTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lowerDetailTextLabel;
 

@@ -7,7 +7,7 @@
 //
 
 #import "PackingListViewController.h"
-#import "LayeredRightDetailTableViewCell.h"
+#import "LayeredRightDetailCell.h"
 
 @interface PackingListViewController ()
 
@@ -62,9 +62,9 @@
     if(indexPath.row == 0)
     {
         static NSString *CellIdentifier = @"weatherReportCell";
-        LayeredRightDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if ( cell == nil ) {
-            cell = [[LayeredRightDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         
         cell.textLabel.text = @"Weather Report";
