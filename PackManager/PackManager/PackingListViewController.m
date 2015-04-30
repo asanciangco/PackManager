@@ -7,6 +7,7 @@
 //
 
 #import "PackingListViewController.h"
+#import "LayeredRightDetailTableViewCell.h"
 
 @interface PackingListViewController ()
 
@@ -44,28 +45,48 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.trip.packingList getNumberOfUniqueItems];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    //weather report row
+    if(indexPath.row == 0)
+    {
+        static NSString *CellIdentifier = @"weatherReportCell";
+        LayeredRightDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if ( cell == nil ) {
+            cell = [[LayeredRightDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        
+        cell.textLabel.text = @"Weather Report";
+        cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallHigh]];
+        cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallLow]];
+        return cell;
+        
+    }
+    //packing list item row
+    else
+    {
+        static NSString *CellIdentifier = @"ListItemCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if ( cell == nil ) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }
+        
+        
+        return cell;
+    }
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
