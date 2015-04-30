@@ -8,6 +8,7 @@
 
 #import "PackingListViewController.h"
 #import "LayeredRightDetailCell.h"
+#import "PackingListItemCell.h"
 
 @interface PackingListViewController ()
 
@@ -67,22 +68,21 @@
             cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         
-        cell.textLabel.text = @"Weather Report";
+        cell.mainTextLabel.text = @"Weather Report";
         cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallHigh]];
         cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallLow]];
         return cell;
-        
     }
     //packing list item row
     else
     {
         static NSString *CellIdentifier = @"ListItemCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        PackingListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if ( cell == nil ) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+            cell = [[PackingListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        
-        
+        cell.itemTextLabel.text = [self.trip.packingList stringForItemAtIndex:indexPath.row];
+        cell.quantityTextLabel.text = [NSString stringWithFormat:@"x%i" [self.trip.packingList quantityForItemAtIndex:indexPath.row] ];
         return cell;
     }
 }

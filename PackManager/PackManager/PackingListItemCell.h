@@ -10,4 +10,8 @@
 
 @interface PackingListItemCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *itemTextLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *quantityTextLabel;
+
 @end

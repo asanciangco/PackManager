@@ -198,7 +198,7 @@
                                     <segue destination="y9H-Xt-eLl" kind="push" identifier="showWeatherReport" id="Vsh-Fm-wHO"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListItemCell" id="2mO-eK-i6l">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListItemCell" id="2mO-eK-i6l" customClass="PackingListItemCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2mO-eK-i6l" id="5qg-QR-6NX">
@@ -233,6 +233,10 @@
                                         <constraint firstItem="TK0-jm-0SQ" firstAttribute="leading" secondItem="5qg-QR-6NX" secondAttribute="leading" constant="20" id="tWa-hc-UJW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemTextLabel" destination="TK0-jm-0SQ" id="coo-kV-KXW"/>
+                                    <outlet property="quantityTextLabel" destination="Zs5-4U-pn4" id="O63-qg-89k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
