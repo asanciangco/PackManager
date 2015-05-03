@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Trip.h"
 
 @interface TripSettingsViewController : UITableViewController
+
+@property (nonatomic, strong) Trip *trip;
 
 @end
