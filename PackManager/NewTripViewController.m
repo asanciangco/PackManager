@@ -9,10 +9,19 @@
 #import "NewTripViewController.h"
 
 @interface NewTripViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *newTripInfoTableView;
 
 @end
 
 @implementation NewTripViewController
+{
+    NSIndexPath *tripNameIndexPath;
+    NSIndexPath *firstLocationIndexPath;
+    NSIndexPath *startDateIndexPath;
+    NSIndexPath *startDatePickerIndexPath;
+    NSIndexPath *firstDurationIndexPath;
+    NSInteger numStops;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +36,15 @@
 {
     [super viewDidLoad];
     
-    self.trip = [Trip alloc];
+    self.trip = [[Trip alloc] initNewTrip];
+    
+    tripNameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    firstLocationIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+    firstDurationIndexPath = [NSIndexPath indexPathForRow:4 inSection:0];
+    
+    numStops = 1;
     // Do any additional setup after loading the view.
 }
 
@@ -36,6 +53,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - TableView functions
+
 
 /*
 #pragma mark - Navigation
