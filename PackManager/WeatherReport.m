@@ -35,12 +35,24 @@
 
 - (NSInteger) getOverallHigh
 {
-    return 100;
+  NSInteger high = NSIntegerMin;
+  for (WeatherDay *r in self.weatherDays) {
+    if(high < [r high]) {
+      high = r.high;
+    }
+  }
+  return high;
 }
 
 - (NSInteger) getOverallLow
 {
-    return 0;
+  NSInteger low = NSIntegerMax;
+  for (WeatherDay *r in self.weatherDays) {
+    if(low > [r low]) {
+      low = r.low;
+    }
+  }
+  return low;
 }
 
 - (NSInteger) numberOfDays
