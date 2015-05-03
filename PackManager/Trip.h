@@ -27,7 +27,7 @@
 // Preferences
 @property BOOL swimmingPreference;
 @property BOOL formalPreference;
-@property BOOL rewearJeansProperty;
+@property BOOL rewearJeansPreference;
 @property BOOL accessToLaundryPreference;
 
 // Initializers //
