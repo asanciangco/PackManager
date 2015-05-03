@@ -37,6 +37,8 @@
                        destination:(Destination *)dest
                               name:(NSString *)name;
 
+- (instancetype) initNewTrip;
+
 // Helpers //
 /////////////
 - (NSDate *) endDate;

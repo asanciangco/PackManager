@@ -35,6 +35,15 @@
     return self;
 }
 
+- (instancetype) initNewTrip
+{
+    if (self = [[Trip alloc] initWithStartDate:NULL duration:-1 destination:NULL name:@""])
+    {
+        
+    }
+    return self;
+}
+
 #pragma mark - Helpers
 
 - (NSDate *) endDate
