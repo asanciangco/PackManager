@@ -125,7 +125,7 @@
 		2127248F1AF18F2300F61AAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+				E2B80F991AF6D078003B6281 /* Packing Items */,
 				2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */,
 				212724891AF18F0C00F61AAA /* Destination.h */,
 				2127248A1AF18F0C00F61AAA /* Destination.m */,
@@ -254,6 +254,14 @@
 				2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		E2B80F991AF6D078003B6281 /* Packing Items */ = {
+			isa = PBXGroup;
+			children = (
+				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+			);
+			name = "Packing Items";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
