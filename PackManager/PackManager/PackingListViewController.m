@@ -66,8 +66,8 @@
         LayeredRightDetailCell *cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         cell.mainTextLabel.text = @"Weather Report";
-        cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallHigh]];
-        cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%i", [self.trip.weatherReport getOverallLow]];
+        cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getOverallHigh]];
+        cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getOverallLow]];
         return cell;
     }
     //packing list item row

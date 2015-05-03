@@ -17,5 +17,4 @@
 
 - (instancetype)initWithPackable:(Packable *)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
-
 @end
