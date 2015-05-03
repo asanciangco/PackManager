@@ -15,6 +15,7 @@
 
 @interface Trip : NSObject <NSCoding>
 
+// Basic Trip Info
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) Destination *destination;
 @property (nonatomic, strong) NSString *name;
@@ -22,6 +23,12 @@
 
 @property (nonatomic, strong) PackingList *packingList;
 @property (nonatomic, strong) WeatherReport *weatherReport;
+
+// Preferences
+@property BOOL swimmingPreference;
+@property BOOL formalPreference;
+@property BOOL rewearJeansProperty;
+@property BOOL accessToLaundryPreference;
 
 // Initializers //
 //////////////////
