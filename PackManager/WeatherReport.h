@@ -16,6 +16,11 @@
 // Returns lowest temp for entire report
 - (NSInteger) getOverallLow;
 
+// returns number of days in this weather report
+- (NSInteger) numberOfDays;
 
+// return high/low temp for given day of trip
+- (NSInteger) getHighForDay:(NSInteger)day; // 1-indexed, so '1' for day 1
+- (NSInteger) getLowForDay:(NSInteger)day;  // 1-indexed, so '1' for day 1
 
 @end

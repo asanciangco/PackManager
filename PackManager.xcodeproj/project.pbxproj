@@ -128,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				E2B80F991AF6D078003B6281 /* Packing Items */,
+				2175AD021AF1A36F0033ECE4 /* WeatherReport.h */,
+				2175AD031AF1A36F0033ECE4 /* WeatherReport.m */,
 				2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */,
 				E2B80F9C1AF6D303003B6281 /* WeatherDay.m */,
 				212724891AF18F0C00F61AAA /* Destination.h */,
@@ -136,8 +138,6 @@
 				2127248C1AF18F0C00F61AAA /* Trip.m */,
 				2175AD001AF1A36F0033ECE4 /* TripsData.h */,
 				2175AD011AF1A36F0033ECE4 /* TripsData.m */,
-				2175AD021AF1A36F0033ECE4 /* WeatherReport.h */,
-				2175AD031AF1A36F0033ECE4 /* WeatherReport.m */,
 				2175AD061AF1A75B0033ECE4 /* PackingList.h */,
 				2175AD071AF1A75B0033ECE4 /* PackingList.m */,
 			);
