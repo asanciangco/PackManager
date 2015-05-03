@@ -56,7 +56,7 @@
      trip = [[TripsData sharedInstance] getTrip:indexPath.row];
      
      cell.textLabel.text = trip.name;
-     cell.detailTextLabel.text = [NSString stringWithFormat:@"%i days", trip.duration];
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"%li days", (long)trip.duration];
      
      return cell;
  }

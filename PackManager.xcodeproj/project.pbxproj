@@ -35,6 +35,8 @@
 		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
 		21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */; };
+		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
+		E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripSettingsViewController.m; sourceTree = "<group>"; };
 		21E432B51AF19F600092E333 /* LayeredRightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayeredRightDetailCell.h; path = ../LayeredRightDetailCell.h; sourceTree = "<group>"; };
 		21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayeredRightDetailCell.m; path = ../LayeredRightDetailCell.m; sourceTree = "<group>"; };
+		E2B80F9C1AF6D303003B6281 /* WeatherDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDay.m; sourceTree = "<group>"; };
+		E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
+		E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,16 +130,17 @@
 		2127248F1AF18F2300F61AAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+				E2B80F991AF6D078003B6281 /* Packing Items */,
+				2175AD021AF1A36F0033ECE4 /* WeatherReport.h */,
+				2175AD031AF1A36F0033ECE4 /* WeatherReport.m */,
 				2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */,
+				E2B80F9C1AF6D303003B6281 /* WeatherDay.m */,
 				212724891AF18F0C00F61AAA /* Destination.h */,
 				2127248A1AF18F0C00F61AAA /* Destination.m */,
 				2127248B1AF18F0C00F61AAA /* Trip.h */,
 				2127248C1AF18F0C00F61AAA /* Trip.m */,
 				2175AD001AF1A36F0033ECE4 /* TripsData.h */,
 				2175AD011AF1A36F0033ECE4 /* TripsData.m */,
-				2175AD021AF1A36F0033ECE4 /* WeatherReport.h */,
-				2175AD031AF1A36F0033ECE4 /* WeatherReport.m */,
 				2175AD061AF1A75B0033ECE4 /* PackingList.h */,
 				2175AD071AF1A75B0033ECE4 /* PackingList.m */,
 			);
@@ -166,6 +172,8 @@
 			children = (
 				21A1546B1AE6FABB002F76BE /* UserPreferences.h */,
 				21A1546C1AE6FABB002F76BE /* UserPreferences.m */,
+				E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */,
+				E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */,
 			);
 			name = "Wrapper / Helper Classes";
 			sourceTree = "<group>";
@@ -254,6 +262,14 @@
 				2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		E2B80F991AF6D078003B6281 /* Packing Items */ = {
+			isa = PBXGroup;
+			children = (
+				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+			);
+			name = "Packing Items";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +383,8 @@
 				21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */,
 				2127248E1AF18F0C00F61AAA /* Trip.m in Sources */,
 				2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */,
+				E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */,
+				E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */,
 				2127248D1AF18F0C00F61AAA /* Destination.m in Sources */,
 				21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */,
 				21D1F30E1ADF3B71003024B7 /* main.m in Sources */,
