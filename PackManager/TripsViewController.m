@@ -10,6 +10,7 @@
 #import "Trip.h"
 #import "TripsData.h"
 #import "PackingListViewController.h"
+#import "NewTripViewController.h"
 
 @interface TripsViewController ()
 
@@ -71,8 +72,11 @@
 #pragma mark - Navagation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PackingListViewController *plistVC = [segue destinationViewController];
-    plistVC.trip = trip;
+    if([segue.identifier isEqualToString:@"showPackingList"])
+    {
+        PackingListViewController *plistVC = [segue destinationViewController];
+        plistVC.trip = trip;
+    }
 }
 
 @end

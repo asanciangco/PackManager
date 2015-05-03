@@ -890,7 +890,7 @@
                     <navigationItem key="navigationItem" title="New Trip" id="XcC-cM-Ewe">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Qce-Jy-T6F">
                             <connections>
-                                <segue destination="nYH-0f-KLo" kind="push" id="0xO-fq-2Qf"/>
+                                <segue destination="nYH-0f-KLo" kind="push" identifier="goToTripSettings" id="0xO-fq-2Qf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1003,6 +1003,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Trip Settings" id="pOT-Za-9Ug"/>
+                    <connections>
+                        <outlet property="FormalPreferenceSwitch" destination="KvZ-8a-6S7" id="hAU-Tb-Wxf"/>
+                        <outlet property="accessToLaundrySwitch" destination="aVn-YJ-h9p" id="7V2-lV-o7N"/>
+                        <outlet property="swimmingPreferenceSwitch" destination="2p3-XH-uUo" id="rPE-T0-43m"/>
+                        <outlet property="willingToRewearJeansSwitch" destination="qyR-uY-BK7" id="xce-zj-a3Q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xk-Hy-wUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1503,6 +1509,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="e4e-5l-C95"/>
+        <segue reference="aBc-ms-JnL"/>
     </inferredMetricsTieBreakers>
 </document>
