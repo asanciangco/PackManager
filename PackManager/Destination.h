@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+	Adds some convenience methods to the Destination class
+*/
 @interface Destination : NSObject <NSCoding>
 
-// Returns true if location is a valid place (i.e. it exists)
-// false otherwise
+/** 
+	Tests to see if a destination is a valid location
+    @Return returns TRUE if location is a valid place (i.e. it exists), otherwise returns FALSE
+*/ 
 - (BOOL) valid;
 
 @end
