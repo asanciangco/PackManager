@@ -966,9 +966,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <connections>
                         <outlet property="newTripInfoTableView" destination="dB1-Uw-LJn" id="09n-Qr-hiq"/>
-                        <outlet property="tripCurrDurationTextField" destination="5Jc-ag-XEx" id="HDD-qe-F1N"/>
-                        <outlet property="tripCurrLocationTextField" destination="qEc-ve-JP3" id="rOL-K4-TvT"/>
-                        <outlet property="tripNameTextField" destination="6iz-wg-rrA" id="gP1-cG-pJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mc-rp-chX" userLabel="First Responder" sceneMemberID="firstResponder"/>

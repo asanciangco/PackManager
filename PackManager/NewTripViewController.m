@@ -10,9 +10,6 @@
 
 @interface NewTripViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *newTripInfoTableView;
-@property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *tripCurrLocationTextField;
-@property (weak, nonatomic) IBOutlet UITextField *tripCurrDurationTextField;
 
 - (IBAction)addStopButtonPress:(id)sender;
 - (IBAction)generateListButtonPress:(id)sender;
