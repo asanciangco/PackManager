@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/asanciangco/PackManager.svg?branch=master)](https://travis-ci.org/asanciangco/PackManager)
+
 # Pack Manager
 
 Packing is hard. Weather reports are accurate only up to a couple of days before you depart, meaning that travel plans made weeks in advance can be spoiled by a surprise storm. People need a travel planner that keeps up to date with the places that they're going, that automatically informs them if things change, and advises them on what to bring.
@@ -8,5 +10,6 @@ Pack Manager gives you a wardrobe list based on the weather of where you're goin
 
 Pack Manager is made using Objective-C in XCode. To run simply:
 
-#. Acquire XCode.
-#. 
+* Acquire Xcode.
+* Load the project into Xcode using the `PackManager.xcodeproj` file.
+* Run the project in the iOS emulator using `Run` in Xcode.
