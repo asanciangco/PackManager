@@ -26,8 +26,6 @@
  @param name    the name of the trip
  */
 - (instancetype) initWithStartDate:(NSDate *)start
-                          duration:(NSInteger)numDays
-                       destination:(Destination *)dest
                               name:(NSString *)name
 {
     if (self = [Trip init])
@@ -35,8 +33,8 @@
         UserPreferences *prefs = [UserPreferences sharedInstance];
         
         self.startDate      = start;
-        self.duration       = numDays;
-        self.destination    = dest;
+        self.durations      = [NSMutableArray array];
+        self.destinations   = [NSMutableArray array];
         self.name           = name;
         
         self.swimmingPreference = [prefs getSwimmingPreference];
@@ -52,7 +50,7 @@
  */
 - (instancetype) initNewTrip
 {
-    if (self = [[Trip alloc] initWithStartDate:NULL duration:-1 destination:NULL name:@""])
+    if (self = [[Trip alloc] initWithStartDate:NULL name:@""])
     {
         
     }
@@ -63,8 +61,12 @@
 
 - (NSDate *) endDate
 {
+    NSInteger totalDuration = 0;
+    for (NSNumber *num in self.durations)
+        totalDuration += [num integerValue];
+    
     // duration * hours * minutes * seconds
-    NSInteger numSeconds = self.duration * 24 * 60 * 60;
+    NSInteger numSeconds = totalDuration * 24 * 60 * 60;
     return [NSDate dateWithTimeInterval:numSeconds sinceDate:self.startDate];
 }
 

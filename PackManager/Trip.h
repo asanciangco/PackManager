@@ -17,9 +17,9 @@
 
 // Basic Trip Info
 @property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, strong) Destination *destination; // here
+@property (nonatomic, strong) NSMutableArray *destinations; // of Destination
 @property (nonatomic, strong) NSString *name;
-@property NSInteger duration;   // in days  (here)
+@property (nonatomic, strong) NSMutableArray *durations;    // of NSIntegers (NSNumber's of days)
 
 @property (nonatomic, strong) PackingList *packingList;
 @property (nonatomic, strong) WeatherReport *weatherReport;
@@ -33,8 +33,6 @@
 // Initializers //
 //////////////////
 - (instancetype) initWithStartDate:(NSDate *)start
-                          duration:(NSInteger)numDays
-                       destination:(Destination *)dest
                               name:(NSString *)name;
 
 - (instancetype) initNewTrip;

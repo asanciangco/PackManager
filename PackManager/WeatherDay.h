@@ -10,11 +10,12 @@
 
 @interface WeatherDay : NSObject
 
-@property NSInteger high;
-@property NSInteger low;
+@property NSInteger high;   // to float
+@property NSInteger low;    // to float
 @property CGFloat   precipitaion;
 @property (nonatomic, strong) NSDate *date;
 
+// corresponding floats here
 - (instancetype) initWithHigh:(NSInteger)high
                           low:(NSInteger)low
                 precipitation:(CGFloat)prec

@@ -11,14 +11,15 @@
 @interface WeatherReport : NSObject
 
 // Returns highest temp for entire report
-- (NSInteger) getOverallHigh;
+- (NSInteger) getOverallHigh;   // to float
 
 // Returns lowest temp for entire report
-- (NSInteger) getOverallLow;
+- (NSInteger) getOverallLow;    // to float
 
 // returns number of days in this weather report
 - (NSInteger) numberOfDays;
 
+// to floats
 // return high/low temp for given day of trip
 - (NSInteger) getHighForDay:(NSInteger)day; // 1-indexed, so '1' for day 1
 - (NSInteger) getLowForDay:(NSInteger)day;  // 1-indexed, so '1' for day 1
