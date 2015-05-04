@@ -31,7 +31,6 @@
         UserPreferences *prefs = [UserPreferences sharedInstance];
         
         self.startDate      = start;
-        self.durations      = [NSMutableArray array];
         self.destinations   = [NSMutableArray array];
         self.name           = name;
         
@@ -59,9 +58,7 @@
 
 - (NSDate *) endDate
 {
-    NSInteger totalDuration = 0;
-    for (NSNumber *num in self.durations)
-        totalDuration += [num integerValue];
+    NSInteger totalDuration = [self totalDuration];
     
     // duration * hours * minutes * seconds
     NSInteger numSeconds = totalDuration * 24 * 60 * 60;

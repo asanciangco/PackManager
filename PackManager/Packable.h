@@ -11,9 +11,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Simple class to represent packable objects (i.e. T-shirts, pants, etc)
+ */
 @protocol Packable
 
+/**
+  The name of the packable object
+*/
 @property (nonatomic, strong) NSString *name;
+
+/**
+  The quantity of that packable object
+*/
 @property NSInteger quantity;
 
 @end
