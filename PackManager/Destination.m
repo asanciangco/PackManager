@@ -8,11 +8,19 @@
 
 #import "Destination.h"
 
+/**
+ Destination class maintains stops for a trip. It is responsible for maintaining destination location and duration of stay at said location.
+ */
 @implementation Destination
 
-#pragma mark - Meta
+#pragma mark - Meta and Helper Functions
 // TODO: Implement this
 - (BOOL) valid
+{
+    return YES;
+}
+
+- (BOOL) isValidZIP:(NSInteger)zip
 {
     return YES;
 }

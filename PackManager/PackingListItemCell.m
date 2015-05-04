@@ -19,7 +19,7 @@
     return self;
 }
 
-- (instancetype)initWithPackable:(Packable *)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithPackable:(id <Packable>)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {

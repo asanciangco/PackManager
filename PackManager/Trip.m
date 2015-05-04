@@ -21,8 +21,6 @@
 /**
  Creates new trip with given parameters.
  @param start   start date of the trip
- @param numDays number of days of the trip, non-negative
- @param dest    where user is going
  @param name    the name of the trip
  */
 - (instancetype) initWithStartDate:(NSDate *)start
@@ -70,20 +68,36 @@
     return [NSDate dateWithTimeInterval:numSeconds sinceDate:self.startDate];
 }
 
+- (NSInteger) totalDuration
+{
+    NSInteger duration = 0;
+    for (Destination *dest in self.destinations)
+    {
+        duration += dest.duration;
+    }
+    
+    return duration;
+}
+
 - (BOOL) generatePackingList
 {
     // Sanity checks first:
     //
     // Check destination
-    if (!self.destination || ![self.destination valid])
-        return NO;
+    for (Destination *dest in self.destinations)
+    {
+        if (!dest || ![dest valid])
+            return NO;
+    }
+        
+    
     
     // Check weather report
     if (!self.weatherReport)
         return NO;
     
     // check dates
-    if (!self.startDate || self.duration <=0)
+    if (!self.startDate || [self totalDuration] <=0)
         return NO;
     
     // Have the packing list create itself based on the
@@ -96,9 +110,8 @@
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.destination forKey:@"destination"];
+    [aCoder encodeObject:self.destinations forKey:@"destination"];
     [aCoder encodeObject:self.startDate forKey:@"startDate"];
-    [aCoder encodeInteger:self.duration forKey:@"duration"];
     [aCoder encodeObject:self.packingList forKey:@"packingList"];
     
     [aCoder encodeBool:self.swimmingPreference forKey:@"swimmingPreference"];
@@ -112,9 +125,8 @@
     if (self = [super init])
     {
         self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.destination = [aDecoder decodeObjectForKey:@"destination"];
+        self.destinations = [aDecoder decodeObjectForKey:@"destination"];
         self.startDate = [aDecoder decodeObjectForKey:@"startDate"];
-        self.duration = [aDecoder decodeIntegerForKey:@"duration"];
         self.packingList = [aDecoder decodeObjectForKey:@"packingList"];
         
         self.swimmingPreference = [aDecoder decodeBoolForKey:@"swimmingPreference"];

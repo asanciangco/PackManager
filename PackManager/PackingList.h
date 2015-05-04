@@ -37,7 +37,7 @@ typedef enum PackingItems
 // Initializer
 - (instancetype) initPackingListForTrip:(Trip *)trip;
 
-- (Packable *) getPackableForIndex:(NSInteger)index;
+- (id<Packable>) getPackableForIndex:(NSInteger)index;
 
 // Returns number of different types of items.
 //

@@ -40,6 +40,7 @@
 // Helpers //
 /////////////
 - (NSDate *) endDate;
+- (NSInteger) totalDuration;
 
 // This is the big one. Returns true if everything went OK and
 // the packing list is created, false otherwise.
