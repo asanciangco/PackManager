@@ -17,9 +17,9 @@
 
 // Basic Trip Info
 @property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, strong) Destination *destination;
+@property (nonatomic, strong) Destination *destination; // here
 @property (nonatomic, strong) NSString *name;
-@property NSInteger duration;   // in days
+@property NSInteger duration;   // in days  (here)
 
 @property (nonatomic, strong) PackingList *packingList;
 @property (nonatomic, strong) WeatherReport *weatherReport;

@@ -23,4 +23,14 @@
 - (NSInteger) getHighForDay:(NSInteger)day; // 1-indexed, so '1' for day 1
 - (NSInteger) getLowForDay:(NSInteger)day;  // 1-indexed, so '1' for day 1
 
+/**
+ Returns whether or not the individual WeatherDays are in chronological order
+ */
+- (BOOL) daysAreInOrder;
+
+/**
+ Sort the WeatherDay objects chronologically
+ */
+- (void) putDaysInOrder;
+
 @end

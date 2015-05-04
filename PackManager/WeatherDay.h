@@ -13,9 +13,11 @@
 @property NSInteger high;
 @property NSInteger low;
 @property CGFloat   precipitaion;
+@property (nonatomic, strong) NSDate *date;
 
 - (instancetype) initWithHigh:(NSInteger)high
                           low:(NSInteger)low
-                precipitation:(CGFloat)prec;
+                precipitation:(CGFloat)prec
+                         date:(NSDate*)date;
 
 @end

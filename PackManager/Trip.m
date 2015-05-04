@@ -9,10 +9,22 @@
 #import "Trip.h"
 #import "UserPreferences.h"
 
+/**
+ Trip object that contains all necessary information for a trip, including
+ the packing lists and weather information. This data structure will be
+ passed around frequently for populating the core UI of many screens.
+ */
 @implementation Trip
 
 #pragma mark - Initializers
 
+/**
+ Creates new trip with given parameters.
+ @param start   start date of the trip
+ @param numDays number of days of the trip, non-negative
+ @param dest    where user is going
+ @param name    the name of the trip
+ */
 - (instancetype) initWithStartDate:(NSDate *)start
                           duration:(NSInteger)numDays
                        destination:(Destination *)dest
@@ -35,6 +47,9 @@
     return self;
 }
 
+/**
+ Creates new, blank trip
+ */
 - (instancetype) initNewTrip
 {
     if (self = [[Trip alloc] initWithStartDate:NULL duration:-1 destination:NULL name:@""])
