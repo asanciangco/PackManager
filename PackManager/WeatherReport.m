@@ -93,4 +93,21 @@
     // TODO: Implement me.
 }
 
+#pragma mark - Encoding / Decoding
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.weatherDays forKey:@"weatherDays"];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        self.weatherDays = [aDecoder decodeObjectForKey:@"weatherDays"];
+    }
+    return self;
+}
+
+
+
 @end

@@ -11,7 +11,7 @@
 /**
 	Class representing a WeatherReport
 */
-@interface WeatherReport : NSObject
+@interface WeatherReport : NSObject <NSCoding>
 
 /**
    Returns highest temp for entire report

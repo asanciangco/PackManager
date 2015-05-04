@@ -14,7 +14,7 @@
 /**
  Simple class to represent packable objects (i.e. T-shirts, pants, etc)
  */
-@protocol Packable
+@interface Packable : NSObject <NSCoding>
 
 /**
   The name of the packable object

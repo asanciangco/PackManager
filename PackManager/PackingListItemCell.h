@@ -15,6 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *quantityTextLabel;
 
-- (instancetype)initWithPackable:(id <Packable>)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (instancetype)initWithPackable:(Packable *)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

@@ -33,7 +33,7 @@
     return [self.list count];
 }
 
-- (id <Packable>) getPackableForIndex:(NSInteger)index
+- (Packable *) getPackableForIndex:(NSInteger)index
 {
     return NULL;
 }

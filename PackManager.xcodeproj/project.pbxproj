@@ -36,6 +36,7 @@
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
 		21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */; };
 		E21273CD1AF6FD440063BA5D /* TShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CC1AF6FD440063BA5D /* TShirt.m */; };
+		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
 		E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayeredRightDetailCell.m; path = ../LayeredRightDetailCell.m; sourceTree = "<group>"; };
 		E21273CB1AF6FD440063BA5D /* TShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TShirt.h; sourceTree = "<group>"; };
 		E21273CC1AF6FD440063BA5D /* TShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TShirt.m; sourceTree = "<group>"; };
+		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E2B80F9C1AF6D303003B6281 /* WeatherDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDay.m; sourceTree = "<group>"; };
 		E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
+				E21273CE1AF80F010063BA5D /* Packable.m */,
 				E21273CB1AF6FD440063BA5D /* TShirt.h */,
 				E21273CC1AF6FD440063BA5D /* TShirt.m */,
 			);
@@ -379,6 +382,7 @@
 				21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */,
 				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
 				2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */,
+				E21273CF1AF80F010063BA5D /* Packable.m in Sources */,
 				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,

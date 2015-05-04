@@ -52,7 +52,7 @@ typedef enum PackingItems
  @param index The index of a packable in the PackingList you wish to retrieve
  @returns a packable item at the given index
  */
-- (id<Packable>) getPackableForIndex:(NSInteger)index;
+- (Packable *) getPackableForIndex:(NSInteger)index;
 
 /**
     Returns number of different types of items

@@ -107,9 +107,11 @@
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.destinations forKey:@"destination"];
+    [aCoder encodeObject:self.destinations forKey:@"destinations"];
     [aCoder encodeObject:self.startDate forKey:@"startDate"];
+    
     [aCoder encodeObject:self.packingList forKey:@"packingList"];
+    [aCoder encodeObject:self.weatherReport forKey:@"weatherReport"];
     
     [aCoder encodeBool:self.swimmingPreference forKey:@"swimmingPreference"];
     [aCoder encodeBool:self.formalPreference forKey:@"formalPreference"];
@@ -122,9 +124,11 @@
     if (self = [super init])
     {
         self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.destinations = [aDecoder decodeObjectForKey:@"destination"];
+        self.destinations = [aDecoder decodeObjectForKey:@"destinations"];
         self.startDate = [aDecoder decodeObjectForKey:@"startDate"];
+        
         self.packingList = [aDecoder decodeObjectForKey:@"packingList"];
+        self.weatherReport = [aDecoder decodeObjectForKey:@"weatherReport"];
         
         self.swimmingPreference = [aDecoder decodeBoolForKey:@"swimmingPreference"];
         self.formalPreference = [aDecoder decodeBoolForKey:@"formalPreference"];

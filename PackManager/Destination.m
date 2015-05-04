@@ -29,12 +29,20 @@
 // TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    
+    [aCoder encodeInteger:self.duration forKey:@"duration"];
+    [aCoder encodeInteger:self.zip forKey:@"zip"];
+    [aCoder encodeObject:self.name forKey:@"name"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
-    return 0;
+    if (self = [super init])
+    {
+        self.duration = [aDecoder decodeIntegerForKey:@"duration"];
+        self.zip = [aDecoder decodeIntegerForKey:@"zip"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+    }
+    return self;
 }
 
 @end

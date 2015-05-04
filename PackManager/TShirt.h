@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Packable.h"
 
-@interface TShirt : NSObject <Packable>
-
-@property (nonatomic, strong) NSString *name;
-@property NSInteger quantity;
+@interface TShirt : Packable
 
 @end
