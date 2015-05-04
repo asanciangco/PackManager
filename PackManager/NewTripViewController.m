@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.trip = [Trip alloc];
     // Do any additional setup after loading the view.
 }
 

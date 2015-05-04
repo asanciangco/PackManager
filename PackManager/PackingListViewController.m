@@ -9,6 +9,7 @@
 #import "PackingListViewController.h"
 #import "LayeredRightDetailCell.h"
 #import "PackingListItemCell.h"
+#import "WeatherReportViewController.h"
 
 @interface PackingListViewController ()
 
@@ -29,6 +30,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = self.trip.name;
+    [self.navigationController.navigationBar pushNavigationItem:self.navigationItem animated:NO];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -65,6 +68,7 @@
         static NSString *CellIdentifier = @"weatherReportCell";
         LayeredRightDetailCell *cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.mainTextLabel.text = @"Weather Report";
         cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getOverallHigh]];
         cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getOverallLow]];
@@ -78,6 +82,14 @@
                                                                             style:UITableViewCellStyleDefault
                                                                   reuseIdentifier:CellIdentifier];
         return cell;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == 0)
+    {
+        [self performSegueWithIdentifier:@"showWeatherReport" sender:self];
     }
 }
 
@@ -120,15 +132,15 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    WeatherReportViewController *weatherReportVC = [segue destinationViewController];
+    weatherReportVC.trip = self.trip;
 }
-*/
+
 
 @end

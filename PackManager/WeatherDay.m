@@ -10,9 +10,7 @@
 
 @implementation WeatherDay
 
-- (instancetype) initWithHigh:(NSInteger)high
-                          low:(NSInteger)low
-                precipitation:(CGFloat)prec
+- (instancetype) initWithHigh:(NSInteger)high low:(NSInteger)low precipitation:(CGFloat)prec
 {
     if (self = [super init])
     {

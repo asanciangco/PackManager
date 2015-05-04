@@ -7,8 +7,13 @@
 //
 
 #import "TripSettingsViewController.h"
+#import "UserPreferences.h"
 
 @interface TripSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *swimmingPreferenceSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *FormalPreferenceSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *accessToLaundrySwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *willingToRewearJeansSwitch;
 
 @end
 
@@ -27,6 +32,19 @@
 {
     [super viewDidLoad];
     
+    //trip preferences
+    [self.swimmingPreferenceSwitch addTarget:self action:@selector(swimmingSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.swimmingPreferenceSwitch setOn:self.trip.swimmingPreference];
+    
+    [self.willingToRewearJeansSwitch addTarget:self action:@selector(rewearJeansSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.willingToRewearJeansSwitch setOn:self.trip.rewearJeansPreference];
+    
+    [self.FormalPreferenceSwitch addTarget:self action:@selector(formalSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.FormalPreferenceSwitch setOn:self.trip.formalPreference];
+    
+    [self.accessToLaundrySwitch addTarget:self action:@selector(accessToLaundrySwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.accessToLaundrySwitch setOn:self.trip.accessToLaundryPreference];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -44,16 +62,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 /*
@@ -115,5 +131,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - switch control
+-(void) swimmingSwitchChanged:(id)sender{
+    self.trip.swimmingPreference = self.swimmingPreferenceSwitch.on;
+}
+
+-(void) rewearJeansSwitchChanged:(id)sender{
+    self.trip.rewearJeansPreference = self.willingToRewearJeansSwitch.on;
+}
+
+-(void) formalSwitchChanged:(id)sender{
+    self.trip.formalPreference = self.FormalPreferenceSwitch.on;
+}
+
+-(void) accessToLaundrySwitchChanged:(id)sender{
+    self.trip.accessToLaundryPreference = self.accessToLaundrySwitch.on;
+}
 
 @end

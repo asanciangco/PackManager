@@ -10,6 +10,7 @@
 #import "Trip.h"
 #import "TripsData.h"
 #import "PackingListViewController.h"
+#import "NewTripViewController.h"
 
 @interface TripsViewController ()
 
@@ -57,6 +58,7 @@
      
      cell.textLabel.text = trip.name;
      cell.detailTextLabel.text = [NSString stringWithFormat:@"%li days", (long)trip.duration];
+     cell.selectionStyle = UITableViewCellSelectionStyleNone;
      
      return cell;
  }
@@ -70,8 +72,11 @@
 #pragma mark - Navagation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PackingListViewController *plistVC = [segue destinationViewController];
-    plistVC.trip = trip;
+    if([segue.identifier isEqualToString:@"showPackingList"])
+    {
+        PackingListViewController *plistVC = [segue destinationViewController];
+        plistVC.trip = trip;
+    }
 }
 
 @end

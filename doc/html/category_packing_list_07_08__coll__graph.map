@@ -1,0 +1,6 @@
+<map id="PackingList()" name="PackingList()">
+<area shape="rect" id="node2" href="$interface_trip.html" title="{Trip\n|+ startDate\l+ name\l+ duration\l|+ initWithStartDate:duration\l:destination:name:\l+ endDate\l+ generatePackingList\l}" alt="" coords="139,321,323,461"/>
+<area shape="rect" id="node5" href="$interface_destination.html" title="{Destination\n||+ valid\l}" alt="" coords="187,158,275,231"/>
+<area shape="rect" id="node6" href="$interface_weather_report.html" title="{WeatherReport\n||+ getOverallHigh\l+ getOverallLow\l+ numberOfDays\l+ getHighForDay:\l+ getLowForDay:\l}" alt="" coords="37,131,163,258"/>
+<area shape="rect" id="node7" href="$interface_packing_list.html" title="{PackingList\n||+ initPackingListForTrip:\l+ getPackableForIndex:\l+ getNumberOfUniqueItems\l+ quantityForItemAtIndex:\l+ stringForItemType:\l}" alt="" coords="298,131,486,258"/>
+</map>

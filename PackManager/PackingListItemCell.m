@@ -28,6 +28,7 @@
         {
             self.itemTextLabel.text = item.name;
             self.quantityTextLabel.text = [NSString stringWithFormat:@"x%li", (long)item.quantity];
+            self.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         else
         {

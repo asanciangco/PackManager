@@ -7,6 +7,7 @@
 //
 
 #import "WeatherReportViewController.h"
+#import "LayeredRightDetailCell.h"
 
 @interface WeatherReportViewController ()
 
@@ -27,6 +28,9 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = self.trip.name;
+    [self.navigationController.navigationBar pushNavigationItem:self.navigationItem animated:NO];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -45,25 +49,30 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.trip.weatherReport numberOfDays];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stopWeatherCell" forIndexPath:indexPath];
+    if(cell == nil)
+    {
+        cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"stopWeatherCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.mainTextLabel.text = [NSString stringWithFormat:@"Day %li", indexPath.row + 1];
+    cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", [self.trip.weatherReport getHighForDay:(indexPath.row + 1)]];
+    cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", [self.trip.weatherReport getLowForDay:(indexPath.row + 1)]];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
