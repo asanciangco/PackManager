@@ -13,6 +13,11 @@ static NSString *ZIP_JSON_DATA_RETURNED_NOTIFICATION = @"ZipJSONDataReturnedNoti
 
 static NSString *CITY_JSON_DATA_RETURNED_NOTIFICATION = @"CityJSONDataReturnedNotification";
 
+static NSString *HIGH_KEY = @"high";
+static NSString *LOW_KEY = @"low";
+static NSString *PREC_KEY = @"prec";
+static NSString *DAY_KEY = @"day";
+
 @interface WeatherAPI : NSObject
 
 // Get the shared instance //

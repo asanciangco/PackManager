@@ -135,66 +135,132 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                                 NSURLResponse *response,
                                 NSError *error) {
                 // handle response
-                NSDictionary *CityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
+                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
                     options:0
                     error:&error];
                 
-                if(error) { /* JSON was malformed, act appropriately here */ }
+                if(error) {
+                    /* JSON was malformed, act appropriately here */
+                }
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:CityWeatherFeatures];
+                //Parse CityWeatherFeatures by start end dates and pass new dictionary
+                NSDate *today = [NSDate date];
+                NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                NSDateComponents *duration = [gregorianCalendar components:NSDayCalendarUnit
+                                            fromDate:start
+                                            toDate:end
+                                            options:0];
+                NSDateComponents *startday = [gregorianCalendar components:NSDayCalendarUnit
+                                            fromDate:today
+                                            toDate:start
+                                            options:0];
+                
+                NSMutableArray *weatherArray = [NSMutableArray array];
+                NSMutableDictionary *weatherEntry = [NSMutableDictionary dictionary];
+                
+                __block CGFloat high = 0;
+                __block CGFloat low = 0;
+                __block CGFloat prec = 0;
+                
+                NSArray *results = [cityWeatherFeatures objectForKey:@"list"];
+                
+                NSDate *dateplus1 = start;
+                
+                for (int i = [startday day]; i < [duration day]; i++) {
+                    NSDictionary *weatherdict = [results objectAtIndex:i];
+                    [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                        if ([key  isEqual: @"temp"]) {
+                            NSDictionary *tempdict = [results objectAtIndex:i];
+                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                                if ([key  isEqual: @"min"]) {
+                                    if ([obj isKindOfClass:([NSNumber class])]) {
+                                        NSNumber *num = (NSNumber*)obj;
+                                        low = [num floatValue];
+                                    }
+                                }
+                                if ([key  isEqual: @"max"]) {
+                                    if ([obj isKindOfClass:([NSNumber class])]) {
+                                        NSNumber *num = (NSNumber*)obj;
+                                        high = [num floatValue];
+                                    }
+                                }
+                            }];
+                        }
+                        if ([key  isEqual: @"rain"]) {
+                            if(obj > 0 && obj <= 1)
+                            {
+                                prec = .1;
+                            }
+                            else if (obj > 1 && obj <= 3)
+                            {
+                                prec = .3;
+                            }
+                            else if (obj > 3 && obj <= 7)
+                            {
+                                prec = .5;
+                            }
+                            else if (obj > 7)
+                            {
+                                prec = .8;
+                            }
+                        }
+                    }];
+                    //Add weather entry to array
+                    [weatherEntry setObject:@(high) forKey:HIGH_KEY];
+                    [weatherEntry setObject:@(low) forKey:HIGH_KEY];
+                    [weatherEntry setObject:@(prec) forKey:HIGH_KEY];
+                    [weatherEntry setObject:dateplus1 forKey:HIGH_KEY];
+                    
+                    [weatherArray addObject:[weatherEntry copy]];
+                    
+                    //Increase Date
+                    dateplus1 = [start dateByAddingTimeInterval:60*60*24*1];
+                    //RESET PARAMETERS
+                    prec = 0;
+
+                }
+                //Call handler
+                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:weatherArray];
                 
             }] resume];
 }
 
 
-//Get Min, Max, Day, and Prec from json object of all 16 gathered days
-- (void) handleWeatherDictionaryCity:(NSDictionary*)dict
+//Changing this function to access a new dictionary and collect data from it
+- (void) handleWeatherDictionaryCity:(NSMutableArray*)array
 {
-    NSDate *day = [NSDate date];
-    CGFloat high;
-    CGFloat low;
-    CGFloat prec;
-    
-    NSArray *results = [dict objectForKey:@"list"];
-    for (int i = 0; i < [results count]; i++) {
-        NSDate *dateplus1 = [day dateByAddingTimeInterval:60*60*24*1];
-        day = dateplus1;
-        prec = 0;
-        NSDictionary *weatherdict = [results objectAtIndex:i];
+    __block NSDate *day;
+    __block CGFloat high = 0;
+    __block CGFloat low = 0;
+    __block CGFloat prec = 0;
+    for (int i = 0; i < [array count]; i++) {
+        NSDictionary *weatherdict = [array objectAtIndex:i];
         [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key  isEqual: @"temp"]) {
-                NSDictionary *tempdict = [results objectAtIndex:i];
-                [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                    if ([key  isEqual: @"min"]) {
-                       __block low = obj;
-                    }
-                    if ([key  isEqual: @"max"]) {
-                        __block high = obj;
-                    }
-                }];
-            }
-            if ([key  isEqual: @"rain"]) {
-                if(obj > 0 && obj <= 1)
-                {
-                    __block prec = .1;
-                }
-                else if (obj > 1 && obj <= 3)
-                {
-                    __block prec = .3;
-                }
-                else if (obj > 3 && obj <= 7)
-                {
-                    __block prec = .5;
-                }
-                else if (obj > 7)
-                {
-                    __block prec = .8;
+            if ([key  isEqual: HIGH_KEY]) {
+                if ([obj isKindOfClass:([NSNumber class])]) {
+                    NSNumber *num = (NSNumber*)obj;
+                    high = [num floatValue];
                 }
             }
+            if ([key  isEqual: LOW_KEY]) {
+                if ([obj isKindOfClass:([NSNumber class])]) {
+                    NSNumber *num = (NSNumber*)obj;
+                    low = [num floatValue];
+                }
+            }
+            if ([key  isEqual: DAY_KEY]) {
+                day = obj;
+            }
+            if ([key  isEqual: PREC_KEY]) {
+                if ([obj isKindOfClass:([NSNumber class])]) {
+                    NSNumber *num = (NSNumber*)obj;
+                    prec = [num floatValue];
+                }
+            }
+            
         }];
         //TODO: addDay with the 4 parameters
-        //THEN RESET PARAMETERS
-        //Right now this function only returns the 16 future days. It doesnt consider the date of the trip
+
     }
 }
 
