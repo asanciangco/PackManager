@@ -10,18 +10,15 @@
 
 @interface NewTripViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *newTripInfoTableView;
+@property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *tripCurrLocationTextField;
+@property (weak, nonatomic) IBOutlet UITextField *tripCurrDurationTextField;
 
+- (IBAction)addStopButtonPress:(id)sender;
+- (IBAction)generateListButtonPress:(id)sender;
 @end
 
 @implementation NewTripViewController
-{
-    NSIndexPath *tripNameIndexPath;
-    NSIndexPath *firstLocationIndexPath;
-    NSIndexPath *startDateIndexPath;
-    NSIndexPath *startDatePickerIndexPath;
-    NSIndexPath *firstDurationIndexPath;
-    NSInteger numStops;
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +34,6 @@
     [super viewDidLoad];
     
     self.trip = [[Trip alloc] initNewTrip];
-    
-    tripNameIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    firstLocationIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-    startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
-    startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
-    firstDurationIndexPath = [NSIndexPath indexPathForRow:4 inSection:0];
-    
-    numStops = 1;
     // Do any additional setup after loading the view.
 }
 
@@ -55,7 +44,26 @@
 }
 
 #pragma mark - TableView functions
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 3 + (self.trip.numStops * 2);
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    //TODO: configure cell
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
 
 /*
 #pragma mark - Navigation
@@ -68,4 +76,12 @@
 }
 */
 
+//TODO
+#pragma mark - button actions
+
+- (IBAction)addStopButtonPress:(id)sender {
+}
+
+- (IBAction)generateListButtonPress:(id)sender {
+}
 @end
