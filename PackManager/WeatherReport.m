@@ -80,4 +80,17 @@
     return weatherDay.low;
 }
 
+#pragma mark - WeatherDay logic
+- (BOOL) daysAreInOrder
+{
+    // TODO: Implement me.
+    
+    return NO;
+}
+
+- (void) putDaysInOrder
+{
+    // TODO: Implement me.
+}
+
 @end
