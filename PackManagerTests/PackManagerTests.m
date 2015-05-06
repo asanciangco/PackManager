@@ -7,10 +7,15 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Trip.h"
+#import "Destination.h"
 
 @interface PackManagerTests : XCTestCase
 
+
 @end
+
+
 
 @implementation PackManagerTests
 
@@ -26,9 +31,60 @@
     [super tearDown];
 }
 
-- (void)testExample
+#pragma mark - Utilities
+
++ (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {
-    XCTAssert(true, @"Hello World from \"%s\"", __PRETTY_FUNCTION__);
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
 }
+
+/* Trip Tests */
+
+#pragma mark - TripTests
+
+- (void) testTripEndDate //Start Unit Test with "test" for it to run
+{
+    Trip *trip = [[Trip alloc] initNewTrip];
+    Destination *d1 = [[Destination alloc] init];
+    d1.duration = 10;
+    Destination *d2 = [[Destination alloc] init];
+    d2.duration = 5;
+    
+    trip.startDate = [NSDate date];
+    trip.destinations = [NSMutableArray arrayWithObjects:d1,d2, nil];
+    
+    NSInteger diff = [PackManagerTests daysBetweenDate:[trip startDate] andDate:[trip endDate]];
+
+    XCTAssertEqual(diff,15);
+}
+
+#pragma mark - DestinationTests
+
+- (void) testNegativeDuration
+{
+    bool t = false;
+    @try {
+        Destination *d1 = [[Destination alloc] init];
+        d1.duration = -10;
+    } @catch (NSException* e){
+        t = [e.name  isEqual: @"Negative Duration"];
+    }
+    
+    XCTAssert(t);
+}
+
 
 @end
