@@ -101,4 +101,10 @@
 */
 - (BOOL) generatePackingList;
 
+/**
+ Creates a generic packing list for demo purposes only.
+ @returns TRUE always
+ */
+- (BOOL) generatePackingListExample;
+
 @end

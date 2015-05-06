@@ -26,6 +26,12 @@
 */
 @property NSInteger quantity;
 
+/**
+ Initialize a packable item with an initial quantity
+ @param quantity The quantity to store
+ */
+- (instancetype) initWithQuantity:(NSUInteger)quantity;
+
 @end
 
 #endif

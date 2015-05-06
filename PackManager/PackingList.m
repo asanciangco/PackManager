@@ -9,6 +9,11 @@
 #import "PackingList.h"
 #import "NSCodingHelper.h"
 
+#import "TShirt.h"
+#import "LongSleeveShirt.h"
+#import "FormalShirt.h"
+#import "Shorts.h"
+
 @interface PackingList ()
 
 @property (nonatomic, strong) NSMutableArray *list; // of Packable
@@ -24,6 +29,22 @@
     if (self = [super init])
     {
         self.trip = trip;
+        self.list = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (instancetype) initExamplePackingListForTrip:(Trip *)trip
+{
+    if (self = [super init])
+    {
+        self.trip = trip;
+        self.list = [NSMutableArray array];
+        [self.list addObjectsFromArray:@[[[TShirt alloc] initWithQuantity:4],
+                                         [[LongSleeveShirt alloc] initWithQuantity:3],
+                                         [[FormalShirt alloc]initWithQuantity:1],
+                                         [[Shorts alloc] initWithQuantity:4],
+                                         ]];
     }
     return self;
 }
