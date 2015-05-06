@@ -48,6 +48,12 @@ typedef enum PackingItems
 - (instancetype) initPackingListForTrip:(Trip *)trip;
 
 /**
+ Initialize a new demo packing list. This method always returns the exact same packing list.
+ @params trip The trip this packing list is attributed to
+ */
+- (instancetype) initExamplePackingListForTrip:(Trip *)trip;
+
+/**
  Returns a packable item that as at the given index in the PackingList object
  @param index The index of a packable in the PackingList you wish to retrieve
  @returns a packable item at the given index

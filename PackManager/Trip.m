@@ -104,6 +104,13 @@
     return (self.packingList != NULL);
 }
 
+- (BOOL) generatePackingListExample
+{
+    self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
+    
+    return TRUE;
+}
+
 #pragma mark - Encoding/Decoding
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
