@@ -34,7 +34,7 @@
     return self;
 }
 
-- (instancetype) initExamplePackingListForTrip:(Trip *)trip
+- (instancetype) initExamplePackingListForTrip:(Trip *)trip 
 {
     if (self = [super init])
     {

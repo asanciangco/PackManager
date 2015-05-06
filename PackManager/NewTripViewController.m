@@ -100,7 +100,7 @@
     {
         //get date string for date cell
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
         cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
     }
     else if([indexPath isEqual:startDatePickerIndexPath])
@@ -109,8 +109,30 @@
     }
     else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
     {
-        //TODO use [self.trip.duration count] to decide when to show
-        cell.hidden = YES;
+        if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
+        {
+            cell.hidden = NO;
+            
+            // Index relative to date picker, so relativeIndex=0 is the first cell below datePicker
+            NSInteger relativeIndex = indexPath.row - startDatePickerIndexPath.row - 1;
+            // The index for the destination related to any cell
+            NSInteger destinationIndex = (relativeIndex) / 2;
+            
+            // If a destination exists for the given cell...
+            if (destinationIndex < [self.trip.destinations count] && destinationIndex >=0)
+            {
+                Destination *dest = [self.trip.destinations objectAtIndex:destinationIndex];
+                
+                if (relativeIndex % 2 == 0)
+                    cell.detailTextLabel.text = dest.name;
+                else
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", dest.duration];
+            }
+        }
+        else
+        {
+            cell.hidden = YES;
+        }
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -127,7 +149,10 @@
     else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
     {
         //TODO use [self.trip.duration count] to decide when to show
-        height = 0.0f;
+        if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
+            height = 44.0f;
+        else
+            height = 0.0f;
     }
     return height;
 }
