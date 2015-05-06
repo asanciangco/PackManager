@@ -72,7 +72,12 @@ static TripsData *sharedInstance;
 {
     if (self = [super init])
     {
-        self.trips = [NSKeyedUnarchiver unarchiveObjectWithData:[aDecoder decodeObjectForKey:@"trips"]];
+        NSData *tripsData = [aDecoder decodeObjectForKey:@"trips"];
+        NSMutableArray *tripsArray = [NSKeyedUnarchiver unarchiveObjectWithData:tripsData];
+        if (tripsArray)
+            self.trips = tripsArray;
+        else
+            self.trips = [NSMutableArray array];
     }
     return self;
 }

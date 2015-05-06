@@ -27,8 +27,8 @@
 @property (nonatomic, strong) NSString *name;
 
 /** 
-	Tests to see if a destination is a valid location
-    @Return returns TRUE if location is a valid place (i.e. it exists), otherwise returns FALSE
+ Tests to see if a destination is a valid location
+ @Return returns TRUE if location is a valid place (i.e. it exists), otherwise returns FALSE
 */
 - (BOOL) valid;
 
