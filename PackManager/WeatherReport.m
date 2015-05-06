@@ -8,6 +8,7 @@
 
 #import "WeatherReport.h"
 #import "WeatherDay.h"
+#import "NSCodingHelper.h"
 
 @interface WeatherReport ()
 
@@ -96,14 +97,14 @@
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.weatherDays forKey:@"weatherDays"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.weatherDays] forKey:@"weatherDays"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        self.weatherDays = [aDecoder decodeObjectForKey:@"weatherDays"];
+        self.weatherDays = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"weatherDays"]];
     }
     return self;
 }

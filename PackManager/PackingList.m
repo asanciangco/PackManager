@@ -7,6 +7,7 @@
 //
 
 #import "PackingList.h"
+#import "NSCodingHelper.h"
 
 @interface PackingList ()
 
@@ -43,8 +44,6 @@
 
 
 #pragma mark - Helpers
-
-// TODO: need to finish design
 - (NSInteger) quantityForItemAtIndex:(NSInteger)index
 {
     Packable *item = [self getPackableForIndex:index];
@@ -98,14 +97,14 @@
 // TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.list forKey:@"list"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.list] forKey:@"list"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        self.list = [aDecoder decodeObjectForKey:@"list"];
+        self.list = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"list"]];
     }
     return self;
 }
