@@ -10,6 +10,7 @@
 #import "LayeredRightDetailCell.h"
 #import "PackingListItemCell.h"
 #import "WeatherReportViewController.h"
+#import "NewTripViewController.h"
 
 @interface PackingListViewController ()
 
@@ -29,9 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.title = self.trip.name;
-    [self.navigationController.navigationBar pushNavigationItem:self.navigationItem animated:NO];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -138,8 +137,16 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    WeatherReportViewController *weatherReportVC = [segue destinationViewController];
-    weatherReportVC.trip = self.trip;
+    if([segue.identifier isEqualToString:@"showWeatherReport"])
+    {
+        WeatherReportViewController *weatherReportVC = [segue destinationViewController];
+        weatherReportVC.trip = self.trip;
+    }
+    else if([segue.identifier isEqualToString:@"editTrip"])
+    {
+        NewTripViewController *newTripVC = [segue destinationViewController];
+        newTripVC.trip = self.trip;
+    }
 }
 
 
