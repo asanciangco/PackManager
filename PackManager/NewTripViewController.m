@@ -9,6 +9,8 @@
 #import "NewTripViewController.h"
 #import "PackingListViewController.h"
 #import "Destination.h"
+#import "TripsData.h"
+#import "TripsViewController.h"
 
 @interface NewTripViewController ()
 
@@ -172,10 +174,6 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    if([textField isEqual:self.tripNameTextField])
-    {
-        self.trip.name = self.tripNameTextField.text;
-    }
     [self enableButtons];
     
     return YES;
@@ -205,11 +203,24 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"generateList"])
+    if([segue.identifier isEqualToString:@"unwindSegue"])
     {
-        [self.trip generatePackingList];
-        PackingListViewController *packingListVC = [segue destinationViewController];
-        packingListVC.trip = self.trip;
+        self.trip.name = self.tripNameTextField.text;
+        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
+        {
+            Destination *dest = [[Destination alloc] init];
+            dest.name = self.currLocationTextField.text;
+            dest.duration = [self.currDurationTextField.text integerValue];
+            [self.trip.destinations addObject:dest];
+        }
+        
+        //TODO: change after demo
+        //[self.trip generatePackingList];
+        [self.trip generatePackingListExample];
+        
+        TripsViewController *tripsVC = [segue destinationViewController];
+        tripsVC.tripToPass = self.trip;
+        [[TripsData sharedInstance] addTrip:self.trip];
     }
 }
 

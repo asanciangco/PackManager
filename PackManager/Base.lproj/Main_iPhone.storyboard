@@ -814,6 +814,9 @@
                                                     <state key="normal" title="Generate List">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="q0z-UU-3Vu" kind="unwind" identifier="unwindSegue" unwindAction="UnwindOnGenerateList:" id="tQC-aD-Rds"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1181,6 +1184,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uff-E9-cDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q0z-UU-3Vu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1511" y="-882"/>
         </scene>

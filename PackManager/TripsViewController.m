@@ -7,7 +7,6 @@
 //
 
 #import "TripsViewController.h"
-#import "Trip.h"
 #import "TripsData.h"
 #import "PackingListViewController.h"
 #import "NewTripViewController.h"
@@ -24,6 +23,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    if(self.tripToPass)
+    {
+        [self performSegueWithIdentifier:@"showPackingList" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,12 +78,17 @@
 }
 
 #pragma mark - Navagation
+-(IBAction)UnwindOnGenerateList:(UIStoryboardSegue *)segue {
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"showPackingList"])
     {
         PackingListViewController *plistVC = [segue destinationViewController];
-        plistVC.trip = trip;
+        plistVC.trip = (self.tripToPass) ? self.tripToPass : trip;
+        self.tripToPass = nil;
     }
 }
 
