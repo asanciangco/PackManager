@@ -11,7 +11,7 @@
 /**
 	Class representing a day's weather
 */
-@interface WeatherDay : NSObject
+@interface WeatherDay : NSObject <NSCoding>
 
 /**
 	The day's high temperature
@@ -26,7 +26,9 @@
 /** 
 	The day's precipitation chance
 */
-@property CGFloat   precipitaion;
+@property CGFloat precipitaion;
+
+@property (nonatomic, strong) NSDate *date;
 
 /**
 	Initialize a new DWeatherDay object
@@ -36,6 +38,7 @@
 */
 - (instancetype) initWithHigh:(NSInteger)high
                           low:(NSInteger)low
-                precipitation:(CGFloat)prec;
+                precipitation:(CGFloat)prec
+                         date:(NSDate*)date;
 
 @end

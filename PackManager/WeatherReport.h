@@ -11,7 +11,7 @@
 /**
 	Class representing a WeatherReport
 */
-@interface WeatherReport : NSObject
+@interface WeatherReport : NSObject <NSCoding>
 
 /**
    Returns highest temp for entire report
@@ -31,6 +31,7 @@
 */
 - (NSInteger) numberOfDays;
 
+// to floats
 // return high/low temp for given day of trip
 /**
 	Returns the high temp for a given day
@@ -45,5 +46,15 @@
 	@returns an integer representing the day's low
 */
 - (NSInteger) getLowForDay:(NSInteger)day;  // 1-indexed, so '1' for day 1
+
+/**
+ Returns whether or not the individual WeatherDays are in chronological order
+ */
+- (BOOL) daysAreInOrder;
+
+/**
+ Sort the WeatherDay objects chronologically
+ */
+- (void) putDaysInOrder;
 
 @end

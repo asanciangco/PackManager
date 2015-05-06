@@ -25,19 +25,14 @@
 @property (nonatomic, strong) NSDate *startDate;
 
 /**
-	The trip's destination
-*/
-@property (nonatomic, strong) Destination *destination;
-
-/** 
-	The name of the trip
-*/
-@property (nonatomic, strong) NSString *name;
+	The trip's destinations
+ */
+@property (nonatomic, strong) NSMutableArray *destinations; // of Destination
 
 /**
-	The duration of the trip in days
-*/
-@property NSInteger duration;   // in days
+	The name of the trip
+ */
+@property (nonatomic, strong) NSString *name;
 
 /**
 	The packing list for the trip
@@ -80,8 +75,6 @@
 	@returns a newly initialized object
 */
 - (instancetype) initWithStartDate:(NSDate *)start
-                          duration:(NSInteger)numDays
-                       destination:(Destination *)dest
                               name:(NSString *)name;
 
 /**
@@ -97,6 +90,7 @@
 	@returns date of trip's end
 */
 - (NSDate *) endDate;
+- (NSInteger) totalDuration;
 
 /** This is the big one. Returns true if everything went OK and
     the packing list is created, false otherwise.

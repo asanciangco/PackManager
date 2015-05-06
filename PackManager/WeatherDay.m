@@ -10,11 +10,32 @@
 
 @implementation WeatherDay
 
-- (instancetype) initWithHigh:(NSInteger)high low:(NSInteger)low precipitation:(CGFloat)prec
+- (instancetype) initWithHigh:(NSInteger)high low:(NSInteger)low precipitation:(CGFloat)prec date:(NSDate *)date
 {
     if (self = [super init])
     {
         
+    }
+    return self;
+}
+
+#pragma mark - Encoding / Decoding
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeInteger:self.high forKey:@"high"];
+    [aCoder encodeInteger:self.low forKey:@"low"];
+    [aCoder encodeFloat:self.precipitaion forKey:@"precipitation"];
+    [aCoder encodeObject:self.date forKey:@"date"];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        self.high = [aDecoder decodeIntegerForKey:@"high"];
+        self.low = [aDecoder decodeIntegerForKey:@"low"];
+        self.precipitaion = [aDecoder decodeFloatForKey:@"precipitation"];
+        self.date = [aDecoder decodeObjectForKey:@"date"];
     }
     return self;
 }

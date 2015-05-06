@@ -48,10 +48,10 @@ typedef enum PackingItems
 - (instancetype) initPackingListForTrip:(Trip *)trip;
 
 /**
-    Returns a packable item that as at the given index in the PackingList object
-    @param index The index of a packable in the PackingList you wish to retrieve
-    @returns a packable item at the given index
-*/
+ Returns a packable item that as at the given index in the PackingList object
+ @param index The index of a packable in the PackingList you wish to retrieve
+ @returns a packable item at the given index
+ */
 - (Packable *) getPackableForIndex:(NSInteger)index;
 
 /**

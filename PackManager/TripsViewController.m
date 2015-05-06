@@ -57,7 +57,7 @@
      trip = [[TripsData sharedInstance] getTrip:indexPath.row];
      
      cell.textLabel.text = trip.name;
-     cell.detailTextLabel.text = [NSString stringWithFormat:@"%li days", (long)trip.duration];
+     cell.detailTextLabel.text = [NSString stringWithFormat:@"%li days", (long)[trip totalDuration]];
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      
      return cell;

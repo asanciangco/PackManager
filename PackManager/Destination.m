@@ -8,11 +8,19 @@
 
 #import "Destination.h"
 
+/**
+ Destination class maintains stops for a trip. It is responsible for maintaining destination location and duration of stay at said location.
+ */
 @implementation Destination
 
-#pragma mark - Meta
+#pragma mark - Meta and Helper Functions
 // TODO: Implement this
 - (BOOL) valid
+{
+    return YES;
+}
+
+- (BOOL) isValidZIP:(NSInteger)zip
 {
     return YES;
 }
@@ -21,12 +29,20 @@
 // TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    
+    [aCoder encodeInteger:self.duration forKey:@"duration"];
+    [aCoder encodeInteger:self.zip forKey:@"zip"];
+    [aCoder encodeObject:self.name forKey:@"name"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
-    return 0;
+    if (self = [super init])
+    {
+        self.duration = [aDecoder decodeIntegerForKey:@"duration"];
+        self.zip = [aDecoder decodeIntegerForKey:@"zip"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+    }
+    return self;
 }
 
 @end
