@@ -26,7 +26,7 @@
 - (instancetype) initWithStartDate:(NSDate *)start
                               name:(NSString *)name
 {
-    if (self = [Trip init])
+    if (self = [super init])
     {
         UserPreferences *prefs = [UserPreferences sharedInstance];
         

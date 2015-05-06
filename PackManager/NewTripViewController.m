@@ -9,13 +9,28 @@
 #import "NewTripViewController.h"
 
 @interface NewTripViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *newTripInfoTableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *addStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *generateListButton;
+@property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
+@property (weak, nonatomic) IBOutlet UITextField *currLocationTextField;
+@property (weak, nonatomic) IBOutlet UITextField *currDurationTextField;
+
+- (IBAction)startDatePicked:(id)sender;
 - (IBAction)addStopButtonPress:(id)sender;
 - (IBAction)generateListButtonPress:(id)sender;
 @end
 
-@implementation NewTripViewController
+@implementation NewTripViewController{
+    NSIndexPath *tripNameIndexPath;
+    NSIndexPath *startDateIndexPath;
+    NSIndexPath *startDatePickerIndexPath;
+    NSIndexPath *currLocationIndexPath;
+    NSIndexPath *currDurationIndexPath;
+    NSInteger numStopsPossible;
+    BOOL startDatePickerShowing;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +46,20 @@
     [super viewDidLoad];
     
     self.trip = [[Trip alloc] initNewTrip];
+    
+    tripNameIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
+    startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
+    startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
+    numStopsPossible = 5;
+    currLocationIndexPath = [NSIndexPath indexPathForRow:2+numStopsPossible*2 inSection:0];
+    currDurationIndexPath = [NSIndexPath indexPathForRow:3+numStopsPossible*2 inSection:0];
+    
+    startDatePickerShowing = NO;
+    
+    //both buttons start off non-operational
+    self.addStopButton.enabled = NO;
+    self.generateListButton.enabled = NO;
+
     // Do any additional setup after loading the view.
 }
 
@@ -50,16 +79,63 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3 + (self.trip.numStops * 2);
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell;
-    //TODO: configure cell
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if([indexPath isEqual:startDateIndexPath])
+    {
+        //get date string for date cell
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+        cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
+    }
+    else if([indexPath isEqual:startDatePickerIndexPath])
+    {
+        cell.hidden = !startDatePickerShowing;
+    }
+    else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
+    {
+        //TODO use [self.trip.duration count] to decide when to show
+        cell.hidden = YES;
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    if([indexPath isEqual:startDatePickerIndexPath])
+    {
+        height = startDatePickerShowing ? 162.0f : 0.0f;
+    }
+    else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
+    {
+        //TODO use [self.trip.duration count] to decide when to show
+        height = 0.0f;
+    }
+    return height;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(![indexPath isEqual:startDatePickerIndexPath] && ![indexPath isEqual:startDateIndexPath])
+    {
+        startDatePickerShowing = NO;
+        [self.tableView reloadData];
+    }
+    
+    if([indexPath isEqual:startDateIndexPath])
+    {
+        startDatePickerShowing = !startDatePickerShowing;
+        [self.tableView reloadData];
+    }
 }
 
 /*
@@ -74,6 +150,14 @@
 */
 
 //TODO
+
+#pragma mark - date picked action
+
+- (IBAction)startDatePicked:(id)sender {
+    self.trip.startDate = self.startDatePicker.date;
+    [self.tableView reloadData];
+}
+
 #pragma mark - button actions
 
 - (IBAction)addStopButtonPress:(id)sender {
@@ -81,4 +165,5 @@
 
 - (IBAction)generateListButtonPress:(id)sender {
 }
+
 @end
