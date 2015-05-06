@@ -68,9 +68,7 @@
 /////////////////////////////////////////////////////////////////////// Initializers ////////////////////////////////////////////////////////////////////////////////////
 /**
 	Initialize a new Trip object
-	@param start The trip start date 
-	@param numDays The trip duration 
-	@param dest The trip destination
+	@param start The trip start date
 	@param name The trip name
 	@returns a newly initialized object
 */
