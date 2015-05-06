@@ -35,7 +35,10 @@
 
 - (Packable *) getPackableForIndex:(NSInteger)index
 {
-    return NULL;
+    if (!self.list || index < 0 || index >= [self.list count])
+        return NULL;
+    
+    return [self.list objectAtIndex:index];
 }
 
 
@@ -44,9 +47,11 @@
 // TODO: need to finish design
 - (NSInteger) quantityForItemAtIndex:(NSInteger)index
 {
-    PackingItems itemEnum = (PackingItems)index;
-    NSNumber *key = [NSNumber numberWithInt:itemEnum];
-    return 0;
+    Packable *item = [self getPackableForIndex:index];
+    if (item)
+        return item.quantity;
+    else
+        return -1;
 }
 
 + (NSString *) stringForItemType:(PackingItems)item
@@ -93,12 +98,16 @@
 // TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    
+    [aCoder encodeObject:self.list forKey:@"list"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
-    return 0;
+    if (self = [super init])
+    {
+        self.list = [aDecoder decodeObjectForKey:@"list"];
+    }
+    return self;
 }
 
 @end
