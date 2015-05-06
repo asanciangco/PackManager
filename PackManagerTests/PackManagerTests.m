@@ -55,7 +55,7 @@
 
 #pragma mark - TripTests
 
-- (void)testTripEndDate //Start Unit Test
+- (void) testTripEndDate //Start Unit Test with "test" for it to run
 {
     Trip *trip = [[Trip alloc] initNewTrip];
     Destination *d1 = [[Destination alloc] init];
@@ -64,13 +64,27 @@
     d2.duration = 5;
     
     trip.startDate = [NSDate date];
-    trip.destinations = [NSMutableArray arrayWithObjects:@[d1,d2], nil];
+    trip.destinations = [NSMutableArray arrayWithObjects:d1,d2, nil];
     
     NSInteger diff = [PackManagerTests daysBetweenDate:[trip startDate] andDate:[trip endDate]];
 
     XCTAssertEqual(diff,15);
 }
 
+#pragma mark - DestinationTests
+
+- (void) testNegativeDuration
+{
+    bool t = false;
+    @try {
+        Destination *d1 = [[Destination alloc] init];
+        d1.duration = -10;
+    } @catch (NSException* e){
+        t = [e.name  isEqual: @"Negative Duration"];
+    }
+    
+    XCTAssert(t);
+}
 
 
 @end

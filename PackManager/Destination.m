@@ -13,6 +13,23 @@
  */
 @implementation Destination
 
+
+/**
+ Add validation logic to set (should not be negative!)
+ */
+
+@synthesize duration = _duration;  //Must do this
+
+//Setter method
+- (void) setDuration:(NSInteger)duration{
+    if (duration < 0) {
+        @throw [NSException exceptionWithName:@"Negative Duration" reason:@"" userInfo:nil];
+    }
+    
+    _duration = duration;
+}
+
+
 #pragma mark - Meta and Helper Functions
 // TODO: Implement this
 - (BOOL) valid
@@ -44,5 +61,7 @@
     }
     return self;
 }
+
+
 
 @end
