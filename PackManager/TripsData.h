@@ -14,8 +14,6 @@
 */
 @interface TripsData : NSObject <NSCoding>
 
-// Get the shared instance //
-/////////////////////////////
 /**
 	Returns a shared instance
 	@returns a shared TripsData instance
@@ -34,5 +32,17 @@
 	@returns A trip object
 */
 - (Trip *) getTrip:(NSInteger)index;
+
+/**
+ Adds a new trip to the list of trips. It will be added in chronological order.
+ @param newTrip The trip to add
+ */
+- (void) addTrip:(Trip *)newTrip;
+
+/**
+ Removes trip at the given index of list of trips.
+ @param index The index of the trip to remove
+ */
+- (void) removeTripAtIndex:(NSInteger)index;
 
 @end
