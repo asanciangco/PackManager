@@ -94,7 +94,6 @@
 }
 
 #pragma mark - Encoding / Decoding
-// TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:[NSCodingHelper dataForArray:self.list] forKey:@"list"];

@@ -32,15 +32,13 @@
 }
 
 #pragma mark - Weather Info
-// TODO: Implement me
-
 - (NSInteger) getOverallHigh
 {
     NSInteger high = NSIntegerMin;
-    for (WeatherDay *r in self.weatherDays) {
-        if(high < [r high]) {
-            high = r.high;
-        }
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(high < day.high)
+            high = day.high;
     }
     return high;
 }
@@ -48,10 +46,10 @@
 - (NSInteger) getOverallLow
 {
     NSInteger low = NSIntegerMax;
-    for (WeatherDay *r in self.weatherDays) {
-        if(low > [r low]) {
-            low = r.low;
-        }
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(low > day.low)
+            low = day.low;
     }
     return low;
 }
