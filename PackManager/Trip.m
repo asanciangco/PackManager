@@ -43,9 +43,6 @@
     return self;
 }
 
-/**
- Creates new, blank trip
- */
 - (instancetype) initNewTrip
 {
     if (self = [[Trip alloc] initWithStartDate:NULL name:@""])
