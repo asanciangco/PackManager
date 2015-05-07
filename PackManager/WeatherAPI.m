@@ -54,73 +54,6 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
 }
 
 #pragma mark - Core Fuctions
-/*
-//To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
-- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end{
-    // TODO: Need to format the dates as strings
-    NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield", HistoricalWeatherURLData, zip, start, end];
-    
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfiguration.HTTPAdditionalHeaders = @{
-                                                   @"token"       : HistoricalWeatherAPIKey
-                                                   };
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    
-    NSError *error = nil;
-    [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                NSDictionary *HistoricalWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
-                    options:0
-                    error:&error];
-                
-                if(error) { 
-                    // JSON was malformed, act appropriately here
-                }
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:HistoricalWeatherFeatures];
-                
-            }] resume];
-}
-
-//need to figure out how to collect data from this crazy API
-- (void) handleWeatherDictionaryHistorical:(NSDictionary*)dict
-{
-    NSDate *day;
-    CGFloat high;
-    CGFloat low;
-    CGFloat prec;
-    
-    NSArray *results = [dict objectForKey:@"results"];
-    for (int i = 0; i < [results count]; i++) {
-        NSDictionary *tempdict = [results objectAtIndex:i];
-        [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key  isEqual: @"date"]) {
-                //Set Date
-                // *day = ;
-            }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"PRCP"]) {
-                    //Set prec based on key "value"
-                }
-            }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"TMAX"]) {
-                    //Set high based on key "value"
-                }
-            }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"TMIN"]) {
-                    //Set low based on key "value"
-                }
-            }
-        }];
-        
-    }
-}
- */
 
 
 //Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
@@ -299,5 +232,73 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
 
     }
 }
+
+/*
+//To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
+- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end{
+    // TODO: Need to format the dates as strings
+    NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield", HistoricalWeatherURLData, zip, start, end];
+    
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.HTTPAdditionalHeaders = @{
+                                                   @"token"       : HistoricalWeatherAPIKey
+                                                   };
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    NSError *error = nil;
+    [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
+            completionHandler:^(NSData *data,
+                                NSURLResponse *response,
+                                NSError *error) {
+                // handle response
+                NSDictionary *HistoricalWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
+                    options:0
+                    error:&error];
+                
+                if(error) { 
+                    // JSON was malformed, act appropriately here
+                }
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:HistoricalWeatherFeatures];
+                
+            }] resume];
+}
+
+//need to figure out how to collect data from this crazy API
+- (void) handleWeatherDictionaryHistorical:(NSDictionary*)dict
+{
+    NSDate *day;
+    CGFloat high;
+    CGFloat low;
+    CGFloat prec;
+    
+    NSArray *results = [dict objectForKey:@"results"];
+    for (int i = 0; i < [results count]; i++) {
+        NSDictionary *tempdict = [results objectAtIndex:i];
+        [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if ([key  isEqual: @"date"]) {
+                //Set Date
+                // *day = ;
+            }
+            if ([key  isEqual: @"datatype"]) {
+                if ([obj  isEqual: @"PRCP"]) {
+                    //Set prec based on key "value"
+                }
+            }
+            if ([key  isEqual: @"datatype"]) {
+                if ([obj  isEqual: @"TMAX"]) {
+                    //Set high based on key "value"
+                }
+            }
+            if ([key  isEqual: @"datatype"]) {
+                if ([obj  isEqual: @"TMIN"]) {
+                    //Set low based on key "value"
+                }
+            }
+        }];
+        
+    }
+}
+ */
 
 @end
