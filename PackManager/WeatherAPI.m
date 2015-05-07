@@ -172,40 +172,49 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                 
                 NSDate *dateplus1 = start;
                 
-                for (int i = [startday day]; i < [duration day]; i++) {
+                for (NSInteger i = [startday day]; i < [duration day]; i++)
+                {
                     NSDictionary *weatherdict = [results objectAtIndex:i];
                     [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                        if ([key  isEqual: @"temp"]) {
+                        if ([key  isEqual: @"temp"])
+                        {
                             NSDictionary *tempdict = [results objectAtIndex:i];
-                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                                if ([key  isEqual: @"min"]) {
-                                    if ([obj isKindOfClass:([NSNumber class])]) {
+                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+                            {
+                                if ([key  isEqual: @"min"])
+                                {
+                                    if ([obj isKindOfClass:([NSNumber class])])
+                                    {
                                         NSNumber *num = (NSNumber*)obj;
                                         low = [num floatValue];
                                     }
                                 }
-                                if ([key  isEqual: @"max"]) {
-                                    if ([obj isKindOfClass:([NSNumber class])]) {
+                                if ([key  isEqual: @"max"])
+                                {
+                                    if ([obj isKindOfClass:([NSNumber class])])
+                                    {
                                         NSNumber *num = (NSNumber*)obj;
                                         high = [num floatValue];
                                     }
                                 }
                             }];
                         }
-                        if ([key  isEqual: @"rain"]) {
-                            if(obj > 0 && obj <= 1)
+                        if ([key  isEqual: @"rain"] && [obj isKindOfClass:[NSNumber class]]) {
+                            CGFloat p = [obj doubleValue];
+                            
+                            if(p > 0 && p <= 1)
                             {
                                 prec = .1;
                             }
-                            else if (obj > 1 && obj <= 3)
+                            else if (p > 1 && p <= 3)
                             {
                                 prec = .3;
                             }
-                            else if (obj > 3 && obj <= 7)
+                            else if (p > 3 && p <= 7)
                             {
                                 prec = .5;
                             }
-                            else if (obj > 7)
+                            else if (p > 7)
                             {
                                 prec = .8;
                             }
