@@ -41,9 +41,9 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
     
     if ((instance = [[WeatherAPI alloc] init]))
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryZip:) name:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryZip:) name:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryZip:) name:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryCity:) name:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self];
     }
     return instance;
 }
@@ -54,8 +54,10 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
 }
 
 #pragma mark - Core Fuctions
-
+/*
+//To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
 - (void) getWeatherFromZip:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end{
+    // TODO: Need to format the dates as strings
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield", ZipWeatherURLData, zip, start, end];
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -74,7 +76,9 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                     options:0
                     error:&error];
                 
-                if(error) { /* JSON was malformed, act appropriately here */ }
+                if(error) { 
+                    // JSON was malformed, act appropriately here
+                }
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:ZipWeatherFeatures];
                 
@@ -95,7 +99,7 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
         [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if ([key  isEqual: @"date"]) {
                 //Set Date
-                //*day = ;
+                // *day = ;
             }
             if ([key  isEqual: @"datatype"]) {
                 if ([obj  isEqual: @"PRCP"]) {
@@ -116,8 +120,10 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
         
     }
 }
+ */
 
-//Still need to figure out how to parse json to only collect the number of days needed, also need to ensure the date of trip is captured by the forecast (0> end_of_trip > 16)
+
+//Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
 - (void) getWeatherFromCity:(NSString*)city country:(NSString*)country start:(NSDate *)start end:(NSDate *)end
 {
     NSString *reformattedCity = [ city stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -129,13 +135,13 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                                                    };
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     
-    NSError *error = nil;
+    //NSError *error = nil;
     [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
             completionHandler:^(NSData *data,
                                 NSURLResponse *response,
                                 NSError *error) {
                 // handle response
-                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
+                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
                     options:0
                     error:&error];
                 
@@ -166,40 +172,52 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                 
                 NSDate *dateplus1 = start;
                 
-                for (int i = [startday day]; i < [duration day]; i++) {
+                NSInteger dateRange = [self daysBetweenDate:start andDate:end];
+                NSInteger dateOffset = [self daysBetweenDate:[NSDate date] andDate:start];
+                
+                for (NSInteger i = dateOffset; i < dateRange; i++)
+                {
                     NSDictionary *weatherdict = [results objectAtIndex:i];
                     [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                        if ([key  isEqual: @"temp"]) {
-                            NSDictionary *tempdict = [results objectAtIndex:i];
-                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                                if ([key  isEqual: @"min"]) {
-                                    if ([obj isKindOfClass:([NSNumber class])]) {
-                                        NSNumber *num = (NSNumber*)obj;
+                        if ([key  isEqualToString:@"temp"])
+                        {
+                            NSDictionary *tempdict = [weatherdict objectForKey:@"temp"];
+                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
+                            {
+                                if ([key2 isEqualToString:@"min"])
+                                {
+                                    if ([obj2 isKindOfClass:([NSNumber class])])
+                                    {
+                                        NSNumber *num = (NSNumber*)obj2;
                                         low = [num floatValue];
                                     }
                                 }
-                                if ([key  isEqual: @"max"]) {
-                                    if ([obj isKindOfClass:([NSNumber class])]) {
-                                        NSNumber *num = (NSNumber*)obj;
+                                if ([key2  isEqualToString:@"max"])
+                                {
+                                    if ([obj2 isKindOfClass:([NSNumber class])])
+                                    {
+                                        NSNumber *num = (NSNumber*)obj2;
                                         high = [num floatValue];
                                     }
                                 }
                             }];
                         }
-                        if ([key  isEqual: @"rain"]) {
-                            if(obj > 0 && obj <= 1)
+                        if ([key isEqualToString:@"rain"] && [obj isKindOfClass:[NSNumber class]]) {
+                            CGFloat p = [obj doubleValue];
+                            
+                            if(p > 0 && p <= 1)
                             {
                                 prec = .1;
                             }
-                            else if (obj > 1 && obj <= 3)
+                            else if (p > 1 && p <= 3)
                             {
                                 prec = .3;
                             }
-                            else if (obj > 3 && obj <= 7)
+                            else if (p > 3 && p <= 7)
                             {
                                 prec = .5;
                             }
-                            else if (obj > 7)
+                            else if (p > 7)
                             {
                                 prec = .8;
                             }
@@ -220,15 +238,35 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
 
                 }
                 //Call handler
-                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:weatherArray];
+                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
                 
             }] resume];
 }
 
+- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
+}
+
 
 //Changing this function to access a new dictionary and collect data from it
-- (void) handleWeatherDictionaryCity:(NSMutableArray*)array
+- (void) handleWeatherDictionaryCity:(NSMutableDictionary*)dict
 {
+    NSMutableArray *array = [dict objectForKey:@"data"];
+    
     __block NSDate *day;
     __block CGFloat high = 0;
     __block CGFloat low = 0;
