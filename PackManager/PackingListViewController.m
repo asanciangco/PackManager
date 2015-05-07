@@ -37,6 +37,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +67,10 @@
     if(indexPath.row == 0)
     {
         static NSString *CellIdentifier = @"weatherReportCell";
-        LayeredRightDetailCell *cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if(cell == nil)
+            cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.mainTextLabel.text = @"Weather Report";
@@ -78,9 +82,25 @@
     else
     {
         static NSString *CellIdentifier = @"ListItemCell";
-        PackingListItemCell *cell = [[PackingListItemCell alloc] initWithPackable:[self.trip.packingList getPackableForIndex:(indexPath.row-1)]
-                                                                            style:UITableViewCellStyleDefault
-                                                                  reuseIdentifier:CellIdentifier];
+        PackingListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if(cell == nil)
+            cell = [[PackingListItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        Packable *item = [self.trip.packingList getPackableForIndex:(indexPath.row-1)];
+        
+        if( item.quantity > 0)
+        {
+            cell.itemTextLabel.text = item.name;
+            cell.quantityTextLabel.text = [NSString stringWithFormat:@"x%li", (long)item.quantity];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        else
+        {
+            cell.hidden = YES;
+        }
+
+        
         return cell;
     }
 }

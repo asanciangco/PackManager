@@ -32,6 +32,10 @@
     {
         [self performSegueWithIdentifier:@"showPackingList" sender:self];
     }
+    else
+    {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
