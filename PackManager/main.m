@@ -13,7 +13,6 @@
 int main(int argc, char * argv[])
 {
     [[WeatherAPI sharedInstance] getWeatherFromCity: @"Los Angeles" country: @"US" start:[NSDate date] end:[NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]]];
-    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

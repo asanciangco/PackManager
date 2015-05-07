@@ -11,10 +11,26 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Packable : NSObject
+/**
+ Simple class to represent packable objects (i.e. T-shirts, pants, etc)
+ */
+@interface Packable : NSObject <NSCoding>
 
+/**
+  The name of the packable object
+*/
 @property (nonatomic, strong) NSString *name;
+
+/**
+  The quantity of that packable object
+*/
 @property NSInteger quantity;
+
+/**
+ Initialize a packable item with an initial quantity
+ @param quantity The quantity to store
+ */
+- (instancetype) initWithQuantity:(NSUInteger)quantity;
 
 @end
 

@@ -7,6 +7,12 @@
 //
 
 #import "PackingList.h"
+#import "NSCodingHelper.h"
+
+#import "TShirt.h"
+#import "LongSleeveShirt.h"
+#import "FormalShirt.h"
+#import "Shorts.h"
 
 @interface PackingList ()
 
@@ -23,6 +29,22 @@
     if (self = [super init])
     {
         self.trip = trip;
+        self.list = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (instancetype) initExamplePackingListForTrip:(Trip *)trip 
+{
+    if (self = [super init])
+    {
+        self.trip = trip;
+        self.list = [NSMutableArray array];
+        [self.list addObjectsFromArray:@[[[TShirt alloc] initWithQuantity:4],
+                                         [[LongSleeveShirt alloc] initWithQuantity:3],
+                                         [[FormalShirt alloc]initWithQuantity:1],
+                                         [[Shorts alloc] initWithQuantity:4],
+                                         ]];
     }
     return self;
 }
@@ -35,18 +57,21 @@
 
 - (Packable *) getPackableForIndex:(NSInteger)index
 {
-    return NULL;
+    if (!self.list || index < 0 || index >= [self.list count])
+        return NULL;
+    
+    return [self.list objectAtIndex:index];
 }
 
 
 #pragma mark - Helpers
-
-// TODO: need to finish design
 - (NSInteger) quantityForItemAtIndex:(NSInteger)index
 {
-    PackingItems itemEnum = (PackingItems)index;
-    NSNumber *key = [NSNumber numberWithInt:itemEnum];
-    return 0;
+    Packable *item = [self getPackableForIndex:index];
+    if (item)
+        return item.quantity;
+    else
+        return -1;
 }
 
 + (NSString *) stringForItemType:(PackingItems)item
@@ -90,15 +115,18 @@
 }
 
 #pragma mark - Encoding / Decoding
-// TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.list] forKey:@"list"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
-    return 0;
+    if (self = [super init])
+    {
+        self.list = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"list"]];
+    }
+    return self;
 }
 
 @end

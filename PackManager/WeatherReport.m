@@ -8,6 +8,7 @@
 
 #import "WeatherReport.h"
 #import "WeatherDay.h"
+#import "NSCodingHelper.h"
 
 @interface WeatherReport ()
 
@@ -31,28 +32,26 @@
 }
 
 #pragma mark - Weather Info
-// TODO: Implement me
-
 - (NSInteger) getOverallHigh
 {
-  NSInteger high = NSIntegerMin;
-  for (WeatherDay *r in self.weatherDays) {
-    if(high < [r high]) {
-      high = r.high;
+    NSInteger high = NSIntegerMin;
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(high < day.high)
+            high = day.high;
     }
-  }
-  return high;
+    return high;
 }
 
 - (NSInteger) getOverallLow
 {
-  NSInteger low = NSIntegerMax;
-  for (WeatherDay *r in self.weatherDays) {
-    if(low > [r low]) {
-      low = r.low;
+    NSInteger low = NSIntegerMax;
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(low > day.low)
+            low = day.low;
     }
-  }
-  return low;
+    return low;
 }
 
 - (NSInteger) numberOfDays
@@ -79,5 +78,35 @@
     
     return weatherDay.low;
 }
+
+#pragma mark - WeatherDay logic
+- (BOOL) daysAreInOrder
+{
+    // TODO: Implement me.
+    
+    return NO;
+}
+
+- (void) putDaysInOrder
+{
+    // TODO: Implement me.
+}
+
+#pragma mark - Encoding / Decoding
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.weatherDays] forKey:@"weatherDays"];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        self.weatherDays = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"weatherDays"]];
+    }
+    return self;
+}
+
+
 
 @end
