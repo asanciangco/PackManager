@@ -172,34 +172,37 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
                 
                 NSDate *dateplus1 = start;
                 
-                for (NSInteger i = [startday day]; i < [duration day]; i++)
+                NSInteger dateRange = [self daysBetweenDate:start andDate:end];
+                NSInteger dateOffset = [self daysBetweenDate:[NSDate date] andDate:start];
+                
+                for (NSInteger i = dateOffset; i < dateRange; i++)
                 {
                     NSDictionary *weatherdict = [results objectAtIndex:i];
                     [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                        if ([key  isEqual: @"temp"])
+                        if ([key  isEqualToString:@"temp"])
                         {
-                            NSDictionary *tempdict = [results objectAtIndex:i];
-                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+                            NSDictionary *tempdict = [weatherdict objectForKey:@"temp"];
+                            [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
                             {
-                                if ([key  isEqual: @"min"])
+                                if ([key2 isEqualToString:@"min"])
                                 {
-                                    if ([obj isKindOfClass:([NSNumber class])])
+                                    if ([obj2 isKindOfClass:([NSNumber class])])
                                     {
-                                        NSNumber *num = (NSNumber*)obj;
+                                        NSNumber *num = (NSNumber*)obj2;
                                         low = [num floatValue];
                                     }
                                 }
-                                if ([key  isEqual: @"max"])
+                                if ([key2  isEqualToString:@"max"])
                                 {
-                                    if ([obj isKindOfClass:([NSNumber class])])
+                                    if ([obj2 isKindOfClass:([NSNumber class])])
                                     {
-                                        NSNumber *num = (NSNumber*)obj;
+                                        NSNumber *num = (NSNumber*)obj2;
                                         high = [num floatValue];
                                     }
                                 }
                             }];
                         }
-                        if ([key  isEqual: @"rain"] && [obj isKindOfClass:[NSNumber class]]) {
+                        if ([key isEqualToString:@"rain"] && [obj isKindOfClass:[NSNumber class]]) {
                             CGFloat p = [obj doubleValue];
                             
                             if(p > 0 && p <= 1)
@@ -235,15 +238,35 @@ static NSString *CityWeatherURLLocation = @"http://api.openweathermap.org/data/2
 
                 }
                 //Call handler
-                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:weatherArray];
+                [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
                 
             }] resume];
 }
 
+- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
+}
+
 
 //Changing this function to access a new dictionary and collect data from it
-- (void) handleWeatherDictionaryCity:(NSMutableArray*)array
+- (void) handleWeatherDictionaryCity:(NSMutableDictionary*)dict
 {
+    NSMutableArray *array = [dict objectForKey:@"data"];
+    
     __block NSDate *day;
     __block CGFloat high = 0;
     __block CGFloat low = 0;
