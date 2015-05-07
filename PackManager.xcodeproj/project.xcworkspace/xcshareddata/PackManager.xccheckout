@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>CE3A1410-8651-4175-8E44-ACE73DB44ABA</string>
 	<key>IDESourceControlProjectName</key>
-	<string>PackManager</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8F2D51737E7D7C9131531BA60F30F7149B5FEAF2</key>
 		<string>https://github.com/asanciangco/PackManager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PackManager.xcodeproj</string>
+	<string>PackManager.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8F2D51737E7D7C9131531BA60F30F7149B5FEAF2</key>
