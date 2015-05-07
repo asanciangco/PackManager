@@ -91,6 +91,14 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
             }] resume];
 }
 
+
+/**
+	Given the json object, returns an array of the forecast for the days of the trip
+	@param weather The json object collected from the api
+	@param start The start date of the trip
+    @param end The end date of the trip
+	@returns NSMutableArray of weather forecast for the days of the trip
+ */
 - (NSMutableArray*) parseJSONforPresent:(NSDictionary *)weather start:(NSDate *)start end:(NSDate *)end
 {
     //Parse PresentWeatherFeatures by start end dates and pass new dictionary
@@ -174,6 +182,12 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
     return weatherArray;
 }
 
+/**
+	Given two dates tell me the number of days between the two
+	@param fromDateTime The first date
+	@param toDateTime The second date
+	@returns integer of the number of days difference between two dates
+ */
 - (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {
     NSDate *fromDate;
@@ -192,7 +206,11 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
     return [difference day];
 }
 
-
+/**
+	Create a weather report based on the trips forecast
+	@param dict a dictionary that holds the array of weather data for the trip
+	@returns void after creating a weather report
+ */
 //Changing this function to access a new dictionary and collect data from it
 - (void) handleWeatherDictionaryPresent:(NSMutableDictionary*)dict
 {
