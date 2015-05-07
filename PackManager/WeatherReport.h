@@ -14,6 +14,11 @@
 @interface WeatherReport : NSObject <NSCoding>
 
 /**
+ Generates example report for demo purposes.
+ */
+- (instancetype) initExampleReport;
+
+/**
    Returns highest temp for entire report
    @returns returns integer representing the report's high
 */

@@ -106,6 +106,7 @@
 
 - (BOOL) generatePackingListExample
 {
+    self.weatherReport = [[WeatherReport alloc] initExampleReport];
     self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
     
     return TRUE;

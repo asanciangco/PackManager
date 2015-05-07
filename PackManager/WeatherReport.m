@@ -31,6 +31,20 @@
     return self;
 }
 
+- (instancetype) initExampleReport
+{
+    if (self = [super init])
+    {
+        self.weatherDays = [NSMutableArray array];
+        
+        [self.weatherDays addObjectsFromArray:@[[[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]]]];
+    }
+    return self;
+}
+
 #pragma mark - Weather Info
 - (NSInteger) getOverallHigh
 {
