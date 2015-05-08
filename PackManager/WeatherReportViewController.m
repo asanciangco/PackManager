@@ -59,13 +59,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stopWeatherCell" forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"stopWeatherCell";
+    LayeredRightDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell == nil)
     {
-        cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"stopWeatherCell"];
+        cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell = (LayeredRightDetailCell*)cell;
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.mainTextLabel.text = [NSString stringWithFormat:@"Day %li", (long)indexPath.row + 1];
     cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getHighForDay:(indexPath.row + 1)]];

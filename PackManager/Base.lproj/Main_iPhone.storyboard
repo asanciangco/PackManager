@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Trip Title-->
+        <!--Weather Report View Controller - Trip Title-->
         <scene sceneID="vMO-eC-LOL">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="y9H-Xt-eLl" customClass="WeatherReportViewController" sceneMemberID="viewController">
@@ -62,6 +61,11 @@
                                         <constraint firstItem="XXe-dF-xNs" firstAttribute="top" secondItem="NRQ-gX-x5A" secondAttribute="top" id="yuo-aQ-hs9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lowerDetailTextLabel" destination="mzo-e1-rjh" id="JKI-xF-ovC"/>
+                                    <outlet property="mainTextLabel" destination="zwM-QU-Syg" id="vkV-NV-LwT"/>
+                                    <outlet property="upperDetailTextLabel" destination="XXe-dF-xNs" id="lj9-GY-iZe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1933" y="-202"/>
         </scene>
-        <!--My Trips-->
+        <!--Trips View Controller - My Trips-->
         <scene sceneID="niG-wC-TS5">
             <objects>
                 <tableViewController id="LCF-3d-wz1" customClass="TripsViewController" sceneMemberID="viewController">
@@ -129,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="948" y="-541"/>
         </scene>
-        <!--Trip Title-->
+        <!--Packing List View Controller - Trip Title-->
         <scene sceneID="hPR-xn-OeY">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="kgQ-Bk-CRi" customClass="PackingListViewController" sceneMemberID="viewController">
@@ -630,7 +634,7 @@
             </objects>
             <point key="canvasLocation" x="1511" y="-882"/>
         </scene>
-        <!--Trip Settings-->
+        <!--Trip Settings View Controller - Trip Settings-->
         <scene sceneID="4nl-5l-eEv">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="nYH-0f-KLo" customClass="TripSettingsViewController" sceneMemberID="viewController">
@@ -756,7 +760,7 @@
             </objects>
             <point key="canvasLocation" x="-24" y="-228"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller - Profile-->
         <scene sceneID="o7Z-rd-O9w">
             <objects>
                 <tableViewController id="X02-xe-oUH" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -1161,7 +1165,7 @@
             </objects>
             <point key="canvasLocation" x="937" y="180"/>
         </scene>
-        <!--Trips-->
+        <!--Navigation Controller - Trips-->
         <scene sceneID="aur-e5-yXv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZ0-Oa-ipT" sceneMemberID="viewController">
@@ -1180,7 +1184,7 @@
             </objects>
             <point key="canvasLocation" x="507" y="-541"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller - Profile-->
         <scene sceneID="tAw-df-ZV6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aIC-AP-hhL" sceneMemberID="viewController">
