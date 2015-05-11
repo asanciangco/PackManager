@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2127248D1AF18F0C00F61AAA /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248A1AF18F0C00F61AAA /* Destination.m */; };
 		2127248E1AF18F0C00F61AAA /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248C1AF18F0C00F61AAA /* Trip.m */; };
+		215A509F1AFB4082002ED745 /* LayeredRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 215A509E1AFB4082002ED745 /* LayeredRightDetailCell.m */; };
+		215A50AB1AFB428A002ED745 /* iPhoneNonRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 215A50A91AFB428A002ED745 /* iPhoneNonRetina.png */; };
+		215A50AC1AFB428A002ED745 /* iphoneRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 215A50AA1AFB428A002ED745 /* iphoneRetina.png */; };
 		2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD011AF1A36F0033ECE4 /* TripsData.m */; };
 		2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD031AF1A36F0033ECE4 /* WeatherReport.m */; };
 		2175AD081AF1A75B0033ECE4 /* PackingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2175AD071AF1A75B0033ECE4 /* PackingList.m */; };
@@ -34,9 +37,12 @@
 		21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3431ADF4933003024B7 /* PackingListViewController.m */; };
 		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
-		21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */; };
 		E21273CD1AF6FD440063BA5D /* TShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CC1AF6FD440063BA5D /* TShirt.m */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
+		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
+		E29254971AFACF5C00007394 /* LongSleeveShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254961AFACF5C00007394 /* LongSleeveShirt.m */; };
+		E292549A1AFAD02B00007394 /* FormalShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254991AFAD02B00007394 /* FormalShirt.m */; };
+		E292549D1AFAD04800007394 /* Shorts.m in Sources */ = {isa = PBXBuildFile; fileRef = E292549C1AFAD04800007394 /* Shorts.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
 		E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,10 @@
 		2127248A1AF18F0C00F61AAA /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
 		2127248B1AF18F0C00F61AAA /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		2127248C1AF18F0C00F61AAA /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		215A509D1AFB4082002ED745 /* LayeredRightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayeredRightDetailCell.h; sourceTree = "<group>"; };
+		215A509E1AFB4082002ED745 /* LayeredRightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayeredRightDetailCell.m; sourceTree = "<group>"; };
+		215A50A91AFB428A002ED745 /* iPhoneNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneNonRetina.png; path = Images/iPhoneNonRetina.png; sourceTree = "<group>"; };
+		215A50AA1AFB428A002ED745 /* iphoneRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iphoneRetina.png; path = Images/iphoneRetina.png; sourceTree = "<group>"; };
 		2175AD001AF1A36F0033ECE4 /* TripsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsData.h; sourceTree = "<group>"; };
 		2175AD011AF1A36F0033ECE4 /* TripsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsData.m; sourceTree = "<group>"; };
 		2175AD021AF1A36F0033ECE4 /* WeatherReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherReport.h; sourceTree = "<group>"; };
@@ -98,11 +108,17 @@
 		21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportViewController.m; sourceTree = "<group>"; };
 		21D1F3481ADF4A0E003024B7 /* TripSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSettingsViewController.h; sourceTree = "<group>"; };
 		21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripSettingsViewController.m; sourceTree = "<group>"; };
-		21E432B51AF19F600092E333 /* LayeredRightDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayeredRightDetailCell.h; path = ../LayeredRightDetailCell.h; sourceTree = "<group>"; };
-		21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayeredRightDetailCell.m; path = ../LayeredRightDetailCell.m; sourceTree = "<group>"; };
 		E21273CB1AF6FD440063BA5D /* TShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TShirt.h; sourceTree = "<group>"; };
 		E21273CC1AF6FD440063BA5D /* TShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TShirt.m; sourceTree = "<group>"; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
+		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
+		E29254931AFAA9ED00007394 /* NSCodingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCodingHelper.m; sourceTree = "<group>"; };
+		E29254951AFACF5C00007394 /* LongSleeveShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongSleeveShirt.h; sourceTree = "<group>"; };
+		E29254961AFACF5C00007394 /* LongSleeveShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongSleeveShirt.m; sourceTree = "<group>"; };
+		E29254981AFAD02B00007394 /* FormalShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormalShirt.h; sourceTree = "<group>"; };
+		E29254991AFAD02B00007394 /* FormalShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormalShirt.m; sourceTree = "<group>"; };
+		E292549B1AFAD04800007394 /* Shorts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shorts.h; sourceTree = "<group>"; };
+		E292549C1AFAD04800007394 /* Shorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shorts.m; sourceTree = "<group>"; };
 		E2B80F9C1AF6D303003B6281 /* WeatherDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDay.m; sourceTree = "<group>"; };
 		E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
@@ -179,8 +195,19 @@
 				21A1546C1AE6FABB002F76BE /* UserPreferences.m */,
 				E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */,
 				E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */,
+				E29254921AFAA9ED00007394 /* NSCodingHelper.h */,
+				E29254931AFAA9ED00007394 /* NSCodingHelper.m */,
 			);
 			name = "Wrapper / Helper Classes";
+			sourceTree = "<group>";
+		};
+		215A50A41AFB416F002ED745 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				215A50A91AFB428A002ED745 /* iPhoneNonRetina.png */,
+				215A50AA1AFB428A002ED745 /* iphoneRetina.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		21D1F2F51ADF3B71003024B7 = {
@@ -216,6 +243,7 @@
 		21D1F3071ADF3B71003024B7 /* PackManager */ = {
 			isa = PBXGroup;
 			children = (
+				215A50A41AFB416F002ED745 /* Images */,
 				21D1F3101ADF3B71003024B7 /* AppDelegate.h */,
 				21D1F3111ADF3B71003024B7 /* AppDelegate.m */,
 				21D1F3131ADF3B71003024B7 /* Main_iPhone.storyboard */,
@@ -261,8 +289,8 @@
 		21E432B81AF19F6F0092E333 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				21E432B51AF19F600092E333 /* LayeredRightDetailCell.h */,
-				21E432B61AF19F600092E333 /* LayeredRightDetailCell.m */,
+				215A509D1AFB4082002ED745 /* LayeredRightDetailCell.h */,
+				215A509E1AFB4082002ED745 /* LayeredRightDetailCell.m */,
 				2175AD091AF1AB250033ECE4 /* PackingListItemCell.h */,
 				2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */,
 			);
@@ -276,6 +304,12 @@
 				E21273CE1AF80F010063BA5D /* Packable.m */,
 				E21273CB1AF6FD440063BA5D /* TShirt.h */,
 				E21273CC1AF6FD440063BA5D /* TShirt.m */,
+				E29254951AFACF5C00007394 /* LongSleeveShirt.h */,
+				E29254961AFACF5C00007394 /* LongSleeveShirt.m */,
+				E29254981AFAD02B00007394 /* FormalShirt.h */,
+				E29254991AFAD02B00007394 /* FormalShirt.m */,
+				E292549B1AFAD04800007394 /* Shorts.h */,
+				E292549C1AFAD04800007394 /* Shorts.m */,
 			);
 			name = "Packing Items";
 			sourceTree = "<group>";
@@ -357,8 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D1F3181ADF3B71003024B7 /* Main_iPad.storyboard in Resources */,
+				215A50AC1AFB428A002ED745 /* iphoneRetina.png in Resources */,
 				21D1F3201ADF3B71003024B7 /* Images.xcassets in Resources */,
 				21D1F3151ADF3B71003024B7 /* Main_iPhone.storyboard in Resources */,
+				215A50AB1AFB428A002ED745 /* iPhoneNonRetina.png in Resources */,
 				21D1F30C1ADF3B71003024B7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,21 +418,25 @@
 				21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */,
 				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
 				2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */,
+				E29254971AFACF5C00007394 /* LongSleeveShirt.m in Sources */,
 				E21273CF1AF80F010063BA5D /* Packable.m in Sources */,
+				E292549D1AFAD04800007394 /* Shorts.m in Sources */,
 				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
 				21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */,
+				E292549A1AFAD02B00007394 /* FormalShirt.m in Sources */,
 				2175AD0B1AF1AB250033ECE4 /* PackingListItemCell.m in Sources */,
-				21E432B71AF19F600092E333 /* LayeredRightDetailCell.m in Sources */,
 				21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */,
 				2127248E1AF18F0C00F61AAA /* Trip.m in Sources */,
 				2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */,
 				E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */,
 				E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */,
+				215A509F1AFB4082002ED745 /* LayeredRightDetailCell.m in Sources */,
 				2127248D1AF18F0C00F61AAA /* Destination.m in Sources */,
 				E21273CD1AF6FD440063BA5D /* TShirt.m in Sources */,
 				21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */,
+				E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */,
 				21D1F30E1ADF3B71003024B7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +570,6 @@
 		21D1F3371ADF3B71003024B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
@@ -543,7 +582,6 @@
 		21D1F3381ADF3B71003024B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";

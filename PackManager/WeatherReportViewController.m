@@ -29,8 +29,6 @@
     [super viewDidLoad];
     
     self.navigationItem.title = self.trip.name;
-    [self.navigationController.navigationBar pushNavigationItem:self.navigationItem animated:NO];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -66,10 +64,12 @@
     {
         cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"stopWeatherCell"];
     }
+    cell = (LayeredRightDetailCell*)cell;
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.mainTextLabel.text = [NSString stringWithFormat:@"Day %li", indexPath.row + 1];
-    cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", [self.trip.weatherReport getHighForDay:(indexPath.row + 1)]];
-    cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", [self.trip.weatherReport getLowForDay:(indexPath.row + 1)]];
+    cell.mainTextLabel.text = [NSString stringWithFormat:@"Day %li", (long)indexPath.row + 1];
+    cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getHighForDay:(indexPath.row + 1)]];
+    cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getLowForDay:(indexPath.row + 1)]];
     return cell;
 }
 

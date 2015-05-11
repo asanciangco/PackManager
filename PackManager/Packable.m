@@ -12,6 +12,15 @@
 
 @implementation Packable
 
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [self init])
+    {
+        self.quantity = quantity;
+    }
+    return self;
+}
+
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {

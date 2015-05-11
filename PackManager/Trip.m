@@ -8,6 +8,7 @@
 
 #import "Trip.h"
 #import "UserPreferences.h"
+#import "NSCodingHelper.h"
 
 /**
  Trip object that contains all necessary information for a trip, including
@@ -42,9 +43,6 @@
     return self;
 }
 
-/**
- Creates new, blank trip
- */
 - (instancetype) initNewTrip
 {
     if (self = [[Trip alloc] initWithStartDate:NULL name:@""])
@@ -103,11 +101,19 @@
     return (self.packingList != NULL);
 }
 
+- (BOOL) generatePackingListExample
+{
+    self.weatherReport = [[WeatherReport alloc] initExampleReport];
+    self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
+    
+    return TRUE;
+}
+
 #pragma mark - Encoding/Decoding
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.destinations forKey:@"destinations"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.destinations] forKey:@"destinations"];
     [aCoder encodeObject:self.startDate forKey:@"startDate"];
     
     [aCoder encodeObject:self.packingList forKey:@"packingList"];
@@ -124,7 +130,7 @@
     if (self = [super init])
     {
         self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.destinations = [aDecoder decodeObjectForKey:@"destinations"];
+        self.destinations = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"destinations"]];
         self.startDate = [aDecoder decodeObjectForKey:@"startDate"];
         
         self.packingList = [aDecoder decodeObjectForKey:@"packingList"];

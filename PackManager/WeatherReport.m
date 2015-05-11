@@ -8,6 +8,7 @@
 
 #import "WeatherReport.h"
 #import "WeatherDay.h"
+#import "NSCodingHelper.h"
 
 @interface WeatherReport ()
 
@@ -30,16 +31,28 @@
     return self;
 }
 
-#pragma mark - Weather Info
-// TODO: Implement me
+- (instancetype) initExampleReport
+{
+    if (self = [super init])
+    {
+        self.weatherDays = [NSMutableArray array];
+        
+        [self.weatherDays addObjectsFromArray:@[[[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:100 low:70 precipitation:0.2 date:[NSDate date]]]];
+    }
+    return self;
+}
 
+#pragma mark - Weather Info
 - (NSInteger) getOverallHigh
 {
     NSInteger high = NSIntegerMin;
-    for (WeatherDay *r in self.weatherDays) {
-        if(high < [r high]) {
-            high = r.high;
-        }
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(high < day.high)
+            high = day.high;
     }
     return high;
 }
@@ -47,10 +60,10 @@
 - (NSInteger) getOverallLow
 {
     NSInteger low = NSIntegerMax;
-    for (WeatherDay *r in self.weatherDays) {
-        if(low > [r low]) {
-            low = r.low;
-        }
+    for (WeatherDay *day in self.weatherDays)
+    {
+        if(low > day.low)
+            low = day.low;
     }
     return low;
 }
@@ -96,14 +109,14 @@
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.weatherDays forKey:@"weatherDays"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.weatherDays] forKey:@"weatherDays"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        self.weatherDays = [aDecoder decodeObjectForKey:@"weatherDays"];
+        self.weatherDays = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"weatherDays"]];
     }
     return self;
 }

@@ -25,9 +25,9 @@ static NSString *DAY_KEY = @"day";
 + (instancetype) sharedInstance;
 
 //Function to get Weather Based On Zip
-- (void) getWeatherFromZip:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end;
+//- (void) getWeatherFromZip:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end;
 
-- (void) getWeatherFromCity:(NSString*)city country:(NSString*)country start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromPresent:(NSString*)city country:(NSString*)country start:(NSDate *)start end:(NSDate *)end;
 
 
 

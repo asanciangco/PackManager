@@ -43,7 +43,6 @@
 }
 
 #pragma mark - Encoding / Decoding
-// TODO: Implement these
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeInteger:self.duration forKey:@"duration"];

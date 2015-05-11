@@ -7,6 +7,7 @@
 //
 
 #import "TripsData.h"
+#import "Trip.h"
 
 static TripsData *sharedInstance;
 
@@ -47,7 +48,7 @@ static TripsData *sharedInstance;
     return data;
 }
 
-#pragma mark - Acessing Trip Info
+#pragma mark - Trips
 - (NSInteger) numberOfTrips
 {
     return [self.trips count];
@@ -61,6 +62,32 @@ static TripsData *sharedInstance;
     return [self.trips objectAtIndex:index];
 }
 
+// TODO: test this
+- (void) addTrip:(Trip *)newTrip
+{
+    if ([self.trips count] == 0)
+    {
+        [self.trips addObject:newTrip];
+        return;
+    }
+    
+    for (NSInteger i = 0; i < [self.trips count]; i++)
+    {
+        Trip *trip = [self.trips objectAtIndex:i];
+        if ([trip.startDate compare:newTrip.startDate] == NSOrderedDescending)
+        {
+            [self.trips insertObject:newTrip atIndex:i];
+        }
+    }
+}
+
+- (void) removeTripAtIndex:(NSInteger)index
+{
+    if (index < 0 || index >= [self.trips count])
+        return;
+    [self.trips removeObjectAtIndex:index];
+}
+
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
@@ -72,7 +99,12 @@ static TripsData *sharedInstance;
 {
     if (self = [super init])
     {
-        self.trips = [NSKeyedUnarchiver unarchiveObjectWithData:[aDecoder decodeObjectForKey:@"trips"]];
+        NSData *tripsData = [aDecoder decodeObjectForKey:@"trips"];
+        NSMutableArray *tripsArray = [NSKeyedUnarchiver unarchiveObjectWithData:tripsData];
+        if (tripsArray)
+            self.trips = tripsArray;
+        else
+            self.trips = [NSMutableArray array];
     }
     return self;
 }
