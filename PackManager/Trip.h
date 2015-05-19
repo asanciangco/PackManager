@@ -94,6 +94,10 @@
 	@returns date of trip's end
 */
 - (NSDate *) endDate;
+
+/**
+ Returns the total number of days for the trip.
+ */
 - (NSInteger) totalDuration;
 
 /** This is the big one. Returns true if everything went OK and
