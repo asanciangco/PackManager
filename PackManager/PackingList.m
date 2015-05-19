@@ -9,9 +9,7 @@
 #import "PackingList.h"
 #import "NSCodingHelper.h"
 
-#import "TShirt.h"
-#import "LongSleeveShirt.h"
-#import "FormalShirt.h"
+#import "Shirt.h"
 #import "Shorts.h"
 
 @interface PackingList ()
@@ -40,11 +38,14 @@
     {
         self.trip = trip;
         self.list = [NSMutableArray array];
-        [self.list addObjectsFromArray:@[[[TShirt alloc] initWithQuantity:4],
-                                         [[LongSleeveShirt alloc] initWithQuantity:3],
-                                         [[FormalShirt alloc]initWithQuantity:1],
-                                         [[Shorts alloc] initWithQuantity:4],
-                                         ]];
+        
+        // TODO: update this part for new packable item subclassing
+        //
+//        [self.list addObjectsFromArray:@[[[Shirt alloc] initWithQuantity:4],
+//                                         [[LongSleeveShirt alloc] initWithQuantity:3],
+//                                         [[FormalShirt alloc]initWithQuantity:1],
+//                                         [[Shorts alloc] initWithQuantity:4],
+//                                         ]];
     }
     return self;
 }
