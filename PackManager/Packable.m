@@ -12,6 +12,7 @@
 
 @implementation Packable
 
+#pragma marg - Initializer
 - (instancetype) initWithQuantity:(NSUInteger)quantity
 {
     if (self = [self init])
@@ -19,6 +20,12 @@
         self.quantity = quantity;
     }
     return self;
+}
+
+#pragma mark - Helpers
+- (NSString *) imageName
+{
+    return nil;
 }
 
 #pragma mark - Encoding / Decoding
