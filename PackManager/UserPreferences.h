@@ -116,7 +116,12 @@ typedef enum
 - (BOOL) setColdTemp:(float)temp;
 
 /**
- Determine the user's set range for a given temperature.
+ Determine the user's set range for a given temperature. Currently set so that:
+    Below COLD pref             => COLD
+    Between COLD and COOL prefs => COOL
+    Between COOL and WARM prefs => NORMAL
+    Between WARM and HOT prefs  => WARM
+    Anything above HOT prefs    => HOT
  @param temp the temperature being queried.
  @returns an enum representing the range of the the given temperature
  */
