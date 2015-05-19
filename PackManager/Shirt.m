@@ -11,6 +11,17 @@
 
 @implementation Shirt
 
+#pragma mark - Initializer
+- (instancetype) initWithQuantity:(NSUInteger)quantity andType:(ShirtType)type
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.shirtType = type;
+    }
+    return self;
+}
+
+#pragma mark - Overridden Methods
 /**
  Overrides getter from parent class.
  @returns NSString name of item, depending on object's shirtType.

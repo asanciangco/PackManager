@@ -27,4 +27,12 @@ typedef enum ShirtType
  */
 @property ShirtType shirtType;
 
+/**
+ Enhanced initializer to handle type as well as quantity.
+ 
+ @param quantity The quantity of this type of shirt
+ @param type The type of shirt, as defined by ShirtType
+ */
+- (instancetype) initWithQuantity:(NSUInteger)quantity andType:(ShirtType)type;
+
 @end

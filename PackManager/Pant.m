@@ -10,6 +10,17 @@
 
 @implementation Pant
 
+#pragma mark - Initializer
+- (instancetype) initWithQuantity:(NSUInteger)quantity andType:(PantType)type
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.pantType = type;
+    }
+    return self;
+}
+
+#pragma mark - Overridden Methods
 /**
  Overrides getter from parent class.
  @returns NSString name of item, depending on object's pantType.
