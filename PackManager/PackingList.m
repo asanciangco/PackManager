@@ -10,7 +10,7 @@
 #import "NSCodingHelper.h"
 
 #import "Shirt.h"
-#import "Shorts.h"
+#import "Pant.h"
 
 @interface PackingList ()
 
