@@ -20,6 +20,23 @@
     return self;
 }
 
+/**
+ For decoding purposes, convert name into type
+ @param name Name of object
+ @returns type referring to specific name. -1 if unrecognized name.
+ */
+- (PantType) pantTypeFromName:(NSString *)name
+{
+    if ([name isEqualToString:@"Shors"])
+        return SHORTS;
+    else if ([name isEqualToString:@"Jeans"])
+        return JEANS;
+    else if ([name isEqualToString:@"Long Pants"])
+        return LONGPANTS;
+    else
+        return -1;
+}
+
 #pragma mark - Overridden Methods
 /**
  Overrides getter from parent class.
@@ -39,6 +56,17 @@
         default:
             return @"Pants";
     }
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.quantity = [aDecoder decodeIntegerForKey:@"quantity"];
+        self.pantType = [self pantTypeFromName:self.name];
+    }
+    return self;
 }
 
 @end

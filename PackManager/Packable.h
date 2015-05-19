@@ -11,6 +11,8 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - Packable Superclass
+
 /**
  Simple class to represent packable objects (i.e. T-shirts, pants, etc)
  */
@@ -38,6 +40,13 @@
  */
 - (NSString *) imageName;
 
+@end
+
+#pragma mark - Miscellaneous Packing Items
+@interface Umbrella : Packable
+@end
+
+@interface Sunscreen : Packable
 @end
 
 #endif

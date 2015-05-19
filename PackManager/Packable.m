@@ -45,4 +45,32 @@
     return self;
 }
 
-@end
+@end // Packable implementation
+
+#pragma mark - Umbrella
+@implementation Umbrella
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Umbrella";
+    }
+    return self;
+}
+
+@end // Umbrella implementation
+
+#pragma mark - Sunscreen
+@implementation Sunscreen
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Sunscreen";
+    }
+    return self;
+}
+
+@end // Sunscreen implementation
