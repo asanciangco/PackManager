@@ -74,3 +74,31 @@
 }
 
 @end // Sunscreen implementation
+
+#pragma mark - Underwear
+@implementation Underwear
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Underwear";
+    }
+    return self;
+}
+
+@end // Underwear implementation
+
+#pragma mark - Sunscreen
+@implementation Socks
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Socks";
+    }
+    return self;
+}
+
+@end // Socks implementation

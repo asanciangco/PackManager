@@ -49,4 +49,10 @@
 @interface Sunscreen : Packable
 @end
 
+@interface Underwear : Packable
+@end
+
+@interface Socks : Packable
+@end
+
 #endif
