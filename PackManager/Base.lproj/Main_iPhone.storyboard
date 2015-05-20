@@ -204,9 +204,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clothing Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TK0-jm-0SQ">
-                                            <rect key="frame" x="20" y="11" width="169" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="192" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="169" id="JM9-ny-w5N"/>
+                                                <constraint firstAttribute="width" constant="192" id="JM9-ny-w5N"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -219,17 +219,29 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMq-c5-8ja">
+                                            <rect key="frame" x="220" y="4" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="wXq-a0-Px4"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="leading" secondItem="5qg-QR-6NX" secondAttribute="leading" constant="20" id="PVx-oI-1gb"/>
+                                        <constraint firstAttribute="bottom" secondItem="oMq-c5-8ja" secondAttribute="bottom" constant="4" id="QYh-b6-3aZ"/>
+                                        <constraint firstItem="Zs5-4U-pn4" firstAttribute="leading" secondItem="oMq-c5-8ja" secondAttribute="trailing" constant="8" id="Rq5-rX-SUu"/>
+                                        <constraint firstItem="oMq-c5-8ja" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="4" id="Sdc-Eq-M7A"/>
                                         <constraint firstAttribute="trailing" secondItem="Zs5-4U-pn4" secondAttribute="trailing" constant="20" id="Tjn-Qg-ju3"/>
-                                        <constraint firstAttribute="bottom" secondItem="TK0-jm-0SQ" secondAttribute="bottom" constant="11" id="ZMw-mi-csa"/>
                                         <constraint firstItem="Zs5-4U-pn4" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="cm1-0h-4vU"/>
-                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="mi0-lw-LJa"/>
+                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="hoK-nA-WNs"/>
                                         <constraint firstAttribute="bottom" secondItem="Zs5-4U-pn4" secondAttribute="bottom" constant="11" id="rGI-bF-bXO"/>
-                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="leading" secondItem="5qg-QR-6NX" secondAttribute="leading" constant="20" id="tWa-hc-UJW"/>
+                                        <constraint firstItem="oMq-c5-8ja" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TK0-jm-0SQ" secondAttribute="trailing" constant="8" id="uKl-rw-u47"/>
+                                        <constraint firstAttribute="bottom" secondItem="TK0-jm-0SQ" secondAttribute="bottom" constant="11" id="w4e-4I-GVb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="itemImageView" destination="5qg-QR-6NX" id="8nA-Mu-Jp8"/>
                                     <outlet property="itemTextLabel" destination="TK0-jm-0SQ" id="coo-kV-KXW"/>
                                     <outlet property="quantityTextLabel" destination="Zs5-4U-pn4" id="O63-qg-89k"/>
                                 </connections>

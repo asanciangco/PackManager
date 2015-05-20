@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *itemTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quantityTextLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *itemImageView;
 
 
 @end
