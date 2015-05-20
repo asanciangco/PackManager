@@ -12,7 +12,7 @@
 
 @interface WeatherReport ()
 
-@property (nonatomic, strong) NSMutableArray *weatherDays;
+@property (nonatomic, readwrite, strong) NSMutableArray *weatherDays;
 
 @end
 
