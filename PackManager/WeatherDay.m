@@ -19,6 +19,16 @@
     return self;
 }
 
+- (NSInteger) averageTemp
+{
+    return (self.high + self.low)/2;
+}
+
+- (NSInteger) range
+{
+    return self.high - self.low;
+}
+
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
