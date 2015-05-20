@@ -14,8 +14,12 @@
 {
     if (self = [super init])
     {
-        
+        self.high = high;
+        self.low = low;
+        self.precipitaion = prec;
+        self.date = date;
     }
+    
     return self;
 }
 
