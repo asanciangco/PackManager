@@ -63,15 +63,19 @@
     CGFloat lightPants  = 0;
     CGFloat heavyPants  = 0;
     
-    WeatherReport *report = self.trip.weatherReport;
+    BOOL    jacket = NO;
     
-    // Basic calculation for shirts and pants only:
+    WeatherReport *report   = self.trip.weatherReport;
+    UserPreferences *prefs  = [UserPreferences sharedInstance];
+    
+    // Basic calculation for shirts and pants only: //
+    //////////////////////////////////////////////////
     for (NSInteger dayIndex = 0; dayIndex < [report numberOfDays]; dayIndex++)
     {
         NSInteger high  = [report getHighForDay:dayIndex];
         NSInteger low   = [report getLowForDay:dayIndex];
-        NSInteger averageTemp = (high + low) / 2;   // Truncated => rounded down
-        TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
+        NSInteger averageTemp = (high + low) / 2;                   // Truncated => rounded down
+        TempRange range = [prefs tempRangeForTemp:averageTemp];
         
         switch (range)
         {
@@ -82,6 +86,8 @@
                 
                 lightShirts += 0;
                 lightPants  += 0;
+                
+                jacket = YES;
             }
                 break;
             case COOL:
@@ -124,6 +130,36 @@
             default:
                 break;
         }
+    }
+    
+    // Populate list with necessary items //
+    ////////////////////////////////////////
+    // SHIRTS
+    if (lightShirts > 0)
+    {
+        [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(lightShirts)
+                                                     andType:TSHIRT]];
+    }
+    if (heavyShirts > 0)
+    {
+        [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(heavyShirts)
+                                                     andType:LONGSLEEVE]];
+    }
+    // PANTS
+    if (lightPants > 0)
+    {
+        [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(lightPants)
+                                                    andType:SHORTS]];
+    }
+    if (heavyPants > 0)
+    {
+        [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(heavyPants)
+                                                    andType:LONGPANTS]];
+    }
+    // JACKET
+    if (jacket)
+    {
+        
     }
 }
 
@@ -205,6 +241,18 @@
         self.list = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"list"]];
     }
     return self;
+}
+
+#pragma mark - Testing
+- (void) printList
+{
+    NSLog(@"Packing List:");
+    
+    for (Packable *item in self.list)
+    {
+        NSLog(@"\tItem: %@; \tQuantity: %ld", item.name, (long)item.quantity);
+    }
+    
 }
 
 @end
