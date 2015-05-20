@@ -123,6 +123,11 @@
     // TODO: Implement me.
 }
 
+- (void) addDay:(WeatherDay *)day
+{
+    [self.weatherDays addObject:day];
+}
+
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
