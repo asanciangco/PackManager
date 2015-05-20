@@ -83,5 +83,9 @@ typedef enum PackingItems
 */
 + (NSString *) stringForItemType:(PackingItems)item;
 
+/**
+ Used for testing, this function will print out the packing list to the console.
+ */
+- (void) printList;
 
 @end

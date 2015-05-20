@@ -80,7 +80,7 @@
         Destination *d1 = [[Destination alloc] init];
         d1.duration = -10;
     } @catch (NSException* e){
-        t = [e.name  isEqual: @"Negative Duration"];
+        t = [e.name isEqualToString: @"Negative Duration"];
     }
     
     XCTAssert(t);

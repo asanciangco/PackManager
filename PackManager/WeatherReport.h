@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherDay.h"
 
 /**
 	Class representing a WeatherReport
@@ -53,6 +54,20 @@
 - (NSInteger) getLowForDay:(NSInteger)day;  // 1-indexed, so '1' for day 1
 
 /**
+	Returns the average temp for a given day
+	@param day The day to check for the average
+	@returns an integer representing the day's average
+ */
+- (NSInteger) getAverageForDay: (NSInteger)day;
+
+/**
+	Returns the range temp for a given day
+	@param day The day to check for the range
+	@returns an integer representing the day's range
+ */
+- (NSInteger) getRangeForDay: (NSInteger)day;
+
+/**
  Returns whether or not the individual WeatherDays are in chronological order
  */
 - (BOOL) daysAreInOrder;
@@ -61,5 +76,11 @@
  Sort the WeatherDay objects chronologically
  */
 - (void) putDaysInOrder;
+
+/**
+ Add a day to the report
+ @param day The day to add
+ */
+- (void) addDay:(WeatherDay *)day;
 
 @end

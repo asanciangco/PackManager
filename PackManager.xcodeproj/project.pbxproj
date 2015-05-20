@@ -48,14 +48,14 @@
 		21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3431ADF4933003024B7 /* PackingListViewController.m */; };
 		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
-		E21273CD1AF6FD440063BA5D /* TShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CC1AF6FD440063BA5D /* TShirt.m */; };
+		4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AA91B0D194F00795767 /* PackingListTests.m */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
-		E29254971AFACF5C00007394 /* LongSleeveShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254961AFACF5C00007394 /* LongSleeveShirt.m */; };
-		E292549A1AFAD02B00007394 /* FormalShirt.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254991AFAD02B00007394 /* FormalShirt.m */; };
-		E292549D1AFAD04800007394 /* Shorts.m in Sources */ = {isa = PBXBuildFile; fileRef = E292549C1AFAD04800007394 /* Shorts.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
 		E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */; };
+		FA8E1FD61B0BDD2E00381AC6 /* Shirt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FD51B0BDD2E00381AC6 /* Shirt.m */; };
+		FA8E1FD91B0BDF5300381AC6 /* Pant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FD81B0BDF5300381AC6 /* Pant.m */; };
+		FA8E1FDF1B0BE30900381AC6 /* Shoe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FDE1B0BE30900381AC6 /* Shoe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,20 +130,19 @@
 		21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportViewController.m; sourceTree = "<group>"; };
 		21D1F3481ADF4A0E003024B7 /* TripSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripSettingsViewController.h; sourceTree = "<group>"; };
 		21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripSettingsViewController.m; sourceTree = "<group>"; };
-		E21273CB1AF6FD440063BA5D /* TShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TShirt.h; sourceTree = "<group>"; };
-		E21273CC1AF6FD440063BA5D /* TShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TShirt.m; sourceTree = "<group>"; };
+		4C085AA91B0D194F00795767 /* PackingListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTests.m; sourceTree = "<group>"; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
 		E29254931AFAA9ED00007394 /* NSCodingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCodingHelper.m; sourceTree = "<group>"; };
-		E29254951AFACF5C00007394 /* LongSleeveShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongSleeveShirt.h; sourceTree = "<group>"; };
-		E29254961AFACF5C00007394 /* LongSleeveShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongSleeveShirt.m; sourceTree = "<group>"; };
-		E29254981AFAD02B00007394 /* FormalShirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormalShirt.h; sourceTree = "<group>"; };
-		E29254991AFAD02B00007394 /* FormalShirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormalShirt.m; sourceTree = "<group>"; };
-		E292549B1AFAD04800007394 /* Shorts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shorts.h; sourceTree = "<group>"; };
-		E292549C1AFAD04800007394 /* Shorts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shorts.m; sourceTree = "<group>"; };
 		E2B80F9C1AF6D303003B6281 /* WeatherDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDay.m; sourceTree = "<group>"; };
 		E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
+		FA8E1FD41B0BDD2E00381AC6 /* Shirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shirt.h; sourceTree = "<group>"; };
+		FA8E1FD51B0BDD2E00381AC6 /* Shirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shirt.m; sourceTree = "<group>"; };
+		FA8E1FD71B0BDF5300381AC6 /* Pant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pant.h; sourceTree = "<group>"; };
+		FA8E1FD81B0BDF5300381AC6 /* Pant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pant.m; sourceTree = "<group>"; };
+		FA8E1FDD1B0BE30900381AC6 /* Shoe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shoe.h; sourceTree = "<group>"; };
+		FA8E1FDE1B0BE30900381AC6 /* Shoe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shoe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				E2B80F991AF6D078003B6281 /* Packing Items */,
+				2175AD061AF1A75B0033ECE4 /* PackingList.h */,
+				2175AD071AF1A75B0033ECE4 /* PackingList.m */,
 				2175AD021AF1A36F0033ECE4 /* WeatherReport.h */,
 				2175AD031AF1A36F0033ECE4 /* WeatherReport.m */,
 				2175AD0D1AF1BF1B0033ECE4 /* WeatherDay.h */,
@@ -184,8 +185,6 @@
 				2127248C1AF18F0C00F61AAA /* Trip.m */,
 				2175AD001AF1A36F0033ECE4 /* TripsData.h */,
 				2175AD011AF1A36F0033ECE4 /* TripsData.m */,
-				2175AD061AF1A75B0033ECE4 /* PackingList.h */,
-				2175AD071AF1A75B0033ECE4 /* PackingList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -306,6 +305,7 @@
 			children = (
 				21D1F3321ADF3B71003024B7 /* PackManagerTests.m */,
 				21D1F32D1ADF3B71003024B7 /* Supporting Files */,
+				4C085AA91B0D194F00795767 /* PackingListTests.m */,
 			);
 			path = PackManagerTests;
 			sourceTree = "<group>";
@@ -335,14 +335,12 @@
 			children = (
 				2175AD0C1AF1BF1B0033ECE4 /* Packable.h */,
 				E21273CE1AF80F010063BA5D /* Packable.m */,
-				E21273CB1AF6FD440063BA5D /* TShirt.h */,
-				E21273CC1AF6FD440063BA5D /* TShirt.m */,
-				E29254951AFACF5C00007394 /* LongSleeveShirt.h */,
-				E29254961AFACF5C00007394 /* LongSleeveShirt.m */,
-				E29254981AFAD02B00007394 /* FormalShirt.h */,
-				E29254991AFAD02B00007394 /* FormalShirt.m */,
-				E292549B1AFAD04800007394 /* Shorts.h */,
-				E292549C1AFAD04800007394 /* Shorts.m */,
+				FA8E1FDD1B0BE30900381AC6 /* Shoe.h */,
+				FA8E1FDE1B0BE30900381AC6 /* Shoe.m */,
+				FA8E1FD41B0BDD2E00381AC6 /* Shirt.h */,
+				FA8E1FD51B0BDD2E00381AC6 /* Shirt.m */,
+				FA8E1FD71B0BDF5300381AC6 /* Pant.h */,
+				FA8E1FD81B0BDF5300381AC6 /* Pant.m */,
 			);
 			name = "Packing Items";
 			sourceTree = "<group>";
@@ -462,23 +460,22 @@
 				21D1F3121ADF3B71003024B7 /* AppDelegate.m in Sources */,
 				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
 				2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */,
-				E29254971AFACF5C00007394 /* LongSleeveShirt.m in Sources */,
 				E21273CF1AF80F010063BA5D /* Packable.m in Sources */,
-				E292549D1AFAD04800007394 /* Shorts.m in Sources */,
 				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
 				21D1F3411ADF4293003024B7 /* ProfileViewController.m in Sources */,
-				E292549A1AFAD02B00007394 /* FormalShirt.m in Sources */,
 				2175AD0B1AF1AB250033ECE4 /* PackingListItemCell.m in Sources */,
+				FA8E1FD61B0BDD2E00381AC6 /* Shirt.m in Sources */,
 				21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */,
 				2127248E1AF18F0C00F61AAA /* Trip.m in Sources */,
+				FA8E1FD91B0BDF5300381AC6 /* Pant.m in Sources */,
 				2175AD041AF1A36F0033ECE4 /* TripsData.m in Sources */,
+				FA8E1FDF1B0BE30900381AC6 /* Shoe.m in Sources */,
 				E2B80FA01AF6D52D003B6281 /* WeatherAPI.m in Sources */,
 				E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */,
 				215A509F1AFB4082002ED745 /* LayeredRightDetailCell.m in Sources */,
 				2127248D1AF18F0C00F61AAA /* Destination.m in Sources */,
-				E21273CD1AF6FD440063BA5D /* TShirt.m in Sources */,
 				21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */,
 				E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */,
 				21D1F30E1ADF3B71003024B7 /* main.m in Sources */,
@@ -490,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D1F3331ADF3B71003024B7 /* PackManagerTests.m in Sources */,
+				4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

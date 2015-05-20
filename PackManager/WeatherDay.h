@@ -28,6 +28,16 @@
 */
 @property CGFloat precipitaion;
 
+/**
+    Custom getter
+ */
+@property (nonatomic) NSInteger averageTemp;
+
+/**
+    Custom getter 
+ */
+@property (nonatomic) NSInteger range;
+
 @property (nonatomic, strong) NSDate *date;
 
 /**

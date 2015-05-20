@@ -104,6 +104,8 @@
     self.weatherReport = [[WeatherReport alloc] initExampleReport];
     self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
     
+    [self.packingList printList];
+    
     return TRUE;
 }
 
