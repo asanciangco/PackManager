@@ -241,7 +241,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="itemImageView" destination="5qg-QR-6NX" id="8nA-Mu-Jp8"/>
+                                    <outlet property="itemImageView" destination="oMq-c5-8ja" id="PZj-Kx-vSL"/>
                                     <outlet property="itemTextLabel" destination="TK0-jm-0SQ" id="coo-kV-KXW"/>
                                     <outlet property="quantityTextLabel" destination="Zs5-4U-pn4" id="O63-qg-89k"/>
                                 </connections>
