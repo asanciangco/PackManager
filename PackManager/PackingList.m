@@ -30,6 +30,11 @@
     CGFloat heavyPants;
     
     CGFloat regularJacket;
+    
+    CGFloat underwear;
+    CGFloat regularSocks;
+    
+    CGFloat rain;
 }
 
 #pragma mark - Initializer
@@ -46,6 +51,11 @@
         heavyPants  = 0;
         
         regularJacket   = 0;
+        
+        underwear = 0;
+        regularSocks = 0;
+        
+        rain = 0;
     }
     return self;
 }
@@ -142,6 +152,7 @@
             heavyShirts += 0;
             lightShirts += 1;
         }
+            break;
     }
 }
 
@@ -185,6 +196,7 @@
             heavyPants += 0;
             lightPants += 1;
         }
+            break;
     }
 }
 
@@ -194,7 +206,11 @@
  */
 - (void) updateAccessoriesForDay:(WeatherDay *)day
 {
+    underwear    += (8.0 / 7.0);    // extra pair of underwear for every week
+    regularSocks += (8.0 / 7.0);    // extra pair of socks per week
     
+    CGFloat prec = [day precipitaion];
+    rain += prec / 2.0;
 }
 
 /**
@@ -214,6 +230,7 @@
     }
     if ([self.trip formalPreference])
     {
+        // TODO need to update quantity calculation
         [self.list addObject:[[Shirt alloc] initWithQuantity:1 andType:FORMAL]];
     }
 }
@@ -245,6 +262,28 @@
     {
         [self.list addObject:[[Jacket alloc] initWithQuantity:ceilf(regularJacket)
                                                       andType:REGULAR_JACKET]];
+    }
+    
+    // RAIN GEAR
+    if (rain > 0.2)
+    {
+        [self.list addObject:[[Jacket alloc] initWithQuantity:1 andType:RAIN_JACKET]];
+    }
+    if (rain >= 0.5)
+    {
+        // gets added in addition to a rain jacket
+        [self.list addObject:[[Umbrella alloc] initWithQuantity:1]];
+    }
+    
+    // UNDERWEAR
+    if (underwear > 0)
+    {
+        [self.list addObject:[[Underwear alloc] initWithQuantity:ceilf(underwear)]];
+    }
+    // REGULAR SOCKS
+    if (regularSocks > 0)
+    {
+        [self.list addObject:[[Socks alloc] initWithQuantity:ceilf(regularSocks)]];
     }
 }
 
