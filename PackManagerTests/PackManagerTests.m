@@ -33,7 +33,7 @@
 
 #pragma mark - Utilities
 
-+ (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {
     NSDate *fromDate;
     NSDate *toDate;
@@ -66,7 +66,7 @@
     trip.startDate = [NSDate date];
     trip.destinations = [NSMutableArray arrayWithObjects:d1,d2, nil];
     
-    NSInteger diff = [PackManagerTests daysBetweenDate:[trip startDate] andDate:[trip endDate]];
+    NSInteger diff = [self daysBetweenDate:[trip startDate] andDate:[trip endDate]];
 
     XCTAssertEqual(diff,15);
 }

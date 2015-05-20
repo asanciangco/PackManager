@@ -84,8 +84,6 @@
         if (!dest || ![dest valid])
             return NO;
     }
-        
-    
     
     // Check weather report
     if (!self.weatherReport)

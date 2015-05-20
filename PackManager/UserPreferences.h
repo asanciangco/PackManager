@@ -22,6 +22,15 @@ typedef enum
     MALE = 1, /**< Male user */
 } Gender;
 
+typedef enum TempRange
+{
+    COLD,
+    COOL,
+    NORMAL,
+    WARM,
+    HOT,
+} TempRange;
+
 /**
 	An enumeration of temperature format
 */
@@ -105,6 +114,18 @@ typedef enum
 	@returns returns TRUE is succeeds, otherwise FALSE
 */
 - (BOOL) setColdTemp:(float)temp;
+
+/**
+ Determine the user's set range for a given temperature. Currently set so that:
+    Below COLD pref             => COLD
+    Between COLD and COOL prefs => COOL
+    Between COOL and WARM prefs => NORMAL
+    Between WARM and HOT prefs  => WARM
+    Anything above HOT prefs    => HOT
+ @param temp the temperature being queried.
+ @returns an enum representing the range of the the given temperature
+ */
+- (TempRange) tempRangeForTemp:(NSInteger)temp;
 
 // Default Settings //
 //////////////////////

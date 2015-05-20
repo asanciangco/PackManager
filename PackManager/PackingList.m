@@ -8,11 +8,10 @@
 
 #import "PackingList.h"
 #import "NSCodingHelper.h"
+#import "UserPreferences.h"
 
-#import "TShirt.h"
-#import "LongSleeveShirt.h"
-#import "FormalShirt.h"
-#import "Shorts.h"
+#import "Shirt.h"
+#import "Pant.h"
 
 @interface PackingList ()
 
@@ -40,13 +39,92 @@
     {
         self.trip = trip;
         self.list = [NSMutableArray array];
-        [self.list addObjectsFromArray:@[[[TShirt alloc] initWithQuantity:4],
-                                         [[LongSleeveShirt alloc] initWithQuantity:3],
-                                         [[FormalShirt alloc]initWithQuantity:1],
-                                         [[Shorts alloc] initWithQuantity:4],
-                                         ]];
+        
+        // TODO: update this part for new packable item subclassing
+        //
+//        [self.list addObjectsFromArray:@[[[Shirt alloc] initWithQuantity:4],
+//                                         [[LongSleeveShirt alloc] initWithQuantity:3],
+//                                         [[FormalShirt alloc]initWithQuantity:1],
+//                                         [[Shorts alloc] initWithQuantity:4],
+//                                         ]];
+        
+        [self generatePackingList];
     }
     return self;
+}
+
+/**
+ The algorithm that will generate the packing list. It must already be determined that the trip has a valid weather report since this algorithm will depend on it. This function will populate the PackingList's 'list' member variable with Packable items. 
+ */
+- (void) generatePackingList
+{
+    CGFloat lightShirts = 0;
+    CGFloat heavyShirts = 0;
+    CGFloat lightPants  = 0;
+    CGFloat heavyPants  = 0;
+    
+    WeatherReport *report = self.trip.weatherReport;
+    
+    // Basic calculation for shirts and pants only:
+    for (NSInteger dayIndex = 0; dayIndex < [report numberOfDays]; dayIndex++)
+    {
+        NSInteger high  = [report getHighForDay:dayIndex];
+        NSInteger low   = [report getLowForDay:dayIndex];
+        NSInteger averageTemp = (high + low) / 2;   // Truncated => rounded down
+        TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
+        
+        switch (range)
+        {
+            case COLD:
+            {
+                heavyShirts += 1;
+                heavyPants  += 1;
+                
+                lightShirts += 0;
+                lightPants  += 0;
+            }
+                break;
+            case COOL:
+            {
+                heavyShirts += 0.75;
+                heavyPants  += 0.75;
+                
+                lightShirts += 0.25;
+                lightPants  += 0.25;
+            }
+                break;
+            case NORMAL:
+            {
+                heavyShirts += 0.5;
+                heavyPants  += 0.5;
+                
+                lightShirts += 0.5;
+                lightPants  += 0.5;
+            }
+                break;
+            case WARM:
+            {
+                heavyShirts += 0.25;
+                heavyPants  += 0.25;
+                
+                lightShirts += 0.75;
+                lightPants  += 0.75;
+            }
+                break;
+            case HOT:
+            {
+                heavyShirts += 0;
+                heavyPants  += 0;
+                
+                lightShirts += 1;
+                lightPants  += 1;
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark - Getters

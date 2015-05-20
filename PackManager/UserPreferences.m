@@ -174,6 +174,20 @@ NSInteger defaultColdTemp   = 50;
     }
 }
 
+- (TempRange) tempRangeForTemp:(NSInteger)temp
+{
+    if (temp <= [self getColdTemp])
+        return COLD;
+    else if (temp <= [self getCoolTemp])
+        return COOL;
+    else if (temp <= [self getWarmTemp])
+        return NORMAL;
+    else if (temp <= [self getHotTemp])
+        return WARM;
+    else
+        return HOT;
+}
+
 #pragma mark - Default Settings
 // Default Settings //
 //////////////////////
