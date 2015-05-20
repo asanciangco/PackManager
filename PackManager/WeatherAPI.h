@@ -51,17 +51,17 @@ static NSString *DAY_KEY = @"day";
 
 //Function to get Weather Based On Zip
 //- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end;
-
-
 /**
 	Collect the weather data for a present forecast from openweathermap API
-	@param city The trip city location
-	@param country The two letter country ID
+	@param lat The trip city latitude
+	@param lng The trip city longitude
     @param start The start date of the trip
     @param end The end date of the trip
 	@returns void after creating a weather report
  */
-- (void) getWeatherFromPresent:(NSString*)city country:(NSString*)country start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat*)lng start:(NSDate *)start end:(NSDate *)end;
+
+- (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
 
 
 
