@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *currLocationTextField;
+@property (weak, nonatomic) IBOutlet UITableView *locationSuggestionsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *currDurationTextField;
 
 - (IBAction)startDatePicked:(id)sender;
@@ -32,9 +33,13 @@
     NSIndexPath *startDateIndexPath;
     NSIndexPath *startDatePickerIndexPath;
     NSIndexPath *currLocationIndexPath;
+    NSIndexPath *locationSuggestionsIndexPath;
+    NSIndexPath *mapIndexPath;
     NSIndexPath *currDurationIndexPath;
     NSInteger numStopsPossible;
     BOOL startDatePickerShowing;
+    BOOL locationSuggestionsShowing;
+    BOOL mapShowing;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -62,9 +67,13 @@
     startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     numStopsPossible = 5;
     currLocationIndexPath = [NSIndexPath indexPathForRow:2+numStopsPossible*2 inSection:0];
-    currDurationIndexPath = [NSIndexPath indexPathForRow:3+numStopsPossible*2 inSection:0];
+    locationSuggestionsIndexPath = [NSIndexPath indexPathForRow:3+numStopsPossible*2 inSection:0];
+    mapIndexPath = [NSIndexPath indexPathForRow:4+numStopsPossible*2 inSection:0];
+    currDurationIndexPath = [NSIndexPath indexPathForRow:5+numStopsPossible*2 inSection:0];
     
     startDatePickerShowing = NO;
+    locationSuggestionsShowing = NO;
+    mapShowing = NO;
     
     //both buttons start off non-operational
     self.addStopButton.enabled = NO;
@@ -95,49 +104,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
-    if([indexPath isEqual:startDateIndexPath])
+    if(tableView == self.tableView)
     {
-        //get date string for date cell
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-        cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
-    }
-    else if([indexPath isEqual:startDatePickerIndexPath])
-    {
-        cell.hidden = !startDatePickerShowing;
-    }
-    else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
-    {
-        if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
+        UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+        
+        if([indexPath isEqual:startDateIndexPath])
         {
-            cell.hidden = NO;
-            
-            // Index relative to date picker, so relativeIndex=0 is the first cell below datePicker
-            NSInteger relativeIndex = indexPath.row - startDatePickerIndexPath.row - 1;
-            // The index for the destination related to any cell
-            NSInteger destinationIndex = (relativeIndex) / 2;
-            
-            // If a destination exists for the given cell...
-            if (destinationIndex < [self.trip.destinations count] && destinationIndex >=0)
+            //get date string for date cell
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+            cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
+        }
+        else if([indexPath isEqual:startDatePickerIndexPath])
+        {
+            cell.hidden = !startDatePickerShowing;
+        }
+        else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
+        {
+            if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
             {
-                Destination *dest = [self.trip.destinations objectAtIndex:destinationIndex];
+                cell.hidden = NO;
                 
-                if (relativeIndex % 2 == 0)
-                    cell.detailTextLabel.text = dest.name;
-                else
-                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+                // Index relative to date picker, so relativeIndex=0 is the first cell below datePicker
+                NSInteger relativeIndex = indexPath.row - startDatePickerIndexPath.row - 1;
+                // The index for the destination related to any cell
+                NSInteger destinationIndex = (relativeIndex) / 2;
+                
+                // If a destination exists for the given cell...
+                if (destinationIndex < [self.trip.destinations count] && destinationIndex >=0)
+                {
+                    Destination *dest = [self.trip.destinations objectAtIndex:destinationIndex];
+                    
+                    if (relativeIndex % 2 == 0)
+                        cell.detailTextLabel.text = dest.name;
+                    else
+                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+                }
+            }
+            else
+            {
+                cell.hidden = YES;
             }
         }
-        else
+        else if([indexPath isEqual:locationSuggestionsIndexPath])
         {
-            cell.hidden = YES;
+            cell.hidden = !locationSuggestionsShowing;
         }
+        else if([indexPath isEqual:mapIndexPath])
+        {
+            cell.hidden = !mapShowing;
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else
+    {
+        UITableViewCell *cell = [self.locationSuggestionsTableView dequeueReusableCellWithIdentifier:@"SugesstionCell"];
+        return cell;
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -154,6 +181,14 @@
             height = 44.0f;
         else
             height = 0.0f;
+    }
+    else if([indexPath isEqual:locationSuggestionsIndexPath])
+    {
+        height = locationSuggestionsShowing ? self.tableView.frame.size.height - 42.0*locationSuggestionsIndexPath.row : 0.0f;
+    }
+    else if([indexPath isEqual:mapIndexPath])
+    {
+        height = mapShowing ? 100.0f : 0.0f;
     }
     return height;
 }
