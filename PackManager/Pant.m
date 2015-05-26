@@ -62,6 +62,24 @@
     }
 }
 
+- (NSString *) imageName
+{
+    switch (self.pantType)
+    {
+        case SHORTS:
+            return @"clothing_shorts_6";
+        case JEANS:
+            return @"clothing_jeans_4";
+        case LONGPANTS:
+            return @"clothing_jeans_4";
+        case FORMALPANTS:
+            return @"clothing_slacks_4";
+            
+        default:
+            return @"clothing_slacks_4";
+    }
+}
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])

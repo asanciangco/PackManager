@@ -20,25 +20,6 @@
     return self;
 }
 
-- (NSString *) imageName
-{
-    switch (self.shoeType) {
-        case FLIPFLOP:
-            return @"clothing_openToedShoes_flipFlops";
-        case SANDAL:
-            return @"clothing_openToedShoe_sandal";
-        case CLOSEDTOE:
-            return @"clothing_casualShoes_2";
-        case FORMALSHOE:
-            return @"clothing_dressShoesMen_4";
-        case RAINBOOTS:
-            return @"clothing_boots_7";
-            
-        default:
-            return @"clothing_casualShoes_2";
-    }
-}
-
 /**
  For decoding purposes, convert name into type
  @param name Name of object
@@ -81,6 +62,25 @@
             
         default:
             return @"Shoes";
+    }
+}
+
+- (NSString *) imageName
+{
+    switch (self.shoeType) {
+        case FLIPFLOP:
+            return @"clothing_openToedShoes_flipFlops";
+        case SANDAL:
+            return @"clothing_openToedShoe_sandal";
+        case CLOSEDTOE:
+            return @"clothing_casualShoes_2";
+        case FORMALSHOE:
+            return @"clothing_dressShoesMen_4";
+        case RAINBOOTS:
+            return @"clothing_boots_7";
+            
+        default:
+            return @"clothing_casualShoes_2";
     }
 }
 
