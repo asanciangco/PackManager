@@ -125,6 +125,7 @@
 		FA3B859B1B0D2D67009E06F4 /* Jacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jacket.h; sourceTree = "<group>"; };
 		FA3B859C1B0D2D67009E06F4 /* Jacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jacket.m; sourceTree = "<group>"; };
 		FA59AAF51B14532000819BB3 /* Nocilla */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Nocilla; path = Pods/Nocilla; sourceTree = "<group>"; };
+		FA59AAF71B1455B100819BB3 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		FA8E1FD41B0BDD2E00381AC6 /* Shirt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shirt.h; sourceTree = "<group>"; };
 		FA8E1FD51B0BDD2E00381AC6 /* Shirt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shirt.m; sourceTree = "<group>"; };
 		FA8E1FD71B0BDF5300381AC6 /* Pant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pant.h; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 		21D1F3001ADF3B71003024B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA59AAF71B1455B100819BB3 /* Pods */,
 				FA59AAF51B14532000819BB3 /* Nocilla */,
 				21D1F3011ADF3B71003024B7 /* Foundation.framework */,
 				21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */,
