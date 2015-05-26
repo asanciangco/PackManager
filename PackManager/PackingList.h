@@ -37,6 +37,10 @@
  */
 - (Packable *) getPackableForIndex:(NSInteger)index;
 
+- (void) removeItemForIndex:(NSInteger)index;
+
+- (void) changeQuantityForIndex:(NSInteger)index to:(NSInteger)q;
+
 /**
     Returns number of different types of items
     For instance, if the list has 3 shirts and 5 pants, this will return 2 (shirts, pants)
