@@ -10,6 +10,35 @@
 
 @implementation Shoe
 
+#pragma mark - Initializer
+- (instancetype) initWithQuantity:(NSUInteger)quantity andType:(ShoeType)type
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.shoeType = type;
+    }
+    return self;
+}
+
+- (NSString *) imageName
+{
+    switch (self.shoeType) {
+        case FLIPFLOP:
+            return @"clothing_openToedShoes_flipFlops";
+        case SANDAL:
+            return @"clothing_openToedShoe_sandal";
+        case CLOSEDTOE:
+            return @"clothing_casualShoes_2";
+        case FORMALSHOE:
+            return @"clothing_dressShoesMen_4";
+        case RAINBOOTS:
+            return @"clothing_boots_7";
+            
+        default:
+            return @"clothing_casualShoes_2";
+    }
+}
+
 /**
  For decoding purposes, convert name into type
  @param name Name of object
@@ -24,7 +53,7 @@
     else if ([name isEqualToString:@"Closed-Toed Shoes"])
         return CLOSEDTOE;
     else if ([name isEqualToString:@"Formal Shoes"])
-        return FORMAL;
+        return FORMALSHOE;
     else if ([name isEqualToString:@"Rain Boots"])
         return RAINBOOTS;
     else
@@ -45,7 +74,7 @@
             return @"Sandals";
         case CLOSEDTOE:
             return @"Closed-Toed Shoes";
-        case FORMAL:
+        case FORMALSHOE:
             return @"Formal Shoes";
         case RAINBOOTS:
             return @"Rain Boots";

@@ -24,6 +24,11 @@
 @property (nonatomic, strong) NSString *name;
 
 /**
+ Image name for packable item.
+ */
+@property (nonatomic, strong) NSString *imageName;
+
+/**
   The quantity of that packable object
 */
 @property NSInteger quantity;
