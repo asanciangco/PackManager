@@ -1,0 +1,129 @@
+\hypertarget{interface_packing_list}{\section{Packing\-List Class Reference}
+\label{interface_packing_list}\index{Packing\-List@{Packing\-List}}
+}
+
+
+{\ttfamily \#import $<$Packing\-List.\-h$>$}
+
+
+
+Inheritance diagram for Packing\-List\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_packing_list__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Packing\-List\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_packing_list__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_packing_list_ad2a2047f09bda181d360593acb068cab}{init\-Packing\-List\-For\-Trip\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_packing_list_a1a06132f16892f9379ded65f2365362b}{init\-Example\-Packing\-List\-For\-Trip\-:}
+\item 
+(\hyperlink{interface_packable}{Packable} $\ast$) -\/ \hyperlink{interface_packing_list_a09a1d6b99216336d3de2f1d39983e4fd}{get\-Packable\-For\-Index\-:}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_packing_list_abc46addde8828e6e414100851eac731e}{get\-Number\-Of\-Unique\-Items}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_packing_list_a4b7a74a055c78ad2c84365b9fd2567cd}{quantity\-For\-Item\-At\-Index\-:}
+\item 
+(void) -\/ \hyperlink{interface_packing_list_a91482348b38c1a7762a08e914306714f}{print\-List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents a list of packing items and adds some convenience methods 
+
+\subsection{Method Documentation}
+\hypertarget{interface_packing_list_abc46addde8828e6e414100851eac731e}{\index{Packing\-List@{Packing\-List}!get\-Number\-Of\-Unique\-Items@{get\-Number\-Of\-Unique\-Items}}
+\index{get\-Number\-Of\-Unique\-Items@{get\-Number\-Of\-Unique\-Items}!PackingList@{Packing\-List}}
+\subsubsection[{get\-Number\-Of\-Unique\-Items}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Number\-Of\-Unique\-Items 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_abc46addde8828e6e414100851eac731e}
+Returns number of different types of items For instance, if the list has 3 shirts and 5 pants, this will return 2 (shirts, pants) \begin{DoxyReturn}{Returns}
+an integer representing the number of unique items 
+\end{DoxyReturn}
+\hypertarget{interface_packing_list_a09a1d6b99216336d3de2f1d39983e4fd}{\index{Packing\-List@{Packing\-List}!get\-Packable\-For\-Index\-:@{get\-Packable\-For\-Index\-:}}
+\index{get\-Packable\-For\-Index\-:@{get\-Packable\-For\-Index\-:}!PackingList@{Packing\-List}}
+\subsubsection[{get\-Packable\-For\-Index\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Packable} $\ast$) get\-Packable\-For\-Index\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{index}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_a09a1d6b99216336d3de2f1d39983e4fd}
+Returns a packable item that as at the given index in the \hyperlink{interface_packing_list}{Packing\-List} object 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of a packable in the \hyperlink{interface_packing_list}{Packing\-List} you wish to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a packable item at the given index 
+\end{DoxyReturn}
+\hypertarget{interface_packing_list_a1a06132f16892f9379ded65f2365362b}{\index{Packing\-List@{Packing\-List}!init\-Example\-Packing\-List\-For\-Trip\-:@{init\-Example\-Packing\-List\-For\-Trip\-:}}
+\index{init\-Example\-Packing\-List\-For\-Trip\-:@{init\-Example\-Packing\-List\-For\-Trip\-:}!PackingList@{Packing\-List}}
+\subsubsection[{init\-Example\-Packing\-List\-For\-Trip\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-Example\-Packing\-List\-For\-Trip\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Trip} $\ast$)}]{trip}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_a1a06132f16892f9379ded65f2365362b}
+Initialize a new demo packing list. This method always returns the exact same packing list.  trip The trip this packing list is attributed to \hypertarget{interface_packing_list_ad2a2047f09bda181d360593acb068cab}{\index{Packing\-List@{Packing\-List}!init\-Packing\-List\-For\-Trip\-:@{init\-Packing\-List\-For\-Trip\-:}}
+\index{init\-Packing\-List\-For\-Trip\-:@{init\-Packing\-List\-For\-Trip\-:}!PackingList@{Packing\-List}}
+\subsubsection[{init\-Packing\-List\-For\-Trip\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-Packing\-List\-For\-Trip\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Trip} $\ast$)}]{trip}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_ad2a2047f09bda181d360593acb068cab}
+Initialize a new \hyperlink{interface_packing_list}{Packing\-List} object 
+\begin{DoxyParams}{Parameters}
+{\em trip} & The trip the packing list is for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly intialized object 
+\end{DoxyReturn}
+\hypertarget{interface_packing_list_a91482348b38c1a7762a08e914306714f}{\index{Packing\-List@{Packing\-List}!print\-List@{print\-List}}
+\index{print\-List@{print\-List}!PackingList@{Packing\-List}}
+\subsubsection[{print\-List}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) print\-List 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_a91482348b38c1a7762a08e914306714f}
+Information Hiding! This class will convert it's items' names into strings for you 
+\begin{DoxyParams}{Parameters}
+{\em item} & A packing item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string representation of the given item Used for testing, this function will print out the packing list to the console. 
+\end{DoxyReturn}
+\hypertarget{interface_packing_list_a4b7a74a055c78ad2c84365b9fd2567cd}{\index{Packing\-List@{Packing\-List}!quantity\-For\-Item\-At\-Index\-:@{quantity\-For\-Item\-At\-Index\-:}}
+\index{quantity\-For\-Item\-At\-Index\-:@{quantity\-For\-Item\-At\-Index\-:}!PackingList@{Packing\-List}}
+\subsubsection[{quantity\-For\-Item\-At\-Index\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) quantity\-For\-Item\-At\-Index\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{index}
+\end{DoxyParamCaption}
+}}\label{interface_packing_list_a4b7a74a055c78ad2c84365b9fd2567cd}
+Returns the number of items at a specific index For instance, 5 socks at index 6. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to examine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the quantity of items at given index 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Packing\-List.\-h\item 
+Pack\-Manager/Packing\-List.\-m\end{DoxyCompactItemize}

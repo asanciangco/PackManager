@@ -1,0 +1,184 @@
+\hypertarget{interface_trip}{\section{Trip Class Reference}
+\label{interface_trip}\index{Trip@{Trip}}
+}
+
+
+{\ttfamily \#import $<$Trip.\-h$>$}
+
+
+
+Inheritance diagram for Trip\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{interface_trip__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Trip\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_trip__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_trip_aca341893b609059158a3c2809d5fd157}{init\-With\-Start\-Date\-:name\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_trip_ab712f4d482a0a2818038069998aea9aa}{init\-New\-Trip}
+\item 
+(N\-S\-Date $\ast$) -\/ \hyperlink{interface_trip_af45eceb7475c6e48bf48641deb44baf4}{end\-Date}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_trip_a7d4e8ffcab800bda331f75625eb2c6d3}{total\-Duration}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_trip_a90808fe2b7874349bf0a5fc5a09acf3e}{generate\-Packing\-List}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_trip_a078c437bbefc9fe136a03093fd549b10}{generate\-Packing\-List\-Example}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_trip_aa73721dd452a5a0c94841aa155761d67}{start\-Date}
+\item 
+N\-S\-Mutable\-Array $\ast$ \hyperlink{interface_trip_a396ca8de2ed1b20c1255cbb5e9b524ed}{destinations}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_trip_a66e63287102687fe25366d61889fe8e1}{name}
+\item 
+\hyperlink{interface_packing_list}{Packing\-List} $\ast$ \hyperlink{interface_trip_a985205885a33d59e7e8b899cab47f2d0}{packing\-List}
+\item 
+\hyperlink{interface_weather_report}{Weather\-Report} $\ast$ \hyperlink{interface_trip_a50df03c3a57389928c170792a63aa67f}{weather\-Report}
+\item 
+B\-O\-O\-L \hyperlink{interface_trip_a3f7f9fac616d0861b0229a31aa485f39}{swimming\-Preference}
+\item 
+B\-O\-O\-L \hyperlink{interface_trip_a4ea48dfbac9dff7d387617f1113c3d08}{formal\-Preference}
+\item 
+B\-O\-O\-L \hyperlink{interface_trip_a0a0bd7f81cb9866501819178b9167fad}{rewear\-Jeans\-Preference}
+\item 
+B\-O\-O\-L \hyperlink{interface_trip_a5807a192e5170272e808780c5e74ca5a}{access\-To\-Laundry\-Preference}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to represent a trip
+
+\hyperlink{interface_trip}{Trip} object that contains all necessary information for a trip, including the packing lists and weather information. This data structure will be passed around frequently for populating the core U\-I of many screens. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_trip_af45eceb7475c6e48bf48641deb44baf4}{\index{Trip@{Trip}!end\-Date@{end\-Date}}
+\index{end\-Date@{end\-Date}!Trip@{Trip}}
+\subsubsection[{end\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date $\ast$) end\-Date 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trip_af45eceb7475c6e48bf48641deb44baf4}
+Helper Function\-: Returns end date of trip \begin{DoxyReturn}{Returns}
+date of trip's end 
+\end{DoxyReturn}
+\hypertarget{interface_trip_a90808fe2b7874349bf0a5fc5a09acf3e}{\index{Trip@{Trip}!generate\-Packing\-List@{generate\-Packing\-List}}
+\index{generate\-Packing\-List@{generate\-Packing\-List}!Trip@{Trip}}
+\subsubsection[{generate\-Packing\-List}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) generate\-Packing\-List 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trip_a90808fe2b7874349bf0a5fc5a09acf3e}
+This is the big one. Returns true if everything went O\-K and the packing list is created, false otherwise.
+
+Examples for why it might return false\-:
+\begin{DoxyItemize}
+\item invalid destination
+\item invalid or N\-U\-L\-L weather report
+\item start date / duration is N\-U\-L\-L \begin{DoxyReturn}{Returns}
+T\-R\-U\-E if everything went ok, otherwise returns F\-A\-L\-S\-E 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\hypertarget{interface_trip_a078c437bbefc9fe136a03093fd549b10}{\index{Trip@{Trip}!generate\-Packing\-List\-Example@{generate\-Packing\-List\-Example}}
+\index{generate\-Packing\-List\-Example@{generate\-Packing\-List\-Example}!Trip@{Trip}}
+\subsubsection[{generate\-Packing\-List\-Example}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) generate\-Packing\-List\-Example 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trip_a078c437bbefc9fe136a03093fd549b10}
+Creates a generic packing list for demo purposes only. \begin{DoxyReturn}{Returns}
+T\-R\-U\-E always 
+\end{DoxyReturn}
+\hypertarget{interface_trip_ab712f4d482a0a2818038069998aea9aa}{\index{Trip@{Trip}!init\-New\-Trip@{init\-New\-Trip}}
+\index{init\-New\-Trip@{init\-New\-Trip}!Trip@{Trip}}
+\subsubsection[{init\-New\-Trip}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-New\-Trip 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trip_ab712f4d482a0a2818038069998aea9aa}
+Initialize a new \hyperlink{interface_trip}{Trip} object \begin{DoxyReturn}{Returns}
+a newly initialized object 
+\end{DoxyReturn}
+\hypertarget{interface_trip_aca341893b609059158a3c2809d5fd157}{\index{Trip@{Trip}!init\-With\-Start\-Date\-:name\-:@{init\-With\-Start\-Date\-:name\-:}}
+\index{init\-With\-Start\-Date\-:name\-:@{init\-With\-Start\-Date\-:name\-:}!Trip@{Trip}}
+\subsubsection[{init\-With\-Start\-Date\-:name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Start\-Date\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Date $\ast$)}]{start}
+\item[{name:(N\-S\-String $\ast$)}]{name}
+\end{DoxyParamCaption}
+}}\label{interface_trip_aca341893b609059158a3c2809d5fd157}
+Initialize a new \hyperlink{interface_trip}{Trip} object 
+\begin{DoxyParams}{Parameters}
+{\em start} & The trip start date \\
+\hline
+{\em name} & The trip name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly initialized object
+\end{DoxyReturn}
+Creates new trip with given parameters. 
+\begin{DoxyParams}{Parameters}
+{\em start} & start date of the trip \\
+\hline
+{\em name} & the name of the trip \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_trip_a7d4e8ffcab800bda331f75625eb2c6d3}{\index{Trip@{Trip}!total\-Duration@{total\-Duration}}
+\index{total\-Duration@{total\-Duration}!Trip@{Trip}}
+\subsubsection[{total\-Duration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) total\-Duration 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trip_a7d4e8ffcab800bda331f75625eb2c6d3}
+Returns the total number of days for the trip. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_trip_a5807a192e5170272e808780c5e74ca5a}{\index{Trip@{Trip}!access\-To\-Laundry\-Preference@{access\-To\-Laundry\-Preference}}
+\index{access\-To\-Laundry\-Preference@{access\-To\-Laundry\-Preference}!Trip@{Trip}}
+\subsubsection[{access\-To\-Laundry\-Preference}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) access\-To\-Laundry\-Preference\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_trip_a5807a192e5170272e808780c5e74ca5a}
+Bool\-: Will the user be able to do laundry on the trip \hypertarget{interface_trip_a396ca8de2ed1b20c1255cbb5e9b524ed}{\index{Trip@{Trip}!destinations@{destinations}}
+\index{destinations@{destinations}!Trip@{Trip}}
+\subsubsection[{destinations}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Array$\ast$) destinations\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_trip_a396ca8de2ed1b20c1255cbb5e9b524ed}
+The trip's destinations \hypertarget{interface_trip_a4ea48dfbac9dff7d387617f1113c3d08}{\index{Trip@{Trip}!formal\-Preference@{formal\-Preference}}
+\index{formal\-Preference@{formal\-Preference}!Trip@{Trip}}
+\subsubsection[{formal\-Preference}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) formal\-Preference\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_trip_a4ea48dfbac9dff7d387617f1113c3d08}
+Bool\-: Will the user require formal clothing \hypertarget{interface_trip_a66e63287102687fe25366d61889fe8e1}{\index{Trip@{Trip}!name@{name}}
+\index{name@{name}!Trip@{Trip}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_trip_a66e63287102687fe25366d61889fe8e1}
+The name of the trip \hypertarget{interface_trip_a985205885a33d59e7e8b899cab47f2d0}{\index{Trip@{Trip}!packing\-List@{packing\-List}}
+\index{packing\-List@{packing\-List}!Trip@{Trip}}
+\subsubsection[{packing\-List}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Packing\-List}$\ast$) packing\-List\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_trip_a985205885a33d59e7e8b899cab47f2d0}
+The packing list for the trip \hypertarget{interface_trip_a0a0bd7f81cb9866501819178b9167fad}{\index{Trip@{Trip}!rewear\-Jeans\-Preference@{rewear\-Jeans\-Preference}}
+\index{rewear\-Jeans\-Preference@{rewear\-Jeans\-Preference}!Trip@{Trip}}
+\subsubsection[{rewear\-Jeans\-Preference}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) rewear\-Jeans\-Preference\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_trip_a0a0bd7f81cb9866501819178b9167fad}
+Bool\-: Will the user rewear unwashed jeans \hypertarget{interface_trip_aa73721dd452a5a0c94841aa155761d67}{\index{Trip@{Trip}!start\-Date@{start\-Date}}
+\index{start\-Date@{start\-Date}!Trip@{Trip}}
+\subsubsection[{start\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) start\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_trip_aa73721dd452a5a0c94841aa155761d67}
+The start date of the trip \hypertarget{interface_trip_a3f7f9fac616d0861b0229a31aa485f39}{\index{Trip@{Trip}!swimming\-Preference@{swimming\-Preference}}
+\index{swimming\-Preference@{swimming\-Preference}!Trip@{Trip}}
+\subsubsection[{swimming\-Preference}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) swimming\-Preference\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_trip_a3f7f9fac616d0861b0229a31aa485f39}
+Bool\-: Will the user be swimming on the trip \hypertarget{interface_trip_a50df03c3a57389928c170792a63aa67f}{\index{Trip@{Trip}!weather\-Report@{weather\-Report}}
+\index{weather\-Report@{weather\-Report}!Trip@{Trip}}
+\subsubsection[{weather\-Report}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Weather\-Report}$\ast$) weather\-Report\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_trip_a50df03c3a57389928c170792a63aa67f}
+The weather report for the trip 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Trip.\-h\item 
+Pack\-Manager/Trip.\-m\end{DoxyCompactItemize}

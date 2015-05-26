@@ -1,0 +1,87 @@
+\hypertarget{interface_destination}{\section{Destination Class Reference}
+\label{interface_destination}\index{Destination@{Destination}}
+}
+
+
+{\ttfamily \#import $<$Destination.\-h$>$}
+
+
+
+Inheritance diagram for Destination\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_destination__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Destination\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_destination__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_destination_ae33ba4170b0e92f1b94ae6f21f5c3dbb}{valid}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_destination_a906246f5d15394fa5d8f5fee672537e1}{is\-Valid\-Z\-I\-P\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Integer \hyperlink{interface_destination_a83a4c63fc216c137f29aadaa4be1fda2}{duration}
+\item 
+N\-S\-Integer \hyperlink{interface_destination_ac3fa98f68bc95bf00852743e1b3d3f9a}{zip}
+\item 
+\hypertarget{interface_destination_ab21be07a3201646736da1899501cb46c}{N\-S\-String $\ast$ {\bfseries name}}\label{interface_destination_ab21be07a3201646736da1899501cb46c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adds some convenience methods to the \hyperlink{interface_destination}{Destination} class
+
+\hyperlink{interface_destination}{Destination} class maintains stops for a trip. It is responsible for maintaining destination location and duration of stay at said location. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_destination_a906246f5d15394fa5d8f5fee672537e1}{\index{Destination@{Destination}!is\-Valid\-Z\-I\-P\-:@{is\-Valid\-Z\-I\-P\-:}}
+\index{is\-Valid\-Z\-I\-P\-:@{is\-Valid\-Z\-I\-P\-:}!Destination@{Destination}}
+\subsubsection[{is\-Valid\-Z\-I\-P\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Valid\-Z\-I\-P\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{zip}
+\end{DoxyParamCaption}
+}}\label{interface_destination_a906246f5d15394fa5d8f5fee672537e1}
+Method to validate given Z\-I\-P code. 
+\begin{DoxyParams}{Parameters}
+{\em zip} & Z\-I\-P code in question \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E if zip is a valid zip code, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{interface_destination_ae33ba4170b0e92f1b94ae6f21f5c3dbb}{\index{Destination@{Destination}!valid@{valid}}
+\index{valid@{valid}!Destination@{Destination}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) valid 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_destination_ae33ba4170b0e92f1b94ae6f21f5c3dbb}
+Tests to see if a destination is a valid location  returns T\-R\-U\-E if location is a valid place (i.\-e. it exists), otherwise returns F\-A\-L\-S\-E 
+
+\subsection{Property Documentation}
+\hypertarget{interface_destination_a83a4c63fc216c137f29aadaa4be1fda2}{\index{Destination@{Destination}!duration@{duration}}
+\index{duration@{duration}!Destination@{Destination}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) duration\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_destination_a83a4c63fc216c137f29aadaa4be1fda2}
+Duration of the trip, positive value \hypertarget{interface_destination_ac3fa98f68bc95bf00852743e1b3d3f9a}{\index{Destination@{Destination}!zip@{zip}}
+\index{zip@{zip}!Destination@{Destination}}
+\subsubsection[{zip}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) zip\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_destination_ac3fa98f68bc95bf00852743e1b3d3f9a}
+Z\-I\-P Code for the given location 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Destination.\-h\item 
+Pack\-Manager/Destination.\-m\end{DoxyCompactItemize}

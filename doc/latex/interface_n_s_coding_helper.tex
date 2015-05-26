@@ -1,0 +1,67 @@
+\hypertarget{interface_n_s_coding_helper}{\section{N\-S\-Coding\-Helper Class Reference}
+\label{interface_n_s_coding_helper}\index{N\-S\-Coding\-Helper@{N\-S\-Coding\-Helper}}
+}
+
+
+Inheritance diagram for N\-S\-Coding\-Helper\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{interface_n_s_coding_helper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for N\-S\-Coding\-Helper\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{interface_n_s_coding_helper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Data $\ast$) + \hyperlink{interface_n_s_coding_helper_ae6726effc13feb81846941f9e0318b38}{data\-For\-Array\-:}
+\item 
+(N\-S\-Mutable\-Array $\ast$) + \hyperlink{interface_n_s_coding_helper_a9808f1de7079b9360beaf6b48c857663}{mutable\-Array\-From\-Data\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_n_s_coding_helper_ae6726effc13feb81846941f9e0318b38}{\index{N\-S\-Coding\-Helper@{N\-S\-Coding\-Helper}!data\-For\-Array\-:@{data\-For\-Array\-:}}
+\index{data\-For\-Array\-:@{data\-For\-Array\-:}!NSCodingHelper@{N\-S\-Coding\-Helper}}
+\subsubsection[{data\-For\-Array\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Data $\ast$) data\-For\-Array\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array$\ast$)}]{array}
+\end{DoxyParamCaption}
+}}\label{interface_n_s_coding_helper_ae6726effc13feb81846941f9e0318b38}
+Converts an array into N\-S\-Data object for ease of storage in N\-S\-User\-Defaults. Must make sure that array's objects conform to \hyperlink{class_n_s_coding-p}{N\-S\-Coding} protocol. 
+\begin{DoxyParams}{Parameters}
+{\em array} & The array you want to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data object 
+\end{DoxyReturn}
+\hypertarget{interface_n_s_coding_helper_a9808f1de7079b9360beaf6b48c857663}{\index{N\-S\-Coding\-Helper@{N\-S\-Coding\-Helper}!mutable\-Array\-From\-Data\-:@{mutable\-Array\-From\-Data\-:}}
+\index{mutable\-Array\-From\-Data\-:@{mutable\-Array\-From\-Data\-:}!NSCodingHelper@{N\-S\-Coding\-Helper}}
+\subsubsection[{mutable\-Array\-From\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Mutable\-Array $\ast$) mutable\-Array\-From\-Data\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data$\ast$)}]{data}
+\end{DoxyParamCaption}
+}}\label{interface_n_s_coding_helper_a9808f1de7079b9360beaf6b48c857663}
+Converts N\-S\-Data object from N\-S\-User\-Defaults back to an N\-S\-Mutable\-Array. If there's a problem with the conversion (e.\-g. the resulting array is null), an empty mutable array is returned. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data object to be converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array correspdonding to data object, or new empty array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/N\-S\-Coding\-Helper.\-h\item 
+Pack\-Manager/N\-S\-Coding\-Helper.\-m\end{DoxyCompactItemize}

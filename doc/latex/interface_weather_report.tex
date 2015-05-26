@@ -1,0 +1,191 @@
+\hypertarget{interface_weather_report}{\section{Weather\-Report Class Reference}
+\label{interface_weather_report}\index{Weather\-Report@{Weather\-Report}}
+}
+
+
+{\ttfamily \#import $<$Weather\-Report.\-h$>$}
+
+
+
+Inheritance diagram for Weather\-Report\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_weather_report__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Weather\-Report\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_weather_report__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_weather_report_ab5d414a63da7d989ad099d5bf79be834}{init\-Example\-Report}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_aa6bbf5b779e0c4598e198adfeef73caa}{get\-Overall\-High}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a8044a91695febcfbd290533f0a2d7014}{get\-Overall\-Low}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a43c87e18a2a90ba36e4426e066ec1bc0}{number\-Of\-Days}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a2f163b73346d557e8e69f1ba4658fd6a}{get\-High\-For\-Day\-:}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a69f1a204d1941aeab765e2ca4bfd989c}{get\-Low\-For\-Day\-:}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a486bd3a6c0a1fe14245772adf722f782}{get\-Average\-For\-Day\-:}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_weather_report_a0d47f6e58cf6ce3c488464935ab82ad4}{get\-Range\-For\-Day\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_weather_report_a40763395e5e7eb7dc1b5c42e6f23c83a}{days\-Are\-In\-Order}
+\item 
+(void) -\/ \hyperlink{interface_weather_report_a2ec4041c4bb88fe1c08f3c017b7e1465}{put\-Days\-In\-Order}
+\item 
+(void) -\/ \hyperlink{interface_weather_report_a7d7f448785554e24c855e207286a4ac1}{add\-Day\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_weather_report_a55a1d3dd268bda012d9a097a75497d84}{N\-S\-Mutable\-Array $\ast$ {\bfseries weather\-Days}}\label{interface_weather_report_a55a1d3dd268bda012d9a097a75497d84}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a \hyperlink{interface_weather_report}{Weather\-Report} 
+
+\subsection{Method Documentation}
+\hypertarget{interface_weather_report_a7d7f448785554e24c855e207286a4ac1}{\index{Weather\-Report@{Weather\-Report}!add\-Day\-:@{add\-Day\-:}}
+\index{add\-Day\-:@{add\-Day\-:}!WeatherReport@{Weather\-Report}}
+\subsubsection[{add\-Day\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Day\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Weather\-Day} $\ast$)}]{day}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a7d7f448785554e24c855e207286a4ac1}
+Add a day to the report 
+\begin{DoxyParams}{Parameters}
+{\em day} & The day to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_weather_report_a40763395e5e7eb7dc1b5c42e6f23c83a}{\index{Weather\-Report@{Weather\-Report}!days\-Are\-In\-Order@{days\-Are\-In\-Order}}
+\index{days\-Are\-In\-Order@{days\-Are\-In\-Order}!WeatherReport@{Weather\-Report}}
+\subsubsection[{days\-Are\-In\-Order}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) days\-Are\-In\-Order 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a40763395e5e7eb7dc1b5c42e6f23c83a}
+Returns whether or not the individual Weather\-Days are in chronological order \hypertarget{interface_weather_report_a486bd3a6c0a1fe14245772adf722f782}{\index{Weather\-Report@{Weather\-Report}!get\-Average\-For\-Day\-:@{get\-Average\-For\-Day\-:}}
+\index{get\-Average\-For\-Day\-:@{get\-Average\-For\-Day\-:}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-Average\-For\-Day\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Average\-For\-Day\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{day}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a486bd3a6c0a1fe14245772adf722f782}
+Returns the average temp for a given day 
+\begin{DoxyParams}{Parameters}
+{\em day} & The day to check for the average \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the day's average 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_a2f163b73346d557e8e69f1ba4658fd6a}{\index{Weather\-Report@{Weather\-Report}!get\-High\-For\-Day\-:@{get\-High\-For\-Day\-:}}
+\index{get\-High\-For\-Day\-:@{get\-High\-For\-Day\-:}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-High\-For\-Day\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-High\-For\-Day\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{day}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a2f163b73346d557e8e69f1ba4658fd6a}
+Returns the high temp for a given day 
+\begin{DoxyParams}{Parameters}
+{\em day} & The day to check for the high \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the day's high 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_a69f1a204d1941aeab765e2ca4bfd989c}{\index{Weather\-Report@{Weather\-Report}!get\-Low\-For\-Day\-:@{get\-Low\-For\-Day\-:}}
+\index{get\-Low\-For\-Day\-:@{get\-Low\-For\-Day\-:}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-Low\-For\-Day\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Low\-For\-Day\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{day}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a69f1a204d1941aeab765e2ca4bfd989c}
+Returns the low temp for a given day 
+\begin{DoxyParams}{Parameters}
+{\em day} & The day to check for the low \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the day's low 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_aa6bbf5b779e0c4598e198adfeef73caa}{\index{Weather\-Report@{Weather\-Report}!get\-Overall\-High@{get\-Overall\-High}}
+\index{get\-Overall\-High@{get\-Overall\-High}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-Overall\-High}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Overall\-High 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_aa6bbf5b779e0c4598e198adfeef73caa}
+Returns highest temp for entire report \begin{DoxyReturn}{Returns}
+returns integer representing the report's high 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_a8044a91695febcfbd290533f0a2d7014}{\index{Weather\-Report@{Weather\-Report}!get\-Overall\-Low@{get\-Overall\-Low}}
+\index{get\-Overall\-Low@{get\-Overall\-Low}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-Overall\-Low}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Overall\-Low 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a8044a91695febcfbd290533f0a2d7014}
+Returns lowest temp for entire report \begin{DoxyReturn}{Returns}
+returns integer representing the report's low 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_a0d47f6e58cf6ce3c488464935ab82ad4}{\index{Weather\-Report@{Weather\-Report}!get\-Range\-For\-Day\-:@{get\-Range\-For\-Day\-:}}
+\index{get\-Range\-For\-Day\-:@{get\-Range\-For\-Day\-:}!WeatherReport@{Weather\-Report}}
+\subsubsection[{get\-Range\-For\-Day\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) get\-Range\-For\-Day\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{day}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a0d47f6e58cf6ce3c488464935ab82ad4}
+Returns the range temp for a given day 
+\begin{DoxyParams}{Parameters}
+{\em day} & The day to check for the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer representing the day's range 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_ab5d414a63da7d989ad099d5bf79be834}{\index{Weather\-Report@{Weather\-Report}!init\-Example\-Report@{init\-Example\-Report}}
+\index{init\-Example\-Report@{init\-Example\-Report}!WeatherReport@{Weather\-Report}}
+\subsubsection[{init\-Example\-Report}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-Example\-Report 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_ab5d414a63da7d989ad099d5bf79be834}
+Generates example report for demo purposes. \hypertarget{interface_weather_report_a43c87e18a2a90ba36e4426e066ec1bc0}{\index{Weather\-Report@{Weather\-Report}!number\-Of\-Days@{number\-Of\-Days}}
+\index{number\-Of\-Days@{number\-Of\-Days}!WeatherReport@{Weather\-Report}}
+\subsubsection[{number\-Of\-Days}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) number\-Of\-Days 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a43c87e18a2a90ba36e4426e066ec1bc0}
+Returns number of days in this weather report \begin{DoxyReturn}{Returns}
+returns integer representing number of days in report 
+\end{DoxyReturn}
+\hypertarget{interface_weather_report_a2ec4041c4bb88fe1c08f3c017b7e1465}{\index{Weather\-Report@{Weather\-Report}!put\-Days\-In\-Order@{put\-Days\-In\-Order}}
+\index{put\-Days\-In\-Order@{put\-Days\-In\-Order}!WeatherReport@{Weather\-Report}}
+\subsubsection[{put\-Days\-In\-Order}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) put\-Days\-In\-Order 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_report_a2ec4041c4bb88fe1c08f3c017b7e1465}
+Sort the \hyperlink{interface_weather_day}{Weather\-Day} objects chronologically 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Weather\-Report.\-h\item 
+Pack\-Manager/Weather\-Report.\-m\end{DoxyCompactItemize}
