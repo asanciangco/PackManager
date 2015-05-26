@@ -14,6 +14,8 @@
 
 @interface PackingListViewController ()
 
+@property NSInteger selectedIndex;
+
 @end
 
 @implementation PackingListViewController
@@ -57,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.trip.packingList getNumberOfUniqueItems];
+    return [self.trip.packingList getNumberOfUniqueItems] + 1;
 }
 
 
@@ -93,6 +95,7 @@
         {
             cell.itemTextLabel.text = item.name;
             cell.quantityTextLabel.text = [NSString stringWithFormat:@"x%li", (long)item.quantity];
+            [cell.itemImageView setImage:[UIImage imageNamed: @"shirt.png"]];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         else
@@ -111,30 +114,49 @@
     {
         [self performSegueWithIdentifier:@"showWeatherReport" sender:self];
     }
+    else{
+        self.selectedIndex = indexPath.row-1;
+        Packable *item = [self.trip.packingList getPackableForIndex:(indexPath.row-1)];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:item.name message:@"change quantity to:" delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Change", nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        UITextField * alertTextField = [alert textFieldAtIndex:0];
+        alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+        alertTextField.placeholder = [NSString stringWithFormat:@"%li", (long)item.quantity];
+        [alert show];
+    }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0){
+        return;
+    }
+    else if (buttonIndex == 1 && ![[alertView textFieldAtIndex:0].text isEqualToString:@""]) {
+        [self.trip.packingList changeQuantityForIndex:self.selectedIndex to:[alertView textFieldAtIndex:0].text.integerValue];
+        [self.tableView reloadData];
+    }
+    self.selectedIndex = -1;
+}
 
-/*
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return indexPath.row != 0;
 }
-*/
 
-/*
-// Override to support editing the table view.
+
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.trip.packingList removeItemForIndex:(indexPath.row-1)];
+        [self.tableView reloadData];
+        
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

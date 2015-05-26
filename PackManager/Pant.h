@@ -18,6 +18,7 @@ typedef enum PantType
     SHORTS,
     JEANS,
     LONGPANTS,
+    FORMALPANTS,
 } PantType;
 
 /**
