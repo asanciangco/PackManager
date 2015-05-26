@@ -18,6 +18,11 @@
 @interface PackingList : NSObject <NSCoding>
 
 /**
+ Trip object that this packing list refers to.
+ */
+@property (nonatomic, strong) Trip* trip;
+
+/**
     Initialize a new PackingList object
     @param trip The trip the packing list is for
     @returns a newly intialized object

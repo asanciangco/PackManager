@@ -18,7 +18,6 @@
 @interface PackingList ()
 
 @property (nonatomic, strong) NSMutableArray *list; // of Packable
-@property (nonatomic, strong) Trip* trip;
 
 @end
 
@@ -80,6 +79,7 @@
     return self;
 }
 
+#pragma mark - Packing Algorithm
 /**
  The algorithm that will generate the packing list. It must already be determined that the trip has a valid weather report since this algorithm will depend on it. This function will populate the PackingList's 'list' member variable with Packable items. 
  */
@@ -280,6 +280,7 @@
     {
         [self.list addObject:[[Underwear alloc] initWithQuantity:ceilf(underwear)]];
     }
+    
     // REGULAR SOCKS
     if (regularSocks > 0)
     {
