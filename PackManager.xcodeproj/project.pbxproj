@@ -183,8 +183,9 @@
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
 		4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AA91B0D194F00795767 /* PackingListTests.m */; };
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
-		A72929383D5A53EC41954E1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
+		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
+		A72929383D5A53EC41954E1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -404,8 +405,9 @@
 		45F5B193DDD9601814C054B2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C085AA91B0D194F00795767 /* PackingListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTests.m; sourceTree = "<group>"; };
 		4C085AAB1B0D22F200795767 /* WeatherDayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDayTests.m; sourceTree = "<group>"; };
-		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C085AAD1B0D273E00795767 /* WeatherReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportTests.m; sourceTree = "<group>"; };
+		4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
+		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
 		E29254931AFAA9ED00007394 /* NSCodingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCodingHelper.m; sourceTree = "<group>"; };
@@ -1070,6 +1072,7 @@
 				4C085AA91B0D194F00795767 /* PackingListTests.m */,
 				4C085AAB1B0D22F200795767 /* WeatherDayTests.m */,
 				4C085AAD1B0D273E00795767 /* WeatherReportTests.m */,
+				4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */,
 			);
 			path = PackManagerTests;
 			sourceTree = "<group>";
@@ -1431,6 +1434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */,
+				4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */,
 				21D1F3331ADF3B71003024B7 /* PackManagerTests.m in Sources */,
 				4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */,
 				4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */,
