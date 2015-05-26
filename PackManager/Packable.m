@@ -33,6 +33,7 @@
 {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeInteger:self.quantity forKey:@"quantity"];
+    [aCoder encodeObject:self.imageName forKey:@"imageName"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -41,6 +42,7 @@
     {
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.quantity = [aDecoder decodeIntegerForKey:@"quantity"];
+        self.imageName = [aDecoder decodeObjectForKey:@"imageName"];
     }
     return self;
 }
@@ -55,6 +57,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Umbrella";
+        self.imageName = @"clothing_umbrella_2";
     }
     return self;
 }
@@ -69,6 +72,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Sunscreen";
+        self.imageName = @"clothing_sunscreen_3";
     }
     return self;
 }
@@ -83,6 +87,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Underwear";
+        self.imageName = @"clothing_underwear_1";
     }
     return self;
 }
@@ -97,6 +102,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Socks";
+        self.imageName = @"clothing_socks_2";
     }
     return self;
 }

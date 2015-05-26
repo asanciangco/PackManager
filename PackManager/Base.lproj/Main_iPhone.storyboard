@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Trip Title-->
+        <!--Weather Report View Controller - Trip Title-->
         <scene sceneID="vMO-eC-LOL">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="y9H-Xt-eLl" customClass="WeatherReportViewController" sceneMemberID="viewController">
@@ -62,6 +61,11 @@
                                         <constraint firstItem="XXe-dF-xNs" firstAttribute="top" secondItem="NRQ-gX-x5A" secondAttribute="top" id="yuo-aQ-hs9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lowerDetailTextLabel" destination="mzo-e1-rjh" id="JKI-xF-ovC"/>
+                                    <outlet property="mainTextLabel" destination="zwM-QU-Syg" id="vkV-NV-LwT"/>
+                                    <outlet property="upperDetailTextLabel" destination="XXe-dF-xNs" id="lj9-GY-iZe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1933" y="-202"/>
         </scene>
-        <!--My Trips-->
+        <!--Trips View Controller - My Trips-->
         <scene sceneID="niG-wC-TS5">
             <objects>
                 <tableViewController id="LCF-3d-wz1" customClass="TripsViewController" sceneMemberID="viewController">
@@ -129,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="948" y="-541"/>
         </scene>
-        <!--Trip Title-->
+        <!--Packing List View Controller - Trip Title-->
         <scene sceneID="hPR-xn-OeY">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="kgQ-Bk-CRi" customClass="PackingListViewController" sceneMemberID="viewController">
@@ -200,9 +204,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clothing Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TK0-jm-0SQ">
-                                            <rect key="frame" x="20" y="11" width="169" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="192" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="169" id="JM9-ny-w5N"/>
+                                                <constraint firstAttribute="width" constant="192" id="JM9-ny-w5N"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -215,17 +219,29 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMq-c5-8ja">
+                                            <rect key="frame" x="220" y="4" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="wXq-a0-Px4"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="leading" secondItem="5qg-QR-6NX" secondAttribute="leading" constant="20" id="PVx-oI-1gb"/>
+                                        <constraint firstAttribute="bottom" secondItem="oMq-c5-8ja" secondAttribute="bottom" constant="4" id="QYh-b6-3aZ"/>
+                                        <constraint firstItem="Zs5-4U-pn4" firstAttribute="leading" secondItem="oMq-c5-8ja" secondAttribute="trailing" constant="8" id="Rq5-rX-SUu"/>
+                                        <constraint firstItem="oMq-c5-8ja" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="4" id="Sdc-Eq-M7A"/>
                                         <constraint firstAttribute="trailing" secondItem="Zs5-4U-pn4" secondAttribute="trailing" constant="20" id="Tjn-Qg-ju3"/>
-                                        <constraint firstAttribute="bottom" secondItem="TK0-jm-0SQ" secondAttribute="bottom" constant="11" id="ZMw-mi-csa"/>
                                         <constraint firstItem="Zs5-4U-pn4" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="cm1-0h-4vU"/>
-                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="mi0-lw-LJa"/>
+                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="top" secondItem="5qg-QR-6NX" secondAttribute="top" constant="11" id="hoK-nA-WNs"/>
                                         <constraint firstAttribute="bottom" secondItem="Zs5-4U-pn4" secondAttribute="bottom" constant="11" id="rGI-bF-bXO"/>
-                                        <constraint firstItem="TK0-jm-0SQ" firstAttribute="leading" secondItem="5qg-QR-6NX" secondAttribute="leading" constant="20" id="tWa-hc-UJW"/>
+                                        <constraint firstItem="oMq-c5-8ja" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TK0-jm-0SQ" secondAttribute="trailing" constant="8" id="uKl-rw-u47"/>
+                                        <constraint firstAttribute="bottom" secondItem="TK0-jm-0SQ" secondAttribute="bottom" constant="11" id="w4e-4I-GVb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="itemImageView" destination="oMq-c5-8ja" id="PZj-Kx-vSL"/>
                                     <outlet property="itemTextLabel" destination="TK0-jm-0SQ" id="coo-kV-KXW"/>
                                     <outlet property="quantityTextLabel" destination="Zs5-4U-pn4" id="O63-qg-89k"/>
                                 </connections>
@@ -610,7 +626,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tcg-UJ-2KW">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="J5d-CR-E7a">
+                        <barButtonItem key="rightBarButtonItem" image="settings_icon.png" id="J5d-CR-E7a">
                             <connections>
                                 <segue destination="nYH-0f-KLo" kind="push" identifier="viewTripSettings" id="BlB-gO-jiD"/>
                             </connections>
@@ -630,7 +646,7 @@
             </objects>
             <point key="canvasLocation" x="1511" y="-882"/>
         </scene>
-        <!--Trip Settings-->
+        <!--Trip Settings View Controller - Trip Settings-->
         <scene sceneID="4nl-5l-eEv">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="nYH-0f-KLo" customClass="TripSettingsViewController" sceneMemberID="viewController">
@@ -650,6 +666,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-XH-uUo">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196078431369" green="0.6470588235294118" blue="0.12549019607843137" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Going swimming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C6-ZB-Cei">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -669,6 +686,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-8a-6S7">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fancy dinner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34H-wF-ASE">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -688,6 +706,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVn-YJ-h9p">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Access to laundry room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rib-ft-pEG">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -707,6 +726,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyR-uY-BK7">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Willing to rewear jeans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-O2-Hym">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -756,7 +776,7 @@
             </objects>
             <point key="canvasLocation" x="-24" y="-228"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller - Profile-->
         <scene sceneID="o7Z-rd-O9w">
             <objects>
                 <tableViewController id="X02-xe-oUH" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -780,6 +800,7 @@
                                                         <segment title="Female"/>
                                                         <segment title="Male"/>
                                                     </segments>
+                                                    <color key="tintColor" red="0.85490196078431369" green="0.6470588235294118" blue="0.12549019607843137" alpha="1" colorSpace="deviceRGB"/>
                                                 </segmentedControl>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-ez-hql">
                                                     <rect key="frame" x="20" y="11" width="149" height="21"/>
@@ -806,6 +827,7 @@
                                                         <segment title="Celsius"/>
                                                         <segment title="Fahrenheit"/>
                                                     </segments>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -823,6 +845,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="90" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="Y53-8I-HKA">
                                                     <rect key="frame" x="101" y="7" width="118" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="CUW-A0-Xob"/>
                                                     </constraints>
@@ -862,6 +885,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="O3C-qo-Mu0">
                                                     <rect key="frame" x="101" y="7" width="118" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="VqT-fi-aUb"/>
                                                     </constraints>
@@ -901,6 +925,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="70" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="esC-K0-9i9">
                                                     <rect key="frame" x="101" y="7" width="118" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="wwT-Yz-4en"/>
                                                     </constraints>
@@ -940,6 +965,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-0V-78y">
                                                     <rect key="frame" x="101" y="7" width="118" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="aKK-Ue-aGc"/>
                                                     </constraints>
@@ -979,6 +1005,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="10" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="V8d-vv-qxs">
                                                     <rect key="frame" x="101" y="7" width="118" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="114" id="RWV-4n-8HO"/>
                                                     </constraints>
@@ -1022,6 +1049,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-VN-W7U">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Going swimming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCO-Ys-8yA">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -1051,6 +1079,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-ei-UZY">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Willing to rewear jeans" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-lC-hVK">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -1080,6 +1109,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eI-61-tZg">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fancy dinner" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-b5-ZIA">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -1109,6 +1139,7 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zuQ-No-Gdv">
                                                     <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <color key="tintColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access to laundry room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbM-hX-Fjy">
                                                     <rect key="frame" x="25" y="11" width="222" height="21"/>
@@ -1161,11 +1192,11 @@
             </objects>
             <point key="canvasLocation" x="937" y="180"/>
         </scene>
-        <!--Trips-->
+        <!--Navigation Controller - Trips-->
         <scene sceneID="aur-e5-yXv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZ0-Oa-ipT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trips" id="xNf-kR-IVU"/>
+                    <tabBarItem key="tabBarItem" title="Trips" image="trips-icon.png" id="xNf-kR-IVU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jxF-Jh-OYW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1180,11 +1211,11 @@
             </objects>
             <point key="canvasLocation" x="507" y="-541"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller - Profile-->
         <scene sceneID="tAw-df-ZV6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aIC-AP-hhL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="wCz-dD-hoz"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_icon.png" id="wCz-dD-hoz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFq-0A-XXf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1200,6 +1231,11 @@
             <point key="canvasLocation" x="525" y="180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile_icon.png" width="30" height="30"/>
+        <image name="settings_icon.png" width="30" height="30"/>
+        <image name="trips-icon.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

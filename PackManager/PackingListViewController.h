@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Trip.h"
 
-@interface PackingListViewController : UITableViewController
+@interface PackingListViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, strong) Trip *trip;
 
