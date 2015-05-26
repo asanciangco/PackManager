@@ -65,6 +65,7 @@ static NSString *DAY_KEY = @"day";
 
 - (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
 
+- (NSMutableArray*) parseJSONforPresent:(NSDictionary *)weather start:(NSDate *)start end:(NSDate *)end;
 
 
 @end

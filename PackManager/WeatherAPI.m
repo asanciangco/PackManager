@@ -211,6 +211,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     for (NSInteger i = dateOffset; i <= dateRange; i++)
     {
         NSDictionary *weatherdict = [results objectAtIndex:i];
+        
         [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             if ([key  isEqualToString:@"temp"])
             {
@@ -256,6 +257,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                 }
             }
         }];
+        
         //Add weather entry to array
         [weatherEntry setObject:@(high) forKey:HIGH_KEY];
         [weatherEntry setObject:@(low) forKey:HIGH_KEY];

@@ -11,6 +11,11 @@
 
 @interface WeatherAPITests : XCTestCase
 
+@property (nonatomic,strong) NSDate *start;
+@property (nonatomic,strong) NSDate *end;
+
+@property (nonatomic,strong) WeatherAPI *instance;
+
 @end
 
 @implementation WeatherAPITests
@@ -18,10 +23,10 @@
 - (void)setUp {
     [super setUp];
     
-    NSDate *start   = [NSDate dateWithTimeInterval:1 * 24 * 60 * 60 sinceDate:[NSDate date]];
-    NSDate *end     = [NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]];
+    self.start   = [NSDate dateWithTimeInterval:1 * 24 * 60 * 60 sinceDate:[NSDate date]];
+    self.end     = [NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]];
     
-    [[WeatherAPI sharedInstance] getLatLongFromAddress: @"Los Angeles" start:start end:end];
+    self.instance = [WeatherAPI sharedInstance];
 }
 
 - (void)tearDown {
@@ -29,7 +34,15 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testWeatherFromPresent {
+    
+}
+
+- (void)testParseJSONForPresent {
+    
+    // bloopity bloo, need a proper nsdict here
+    
+    NSMutableArray* days = [self.instance parseJSONforPresent:nil start:self.start end:self.end];
     
     XCTAssert(YES, @"Pass");
 }
