@@ -11,6 +11,7 @@
 #import "Destination.h"
 #import "TripsData.h"
 #import "TripsViewController.h"
+#import "TripSettingsViewController.h"
 
 @interface NewTripViewController ()
 
@@ -246,6 +247,11 @@
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;
         [[TripsData sharedInstance] addTrip:self.trip];
+    }
+    else if([segue.identifier isEqualToString:@"viewTripSettings"])
+    {
+        TripSettingsViewController *TripSettingsVC = [segue destinationViewController];
+        TripSettingsVC.trip = self.trip;
     }
 }
 

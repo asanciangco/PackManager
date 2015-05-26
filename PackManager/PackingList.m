@@ -302,6 +302,16 @@
     return [self.list objectAtIndex:index];
 }
 
+- (void) removeItemForIndex:(NSInteger)index
+{
+    [self.list removeObjectAtIndex:index];
+}
+
+- (void) changeQuantityForIndex:(NSInteger)index to:(NSInteger)q
+{
+    Packable *item = [self.list objectAtIndex:index];
+    item.quantity = q;
+}
 
 #pragma mark - Helpers
 - (NSInteger) quantityForItemAtIndex:(NSInteger)index
