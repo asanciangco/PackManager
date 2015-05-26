@@ -11,12 +11,12 @@
 /**
 	NSString: Constant notification to be used to call the historical API handler
  */
-static NSString *ZIP_JSON_DATA_RETURNED_NOTIFICATION = @"HistoricalJSONDataReturnedNotification";
+static NSString *HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION = @"HistoricalJSONDataReturnedNotification";
 
 /**
 	NSString: Constant notification to be used to call the present API handler
  */
-static NSString *CITY_JSON_DATA_RETURNED_NOTIFICATION = @"PresentJSONDataReturnedNotification";
+static NSString *PRESENT_JSON_DATA_RETURNED_NOTIFICATION = @"PresentJSONDataReturnedNotification";
 
 /**
 	NSString: Constant key to be used for the weather entries object for high temperature
@@ -59,7 +59,7 @@ static NSString *DAY_KEY = @"day";
     @param end The end date of the trip
 	@returns void after creating a weather report
  */
-- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat*)lng start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromPresent:(CGFloat *)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end;
 
 - (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
 

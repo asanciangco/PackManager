@@ -16,7 +16,7 @@ int main(int argc, char * argv[])
     NSDate *start   = [NSDate dateWithTimeInterval:1 * 24 * 60 * 60 sinceDate:[NSDate date]];
     NSDate *end     = [NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]];
     
-    [[WeatherAPI sharedInstance] getWeatherFromPresent: @"Los Angeles" country: @"US" start:start end:end];
+    [[WeatherAPI sharedInstance] getLatLongFromAddress: @"Los Angeles" start:start end:end];
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
