@@ -2,7 +2,7 @@
 //  PackingListTests.m
 //  PackManager
 //
-//  Created by NIck Westman on 5/20/15.
+//  Created by Nck Westman on 5/20/15.
 //
 //
 
