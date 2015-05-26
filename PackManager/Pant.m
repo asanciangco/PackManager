@@ -33,6 +33,8 @@
         return JEANS;
     else if ([name isEqualToString:@"Long Pants"])
         return LONGPANTS;
+    else if ([name isEqualToString:@"Formal Pants"])
+        return FORMALPANTS;
     else
         return -1;
 }
@@ -52,6 +54,8 @@
             return @"Jeans";
         case LONGPANTS:
             return @"Long Pants";
+        case FORMALPANTS:
+            return @"Formal Pants";
             
         default:
             return @"Pants";

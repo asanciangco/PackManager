@@ -121,7 +121,7 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField * alertTextField = [alert textFieldAtIndex:0];
         alertTextField.keyboardType = UIKeyboardTypeNumberPad;
-        alertTextField.placeholder = [NSString stringWithFormat:@"%i", item.quantity];
+        alertTextField.placeholder = [NSString stringWithFormat:@"%li", (long)item.quantity];
         [alert show];
     }
 }

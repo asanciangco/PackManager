@@ -14,6 +14,7 @@
 #import "Shirt.h"
 #import "Pant.h"
 #import "Jacket.h"
+#import "Shoe.h"
 
 @interface PackingList ()
 
@@ -23,16 +24,31 @@
 
 @implementation PackingList
 {
+    // tops
     CGFloat lightShirts;
     CGFloat heavyShirts;
+    CGFloat tankTops;
+    
+    // formal wear
+    CGFloat formalShirts;
+    CGFloat formalPants;
+    
+    // bottoms
     CGFloat lightPants;
     CGFloat heavyPants;
     
+    // shoes
+    CGFloat flipFlops;
+    CGFloat closedToeShoes;
+    
+    // Jacket
     CGFloat regularJacket;
     
+    // clothing accessories
     CGFloat underwear;
     CGFloat regularSocks;
     
+    // rain
     CGFloat rain;
 }
 
@@ -45,11 +61,19 @@
         self.list = [NSMutableArray array];
         
         lightShirts = 0;
-        lightPants  = 0;
         heavyShirts = 0;
-        heavyPants  = 0;
+        tankTops = 0;
         
-        regularJacket   = 0;
+        formalShirts = 0;
+        formalPants  = 0;
+        
+        lightPants = 0;
+        heavyPants = 0;
+        
+        flipFlops = 0;
+        closedToeShoes = 0;
+        
+        regularJacket = 0;
         
         underwear = 0;
         regularSocks = 0;
@@ -117,6 +141,12 @@
     NSInteger averageTemp = [day averageTemp];
     TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
     
+    if (self.trip.formalPreference)
+    {
+        formalShirts += 0.75;
+    }
+    
+    // Regular shirts and jackets
     switch (range)
     {
         case COLD:
@@ -150,7 +180,8 @@
         case HOT:
         {
             heavyShirts += 0;
-            lightShirts += 1;
+            lightShirts += 0.5;
+            tankTops    += 0.5;
         }
             break;
     }
@@ -165,6 +196,13 @@
     NSInteger averageTemp = [day averageTemp];
     TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
     
+    // Formal Wear
+    if (self.trip.formalPreference)
+    {
+        formalPants += 0.75;
+    }
+    
+    // Regualr pants
     switch (range)
     {
         case COLD:
@@ -206,11 +244,36 @@
  */
 - (void) updateAccessoriesForDay:(WeatherDay *)day
 {
+    NSInteger averageTemp = [day averageTemp];
+    TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
+    CGFloat prec = [day precipitaion];
+    
     underwear    += (8.0 / 7.0);    // extra pair of underwear for every week
     regularSocks += (8.0 / 7.0);    // extra pair of socks per week
     
-    CGFloat prec = [day precipitaion];
     rain += prec / 2.0;
+    
+    // Shoes
+    // Notice the specific breaks, this utilizes fall-through of switch blocks
+    switch (range)
+    {
+        case COLD:
+        case COOL:
+        case NORMAL:
+        {
+            closedToeShoes += 0.25;
+        }
+            break;
+        case WARM:
+        {
+            closedToeShoes += 0.1;
+        }
+        case HOT:
+        {
+            flipFlops += 0.25;
+        }
+            break;
+    }
 }
 
 /**
@@ -228,10 +291,10 @@
         [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(heavyShirts)
                                                      andType:LONGSLEEVE]];
     }
-    if ([self.trip formalPreference])
+    if (formalShirts > 0)
     {
-        // TODO need to update quantity calculation
-        [self.list addObject:[[Shirt alloc] initWithQuantity:1 andType:FORMAL]];
+        [self.list addObject:[[Shirt alloc] initWithQuantity:formalShirts
+                                                     andType:FORMAL]];
     }
 }
 
@@ -249,6 +312,11 @@
     {
         [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(heavyPants)
                                                    andType:LONGPANTS]];
+    }
+    if (formalPants > 0)
+    {
+        [self.list addObject:[[Pant alloc] initWithQuantity:formalPants
+                                                    andType:FORMALPANTS]];
     }
 }
 
@@ -271,8 +339,15 @@
     }
     if (rain >= 0.5)
     {
-        // gets added in addition to a rain jacket
+        // UMBRELLA gets added in addition to a rain jacket
         [self.list addObject:[[Umbrella alloc] initWithQuantity:1]];
+        // RAIN BOOTS also get added
+        [self.list addObject:[[Shoe alloc] initWithQuantity:1 andType:RAINBOOTS]];
+    }
+    
+    if (rain < 1)
+    {
+        [self.list addObject:[[Sunscreen alloc] initWithQuantity:1]];
     }
     
     // UNDERWEAR

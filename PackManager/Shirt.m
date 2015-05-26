@@ -21,6 +21,25 @@
     return self;
 }
 
+- (NSString *) imageName
+{
+    switch (self.shirtType)
+    {
+        case TSHIRT:
+            return @"clothing_tshirt_1";
+        case LONGSLEEVE:
+            return @"clothing_longsleeve_4";
+        case FORMAL:
+            // TODO change to basic image
+            return @"clothing_dressShirt_6";
+        case TANKTOP:
+            return @"clothing_tanktop_3";
+            
+        default:
+            return @"clothing_tshirt_1";
+    }
+}
+
 /**
  For decoding purposes, convert name into type
  @param name Name of object
