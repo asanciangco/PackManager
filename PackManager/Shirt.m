@@ -63,6 +63,24 @@
     }
 }
 
+- (NSString *) imageName
+{
+    switch (self.shirtType)
+    {
+        case TSHIRT:
+            return @"clothing_tshirt_1";
+        case LONGSLEEVE:
+            return @"clothing_longsleeve_4";
+        case FORMAL:
+            return @"clothing_dressShirt_10";
+        case TANKTOP:
+            return @"clothing_tanktop_3";
+            
+        default:
+            return @"clothing_tshirt_1";
+    }
+}
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])

@@ -71,6 +71,13 @@
     XCTAssertEqual(diff,15);
 }
 
+//Alex's test
+- (void) testTrip
+{
+    Trip *trip = [[Trip alloc] initNewTrip];
+    [trip generatePackingListExample];
+}
+
 #pragma mark - DestinationTests
 
 - (void) testNegativeDuration

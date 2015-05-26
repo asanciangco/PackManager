@@ -15,10 +15,12 @@ typedef enum ShoeType
     FLIPFLOP,
     SANDAL,
     CLOSEDTOE,
-    FORMAL,
+    FORMALSHOE,
     RAINBOOTS
 } ShoeType;
 
 @property ShoeType shoeType;
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity andType:(ShoeType)type;
 
 @end

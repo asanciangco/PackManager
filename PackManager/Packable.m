@@ -22,17 +22,12 @@
     return self;
 }
 
-#pragma mark - Helpers
-- (NSString *) imageName
-{
-    return nil;
-}
-
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeInteger:self.quantity forKey:@"quantity"];
+    [aCoder encodeObject:self.imageName forKey:@"imageName"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
@@ -41,6 +36,7 @@
     {
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.quantity = [aDecoder decodeIntegerForKey:@"quantity"];
+        self.imageName = [aDecoder decodeObjectForKey:@"imageName"];
     }
     return self;
 }
@@ -55,6 +51,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Umbrella";
+        self.imageName = @"clothing_umbrella_5";
     }
     return self;
 }
@@ -69,6 +66,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Sunscreen";
+        self.imageName = @"clothing_sunscreen_4";
     }
     return self;
 }
@@ -83,13 +81,14 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Underwear";
+        self.imageName = @"clothing_underwear_1";
     }
     return self;
 }
 
 @end // Underwear implementation
 
-#pragma mark - Sunscreen
+#pragma mark - Socks
 @implementation Socks
 
 - (instancetype) initWithQuantity:(NSUInteger)quantity
@@ -97,6 +96,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Socks";
+        self.imageName = @"clothing_socks_2";
     }
     return self;
 }

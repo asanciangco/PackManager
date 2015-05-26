@@ -33,6 +33,8 @@
         return JEANS;
     else if ([name isEqualToString:@"Long Pants"])
         return LONGPANTS;
+    else if ([name isEqualToString:@"Formal Pants"])
+        return FORMALPANTS;
     else
         return -1;
 }
@@ -52,9 +54,29 @@
             return @"Jeans";
         case LONGPANTS:
             return @"Long Pants";
+        case FORMALPANTS:
+            return @"Formal Pants";
             
         default:
             return @"Pants";
+    }
+}
+
+- (NSString *) imageName
+{
+    switch (self.pantType)
+    {
+        case SHORTS:
+            return @"clothing_shorts_6";
+        case JEANS:
+            return @"clothing_jeans_4";
+        case LONGPANTS:
+            return @"clothing_jeans_4";
+        case FORMALPANTS:
+            return @"clothing_slacks_4";
+            
+        default:
+            return @"clothing_slacks_4";
     }
 }
 

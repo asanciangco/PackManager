@@ -54,6 +54,20 @@
     }
 }
 
+- (NSString *) imageName
+{
+    switch (self.jacketType)
+    {
+        case REGULAR_JACKET:
+            return @"clothing_jacket_11";
+        case RAIN_JACKET:
+            return @"clothing_jacket_10";
+            
+        default:
+            return @"Jacket";
+    }
+}
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])

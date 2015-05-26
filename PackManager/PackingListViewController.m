@@ -95,7 +95,16 @@
         {
             cell.itemTextLabel.text = item.name;
             cell.quantityTextLabel.text = [NSString stringWithFormat:@"x%li", (long)item.quantity];
-            [cell.itemImageView setImage:[UIImage imageNamed: @"shirt.png"]];
+            NSString *imageName = item.imageName;
+            NSLog(@"%@\n",imageName);
+            if (imageName)
+            {
+                [cell.itemImageView setImage:[UIImage imageNamed:imageName]];
+            }
+            else
+            {
+                [cell.itemImageView setImage:[UIImage imageNamed: @"shirt.png"]];
+            }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         else
@@ -121,7 +130,7 @@
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField * alertTextField = [alert textFieldAtIndex:0];
         alertTextField.keyboardType = UIKeyboardTypeNumberPad;
-        alertTextField.placeholder = [NSString stringWithFormat:@"%i", item.quantity];
+        alertTextField.placeholder = [NSString stringWithFormat:@"%li", (long)item.quantity];
         [alert show];
     }
 }

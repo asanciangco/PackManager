@@ -24,6 +24,11 @@
 @property (nonatomic, strong) NSString *name;
 
 /**
+ Image name for packable item.
+ */
+@property (nonatomic, strong) NSString *imageName;
+
+/**
   The quantity of that packable object
 */
 @property NSInteger quantity;
@@ -33,12 +38,6 @@
  @param quantity The quantity to store
  */
 - (instancetype) initWithQuantity:(NSUInteger)quantity;
-
-/**
- The name for the image to be displayed within packing list. Returns nil by default, must be overridden by subclasses.
- @returns NSString of the image name
- */
-- (NSString *) imageName;
 
 @end
 

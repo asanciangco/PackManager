@@ -2,7 +2,7 @@
 //  WeatherDayTests.m
 //  PackManager
 //
-//  Created by NIck Westman on 5/20/15.
+//  Created by Nick Westman on 5/20/15.
 //
 //
 

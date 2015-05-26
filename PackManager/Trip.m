@@ -101,6 +101,8 @@
 
 - (BOOL) generatePackingListExample
 {
+    self.formalPreference = YES;
+    
     self.weatherReport = [[WeatherReport alloc] initExampleReport];
     self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
     
@@ -134,6 +136,7 @@
         self.startDate = [aDecoder decodeObjectForKey:@"startDate"];
         
         self.packingList = [aDecoder decodeObjectForKey:@"packingList"];
+        self.packingList.trip = self;
         self.weatherReport = [aDecoder decodeObjectForKey:@"weatherReport"];
         
         self.swimmingPreference = [aDecoder decodeBoolForKey:@"swimmingPreference"];
