@@ -308,6 +308,8 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 {
     NSMutableArray *array = [dict objectForKey:@"data"];
     
+    __block WeatherReport *weatherReport = [weatherReport init];
+    
     __block NSDate *day;
     __block CGFloat high = 0;
     __block CGFloat low = 0;
@@ -339,6 +341,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             
         }];
         //TODO: addDay with the 4 parameters
+        WeatherDay *weatherDay = [weatherDay initWithHigh: high low: low precipitation: prec date: day];
+        
+        [weatherReport.weatherDays addObject:[weatherDay copy]];
 
     }
 }

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "WeatherReport.h"
+#import "WeatherDay.h"
+
 /**
 	NSString: Constant notification to be used to call the historical API handler
  */
