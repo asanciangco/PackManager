@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherDay.h"
 
 /**
 	Class representing a WeatherReport
 */
 @interface WeatherReport : NSObject <NSCoding>
+
+/**
+ 
+ */
+@property (nonatomic, readonly, strong) NSMutableArray *weatherDays;
 
 /**
  Generates example report for demo purposes.
@@ -75,5 +81,11 @@
  Sort the WeatherDay objects chronologically
  */
 - (void) putDaysInOrder;
+
+/**
+ Add a day to the report
+ @param day The day to add
+ */
+- (void) addDay:(WeatherDay *)day;
 
 @end
