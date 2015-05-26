@@ -10,8 +10,10 @@
 #import "NSCodingHelper.h"
 #import "UserPreferences.h"
 
+#import "Packable.h"
 #import "Shirt.h"
 #import "Pant.h"
+#import "Jacket.h"
 
 @interface PackingList ()
 
@@ -21,6 +23,19 @@
 @end
 
 @implementation PackingList
+{
+    CGFloat lightShirts;
+    CGFloat heavyShirts;
+    CGFloat lightPants;
+    CGFloat heavyPants;
+    
+    CGFloat regularJacket;
+    
+    CGFloat underwear;
+    CGFloat regularSocks;
+    
+    CGFloat rain;
+}
 
 #pragma mark - Initializer
 - (instancetype) initPackingListForTrip:(Trip *)trip
@@ -29,6 +44,18 @@
     {
         self.trip = trip;
         self.list = [NSMutableArray array];
+        
+        lightShirts = 0;
+        lightPants  = 0;
+        heavyShirts = 0;
+        heavyPants  = 0;
+        
+        regularJacket   = 0;
+        
+        underwear = 0;
+        regularSocks = 0;
+        
+        rain = 0;
     }
     return self;
 }
@@ -58,83 +85,139 @@
  */
 - (void) generatePackingList
 {
-    CGFloat lightShirts = 0;
-    CGFloat heavyShirts = 0;
-    CGFloat lightPants  = 0;
-    CGFloat heavyPants  = 0;
-    
-    BOOL    jacket = NO;
-    
     WeatherReport *report   = self.trip.weatherReport;
-    UserPreferences *prefs  = [UserPreferences sharedInstance];
     
-    // Basic calculation for shirts and pants only: //
-    //////////////////////////////////////////////////
+    // Loop through the days, calling
+    //      update tops
+    //      update pants
+    //      update accessories
+    // for each day
     for (NSInteger dayIndex = 0; dayIndex < [report numberOfDays]; dayIndex++)
     {
-        NSInteger high  = [report getHighForDay:dayIndex];
-        NSInteger low   = [report getLowForDay:dayIndex];
-        NSInteger averageTemp = (high + low) / 2;                   // Truncated => rounded down
-        TempRange range = [prefs tempRangeForTemp:averageTemp];
-        
-        switch (range)
-        {
-            case COLD:
-            {
-                heavyShirts += 1;
-                heavyPants  += 1;
-                
-                lightShirts += 0;
-                lightPants  += 0;
-                
-                jacket = YES;
-            }
-                break;
-            case COOL:
-            {
-                heavyShirts += 0.75;
-                heavyPants  += 0.75;
-                
-                lightShirts += 0.25;
-                lightPants  += 0.25;
-            }
-                break;
-            case NORMAL:
-            {
-                heavyShirts += 0.5;
-                heavyPants  += 0.5;
-                
-                lightShirts += 0.5;
-                lightPants  += 0.5;
-            }
-                break;
-            case WARM:
-            {
-                heavyShirts += 0.25;
-                heavyPants  += 0.25;
-                
-                lightShirts += 0.75;
-                lightPants  += 0.75;
-            }
-                break;
-            case HOT:
-            {
-                heavyShirts += 0;
-                heavyPants  += 0;
-                
-                lightShirts += 1;
-                lightPants  += 1;
-            }
-                break;
-                
-            default:
-                break;
-        }
+        WeatherDay *day = [report.weatherDays objectAtIndex:dayIndex];
+
+        [self updateTopsForDay:day];
+        [self updatePantsForDay:day];
+        [self updateAccessoriesForDay:day];
     }
     
     // Populate list with necessary items //
     ////////////////////////////////////////
-    // SHIRTS
+    [self populateShirts];
+    [self populatePants];
+    [self populateAccessories];
+}
+
+/**
+ Updates the running variables responsible for maintaining state through packing algorithm, specifically for shirts.
+ @param day The weatherDay object being used for current calculations.
+ */
+- (void) updateTopsForDay:(WeatherDay *)day
+{
+    NSInteger averageTemp = [day averageTemp];
+    TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
+    
+    switch (range)
+    {
+        case COLD:
+        {
+            heavyShirts += 1;
+            lightShirts += 0;
+            
+            regularJacket += 0.25;      // 1 jacket per 4 days
+        }
+            break;
+        case COOL:
+        {
+            heavyShirts += 0.75;
+            lightShirts += 0.25;
+            
+            regularJacket += 0.125;     // 1 jacket per 8 days
+        }
+            break;
+        case NORMAL:
+        {
+            heavyShirts += 0.5;
+            lightShirts += 0.5;
+        }
+            break;
+        case WARM:
+        {
+            heavyShirts += 0.25;
+            lightShirts += 0.75;
+        }
+            break;
+        case HOT:
+        {
+            heavyShirts += 0;
+            lightShirts += 1;
+        }
+            break;
+    }
+}
+
+/**
+ Updates the running variables responsible for maintaining state through packing algorithm, specifically for pants.
+ @param day The weatherDay object being used for current calculations.
+ */
+- (void) updatePantsForDay:(WeatherDay *)day
+{
+    NSInteger averageTemp = [day averageTemp];
+    TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
+    
+    switch (range)
+    {
+        case COLD:
+        {
+            heavyPants += 1;
+            lightPants += 0;
+        }
+            break;
+        case COOL:
+        {
+            heavyPants += 0.75;
+            lightPants += 0.25;
+        }
+            break;
+        case NORMAL:
+        {
+            heavyPants += 0.5;
+            lightPants += 0.5;
+        }
+            break;
+        case WARM:
+        {
+            heavyPants += 0.25;
+            lightPants += 0.75;
+        }
+            break;
+        case HOT:
+        {
+            heavyPants += 0;
+            lightPants += 1;
+        }
+            break;
+    }
+}
+
+/**
+ Updates the running variables responsible for maintaining state through packing algorithm.
+ @param day The weatherDay object being used for current calculations.
+ */
+- (void) updateAccessoriesForDay:(WeatherDay *)day
+{
+    underwear    += (8.0 / 7.0);    // extra pair of underwear for every week
+    regularSocks += (8.0 / 7.0);    // extra pair of socks per week
+    
+    CGFloat prec = [day precipitaion];
+    rain += prec / 2.0;
+}
+
+/**
+ Pupulates the packing list with shirts based on previous calculations. This is a helper method called from within generatePackingList.
+ */
+- (void) populateShirts
+{
     if (lightShirts > 0)
     {
         [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(lightShirts)
@@ -145,7 +228,18 @@
         [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(heavyShirts)
                                                      andType:LONGSLEEVE]];
     }
-    // PANTS
+    if ([self.trip formalPreference])
+    {
+        // TODO need to update quantity calculation
+        [self.list addObject:[[Shirt alloc] initWithQuantity:1 andType:FORMAL]];
+    }
+}
+
+/**
+ Pupulates the packing list with pants based on previous calculations. This is a helper method called from within generatePackingList.
+ */
+- (void) populatePants
+{
     if (lightPants > 0)
     {
         [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(lightPants)
@@ -154,12 +248,42 @@
     if (heavyPants > 0)
     {
         [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(heavyPants)
-                                                    andType:LONGPANTS]];
+                                                   andType:LONGPANTS]];
     }
+}
+
+/**
+ Pupulates the packing list with accessories based on previous calculations. This is a helper method called from within generatePackingList.
+ */
+- (void) populateAccessories
+{
     // JACKET
-    if (jacket)
+    if (regularJacket > 0)
     {
-        
+        [self.list addObject:[[Jacket alloc] initWithQuantity:ceilf(regularJacket)
+                                                      andType:REGULAR_JACKET]];
+    }
+    
+    // RAIN GEAR
+    if (rain > 0.2)
+    {
+        [self.list addObject:[[Jacket alloc] initWithQuantity:1 andType:RAIN_JACKET]];
+    }
+    if (rain >= 0.5)
+    {
+        // gets added in addition to a rain jacket
+        [self.list addObject:[[Umbrella alloc] initWithQuantity:1]];
+    }
+    
+    // UNDERWEAR
+    if (underwear > 0)
+    {
+        [self.list addObject:[[Underwear alloc] initWithQuantity:ceilf(underwear)]];
+    }
+    // REGULAR SOCKS
+    if (regularSocks > 0)
+    {
+        [self.list addObject:[[Socks alloc] initWithQuantity:ceilf(regularSocks)]];
     }
 }
 
@@ -186,46 +310,6 @@
         return item.quantity;
     else
         return -1;
-}
-
-+ (NSString *) stringForItemType:(PackingItems)item
-{
-    NSString *itemName;
-    
-    switch (item)
-    {
-        case SHORT_SLEEVE_SHIRT:
-            itemName = @"T-Shirt";
-            break;
-        case LONG_SLEEVE_SHIRT:
-            itemName = @"Long Sleeve Shirt";
-            break;
-        case FORMAL_SHIRT:
-            itemName = @"Formal Shirt";
-            break;
-        case SHORT_PANT:
-            itemName = @"Shorts";
-            break;
-        case LONG_PANT:
-            itemName = @"pants";
-            break;
-        case SWIMSUIT:
-            itemName = @"Swimsuit";
-            break;
-        case SUIT:
-            itemName = @"Suit";
-            break;
-        case DRESS:
-            itemName = @"Dress";
-            break;
-        case TIE:
-            itemName = @"Tie";
-            break;
-        default:
-            itemName = @"ITEM NOT FOUND";
-    }
-    
-    return itemName;
 }
 
 #pragma mark - Encoding / Decoding

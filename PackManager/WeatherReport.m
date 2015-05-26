@@ -12,7 +12,7 @@
 
 @interface WeatherReport ()
 
-@property (nonatomic, strong) NSMutableArray *weatherDays;
+@property (nonatomic, readwrite, strong) NSMutableArray *weatherDays;
 
 @end
 
@@ -38,12 +38,12 @@
         self.weatherDays = [NSMutableArray array];
         
         // Current exmaple, 7 day trip of one temperature
-        [self.weatherDays addObjectsFromArray:@[[[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
-                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
-                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
-                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
-                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
-                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]],
+        [self.weatherDays addObjectsFromArray:@[[[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:1 date:[NSDate date]],
                                                 [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]]]];
     }
     return self;

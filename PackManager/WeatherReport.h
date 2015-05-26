@@ -15,6 +15,11 @@
 @interface WeatherReport : NSObject <NSCoding>
 
 /**
+ 
+ */
+@property (nonatomic, readonly, strong) NSMutableArray *weatherDays;
+
+/**
  Generates example report for demo purposes.
  */
 - (instancetype) initExampleReport;
