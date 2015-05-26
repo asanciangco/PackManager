@@ -12,6 +12,7 @@ static WeatherAPI *sharedInstance;
 
 static NSString *HistoricalWeatherAPIKey = @"FgFYQJXIFJwfhPAWbARqFNwPqdokgUeC";
 static NSString *PresentWeatherAPIKey = @"1412e64aff4c8a2d7411980f8568efd2";
+static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 
@@ -20,6 +21,8 @@ static NSString *HistoricalWeatherURLLocation = @"http://www.ncdc.noaa.gov/cdo-w
 static NSString *PresentWeatherURLData = @"http://api.openweathermap.org/data/2.5/forecast/daily?";
 
 static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/data/2.5/find?";
+
+static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geocode/json?";
 
 @implementation WeatherAPI
 
@@ -41,9 +44,9 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
     
     if ((instance = [[WeatherAPI alloc] init]))
     {
-        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryHistorical:) name:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryHistorical:) name:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryPresent:) name:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryPresent:) name:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self];
     }
     return instance;
 }
@@ -55,12 +58,101 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
 
 #pragma mark - Core Fuctions
 
+- (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end
+{
+  //Get URL search string with + instead of space
+  NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+  NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
+    
+    
+    //Check which API to use based on number of days until end of trip
+    NSInteger daysNeeded = [self daysBetweenDate:[NSDate date] andDate:end];
+    bool presentForecast = false;
+    bool historicalForeast = false;
+    
+    if(daysNeeded >= 15)
+    {
+        presentForecast = false;
+        historicalForeast = true;
+    }
+    else
+    {
+        presentForecast = true;
+        historicalForeast = false;
+    }
+  
+  __block CGFloat lat = 0;
+  __block CGFloat lon = 0;
+  
+  NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+
+  NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+  
+  [[session dataTaskWithURL:[NSURL URLWithString:LatLongUrl]
+          completionHandler:^(NSData *data,
+                              NSURLResponse *response,
+                              NSError *error) {
+            // handle response
+            NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData: data
+                                                                                options:0
+                                                                                  error:&error];
+            
+            if(error) {
+              /* JSON was malformed, act appropriately here */
+            }
+            else{
+              
+              NSArray *results = [cityLatLong objectForKey:@"results"];
+              NSDictionary *resultDict = [results objectAtIndex:0];
+              
+              [resultDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                  if ([key  isEqualToString:@"geometry"])
+                  {
+                      NSDictionary *geodict = [resultDict objectForKey:@"geometry"];
+                      [geodict enumerateKeysAndObjectsUsingBlock:^(id geokey, id geoobj, BOOL *geostop)
+                       {
+
+                            if ([geokey  isEqualToString:@"location"])
+                            {
+                              NSDictionary *tempdict = [geodict objectForKey:@"location"];
+                              [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
+                               {
+                                 if ([key2 isEqualToString:@"lat"])
+                                 {
+                                   if ([obj2 isKindOfClass:([NSNumber class])])
+                                   {
+                                     NSNumber *num = (NSNumber*)obj2;
+                                     lat = [num floatValue];
+                                   }
+                                 }
+                                 if ([key2  isEqualToString:@"lng"])
+                                 {
+                                   if ([obj2 isKindOfClass:([NSNumber class])])
+                                   {
+                                     NSNumber *num = (NSNumber*)obj2;
+                                     lon = [num floatValue];
+                                   }
+                                 }
+                               }];
+                            }
+                       }];
+                  }
+              }];
+
+            }
+            
+            [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
+            
+          }] resume];
+
+  
+}
+
 
 //Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
-- (void) getWeatherFromPresent:(NSString*)city country:(NSString*)country start:(NSDate *)start end:(NSDate *)end
+- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end
 {
-    NSString *reformattedPresent = [ city stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *WeatherUrl = [NSString stringWithFormat:@"%@q=%@,%@&cnt=16&mode=json&units=imperial", PresentWeatherURLData, reformattedPresent, country];
+    NSString *WeatherUrl = [NSString stringWithFormat:@"%@lat=%f&lon=%f&cnt=16&mode=json&units=imperial", PresentWeatherURLData, lat, lng];
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     sessionConfiguration.HTTPAdditionalHeaders = @{
@@ -85,12 +177,20 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
                     NSMutableArray *weatherArray = [self parseJSONforPresent:cityWeatherFeatures start:start end:end];
                     
                     //Call handler
-                    [[NSNotificationCenter defaultCenter] postNotificationName:CITY_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
                 }
                 
             }] resume];
 }
 
+
+/**
+	Given the json object, returns an array of the forecast for the days of the trip
+	@param weather The json object collected from the api
+	@param start The start date of the trip
+    @param end The end date of the trip
+	@returns NSMutableArray of weather forecast for the days of the trip
+ */
 - (NSMutableArray*) parseJSONforPresent:(NSDictionary *)weather start:(NSDate *)start end:(NSDate *)end
 {
     //Parse PresentWeatherFeatures by start end dates and pass new dictionary
@@ -174,6 +274,12 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
     return weatherArray;
 }
 
+/**
+	Given two dates tell me the number of days between the two
+	@param fromDateTime The first date
+	@param toDateTime The second date
+	@returns integer of the number of days difference between two dates
+ */
 - (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {
     NSDate *fromDate;
@@ -192,11 +298,17 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
     return [difference day];
 }
 
-
+/**
+	Create a weather report based on the trips forecast
+	@param dict a dictionary that holds the array of weather data for the trip
+	@returns void after creating a weather report
+ */
 //Changing this function to access a new dictionary and collect data from it
 - (void) handleWeatherDictionaryPresent:(NSMutableDictionary*)dict
 {
     NSMutableArray *array = [dict objectForKey:@"data"];
+    
+    __block WeatherReport *weatherReport;
     
     __block NSDate *day;
     __block CGFloat high = 0;
@@ -229,6 +341,9 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
             
         }];
         //TODO: addDay with the 4 parameters
+        WeatherDay *weatherDay;
+        
+        [weatherReport addDay:[weatherDay initWithHigh: high low: low precipitation: prec date: day]];
 
     }
 }
@@ -259,7 +374,7 @@ static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/dat
                     // JSON was malformed, act appropriately here
                 }
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:ZIP_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:HistoricalWeatherFeatures];
+                [[NSNotificationCenter defaultCenter] postNotificationName:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:HistoricalWeatherFeatures];
                 
             }] resume];
 }

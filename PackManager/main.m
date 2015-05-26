@@ -14,9 +14,6 @@
 int main(int argc, char * argv[])
 {
     
-    Trip *trip = [[Trip alloc] initNewTrip];
-    [trip generatePackingListExample];
-    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
