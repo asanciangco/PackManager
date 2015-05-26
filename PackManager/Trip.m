@@ -43,9 +43,6 @@
     return self;
 }
 
-/**
- Creates new, blank trip
- */
 - (instancetype) initNewTrip
 {
     if (self = [[Trip alloc] initWithStartDate:NULL name:@""])
@@ -87,8 +84,6 @@
         if (!dest || ![dest valid])
             return NO;
     }
-        
-    
     
     // Check weather report
     if (!self.weatherReport)
@@ -106,7 +101,10 @@
 
 - (BOOL) generatePackingListExample
 {
+    self.weatherReport = [[WeatherReport alloc] initExampleReport];
     self.packingList = [[PackingList alloc] initExamplePackingListForTrip:self];
+    
+    [self.packingList printList];
     
     return TRUE;
 }

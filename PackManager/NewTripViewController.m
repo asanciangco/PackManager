@@ -126,7 +126,7 @@
                 if (relativeIndex % 2 == 0)
                     cell.detailTextLabel.text = dest.name;
                 else
-                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", dest.duration];
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
             }
         }
         else

@@ -12,6 +12,7 @@
 
 @implementation Packable
 
+#pragma marg - Initializer
 - (instancetype) initWithQuantity:(NSUInteger)quantity
 {
     if (self = [self init])
@@ -19,6 +20,12 @@
         self.quantity = quantity;
     }
     return self;
+}
+
+#pragma mark - Helpers
+- (NSString *) imageName
+{
+    return nil;
 }
 
 #pragma mark - Encoding / Decoding
@@ -38,4 +45,60 @@
     return self;
 }
 
-@end
+@end // Packable implementation
+
+#pragma mark - Umbrella
+@implementation Umbrella
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Umbrella";
+    }
+    return self;
+}
+
+@end // Umbrella implementation
+
+#pragma mark - Sunscreen
+@implementation Sunscreen
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Sunscreen";
+    }
+    return self;
+}
+
+@end // Sunscreen implementation
+
+#pragma mark - Underwear
+@implementation Underwear
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Underwear";
+    }
+    return self;
+}
+
+@end // Underwear implementation
+
+#pragma mark - Sunscreen
+@implementation Socks
+
+- (instancetype) initWithQuantity:(NSUInteger)quantity
+{
+    if (self = [super initWithQuantity:quantity])
+    {
+        self.name = @"Socks";
+    }
+    return self;
+}
+
+@end // Socks implementation

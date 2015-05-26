@@ -136,7 +136,9 @@ Juggler.xcodeproj/xcuserdata/asanciangco.xcuserdatad/xcdebugger/Breakpoints_v2.x
 *.pbxproj
 *.xccheckout
 doc/*
+PackManager.xcodeproj/xcshareddata/xcschemes/PackManager.xcscheme
 
 
 
 
+PackManager.xcodeproj/project.pbxproj

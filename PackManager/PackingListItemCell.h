@@ -12,9 +12,7 @@
 @interface PackingListItemCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *itemTextLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *quantityTextLabel;
 
-- (instancetype)initWithPackable:(Packable *)item style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

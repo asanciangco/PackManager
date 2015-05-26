@@ -18,29 +18,6 @@
 @interface PackingList : NSObject <NSCoding>
 
 /**
-    An enumeration of packing items (i.e. shirts, pants, etc)
-*/
-typedef enum PackingItems
-{
-    SHORT_SLEEVE_SHIRT = 0,
-    LONG_SLEEVE_SHIRT,
-    FORMAL_SHIRT,
-    SHORT_PANT,
-    LONG_PANT,
-    UNDERWEAR,
-    SOCKS,
-    SHOES,
-    SANDALS,
-    SWIMSUIT,
-    SUIT,
-    DRESS,
-    TIE,
-    UMBERELLA,
-    SUNSCREEN,
-    
-} PackingItems;
-
-/**
     Initialize a new PackingList object
     @param trip The trip the packing list is for
     @returns a newly intialized object
@@ -81,7 +58,11 @@ typedef enum PackingItems
   @param item A packing item
   @returns a string representation of the given item
 */
-+ (NSString *) stringForItemType:(PackingItems)item;
+//+ (NSString *) stringForItemType:(PackingItems)item;
 
+/**
+ Used for testing, this function will print out the packing list to the console.
+ */
+- (void) printList;
 
 @end

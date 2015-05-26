@@ -12,7 +12,7 @@
 
 @interface WeatherReport ()
 
-@property (nonatomic, strong) NSMutableArray *weatherDays;
+@property (nonatomic, readwrite, strong) NSMutableArray *weatherDays;
 
 @end
 
@@ -27,6 +27,24 @@
     if (self = [super init])
     {
         self.weatherDays = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (instancetype) initExampleReport
+{
+    if (self = [super init])
+    {
+        self.weatherDays = [NSMutableArray array];
+        
+        // Current exmaple, 7 day trip of one temperature
+        [self.weatherDays addObjectsFromArray:@[[[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0.1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:1 date:[NSDate date]],
+                                                [[WeatherDay alloc] initWithHigh:70 low:70 precipitation:0 date:[NSDate date]]]];
     }
     return self;
 }
@@ -59,25 +77,38 @@
     return [self.weatherDays count];
 }
 
-- (NSInteger) getHighForDay:(NSInteger)day
+- (WeatherDay*) getDayAtIndex: (NSInteger) day;
 {
     if (day <= 0 || day > [self numberOfDays])
-        return NSIntegerMin;
+        return nil;
     
-    WeatherDay *weatherDay = [self.weatherDays objectAtIndex:(day - 1)];
-    
+    return [self.weatherDays objectAtIndex:(day - 1)];
+}
+
+- (NSInteger) getHighForDay:(NSInteger)day
+{
+    WeatherDay *weatherDay = [self getDayAtIndex:day];
     return weatherDay.high;
 }
 
 - (NSInteger) getLowForDay:(NSInteger)day;
 {
-    if (day <= 0 || day > [self numberOfDays])
-        return NSIntegerMin;
-    
-    WeatherDay *weatherDay = [self.weatherDays objectAtIndex:(day - 1)];
-    
+    WeatherDay *weatherDay = [self getDayAtIndex:day];
     return weatherDay.low;
 }
+
+- (NSInteger) getAverageForDay: (NSInteger)day;
+{
+    WeatherDay *weatherDay = [self getDayAtIndex:day];
+    return weatherDay.averageTemp;
+}
+
+- (NSInteger) getRangeForDay: (NSInteger)day;
+{
+    WeatherDay *weatherDay = [self getDayAtIndex:day];
+    return weatherDay.range;
+}
+
 
 #pragma mark - WeatherDay logic
 - (BOOL) daysAreInOrder
@@ -90,6 +121,11 @@
 - (void) putDaysInOrder
 {
     // TODO: Implement me.
+}
+
+- (void) addDay:(WeatherDay *)day
+{
+    [self.weatherDays addObject:day];
 }
 
 #pragma mark - Encoding / Decoding

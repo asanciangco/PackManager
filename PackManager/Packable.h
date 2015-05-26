@@ -11,6 +11,8 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - Packable Superclass
+
 /**
  Simple class to represent packable objects (i.e. T-shirts, pants, etc)
  */
@@ -32,6 +34,25 @@
  */
 - (instancetype) initWithQuantity:(NSUInteger)quantity;
 
+/**
+ The name for the image to be displayed within packing list. Returns nil by default, must be overridden by subclasses.
+ @returns NSString of the image name
+ */
+- (NSString *) imageName;
+
+@end
+
+#pragma mark - Miscellaneous Packing Items
+@interface Umbrella : Packable
+@end
+
+@interface Sunscreen : Packable
+@end
+
+@interface Underwear : Packable
+@end
+
+@interface Socks : Packable
 @end
 
 #endif

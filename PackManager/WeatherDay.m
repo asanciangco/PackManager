@@ -14,9 +14,23 @@
 {
     if (self = [super init])
     {
-        
+        self.high = high;
+        self.low = low;
+        self.precipitaion = prec;
+        self.date = date;
     }
+    
     return self;
+}
+
+- (NSInteger) averageTemp
+{
+    return (self.high + self.low)/2;
+}
+
+- (NSInteger) range
+{
+    return self.high - self.low;
 }
 
 #pragma mark - Encoding / Decoding
