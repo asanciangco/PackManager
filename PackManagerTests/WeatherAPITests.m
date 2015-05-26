@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Nocilla.h"
 #import "WeatherAPI.h"
 
 @interface WeatherAPITests : XCTestCase
@@ -23,10 +24,16 @@
 - (void)setUp {
     [super setUp];
     
+    // Set up properties
+    
     self.start   = [NSDate dateWithTimeInterval:1 * 24 * 60 * 60 sinceDate:[NSDate date]];
     self.end     = [NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]];
     
     self.instance = [WeatherAPI sharedInstance];
+    
+    // Set up mocks
+    
+    stubRequest(@"GET", @"^https://maps\\.googleapis\\.com/.*".regex).andReturn(404);
 }
 
 - (void)tearDown {
@@ -34,15 +41,17 @@
     [super tearDown];
 }
 
+#pragma mark Tests
+
 - (void)testWeatherFromPresent {
-    
+    [self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
 }
 
 - (void)testParseJSONForPresent {
     
     // bloopity bloo, need a proper nsdict here
     
-    NSMutableArray* days = [self.instance parseJSONforPresent:nil start:self.start end:self.end];
+    /* NSMutableArray* days = [self.instance parseJSONforPresent:nil start:self.start end:self.end]; */
     
     XCTAssert(YES, @"Pass");
 }

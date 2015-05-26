@@ -171,7 +171,6 @@
 		21D1F3181ADF3B71003024B7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F3161ADF3B71003024B7 /* Main_iPad.storyboard */; };
 		21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F31A1ADF3B71003024B7 /* TripsViewController.m */; };
 		21D1F3201ADF3B71003024B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F31F1ADF3B71003024B7 /* Images.xcassets */; };
-		21D1F3271ADF3B71003024B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3261ADF3B71003024B7 /* XCTest.framework */; };
 		21D1F3281ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
 		21D1F3291ADF3B71003024B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3051ADF3B71003024B7 /* UIKit.framework */; };
 		21D1F3311ADF3B71003024B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F32F1ADF3B71003024B7 /* InfoPlist.strings */; };
@@ -185,7 +184,8 @@
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
 		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
-		A72929383D5A53EC41954E1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
+		4C7D9DAC1B152FDE0005C522 /* Nocilla in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59AAF51B14532000819BB3 /* Nocilla */; };
+		4C7D9DAF1B1530A60005C522 /* Nocilla in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59AAF51B14532000819BB3 /* Nocilla */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -431,10 +431,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7D9DAC1B152FDE0005C522 /* Nocilla in Frameworks */,
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
-				A72929383D5A53EC41954E1E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21D1F3271ADF3B71003024B7 /* XCTest.framework in Frameworks */,
+				4C7D9DAF1B1530A60005C522 /* Nocilla in Frameworks */,
 				21D1F3291ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3281ADF3B71003024B7 /* Foundation.framework in Frameworks */,
 			);
@@ -1587,6 +1587,7 @@
 		};
 		21D1F33A1ADF3B71003024B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F5B193DDD9601814C054B2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PackManager.app/PackManager";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1601,6 +1602,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PackManagerTests/PackManagerTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1619,6 +1624,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
 				INFOPLIST_FILE = "PackManagerTests/PackManagerTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

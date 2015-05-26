@@ -98,7 +98,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                                                                                   error:&error];
             
             if(error) {
-              /* JSON was malformed, act appropriately here */
+                /* do nothing */
             }
             else{
               
@@ -208,7 +208,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSInteger dateRange = [self daysBetweenDate:start andDate:end];
     NSInteger dateOffset = [self daysBetweenDate:[NSDate date] andDate:start];
     
-    for (NSInteger i = dateOffset; i <= dateRange; i++)
+    for (NSInteger i = dateOffset; i <= dateOffset + dateRange; i++)
     {
         NSDictionary *weatherdict = [results objectAtIndex:i];
         
