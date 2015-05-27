@@ -183,6 +183,7 @@
 		4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AA91B0D194F00795767 /* PackingListTests.m */; };
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
+		4C0BA6241B162F6700907525 /* googlemaps2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BA6231B162F6700907525 /* googlemaps2.json */; };
 		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
 		4C7D9DB81B157D260005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
@@ -406,6 +407,7 @@
 		4C085AA91B0D194F00795767 /* PackingListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackingListTests.m; sourceTree = "<group>"; };
 		4C085AAB1B0D22F200795767 /* WeatherDayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDayTests.m; sourceTree = "<group>"; };
 		4C085AAD1B0D273E00795767 /* WeatherReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportTests.m; sourceTree = "<group>"; };
+		4C0BA6231B162F6700907525 /* googlemaps2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = googlemaps2.json; path = SampleJSON/googlemaps2.json; sourceTree = "<group>"; };
 		4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
 		4C7D9DB71B157D260005C522 /* googlemaps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = googlemaps.json; path = SampleJSON/googlemaps.json; sourceTree = "<group>"; };
 		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1004,6 +1006,7 @@
 		21D1F2F51ADF3B71003024B7 = {
 			isa = PBXGroup;
 			children = (
+				4C0BA6231B162F6700907525 /* googlemaps2.json */,
 				4C7D9DB71B157D260005C522 /* googlemaps.json */,
 				21D1F3071ADF3B71003024B7 /* PackManager */,
 				21D1F32C1ADF3B71003024B7 /* PackManagerTests */,
@@ -1201,6 +1204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0BA6241B162F6700907525 /* googlemaps2.json in Resources */,
 				4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */,
 				21C678E51B15004400C29B0B /* clothing_jeans_2.png in Resources */,
 				21C679131B15004400C29B0B /* clothing_swimwear_2.png in Resources */,

@@ -45,6 +45,13 @@
 
 #pragma mark Tests
 
+- (NSString *) getSampleJSON:(NSString*)name {
+    NSString* path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
+    NSString *sampleJSON = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    
+    return sampleJSON;
+}
+
 - (void)testNocillaMock {
     //[self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
     
@@ -74,14 +81,18 @@
     [self waitForExpectationsWithTimeout:5.0 handler:nil]; */
 }
 
-- (void)testGetWeatherFromPresent {
-    NSBundle * main = [NSBundle mainBundle];
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"googlemaps" ofType:@"json"];
-    NSString *sampleJSON = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+- (void)testGetLatLongFromAddress { //TODO: reduce fragility of requests
+    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?address=Los+Angeles&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
+    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?latlng=34.052235,-118.243683&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps2"]);
     
-    stubRequest(@"GET", @"https://maps.googleapis.com/.*".regex).andReturn(200).withBody(sampleJSON);
+    GLfloat lat;
+    GLfloat lon;
+    NSString *zip;
     
-    [self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
+    [self.instance getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+    
+    
+    XCTAssert([zip isEqualToString:@"90012"]);
 }
 
 - (void)testParseJSONForPresent {

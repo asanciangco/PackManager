@@ -42,17 +42,23 @@ static NSString *DAY_KEY = @"day";
 
 @interface WeatherAPI : NSObject
 
-// Get the shared instance //
-/////////////////////////////
+#pragma mark Main Functions
 
 /**
-    Get the shared instance
-    @returns a shared instance of the WeatherAPI
-*/
+ * Get the shared instance
+ *@returns a shared instance of the WeatherAPI
+ */
 + (instancetype) sharedInstance;
 
-//Function to get Weather Based On Zip
-//- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end;
+/**
+ * getWeatherReport
+ * generates the weather report from a location, start, and end tuple
+ * @returns WeatherReport*
+ */
+- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end;
+
+#pragma mark Helper Functions
+
 /**
 	Collect the weather data for a present forecast from openweathermap API
 	@param lat The trip city latitude
@@ -61,11 +67,22 @@ static NSString *DAY_KEY = @"day";
     @param end The end date of the trip
 	@returns void after creating a weather report
  */
-- (void) getWeatherFromPresent:(CGFloat *)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end;
 
-- (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
+
 
 - (NSMutableArray*) parseJSONforPresent:(NSDictionary *)weather start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
+
+/**
+ * getLatLongFromAddress
+ * @param (NSString *) address
+ * @param (GLfloat *) lat
+ * @param (GLfloat *) lon
+ * @param (NSString **) zip
+ * @returns void
+ */
+- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip;
 
 
 @end
