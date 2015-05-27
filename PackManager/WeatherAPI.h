@@ -69,14 +69,21 @@ static NSString *DAY_KEY = @"day";
  */
 - (NSMutableArray *) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end;
 
+/**
+	Collect the weather data for a present forecast from openweathermap API
+	@param zip The zip code of the location
+    @param start The start date of the trip
+    @param end The end date of the trip
+	@returns void after creating a weather report
+ */
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
 
 /**
  * getLatLongFromAddress
- * @param (NSString *) address
- * @param (GLfloat *) lat
- * @param (GLfloat *) lon
- * @returns void
+ * @param address location query entered by client
+ * @param lat latitude of the location
+ * @param lon longitude of the location
+ * @returns void after retrieving the lat/long
  */
 - (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon;
 
