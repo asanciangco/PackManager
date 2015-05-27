@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *currLocationTextField;
 @property (weak, nonatomic) IBOutlet UITableView *locationSuggestionsTableView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *currDurationTextField;
 
 - (IBAction)startDatePicked:(id)sender;
@@ -73,7 +74,8 @@
     
     startDatePickerShowing = NO;
     locationSuggestionsShowing = NO;
-    mapShowing = NO;
+    mapShowing = YES;
+    [self updateMapViewToLat:34 Long:-118];
     
     //both buttons start off non-operational
     self.addStopButton.enabled = NO;
@@ -153,6 +155,8 @@
         }
         else if([indexPath isEqual:mapIndexPath])
         {
+            //trying to remove cell separator for map (only does below
+            //cell.separatorInset = UIEdgeInsetsMake(0.f, cell.bounds.size.width, 0.f, 0.f);
             cell.hidden = !mapShowing;
         }
         
@@ -258,6 +262,18 @@
     self.currLocationTextField.text = @"";
     self.currDurationTextField.text = @"";
     [self.tableView reloadData];
+}
+
+- (void)updateMapViewToLat:(CLLocationDegrees)lat Long:(CLLocationDegrees)lon{
+    
+    // create a region and pass it to the Map View
+    MKCoordinateRegion region;
+    region.center.latitude = lat;
+    region.center.longitude = lon;
+    region.span.latitudeDelta = 0.5;
+    region.span.longitudeDelta = 0.5;
+    
+    [self.mapView setRegion:region animated:NO];
 }
 
 #pragma mark - Navigation

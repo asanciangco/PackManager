@@ -643,6 +643,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5m-An-vOv" id="Bhe-U5-X3l">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lky-vL-TIZ">
+                                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </mapView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lky-vL-TIZ" firstAttribute="leading" secondItem="Bhe-U5-X3l" secondAttribute="leading" constant="10" id="Hf0-qB-Jjv"/>
+                                                <constraint firstItem="Lky-vL-TIZ" firstAttribute="top" secondItem="Bhe-U5-X3l" secondAttribute="top" id="cSt-xz-hJ9"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lky-vL-TIZ" secondAttribute="bottom" id="cjJ-so-XCD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lky-vL-TIZ" secondAttribute="trailing" constant="10" id="zUJ-zz-LxT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currDurationCell" id="JaX-kB-ZKg">
@@ -689,6 +707,7 @@
                         <outlet property="currLocationTextField" destination="qEc-ve-JP3" id="8mS-wb-U6Q"/>
                         <outlet property="generateListButton" destination="uTQ-1g-wuv" id="KS9-Fb-eSC"/>
                         <outlet property="locationSuggestionsTableView" destination="gyw-SI-tHo" id="Fbc-o3-yDS"/>
+                        <outlet property="mapView" destination="Lky-vL-TIZ" id="NMC-hg-kjw"/>
                         <outlet property="startDatePicker" destination="41i-2g-jk3" id="nRi-VP-aHY"/>
                         <outlet property="tripNameTextField" destination="6iz-wg-rrA" id="fwY-ox-dGt"/>
                     </connections>
