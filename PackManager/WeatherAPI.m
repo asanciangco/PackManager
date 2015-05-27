@@ -110,7 +110,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 
 //Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
-- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat*)lng start:(NSDate *)start end:(NSDate *)end
+- (NSMutableArray *) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end
 {
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@lat=%f&lon=%f&cnt=16&mode=json&units=imperial", PresentWeatherURLData, lat, lng];
     
@@ -124,16 +124,13 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSData* data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     
         // handle response
-    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
-        options:0
-        error:&error];
+    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
     
     if(error) {
-        return; /* JSON was malformed, act appropriately here */
+        return nil; /* JSON was malformed, act appropriately here */
     }
-    NSMutableArray *weatherArray = [self parseJSONforPresent:cityWeatherFeatures start:start end:end];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
+    return [self parseJSONforPresent:cityWeatherFeatures start:start end:end];
 }
 
 
@@ -200,7 +197,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         [weatherArray addObject:[weatherEntry copy]];
         
         //Increase Date
-        dateplus1 = [dateplus1 dateByAddingTimeInterval:60*60*24*1];
+        dateplus1 = [self dayFromDate:dateplus1 andDays:1];
         //RESET PARAMETERS
         prec = 0;
         
@@ -231,6 +228,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                                                fromDate:fromDate toDate:toDate options:0];
     
     return [difference day];
+}
+
+- (NSDate *)dayFromDate:(NSDate *) date andDays:(NSInteger) numDays
+{
+    return [date dateByAddingTimeInterval:60*60*24*numDays];
 }
 
 /**
@@ -264,7 +266,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 }
 
 //To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
-- (void) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
+- (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
     
     NSDateFormatter* df = [[NSDateFormatter alloc]init];
     [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
@@ -301,7 +303,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                 }
                 
             }] resume];
-
+    return nil;
 }
 
 - (NSMutableArray*) parseJSONforHistorical:(NSDictionary *)weather
@@ -454,6 +456,13 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     bool presentForecast = daysToStart <= 15;
     bool historicalForecast = daysToEnd >= 15;
+    
+    GLfloat lat;
+    GLfloat lon;
+    NSString *zip;
+    
+    [self getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+    
     
     return nil;
 }

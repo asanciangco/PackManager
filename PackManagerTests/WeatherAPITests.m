@@ -91,17 +91,18 @@
     
     [self.instance getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
     
-    
+    XCTAssertEqualWithAccuracy(lat, 34.0, 1.0);
+    XCTAssertEqualWithAccuracy(lon, -118, 1.0);
     XCTAssert([zip isEqualToString:@"90012"]);
 }
 
-- (void)testParseJSONForPresent {
+- (void)testGetWeatherFromPresent {
+    stubRequest(@"GET", @"http://api.openweathermap.org/.*".regex).andReturn(200).withBody([self getSampleJSON:@"openWeatherMap"]);
     
-    // bloopity bloo, need a proper nsdict here
+    //WeatherReport *report = [[WeatherReport alloc] init];
+    NSMutableArray * weather = [self.instance getWeatherFromPresent:34.0522346 lng:-118.243683 start:self.start end:self.end];
     
-    /* NSMutableArray* days = [self.instance parseJSONforPresent:nil start:self.start end:self.end]; */
-    
-    XCTAssert(YES, @"Pass");
+    XCTAssertEqual([weather count], 7);
 }
 
 @end
