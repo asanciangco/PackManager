@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <Nocilla/Nocilla.h>
+#import <objc/runtime.h>
 #import "WeatherAPI.h"
 
 @interface WeatherAPITests : XCTestCase
@@ -17,6 +18,13 @@
 
 @property (nonatomic,strong) WeatherAPI *instance;
 
+@property (nonatomic, strong) NSDate *mockDate;
+
+@property (nonatomic) Method mockDateMethod;
+@property (nonatomic) Method originalDateMethod;
+
+
+
 @end
 
 @implementation WeatherAPITests
@@ -24,12 +32,16 @@
 - (void)setUp {
     [super setUp];
     
+    [self setUpFakeDate];
+    
     // Set up properties
     
     self.start   = [NSDate dateWithTimeInterval:1 * 24 * 60 * 60 sinceDate:[NSDate date]];
     self.end     = [NSDate dateWithTimeInterval:7 * 24 * 60 * 60 sinceDate:[NSDate date]];
     
     self.instance = [WeatherAPI sharedInstance];
+    
+    
     
     // Set up mocks
     
@@ -45,10 +57,12 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
     
+    [self tearDownFakeDate];
+    
     [[LSNocilla sharedInstance] stop];
 }
 
-#pragma mark Tests
+#pragma mark Helpers
 
 - (NSString *) getSampleJSON:(NSString*)name {
     NSString* path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
@@ -56,6 +70,30 @@
     
     return sampleJSON;
 }
+
+- (void)setUpFakeDate
+{
+    // Save these as instance variables so test teardown can swap the implementation back
+    self.originalDateMethod = class_getClassMethod([NSDate class], @selector(date));
+    self.mockDateMethod = class_getInstanceMethod([self class], @selector(mockDateSwizzle));
+    method_exchangeImplementations(self.originalDateMethod, self.mockDateMethod);
+}
+
+- (void)tearDownFakeDate
+{
+    // Revert the swizzle
+    method_exchangeImplementations(self.mockDateMethod, self.originalDateMethod);
+}
+
+// Mock Method, replaces [NSDate date]
+- (NSDate *)mockDateSwizzle {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *mock = [formatter dateFromString:@"2015-04-23 02:34:27"];
+    return mock;
+}
+
+#pragma mark Tests
 
 - (void)testNocillaMock {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -80,6 +118,12 @@
     }];
     
     [self waitForExpectationsWithTimeout:5.0 handler:nil]; */
+}
+
+- (void)testMockDate {
+    NSDate *d = [NSDate date];
+    
+    XCTAssert(true);
 }
 
 - (void)testGetLatLongFromAddress { //TODO: reduce fragility of requests
