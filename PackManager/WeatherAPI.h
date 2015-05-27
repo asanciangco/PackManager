@@ -67,7 +67,7 @@ static NSString *DAY_KEY = @"day";
     @param start The start date of the trip
     @param end The end date of the trip
 	@param lat The trip city latitude
-	@param lng The trip city longitude
+	@param lon The trip city longitude
 	@returns WeatherReport for the trip to use
  */
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon;
