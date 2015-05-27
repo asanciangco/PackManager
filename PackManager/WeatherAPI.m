@@ -52,7 +52,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 #pragma mark - Core Fuctions
 
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip;
+- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -81,15 +81,29 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         *lat = [loc[@"lat"] floatValue];
         *lon = [loc[@"lng"] floatValue];
     }
+}
 
+/**
+ * getZipFromLatLong
+ * @param lat latitude of the location
+ * @param lon longitude of the location
+ * @param zip zip code of the location to be returned
+ * @returns void after retrieving the zip
+ */
+- (void) getZipFromLatLong:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
     request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:URLString]];
     [request setHTTPMethod:@"GET"];
     
+    NSURLResponse* response;
+    NSError* error = nil;
+    
     response = nil;
     error = nil;
-    result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
@@ -265,14 +279,13 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
 }
 
-//To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
     
     NSDateFormatter* df = [[NSDateFormatter alloc]init];
     [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
     [df setDateFormat:@"yyyy-MM-dd"];
-    NSString *startString = [df stringFromDate:start];
-    NSString *endString = [df stringFromDate:end];
+    NSString *startString = [df stringFromDate:[self logicalOneYearAgo:start]];
+    NSString *endString = [df stringFromDate:[self logicalOneYearAgo:end]];
     
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield=date&limit=1000", HistoricalWeatherURLData, zip, startString, endString];
     
@@ -422,17 +435,19 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     GLfloat lon;
     NSString *zip;
     
-    [self getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+    [self getLatLongFromAddress:location lat:&lat lon:&lon];
     
     
     if (presentForecast && historicalForecast) {
+        [self getZipFromLatLong:&lat lon:&lon zip:&zip];
         NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
         NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
-        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:mid end:end]];
+        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:[self dayFromDate:mid andDays:1] end:end]];
         return [self handleWeatherDictionary:weather];
     } else if (presentForecast) {
         return [self handleWeatherDictionary:[self getWeatherFromPresent:lat lng:lon start:start end:end]];
     } else if (historicalForecast) {
+        [self getZipFromLatLong:&lat lon:&lon zip:&zip];
         return [self handleWeatherDictionary:[self getWeatherFromHistorical:zip start:start end:end]];
     }
     
