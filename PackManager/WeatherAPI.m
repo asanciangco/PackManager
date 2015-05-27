@@ -64,25 +64,13 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
     
-    
     //Check which API to use based on number of days until end of trip
     NSInteger daysNeeded = [self daysBetweenDate:[NSDate date] andDate:end];
-    bool presentForecast = false;
-    bool historicalForeast = false;
-    
-    if(daysNeeded >= 15)
-    {
-        presentForecast = false;
-        historicalForeast = true;
-    }
-    else
-    {
-        presentForecast = true;
-        historicalForeast = false;
-    }
+    bool presentForecast = daysNeeded >= 15;
+    // bool historicalForeast = !presentForecast; //unused
   
-    __block CGFloat lat = 0;
-    __block CGFloat lon = 0;
+    CGFloat lat = 0;
+    CGFloat lon = 0;
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:LatLongUrl]];
@@ -112,7 +100,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 
 //Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
-- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end
+- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat*)lng start:(NSDate *)start end:(NSDate *)end
 {
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@lat=%f&lon=%f&cnt=16&mode=json&units=imperial", PresentWeatherURLData, lat, lng];
     
@@ -152,10 +140,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSMutableArray *weatherArray = [NSMutableArray array];
     NSMutableDictionary *weatherEntry = [NSMutableDictionary dictionary];
     
-    __block CGFloat high = 0;
-    __block CGFloat low = 0;
-    __block CGFloat prec = 0;
-    
+    CGFloat high = 0;
+    CGFloat low = 0;
+    CGFloat prec = 0;
+     
     NSArray *results = [weather objectForKey:@"list"];
     
     NSDate *dateplus1 = start;
@@ -167,57 +155,37 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     {
         NSDictionary *weatherdict = [results objectAtIndex:i];
         
-        [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key  isEqualToString:@"temp"])
+        if (weatherdict[@"temp"]) {
+            low = [weatherdict[@"temp"][@"min"] floatValue];
+            high = [weatherdict[@"temp"][@"max"] floatValue];
+        }
+        
+        if (weatherdict[@"rain"]) {
+            CGFloat p = [weatherdict[@"rain"] floatValue];
+            
+            if(p > 0 && p <= 1)
             {
-                NSDictionary *tempdict = [weatherdict objectForKey:@"temp"];
-                [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
-                 {
-                     if ([key2 isEqualToString:@"min"])
-                     {
-                         if ([obj2 isKindOfClass:([NSNumber class])])
-                         {
-                             NSNumber *num = (NSNumber*)obj2;
-                             low = [num floatValue];
-                         }
-                     }
-                     if ([key2  isEqualToString:@"max"])
-                     {
-                         if ([obj2 isKindOfClass:([NSNumber class])])
-                         {
-                             NSNumber *num = (NSNumber*)obj2;
-                             high = [num floatValue];
-                         }
-                     }
-                 }];
+                prec = .1;
             }
-            if ([key isEqualToString:@"rain"] && [obj isKindOfClass:[NSNumber class]]) {
-                CGFloat p = [obj doubleValue];
-                
-                if(p > 0 && p <= 1)
-                {
-                    prec = .1;
-                }
-                else if (p > 1 && p <= 3)
-                {
-                    prec = .3;
-                }
-                else if (p > 3 && p <= 7)
-                {
-                    prec = .5;
-                }
-                else if (p > 7)
-                {
-                    prec = .8;
-                }
+            else if (p > 1 && p <= 3)
+            {
+                prec = .3;
             }
-        }];
+            else if (p > 3 && p <= 7)
+            {
+                prec = .5;
+            }
+            else if (p > 7)
+            {
+                prec = .8;
+            }
+        }
         
         //Add weather entry to array
         [weatherEntry setObject:@(high) forKey:HIGH_KEY];
-        [weatherEntry setObject:@(low) forKey:HIGH_KEY];
-        [weatherEntry setObject:@(prec) forKey:HIGH_KEY];
-        [weatherEntry setObject:dateplus1 forKey:HIGH_KEY];
+        [weatherEntry setObject:@(low) forKey:LOW_KEY];
+        [weatherEntry setObject:@(prec) forKey:PREC_KEY];
+        [weatherEntry setObject:dateplus1 forKey:DAY_KEY];
         
         [weatherArray addObject:[weatherEntry copy]];
         
