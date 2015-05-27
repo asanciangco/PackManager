@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B8C77480164F10962BD99F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
+		210F37F01B153433007C74BC /* GooglePlacesAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 210F37EF1B153433007C74BC /* GooglePlacesAPI.m */; };
+		210F37F21B15362F007C74BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210F37F11B15362F007C74BC /* MapKit.framework */; };
+		210F37F41B153645007C74BC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210F37F31B153645007C74BC /* CoreLocation.framework */; };
 		2127248D1AF18F0C00F61AAA /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248A1AF18F0C00F61AAA /* Destination.m */; };
 		2127248E1AF18F0C00F61AAA /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248C1AF18F0C00F61AAA /* Trip.m */; };
 		213CC7671B0BFDD700475EC5 /* briefcase-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 213CC7651B0BFDD700475EC5 /* briefcase-icon.png */; };
@@ -141,6 +143,7 @@
 		21C679331B15004400C29B0B /* clothing_tshirt_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C678AA1B15004400C29B0B /* clothing_tshirt_3.png */; };
 		21C679341B15004400C29B0B /* clothing_boxerbrief_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C678AD1B15004400C29B0B /* clothing_boxerbrief_1.png */; };
 		21C679351B15004400C29B0B /* clothing_boxer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C678AF1B15004400C29B0B /* clothing_boxer_1.png */; };
+		21C679391B152EC200C29B0B /* Nocilla in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59AAF51B14532000819BB3 /* Nocilla */; };
 		21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3011ADF3B71003024B7 /* Foundation.framework */; };
 		21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3031ADF3B71003024B7 /* CoreGraphics.framework */; };
 		21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D1F3051ADF3B71003024B7 /* UIKit.framework */; };
@@ -207,6 +210,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210F37EE1B153433007C74BC /* GooglePlacesAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesAPI.h; sourceTree = "<group>"; };
+		210F37EF1B153433007C74BC /* GooglePlacesAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlacesAPI.m; sourceTree = "<group>"; };
+		210F37F11B15362F007C74BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		210F37F31B153645007C74BC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		212724891AF18F0C00F61AAA /* Destination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destination.h; sourceTree = "<group>"; };
 		2127248A1AF18F0C00F61AAA /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
 		2127248B1AF18F0C00F61AAA /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
@@ -431,6 +438,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210F37F41B153645007C74BC /* CoreLocation.framework in Frameworks */,
+				210F37F21B15362F007C74BC /* MapKit.framework in Frameworks */,
+				21C679391B152EC200C29B0B /* Nocilla in Frameworks */,
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
@@ -493,6 +503,8 @@
 				E2B80F9F1AF6D52D003B6281 /* WeatherAPI.m */,
 				E29254921AFAA9ED00007394 /* NSCodingHelper.h */,
 				E29254931AFAA9ED00007394 /* NSCodingHelper.m */,
+				210F37EE1B153433007C74BC /* GooglePlacesAPI.h */,
+				210F37EF1B153433007C74BC /* GooglePlacesAPI.m */,
 			);
 			name = "Wrapper / Helper Classes";
 			sourceTree = "<group>";
@@ -1015,6 +1027,8 @@
 		21D1F3001ADF3B71003024B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				210F37F31B153645007C74BC /* CoreLocation.framework */,
+				210F37F11B15362F007C74BC /* MapKit.framework */,
 				FA59AAF71B1455B100819BB3 /* Pods */,
 				FA59AAF51B14532000819BB3 /* Nocilla */,
 				21D1F3011ADF3B71003024B7 /* Foundation.framework */,
@@ -1431,6 +1445,7 @@
 				21D1F31B1ADF3B71003024B7 /* TripsViewController.m in Sources */,
 				2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */,
 				E21273CF1AF80F010063BA5D /* Packable.m in Sources */,
+				210F37F01B153433007C74BC /* GooglePlacesAPI.m in Sources */,
 				FA3B859D1B0D2D67009E06F4 /* Jacket.m in Sources */,
 				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
