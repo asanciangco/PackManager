@@ -22,12 +22,6 @@
     return self;
 }
 
-#pragma mark - Helpers
-- (NSString *) imageName
-{
-    return nil;
-}
-
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
@@ -57,7 +51,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Umbrella";
-        self.imageName = @"clothing_umbrella_2";
+        self.imageName = @"clothing_umbrella_5";
     }
     return self;
 }
@@ -72,7 +66,7 @@
     if (self = [super initWithQuantity:quantity])
     {
         self.name = @"Sunscreen";
-        self.imageName = @"clothing_sunscreen_3";
+        self.imageName = @"clothing_sunscreen_4";
     }
     return self;
 }
@@ -94,7 +88,7 @@
 
 @end // Underwear implementation
 
-#pragma mark - Sunscreen
+#pragma mark - Socks
 @implementation Socks
 
 - (instancetype) initWithQuantity:(NSUInteger)quantity

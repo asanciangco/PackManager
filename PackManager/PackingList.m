@@ -293,7 +293,7 @@
     }
     if (formalShirts > 0)
     {
-        [self.list addObject:[[Shirt alloc] initWithQuantity:formalShirts
+        [self.list addObject:[[Shirt alloc] initWithQuantity:ceilf(formalShirts)
                                                      andType:FORMAL]];
     }
 }
@@ -315,7 +315,7 @@
     }
     if (formalPants > 0)
     {
-        [self.list addObject:[[Pant alloc] initWithQuantity:formalPants
+        [self.list addObject:[[Pant alloc] initWithQuantity:ceilf(formalPants)
                                                     andType:FORMALPANTS]];
     }
 }
@@ -330,6 +330,12 @@
     {
         [self.list addObject:[[Jacket alloc] initWithQuantity:ceilf(regularJacket)
                                                       andType:REGULAR_JACKET]];
+    }
+    
+    // FORMAL SHOES
+    if (formalPants > 0 || formalShirts > 0)
+    {
+        [self.list addObject:[[Shoe alloc] initWithQuantity:1 andType:FORMALSHOE]];
     }
     
     // RAIN GEAR

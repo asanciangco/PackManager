@@ -134,7 +134,7 @@ Juggler.xcodeproj/project.xcworkspace/xcuserdata/asanciangco.xcuserdatad/UserInt
 Juggler.xcodeproj/project.xcworkspace/xcshareddata/
 Juggler.xcodeproj/xcuserdata/asanciangco.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 /Notes/
-*.pbxproj
+#*.pbxproj
 *.xccheckout
 doc/*
 PackManager.xcodeproj/xcshareddata/xcschemes/PackManager.xcscheme
