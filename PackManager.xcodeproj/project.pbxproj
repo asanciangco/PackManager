@@ -188,6 +188,7 @@
 		4C7D9DB81B157D260005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		4CFD9D531B163C3C007EFAC2 /* openWeatherMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */; };
+		4CFD9D551B164006007EFAC2 /* historical.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD9D541B164006007EFAC2 /* historical.json */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -412,6 +413,7 @@
 		4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
 		4C7D9DB71B157D260005C522 /* googlemaps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = googlemaps.json; path = SampleJSON/googlemaps.json; sourceTree = "<group>"; };
 		4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openWeatherMap.json; path = SampleJSON/openWeatherMap.json; sourceTree = "<group>"; };
+		4CFD9D541B164006007EFAC2 /* historical.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = historical.json; path = SampleJSON/historical.json; sourceTree = "<group>"; };
 		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
@@ -1008,9 +1010,7 @@
 		21D1F2F51ADF3B71003024B7 = {
 			isa = PBXGroup;
 			children = (
-				4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */,
-				4C0BA6231B162F6700907525 /* googlemaps2.json */,
-				4C7D9DB71B157D260005C522 /* googlemaps.json */,
+				4CFD9D561B164011007EFAC2 /* JSON Bundles */,
 				21D1F3071ADF3B71003024B7 /* PackManager */,
 				21D1F32C1ADF3B71003024B7 /* PackManagerTests */,
 				21D1F3001ADF3B71003024B7 /* Frameworks */,
@@ -1101,6 +1101,17 @@
 				2175AD0A1AF1AB250033ECE4 /* PackingListItemCell.m */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		4CFD9D561B164011007EFAC2 /* JSON Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				4CFD9D541B164006007EFAC2 /* historical.json */,
+				4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */,
+				4C0BA6231B162F6700907525 /* googlemaps2.json */,
+				4C7D9DB71B157D260005C522 /* googlemaps.json */,
+			);
+			name = "JSON Bundles";
 			sourceTree = "<group>";
 		};
 		83CB1909BB5D7B2D2EDEF593 /* Pods */ = {
@@ -1207,6 +1218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFD9D551B164006007EFAC2 /* historical.json in Resources */,
 				4C0BA6241B162F6700907525 /* googlemaps2.json in Resources */,
 				4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */,
 				21C678E51B15004400C29B0B /* clothing_jeans_2.png in Resources */,

@@ -276,34 +276,24 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield=date&limit=1000", HistoricalWeatherURLData, zip, startString, endString];
     
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfiguration.HTTPAdditionalHeaders = @{
-                                                   @"token"       : HistoricalWeatherAPIKey
-                                                   };
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WeatherUrl]];
+    [request setHTTPMethod:@"GET"];
+    [request addValue:HistoricalWeatherAPIKey forHTTPHeaderField:@"token"];
     
-    [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
-                                                                                    options:0
-                                                                                      error:&error];
-                
-                if(error) {
-                    /* JSON was malformed, act appropriately here */
-                }
-                else{
-                    NSMutableArray *weatherArray = [self parseJSONforHistorical:cityWeatherFeatures];
-                    
-                    //Call handler
-                    [[NSNotificationCenter defaultCenter] postNotificationName:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
-                }
-                
-            }] resume];
-    return nil;
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    // handle response
+    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
+    
+    if(error) {
+        return nil; /* JSON was malformed, act appropriately here */
+    }
+    
+    return [self parseJSONforHistorical:cityWeatherFeatures];
 }
 
 - (NSMutableArray*) parseJSONforHistorical:(NSDictionary *)weather
@@ -406,48 +396,19 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 	@returns void after creating a weather report
  */
 //Changing this function to access a new dictionary and collect data from it
-- (void) handleWeatherDictionary:(NSMutableDictionary*)dict
+- (WeatherReport *) handleWeatherDictionary:(NSMutableArray*) array
 {
-    NSMutableArray *array = [dict objectForKey:@"data"];
+    WeatherReport *weatherReport = [[WeatherReport alloc] init];
     
-    __block WeatherReport *weatherReport;
-    
-    __block NSDate *day;
-    __block CGFloat high = 0;
-    __block CGFloat low = 0;
-    __block CGFloat prec = 0;
-    for (int i = 0; i < [array count]; i++) {
-        NSDictionary *weatherdict = [array objectAtIndex:i];
-        [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key  isEqual: HIGH_KEY]) {
-                if ([obj isKindOfClass:([NSNumber class])]) {
-                    NSNumber *num = (NSNumber*)obj;
-                    high = [num floatValue];
-                }
-            }
-            if ([key  isEqual: LOW_KEY]) {
-                if ([obj isKindOfClass:([NSNumber class])]) {
-                    NSNumber *num = (NSNumber*)obj;
-                    low = [num floatValue];
-                }
-            }
-            if ([key  isEqual: DAY_KEY]) {
-                day = obj;
-            }
-            if ([key  isEqual: PREC_KEY]) {
-                if ([obj isKindOfClass:([NSNumber class])]) {
-                    NSNumber *num = (NSNumber*)obj;
-                    prec = [num floatValue];
-                }
-            }
-            
-        }];
-        //TODO: addDay with the 4 parameters
-//        WeatherDay *weatherDay;
-        
-        [weatherReport addDay:[[WeatherDay alloc] initWithHigh: high low: low precipitation: prec date: day]];
-
+    for (id obj in array) {
+        [weatherReport addDay:[[WeatherDay alloc]
+                               initWithHigh: [obj[HIGH_KEY] floatValue]
+                               low: [obj[LOW_KEY] floatValue]
+                               precipitation: [obj[PREC_KEY] floatValue]
+                               date: obj[DAY_KEY]]];
     }
+    
+    return weatherReport;
 }
 
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end {
@@ -462,6 +423,18 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSString *zip;
     
     [self getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+    
+    
+    if (presentForecast && historicalForecast) {
+        NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
+        NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
+        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:mid end:end]];
+        return [self handleWeatherDictionary:weather];
+    } else if (presentForecast) {
+        return [self handleWeatherDictionary:[self getWeatherFromPresent:lat lng:lon start:start end:end]];
+    } else if (historicalForecast) {
+        return [self handleWeatherDictionary:[self getWeatherFromHistorical:zip start:start end:end]];
+    }
     
     
     return nil;

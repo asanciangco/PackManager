@@ -34,6 +34,11 @@
     // Set up mocks
     
     [[LSNocilla sharedInstance] start]; //Start nocilla
+    stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
+    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?address=Los+Angeles&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
+    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?latlng=34.052235,-118.243683&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps2"]);
+    stubRequest(@"GET", @"http://api.openweathermap.org/.*".regex).andReturn(200).withBody([self getSampleJSON:@"openWeatherMap"]);
+    stubRequest(@"GET", @"http://www.ncdc.noaa.gov/.*".regex).andReturn(200).withBody([self getSampleJSON:@"historical"]);
 }
 
 - (void)tearDown {
@@ -53,10 +58,6 @@
 }
 
 - (void)testNocillaMock {
-    //[self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
-    
-    stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"http://www.google.com"]];
     [request setHTTPMethod:@"GET"];
@@ -82,9 +83,6 @@
 }
 
 - (void)testGetLatLongFromAddress { //TODO: reduce fragility of requests
-    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?address=Los+Angeles&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
-    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?latlng=34.052235,-118.243683&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps2"]);
-    
     GLfloat lat;
     GLfloat lon;
     NSString *zip;
@@ -97,12 +95,29 @@
 }
 
 - (void)testGetWeatherFromPresent {
-    stubRequest(@"GET", @"http://api.openweathermap.org/.*".regex).andReturn(200).withBody([self getSampleJSON:@"openWeatherMap"]);
-    
     //WeatherReport *report = [[WeatherReport alloc] init];
-    NSMutableArray * weather = [self.instance getWeatherFromPresent:34.0522346 lng:-118.243683 start:self.start end:self.end];
+    NSMutableArray *weather = [self.instance getWeatherFromPresent:34.0522346 lng:-118.243683 start:self.start end:self.end];
     
     XCTAssertEqual([weather count], 7);
 }
+
+- (void)testGetWeatherFromHistorical {
+    //WeatherReport *report = [[WeatherReport alloc] init];
+    NSMutableArray *weather = [self.instance getWeatherFromHistorical:@"90012" start:self.start end:self.end];
+    
+    XCTAssertEqual([weather count], 7);
+}
+
+- (void)testGetWeatherReportPresentOnly {
+    WeatherReport *report = [self.instance getWeatherReport:@"Los Angeles" start:self.start end:self.end];
+    
+    GLfloat high = [report getOverallHigh];
+    GLfloat low = [report getOverallLow];
+    
+    XCTAssertEqual(high, 82);
+    XCTAssertEqual(low, 48);
+}
+
+
 
 @end
