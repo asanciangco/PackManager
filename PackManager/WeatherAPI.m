@@ -52,7 +52,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 #pragma mark - Core Fuctions
 
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon
+- (void) getLatLongFromAddress:(NSString*)address lat:(CGFloat *)lat lon:(CGFloat *)lon
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -90,7 +90,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
  * @param zip zip code of the location to be returned
  * @returns void after retrieving the zip
  */
-- (void) getZipFromLatLong:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip
+- (void) getZipFromLatLong:(CGFloat *)lat lon:(CGFloat *)lon zip:(NSString **)zip
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
@@ -439,19 +439,23 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherReport;
 }
 
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end {
+- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end
+{
+    return [self getWeatherReport:location start:start end:end lat:NSIntegerMin lon:NSIntegerMin];
+}
+
+- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     
     bool presentForecast = daysToStart <= 15;
     bool historicalForecast = daysToEnd >= 15;
     
-    GLfloat lat;
-    GLfloat lon;
     NSString *zip;
     
-    [self getLatLongFromAddress:location lat:&lat lon:&lon];
-    
+    if (lat == NSIntegerMin && lon == NSIntegerMin) {
+        [self getLatLongFromAddress:location lat:&lat lon:&lon];
+    }
     
     if (presentForecast && historicalForecast) {
         [self getZipFromLatLong:&lat lon:&lon zip:&zip];

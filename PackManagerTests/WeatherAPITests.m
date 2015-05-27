@@ -141,8 +141,8 @@
  * tests success branch
  */
 - (void)testGetLatLongFromAddress { //TODO: reduce fragility of requests
-    GLfloat lat;
-    GLfloat lon;
+    CGFloat lat;
+    CGFloat lon;
     
     [self.instance getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon];
     
