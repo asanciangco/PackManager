@@ -265,14 +265,13 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
 }
 
-//To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
     
     NSDateFormatter* df = [[NSDateFormatter alloc]init];
     [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
     [df setDateFormat:@"yyyy-MM-dd"];
-    NSString *startString = [df stringFromDate:start];
-    NSString *endString = [df stringFromDate:end];
+    NSString *startString = [df stringFromDate:[self logicalOneYearAgo:start]];
+    NSString *endString = [df stringFromDate:[self logicalOneYearAgo:end]];
     
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield=date&limit=1000", HistoricalWeatherURLData, zip, startString, endString];
     
