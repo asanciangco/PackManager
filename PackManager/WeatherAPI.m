@@ -80,7 +80,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSError* error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     
-    NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
+    NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
             
     if(error) {
         return; /* do nothing */
@@ -92,10 +92,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     if(resultDict && resultDict[@"geometry"] && resultDict[@"geometry"][@"location"]) {
         NSDictionary *loc = resultDict[@"geometry"][@"location"];
         lat = [loc[@"lat"] floatValue];
-        lon = [loc[@"lon"] floatValue];
+        lon = [loc[@"lng"] floatValue];
     }
 
-    [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
+    //[[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
 }
 
 
@@ -143,7 +143,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     CGFloat high = 0;
     CGFloat low = 0;
     CGFloat prec = 0;
-     
+    
     NSArray *results = [weather objectForKey:@"list"];
     
     NSDate *dateplus1 = start;

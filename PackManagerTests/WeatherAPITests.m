@@ -75,10 +75,13 @@
 }
 
 - (void)testGetWeatherFromPresent {
-    //NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    NSBundle * main = [NSBundle mainBundle];
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"googlemaps" ofType:@"json"];
+    NSString *sampleJSON = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
-    //NSString* body = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+    stubRequest(@"GET", @"https://maps.googleapis.com/.*".regex).andReturn(200).withBody(sampleJSON);
     
+    [self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
 }
 
 - (void)testParseJSONForPresent {

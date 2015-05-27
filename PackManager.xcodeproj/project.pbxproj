@@ -184,6 +184,8 @@
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
 		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
+		4C7D9DB81B157D260005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
+		4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -405,6 +407,7 @@
 		4C085AAB1B0D22F200795767 /* WeatherDayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDayTests.m; sourceTree = "<group>"; };
 		4C085AAD1B0D273E00795767 /* WeatherReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportTests.m; sourceTree = "<group>"; };
 		4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
+		4C7D9DB71B157D260005C522 /* googlemaps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = googlemaps.json; path = SampleJSON/googlemaps.json; sourceTree = "<group>"; };
 		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
@@ -1001,6 +1004,7 @@
 		21D1F2F51ADF3B71003024B7 = {
 			isa = PBXGroup;
 			children = (
+				4C7D9DB71B157D260005C522 /* googlemaps.json */,
 				21D1F3071ADF3B71003024B7 /* PackManager */,
 				21D1F32C1ADF3B71003024B7 /* PackManagerTests */,
 				21D1F3001ADF3B71003024B7 /* Frameworks */,
@@ -1197,6 +1201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */,
 				21C678E51B15004400C29B0B /* clothing_jeans_2.png in Resources */,
 				21C679131B15004400C29B0B /* clothing_swimwear_2.png in Resources */,
 				21C679251B15004400C29B0B /* clothing_jacket_6.png in Resources */,
@@ -1355,6 +1360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D1F3311ADF3B71003024B7 /* InfoPlist.strings in Resources */,
+				4C7D9DB81B157D260005C522 /* googlemaps.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
