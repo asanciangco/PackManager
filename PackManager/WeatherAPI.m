@@ -60,9 +60,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 - (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end
 {
-  //Get URL search string with + instead of space
-  NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-  NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
+    //Get URL search string with + instead of space
+    NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
     
     
     //Check which API to use based on number of days until end of trip
@@ -81,71 +81,63 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         historicalForeast = false;
     }
   
-  __block CGFloat lat = 0;
-  __block CGFloat lon = 0;
-  
-  NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    __block CGFloat lat = 0;
+    __block CGFloat lon = 0;
 
-  NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-  
-  [[session dataTaskWithURL:[NSURL URLWithString:LatLongUrl]
-          completionHandler:^(NSData *data,
-                              NSURLResponse *response,
-                              NSError *error) {
-            // handle response
-            NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData: data
-                                                                                options:0
-                                                                                  error:&error];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:LatLongUrl]];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
             
-            if(error) {
+    if(error) {
                 /* do nothing */
-            }
-            else{
-              
-              NSArray *results = [cityLatLong objectForKey:@"results"];
-              NSDictionary *resultDict = [results objectAtIndex:0];
-              
-              [resultDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-                  if ([key  isEqualToString:@"geometry"])
-                  {
-                      NSDictionary *geodict = [resultDict objectForKey:@"geometry"];
-                      [geodict enumerateKeysAndObjectsUsingBlock:^(id geokey, id geoobj, BOOL *geostop)
+    }
+    else {
+        NSArray *results = [cityLatLong objectForKey:@"results"];
+        NSDictionary *resultDict = [results objectAtIndex:0];
+      
+        [resultDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+          if ([key  isEqualToString:@"geometry"])
+          {
+              NSDictionary *geodict = [resultDict objectForKey:@"geometry"];
+              [geodict enumerateKeysAndObjectsUsingBlock:^(id geokey, id geoobj, BOOL *geostop)
+               {
+
+                if ([geokey  isEqualToString:@"location"])
+                    {
+                      NSDictionary *tempdict = [geodict objectForKey:@"location"];
+                      [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
                        {
-
-                            if ([geokey  isEqualToString:@"location"])
-                            {
-                              NSDictionary *tempdict = [geodict objectForKey:@"location"];
-                              [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
-                               {
-                                 if ([key2 isEqualToString:@"lat"])
-                                 {
-                                   if ([obj2 isKindOfClass:([NSNumber class])])
-                                   {
-                                     NSNumber *num = (NSNumber*)obj2;
-                                     lat = [num floatValue];
-                                   }
-                                 }
-                                 if ([key2  isEqualToString:@"lng"])
-                                 {
-                                   if ([obj2 isKindOfClass:([NSNumber class])])
-                                   {
-                                     NSNumber *num = (NSNumber*)obj2;
-                                     lon = [num floatValue];
-                                   }
-                                 }
-                               }];
-                            }
+                         if ([key2 isEqualToString:@"lat"])
+                         {
+                           if ([obj2 isKindOfClass:([NSNumber class])])
+                           {
+                             NSNumber *num = (NSNumber*)obj2;
+                             lat = [num floatValue];
+                           }
+                         }
+                         if ([key2  isEqualToString:@"lng"])
+                         {
+                           if ([obj2 isKindOfClass:([NSNumber class])])
+                           {
+                             NSNumber *num = (NSNumber*)obj2;
+                             lon = [num floatValue];
+                           }
+                         }
                        }];
-                  }
-              }];
+                    }
+               }];
+          }
+      }];
 
-            }
-            
-            [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
-            
-          }] resume];
+    }
 
-  
+    [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
 }
 
 

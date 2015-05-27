@@ -33,7 +33,7 @@
     
     // Set up mocks
     
-    [[LSNocilla sharedInstance] start];
+    [[LSNocilla sharedInstance] start]; //Start nocilla
 }
 
 - (void)tearDown {
@@ -49,7 +49,8 @@
     //[self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
     
     stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"http://www.google.com"]];
     [request setHTTPMethod:@"GET"];
 
@@ -71,6 +72,13 @@
     }];
     
     [self waitForExpectationsWithTimeout:5.0 handler:nil]; */
+}
+
+- (void)testGetWeatherFromPresent {
+    //NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    //NSString* body = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+    
 }
 
 - (void)testParseJSONForPresent {

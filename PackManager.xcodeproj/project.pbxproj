@@ -184,8 +184,6 @@
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
 		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
-		4C7D9DAC1B152FDE0005C522 /* Nocilla in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59AAF51B14532000819BB3 /* Nocilla */; };
-		4C7D9DAF1B1530A60005C522 /* Nocilla in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59AAF51B14532000819BB3 /* Nocilla */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -431,7 +429,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7D9DAC1B152FDE0005C522 /* Nocilla in Frameworks */,
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
@@ -442,7 +439,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7D9DAF1B1530A60005C522 /* Nocilla in Frameworks */,
 				21D1F3291ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3281ADF3B71003024B7 /* Foundation.framework in Frameworks */,
 			);
