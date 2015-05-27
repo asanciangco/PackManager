@@ -51,13 +51,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 }
 
 #pragma mark - Core Fuctions
-/**
- * getLatLongFromAddress
- * @param (NSString *) address
- * @param (GLfloat *) lat
- * @param (GLfloat *) lon
- * @returns void
- */
+
 - (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon
 {
     //Get URL search string with + instead of space
