@@ -69,8 +69,6 @@ static NSString *DAY_KEY = @"day";
  */
 - (NSMutableArray *) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end;
 
-
-
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
 
 /**
@@ -78,10 +76,8 @@ static NSString *DAY_KEY = @"day";
  * @param (NSString *) address
  * @param (GLfloat *) lat
  * @param (GLfloat *) lon
- * @param (NSString **) zip
  * @returns void
  */
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip;
-
+- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon;
 
 @end

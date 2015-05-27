@@ -52,7 +52,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 #pragma mark - Core Fuctions
 
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip;
+- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -81,15 +81,22 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         *lat = [loc[@"lat"] floatValue];
         *lon = [loc[@"lng"] floatValue];
     }
+}
 
+- (void) getZipFromLatLong:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
     request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:URLString]];
     [request setHTTPMethod:@"GET"];
     
+    NSURLResponse* response;
+    NSError* error = nil;
+    
     response = nil;
     error = nil;
-    result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
@@ -421,17 +428,19 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     GLfloat lon;
     NSString *zip;
     
-    [self getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+    [self getLatLongFromAddress:location lat:&lat lon:&lon];
     
     
     if (presentForecast && historicalForecast) {
+        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
         NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
         NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
-        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:mid end:end]];
+        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:[self dayFromDate:mid andDays:1] end:end]];
         return [self handleWeatherDictionary:weather];
     } else if (presentForecast) {
         return [self handleWeatherDictionary:[self getWeatherFromPresent:lat lng:lon start:start end:end]];
     } else if (historicalForecast) {
+        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
         return [self handleWeatherDictionary:[self getWeatherFromHistorical:zip start:start end:end]];
     }
     
