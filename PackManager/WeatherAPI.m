@@ -146,33 +146,26 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 {
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@lat=%f&lon=%f&cnt=16&mode=json&units=imperial", PresentWeatherURLData, lat, lng];
     
-    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    sessionConfiguration.HTTPAdditionalHeaders = @{
-                                                   @"x-api-key"       : PresentWeatherAPIKey
-                                                   };
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:WeatherUrl]];
+    [request setHTTPMethod:@"GET"];
+    [request addValue:PresentWeatherAPIKey forHTTPHeaderField:@"x-api-key"];
     
-    //NSError *error = nil;
-    [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
-                    options:0
-                    error:&error];
-                
-                if(error) {
-                    /* JSON was malformed, act appropriately here */
-                }
-                else{
-                    NSMutableArray *weatherArray = [self parseJSONforPresent:cityWeatherFeatures start:start end:end];
-                    
-                    //Call handler
-                    [[NSNotificationCenter defaultCenter] postNotificationName:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
-                }
-                
-            }] resume];
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+        // handle response
+    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
+        options:0
+        error:&error];
+    
+    if(error) {
+        return; /* JSON was malformed, act appropriately here */
+    }
+    NSMutableArray *weatherArray = [self parseJSONforPresent:cityWeatherFeatures start:start end:end];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
 }
 
 
