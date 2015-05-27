@@ -130,6 +130,9 @@
     [self populateShirts];
     [self populatePants];
     [self populateAccessories];
+    
+    // Sort the packing list
+    [self sortPackingList];
 }
 
 /**
@@ -366,6 +369,121 @@
     if (regularSocks > 0)
     {
         [self.list addObject:[[Socks alloc] initWithQuantity:ceilf(regularSocks)]];
+    }
+}
+
+/**
+ Sorts the packing list into a more logical, user-friendly format
+ */
+- (void) sortPackingList
+{
+    self.list = [[self.list sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Packable *a = (Packable *)obj1;
+        Packable *b = (Packable *)obj2;
+        
+        if ([self indexForPackable:a] < [self indexForPackable:b])
+            return (NSComparisonResult)NSOrderedAscending;
+        else if ([self indexForPackable:a] > [self indexForPackable:b])
+            return (NSComparisonResult)NSOrderedDescending;
+        return (NSComparisonResult)NSOrderedSame;
+    }] mutableCopy];
+}
+
+- (NSInteger) indexForPackable:(Packable *)item
+{
+    // List of indexes to determine list order
+    NSInteger underwearIndex    = 000;
+    NSInteger socks             = 010;
+    
+    NSInteger tanktop           = 100;
+    NSInteger tshirt            = 110;
+    NSInteger longsleeve        = 120;
+    
+    NSInteger shorts            = 200;
+    NSInteger jeans             = 210;
+    NSInteger longPants         = 220;
+    
+    NSInteger formalShirt       = 300;
+    NSInteger formalPant        = 310;
+    NSInteger formalShoe        = 320;
+    
+    NSInteger jacket            = 400;
+    NSInteger rainJacket        = 410;
+    
+    NSInteger flipFlop          = 500;
+    NSInteger sandal            = 510;
+    NSInteger closedToe         = 520;
+
+    NSInteger umbrella          = 600;
+    NSInteger sunscreen         = 610;
+    NSInteger rainBoots         = 620;
+    
+    if ([item isKindOfClass:[Shirt class]])
+    {
+        switch (((Shirt *)item).shirtType)
+        {
+            case TSHIRT:        return tshirt;
+            case LONGSLEEVE:    return longsleeve;
+            case FORMAL:        return formalShirt;
+            case TANKTOP:       return tanktop;
+            
+            default:            return -1;
+        }
+    }
+    else if ([item isKindOfClass:[Pant class]])
+    {
+        switch (((Pant *)item).pantType)
+        {
+            case SHORTS:        return shorts;
+            case JEANS:         return jeans;
+            case LONGPANTS:     return longPants;
+            case FORMALPANTS:   return formalPant;
+            
+            default:            return -1;
+        }
+    }
+    else if ([item isKindOfClass:[Jacket class]])
+    {
+        switch (((Jacket *)item).jacketType)
+        {
+            case REGULAR_JACKET:    return jacket;
+            case RAIN_JACKET:       return rainJacket;
+                
+            default:                return -1;
+        }
+    }
+    else if ([item isKindOfClass:[Shoe class]])
+    {
+        switch (((Shoe *)item).shoeType)
+        {
+            case FLIPFLOP:      return flipFlop;
+            case SANDAL:        return sandal;
+            case CLOSEDTOE:     return closedToe;
+            case FORMALSHOE:    return formalShoe;
+            case RAINBOOTS:     return rainBoots;
+                
+            default:            return -1;
+        }
+    }
+    else if ([item isKindOfClass:[Underwear class]])
+    {
+        return underwearIndex;
+    }
+    else if ([item isKindOfClass:[Socks class]])
+    {
+        return socks;
+    }
+    else if ([item isKindOfClass:[Umbrella class]])
+    {
+        return umbrella;
+    }
+    else if ([item isKindOfClass:[Sunscreen class]])
+    {
+        return sunscreen;
+    }
+    else
+    {
+        return -1;
     }
 }
 
