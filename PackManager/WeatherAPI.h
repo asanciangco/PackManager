@@ -87,8 +87,6 @@ static NSString *DAY_KEY = @"day";
 	@param zip The zip code of the location
     @param start The start date of the trip
     @param end The end date of the trip
-    @param lat The lat of the location if already received
-    @param lon The longitude of the location if already provided
 	@returns void after creating a weather report
  */
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
