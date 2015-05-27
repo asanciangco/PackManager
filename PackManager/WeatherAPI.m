@@ -52,7 +52,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 #pragma mark - Core Fuctions
 
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon
+- (void) getLatLongFromAddress:(NSString*)address lat:(CGFloat *)lat lon:(CGFloat *)lon
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -83,7 +83,14 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     }
 }
 
-- (void) getZipFromLatLong:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip
+/**
+ * getZipFromLatLong
+ * @param lat latitude of the location
+ * @param lon longitude of the location
+ * @param zip zip code of the location to be returned
+ * @returns void after retrieving the zip
+ */
+- (void) getZipFromLatLong:(CGFloat *)lat lon:(CGFloat *)lon zip:(NSString **)zip
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
@@ -237,6 +244,12 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return [difference day];
 }
 
+/**
+	Given a date add days and return new date
+	@param date The date to start
+	@param numDays the number of days to be added
+	@returns NSDate = start date  + numDays
+ */
 - (NSDate *)dayFromDate:(NSDate *) date andDays:(NSInteger) numDays
 {
     return [date dateByAddingTimeInterval:60*60*24*numDays];
@@ -261,6 +274,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return YES;
 }
 
+/**
+	Given a date tell me the logical date one year ago
+	@param from The start date
+	@returns The date a year ago from the provided date
+ */
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -302,6 +320,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return [self parseJSONforHistorical:cityWeatherFeatures];
 }
 
+/**
+	Given the json object, returns an array of the forecast for the days of the trip
+	@param weather The json object collected from the api
+	@returns NSMutableArray of weather forecast for the days of the trip
+ */
 - (NSMutableArray*) parseJSONforHistorical:(NSDictionary *)weather
 {
     //Parse PresentWeatherFeatures by start end dates and pass new dictionary
@@ -398,10 +421,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 /**
 	Create a weather report based on the trips forecast
-	@param dict a dictionary that holds the array of weather data for the trip
+	@param array a dictionary that holds the array of weather data for the trip
 	@returns void after creating a weather report
  */
-//Changing this function to access a new dictionary and collect data from it
 - (WeatherReport *) handleWeatherDictionary:(NSMutableArray*) array
 {
     WeatherReport *weatherReport = [[WeatherReport alloc] init];
@@ -417,22 +439,26 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherReport;
 }
 
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end {
+- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end
+{
+    return [self getWeatherReport:location start:start end:end lat:NSIntegerMin lon:NSIntegerMin];
+}
+
+- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     
     bool presentForecast = daysToStart <= 15;
     bool historicalForecast = daysToEnd >= 15;
     
-    GLfloat lat;
-    GLfloat lon;
     NSString *zip;
     
-    [self getLatLongFromAddress:location lat:&lat lon:&lon];
-    
+    if (lat == NSIntegerMin && lon == NSIntegerMin) {
+        [self getLatLongFromAddress:location lat:&lat lon:&lon];
+    }
     
     if (presentForecast && historicalForecast) {
-        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
+        [self getZipFromLatLong:&lat lon:&lon zip:&zip];
         NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
         NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
         [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:[self dayFromDate:mid andDays:1] end:end]];
@@ -440,7 +466,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     } else if (presentForecast) {
         return [self handleWeatherDictionary:[self getWeatherFromPresent:lat lng:lon start:start end:end]];
     } else if (historicalForecast) {
-        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
+        [self getZipFromLatLong:&lat lon:&lon zip:&zip];
         return [self handleWeatherDictionary:[self getWeatherFromHistorical:zip start:start end:end]];
     }
     
