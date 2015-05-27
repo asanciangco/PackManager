@@ -51,8 +51,6 @@ static NSString *DAY_KEY = @"day";
 */
 + (instancetype) sharedInstance;
 
-//Function to get Weather Based On Zip
-//- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end;
 /**
 	Collect the weather data for a present forecast from openweathermap API
 	@param lat The trip city latitude
@@ -64,6 +62,8 @@ static NSString *DAY_KEY = @"day";
 - (void) getWeatherFromPresent:(CGFloat *)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end;
 
 - (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
+
+- (void) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
 
 
 

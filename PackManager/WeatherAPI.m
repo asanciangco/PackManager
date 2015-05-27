@@ -16,11 +16,7 @@ static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 
-static NSString *HistoricalWeatherURLLocation = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/locations?";
-
 static NSString *PresentWeatherURLData = @"http://api.openweathermap.org/data/2.5/forecast/daily?";
-
-static NSString *PresentWeatherURLLocation = @"http://api.openweathermap.org/data/2.5/find?";
 
 static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geocode/json?";
 
@@ -44,9 +40,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     if ((instance = [[WeatherAPI alloc] init]))
     {
-        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryHistorical:) name:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionary:) name:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionaryPresent:) name:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleWeatherDictionary:) name:PRESENT_JSON_DATA_RETURNED_NOTIFICATION object:self];
     }
     return instance;
 }
@@ -66,27 +62,38 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     
     //Check which API to use based on number of days until end of trip
-    NSInteger daysNeeded = [self daysBetweenDate:[NSDate date] andDate:end];
+    BOOL startIsCurrent = [self date:start isBetweenDate:[NSDate date] andDate:[[NSDate date] dateByAddingTimeInterval:60*60*24*15]];
+    BOOL endIsCurrent = [self date:end isBetweenDate:[NSDate date] andDate:[[NSDate date] dateByAddingTimeInterval:60*60*24*15]];
     bool presentForecast = false;
     bool historicalForeast = false;
     
-    if(daysNeeded >= 15)
-    {
-        presentForecast = false;
-        historicalForeast = true;
-    }
-    else
+    if(startIsCurrent && endIsCurrent)
     {
         presentForecast = true;
         historicalForeast = false;
     }
+    else if(startIsCurrent && !endIsCurrent)
+    {
+        presentForecast = true;
+        historicalForeast = true;
+    }
+    else
+    {
+        presentForecast = false;
+        historicalForeast = true;
+    }
   
   __block CGFloat lat = 0;
   __block CGFloat lon = 0;
+  __block NSString *zip = 0;
   
   NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
 
   NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+  NSURLSessionConfiguration *sessionConfiguration2 = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+  NSURLSession *session2 = [NSURLSession sessionWithConfiguration:sessionConfiguration2];
   
   [[session dataTaskWithURL:[NSURL URLWithString:LatLongUrl]
           completionHandler:^(NSData *data,
@@ -140,10 +147,73 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
               }];
 
             }
-            
+            if(presentForecast && !historicalForeast)
+            {
             [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
-            
-          }] resume];
+            }
+            else
+            {
+                //NEED TO GET ZIP
+                [[session2 dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@latlng=%@,%@&key=%@", GoogleLatLongURL, lat, lon, GoogleAPIKey]]
+                        completionHandler:^(NSData *data,
+                                            NSURLResponse *response,
+                                            NSError *error) {
+                            // handle response
+                            NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData: data
+                                                                                        options:0
+                                                                                          error:&error];
+                            
+                            if(error) {
+                                /* JSON was malformed, act appropriately here */
+                            }
+                            else{
+                                //Get zipcode from JSON
+                                NSDictionary *results = [cityLatLong objectForKey:@"results"];
+                                NSArray *addressComponents = [results objectForKey:@"address_components"];
+                                for (int i = 0; i < [addressComponents count]; i++)
+                                {
+                                    NSDictionary *zipdict = [addressComponents objectAtIndex:i];
+                                    [zipdict enumerateKeysAndObjectsUsingBlock:^(id zipkey, id zipobj, BOOL *stop) {
+                                        if ([zipkey  isEqualToString:@"types"])
+                                        {
+                                            NSArray *types = [zipdict objectForKey:@"types"];
+                                            for (int i = 0; i < [types count]; i++)
+                                            {
+                                                if ([[types objectAtIndex:i]  isEqualToString:@"postal_code"])
+                                                {
+                                                    [zipdict enumerateKeysAndObjectsUsingBlock:^(id zipkey2, id zipobj2, BOOL *stop) {
+                                                        if ([zipkey2 isEqualToString:@"types"])
+                                                        {
+                                                            if ([zipkey2  isEqualToString:@"long_name"])
+                                                            {
+                                                                    zip = zipobj2;
+                                                                
+                                                            }
+
+                                                        }
+                                                        }];
+                                                }
+                                            }
+                                        }
+                                    }];
+                                }
+                                if(!presentForecast && historicalForeast)
+                                {
+                                    [[WeatherAPI sharedInstance]getWeatherFromHistorical: zip start: [self logicalOneYearAgo:start] end: [self logicalOneYearAgo:end]];
+                                }
+                                else
+                                {
+                                    //Use the Present API for as many days as possible up to 15 days past today
+                                    [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:[[NSDate date] dateByAddingTimeInterval:60*60*24*15]];
+                                    
+                                    //Use historical for everything else
+                                    [[WeatherAPI sharedInstance]getWeatherFromHistorical: zip start:[self logicalOneYearAgo:[[NSDate date] dateByAddingTimeInterval:60*60*24*16]]  end: [self logicalOneYearAgo:end]];
+                                    
+                                }
+                            }
+                }] resume];
+            }
+    }] resume];
 
   
 }
@@ -299,12 +369,42 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 }
 
 /**
+	Given a date tell me if it falls between two other dates
+	@param date The date to check
+	@param beginDate The start date
+    @param endDate The end date
+	@returns bool of whether it is within the bounds or not
+ */
+
+- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
+{
+    if ([date compare:beginDate] == NSOrderedAscending)
+        return NO;
+    
+    if ([date compare:endDate] == NSOrderedDescending)
+        return NO;
+    
+    return YES;
+}
+
+- (NSDate *)logicalOneYearAgo:(NSDate *)from {
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:-1];
+    
+    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    
+}
+
+/**
 	Create a weather report based on the trips forecast
 	@param dict a dictionary that holds the array of weather data for the trip
 	@returns void after creating a weather report
  */
 //Changing this function to access a new dictionary and collect data from it
-- (void) handleWeatherDictionaryPresent:(NSMutableDictionary*)dict
+- (void) handleWeatherDictionary:(NSMutableDictionary*)dict
 {
     NSMutableArray *array = [dict objectForKey:@"data"];
     
@@ -341,79 +441,135 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             
         }];
         //TODO: addDay with the 4 parameters
-        WeatherDay *weatherDay;
+//        WeatherDay *weatherDay;
         
-        [weatherReport addDay:[weatherDay initWithHigh: high low: low precipitation: prec date: day]];
+        [weatherReport addDay:[[WeatherDay alloc] initWithHigh: high low: low precipitation: prec date: day]];
 
     }
 }
 
-/*
+
 //To be used later when we implement the NOAA API (CURRENTLY NOT COMPLETE)
-- (void) getWeatherFromHistorical:(NSInteger)zip start:(NSDate *)start end:(NSDate *)end{
-    // TODO: Need to format the dates as strings
-    NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield", HistoricalWeatherURLData, zip, start, end];
+- (void) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
+    
+    NSDateFormatter* df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    NSString *startString = [df stringFromDate:start];
+    NSString *endString = [df stringFromDate:end];
+    
+    NSString *WeatherUrl = [NSString stringWithFormat:@"%@datasetid=GHCND&locationid=ZIP:%@&startdate=%@&enddate=%@&sortfield=date", HistoricalWeatherURLData, zip, startString, endString];
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     sessionConfiguration.HTTPAdditionalHeaders = @{
                                                    @"token"       : HistoricalWeatherAPIKey
                                                    };
+    
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     
-    NSError *error = nil;
     [[session dataTaskWithURL:[NSURL URLWithString:WeatherUrl]
             completionHandler:^(NSData *data,
                                 NSURLResponse *response,
                                 NSError *error) {
                 // handle response
-                NSDictionary *HistoricalWeatherFeatures = [NSJSONSerialization JSONObjectWithData:response
-                    options:0
-                    error:&error];
+                NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data
+                                                                                    options:0
+                                                                                      error:&error];
                 
-                if(error) { 
-                    // JSON was malformed, act appropriately here
+                if(error) {
+                    /* JSON was malformed, act appropriately here */
                 }
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:HistoricalWeatherFeatures];
+                else{
+                    NSMutableArray *weatherArray = [self parseJSONforHistorical:cityWeatherFeatures];
+                    
+                    //Call handler
+                    [[NSNotificationCenter defaultCenter] postNotificationName:HISTORICAL_JSON_DATA_RETURNED_NOTIFICATION object:self userInfo:@{@"data":weatherArray}];
+                }
                 
             }] resume];
+
 }
 
-//need to figure out how to collect data from this crazy API
-- (void) handleWeatherDictionaryHistorical:(NSDictionary*)dict
+- (NSMutableArray*) parseJSONforHistorical:(NSDictionary *)weather
 {
-    NSDate *day;
-    CGFloat high;
-    CGFloat low;
-    CGFloat prec;
+    //Parse PresentWeatherFeatures by start end dates and pass new dictionary
+    NSMutableArray *weatherArray = [NSMutableArray array];
+    NSMutableDictionary *weatherEntry = [NSMutableDictionary dictionary];
     
-    NSArray *results = [dict objectForKey:@"results"];
-    for (int i = 0; i < [results count]; i++) {
-        NSDictionary *tempdict = [results objectAtIndex:i];
-        [tempdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            if ([key  isEqual: @"date"]) {
-                //Set Date
-                // *day = ;
-            }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"PRCP"]) {
-                    //Set prec based on key "value"
+    __block CGFloat prec = 0;
+    __block NSString *date = @"";
+    __block CGFloat value = 0;
+    __block NSString* type = @"";
+    __block NSString *last_date = @"";
+    
+    NSArray *results = [weather objectForKey:@"results"];
+    
+    for (int i = 0; i < [results count]; i++)
+    {
+        NSDictionary *weatherdict = [results objectAtIndex:i];
+        [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if ([key  isEqualToString:@"value"])
+            {
+                if ([obj isKindOfClass:([NSNumber class])]) {
+                    NSNumber *num = (NSNumber*)obj;
+                    value = [num floatValue];
                 }
             }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"TMAX"]) {
-                    //Set high based on key "value"
-                }
+            if ([key  isEqualToString:@"datatype"])
+            {
+                type = obj;
             }
-            if ([key  isEqual: @"datatype"]) {
-                if ([obj  isEqual: @"TMIN"]) {
-                    //Set low based on key "value"
-                }
+            if ([key  isEqualToString:@"date"])
+            {
+                last_date = date;
+                date = obj;
             }
+            
         }];
+        if (![date  isEqualToString:last_date]) {
+            NSDateFormatter* df = [[NSDateFormatter alloc]init];
+            [df setDateFormat:@"yyyy-MM-dd"];
+            NSDate *date_obj = [df dateFromString:last_date];
+            
+            [weatherEntry setObject:date_obj forKey:DAY_KEY];
+            [weatherArray addObject:[weatherEntry copy]];
+        }
+        if ([type isEqualToString:@"PRCP"]) {
+            if(value > 0 && value <= 1)
+            {
+                prec = .1;
+            }
+            else if (value > 1 && value <= 3)
+            {
+                prec = .3;
+            }
+            else if (value > 3 && value <= 7)
+            {
+                prec = .5;
+            }
+            else if (value > 7)
+            {
+                prec = .8;
+            }
+            [weatherEntry setObject:@(prec) forKey:PREC_KEY];
+        }
+        if ([type isEqualToString:@"TMIN"]) {
+            [weatherEntry setObject:@(value) forKey:LOW_KEY];
+        }
+        if ([type isEqualToString:@"TMAX"]) {
+            [weatherEntry setObject:@(value) forKey:HIGH_KEY];
+        }
+        
+        //RESET PARAMETERS
+        prec = 0;
         
     }
+    //Enter last day
+    [weatherEntry setObject:last_date forKey:DAY_KEY];
+    [weatherArray addObject:[weatherEntry copy]];
+    
+    return weatherArray;
 }
- */
+
+
 
 @end
