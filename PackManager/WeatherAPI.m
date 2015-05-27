@@ -95,46 +95,16 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
             
     if(error) {
-                /* do nothing */
+        return; /* do nothing */
     }
-    else {
-        NSArray *results = [cityLatLong objectForKey:@"results"];
-        NSDictionary *resultDict = [results objectAtIndex:0];
-      
-        [resultDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-          if ([key  isEqualToString:@"geometry"])
-          {
-              NSDictionary *geodict = [resultDict objectForKey:@"geometry"];
-              [geodict enumerateKeysAndObjectsUsingBlock:^(id geokey, id geoobj, BOOL *geostop)
-               {
-
-                if ([geokey  isEqualToString:@"location"])
-                    {
-                      NSDictionary *tempdict = [geodict objectForKey:@"location"];
-                      [tempdict enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop2)
-                       {
-                         if ([key2 isEqualToString:@"lat"])
-                         {
-                           if ([obj2 isKindOfClass:([NSNumber class])])
-                           {
-                             NSNumber *num = (NSNumber*)obj2;
-                             lat = [num floatValue];
-                           }
-                         }
-                         if ([key2  isEqualToString:@"lng"])
-                         {
-                           if ([obj2 isKindOfClass:([NSNumber class])])
-                           {
-                             NSNumber *num = (NSNumber*)obj2;
-                             lon = [num floatValue];
-                           }
-                         }
-                       }];
-                    }
-               }];
-          }
-      }];
-
+    
+    NSArray *results = [cityLatLong objectForKey:@"results"];
+    NSDictionary *resultDict = [results objectAtIndex:0];
+    
+    if(resultDict && resultDict[@"geometry"] && resultDict[@"geometry"][@"location"]) {
+        NSDictionary *loc = resultDict[@"geometry"][@"location"];
+        lat = [loc[@"lat"] floatValue];
+        lon = [loc[@"lon"] floatValue];
     }
 
     [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
