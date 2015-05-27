@@ -617,7 +617,7 @@
                                                                         <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.85490196080000003" green="0.64705882349999999" blue="0.12549019610000001" alpha="1" colorSpace="deviceRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -625,15 +625,16 @@
                                                         </tableViewCell>
                                                     </prototypes>
                                                     <connections>
+                                                        <outlet property="dataSource" destination="LFG-zt-m2r" id="yLq-uh-oAk"/>
                                                         <outlet property="delegate" destination="LFG-zt-m2r" id="6HK-0v-4J1"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gyw-SI-tHo" secondAttribute="trailing" id="6Xg-Ca-gNZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="gyw-SI-tHo" secondAttribute="bottom" id="CrI-RF-SpK"/>
                                                 <constraint firstItem="gyw-SI-tHo" firstAttribute="leading" secondItem="prP-FI-R1R" secondAttribute="leading" id="JXC-Cu-TbU"/>
-                                                <constraint firstItem="gyw-SI-tHo" firstAttribute="top" secondItem="prP-FI-R1R" secondAttribute="top" id="aw8-pK-OT7"/>
-                                                <constraint firstAttribute="trailing" secondItem="gyw-SI-tHo" secondAttribute="trailing" id="has-U2-2ig"/>
+                                                <constraint firstItem="gyw-SI-tHo" firstAttribute="top" secondItem="prP-FI-R1R" secondAttribute="top" id="b3e-XR-T4j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
