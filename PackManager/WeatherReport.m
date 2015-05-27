@@ -109,7 +109,6 @@
     return weatherDay.range;
 }
 
-
 #pragma mark - WeatherDay logic
 - (BOOL) daysAreInOrder
 {
