@@ -59,7 +59,7 @@ static NSString *DAY_KEY = @"day";
     @param end The end date of the trip
 	@returns void after creating a weather report
  */
-- (void) getWeatherFromPresent:(CGFloat *)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end;
+- (void) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end;
 
 - (void) getLatLongFromAddress:(NSString*)address start:(NSDate *)start end:(NSDate *)end;
 

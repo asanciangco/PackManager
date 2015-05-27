@@ -149,12 +149,12 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             }
             if(presentForecast && !historicalForeast)
             {
-            [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:end];
+            [[WeatherAPI sharedInstance]getWeatherFromPresent:lat lng:lon start:start end:end];
             }
             else
             {
                 //NEED TO GET ZIP
-                [[session2 dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@latlng=%@,%@&key=%@", GoogleLatLongURL, lat, lon, GoogleAPIKey]]
+                [[session2 dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, lat, lon, GoogleAPIKey]]
                         completionHandler:^(NSData *data,
                                             NSURLResponse *response,
                                             NSError *error) {
@@ -168,8 +168,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                             }
                             else{
                                 //Get zipcode from JSON
-                                NSDictionary *results = [cityLatLong objectForKey:@"results"];
-                                NSArray *addressComponents = [results objectForKey:@"address_components"];
+                                NSArray *results = [cityLatLong objectForKey:@"results"];
+                                NSDictionary *resultDict = [results objectAtIndex:0];
+                                NSArray *addressComponents = [resultDict objectForKey:@"address_components"];
                                 for (int i = 0; i < [addressComponents count]; i++)
                                 {
                                     NSDictionary *zipdict = [addressComponents objectAtIndex:i];
@@ -182,20 +183,17 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                                                 if ([[types objectAtIndex:i]  isEqualToString:@"postal_code"])
                                                 {
                                                     [zipdict enumerateKeysAndObjectsUsingBlock:^(id zipkey2, id zipobj2, BOOL *stop) {
-                                                        if ([zipkey2 isEqualToString:@"types"])
-                                                        {
                                                             if ([zipkey2  isEqualToString:@"long_name"])
                                                             {
                                                                     zip = zipobj2;
-                                                                
-                                                            }
-
                                                         }
                                                         }];
                                                 }
                                             }
                                         }
                                     }];
+                                    if(zip != 0)
+                                        break;
                                 }
                                 if(!presentForecast && historicalForeast)
                                 {
@@ -204,10 +202,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
                                 else
                                 {
                                     //Use the Present API for as many days as possible up to 15 days past today
-                                    [[WeatherAPI sharedInstance]getWeatherFromPresent:&lat lng:&lon start:start end:[[NSDate date] dateByAddingTimeInterval:60*60*24*15]];
+                                    [[WeatherAPI sharedInstance]getWeatherFromPresent:lat lng:lon start:start end:[[NSDate date] dateByAddingTimeInterval:60*60*24*14]];
                                     
                                     //Use historical for everything else
-                                    [[WeatherAPI sharedInstance]getWeatherFromHistorical: zip start:[self logicalOneYearAgo:[[NSDate date] dateByAddingTimeInterval:60*60*24*16]]  end: [self logicalOneYearAgo:end]];
+                                    [[WeatherAPI sharedInstance]getWeatherFromHistorical: zip start:[self logicalOneYearAgo:[[NSDate date] dateByAddingTimeInterval:60*60*24*15]]  end: [self logicalOneYearAgo:end]];
                                     
                                 }
                             }
@@ -220,7 +218,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 
 //Gets weather for a city country combination for the next 16 days and uses that to get the weather for the upcoming trip. Country needs to be the two char country code. Takes the data from json and places it into a new dictionary that it passes to a handler to work with. Have not tested yet!
-- (void) getWeatherFromPresent:(CGFloat*)lat lng:(CGFloat *)lng start:(NSDate *)start end:(NSDate *)end
+- (void) getWeatherFromPresent:(CGFloat)lat lng:(CGFloat)lng start:(NSDate *)start end:(NSDate *)end
 {
     NSString *WeatherUrl = [NSString stringWithFormat:@"%@lat=%f&lon=%f&cnt=16&mode=json&units=imperial", PresentWeatherURLData, lat, lng];
     
@@ -278,7 +276,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSInteger dateRange = [self daysBetweenDate:start andDate:end];
     NSInteger dateOffset = [self daysBetweenDate:[NSDate date] andDate:start];
     
-    for (NSInteger i = dateOffset; i <= dateRange; i++)
+    for (NSInteger i = dateOffset; i <= dateRange + dateOffset; i++)
     {
         NSDictionary *weatherdict = [results objectAtIndex:i];
         [weatherdict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -328,14 +326,14 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         }];
         //Add weather entry to array
         [weatherEntry setObject:@(high) forKey:HIGH_KEY];
-        [weatherEntry setObject:@(low) forKey:HIGH_KEY];
-        [weatherEntry setObject:@(prec) forKey:HIGH_KEY];
-        [weatherEntry setObject:dateplus1 forKey:HIGH_KEY];
+        [weatherEntry setObject:@(low) forKey:LOW_KEY];
+        [weatherEntry setObject:@(prec) forKey:PREC_KEY];
+        [weatherEntry setObject:dateplus1 forKey:DAY_KEY];
         
         [weatherArray addObject:[weatherEntry copy]];
         
         //Increase Date
-        dateplus1 = [start dateByAddingTimeInterval:60*60*24*1];
+        dateplus1 = [dateplus1 dateByAddingTimeInterval:60*60*24*1];
         //RESET PARAMETERS
         prec = 0;
         
