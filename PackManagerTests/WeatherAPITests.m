@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Nocilla.h"
+#import <Nocilla/Nocilla.h>
 #import "WeatherAPI.h"
 
 @interface WeatherAPITests : XCTestCase
@@ -33,18 +33,44 @@
     
     // Set up mocks
     
-    stubRequest(@"GET", @"^https://maps\\.googleapis\\.com/.*".regex).andReturn(404);
+    [[LSNocilla sharedInstance] start];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    [[LSNocilla sharedInstance] stop];
 }
 
 #pragma mark Tests
 
-- (void)testWeatherFromPresent {
-    [self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
+- (void)testNocillaMock {
+    //[self.instance getLatLongFromAddress:@"Los Angeles" start:self.start end:self.end];
+    
+    stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://www.google.com"]];
+    [request setHTTPMethod:@"GET"];
+
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    NSString* body = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+    
+    XCTAssert([body isEqualToString:@"Hello Mocks"]);
+    
+    /* //Async Version
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Fetch"];
+
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *error) {
+         [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:nil]; */
 }
 
 - (void)testParseJSONForPresent {
