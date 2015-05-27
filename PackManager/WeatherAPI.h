@@ -50,14 +50,14 @@ static NSString *DAY_KEY = @"day";
  */
 + (instancetype) sharedInstance;
 
+#pragma mark Helper Functions
+
 /**
  * getWeatherReport
  * generates the weather report from a location, start, and end tuple
  * @returns WeatherReport*
  */
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end;
-
-#pragma mark Helper Functions
 
 /**
 	Collect the weather data for a present forecast from openweathermap API

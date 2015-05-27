@@ -244,6 +244,12 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return [difference day];
 }
 
+/**
+	Given a date add days and return new date
+	@param date The date to start
+	@param numDays the number of days to be added
+	@returns NSDate = start date  + numDays
+ */
 - (NSDate *)dayFromDate:(NSDate *) date andDays:(NSInteger) numDays
 {
     return [date dateByAddingTimeInterval:60*60*24*numDays];
@@ -268,6 +274,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return YES;
 }
 
+/**
+	Given a date tell me the logical date one year ago
+	@param from The start date
+	@returns The date a year ago from the provided date
+ */
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -309,6 +320,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return [self parseJSONforHistorical:cityWeatherFeatures];
 }
 
+/**
+	Given the json object, returns an array of the forecast for the days of the trip
+	@param weather The json object collected from the api
+	@returns NSMutableArray of weather forecast for the days of the trip
+ */
 - (NSMutableArray*) parseJSONforHistorical:(NSDictionary *)weather
 {
     //Parse PresentWeatherFeatures by start end dates and pass new dictionary
@@ -405,10 +421,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 
 /**
 	Create a weather report based on the trips forecast
-	@param dict a dictionary that holds the array of weather data for the trip
+	@param array a dictionary that holds the array of weather data for the trip
 	@returns void after creating a weather report
  */
-//Changing this function to access a new dictionary and collect data from it
 - (WeatherReport *) handleWeatherDictionary:(NSMutableArray*) array
 {
     WeatherReport *weatherReport = [[WeatherReport alloc] init];
