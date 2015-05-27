@@ -73,15 +73,5 @@ static NSString *DAY_KEY = @"day";
 
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end;
 
-/**
- * getLatLongFromAddress
- * @param (NSString *) address
- * @param (GLfloat *) lat
- * @param (GLfloat *) lon
- * @param (NSString **) zip
- * @returns void
- */
-- (void) getLatLongFromAddress:(NSString*)address lat:(GLfloat *)lat lon:(GLfloat *)lon zip:(NSString **)zip;
-
 
 @end
