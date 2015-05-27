@@ -434,19 +434,19 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     GLfloat lon;
     NSString *zip;
     
-    [self getLatLongFromAddress:@"Los Angeles" lat:&lat lon:&lon];
+    [self getLatLongFromAddress:location lat:&lat lon:&lon];
     
     
     if (presentForecast && historicalForecast) {
-        [self getZipFromLatLong:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
         NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
         NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
-        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:mid end:end]];
+        [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:[self dayFromDate:mid andDays:1] end:end]];
         return [self handleWeatherDictionary:weather];
     } else if (presentForecast) {
         return [self handleWeatherDictionary:[self getWeatherFromPresent:lat lng:lon start:start end:end]];
     } else if (historicalForecast) {
-        [self getZipFromLatLong:@"Los Angeles" lat:&lat lon:&lon zip:&zip];
+        [self getZipFromLatLong:location lat:&lat lon:&lon zip:&zip];
         return [self handleWeatherDictionary:[self getWeatherFromHistorical:zip start:start end:end]];
     }
     

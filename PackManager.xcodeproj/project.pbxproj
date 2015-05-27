@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B8C77480164F10962BD99F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
 		2127248D1AF18F0C00F61AAA /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248A1AF18F0C00F61AAA /* Destination.m */; };
 		2127248E1AF18F0C00F61AAA /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 2127248C1AF18F0C00F61AAA /* Trip.m */; };
 		213CC7671B0BFDD700475EC5 /* briefcase-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 213CC7651B0BFDD700475EC5 /* briefcase-icon.png */; };
@@ -433,6 +434,7 @@
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
+				04B8C77480164F10962BD99F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
