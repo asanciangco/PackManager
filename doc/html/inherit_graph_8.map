@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$interface_b_f_app_link_return_to_referer_view.html" title="BFAppLinkReturnToRefererView" alt="" coords="117,5,331,30"/>
+<area shape="rect" id="node3" href="$interface_f_b_ad_choices_view.html" title="FBAdChoicesView" alt="" coords="158,54,290,79"/>
+<area shape="rect" id="node4" href="$interface_f_b_ad_star_rating_view.html" title="FBAdStarRatingView" alt="" coords="151,103,297,129"/>
+<area shape="rect" id="node5" href="$interface_f_b_ad_view.html" title="FBAdView" alt="" coords="182,153,266,178"/>
+<area shape="rect" id="node6" href="$interface_f_b_media_view.html" title="FBMediaView" alt="" coords="172,202,276,227"/>
+<area shape="rect" id="node7" href="$interface_f_b_native_ad_scroll_view.html" title="FBNativeAdScrollView" alt="" coords="147,251,301,277"/>
+<area shape="rect" id="node8" href="$interface_f_b_native_ad_view.html" title="FBNativeAdView" alt="" coords="163,301,285,326"/>
+<area shape="rect" id="node9" href="$interface_f_b_s_d_k_profile_picture_view.html" title="FBSDKProfilePictureView" alt="" coords="137,350,311,375"/>
+<area shape="rect" id="node10" href="$interface_f_b_s_d_k_tooltip_view.html" title="FBSDKTooltipView" alt="" coords="158,399,290,425"/>
+<area shape="rect" id="node12" href="$interface_f_b_s_d_k_web_dialog_view.html" title="FBSDKWebDialogView" alt="" coords="144,449,304,474"/>
+<area shape="rect" id="node11" href="$interface_f_b_s_d_k_login_tooltip_view.html" title="FBSDKLoginTooltipView" alt="" coords="379,399,544,425"/>
+</map>

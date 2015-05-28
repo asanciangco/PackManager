@@ -1,0 +1,4 @@
+<map id="FBNativeAd" name="FBNativeAd">
+<area shape="rect" id="node4" href="$interface_f_b_ad_image.html" title="{FBAdImage\n|+ url\l+ width\l+ height\l|+ initWithURL:width:height:\l+ loadImageAsyncWithBlock:\l}" alt="" coords="40,131,233,245"/>
+<area shape="rect" id="node3" href="$struct_f_b_ad_star_rating.html" title="{FBAdStarRating\n|# value\l# scale\l|}" alt="" coords="258,145,376,231"/>
+</map>

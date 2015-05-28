@@ -1,0 +1,152 @@
+Stunning H\-T\-T\-P stubbing for i\-O\-S and O\-S X. Testing H\-T\-T\-P requests has never been easier.
+
+This library was inspired by \href{https://github.com/bblimke/webmock}{\tt Web\-Mock} and it's using \href{http://www.infinite-loop.dk/blog/2011/09/using-nsurlprotocol-for-injecting-test-data/}{\tt this approach} to stub the requests.
+
+\subsection*{Features}
+
+
+\begin{DoxyItemize}
+\item Stub H\-T\-T\-P and H\-T\-T\-P\-S requests in your unit tests.
+\item Supports N\-S\-U\-R\-L\-Connection, N\-S\-U\-R\-L\-Session and \hyperlink{interface_a_s_i_h_t_t_p_request}{A\-S\-I\-H\-T\-T\-P\-Request}.
+\item Awesome D\-S\-L that will improve the readability and maintainability of your tests.
+\item Match requests with regular expressions.
+\item Stub requests with errors.
+\item Tested.
+\item Fast.
+\item Extendable to support more H\-T\-T\-P libraries.
+\end{DoxyItemize}
+
+\subsection*{Installation}
+
+\subsubsection*{As a \href{http://cocoapods.org/}{\tt Cocoa\-Pod}}
+
+Just add this to your Podfile ```ruby pod 'Nocilla' ```
+
+\subsubsection*{Other approaches}
+
+
+\begin{DoxyItemize}
+\item You should be able to add Nocilla to you source tree. If you are using git, consider using a {\ttfamily git submodule}
+\end{DoxyItemize}
+
+\subsection*{Usage}
+
+{\itshape Yes, the following code is valid Objective-\/\-C, or at least, it should be}
+
+The following examples are described using \href{https://github.com/kiwi-bdd/Kiwi}{\tt Kiwi}
+
+\subsubsection*{Common parts}
+
+Until Nocilla can hook directly into Kiwi, you will have to include the following snippet in the specs you want to use Nocilla\-:
+
+```objc \#import \char`\"{}\-Kiwi.\-h\char`\"{} \#import \char`\"{}\-Nocilla.\-h\char`\"{} S\-P\-E\-C\-\_\-\-B\-E\-G\-I\-N(\-Example\-Spec) before\-All($^\wedge$\{ \mbox{[}\mbox{[}\hyperlink{interface_l_s_nocilla}{L\-S\-Nocilla} shared\-Instance\mbox{]} start\mbox{]}; \}); after\-All($^\wedge$\{ \mbox{[}\mbox{[}\hyperlink{interface_l_s_nocilla}{L\-S\-Nocilla} shared\-Instance\mbox{]} stop\mbox{]}; \}); after\-Each($^\wedge$\{ \mbox{[}\mbox{[}\hyperlink{interface_l_s_nocilla}{L\-S\-Nocilla} shared\-Instance\mbox{]} clear\-Stubs\mbox{]}; \});
+
+it("should do something", $^\wedge$\{ // Stub here! \}); S\-P\-E\-C\-\_\-\-E\-N\-D ```
+
+\subsubsection*{Stubbing requests}
+
+\paragraph*{Stubbing a simple request}
+
+It will return the default response, which is a 200 and an empty body.
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{http://www.google.com}{\tt http\-://www.\-google.\-com}"); ```
+
+\paragraph*{Stubbing requests with regular expressions}
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}$^\wedge$http\-://(.$\ast$?)\textbackslash{}.example\textbackslash{}.com/v1/dogs\textbackslash{}.json".regex); ```
+
+\paragraph*{Stubbing a request with a particular header}
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{https://api.example.com}{\tt https\-://api.\-example.\-com}\char`\"{}).
+with\-Header(@\char`\"{}Accept\char`\"{}, @\char`\"{}application/json"); ```
+
+\paragraph*{Stubbing a request with multiple headers}
+
+Using the {\ttfamily with\-Headers} method makes sense with the Objective-\/\-C literals, but it accepts an N\-S\-Dictionary.
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf"\}); ```
+
+\paragraph*{Stubbing a request with a particular body}
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf\char`\"{}\}).
+with\-Body(@\char`\"{}\{"name"\-:"foo"\}"); ```
+
+You can also use {\ttfamily N\-S\-Data} for the request body\-:
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf\char`\"{}\}).
+with\-Body(\mbox{[}@\char`\"{}foo" data\-Using\-Encoding\-:N\-S\-U\-T\-F8\-String\-Encoding\mbox{]}); ```
+
+It even works with regular expressions!
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf\char`\"{}\}).
+with\-Body(@\char`\"{}$^\wedge$\-The body start with this".regex); ```
+
+\paragraph*{Returning a specific status code}
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{http://www.google.com}{\tt http\-://www.\-google.\-com}").and\-Return(404); ```
+
+\paragraph*{Returning a specific status code and header}
+
+The same approch here, you can use {\ttfamily with\-Header} or {\ttfamily with\-Headers}
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}"). and\-Return(201). with\-Headers("Content-\/\-Type\char`\"{}\-: @\char`\"{}application/json"\}); ```
+
+\paragraph*{Returning a specific status code, headers and body}
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}"). and\-Return(201). with\-Headers("Content-\/\-Type\char`\"{}\-: @\char`\"{}application/json\char`\"{}\}).
+with\-Body(@\char`\"{}\{"ok"\-:true\}"); ```
+
+You can also use {\ttfamily N\-S\-Data} for the response body\-:
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}"). and\-Return(201). with\-Headers("Content-\/\-Type\char`\"{}\-: @\char`\"{}application/json\char`\"{}\}).
+with\-Body(\mbox{[}@\char`\"{}bar" data\-Using\-Encoding\-:N\-S\-U\-T\-F8\-String\-Encoding\mbox{]}); ```
+
+\paragraph*{Returning raw responses recorded with {\ttfamily curl -\/is}}
+
+{\ttfamily curl -\/is \href{http://api.example.com/dogs.json}{\tt http\-://api.\-example.\-com/dogs.\-json} $>$ /tmp/example\-\_\-curl\-\_\--\/is\-\_\-output.txt}
+
+```objc stub\-Request("G\-E\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+and\-Return\-Raw\-Response(\mbox{[}\-N\-S\-Data data\-With\-Contents\-Of\-File\-:@\char`\"{}/tmp/example\-\_\-curl\-\_\--\/is\-\_\-output.txt"\mbox{]}); ```
+
+\paragraph*{All together}
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf\char`\"{}\}).
+with\-Body(@\char`\"{}\{"name"\-:"foo"\}"). and\-Return(201). with\-Headers("Content-\/\-Type\char`\"{}\-: @\char`\"{}application/json\char`\"{}\}).
+with\-Body(@\char`\"{}\{"ok"\-:true\}"); ```
+
+\paragraph*{Making a request fail}
+
+This will call the failure handler (callback, delegate... whatever your H\-T\-T\-P client uses) with the specified error.
+
+```objc stub\-Request("P\-O\-S\-T\char`\"{}, @\char`\"{}\href{https://api.example.com/dogs.json}{\tt https\-://api.\-example.\-com/dogs.\-json}\char`\"{}).
+with\-Headers(@\char`\"{}Accept\char`\"{}\-: @\char`\"{}application/json\char`\"{}, @\char`\"{}X-\/\-C\-U\-S\-T\-O\-M-\/\-H\-E\-A\-D\-E\-R\char`\"{}\-: @\char`\"{}abcf2fbc6abgf\char`\"{}\}).
+with\-Body(@\char`\"{}\{"name"\-:"foo"\}\char`\"{}).
+and\-Fail\-With\-Error(\mbox{[}\-N\-S\-Error error\-With\-Domain\-:@\char`\"{}foo" code\-:123 user\-Info\-:nil\mbox{]}); ```
+
+\subsubsection*{Unexpected requests}
+
+If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail. At this moment Nocilla will raise an exception with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
+
+\subsection*{Other alternatives}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/InfiniteLoopDK/ILTesting}{\tt I\-L\-Testing}
+\item \href{https://github.com/AliSoftware/OHHTTPStubs}{\tt O\-H\-H\-T\-T\-P\-Stubs}
+\end{DoxyItemize}
+
+\subsection*{Contributing}
+
+
+\begin{DoxyEnumerate}
+\item Fork it
+\item Create your feature branch
+\item Commit your changes
+\item Push to the branch
+\item Create new Pull Request 
+\end{DoxyEnumerate}

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['cancel',['cancel',['../interface_b_f_task_completion_source.html#a945538d5ef1ea6110ced6a7417955ec5',1,'BFTaskCompletionSource::cancel()'],['../interface_f_b_s_d_k_graph_request_connection.html#ac837293e8959c4aa67fb691c8ac6fbb7',1,'FBSDKGraphRequestConnection::cancel()']]],
+  ['cancelledtask',['cancelledTask',['../interface_b_f_task.html#ab08b49566c850f4688fad77834310578',1,'BFTask']]],
+  ['canopenurl_3asourceapplication_3a',['canOpenURL:sourceApplication:',['../interface_f_b_s_d_k_messenger_u_r_l_handler.html#a060d742ac76d48fb08a51761c997cf2a',1,'FBSDKMessengerURLHandler']]],
+  ['canshare',['canShare',['../interface_f_b_s_d_k_share_a_p_i.html#a785150525008f6d86334ec4fb0bf51a9',1,'FBSDKShareAPI']]],
+  ['canshow',['canShow',['../interface_f_b_s_d_k_app_group_add_dialog.html#a845f3b19aec34ac420fac564ec70e6dc',1,'FBSDKAppGroupAddDialog::canShow()'],['../interface_f_b_s_d_k_app_group_join_dialog.html#a3bf5924eb50f3694d7b57c11e723e74c',1,'FBSDKAppGroupJoinDialog::canShow()'],['../interface_f_b_s_d_k_app_invite_dialog.html#a77e76bfb138db2103dc112800a89eeb3',1,'FBSDKAppInviteDialog::canShow()'],['../interface_f_b_s_d_k_game_request_dialog.html#a12864871d0d4e6c9bb108a66144f8e1f',1,'FBSDKGameRequestDialog::canShow()'],['../protocol_f_b_s_d_k_sharing_dialog-p.html#a68ec3b22db7bf5b908fdc12438d38159',1,'FBSDKSharingDialog-p::canShow()']]],
+  ['changequantityforindex_3ato_3a',['changeQuantityForIndex:to:',['../interface_packing_list.html#ac17f7681dfe6d6fd48610412c6c81d6a',1,'PackingList']]],
+  ['circularbuttonwithstyle_3a',['circularButtonWithStyle:',['../interface_f_b_s_d_k_messenger_share_button.html#ac580a1fe4a443553471f8e1b3968b5c8',1,'FBSDKMessengerShareButton']]],
+  ['circularbuttonwithstyle_3awidth_3a',['circularButtonWithStyle:width:',['../interface_f_b_s_d_k_messenger_share_button.html#adebb3a3ff76fdefd9642200107159ed5',1,'FBSDKMessengerShareButton']]],
+  ['cleartestdevices',['clearTestDevices',['../interface_f_b_ad_settings.html#af6d62d5a096e6701bb83407114eb7dd6',1,'FBAdSettings']]],
+  ['clienttoken',['clientToken',['../interface_f_b_s_d_k_settings.html#a281a16a620cbadd20dda5e4855640d47',1,'FBSDKSettings']]],
+  ['closeviewanimated_3a',['closeViewAnimated:',['../interface_b_f_app_link_return_to_referer_controller.html#a13a65ce4cf4dcf07abafea5e14541d2e',1,'BFAppLinkReturnToRefererController']]],
+  ['continuewithblock_3a',['continueWithBlock:',['../interface_b_f_task.html#a2a365f99ecb75cc9309ec06bc0486340',1,'BFTask']]],
+  ['continuewithexecutor_3awithblock_3a',['continueWithExecutor:withBlock:',['../interface_b_f_task.html#ac54630598ad15d751cc8a541c71043a9',1,'BFTask']]],
+  ['continuewithexecutor_3awithsuccessblock_3a',['continueWithExecutor:withSuccessBlock:',['../interface_b_f_task.html#a350a8b82dfce94182299c94a7ec6eba4',1,'BFTask']]],
+  ['continuewithsuccessblock_3a',['continueWithSuccessBlock:',['../interface_b_f_task.html#ad898327275b645d21c9c06dfb1f05d83',1,'BFTask']]],
+  ['copy',['copy',['../protocol_f_b_s_d_k_copying-p.html#a93cd1625db2e893f0880c1093e4caf0c',1,'FBSDKCopying-p']]],
+  ['createopengraphobject_3a',['createOpenGraphObject:',['../interface_f_b_s_d_k_share_a_p_i.html#a228e7a9168a9c48e19af98236bba89e4',1,'FBSDKShareAPI']]],
+  ['currentaccesstoken',['currentAccessToken',['../interface_f_b_s_d_k_access_token.html#a245bde98fb3133bce397d2934b420da8',1,'FBSDKAccessToken']]],
+  ['currentprofile',['currentProfile',['../interface_f_b_s_d_k_profile.html#a38bbb7b3aa2faccef349a8ecca18f78d',1,'FBSDKProfile']]]
+];

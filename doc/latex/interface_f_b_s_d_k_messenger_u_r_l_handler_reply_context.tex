@@ -1,0 +1,57 @@
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context}{\section{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context Class Reference}
+\label{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context}\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Open\-From\-Composer\-Context.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_a6c5f74a436e2dbf6443853c9a64b725f}{metadata}
+\item 
+N\-S\-Set $\ast$ \hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_ad90f842303b7d910f85ab8996294c011}{user\-I\-Ds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This object represents a user selecting this app from the composer in Messenger Passing this context into a share method will trigger a the reply flow
+
+This object represents a user tapping reply from a message in Messenger. Passing this context into a share method will trigger the reply flow 
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_a6c5f74a436e2dbf6443853c9a64b725f}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context}!metadata@{metadata}}
+\index{metadata@{metadata}!FBSDKMessengerURLHandlerReplyContext@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context}}
+\subsubsection[{metadata}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) metadata\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_a6c5f74a436e2dbf6443853c9a64b725f}
+Additional information that was passed along with the original media that was replied to
+
+If content shared to Messenger incuded metadata and the user replied to that message, that metadata is passed along with the reply back to the app. If no metadata was included this is nil \hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_ad90f842303b7d910f85ab8996294c011}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context}!user\-I\-Ds@{user\-I\-Ds}}
+\index{user\-I\-Ds@{user\-I\-Ds}!FBSDKMessengerURLHandlerReplyContext@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context}}
+\subsubsection[{user\-I\-Ds}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Set$\ast$) user\-I\-Ds\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context_ad90f842303b7d910f85ab8996294c011}
+The user I\-Ds of the other participants on the thread.
+
+User I\-Ds can be used with the Facebook S\-D\-K and Graph A\-P\-I (\href{https://developers.facebook.com/docs/graph-api}{\tt https\-://developers.\-facebook.\-com/docs/graph-\/api}) to query names, photos, and other data. This will only contain I\-Ds of users that have also logged into your app via their Facebook account. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Messenger\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context.\-h\end{DoxyCompactItemize}

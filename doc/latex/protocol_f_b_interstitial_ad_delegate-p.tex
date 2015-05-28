@@ -1,0 +1,133 @@
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p}{\section{$<$F\-B\-Interstitial\-Ad\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_interstitial_ad_delegate-p}\index{$<$\-F\-B\-Interstitial\-Ad\-Delegate$>$@{$<$\-F\-B\-Interstitial\-Ad\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-Interstitial\-Ad\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{protocol_f_b_interstitial_ad_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-Interstitial\-Ad\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{protocol_f_b_interstitial_ad_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_aa5a63780d46da2998edfed66234af99e}{interstitial\-Ad\-Did\-Click\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_a5d7ad3c4a1a1de7ec681e6b69863a102}{interstitial\-Ad\-Did\-Close\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_a24e2c8a8f01f659eebb34553a6e9656e}{interstitial\-Ad\-Will\-Close\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_af03e285460d89e1923f3d2bbe557b537}{interstitial\-Ad\-Did\-Load\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_ac8ef831ef8fc80b60e4f3806d799d173}{interstitial\-Ad\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_interstitial_ad_delegate-p_a5a53b765c0a18842f817efe384b47c60}{interstitial\-Ad\-Will\-Log\-Impression\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_ac8ef831ef8fc80b60e4f3806d799d173}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-:did\-Fail\-With\-Error\-:@{interstitial\-Ad\-:did\-Fail\-With\-Error\-:}}
+\index{interstitial\-Ad\-:did\-Fail\-With\-Error\-:@{interstitial\-Ad\-:did\-Fail\-With\-Error\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_ac8ef831ef8fc80b60e4f3806d799d173}
+Sent when an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} failes to load an ad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+{\em error} & An error object containing details of the error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_aa5a63780d46da2998edfed66234af99e}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-Did\-Click\-:@{interstitial\-Ad\-Did\-Click\-:}}
+\index{interstitial\-Ad\-Did\-Click\-:@{interstitial\-Ad\-Did\-Click\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-Did\-Click\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-Did\-Click\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_aa5a63780d46da2998edfed66234af99e}
+Sent after an ad in the \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object is clicked. The appropriate app store view or app browser will be launched.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_a5d7ad3c4a1a1de7ec681e6b69863a102}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-Did\-Close\-:@{interstitial\-Ad\-Did\-Close\-:}}
+\index{interstitial\-Ad\-Did\-Close\-:@{interstitial\-Ad\-Did\-Close\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-Did\-Close\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-Did\-Close\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_a5d7ad3c4a1a1de7ec681e6b69863a102}
+Sent after an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object has been dismissed from the screen, returning control to your application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_af03e285460d89e1923f3d2bbe557b537}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-Did\-Load\-:@{interstitial\-Ad\-Did\-Load\-:}}
+\index{interstitial\-Ad\-Did\-Load\-:@{interstitial\-Ad\-Did\-Load\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-Did\-Load\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-Did\-Load\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_af03e285460d89e1923f3d2bbe557b537}
+Sent when an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} successfully loads an ad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_a24e2c8a8f01f659eebb34553a6e9656e}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-Will\-Close\-:@{interstitial\-Ad\-Will\-Close\-:}}
+\index{interstitial\-Ad\-Will\-Close\-:@{interstitial\-Ad\-Will\-Close\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-Will\-Close\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-Will\-Close\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_a24e2c8a8f01f659eebb34553a6e9656e}
+Sent immediately before an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object will be dismissed from the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_interstitial_ad_delegate-p_a5a53b765c0a18842f817efe384b47c60}{\index{F\-B\-Interstitial\-Ad\-Delegate-\/p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}!interstitial\-Ad\-Will\-Log\-Impression\-:@{interstitial\-Ad\-Will\-Log\-Impression\-:}}
+\index{interstitial\-Ad\-Will\-Log\-Impression\-:@{interstitial\-Ad\-Will\-Log\-Impression\-:}!FBInterstitialAdDelegate-p@{F\-B\-Interstitial\-Ad\-Delegate-\/p}}
+\subsubsection[{interstitial\-Ad\-Will\-Log\-Impression\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) interstitial\-Ad\-Will\-Log\-Impression\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Interstitial\-Ad} $\ast$)}]{interstitial\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_interstitial_ad_delegate-p_a5a53b765c0a18842f817efe384b47c60}
+Sent immediately before the impression of an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em interstitial\-Ad} & An \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Interstitial\-Ad.\-h\end{DoxyCompactItemize}

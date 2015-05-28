@@ -1,0 +1,88 @@
+\hypertarget{interface_f_b_s_d_k_share_link_content}{\section{F\-B\-S\-D\-K\-Share\-Link\-Content Class Reference}
+\label{interface_f_b_s_d_k_share_link_content}\index{F\-B\-S\-D\-K\-Share\-Link\-Content@{F\-B\-S\-D\-K\-Share\-Link\-Content}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Share\-Link\-Content.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Share\-Link\-Content\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{interface_f_b_s_d_k_share_link_content__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Share\-Link\-Content\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{interface_f_b_s_d_k_share_link_content__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_share_link_content_a8f34990c56f670c00c01a4a92c09b35c}{is\-Equal\-To\-Share\-Link\-Content\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_share_link_content_a1fef92d83f1e0a9f51c0923fd820ec41}{content\-Description}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_share_link_content_acad99ec961a251713ec7118356ed6a2a}{content\-Title}
+\item 
+N\-S\-U\-R\-L $\ast$ \hyperlink{interface_f_b_s_d_k_share_link_content_a7eb946e85589c6436ed65bf8f4166172}{image\-U\-R\-L}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A model for status and link content to be shared. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_share_link_content_a8f34990c56f670c00c01a4a92c09b35c}{\index{F\-B\-S\-D\-K\-Share\-Link\-Content@{F\-B\-S\-D\-K\-Share\-Link\-Content}!is\-Equal\-To\-Share\-Link\-Content\-:@{is\-Equal\-To\-Share\-Link\-Content\-:}}
+\index{is\-Equal\-To\-Share\-Link\-Content\-:@{is\-Equal\-To\-Share\-Link\-Content\-:}!FBSDKShareLinkContent@{F\-B\-S\-D\-K\-Share\-Link\-Content}}
+\subsubsection[{is\-Equal\-To\-Share\-Link\-Content\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Equal\-To\-Share\-Link\-Content\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Share\-Link\-Content} $\ast$)}]{content}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_link_content_a8f34990c56f670c00c01a4a92c09b35c}
+Compares the receiver to another link content. 
+\begin{DoxyParams}{Parameters}
+{\em content} & The other content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver's values are equal to the other content's values; otherwise N\-O 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_share_link_content_a1fef92d83f1e0a9f51c0923fd820ec41}{\index{F\-B\-S\-D\-K\-Share\-Link\-Content@{F\-B\-S\-D\-K\-Share\-Link\-Content}!content\-Description@{content\-Description}}
+\index{content\-Description@{content\-Description}!FBSDKShareLinkContent@{F\-B\-S\-D\-K\-Share\-Link\-Content}}
+\subsubsection[{content\-Description}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) content\-Description\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_share_link_content_a1fef92d83f1e0a9f51c0923fd820ec41}
+The description of the link.  If not specified, this field is automatically populated by information scraped from the content\-U\-R\-L, typically the title of the page. \begin{DoxyReturn}{Returns}
+The description of the link 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_share_link_content_acad99ec961a251713ec7118356ed6a2a}{\index{F\-B\-S\-D\-K\-Share\-Link\-Content@{F\-B\-S\-D\-K\-Share\-Link\-Content}!content\-Title@{content\-Title}}
+\index{content\-Title@{content\-Title}!FBSDKShareLinkContent@{F\-B\-S\-D\-K\-Share\-Link\-Content}}
+\subsubsection[{content\-Title}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) content\-Title\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_share_link_content_acad99ec961a251713ec7118356ed6a2a}
+The title to display for this link. \begin{DoxyReturn}{Returns}
+The link title 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_share_link_content_a7eb946e85589c6436ed65bf8f4166172}{\index{F\-B\-S\-D\-K\-Share\-Link\-Content@{F\-B\-S\-D\-K\-Share\-Link\-Content}!image\-U\-R\-L@{image\-U\-R\-L}}
+\index{image\-U\-R\-L@{image\-U\-R\-L}!FBSDKShareLinkContent@{F\-B\-S\-D\-K\-Share\-Link\-Content}}
+\subsubsection[{image\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L$\ast$) image\-U\-R\-L\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_share_link_content_a7eb946e85589c6436ed65bf8f4166172}
+The U\-R\-L of a picture to attach to this content. \begin{DoxyReturn}{Returns}
+The network U\-R\-L of an image 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Share\-Link\-Content.\-h\end{DoxyCompactItemize}

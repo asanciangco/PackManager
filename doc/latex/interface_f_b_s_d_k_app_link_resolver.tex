@@ -1,0 +1,74 @@
+\hypertarget{interface_f_b_s_d_k_app_link_resolver}{\section{F\-B\-S\-D\-K\-App\-Link\-Resolver Class Reference}
+\label{interface_f_b_s_d_k_app_link_resolver}\index{F\-B\-S\-D\-K\-App\-Link\-Resolver@{F\-B\-S\-D\-K\-App\-Link\-Resolver}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Link\-Resolver.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-App\-Link\-Resolver\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{interface_f_b_s_d_k_app_link_resolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-App\-Link\-Resolver\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{interface_f_b_s_d_k_app_link_resolver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) -\/ \hyperlink{interface_f_b_s_d_k_app_link_resolver_a0a56680a0b2be94b85cf45a4db0ebfb5}{app\-Links\-From\-U\-R\-Ls\-In\-Background\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_app_link_resolver_a4d9003c46f8f3156deb2c88e82ae2145}{resolver}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides an implementation of the \hyperlink{protocol_b_f_app_link_resolving-p}{B\-F\-App\-Link\-Resolving} protocol that uses the Facebook App Link Index A\-P\-I to resolve App Links given a U\-R\-L. It also provides an additional helper method that can resolve multiple App Links in a single call.
+
+Usage of this type requires a client token. See {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_settings}{F\-B\-S\-D\-K\-Settings} set\-Client\-Token\-:\mbox{]}} and linking Bolts.\-framework 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_app_link_resolver_a0a56680a0b2be94b85cf45a4db0ebfb5}{\index{F\-B\-S\-D\-K\-App\-Link\-Resolver@{F\-B\-S\-D\-K\-App\-Link\-Resolver}!app\-Links\-From\-U\-R\-Ls\-In\-Background\-:@{app\-Links\-From\-U\-R\-Ls\-In\-Background\-:}}
+\index{app\-Links\-From\-U\-R\-Ls\-In\-Background\-:@{app\-Links\-From\-U\-R\-Ls\-In\-Background\-:}!FBSDKAppLinkResolver@{F\-B\-S\-D\-K\-App\-Link\-Resolver}}
+\subsubsection[{app\-Links\-From\-U\-R\-Ls\-In\-Background\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-Task} $\ast$) app\-Links\-From\-U\-R\-Ls\-In\-Background\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{urls}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_link_resolver_a0a56680a0b2be94b85cf45a4db0ebfb5}
+Asynchronously resolves App Link data for multiple U\-R\-Ls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em urls} & An array of N\-S\-U\-R\-Ls to resolve into App Links. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{interface_b_f_task}{B\-F\-Task} that will return dictionary mapping input N\-S\-U\-R\-Ls to their corresponding \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link}.
+\end{DoxyReturn}
+You should set the client token before making this call. See {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_settings}{F\-B\-S\-D\-K\-Settings} set\-Client\-Token\-:\mbox{]}} \hypertarget{interface_f_b_s_d_k_app_link_resolver_a4d9003c46f8f3156deb2c88e82ae2145}{\index{F\-B\-S\-D\-K\-App\-Link\-Resolver@{F\-B\-S\-D\-K\-App\-Link\-Resolver}!resolver@{resolver}}
+\index{resolver@{resolver}!FBSDKAppLinkResolver@{F\-B\-S\-D\-K\-App\-Link\-Resolver}}
+\subsubsection[{resolver}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) resolver 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_link_resolver_a4d9003c46f8f3156deb2c88e82ae2145}
+Allocates and initializes a new instance of \hyperlink{interface_f_b_s_d_k_app_link_resolver}{F\-B\-S\-D\-K\-App\-Link\-Resolver}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Link\-Resolver.\-h\end{DoxyCompactItemize}

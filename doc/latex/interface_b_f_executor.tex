@@ -1,0 +1,127 @@
+\hypertarget{interface_b_f_executor}{\section{B\-F\-Executor Class Reference}
+\label{interface_b_f_executor}\index{B\-F\-Executor@{B\-F\-Executor}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-Executor.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-Executor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interface_b_f_executor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-Executor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interface_b_f_executor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_b_f_executor_a32faf486dcdd09b6895cc337f65060e0}{execute\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_a81eae8cce462b2611cbf9a8117f11f9b}{default\-Executor}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_aa09657f4258410d0d8265e0656d96b4e}{immediate\-Executor}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_a63e1382c4dbdcb36ba971e7cbf2cc439}{main\-Thread\-Executor}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_a4b739b49457cdea9c30e9ac0a2b29a57}{executor\-With\-Block\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_aedce1a2c68d49f9218b086f431edcc3f}{executor\-With\-Dispatch\-Queue\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_executor_afa8edfb15d7a47fa4c7ed4394731d716}{executor\-With\-Operation\-Queue\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An object that can run a given block. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_f_executor_a81eae8cce462b2611cbf9a8117f11f9b}{\index{B\-F\-Executor@{B\-F\-Executor}!default\-Executor@{default\-Executor}}
+\index{default\-Executor@{default\-Executor}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{default\-Executor}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) default\-Executor 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_a81eae8cce462b2611cbf9a8117f11f9b}
+Returns a default executor, which runs continuations immediately until the call stack gets too deep, then dispatches to a new G\-C\-D queue. \hypertarget{interface_b_f_executor_a32faf486dcdd09b6895cc337f65060e0}{\index{B\-F\-Executor@{B\-F\-Executor}!execute\-:@{execute\-:}}
+\index{execute\-:@{execute\-:}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{execute\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) execute\-: 
+\begin{DoxyParamCaption}
+\item[{(void($^\wedge$)())}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_a32faf486dcdd09b6895cc337f65060e0}
+Runs the given block using this executor's particular strategy. 
+\begin{DoxyParams}{Parameters}
+{\em block} & The block to execute. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_executor_a4b739b49457cdea9c30e9ac0a2b29a57}{\index{B\-F\-Executor@{B\-F\-Executor}!executor\-With\-Block\-:@{executor\-With\-Block\-:}}
+\index{executor\-With\-Block\-:@{executor\-With\-Block\-:}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{executor\-With\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) executor\-With\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(void($^\wedge$)(void($^\wedge$block)()))}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_a4b739b49457cdea9c30e9ac0a2b29a57}
+Returns a new executor that uses the given block to execute continuations. 
+\begin{DoxyParams}{Parameters}
+{\em block} & The block to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_executor_aedce1a2c68d49f9218b086f431edcc3f}{\index{B\-F\-Executor@{B\-F\-Executor}!executor\-With\-Dispatch\-Queue\-:@{executor\-With\-Dispatch\-Queue\-:}}
+\index{executor\-With\-Dispatch\-Queue\-:@{executor\-With\-Dispatch\-Queue\-:}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{executor\-With\-Dispatch\-Queue\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) executor\-With\-Dispatch\-Queue\-: 
+\begin{DoxyParamCaption}
+\item[{(dispatch\-\_\-queue\-\_\-t)}]{queue}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_aedce1a2c68d49f9218b086f431edcc3f}
+Returns a new executor that runs continuations on the given queue. 
+\begin{DoxyParams}{Parameters}
+{\em queue} & The instance of {\ttfamily dispatch\-\_\-queue\-\_\-t} to dispatch all continuations onto. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_executor_afa8edfb15d7a47fa4c7ed4394731d716}{\index{B\-F\-Executor@{B\-F\-Executor}!executor\-With\-Operation\-Queue\-:@{executor\-With\-Operation\-Queue\-:}}
+\index{executor\-With\-Operation\-Queue\-:@{executor\-With\-Operation\-Queue\-:}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{executor\-With\-Operation\-Queue\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) executor\-With\-Operation\-Queue\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Operation\-Queue $\ast$)}]{queue}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_afa8edfb15d7a47fa4c7ed4394731d716}
+Returns a new executor that runs continuations on the given queue. 
+\begin{DoxyParams}{Parameters}
+{\em queue} & The instance of {\ttfamily N\-S\-Operation\-Queue} to run all continuations on. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_executor_aa09657f4258410d0d8265e0656d96b4e}{\index{B\-F\-Executor@{B\-F\-Executor}!immediate\-Executor@{immediate\-Executor}}
+\index{immediate\-Executor@{immediate\-Executor}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{immediate\-Executor}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) immediate\-Executor 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_aa09657f4258410d0d8265e0656d96b4e}
+Returns an executor that runs continuations on the thread where the previous task was completed. \hypertarget{interface_b_f_executor_a63e1382c4dbdcb36ba971e7cbf2cc439}{\index{B\-F\-Executor@{B\-F\-Executor}!main\-Thread\-Executor@{main\-Thread\-Executor}}
+\index{main\-Thread\-Executor@{main\-Thread\-Executor}!BFExecutor@{B\-F\-Executor}}
+\subsubsection[{main\-Thread\-Executor}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) main\-Thread\-Executor 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_executor_a63e1382c4dbdcb36ba971e7cbf2cc439}
+Returns an executor that runs continuations on the main thread. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-Executor.\-h\end{DoxyCompactItemize}

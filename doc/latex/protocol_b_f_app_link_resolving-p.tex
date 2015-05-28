@@ -1,0 +1,80 @@
+\hypertarget{protocol_b_f_app_link_resolving-p}{\section{$<$B\-F\-App\-Link\-Resolving$>$ Protocol Reference}
+\label{protocol_b_f_app_link_resolving-p}\index{$<$\-B\-F\-App\-Link\-Resolving$>$@{$<$\-B\-F\-App\-Link\-Resolving$>$}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-App\-Link\-Resolving.\-h$>$}
+
+
+
+Inheritance diagram for $<$B\-F\-App\-Link\-Resolving$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{protocol_b_f_app_link_resolving-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$B\-F\-App\-Link\-Resolving$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{protocol_b_f_app_link_resolving-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) -\/ \hyperlink{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}{app\-Link\-From\-U\-R\-L\-In\-Background\-:}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) -\/ \hyperlink{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}{app\-Link\-From\-U\-R\-L\-In\-Background\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implement this protocol to provide an alternate strategy for resolving App Links that may include pre-\/fetching, caching, or querying for App Link data from an index provided by a service provider. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}{\index{B\-F\-App\-Link\-Resolving-\/p@{B\-F\-App\-Link\-Resolving-\/p}!app\-Link\-From\-U\-R\-L\-In\-Background\-:@{app\-Link\-From\-U\-R\-L\-In\-Background\-:}}
+\index{app\-Link\-From\-U\-R\-L\-In\-Background\-:@{app\-Link\-From\-U\-R\-L\-In\-Background\-:}!BFAppLinkResolving-p@{B\-F\-App\-Link\-Resolving-\/p}}
+\subsubsection[{app\-Link\-From\-U\-R\-L\-In\-Background\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-Task} $\ast$) app\-Link\-From\-U\-R\-L\-In\-Background\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}
+Asynchronously resolves App Link data for a given U\-R\-L.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L to resolve into an App Link. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{interface_b_f_task}{B\-F\-Task} that will return a \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} for the given U\-R\-L. 
+\end{DoxyReturn}
+\hypertarget{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}{\index{B\-F\-App\-Link\-Resolving-\/p@{B\-F\-App\-Link\-Resolving-\/p}!app\-Link\-From\-U\-R\-L\-In\-Background\-:@{app\-Link\-From\-U\-R\-L\-In\-Background\-:}}
+\index{app\-Link\-From\-U\-R\-L\-In\-Background\-:@{app\-Link\-From\-U\-R\-L\-In\-Background\-:}!BFAppLinkResolving-p@{B\-F\-App\-Link\-Resolving-\/p}}
+\subsubsection[{app\-Link\-From\-U\-R\-L\-In\-Background\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-Task} $\ast$) app\-Link\-From\-U\-R\-L\-In\-Background\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{protocol_b_f_app_link_resolving-p_a78b6f44fe77610b147cb08dc1644cc35}
+Asynchronously resolves App Link data for a given U\-R\-L.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L to resolve into an App Link. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{interface_b_f_task}{B\-F\-Task} that will return a \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} for the given U\-R\-L. 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-App\-Link\-Resolving.\-h\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Link\-Resolver.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+\hypertarget{interface_f_b_native_ad_scroll_view}{\section{F\-B\-Native\-Ad\-Scroll\-View Class Reference}
+\label{interface_f_b_native_ad_scroll_view}\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}}
+}
+
+
+Inheritance diagram for F\-B\-Native\-Ad\-Scroll\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{interface_f_b_native_ad_scroll_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Native\-Ad\-Scroll\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{interface_f_b_native_ad_scroll_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_scroll_view_a7c9ec389c5f0f9f4375e88d813b3e8aa}{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_scroll_view_a1a84845198700263a1dd7e3e10164f5f}{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_scroll_view_a5ce36c2a5c86ba6de8902515a9070dba}{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_scroll_view_a51c05ac76f63e1e5c4d34fa3248a7d81}{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_scroll_view_aed428d2090c9a14f5c7ca40fa52157fb}{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_a626d4ea10573dd4fe86479864d79853c}{N\-S\-U\-Integer {\bfseries maximum\-Native\-Ad\-Count}}\label{interface_f_b_native_ad_scroll_view_a626d4ea10573dd4fe86479864d79853c}
+
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_abe254c39872f9a589894ba0d67bdc75f}{B\-O\-O\-L {\bfseries animation\-Enabled}}\label{interface_f_b_native_ad_scroll_view_abe254c39872f9a589894ba0d67bdc75f}
+
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_aaf11664a9ee0c49f94b9fd92ebcd78e8}{C\-G\-Float {\bfseries x\-Inset}}\label{interface_f_b_native_ad_scroll_view_aaf11664a9ee0c49f94b9fd92ebcd78e8}
+
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_acc39c9fd1d47702d817a63a10ace47e9}{B\-O\-O\-L {\bfseries ad\-Persistence\-Enabled}}\label{interface_f_b_native_ad_scroll_view_acc39c9fd1d47702d817a63a10ace47e9}
+
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_a97b264c76c21b6e857256a042cf2ecea}{U\-I\-View\-Controller $\ast$ {\bfseries view\-Controller}}\label{interface_f_b_native_ad_scroll_view_a97b264c76c21b6e857256a042cf2ecea}
+
+\item 
+\hypertarget{interface_f_b_native_ad_scroll_view_a70c8b0ae8848c51b0a25e48995b70214}{id$<$ \hyperlink{protocol_f_b_native_ad_delegate-p}{F\-B\-Native\-Ad\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_native_ad_scroll_view_a70c8b0ae8848c51b0a25e48995b70214}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_native_ad_scroll_view_a7c9ec389c5f0f9f4375e88d813b3e8aa}{\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}!init\-With\-Native\-Ads\-Manager\-:with\-Type\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:}}
+\index{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:}!FBNativeAdScrollView@{F\-B\-Native\-Ad\-Scroll\-View}}
+\subsubsection[{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Native\-Ads\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{withType:(F\-B\-Native\-Ad\-View\-Type)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_scroll_view_a7c9ec389c5f0f9f4375e88d813b3e8aa}
+Creates a native ad horizontal scroll view for a given native ads manager and native ad template. The manager can be preloaded with ads, and load\-Ads will use the preloaded ads from the manager. Otherwise, the scroll view uses the manager to load ads normally. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & An instance of F\-B\-Native\-Ad\-Manager. Can be preloaded with ads. \\
+\hline
+{\em type} & The type of this native ad template. For more information, consult F\-B\-Native\-Ad\-View\-Type. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_scroll_view_a1a84845198700263a1dd7e3e10164f5f}{\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}!init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:}}
+\index{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:}!FBNativeAdScrollView@{F\-B\-Native\-Ad\-Scroll\-View}}
+\subsubsection[{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Native\-Ads\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{withType:(F\-B\-Native\-Ad\-View\-Type)}]{type}
+\item[{withAttributes:({\bf F\-B\-Native\-Ad\-View\-Attributes} $\ast$)}]{attributes}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_scroll_view_a1a84845198700263a1dd7e3e10164f5f}
+Creates a native ad horizontal scroll view for a given native ads manager and native ad template. The manager can be preloaded with ads, and load\-Ads will use the preloaded ads from the manager. Otherwise, the scroll view uses the manager to load ads normally. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & An instance of F\-B\-Native\-Ad\-Manager. Can be preloaded with ads. \\
+\hline
+{\em type} & The type of this native ad template. For more information, consult F\-B\-Native\-Ad\-View\-Type. \\
+\hline
+{\em attributes} & The layout of this native ad template. For more information, consult \hyperlink{class_f_b_native_ad_view_layout}{F\-B\-Native\-Ad\-View\-Layout}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_scroll_view_a5ce36c2a5c86ba6de8902515a9070dba}{\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}!init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:}}
+\index{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:@{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:}!FBNativeAdScrollView@{F\-B\-Native\-Ad\-Scroll\-View}}
+\subsubsection[{init\-With\-Native\-Ads\-Manager\-:with\-Type\-:with\-Attributes\-:with\-Maximum\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Native\-Ads\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{withType:(F\-B\-Native\-Ad\-View\-Type)}]{type}
+\item[{withAttributes:({\bf F\-B\-Native\-Ad\-View\-Attributes} $\ast$)}]{attributes}
+\item[{withMaximum:(N\-S\-U\-Integer)}]{maximum\-Native\-Ad\-Count}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_scroll_view_a5ce36c2a5c86ba6de8902515a9070dba}
+Creates a native ad horizontal scroll view for a given native ads manager and native ad template. The manager can be preloaded with ads, and load\-Ads will use the preloaded ads from the manager. Otherwise, the scroll view uses the manager to load ads normally. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & An instance of F\-B\-Native\-Ad\-Manager. Can be preloaded with ads. \\
+\hline
+{\em type} & The type of this native ad template. For more information, consult F\-B\-Native\-Ad\-View\-Type. \\
+\hline
+{\em attributes} & The layout of this native ad template. For more information, consult \hyperlink{class_f_b_native_ad_view_layout}{F\-B\-Native\-Ad\-View\-Layout}. \\
+\hline
+{\em maximum\-Native\-Ad\-Count} & Maximum native ads to show at once. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_scroll_view_a51c05ac76f63e1e5c4d34fa3248a7d81}{\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}!init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:@{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:}}
+\index{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:@{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:}!FBNativeAdScrollView@{F\-B\-Native\-Ad\-Scroll\-View}}
+\subsubsection[{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Native\-Ads\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{withViewProvider:(U\-I\-View $\ast$($^\wedge$)({\bf F\-B\-Native\-Ad} $\ast$native\-Ad, N\-S\-U\-Integer position))}]{child\-View\-Provider}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_scroll_view_a51c05ac76f63e1e5c4d34fa3248a7d81}
+This is a method to create a native ad horizontal scroll view from a user provided view. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & An instance of F\-B\-Native\-Ad\-Manager. Can be preloaded with ads. \\
+\hline
+{\em child\-View\-Provider} & Block that creates new views for each loaded native ad. Must not reuse the same instance, but return a new view for each call. Views may be arbitrarily resized and should support resizing their content through Auto Layout constraints, autoresizing masks, or manual resizing. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_scroll_view_aed428d2090c9a14f5c7ca40fa52157fb}{\index{F\-B\-Native\-Ad\-Scroll\-View@{F\-B\-Native\-Ad\-Scroll\-View}!init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:@{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:}}
+\index{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:@{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:}!FBNativeAdScrollView@{F\-B\-Native\-Ad\-Scroll\-View}}
+\subsubsection[{init\-With\-Native\-Ads\-Manager\-:with\-View\-Provider\-:with\-Maximum\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Native\-Ads\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{withViewProvider:(U\-I\-View $\ast$($^\wedge$)({\bf F\-B\-Native\-Ad} $\ast$native\-Ad, N\-S\-U\-Integer position))}]{child\-View\-Provider}
+\item[{withMaximum:(N\-S\-U\-Integer)}]{maximum\-Native\-Ad\-Count}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_scroll_view_aed428d2090c9a14f5c7ca40fa52157fb}
+This is a method to create a native ad horizontal scroll view from a user provided view. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & An instance of F\-B\-Native\-Ad\-Manager. Can be preloaded with ads. \\
+\hline
+{\em child\-View\-Provider} & Block that creates new views for each loaded native ad. Must not reuse the same instance, but return a new view for each call. Views may be arbitrarily resized and should support resizing their content through Auto Layout constraints, autoresizing masks, or manual resizing. \\
+\hline
+{\em maximum\-Native\-Ad\-Count} & Maximum native ads to show at once. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad\-Scroll\-View.\-h\end{DoxyCompactItemize}

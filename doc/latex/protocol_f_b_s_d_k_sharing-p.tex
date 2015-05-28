@@ -1,0 +1,86 @@
+\hypertarget{protocol_f_b_s_d_k_sharing-p}{\section{$<$F\-B\-S\-D\-K\-Sharing$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_sharing-p}\index{$<$\-F\-B\-S\-D\-K\-Sharing$>$@{$<$\-F\-B\-S\-D\-K\-Sharing$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Sharing.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Sharing$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{protocol_f_b_s_d_k_sharing-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Sharing$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{protocol_f_b_s_d_k_sharing-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_f_b_s_d_k_sharing-p_af70f439e9b7caf3671d798c29458fe59}{validate\-With\-Error\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id$<$ \hyperlink{protocol_f_b_s_d_k_sharing_delegate-p}{F\-B\-S\-D\-K\-Sharing\-Delegate} $>$ \hyperlink{protocol_f_b_s_d_k_sharing-p_a310585baeb89d309bda3879aaa1be72d}{delegate}
+\item 
+id$<$ \hyperlink{protocol_f_b_s_d_k_sharing_content-p}{F\-B\-S\-D\-K\-Sharing\-Content} $>$ \hyperlink{protocol_f_b_s_d_k_sharing-p_a9cc352e3d8e8aec628ba42e8718bbeaf}{share\-Content}
+\item 
+B\-O\-O\-L \hyperlink{protocol_f_b_s_d_k_sharing-p_ac1c01a21db7b956e8ea47df72f01d12d}{should\-Fail\-On\-Data\-Error}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The common interface for components that initiate sharing. \begin{DoxySeeAlso}{See Also}
+\hyperlink{interface_f_b_s_d_k_share_dialog}{F\-B\-S\-D\-K\-Share\-Dialog} 
+
+\hyperlink{interface_f_b_s_d_k_message_dialog}{F\-B\-S\-D\-K\-Message\-Dialog} 
+
+\hyperlink{interface_f_b_s_d_k_share_a_p_i}{F\-B\-S\-D\-K\-Share\-A\-P\-I} 
+\end{DoxySeeAlso}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_sharing-p_af70f439e9b7caf3671d798c29458fe59}{\index{F\-B\-S\-D\-K\-Sharing-\/p@{F\-B\-S\-D\-K\-Sharing-\/p}!validate\-With\-Error\-:@{validate\-With\-Error\-:}}
+\index{validate\-With\-Error\-:@{validate\-With\-Error\-:}!FBSDKSharing-p@{F\-B\-S\-D\-K\-Sharing-\/p}}
+\subsubsection[{validate\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) validate\-With\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$$\ast$)}]{error\-Ref}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_sharing-p_af70f439e9b7caf3671d798c29458fe59}
+Validates the content on the receiver. 
+\begin{DoxyParams}{Parameters}
+{\em error\-Ref} & If an error occurs, upon return contains an N\-S\-Error object that describes the problem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the content is valid, otherwise N\-O. 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{protocol_f_b_s_d_k_sharing-p_a310585baeb89d309bda3879aaa1be72d}{\index{F\-B\-S\-D\-K\-Sharing-\/p@{F\-B\-S\-D\-K\-Sharing-\/p}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKSharing-p@{F\-B\-S\-D\-K\-Sharing-\/p}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-Sharing\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{protocol_f_b_s_d_k_sharing-p_a310585baeb89d309bda3879aaa1be72d}
+The receiver's delegate or nil if it doesn't have a delegate. \hypertarget{protocol_f_b_s_d_k_sharing-p_a9cc352e3d8e8aec628ba42e8718bbeaf}{\index{F\-B\-S\-D\-K\-Sharing-\/p@{F\-B\-S\-D\-K\-Sharing-\/p}!share\-Content@{share\-Content}}
+\index{share\-Content@{share\-Content}!FBSDKSharing-p@{F\-B\-S\-D\-K\-Sharing-\/p}}
+\subsubsection[{share\-Content}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-Sharing\-Content}$>$) share\-Content\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{protocol_f_b_s_d_k_sharing-p_a9cc352e3d8e8aec628ba42e8718bbeaf}
+The content to be shared. \hypertarget{protocol_f_b_s_d_k_sharing-p_ac1c01a21db7b956e8ea47df72f01d12d}{\index{F\-B\-S\-D\-K\-Sharing-\/p@{F\-B\-S\-D\-K\-Sharing-\/p}!should\-Fail\-On\-Data\-Error@{should\-Fail\-On\-Data\-Error}}
+\index{should\-Fail\-On\-Data\-Error@{should\-Fail\-On\-Data\-Error}!FBSDKSharing-p@{F\-B\-S\-D\-K\-Sharing-\/p}}
+\subsubsection[{should\-Fail\-On\-Data\-Error}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) should\-Fail\-On\-Data\-Error\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{protocol_f_b_s_d_k_sharing-p_ac1c01a21db7b956e8ea47df72f01d12d}
+A Boolean value that indicates whether the receiver should fail if it finds an error with the share content.  If N\-O, the sharer will still be displayed without the data that was mis-\/configured. For example, an invalid place\-I\-D specified on the share\-Content would produce a data error. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Sharing.\-h\end{DoxyCompactItemize}

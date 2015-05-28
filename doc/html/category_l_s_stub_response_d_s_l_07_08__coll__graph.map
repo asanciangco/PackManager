@@ -1,0 +1,4 @@
+<map id="LSStubResponseDSL()" name="LSStubResponseDSL()">
+<area shape="rect" id="node2" href="$interface_l_s_stub_response.html" title="{LSStubResponse\n|+ statusCode\l+ body\l+ headers\l+ shouldFail\l+ error\l|+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l}" alt="" coords="39,283,205,530"/>
+<area shape="rect" id="node4" href="$protocol_l_s_h_t_t_p_response-p.html" title="{\&lt;LSHTTPResponse\&gt;\n|+ statusCode\l+ headers\l+ body\l|}" alt="" coords="107,131,255,231"/>
+</map>

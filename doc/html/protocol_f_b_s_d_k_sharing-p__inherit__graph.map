@@ -1,0 +1,6 @@
+<map id="&lt;FBSDKSharing&gt;" name="&lt;FBSDKSharing&gt;">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_share_a_p_i.html" title="{FBSDKShareAPI\n|+ createObjectsWithClientToken\l+ message\l|+ canShare\l+ createOpenGraphObject:\l+ share\l+ shareWithContent:delegate:\l}" alt="" coords="5,278,216,405"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_sharing_dialog-p.html" title="{\&lt;FBSDKSharingDialog\&gt;\n||+ canShow\l+ show\l}" alt="" coords="240,298,404,385"/>
+<area shape="rect" id="node5" href="$interface_f_b_s_d_k_message_dialog.html" title="{FBSDKMessageDialog\n||+ showWithContent:delegate:\l}" alt="" coords="118,467,313,541"/>
+<area shape="rect" id="node6" href="$interface_f_b_s_d_k_share_dialog.html" title="{FBSDKShareDialog\n|+ fromViewController\l+ mode\l|+ showFromViewController\l:withContent:delegate:\l}" alt="" coords="339,454,520,554"/>
+</map>

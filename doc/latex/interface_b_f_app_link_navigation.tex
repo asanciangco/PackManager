@@ -1,0 +1,151 @@
+\hypertarget{interface_b_f_app_link_navigation}{\section{B\-F\-App\-Link\-Navigation Class Reference}
+\label{interface_b_f_app_link_navigation}\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-App\-Link\-Navigation.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-App\-Link\-Navigation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{interface_b_f_app_link_navigation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-App\-Link\-Navigation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{interface_b_f_app_link_navigation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-F\-App\-Link\-Navigation\-Type) -\/ \hyperlink{interface_b_f_app_link_navigation_a5a03d67d7fb455e69907574022316792}{navigate\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_b_f_app_link_navigation_a4427fccd6479cd32aad30a840bbb0367}{navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) + \hyperlink{interface_b_f_app_link_navigation_a86de41fa3a5d9deffc3342013ec096f4}{resolve\-App\-Link\-In\-Background\-:}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) + \hyperlink{interface_b_f_app_link_navigation_a91644d6837572bd0e787781f4b351c46}{resolve\-App\-Link\-In\-Background\-:resolver\-:}
+\item 
+(B\-F\-App\-Link\-Navigation\-Type) + \hyperlink{interface_b_f_app_link_navigation_a605c43d3b1bdb897e4e6e9b475652140}{navigate\-To\-App\-Link\-:error\-:}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) + \hyperlink{interface_b_f_app_link_navigation_a2afa0e9a3c1c1c86b6bb61b413960f05}{navigate\-To\-U\-R\-L\-In\-Background\-:}
+\item 
+(\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$) + \hyperlink{interface_b_f_app_link_navigation_ad43dd649b3c834977f3d0330bf55766d}{navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:}
+\item 
+(id$<$ \hyperlink{protocol_b_f_app_link_resolving-p}{B\-F\-App\-Link\-Resolving} $>$) + \hyperlink{interface_b_f_app_link_navigation_aa56e24f30585083b4b962743a8b9a148}{default\-Resolver}
+\item 
+(void) + \hyperlink{interface_b_f_app_link_navigation_ac9e14dc63ec5e921e7ad4d24df7d6196}{set\-Default\-Resolver\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_app_link_navigation_a75478e20d3d2f13c93e8d0cd79b20b2c}{extras}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_app_link_navigation_a2412a1d4fa49c52d7883bee810e5026d}{app\-Link\-Data}
+\item 
+\hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} $\ast$ \hyperlink{interface_b_f_app_link_navigation_a052e0aa4d7101904ca825a21712cdd7b}{app\-Link}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a pending request to navigate to an App Link. Most developers will simply use navigate\-To\-U\-R\-L\-In\-Background\-: to open a U\-R\-L, but developers can build custom requests with additional navigation and app data attached to them by creating B\-F\-App\-Link\-Navigations themselves. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_f_app_link_navigation_aa56e24f30585083b4b962743a8b9a148}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!default\-Resolver@{default\-Resolver}}
+\index{default\-Resolver@{default\-Resolver}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{default\-Resolver}]{\setlength{\rightskip}{0pt plus 5cm}+ (id$<${\bf B\-F\-App\-Link\-Resolving}$>$) default\-Resolver 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_aa56e24f30585083b4b962743a8b9a148}
+Gets the default resolver to be used for App Link resolution. If the developer has not set one explicitly, a basic, built-\/in resolver will be used. \hypertarget{interface_b_f_app_link_navigation_a5a03d67d7fb455e69907574022316792}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!navigate\-:@{navigate\-:}}
+\index{navigate\-:@{navigate\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{navigate\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-F\-App\-Link\-Navigation\-Type) navigate\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$$\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a5a03d67d7fb455e69907574022316792}
+Performs the navigation \hypertarget{interface_b_f_app_link_navigation_a605c43d3b1bdb897e4e6e9b475652140}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!navigate\-To\-App\-Link\-:error\-:@{navigate\-To\-App\-Link\-:error\-:}}
+\index{navigate\-To\-App\-Link\-:error\-:@{navigate\-To\-App\-Link\-:error\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{navigate\-To\-App\-Link\-:error\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (B\-F\-App\-Link\-Navigation\-Type) navigate\-To\-App\-Link\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-App\-Link} $\ast$)}]{link}
+\item[{error:(N\-S\-Error $\ast$$\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a605c43d3b1bdb897e4e6e9b475652140}
+Navigates to a \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} and returns whether it opened in-\/app or in-\/browser \hypertarget{interface_b_f_app_link_navigation_a2afa0e9a3c1c1c86b6bb61b413960f05}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!navigate\-To\-U\-R\-L\-In\-Background\-:@{navigate\-To\-U\-R\-L\-In\-Background\-:}}
+\index{navigate\-To\-U\-R\-L\-In\-Background\-:@{navigate\-To\-U\-R\-L\-In\-Background\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{navigate\-To\-U\-R\-L\-In\-Background\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-Task} $\ast$) navigate\-To\-U\-R\-L\-In\-Background\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{destination}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a2afa0e9a3c1c1c86b6bb61b413960f05}
+Navigates to a U\-R\-L (an asynchronous action) and returns a B\-F\-Navigation\-Type \hypertarget{interface_b_f_app_link_navigation_ad43dd649b3c834977f3d0330bf55766d}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:@{navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:}}
+\index{navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:@{navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{navigate\-To\-U\-R\-L\-In\-Background\-:resolver\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-Task} $\ast$) {\bf navigate\-To\-U\-R\-L\-In\-Background\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{destination}
+\item[{resolver:(id$<$ {\bf B\-F\-App\-Link\-Resolving} $>$)}]{resolver}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_ad43dd649b3c834977f3d0330bf55766d}
+Navigates to a U\-R\-L (an asynchronous action) using the given App Link resolution strategy and returns a B\-F\-Navigation\-Type \hypertarget{interface_b_f_app_link_navigation_a4427fccd6479cd32aad30a840bbb0367}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:@{navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:}}
+\index{navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:@{navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{navigation\-With\-App\-Link\-:extras\-:app\-Link\-Data\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) navigation\-With\-App\-Link\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-App\-Link} $\ast$)}]{app\-Link}
+\item[{extras:(N\-S\-Dictionary $\ast$)}]{extras}
+\item[{appLinkData:(N\-S\-Dictionary $\ast$)}]{app\-Link\-Data}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a4427fccd6479cd32aad30a840bbb0367}
+Creates an App\-Link\-Navigation with the given link, extras, and App Link data \hypertarget{interface_b_f_app_link_navigation_a86de41fa3a5d9deffc3342013ec096f4}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!resolve\-App\-Link\-In\-Background\-:@{resolve\-App\-Link\-In\-Background\-:}}
+\index{resolve\-App\-Link\-In\-Background\-:@{resolve\-App\-Link\-In\-Background\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{resolve\-App\-Link\-In\-Background\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-Task} $\ast$) resolve\-App\-Link\-In\-Background\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{destination}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a86de41fa3a5d9deffc3342013ec096f4}
+Returns a \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} for the given U\-R\-L \hypertarget{interface_b_f_app_link_navigation_a91644d6837572bd0e787781f4b351c46}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!resolve\-App\-Link\-In\-Background\-:resolver\-:@{resolve\-App\-Link\-In\-Background\-:resolver\-:}}
+\index{resolve\-App\-Link\-In\-Background\-:resolver\-:@{resolve\-App\-Link\-In\-Background\-:resolver\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{resolve\-App\-Link\-In\-Background\-:resolver\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-Task} $\ast$) {\bf resolve\-App\-Link\-In\-Background\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{destination}
+\item[{resolver:(id$<$ {\bf B\-F\-App\-Link\-Resolving} $>$)}]{resolver}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_a91644d6837572bd0e787781f4b351c46}
+Returns a \hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} for the given U\-R\-L using the given App Link resolution strategy \hypertarget{interface_b_f_app_link_navigation_ac9e14dc63ec5e921e7ad4d24df7d6196}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!set\-Default\-Resolver\-:@{set\-Default\-Resolver\-:}}
+\index{set\-Default\-Resolver\-:@{set\-Default\-Resolver\-:}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{set\-Default\-Resolver\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Default\-Resolver\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf B\-F\-App\-Link\-Resolving} $>$)}]{resolver}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_app_link_navigation_ac9e14dc63ec5e921e7ad4d24df7d6196}
+Sets the default resolver to be used for App Link resolution. Setting this to nil will revert the default resolver to the basic, built-\/in resolver provided by \hyperlink{interface_bolts}{Bolts}. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_b_f_app_link_navigation_a052e0aa4d7101904ca825a21712cdd7b}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!app\-Link@{app\-Link}}
+\index{app\-Link@{app\-Link}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{app\-Link}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-App\-Link}$\ast$) app\-Link\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_app_link_navigation_a052e0aa4d7101904ca825a21712cdd7b}
+The App\-Link to navigate to \hypertarget{interface_b_f_app_link_navigation_a2412a1d4fa49c52d7883bee810e5026d}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!app\-Link\-Data@{app\-Link\-Data}}
+\index{app\-Link\-Data@{app\-Link\-Data}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{app\-Link\-Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) app\-Link\-Data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_b_f_app_link_navigation_a2412a1d4fa49c52d7883bee810e5026d}
+The al\-\_\-applink\-\_\-data for the App\-Link\-Navigation. This will generally contain data common to navigation attempts such as back-\/links, user agents, and other information that may be used in routing and handling an App Link request. \hypertarget{interface_b_f_app_link_navigation_a75478e20d3d2f13c93e8d0cd79b20b2c}{\index{B\-F\-App\-Link\-Navigation@{B\-F\-App\-Link\-Navigation}!extras@{extras}}
+\index{extras@{extras}!BFAppLinkNavigation@{B\-F\-App\-Link\-Navigation}}
+\subsubsection[{extras}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) extras\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_b_f_app_link_navigation_a75478e20d3d2f13c93e8d0cd79b20b2c}
+The extras for the App\-Link\-Navigation. This will generally contain application-\/specific data that should be passed along with the request, such as advertiser or affiliate I\-Ds or other such metadata relevant on this device. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-App\-Link\-Navigation.\-h\end{DoxyCompactItemize}

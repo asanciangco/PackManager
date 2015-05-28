@@ -1,0 +1,91 @@
+\hypertarget{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p}{\section{$<$F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_a4671928458982fc91776c967ed024d0a}{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_aabad801769fd503a4a073aefbf88d285}{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_afc171e3f8e934b7e78cf8591e9a3644f}{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_afc171e3f8e934b7e78cf8591e9a3644f}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}!messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:}}
+\index{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:}!FBSDKMessengerURLHandlerDelegate-p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}}
+\subsubsection[{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Cancel\-With\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) messenger\-U\-R\-L\-Handler\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler} $\ast$)}]{messenger\-U\-R\-L\-Handler}
+\item[{didHandleCancelWithContext:({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Cancel\-Context} $\ast$)}]{context}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_afc171e3f8e934b7e78cf8591e9a3644f}
+This is called after a user canceled a share and Messenger redirected here
+
+
+\begin{DoxyParams}{Parameters}
+{\em messenger\-U\-R\-L\-Handler} & The handler that handled the U\-R\-L \\
+\hline
+{\em context} & The data passed from Messenger \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_aabad801769fd503a4a073aefbf88d285}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}!messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:}}
+\index{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:}!FBSDKMessengerURLHandlerDelegate-p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}}
+\subsubsection[{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Open\-From\-Composer\-With\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) messenger\-U\-R\-L\-Handler\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler} $\ast$)}]{messenger\-U\-R\-L\-Handler}
+\item[{didHandleOpenFromComposerWithContext:({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Open\-From\-Composer\-Context} $\ast$)}]{context}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_aabad801769fd503a4a073aefbf88d285}
+This is called after a user tapped this app from the composer in Messenger
+
+
+\begin{DoxyParams}{Parameters}
+{\em messenger\-U\-R\-L\-Handler} & The handler that handled the U\-R\-L \\
+\hline
+{\em context} & The data passed from Messenger \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_a4671928458982fc91776c967ed024d0a}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}!messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:}}
+\index{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:@{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:}!FBSDKMessengerURLHandlerDelegate-p@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate-\/p}}
+\subsubsection[{messenger\-U\-R\-L\-Handler\-:did\-Handle\-Reply\-With\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) messenger\-U\-R\-L\-Handler\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler} $\ast$)}]{messenger\-U\-R\-L\-Handler}
+\item[{didHandleReplyWithContext:({\bf F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Reply\-Context} $\ast$)}]{context}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p_a4671928458982fc91776c967ed024d0a}
+This is called after \hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler}{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler} has received a reply from messenger
+
+
+\begin{DoxyParams}{Parameters}
+{\em messenger\-U\-R\-L\-Handler} & The handler that handled the U\-R\-L \\
+\hline
+{\em context} & The data passed from Messenger \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Messenger\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler.\-h\end{DoxyCompactItemize}

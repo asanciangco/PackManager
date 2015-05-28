@@ -1,0 +1,127 @@
+\hypertarget{interface_f_b_ad_settings}{\section{F\-B\-Ad\-Settings Class Reference}
+\label{interface_f_b_ad_settings}\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Ad\-Settings.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Ad\-Settings\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{interface_f_b_ad_settings__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Ad\-Settings\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{interface_f_b_ad_settings__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_adf2fc44110adb3613551750bf42671af}{add\-Test\-Device\-:}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_aef0e9decab562f63ecadc72dbb594a56}{add\-Test\-Devices\-:}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_af6d62d5a096e6701bb83407114eb7dd6}{clear\-Test\-Devices}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_a0f1e7129f1c07b5420d9a6a1f7eb9768}{set\-Is\-Child\-Directed\-:}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_aab1304a0308648520b5dc1fda60a944c}{set\-Url\-Prefix\-:}
+\item 
+(F\-B\-Ad\-Log\-Level) + \hyperlink{interface_f_b_ad_settings_ad60e4d6f1575676d39f2e23786e54c0a}{get\-Log\-Level}
+\item 
+(void) + \hyperlink{interface_f_b_ad_settings_a24d42f2f691676ba83d9aeda287a54b5}{set\-Log\-Level\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ad\-Settings contains global settings for all ad controls. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_ad_settings_adf2fc44110adb3613551750bf42671af}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!add\-Test\-Device\-:@{add\-Test\-Device\-:}}
+\index{add\-Test\-Device\-:@{add\-Test\-Device\-:}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{add\-Test\-Device\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Test\-Device\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{device\-Hash}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_adf2fc44110adb3613551750bf42671af}
+Adds a test device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-Hash} & The id of the device to use test mode, can be obtained from debug log\\
+\hline
+\end{DoxyParams}
+Copy the current device Id from debug log and add it as a test device to get test ads. Apps running on emulator will automatically get test ads. Test devices should be added before load\-Ad is called. \hypertarget{interface_f_b_ad_settings_aef0e9decab562f63ecadc72dbb594a56}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!add\-Test\-Devices\-:@{add\-Test\-Devices\-:}}
+\index{add\-Test\-Devices\-:@{add\-Test\-Devices\-:}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{add\-Test\-Devices\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) add\-Test\-Devices\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{devices\-Hash}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_aef0e9decab562f63ecadc72dbb594a56}
+Add a collection of test devices. See {\ttfamily +add\-Test\-Devices\-:} for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em devices\-Hash} & The array of the device id to use test mode, can be obtained from debug log \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_ad_settings_af6d62d5a096e6701bb83407114eb7dd6}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!clear\-Test\-Devices@{clear\-Test\-Devices}}
+\index{clear\-Test\-Devices@{clear\-Test\-Devices}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{clear\-Test\-Devices}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) clear\-Test\-Devices 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_af6d62d5a096e6701bb83407114eb7dd6}
+Clear all the added test devices \hypertarget{interface_f_b_ad_settings_ad60e4d6f1575676d39f2e23786e54c0a}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!get\-Log\-Level@{get\-Log\-Level}}
+\index{get\-Log\-Level@{get\-Log\-Level}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{get\-Log\-Level}]{\setlength{\rightskip}{0pt plus 5cm}+ (F\-B\-Ad\-Log\-Level) get\-Log\-Level 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_ad60e4d6f1575676d39f2e23786e54c0a}
+Gets the current S\-D\-K logging level \hypertarget{interface_f_b_ad_settings_a0f1e7129f1c07b5420d9a6a1f7eb9768}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!set\-Is\-Child\-Directed\-:@{set\-Is\-Child\-Directed\-:}}
+\index{set\-Is\-Child\-Directed\-:@{set\-Is\-Child\-Directed\-:}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{set\-Is\-Child\-Directed\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Is\-Child\-Directed\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{is\-Child\-Directed}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_a0f1e7129f1c07b5420d9a6a1f7eb9768}
+Configures the ad control for treatment as child-\/directed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\-Child\-Directed} & Indicates whether you would like your ad control to be treated as child-\/directed\\
+\hline
+\end{DoxyParams}
+Note that you may have other legal obligations under the Children's Online Privacy Protection Act (C\-O\-P\-P\-A). Please review the F\-T\-C's guidance and consult with your own legal counsel. \hypertarget{interface_f_b_ad_settings_a24d42f2f691676ba83d9aeda287a54b5}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!set\-Log\-Level\-:@{set\-Log\-Level\-:}}
+\index{set\-Log\-Level\-:@{set\-Log\-Level\-:}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{set\-Log\-Level\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Log\-Level\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-Ad\-Log\-Level)}]{level}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_a24d42f2f691676ba83d9aeda287a54b5}
+Sets the current S\-D\-K logging level \hypertarget{interface_f_b_ad_settings_aab1304a0308648520b5dc1fda60a944c}{\index{F\-B\-Ad\-Settings@{F\-B\-Ad\-Settings}!set\-Url\-Prefix\-:@{set\-Url\-Prefix\-:}}
+\index{set\-Url\-Prefix\-:@{set\-Url\-Prefix\-:}!FBAdSettings@{F\-B\-Ad\-Settings}}
+\subsubsection[{set\-Url\-Prefix\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Url\-Prefix\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{url\-Prefix}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_settings_aab1304a0308648520b5dc1fda60a944c}
+Sets the url prefix to use when making ad requests.
+
+This method should never be used in production. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Ad\-Settings.\-h\end{DoxyCompactItemize}

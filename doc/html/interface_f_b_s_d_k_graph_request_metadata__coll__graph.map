@@ -1,0 +1,4 @@
+<map id="FBSDKGraphRequestMetadata" name="FBSDKGraphRequestMetadata">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_graph_request_connection.html" title="{FBSDKGraphRequestConnection\n|+ delegate\l+ timeout\l+ URLResponse\l|+ addRequest:completionHandler:\l+ addRequest:completionHandler\l:batchEntryName:\l+ addRequest:completionHandler\l:batchParameters:\l+ cancel\l+ start\l+ setDelegateQueue:\l+ overrideVersionPartWith:\l}" alt="" coords="48,131,270,338"/>
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_graph_request.html" title="{FBSDKGraphRequest\n|+ parameters\l+ tokenString\l+ graphPath\l+ HTTPMethod\l+ version\l|+ initWithGraphPath:parameters:\l+ initWithGraphPath:parameters\l:HTTPMethod:\l+ initWithGraphPath:parameters\l:tokenString:version:HTTPMethod:\l+ setGraphErrorRecoveryDisabled:\l+ startWithCompletionHandler:\l}" alt="" coords="296,131,523,338"/>
+</map>

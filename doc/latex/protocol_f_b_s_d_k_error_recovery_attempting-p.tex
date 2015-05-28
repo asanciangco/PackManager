@@ -1,0 +1,72 @@
+\hypertarget{protocol_f_b_s_d_k_error_recovery_attempting-p}{\section{$<$F\-B\-S\-D\-K\-Error\-Recovery\-Attempting$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_error_recovery_attempting-p}\index{$<$\-F\-B\-S\-D\-K\-Error\-Recovery\-Attempting$>$@{$<$\-F\-B\-S\-D\-K\-Error\-Recovery\-Attempting$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Constants.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Error\-Recovery\-Attempting$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{protocol_f_b_s_d_k_error_recovery_attempting-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Error\-Recovery\-Attempting$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{protocol_f_b_s_d_k_error_recovery_attempting-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_error_recovery_attempting-p_ad30e4446144df6e728789726bc8db056}{attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+a formal protocol very similar to the informal protocol N\-S\-Error\-Recovery\-Attempting 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_error_recovery_attempting-p_ad30e4446144df6e728789726bc8db056}{\index{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting-\/p@{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting-\/p}!attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:@{attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:}}
+\index{attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:@{attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:}!FBSDKErrorRecoveryAttempting-p@{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting-\/p}}
+\subsubsection[{attempt\-Recovery\-From\-Error\-:option\-Index\-:delegate\-:did\-Recover\-Selector\-:context\-Info\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) attempt\-Recovery\-From\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\item[{optionIndex:(N\-S\-U\-Integer)}]{recovery\-Option\-Index}
+\item[{delegate:(id)}]{delegate}
+\item[{didRecoverSelector:(S\-E\-L)}]{did\-Recover\-Selector}
+\item[{contextInfo:(void $\ast$)}]{context\-Info}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_error_recovery_attempting-p_ad30e4446144df6e728789726bc8db056}
+attempt the recovery 
+\begin{DoxyParams}{Parameters}
+{\em error} & the error \\
+\hline
+{\em recovery\-Option\-Index} & the selected option index \\
+\hline
+{\em delegate} & the delegate \\
+\hline
+{\em did\-Recover\-Selector} & the callback selector, see discussion. \\
+\hline
+{\em context\-Info} & context info to pass back to callback selector, see discussion.  Given that an error alert has been presented document-\/modally to the user, and the user has chosen one of the error's recovery options, attempt recovery from the error, and send the selected message to the specified delegate. The option index is an index into the error's array of localized recovery options. The method selected by did\-Recover\-Selector must have the same signature as\-:\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item (void)did\-Present\-Error\-With\-Recovery\-:(\-B\-O\-O\-L)did\-Recover context\-Info\-:(void $\ast$)context\-Info;
+\end{DoxyItemize}
+
+The value passed for did\-Recover must be Y\-E\-S if error recovery was completely successful, N\-O otherwise. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Constants.\-h\end{DoxyCompactItemize}

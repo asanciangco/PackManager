@@ -1,0 +1,4 @@
+<map id="FBSDKMessageDialog" name="FBSDKMessageDialog">
+<area shape="rect" id="node3" href="$protocol_f_b_s_d_k_sharing_dialog-p.html" title="{\&lt;FBSDKSharingDialog\&gt;\n||+ canShow\l+ show\l}" alt="" coords="107,278,271,365"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_sharing-p.html" title="{\&lt;FBSDKSharing\&gt;\n|+ delegate\l+ shareContent\l+ shouldFailOnDataError\l|+ validateWithError:\l}" alt="" coords="105,129,273,229"/>
+</map>

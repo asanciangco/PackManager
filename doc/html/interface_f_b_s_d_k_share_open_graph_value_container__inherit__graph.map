@@ -1,0 +1,5 @@
+<map id="FBSDKShareOpenGraphValueContainer" name="FBSDKShareOpenGraphValueContainer">
+<area shape="rect" id="node6" href="$interface_f_b_s_d_k_share_open_graph_action.html" title="{FBSDKShareOpenGraphAction\n|+ actionType\l|+ isEqualToShareOpenGraphAction:\l+ actionWithType:object:key:\l+ actionWithType:objectID:key:\l+ actionWithType:objectURL:key:\l}" alt="" coords="4,547,240,661"/>
+<area shape="rect" id="node7" href="$interface_f_b_s_d_k_share_open_graph_object.html" title="{FBSDKShareOpenGraphObject\n||+ isEqualToShareOpenGraphObject:\l+ objectWithProperties:\l}" alt="" coords="265,561,503,647"/>
+<area shape="rect" id="node3" href="$protocol_f_b_s_d_k_share_open_graph_value_containing-p.html" title="{\&lt;FBSDKShareOpenGraphValue\lContaining\&gt;\n||+ arrayForKey:\l+ enumerateKeysAndObjectsUsing\lBlock:\l+ keyEnumerator\l+ numberForKey:\l+ objectEnumerator\l+ objectForKey:\l+ objectForKeyedSubscript:\l+ parseProperties:\l+ photoForKey:\l+ removeObjectForKey:\land 8 more...\l}" alt="" coords="228,129,456,362"/>
+</map>

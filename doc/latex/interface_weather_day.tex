@@ -1,0 +1,97 @@
+\hypertarget{interface_weather_day}{\section{Weather\-Day Class Reference}
+\label{interface_weather_day}\index{Weather\-Day@{Weather\-Day}}
+}
+
+
+{\ttfamily \#import $<$Weather\-Day.\-h$>$}
+
+
+
+Inheritance diagram for Weather\-Day\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{interface_weather_day__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Weather\-Day\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{interface_weather_day__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_weather_day_a5a57d195f2f06cb96693b4b4d68fd955}{init\-With\-High\-:low\-:precipitation\-:date\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Integer \hyperlink{interface_weather_day_a97d5aad192216fe0de9ebc43296cfb68}{high}
+\item 
+N\-S\-Integer \hyperlink{interface_weather_day_a677798c5423dabd4861214c5de4faf55}{low}
+\item 
+C\-G\-Float \hyperlink{interface_weather_day_a62a56a8c78976523287185d6dce106e1}{precipitaion}
+\item 
+N\-S\-Integer \hyperlink{interface_weather_day_a8447b6e2f7cd73dce25e53ae8ac4baaa}{weighted\-Average\-Temp}
+\item 
+N\-S\-Integer \hyperlink{interface_weather_day_ade050fc16334cf7cac350d222ff1a026}{range}
+\item 
+\hypertarget{interface_weather_day_a0217f0a16223b343331a1831eecd97bb}{N\-S\-Date $\ast$ {\bfseries date}}\label{interface_weather_day_a0217f0a16223b343331a1831eecd97bb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a day's weather 
+
+\subsection{Method Documentation}
+\hypertarget{interface_weather_day_a5a57d195f2f06cb96693b4b4d68fd955}{\index{Weather\-Day@{Weather\-Day}!init\-With\-High\-:low\-:precipitation\-:date\-:@{init\-With\-High\-:low\-:precipitation\-:date\-:}}
+\index{init\-With\-High\-:low\-:precipitation\-:date\-:@{init\-With\-High\-:low\-:precipitation\-:date\-:}!WeatherDay@{Weather\-Day}}
+\subsubsection[{init\-With\-High\-:low\-:precipitation\-:date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-High\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{high}
+\item[{low:(N\-S\-Integer)}]{low}
+\item[{precipitation:(C\-G\-Float)}]{prec}
+\item[{date:(N\-S\-Date$\ast$)}]{date}
+\end{DoxyParamCaption}
+}}\label{interface_weather_day_a5a57d195f2f06cb96693b4b4d68fd955}
+Initialize a new D\-Weather\-Day object 
+\begin{DoxyParams}{Parameters}
+{\em high} & The day's high \\
+\hline
+{\em low} & The day's low \\
+\hline
+{\em prec} & The days precipitation chance \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_weather_day_a97d5aad192216fe0de9ebc43296cfb68}{\index{Weather\-Day@{Weather\-Day}!high@{high}}
+\index{high@{high}!WeatherDay@{Weather\-Day}}
+\subsubsection[{high}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) high\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_weather_day_a97d5aad192216fe0de9ebc43296cfb68}
+The day's high temperature \hypertarget{interface_weather_day_a677798c5423dabd4861214c5de4faf55}{\index{Weather\-Day@{Weather\-Day}!low@{low}}
+\index{low@{low}!WeatherDay@{Weather\-Day}}
+\subsubsection[{low}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) low\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_weather_day_a677798c5423dabd4861214c5de4faf55}
+The day's low temperature \hypertarget{interface_weather_day_a62a56a8c78976523287185d6dce106e1}{\index{Weather\-Day@{Weather\-Day}!precipitaion@{precipitaion}}
+\index{precipitaion@{precipitaion}!WeatherDay@{Weather\-Day}}
+\subsubsection[{precipitaion}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-G\-Float) precipitaion\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [atomic]}}}\label{interface_weather_day_a62a56a8c78976523287185d6dce106e1}
+The day's precipitation chance \hypertarget{interface_weather_day_ade050fc16334cf7cac350d222ff1a026}{\index{Weather\-Day@{Weather\-Day}!range@{range}}
+\index{range@{range}!WeatherDay@{Weather\-Day}}
+\subsubsection[{range}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) range\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_weather_day_ade050fc16334cf7cac350d222ff1a026}
+Custom getter \hypertarget{interface_weather_day_a8447b6e2f7cd73dce25e53ae8ac4baaa}{\index{Weather\-Day@{Weather\-Day}!weighted\-Average\-Temp@{weighted\-Average\-Temp}}
+\index{weighted\-Average\-Temp@{weighted\-Average\-Temp}!WeatherDay@{Weather\-Day}}
+\subsubsection[{weighted\-Average\-Temp}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) weighted\-Average\-Temp\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_weather_day_a8447b6e2f7cd73dce25e53ae8ac4baaa}
+Custom getter 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Weather\-Day.\-h\item 
+Pack\-Manager/Weather\-Day.\-m\end{DoxyCompactItemize}

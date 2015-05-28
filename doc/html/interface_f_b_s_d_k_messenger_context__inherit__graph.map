@@ -1,0 +1,6 @@
+<map id="FBSDKMessengerContext" name="FBSDKMessengerContext">
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_messenger_broadcast_context.html" title="{FBSDKMessengerBroadcastContext\n||}" alt="" coords="5,265,243,338"/>
+<area shape="rect" id="node5" href="$interface_f_b_s_d_k_messenger_u_r_l_handler_cancel_context.html" title="{FBSDKMessengerURLHandler\lCancelContext\n||}" alt="" coords="267,258,471,345"/>
+<area shape="rect" id="node6" href="$interface_f_b_s_d_k_messenger_u_r_l_handler_open_from_composer_context.html" title="{FBSDKMessengerURLHandler\lOpenFromComposerContext\n|+ metadata\l+ userIDs\l|}" alt="" coords="496,251,700,351"/>
+<area shape="rect" id="node7" href="$interface_f_b_s_d_k_messenger_u_r_l_handler_reply_context.html" title="{FBSDKMessengerURLHandler\lReplyContext\n|+ metadata\l+ userIDs\l|}" alt="" coords="725,251,929,351"/>
+</map>

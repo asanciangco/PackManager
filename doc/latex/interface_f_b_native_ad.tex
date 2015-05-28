@@ -1,0 +1,159 @@
+\hypertarget{interface_f_b_native_ad}{\section{F\-B\-Native\-Ad Class Reference}
+\label{interface_f_b_native_ad}\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Media\-View.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Native\-Ad\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{interface_f_b_native_ad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Native\-Ad\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_native_ad__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_a111579ea5252366d86f9a1a64ededadd}{init\-With\-Placement\-I\-D\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ad_ac59e70c3b67fdb6f91adfdf05b50b87d}{register\-View\-For\-Interaction\-:with\-View\-Controller\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ad_af00e5e92804248d283e1d9b3b6719125}{register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ad_af146b825ecd435d8e4de489f6b61dcc2}{unregister\-View}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ad_a943433e6b6c4e4a3d3868203642cda15}{load\-Ad}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_native_ad_ad974dfce003733a3d0186688b5706890}{N\-S\-String $\ast$ {\bfseries placement\-I\-D}}\label{interface_f_b_native_ad_ad974dfce003733a3d0186688b5706890}
+
+\item 
+\hypertarget{interface_f_b_native_ad_aa396b356858f67547436860dcc660b86}{struct \hyperlink{struct_f_b_ad_star_rating}{F\-B\-Ad\-Star\-Rating} {\bfseries star\-Rating}}\label{interface_f_b_native_ad_aa396b356858f67547436860dcc660b86}
+
+\item 
+\hypertarget{interface_f_b_native_ad_afb750da0c8449459df29f892e36f1cf3}{N\-S\-String $\ast$ {\bfseries title}}\label{interface_f_b_native_ad_afb750da0c8449459df29f892e36f1cf3}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a36442a0ca47c1fe7798edec2a747530c}{N\-S\-String $\ast$ {\bfseries subtitle}}\label{interface_f_b_native_ad_a36442a0ca47c1fe7798edec2a747530c}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a79af20cf622a58b26c53525812db2468}{N\-S\-String $\ast$ {\bfseries social\-Context}}\label{interface_f_b_native_ad_a79af20cf622a58b26c53525812db2468}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a6b0d7c78282083535900a08a7545e764}{N\-S\-String $\ast$ {\bfseries call\-To\-Action}}\label{interface_f_b_native_ad_a6b0d7c78282083535900a08a7545e764}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a2b2046b501a03159c476f1efc1922721}{\hyperlink{interface_f_b_ad_image}{F\-B\-Ad\-Image} $\ast$ {\bfseries icon}}\label{interface_f_b_native_ad_a2b2046b501a03159c476f1efc1922721}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a1921678d962c4f9d95f98573df92edcf}{\hyperlink{interface_f_b_ad_image}{F\-B\-Ad\-Image} $\ast$ {\bfseries cover\-Image}}\label{interface_f_b_native_ad_a1921678d962c4f9d95f98573df92edcf}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a1f100c86df5b4aa3afcaaeb94053b494}{N\-S\-String $\ast$ {\bfseries body}}\label{interface_f_b_native_ad_a1f100c86df5b4aa3afcaaeb94053b494}
+
+\item 
+\hypertarget{interface_f_b_native_ad_ae6303615419a0e192466d6856aa565d1}{F\-B\-Native\-Ads\-Cache\-Policy {\bfseries media\-Cache\-Policy}}\label{interface_f_b_native_ad_ae6303615419a0e192466d6856aa565d1}
+
+\item 
+\hypertarget{interface_f_b_native_ad_a1aba7c4fa9b88405ad9575ee2405f463}{id$<$ \hyperlink{protocol_f_b_native_ad_delegate-p}{F\-B\-Native\-Ad\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_native_ad_a1aba7c4fa9b88405ad9575ee2405f463}
+
+\item 
+\hypertarget{interface_f_b_native_ad_abc3cfb99e3694aaefab255acf3e04b78}{B\-O\-O\-L {\bfseries ad\-Valid}}\label{interface_f_b_native_ad_abc3cfb99e3694aaefab255acf3e04b78}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{interface_f_b_media_view}{F\-B\-Media\-View} loads media content from a given \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad}. This view takes the place of manually loading a cover image.
+
+The \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} represents ad metadata to allow you to construct custom ad views. See the Native\-Ad\-Sample in the sample apps section of the Audience Network framework. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_native_ad_a111579ea5252366d86f9a1a64ededadd}{\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}!init\-With\-Placement\-I\-D\-:@{init\-With\-Placement\-I\-D\-:}}
+\index{init\-With\-Placement\-I\-D\-:@{init\-With\-Placement\-I\-D\-:}!FBNativeAd@{F\-B\-Native\-Ad}}
+\subsubsection[{init\-With\-Placement\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Placement\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{N\-S\-\_\-\-D\-E\-S\-I\-G\-N\-A\-T\-E\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_a111579ea5252366d86f9a1a64ededadd}
+This is a method to initialize a \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object matching the given placement id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em placement\-I\-D} & The id of the ad placement. You can create your placement id from Facebook developers page. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_a943433e6b6c4e4a3d3868203642cda15}{\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}!load\-Ad@{load\-Ad}}
+\index{load\-Ad@{load\-Ad}!FBNativeAd@{F\-B\-Native\-Ad}}
+\subsubsection[{load\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Ad 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_a943433e6b6c4e4a3d3868203642cda15}
+Begins loading the \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} content.
+
+You can implement {\ttfamily native\-Ad\-Did\-Load\-:} and {\ttfamily native\-Ad\-:did\-Fail\-With\-Error\-:} methods of {\ttfamily \hyperlink{protocol_f_b_native_ad_delegate-p}{F\-B\-Native\-Ad\-Delegate}} if you would like to be notified as loading succeeds or fails. \hypertarget{interface_f_b_native_ad_ac59e70c3b67fdb6f91adfdf05b50b87d}{\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}!register\-View\-For\-Interaction\-:with\-View\-Controller\-:@{register\-View\-For\-Interaction\-:with\-View\-Controller\-:}}
+\index{register\-View\-For\-Interaction\-:with\-View\-Controller\-:@{register\-View\-For\-Interaction\-:with\-View\-Controller\-:}!FBNativeAd@{F\-B\-Native\-Ad}}
+\subsubsection[{register\-View\-For\-Interaction\-:with\-View\-Controller\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) register\-View\-For\-Interaction\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View $\ast$)}]{view}
+\item[{withViewController:(U\-I\-View\-Controller $\ast$)}]{view\-Controller}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_ac59e70c3b67fdb6f91adfdf05b50b87d}
+This is a method to associate a \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} with the U\-I\-View you will use to display the native ads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The U\-I\-View you created to render all the native ads data elements. \\
+\hline
+{\em view\-Controller} & The U\-I\-View\-Controller that will be used to present S\-K\-Store\-Product\-View\-Controller (i\-Tunes Store product information) or the in-\/app browser.\\
+\hline
+\end{DoxyParams}
+The whole area of the U\-I\-View will be clickable. \hypertarget{interface_f_b_native_ad_af00e5e92804248d283e1d9b3b6719125}{\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}!register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:@{register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:}}
+\index{register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:@{register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:}!FBNativeAd@{F\-B\-Native\-Ad}}
+\subsubsection[{register\-View\-For\-Interaction\-:with\-View\-Controller\-:with\-Clickable\-Views\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) register\-View\-For\-Interaction\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View $\ast$)}]{view}
+\item[{withViewController:(U\-I\-View\-Controller $\ast$)}]{view\-Controller}
+\item[{withClickableViews:(N\-S\-Array $\ast$)}]{clickable\-Views}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_af00e5e92804248d283e1d9b3b6719125}
+This is a method to associate \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} with the U\-I\-View you will use to display the native ads and set clickable areas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The U\-I\-View you created to render all the native ads data elements. \\
+\hline
+{\em view\-Controller} & The U\-I\-View\-Controller that will be used to present S\-K\-Store\-Product\-View\-Controller (i\-Tunes Store product information). \\
+\hline
+{\em clickable\-Views} & An array of U\-I\-View you created to render the native ads data element, e.\-g. Call\-To\-Action button, Icon image, which you want to specify as clickable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_af146b825ecd435d8e4de489f6b61dcc2}{\index{F\-B\-Native\-Ad@{F\-B\-Native\-Ad}!unregister\-View@{unregister\-View}}
+\index{unregister\-View@{unregister\-View}!FBNativeAd@{F\-B\-Native\-Ad}}
+\subsubsection[{unregister\-View}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) unregister\-View 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_af146b825ecd435d8e4de489f6b61dcc2}
+This is a method to disconnect a \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} with the U\-I\-View you used to display the native ads. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p}{\section{$<$F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_abfcec4aa4e6c80f5220af8983b0bec27}{app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a0639394cc50c3e8fcaee3ffb8d21c3bb}{app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a93e2f514934d20fe2a5a15160e123caf}{app\-Group\-Add\-Dialog\-Did\-Cancel\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A delegate for \hyperlink{interface_f_b_s_d_k_app_group_add_dialog}{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog}.  The delegate is notified with the results of the app group request as long as the application has permissions to receive the information. For example, if the person is not signed into the containing app, the shower may not be able to distinguish between completion of an app group request and cancellation. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_abfcec4aa4e6c80f5220af8983b0bec27}{\index{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}!app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:}}
+\index{app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:}!FBSDKAppGroupAddDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Add\-Dialog\-:did\-Complete\-With\-Results\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Add\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} $\ast$)}]{app\-Group\-Add\-Dialog}
+\item[{didCompleteWithResults:(N\-S\-Dictionary $\ast$)}]{results}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_abfcec4aa4e6c80f5220af8983b0bec27}
+Sent to the delegate when the app group request completes without error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Add\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_add_dialog}{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} that completed. \\
+\hline
+{\em results} & The results from the dialog. This may be nil or empty. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a0639394cc50c3e8fcaee3ffb8d21c3bb}{\index{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}!app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:}}
+\index{app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:}!FBSDKAppGroupAddDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Add\-Dialog\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Add\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} $\ast$)}]{app\-Group\-Add\-Dialog}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a0639394cc50c3e8fcaee3ffb8d21c3bb}
+Sent to the delegate when the app group request encounters an error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Add\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_add_dialog}{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} that completed. \\
+\hline
+{\em error} & The error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a93e2f514934d20fe2a5a15160e123caf}{\index{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}!app\-Group\-Add\-Dialog\-Did\-Cancel\-:@{app\-Group\-Add\-Dialog\-Did\-Cancel\-:}}
+\index{app\-Group\-Add\-Dialog\-Did\-Cancel\-:@{app\-Group\-Add\-Dialog\-Did\-Cancel\-:}!FBSDKAppGroupAddDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Add\-Dialog\-Did\-Cancel\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Add\-Dialog\-Did\-Cancel\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} $\ast$)}]{app\-Group\-Add\-Dialog}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_add_dialog_delegate-p_a93e2f514934d20fe2a5a15160e123caf}
+Sent to the delegate when the app group dialog is cancelled. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Add\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_add_dialog}{F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog} that completed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Group\-Add\-Dialog.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\hypertarget{interface_f_b_s_d_k_app_link_utility}{\section{F\-B\-S\-D\-K\-App\-Link\-Utility Class Reference}
+\label{interface_f_b_s_d_k_app_link_utility}\index{F\-B\-S\-D\-K\-App\-Link\-Utility@{F\-B\-S\-D\-K\-App\-Link\-Utility}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Link\-Utility.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-App\-Link\-Utility\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{interface_f_b_s_d_k_app_link_utility__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-App\-Link\-Utility\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{interface_f_b_s_d_k_app_link_utility__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_link_utility_a0b3a90ed3cc6c53d53fe3affa5b7be87}{fetch\-Deferred\-App\-Link\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class containing App Links related utility methods. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_app_link_utility_a0b3a90ed3cc6c53d53fe3affa5b7be87}{\index{F\-B\-S\-D\-K\-App\-Link\-Utility@{F\-B\-S\-D\-K\-App\-Link\-Utility}!fetch\-Deferred\-App\-Link\-:@{fetch\-Deferred\-App\-Link\-:}}
+\index{fetch\-Deferred\-App\-Link\-:@{fetch\-Deferred\-App\-Link\-:}!FBSDKAppLinkUtility@{F\-B\-S\-D\-K\-App\-Link\-Utility}}
+\subsubsection[{fetch\-Deferred\-App\-Link\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) fetch\-Deferred\-App\-Link\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-S\-D\-K\-Deferred\-App\-Link\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_link_utility_a0b3a90ed3cc6c53d53fe3affa5b7be87}
+Call this method from the main thread to fetch deferred applink data if you use Mobile App Engagement Ads (\href{https://developers.facebook.com/docs/ads-for-apps/mobile-app-ads-engagement}{\tt https\-://developers.\-facebook.\-com/docs/ads-\/for-\/apps/mobile-\/app-\/ads-\/engagement}). This may require a network round trip. If successful, the handler is invoked with the link data (this will only return a valid U\-R\-L once, and future calls will result in a nil U\-R\-L value in the callback).
+
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & the handler to be invoked if there is deferred App Link data\\
+\hline
+\end{DoxyParams}
+The handler may contain an N\-S\-Error instance to capture any errors. In the common case where there simply was no app link data, the N\-S\-Error instance will be nil.
+
+This method should only be called from a location that occurs after any launching U\-R\-L has been processed (e.\-g., you should call this method from your application delegate's application\-Did\-Become\-Active\-:). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Link\-Utility.\-h\end{DoxyCompactItemize}

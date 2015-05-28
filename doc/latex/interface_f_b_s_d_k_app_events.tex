@@ -1,0 +1,342 @@
+\hypertarget{interface_f_b_s_d_k_app_events}{\section{F\-B\-S\-D\-K\-App\-Events Class Reference}
+\label{interface_f_b_s_d_k_app_events}\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Events.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-App\-Events\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{interface_f_b_s_d_k_app_events__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-App\-Events\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{interface_f_b_s_d_k_app_events__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_ab605cd80f86427aff7c1f8aabc7c66d5}{log\-Event\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a58667a5b1a2d4afc624234221c95462b}{log\-Event\-:value\-To\-Sum\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a92bd8932c1fc897b728fd4c4b07de08b}{log\-Event\-:parameters\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_aeefb69a9e678b9ffc9796a54eea8f1bd}{log\-Event\-:value\-To\-Sum\-:parameters\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_abbb2eb0ff301d10b128c1fedf035b8aa}{log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a57cc5c84810c0242b579d461cc5378dc}{log\-Purchase\-:currency\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a4412a8f55bd2c0e9d0e7bcc4289002b5}{log\-Purchase\-:currency\-:parameters\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a00c308db422bdf184e6abbcf6a809ce5}{log\-Purchase\-:currency\-:parameters\-:access\-Token\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a4846c87fc0de72102972b2a78fbdeb09}{activate\-App}
+\item 
+(F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior) + \hyperlink{interface_f_b_s_d_k_app_events_a938b71bde76d5c02599778243d1e92e7}{flush\-Behavior}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_ab5a903bcfe1f5bfa633cc9b202138fdc}{set\-Flush\-Behavior\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a4ed11c9908b55d7d8dc8b790fb5dda67}{set\-Logging\-Override\-App\-I\-D\-:}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_f_b_s_d_k_app_events_a49a091e8ee936bb4bfac39fb4fe17c77}{logging\-Override\-App\-I\-D}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_app_events_a29c403bbe9d6a720de1a42f739bba249}{flush}
+\item 
+(\hyperlink{interface_f_b_s_d_k_graph_request}{F\-B\-S\-D\-K\-Graph\-Request} $\ast$) + \hyperlink{interface_f_b_s_d_k_app_events_a47cb8cd6a8f098aad2c8aaf648f4ce0e}{request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Client-\/side event logging for specialized application analytics available through Facebook App Insights and for use with Facebook Ads conversion tracking and optimization.
+
+The {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} static class has a few related roles\-:
+
+
+\begin{DoxyItemize}
+\item Logging predefined and application-\/defined events to Facebook App Insights with a numeric value to sum across a large number of events, and an optional set of key/value parameters that define \char`\"{}segments\char`\"{} for this event (e.\-g., 'purchaser\-Status' \-: 'frequent', or 'gamer\-Level' \-: 'intermediate')
+\item Logging events to later be used for ads optimization around lifetime value.
+\item Methods that control the way in which events are flushed out to the Facebook servers.
+\end{DoxyItemize}
+
+Here are some important characteristics of the logging mechanism provided by {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}}\-:
+
+
+\begin{DoxyItemize}
+\item Events are not sent immediately when logged. They're cached and flushed out to the Facebook servers in a number of situations\-:
+\item when an event count threshold is passed (currently 100 logged events).
+\item when a time threshold is passed (currently 15 seconds).
+\item when an app has gone to background and is then brought back to the foreground.
+\item Events will be accumulated when the app is in a disconnected state, and sent when the connection is restored and one of the above 'flush' conditions are met.
+\item The {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} class in thread-\/safe in that events may be logged from any of the app's threads.
+\item The developer can set the {\ttfamily flush\-Behavior} on {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} to force the flushing of events to only occur on an explicit call to the {\ttfamily flush} method.
+\item The developer can turn on console debug output for event logging and flushing to the server by using the {\ttfamily F\-B\-S\-D\-K\-Logging\-Behavior\-App\-Events} value in {\ttfamily \mbox{[}F\-B\-Settings set\-Logging\-Behavior\-:\mbox{]}}.
+\end{DoxyItemize}
+
+Some things to note when logging events\-:
+
+
+\begin{DoxyItemize}
+\item There is a limit on the number of unique event names an app can use, on the order of 300.
+\item There is a limit to the number of unique parameter names in the provided parameters that can be used per event, on the order of 25. This is not just for an individual call, but for all invocations for that event\-Name.
+\item Event names and parameter names (the keys in the N\-S\-Dictionary) must be between 2 and 40 characters, and must consist of alphanumeric characters, \-\_\-, -\/, or spaces.
+\item The length of each parameter value can be no more than on the order of 100 characters. 
+\end{DoxyItemize}
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_app_events_a4846c87fc0de72102972b2a78fbdeb09}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!activate\-App@{activate\-App}}
+\index{activate\-App@{activate\-App}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{activate\-App}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) activate\-App 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a4846c87fc0de72102972b2a78fbdeb09}
+Notifies the events system that the app has launched and, when appropriate, logs an \char`\"{}activated app\char`\"{} event. Should typically be placed in the app delegates' {\ttfamily application\-Did\-Become\-Active\-:} method.
+
+This method also takes care of logging the event indicating the first time this app has been launched, which, among other things, is used to track user acquisition and app install ads conversions.
+
+{\ttfamily activate\-App} will not log an event on every app launch, since launches happen every time the app is backgrounded and then foregrounded. \char`\"{}activated app\char`\"{} events will be logged when the app has not been active for more than 60 seconds. This method also causes a \char`\"{}deactivated app\char`\"{} event to be logged when sessions are \char`\"{}completed\char`\"{}, and these events are logged with the session length, with an indication of how much time has elapsed between sessions, and with the number of background/foreground interruptions that session had. This data is all visible in your app's App Events Insights. \hypertarget{interface_f_b_s_d_k_app_events_a29c403bbe9d6a720de1a42f739bba249}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!flush@{flush}}
+\index{flush@{flush}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) flush 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a29c403bbe9d6a720de1a42f739bba249}
+Explicitly kick off flushing of events to Facebook. This is an asynchronous method, but it does initiate an immediate kick off. Server failures will be reported through the Notification\-Center with notification I\-D {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Logging\-Result\-Notification}. \hypertarget{interface_f_b_s_d_k_app_events_a938b71bde76d5c02599778243d1e92e7}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!flush\-Behavior@{flush\-Behavior}}
+\index{flush\-Behavior@{flush\-Behavior}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{flush\-Behavior}]{\setlength{\rightskip}{0pt plus 5cm}+ (F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior) flush\-Behavior 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a938b71bde76d5c02599778243d1e92e7}
+Get the current event flushing behavior specifying when events are sent back to Facebook servers. \hypertarget{interface_f_b_s_d_k_app_events_ab605cd80f86427aff7c1f8aabc7c66d5}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Event\-:@{log\-Event\-:}}
+\index{log\-Event\-:@{log\-Event\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Event\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-Event\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{event\-Name}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_ab605cd80f86427aff7c1f8aabc7c66d5}
+Log an event with just an event\-Name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Name} & The name of the event to record. Limitations on number of events and name length are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_a92bd8932c1fc897b728fd4c4b07de08b}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Event\-:parameters\-:@{log\-Event\-:parameters\-:}}
+\index{log\-Event\-:parameters\-:@{log\-Event\-:parameters\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Event\-:parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) {\bf log\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{event\-Name}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a92bd8932c1fc897b728fd4c4b07de08b}
+Log an event with an event\-Name and a set of key/value pairs in the parameters dictionary. Parameter limitations are described above.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Name} & The name of the event to record. Limitations on number of events and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Common event names are provided in {\ttfamily F\-B\-App\-Event\-Name$\ast$} constants.\\
+\hline
+{\em parameters} & Arbitrary parameter dictionary of characteristics. The keys to this dictionary must be N\-S\-String's, and the values are expected to be N\-S\-String or N\-S\-Number. Limitations on the number of parameters and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Commonly used parameter names are provided in {\ttfamily F\-B\-S\-D\-K\-App\-Event\-Parameter\-Name$\ast$} constants. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_a58667a5b1a2d4afc624234221c95462b}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Event\-:value\-To\-Sum\-:@{log\-Event\-:value\-To\-Sum\-:}}
+\index{log\-Event\-:value\-To\-Sum\-:@{log\-Event\-:value\-To\-Sum\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Event\-:value\-To\-Sum\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) {\bf log\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{event\-Name}
+\item[{valueToSum:(double)}]{value\-To\-Sum}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a58667a5b1a2d4afc624234221c95462b}
+Log an event with an event\-Name and a numeric value to be aggregated with other events of this name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Name} & The name of the event to record. Limitations on number of events and name length are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Common event names are provided in {\ttfamily F\-B\-App\-Event\-Name$\ast$} constants.\\
+\hline
+{\em value\-To\-Sum} & Amount to be aggregated into all events of this event\-Name, and App Insights will report the cumulative and average value of this amount. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_aeefb69a9e678b9ffc9796a54eea8f1bd}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Event\-:value\-To\-Sum\-:parameters\-:@{log\-Event\-:value\-To\-Sum\-:parameters\-:}}
+\index{log\-Event\-:value\-To\-Sum\-:parameters\-:@{log\-Event\-:value\-To\-Sum\-:parameters\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Event\-:value\-To\-Sum\-:parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) {\bf log\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{event\-Name}
+\item[{valueToSum:(double)}]{value\-To\-Sum}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_aeefb69a9e678b9ffc9796a54eea8f1bd}
+Log an event with an event\-Name, a numeric value to be aggregated with other events of this name, and a set of key/value pairs in the parameters dictionary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Name} & The name of the event to record. Limitations on number of events and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Common event names are provided in {\ttfamily F\-B\-App\-Event\-Name$\ast$} constants.\\
+\hline
+{\em value\-To\-Sum} & Amount to be aggregated into all events of this event\-Name, and App Insights will report the cumulative and average value of this amount.\\
+\hline
+{\em parameters} & Arbitrary parameter dictionary of characteristics. The keys to this dictionary must be N\-S\-String's, and the values are expected to be N\-S\-String or N\-S\-Number. Limitations on the number of parameters and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Commonly used parameter names are provided in {\ttfamily F\-B\-S\-D\-K\-App\-Event\-Parameter\-Name$\ast$} constants. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_abbb2eb0ff301d10b128c1fedf035b8aa}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:@{log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:}}
+\index{log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:@{log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Event\-:value\-To\-Sum\-:parameters\-:access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) {\bf log\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{event\-Name}
+\item[{valueToSum:(N\-S\-Number $\ast$)}]{value\-To\-Sum}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{accessToken:({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{access\-Token}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_abbb2eb0ff301d10b128c1fedf035b8aa}
+Log an event with an event\-Name, a numeric value to be aggregated with other events of this name, and a set of key/value pairs in the parameters dictionary. Providing session lets the developer target a particular $<$\-F\-B\-Session$>$. If nil is provided, then {\ttfamily \mbox{[}F\-B\-Session active\-Session\mbox{]}} will be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-Name} & The name of the event to record. Limitations on number of events and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Common event names are provided in {\ttfamily F\-B\-App\-Event\-Name$\ast$} constants.\\
+\hline
+{\em value\-To\-Sum} & Amount to be aggregated into all events of this event\-Name, and App Insights will report the cumulative and average value of this amount. Note that this is an N\-S\-Number, and a value of {\ttfamily nil} denotes that this event doesn't have a value associated with it for summation.\\
+\hline
+{\em parameters} & Arbitrary parameter dictionary of characteristics. The keys to this dictionary must be N\-S\-String's, and the values are expected to be N\-S\-String or N\-S\-Number. Limitations on the number of parameters and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Commonly used parameter names are provided in {\ttfamily F\-B\-S\-D\-K\-App\-Event\-Parameter\-Name$\ast$} constants.\\
+\hline
+{\em access\-Token} & The optional access token to log the event as. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_a49a091e8ee936bb4bfac39fb4fe17c77}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!logging\-Override\-App\-I\-D@{logging\-Override\-App\-I\-D}}
+\index{logging\-Override\-App\-I\-D@{logging\-Override\-App\-I\-D}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{logging\-Override\-App\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) logging\-Override\-App\-I\-D 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a49a091e8ee936bb4bfac39fb4fe17c77}
+Get the 'override' App I\-D for App Event logging.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{interface_f_b_s_d_k_app_events_a4ed11c9908b55d7d8dc8b790fb5dda67}{+ set\-Logging\-Override\-App\-I\-D\-:} 
+\end{DoxySeeAlso}
+\hypertarget{interface_f_b_s_d_k_app_events_a57cc5c84810c0242b579d461cc5378dc}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Purchase\-:currency\-:@{log\-Purchase\-:currency\-:}}
+\index{log\-Purchase\-:currency\-:@{log\-Purchase\-:currency\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Purchase\-:currency\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-Purchase\-: 
+\begin{DoxyParamCaption}
+\item[{(double)}]{purchase\-Amount}
+\item[{currency:(N\-S\-String $\ast$)}]{currency}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a57cc5c84810c0242b579d461cc5378dc}
+Log a purchase of the specified amount, in the specified currency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em purchase\-Amount} & Purchase amount to be logged, as expressed in the specified currency. This value will be rounded to the thousandths place (e.\-g., 12.\-34567 becomes 12.\-346).\\
+\hline
+{\em currency} & Currency, is denoted as, e.\-g. \char`\"{}\-U\-S\-D\char`\"{}, \char`\"{}\-E\-U\-R\char`\"{}, \char`\"{}\-G\-B\-P\char`\"{}. See I\-S\-O-\/4217 for specific values. One reference for these is \href{http://en.wikipedia.org/wiki/ISO_4217}{\tt http\-://en.\-wikipedia.\-org/wiki/\-I\-S\-O\-\_\-4217}.\\
+\hline
+\end{DoxyParams}
+This event immediately triggers a flush of the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} event queue, unless the {\ttfamily flush\-Behavior} is set to {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior\-Explicit\-Only}. \hypertarget{interface_f_b_s_d_k_app_events_a4412a8f55bd2c0e9d0e7bcc4289002b5}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Purchase\-:currency\-:parameters\-:@{log\-Purchase\-:currency\-:parameters\-:}}
+\index{log\-Purchase\-:currency\-:parameters\-:@{log\-Purchase\-:currency\-:parameters\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Purchase\-:currency\-:parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-Purchase\-: 
+\begin{DoxyParamCaption}
+\item[{(double)}]{purchase\-Amount}
+\item[{currency:(N\-S\-String $\ast$)}]{currency}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a4412a8f55bd2c0e9d0e7bcc4289002b5}
+Log a purchase of the specified amount, in the specified currency, also providing a set of additional characteristics describing the purchase.
+
+
+\begin{DoxyParams}{Parameters}
+{\em purchase\-Amount} & Purchase amount to be logged, as expressed in the specified currency.\-This value will be rounded to the thousandths place (e.\-g., 12.\-34567 becomes 12.\-346).\\
+\hline
+{\em currency} & Currency, is denoted as, e.\-g. \char`\"{}\-U\-S\-D\char`\"{}, \char`\"{}\-E\-U\-R\char`\"{}, \char`\"{}\-G\-B\-P\char`\"{}. See I\-S\-O-\/4217 for specific values. One reference for these is \href{http://en.wikipedia.org/wiki/ISO_4217}{\tt http\-://en.\-wikipedia.\-org/wiki/\-I\-S\-O\-\_\-4217}.\\
+\hline
+{\em parameters} & Arbitrary parameter dictionary of characteristics. The keys to this dictionary must be N\-S\-String's, and the values are expected to be N\-S\-String or N\-S\-Number. Limitations on the number of parameters and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Commonly used parameter names are provided in {\ttfamily F\-B\-S\-D\-K\-App\-Event\-Parameter\-Name$\ast$} constants.\\
+\hline
+\end{DoxyParams}
+This event immediately triggers a flush of the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} event queue, unless the {\ttfamily flush\-Behavior} is set to {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior\-Explicit\-Only}. \hypertarget{interface_f_b_s_d_k_app_events_a00c308db422bdf184e6abbcf6a809ce5}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!log\-Purchase\-:currency\-:parameters\-:access\-Token\-:@{log\-Purchase\-:currency\-:parameters\-:access\-Token\-:}}
+\index{log\-Purchase\-:currency\-:parameters\-:access\-Token\-:@{log\-Purchase\-:currency\-:parameters\-:access\-Token\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{log\-Purchase\-:currency\-:parameters\-:access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) log\-Purchase\-: 
+\begin{DoxyParamCaption}
+\item[{(double)}]{purchase\-Amount}
+\item[{currency:(N\-S\-String $\ast$)}]{currency}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{accessToken:({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{access\-Token}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a00c308db422bdf184e6abbcf6a809ce5}
+Log a purchase of the specified amount, in the specified currency, also providing a set of additional characteristics describing the purchase, as well as an $<$\-F\-B\-Session$>$ to log to.
+
+
+\begin{DoxyParams}{Parameters}
+{\em purchase\-Amount} & Purchase amount to be logged, as expressed in the specified currency.\-This value will be rounded to the thousandths place (e.\-g., 12.\-34567 becomes 12.\-346).\\
+\hline
+{\em currency} & Currency, is denoted as, e.\-g. \char`\"{}\-U\-S\-D\char`\"{}, \char`\"{}\-E\-U\-R\char`\"{}, \char`\"{}\-G\-B\-P\char`\"{}. See I\-S\-O-\/4217 for specific values. One reference for these is \href{http://en.wikipedia.org/wiki/ISO_4217}{\tt http\-://en.\-wikipedia.\-org/wiki/\-I\-S\-O\-\_\-4217}.\\
+\hline
+{\em parameters} & Arbitrary parameter dictionary of characteristics. The keys to this dictionary must be N\-S\-String's, and the values are expected to be N\-S\-String or N\-S\-Number. Limitations on the number of parameters and name construction are given in the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} documentation. Commonly used parameter names are provided in {\ttfamily F\-B\-S\-D\-K\-App\-Event\-Parameter\-Name$\ast$} constants.\\
+\hline
+{\em access\-Token} & The optional access token to log the event as.\\
+\hline
+\end{DoxyParams}
+This event immediately triggers a flush of the {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}} event queue, unless the {\ttfamily flush\-Behavior} is set to {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior\-Explicit\-Only}. \hypertarget{interface_f_b_s_d_k_app_events_a47cb8cd6a8f098aad2c8aaf648f4ce0e}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:@{request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:}}
+\index{request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:@{request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf F\-B\-S\-D\-K\-Graph\-Request} $\ast$) request\-For\-Custom\-Audience\-Third\-Party\-I\-D\-With\-Access\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{access\-Token}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a47cb8cd6a8f098aad2c8aaf648f4ce0e}
+Creates a request representing the Graph A\-P\-I call to retrieve a Custom Audience \char`\"{}third party I\-D\char`\"{} for the app's Facebook user. Callers will send this I\-D back to their own servers, collect up a set to create a Facebook Custom Audience with, and then use the resultant Custom Audience to target ads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em access\-Token} & The access token to use to establish the user's identity for users logged into Facebook through this app. If {\ttfamily nil}, then the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} is used.\\
+\hline
+\end{DoxyParams}
+The J\-S\-O\-N in the request's response will include an \char`\"{}custom\-\_\-audience\-\_\-third\-\_\-party\-\_\-id\char`\"{} key/value pair, with the value being the I\-D retrieved. This I\-D is an encrypted encoding of the Facebook user's I\-D and the invoking Facebook app I\-D. Multiple calls with the same user will return different I\-Ds, thus these I\-Ds cannot be used to correlate behavior across devices or applications, and are only meaningful when sent back to Facebook for creating Custom Audiences.
+
+The I\-D retrieved represents the Facebook user identified in the following way\-: if the specified access token is valid, the I\-D will represent the user associated with that token; otherwise the I\-D will represent the user logged into the native Facebook app on the device. If there is no native Facebook app, no one is logged into it, or the user has opted out at the i\-O\-S level from ad tracking, then a {\ttfamily nil} I\-D will be returned.
+
+This method returns {\ttfamily nil} if either the user has opted-\/out (via i\-O\-S) from Ad Tracking, the app itself has limited event usage via the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_settings}{F\-B\-S\-D\-K\-Settings} limit\-Event\-And\-Data\-Usage\mbox{]}} flag, or a specific Facebook user cannot be identified. \hypertarget{interface_f_b_s_d_k_app_events_ab5a903bcfe1f5bfa633cc9b202138fdc}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!set\-Flush\-Behavior\-:@{set\-Flush\-Behavior\-:}}
+\index{set\-Flush\-Behavior\-:@{set\-Flush\-Behavior\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{set\-Flush\-Behavior\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Flush\-Behavior\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior)}]{flush\-Behavior}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_ab5a903bcfe1f5bfa633cc9b202138fdc}
+Set the current event flushing behavior specifying when events are sent back to Facebook servers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flush\-Behavior} & The desired {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Flush\-Behavior} to be used. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_events_a4ed11c9908b55d7d8dc8b790fb5dda67}{\index{F\-B\-S\-D\-K\-App\-Events@{F\-B\-S\-D\-K\-App\-Events}!set\-Logging\-Override\-App\-I\-D\-:@{set\-Logging\-Override\-App\-I\-D\-:}}
+\index{set\-Logging\-Override\-App\-I\-D\-:@{set\-Logging\-Override\-App\-I\-D\-:}!FBSDKAppEvents@{F\-B\-S\-D\-K\-App\-Events}}
+\subsubsection[{set\-Logging\-Override\-App\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Logging\-Override\-App\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{app\-I\-D}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_events_a4ed11c9908b55d7d8dc8b790fb5dda67}
+Set the 'override' App I\-D for App Event logging.
+
+In some cases, apps want to use one Facebook App I\-D for login and social presence and another for App Event logging. (An example is if multiple apps from the same company share an app I\-D for login, but want distinct logging.) By default, this value is {\ttfamily nil}, and defers to the {\ttfamily F\-B\-S\-D\-K\-App\-Events\-Override\-App\-I\-D\-Bundle\-Key} plist value. If that's not set, it defaults to {\ttfamily \mbox{[}F\-B\-S\-D\-K\-Settigns app\-I\-D\mbox{]}}.
+
+This should be set before any other calls are made to {\ttfamily \hyperlink{interface_f_b_s_d_k_app_events}{F\-B\-S\-D\-K\-App\-Events}}. Thus, you should set it in your application delegate's {\ttfamily application\-:did\-Finish\-Launching\-With\-Options\-:} delegate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\-I\-D} & The Facebook App I\-D to be used for App Event logging. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Events.\-h\end{DoxyCompactItemize}

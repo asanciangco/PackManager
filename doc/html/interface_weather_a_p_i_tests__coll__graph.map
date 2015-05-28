@@ -1,0 +1,3 @@
+<map id="WeatherAPITests" name="WeatherAPITests">
+<area shape="rect" id="node3" href="$interface_weather_a_p_i.html" title="{WeatherAPI\n||+ getWeatherReport:start:end:\l+ getWeatherReport:start\l:end:lat:lon:\l+ getWeatherFromPresent\l:lng:start:end:\l+ getWeatherFromHistorical\l:start:end:\l+ getLatLongFromAddress\l:lat:lon:\l+ sharedInstance\l}" alt="" coords="124,131,324,325"/>
+</map>

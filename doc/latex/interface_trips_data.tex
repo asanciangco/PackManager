@@ -1,0 +1,112 @@
+\hypertarget{interface_trips_data}{\section{Trips\-Data Class Reference}
+\label{interface_trips_data}\index{Trips\-Data@{Trips\-Data}}
+}
+
+
+{\ttfamily \#import $<$Trips\-Data.\-h$>$}
+
+
+
+Inheritance diagram for Trips\-Data\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_trips_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Trips\-Data\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{interface_trips_data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Integer) -\/ \hyperlink{interface_trips_data_aaad503ab67656b4e43ad6227fba6fc59}{number\-Of\-Trips}
+\item 
+(\hyperlink{interface_trip}{Trip} $\ast$) -\/ \hyperlink{interface_trips_data_a433034d39dff68774a32958007ad5ff1}{get\-Trip\-:}
+\item 
+(void) -\/ \hyperlink{interface_trips_data_a467bdf7deae8160c6552be65b613d36c}{add\-Trip\-:}
+\item 
+(void) -\/ \hyperlink{interface_trips_data_a1951cb6a576c4294c680ec94664ca5b0}{remove\-Trip\-At\-Index\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_trips_data_ac78fc79e8ebd10722f0b9f06df78eb27}{shared\-Instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adds some convenience methods to \hyperlink{interface_trips_data}{Trips\-Data} 
+
+\subsection{Method Documentation}
+\hypertarget{interface_trips_data_a467bdf7deae8160c6552be65b613d36c}{\index{Trips\-Data@{Trips\-Data}!add\-Trip\-:@{add\-Trip\-:}}
+\index{add\-Trip\-:@{add\-Trip\-:}!TripsData@{Trips\-Data}}
+\subsubsection[{add\-Trip\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Trip\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf Trip} $\ast$)}]{new\-Trip}
+\end{DoxyParamCaption}
+}}\label{interface_trips_data_a467bdf7deae8160c6552be65b613d36c}
+Adds a new trip to the list of trips. It will be added in chronological order. 
+\begin{DoxyParams}{Parameters}
+{\em new\-Trip} & The trip to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_trips_data_a433034d39dff68774a32958007ad5ff1}{\index{Trips\-Data@{Trips\-Data}!get\-Trip\-:@{get\-Trip\-:}}
+\index{get\-Trip\-:@{get\-Trip\-:}!TripsData@{Trips\-Data}}
+\subsubsection[{get\-Trip\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Trip} $\ast$) get\-Trip\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{index}
+\end{DoxyParamCaption}
+}}\label{interface_trips_data_a433034d39dff68774a32958007ad5ff1}
+Returns a trip at a given index 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of trip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A trip object 
+\end{DoxyReturn}
+\hypertarget{interface_trips_data_aaad503ab67656b4e43ad6227fba6fc59}{\index{Trips\-Data@{Trips\-Data}!number\-Of\-Trips@{number\-Of\-Trips}}
+\index{number\-Of\-Trips@{number\-Of\-Trips}!TripsData@{Trips\-Data}}
+\subsubsection[{number\-Of\-Trips}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Integer) number\-Of\-Trips 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trips_data_aaad503ab67656b4e43ad6227fba6fc59}
+Returns the number of trips \begin{DoxyReturn}{Returns}
+an integer representing the number of trips 
+\end{DoxyReturn}
+\hypertarget{interface_trips_data_a1951cb6a576c4294c680ec94664ca5b0}{\index{Trips\-Data@{Trips\-Data}!remove\-Trip\-At\-Index\-:@{remove\-Trip\-At\-Index\-:}}
+\index{remove\-Trip\-At\-Index\-:@{remove\-Trip\-At\-Index\-:}!TripsData@{Trips\-Data}}
+\subsubsection[{remove\-Trip\-At\-Index\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-Trip\-At\-Index\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{index}
+\end{DoxyParamCaption}
+}}\label{interface_trips_data_a1951cb6a576c4294c680ec94664ca5b0}
+Removes trip at the given index of list of trips. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the trip to remove \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_trips_data_ac78fc79e8ebd10722f0b9f06df78eb27}{\index{Trips\-Data@{Trips\-Data}!shared\-Instance@{shared\-Instance}}
+\index{shared\-Instance@{shared\-Instance}!TripsData@{Trips\-Data}}
+\subsubsection[{shared\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) shared\-Instance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_trips_data_ac78fc79e8ebd10722f0b9f06df78eb27}
+Returns a shared instance \begin{DoxyReturn}{Returns}
+a shared \hyperlink{interface_trips_data}{Trips\-Data} instance 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Trips\-Data.\-h\item 
+Pack\-Manager/Trips\-Data.\-m\end{DoxyCompactItemize}

@@ -1,0 +1,3 @@
+<map id="WeatherDayTests" name="WeatherDayTests">
+<area shape="rect" id="node3" href="$interface_weather_day.html" title="{WeatherDay\n|+ high\l+ low\l+ precipitaion\l+ weightedAverageTemp\l+ range\l+ date\l|+ initWithHigh:low:precipitation\l:date:\l}" alt="" coords="124,131,327,285"/>
+</map>

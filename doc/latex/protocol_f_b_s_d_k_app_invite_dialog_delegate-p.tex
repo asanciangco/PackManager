@@ -1,0 +1,75 @@
+\hypertarget{protocol_f_b_s_d_k_app_invite_dialog_delegate-p}{\section{$<$F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_app_invite_dialog_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Invite\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{protocol_f_b_s_d_k_app_invite_dialog_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{protocol_f_b_s_d_k_app_invite_dialog_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a21c9fc9d58534d6972f310d88e213bf4}{app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a7483f1f58a4cea0a6ddc3b28e37059cd}{app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A delegate for \hyperlink{interface_f_b_s_d_k_app_invite_dialog}{F\-B\-S\-D\-K\-App\-Invite\-Dialog}.  The delegate is notified with the results of the app invite as long as the application has permissions to receive the information. For example, if the person is not signed into the containing app, the shower may not be able to distinguish between completion of an app invite and cancellation. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a21c9fc9d58534d6972f310d88e213bf4}{\index{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p}!app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:}}
+\index{app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:}!FBSDKAppInviteDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Invite\-Dialog\-:did\-Complete\-With\-Results\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Invite\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Invite\-Dialog} $\ast$)}]{app\-Invite\-Dialog}
+\item[{didCompleteWithResults:(N\-S\-Dictionary $\ast$)}]{results}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a21c9fc9d58534d6972f310d88e213bf4}
+Sent to the delegate when the app invite completes without error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Invite\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_invite_dialog}{F\-B\-S\-D\-K\-App\-Invite\-Dialog} that completed. \\
+\hline
+{\em results} & The results from the dialog. This may be nil or empty. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a7483f1f58a4cea0a6ddc3b28e37059cd}{\index{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p}!app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:}}
+\index{app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:}!FBSDKAppInviteDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Invite\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Invite\-Dialog\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Invite\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Invite\-Dialog} $\ast$)}]{app\-Invite\-Dialog}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_invite_dialog_delegate-p_a7483f1f58a4cea0a6ddc3b28e37059cd}
+Sent to the delegate when the app invite encounters an error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Invite\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_invite_dialog}{F\-B\-S\-D\-K\-App\-Invite\-Dialog} that completed. \\
+\hline
+{\em error} & The error. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Invite\-Dialog.\-h\end{DoxyCompactItemize}

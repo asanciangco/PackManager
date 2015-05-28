@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$interface_new_trip_view_controller.html" title="NewTripViewController" alt="" coords="239,54,396,79"/>
+<area shape="rect" id="node4" href="$interface_packing_list_view_controller.html" title="PackingListViewController" alt="" coords="229,103,405,129"/>
+<area shape="rect" id="node6" href="$interface_profile_view_controller.html" title="ProfileViewController" alt="" coords="245,251,390,277"/>
+<area shape="rect" id="node7" href="$interface_trip_settings_view_controller.html" title="TripSettingsViewController" alt="" coords="228,301,407,326"/>
+<area shape="rect" id="node8" href="$interface_trips_view_controller.html" title="TripsViewController" alt="" coords="249,153,386,178"/>
+<area shape="rect" id="node9" href="$interface_weather_report_view_controller.html" title="WeatherReportViewController" alt="" coords="218,202,416,227"/>
+</map>

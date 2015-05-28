@@ -1,0 +1,5 @@
+<map id="LSMatcher" name="LSMatcher">
+<area shape="rect" id="node3" href="$interface_l_s_data_matcher.html" title="{LSDataMatcher\n||+ initWithData:\l+ initWithData:\l+ initWithData:\l}" alt="" coords="4,278,117,378"/>
+<area shape="rect" id="node4" href="$interface_l_s_regex_matcher.html" title="{LSRegexMatcher\n||+ initWithRegex:\l+ initWithRegex:\l+ initWithRegex:\l}" alt="" coords="142,278,265,378"/>
+<area shape="rect" id="node5" href="$interface_l_s_string_matcher.html" title="{LSStringMatcher\n||+ initWithString:\l+ initWithString:\l+ initWithString:\l}" alt="" coords="290,278,411,378"/>
+</map>
