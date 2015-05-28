@@ -12,7 +12,8 @@ static WeatherAPI *sharedInstance;
 
 static NSString *HistoricalWeatherAPIKey = @"FgFYQJXIFJwfhPAWbARqFNwPqdokgUeC";
 static NSString *PresentWeatherAPIKey = @"1412e64aff4c8a2d7411980f8568efd2";
-static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";
+//static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA"; // kacey's
+static NSString *GoogleAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 

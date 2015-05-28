@@ -443,8 +443,10 @@
         //TODO: change after demo
         //[self.trip generatePackingList];
         
-        
-        [self.trip generatePackingListExample];
+        //Generate packing list
+        [self generateWeatherReport];
+        [self.trip generatePackingList];
+//        [self.trip generatePackingListExample];
         
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;
@@ -465,7 +467,7 @@
     for (Destination* dest in self.trip.destinations)
     {
         NSDate *startDate = ([self.trip.startDate dateByAddingTimeInterval:60*60*24*dayOffset]);
-        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24*dest.duration];
+        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24*(dest.duration - 1)];
         
         WeatherReport *tempReport = [[WeatherAPI sharedInstance] getWeatherReport:dest.name
                                                                             start:startDate
