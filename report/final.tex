@@ -3,7 +3,7 @@
 \usepackage[latin1]{inputenc}
 \usepackage{lmodern}
 \usepackage{xcolor}
-\usepackage{tikz,graphics,color,fullpage,float,epsf,caption,subcaption,tabularx}
+\usepackage{tikz,graphics,color,fullpage,float,epsf,caption,subcaption,tabularx, hyperref}
 
 
 \usepackage[margin=1in]{geometry}
@@ -153,15 +153,17 @@ Another example is someone traveling to an area with which they are unfamiliar w
 
     The controllers can be found in the \texttt{Controllers} subdirectory. These files dictate the flow of control within the application; they are the glue between the storyboards and the models, which define how data is stored and manipulated. By carefully separating the concerns between storing and loading data from the user interface logic, we get a clean modular structure that allowed Heather and Alex to both work simultaneously on different aspects of the application. 
 
-    The Weather API is an important and very tricky component of our application. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}}, which includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. 
 
     \subsection{External API Usage}
+    \subsubsection{Weather API}
+    The Weather API is an important and very tricky component of our application. See \texttt{PackManager/WeatherAPI.m} for our implementation. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}} for date ranges that are outside of a 16-day weather forecast. This data source includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. Both data sources have completely different output formats (which is why our parsing file is over 500 lines long!).
+
     \subsubsection{Google Places API}
-    We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. 
+    We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. Handling this API was tricky, since it has a limited number of requests per day. See \texttt{PackManager/GooglePlacesAPI.m} for implementation.
 
+    % TODO: More of these
 
-
-    \subsection{Class Diagram}
+    \subsection{Class Diagrams}
     \begin{figure}
         \centering
         \begin{subfigure}[t]{0.45\textwidth}
@@ -221,6 +223,9 @@ Another example is someone traveling to an area with which they are unfamiliar w
     \subsection{Clothes Selection Algorithm}
     In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. 
 
+    \subsection{API Description}
+
+
 
 \section{Quality Assurance}
 
@@ -250,27 +255,20 @@ Some potential change scenarios we considered were:
 
 
 \subsection{Documentation}
-For documentation we are using Doxygen\footnote{See \texttt{http://www.stack.nl/\~dimitri/doxygen/}}. The documentation is automatically generated whenever we build by Travis CI. It includes automatically generated UML documents (as seen in iour Class Diagram section), as well as parsing descriptions for classes, parameters, returned values, and properties. We simply include a small specially formatted comment before the desired code block. These formatted comments integrate with Xcode, allowing us to refer to our documentation as we write our code, further decreasing the chance of errors. 
+For documentation we are using Doxygen\footnote{See \texttt{http://www.stack.nl/\textasciitilde dimitri/doxygen/}}. The documentation is automatically generated whenever we build by Travis CI. It includes automatically generated UML documents (as seen in iour Class Diagram section), as well as parsing descriptions for classes, parameters, returned values, and properties. We simply include a small specially formatted comment before the desired code block. These formatted comments integrate with Xcode, allowing us to refer to our documentation as we write our code, further decreasing the chance of errors. 
 
 Feel free to browse the documentation in our git repository, which can be found at \texttt{docs/html/index.html}. 
 
 \section{User Interface}
-See Fig.\ref{fig:ui} for some screen shots of the current state of the user interface.
+See Fig.\ref{fig:ui} for some screen shots of the user interface.
 
 \begin{figure}
     \centering
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{img/tripmaker.png}
-        \caption{The trip designing frame. Here we see the various options a user can select while making a trip.}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{img/profile.png}
-        \caption{The user profile creation screen. There are many options (some not shown here).}
-    \end{subfigure}
-    \caption{The two main user interface panes designed so far.}
+    \begin{tabular}{ccc}
+    \includegraphics[scale=0.2]{img/ui-2.jpg} & \includegraphics[scale=0.2]{img/ui-1.jpg} & \includegraphics[scale=0.2]{img/ui-7.jpg}\\
+    \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[scale=0.2]{img/ui-4.jpg}
+    \end{tabular}
+    \caption{User interface snapshots. Top left, a generated packing list; top middle, an option to delete a packing item; top right, an ; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile.}
     \label{fig:ui}
 \end{figure}
 
