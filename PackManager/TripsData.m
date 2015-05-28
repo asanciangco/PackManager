@@ -70,6 +70,8 @@ static TripsData *sharedInstance;
         [self.trips addObject:newTrip];
         return;
     }
+    if ([self.trips containsObject:newTrip])
+        return;
     
     for (NSInteger i = 0; i < [self.trips count]; i++)
     {

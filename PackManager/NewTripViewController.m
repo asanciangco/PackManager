@@ -64,10 +64,13 @@
     if(self.trip)
     {
         self.tripNameTextField.text = self.trip.name;
-        Destination *dest = [self.trip.destinations objectAtIndex:[self.trip.destinations count] -1];
-        self.currLocationTextField.text = dest.name;
-        self.currDurationTextField.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
-        [self.trip.destinations removeLastObject];
+        if ([self.trip.destinations count] > 0)
+        {
+            Destination *dest = [self.trip.destinations objectAtIndex:[self.trip.destinations count] -1];
+            self.currLocationTextField.text = dest.name;
+            self.currDurationTextField.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+            [self.trip.destinations removeLastObject];
+        }
     }
     else
         self.trip = [[Trip alloc] initNewTrip];
@@ -92,6 +95,17 @@
     self.generateListButton.enabled = NO;
 
     // Do any additional setup after loading the view.
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""])
+    {
+        Destination *dest = [[Destination alloc] init];
+        dest.name = self.currLocationTextField.text;
+        dest.duration = self.currDurationTextField.text.integerValue;
+        [self.trip.destinations addObject:dest];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -369,13 +383,13 @@
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
         self.trip.name = self.tripNameTextField.text;
-        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
-        {
-            Destination *dest = [[Destination alloc] init];
-            dest.name = self.currLocationTextField.text;
-            dest.duration = [self.currDurationTextField.text integerValue];
-            [self.trip.destinations addObject:dest];
-        }
+//        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
+//        {
+//            Destination *dest = [[Destination alloc] init];
+//            dest.name = self.currLocationTextField.text;
+//            dest.duration = [self.currDurationTextField.text integerValue];
+//            [self.trip.destinations addObject:dest];
+//        }
         
         //TODO: change after demo
         //[self.trip generatePackingList];
