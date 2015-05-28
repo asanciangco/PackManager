@@ -183,6 +183,8 @@
 		FA8E1FD61B0BDD2E00381AC6 /* Shirt.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FD51B0BDD2E00381AC6 /* Shirt.m */; };
 		FA8E1FD91B0BDF5300381AC6 /* Pant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FD81B0BDF5300381AC6 /* Pant.m */; };
 		FA8E1FDF1B0BE30900381AC6 /* Shoe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E1FDE1B0BE30900381AC6 /* Shoe.m */; };
+		FAB8AC7F1B16B077003B538E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB8AC7E1B16B077003B538E /* FBSDKCoreKit.framework */; };
+		FAB8AC811B16B085003B538E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB8AC801B16B085003B538E /* FBSDKLoginKit.framework */; };
 		FAF440341B1523B300985600 /* clothing_shorts_6.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF440331B1523B300985600 /* clothing_shorts_6.png */; };
 		FAF4403A1B1523CC00985600 /* clothing_shorts_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF440351B1523CC00985600 /* clothing_shorts_1.png */; };
 		FAF4403B1B1523CC00985600 /* clothing_shorts_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF440361B1523CC00985600 /* clothing_shorts_2.png */; };
@@ -420,6 +422,8 @@
 		FA8E1FD81B0BDF5300381AC6 /* Pant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pant.m; sourceTree = "<group>"; };
 		FA8E1FDD1B0BE30900381AC6 /* Shoe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shoe.h; sourceTree = "<group>"; };
 		FA8E1FDE1B0BE30900381AC6 /* Shoe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shoe.m; sourceTree = "<group>"; };
+		FAB8AC7E1B16B077003B538E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		FAB8AC801B16B085003B538E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		FAF440331B1523B300985600 /* clothing_shorts_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clothing_shorts_6.png; sourceTree = "<group>"; };
 		FAF440351B1523CC00985600 /* clothing_shorts_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clothing_shorts_1.png; sourceTree = "<group>"; };
 		FAF440361B1523CC00985600 /* clothing_shorts_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clothing_shorts_2.png; sourceTree = "<group>"; };
@@ -446,9 +450,11 @@
 			files = (
 				210F37F41B153645007C74BC /* CoreLocation.framework in Frameworks */,
 				210F37F21B15362F007C74BC /* MapKit.framework in Frameworks */,
+				FAB8AC811B16B085003B538E /* FBSDKLoginKit.framework in Frameworks */,
 				21C679391B152EC200C29B0B /* Nocilla in Frameworks */,
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
+				FAB8AC7F1B16B077003B538E /* FBSDKCoreKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
 				396C6FD6D7288AECD36BAB2E /* libPods.a in Frameworks */,
 			);
@@ -1035,6 +1041,8 @@
 		21D1F3001ADF3B71003024B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAB8AC801B16B085003B538E /* FBSDKLoginKit.framework */,
+				FAB8AC7E1B16B077003B538E /* FBSDKCoreKit.framework */,
 				210F37F31B153645007C74BC /* CoreLocation.framework */,
 				210F37F11B15362F007C74BC /* MapKit.framework */,
 				FA59AAF71B1455B100819BB3 /* Pods */,
@@ -1621,6 +1629,10 @@
 			baseConfigurationReference = 45F5B193DDD9601814C054B2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
 				INFOPLIST_FILE = "PackManager/PackManager-Info.plist";
@@ -1634,6 +1646,10 @@
 			baseConfigurationReference = 2F22B8A71E23DEAEA6EF5526 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PackManager/PackManager-Prefix.pch";
 				INFOPLIST_FILE = "PackManager/PackManager-Info.plist";

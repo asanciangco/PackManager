@@ -23,9 +23,9 @@
     return self;
 }
 
-- (NSInteger) averageTemp
+- (NSInteger) weightedAverageTemp
 {
-    return (self.high + self.low)/2;
+    return (0.80 * self.high) + (0.20 * self.low);
 }
 
 - (NSInteger) range

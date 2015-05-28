@@ -88,4 +88,10 @@
  */
 - (void) addDay:(WeatherDay *)day;
 
+/**
+ Merges another weather report with this one.
+ @param other The other weather report that will be merged
+ */
+- (void) mergeWeatherReport:(WeatherReport *)other;
+
 @end

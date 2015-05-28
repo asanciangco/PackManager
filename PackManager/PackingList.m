@@ -79,6 +79,8 @@
         regularSocks = 0;
         
         rain = 0;
+        
+        [self generatePackingList];
     }
     return self;
 }
@@ -141,7 +143,7 @@
  */
 - (void) updateTopsForDay:(WeatherDay *)day
 {
-    NSInteger averageTemp = [day averageTemp];
+    NSInteger averageTemp = [day weightedAverageTemp];
     TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
     
     if (self.trip.formalPreference)
@@ -196,7 +198,7 @@
  */
 - (void) updatePantsForDay:(WeatherDay *)day
 {
-    NSInteger averageTemp = [day averageTemp];
+    NSInteger averageTemp = [day weightedAverageTemp];
     TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
     
     // Formal Wear
@@ -247,7 +249,7 @@
  */
 - (void) updateAccessoriesForDay:(WeatherDay *)day
 {
-    NSInteger averageTemp = [day averageTemp];
+    NSInteger averageTemp = [day weightedAverageTemp];
     TempRange range = [[UserPreferences sharedInstance] tempRangeForTemp:averageTemp];
     CGFloat prec = [day precipitaion];
     
@@ -533,6 +535,7 @@
     if (self = [super init])
     {
         self.list = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"list"]];
+        
     }
     return self;
 }

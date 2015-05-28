@@ -100,7 +100,7 @@
 - (NSInteger) getAverageForDay: (NSInteger)day;
 {
     WeatherDay *weatherDay = [self getDayAtIndex:day];
-    return weatherDay.averageTemp;
+    return [weatherDay weightedAverageTemp];
 }
 
 - (NSInteger) getRangeForDay: (NSInteger)day;
@@ -140,6 +140,11 @@
         self.weatherDays = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"weatherDays"]];
     }
     return self;
+}
+
+- (void) mergeWeatherReport:(WeatherReport *)other
+{
+    [self.weatherDays addObjectsFromArray:other.weatherDays];
 }
 
 

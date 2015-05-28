@@ -11,8 +11,8 @@
 static GooglePlacesAPI *sharedInstance;
 
 //two keys so we can switch back and forth when reach daily limit
-//static NSString *googlePlacesAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k";
-static NSString *googlePlacesAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";
+static NSString *googlePlacesAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
+//static NSString *googlePlacesAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";   // someone else's
 
 static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/textsearch/json?";
 
@@ -64,10 +64,6 @@ static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/
     }
     
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
-    
-    if(error) {
-        return @[];/* do nothing */
-    }
     
     NSArray *results = [jsonResult objectForKey:@"results"];
     
