@@ -11,6 +11,10 @@
 #import "PackingListViewController.h"
 #import "NewTripViewController.h"
 
+// facebook testing
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 @interface TripsViewController ()
 
 @end
@@ -23,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    [self.view addSubview:loginButton];
     
 }
 
