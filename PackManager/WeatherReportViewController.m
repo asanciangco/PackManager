@@ -66,7 +66,13 @@
         cell = [[LayeredRightDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.mainTextLabel.text = [NSString stringWithFormat:@"Day %li", (long)indexPath.row + 1];
+    
+    NSDate *date = [self.trip.weatherReport dateForDay:(indexPath.row)];
+    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+
+    [df setDateFormat:@"EE, MMMM d, yyyy"];
+    cell.mainTextLabel.text = [df stringFromDate:date];
+    
     cell.upperDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getHighForDay:(indexPath.row + 1)]];
     cell.lowerDetailTextLabel.text = [NSString stringWithFormat:@"%li", (long)[self.trip.weatherReport getLowForDay:(indexPath.row + 1)]];
     return cell;
