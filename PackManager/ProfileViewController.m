@@ -11,6 +11,8 @@
 
 @interface ProfileViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnitsSegControl;
 @property (weak, nonatomic) IBOutlet UISlider *hotTempSlider;
@@ -172,6 +174,11 @@
     self.coolTempLabel.text = [NSString stringWithFormat:@"%.0f", [[UserPreferences sharedInstance] getCoolTemp]];
     self.coldTempSlider.value = [[UserPreferences sharedInstance] getColdTemp];
     self.coldTempLabel.text = [NSString stringWithFormat:@"%.0f", [[UserPreferences sharedInstance] getColdTemp]];
+}
+
+#pragma mark - Button
+- (IBAction)loginButtonPressed:(id)sender {
+    //TODO
 }
 
 

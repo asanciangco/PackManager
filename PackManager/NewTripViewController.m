@@ -64,6 +64,10 @@
     if(self.trip)
     {
         self.tripNameTextField.text = self.trip.name;
+        Destination *dest = [self.trip.destinations objectAtIndex:[self.trip.destinations count] -1];
+        self.currLocationTextField.text = dest.name;
+        self.currDurationTextField.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+        [self.trip.destinations removeLastObject];
     }
     else
         self.trip = [[Trip alloc] initNewTrip];
