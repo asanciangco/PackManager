@@ -57,10 +57,12 @@ static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/
     NSError* error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     
-    NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
-    if(error) {
+    if(error)
+    {
         return @[];/* do nothing */
     }
+    
+    NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     NSArray *results = [jsonResult objectForKey:@"results"];
     

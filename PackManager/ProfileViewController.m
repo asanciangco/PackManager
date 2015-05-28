@@ -12,7 +12,6 @@
 @interface ProfileViewController ()
 
 
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tempUnitsSegControl;
 @property (weak, nonatomic) IBOutlet UISlider *hotTempSlider;
@@ -175,12 +174,6 @@
     self.coldTempSlider.value = [[UserPreferences sharedInstance] getColdTemp];
     self.coldTempLabel.text = [NSString stringWithFormat:@"%.0f", [[UserPreferences sharedInstance] getColdTemp]];
 }
-
-#pragma mark - Button
-- (IBAction)loginButtonPressed:(id)sender {
-    //TODO
-}
-
 
 #pragma mark - Segmented Control
 -(void) genderChoiceChange:(id)sender{
