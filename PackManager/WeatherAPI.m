@@ -496,11 +496,6 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherReport;
 }
 
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end
-{
-    return [self getWeatherReport:location start:start end:end lat:NSIntegerMin lon:NSIntegerMin];
-}
-
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
     if ([start compare:[NSDate date]] == NSOrderedAscending)
     {
