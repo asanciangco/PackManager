@@ -143,7 +143,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
         \begin{enumerate}
         \item Test coverage and automated building 
         \item Free to download 
-        \item Security Outside 
+        \item Secure 
 
         \begin{enumerate}
         \item user cannot see your packing lists 
@@ -166,28 +166,9 @@ Another example is someone traveling to an area with which they are unfamiliar w
     \subsubsection{Google Places API}
     We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. Handling this API was tricky, since it has a limited number of requests per day. See \texttt{PackManager/GooglePlacesAPI.m} for implementation.
 
-    % TODO: More of these
 
     \subsection{Class Diagrams}
-    \begin{figure}
-        \centering
-        \begin{subfigure}[t]{0.45\textwidth}
-            \centering
-            \includegraphics[width=0.5\textwidth]{img/inherit_graph_1.png}
-            \caption{Class diagram of the models. An \texttt{NSObject} is the root object in Objective-C; the \texttt{NSCoding} interface allows a class to be encoded (serialized).}
-        \end{subfigure}%
-        ~ 
-        \begin{subfigure}[t]{0.45\textwidth} 
-            \centering
-            \includegraphics[width=0.7\textwidth]{img/inherit_graph_7.png}
-            \caption{Class diagram of the controllers. Each controller must inherit from the \texttt{UITableViewController} class in order to interface with the storyboards.}
-        \end{subfigure}
-        \caption{General class hierarchy for Pack Manager.}
-        \label{fig:classdiagram1}
-    \end{figure}
-
-
-    The general structure of our classes can be found in can be found in Fig.\ref{fig:classdiagram1}. This figure lays out the general class hierarchy for quick reference. See Fig.\ref{fig:tripclass}, Fig.\ref{fig:packable}, Fig.\ref{fig:weather-api} for an overview of our class design decisions. 
+    See Fig.\ref{fig:tripclass}, Fig.\ref{fig:packable}, Fig.\ref{fig:weather-api} for an overview of our class design decisions. 
 
     \begin{figure}
         \centering
