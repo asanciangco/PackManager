@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "Trip.h"
 
-@interface NewTripViewController : UITableViewController <UITextFieldDelegate>
+@interface NewTripViewController : UITableViewController <UITextFieldDelegate, MKMapViewDelegate>
 
 @property (nonatomic, strong) Trip *trip;
 

@@ -42,6 +42,8 @@
     // Set up mocks
     
     [[LSNocilla sharedInstance] start]; //Start nocilla
+    [[LSNocilla sharedInstance] clearStubs];
+    
     stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
     stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?address=Los+Angeles&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
     stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?latlng=34.052235,-118.243683&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps2"]);
