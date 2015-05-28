@@ -69,11 +69,17 @@
             Destination *dest = [self.trip.destinations objectAtIndex:[self.trip.destinations count] -1];
             self.currLocationTextField.text = dest.name;
             self.currDurationTextField.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+            lat = dest.lat;
+            lng = dest.lon;
             [self.trip.destinations removeLastObject];
         }
     }
     else
+    {
+        lat = NSIntegerMin;
+        lng = NSIntegerMin;
         self.trip = [[Trip alloc] initNewTrip];
+    }
     
     tripNameIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
@@ -87,8 +93,6 @@
     startDatePickerShowing = NO;
     locationSuggestionsShowing = NO;
     mapShowing = NO;
-    lat = 200;
-    lng = 200;
     
     //both buttons start off non-operational
     self.addStopButton.enabled = NO;
@@ -104,7 +108,12 @@
         Destination *dest = [[Destination alloc] init];
         dest.name = self.currLocationTextField.text;
         dest.duration = self.currDurationTextField.text.integerValue;
+        dest.lat = lat;
+        dest.lon = lng;
         [self.trip.destinations addObject:dest];
+        
+        lat = NSIntegerMin;
+        lng = NSIntegerMin;
     }
 }
 
@@ -375,9 +384,15 @@
     Destination *dest = [[Destination alloc] init];
     dest.name = self.currLocationTextField.text;
     dest.duration = [self.currDurationTextField.text integerValue];
+    dest.lat = lat;
+    dest.lon = lng;
     [self.trip.destinations addObject:dest];
+    
     self.currLocationTextField.text = @"";
     self.currDurationTextField.text = @"";
+    lat = NSIntegerMin;
+    lng = NSIntegerMin;
+    
     [self.tableView reloadData];
 }
 
@@ -398,6 +413,7 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // this one unwinds then goes to the packing list
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
         self.trip.name = self.tripNameTextField.text;
