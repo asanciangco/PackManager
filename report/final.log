@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -647,27 +647,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: img/inherit_graph_1.png Graphic file (type png)
 
 <use img/inherit_graph_1.png>
-Package pdftex.def Info: img/inherit_graph_1.png used on input line 166.
+Package pdftex.def Info: img/inherit_graph_1.png used on input line 169.
 (pdftex.def)             Requested size: 105.69415pt x 149.30223pt.
 
 <img/inherit_graph_7.png, id=25, 412.54124pt x 232.87pt>
 File: img/inherit_graph_7.png Graphic file (type png)
 
 <use img/inherit_graph_7.png>
-Package pdftex.def Info: img/inherit_graph_7.png used on input line 172.
+Package pdftex.def Info: img/inherit_graph_7.png used on input line 175.
 (pdftex.def)             Requested size: 147.97118pt x 83.52754pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
 []\T1/lmr/m/n/10 (b) |Class di-a-gram of the con-trollers.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
 \T1/lmr/m/n/10 Each con-troller must in-herit from the
  []
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 173--173
+Underfull \hbox (badness 7116) in paragraph at lines 176--176
 \T1/lmtt/m/n/10 UITableViewController \T1/lmr/m/n/10 class in or-der to
  []
 
@@ -675,34 +675,34 @@ Underfull \hbox (badness 7116) in paragraph at lines 173--173
 File: img/trip_inheritance.png Graphic file (type png)
 
 <use img/trip_inheritance.png>
-Package pdftex.def Info: img/trip_inheritance.png used on input line 184.
+Package pdftex.def Info: img/trip_inheritance.png used on input line 187.
 (pdftex.def)             Requested size: 341.77602pt x 574.39453pt.
 
 <img/packable.pdf, id=34, 138.5175pt x 238.8925pt>
 File: img/packable.pdf Graphic file (type pdf)
  <use img/packable.pdf>
-Package pdftex.def Info: img/packable.pdf used on input line 191.
+Package pdftex.def Info: img/packable.pdf used on input line 194.
 (pdftex.def)             Requested size: 103.88786pt x 179.16893pt.
 
 <img/interface_packable.png, id=35, 1016.79875pt x 358.33875pt>
 File: img/interface_packable.png Graphic file (type png)
 
 <use img/interface_packable.png>
-Package pdftex.def Info: img/interface_packable.png used on input line 198.
+Package pdftex.def Info: img/interface_packable.png used on input line 201.
 (pdftex.def)             Requested size: 469.75502pt x 165.54863pt.
 
 <img/interface_weather_api.png, id=36, 187.70125pt x 235.88126pt>
 File: img/interface_weather_api.png Graphic file (type png)
 
 <use img/interface_weather_api.png>
-Package pdftex.def Info: img/interface_weather_api.png used on input line 207.
+Package pdftex.def Info: img/interface_weather_api.png used on input line 210.
 (pdftex.def)             Requested size: 105.69415pt x 132.82684pt.
 
 <img/interface_weather_day.png, id=37, 216.81pt x 289.08pt>
 File: img/interface_weather_day.png Graphic file (type png)
 
 <use img/interface_weather_day.png>
-Package pdftex.def Info: img/interface_weather_day.png used on input line 212.
+Package pdftex.def Info: img/interface_weather_day.png used on input line 215.
 (pdftex.def)             Requested size: 147.97118pt x 197.30402pt.
  [5 <./img/inherit_graph_1.png> <./img/inherit_graph_7.png>] [6 <./img/trip_inh
 eritance.png>] [7 <./img/packable.pdf> <./img/interface_packable.png>] <img/tra
@@ -710,10 +710,10 @@ vis.png, id=64, 1042.89626pt x 448.67625pt>
 File: img/travis.png Graphic file (type png)
 
 <use img/travis.png>
-Package pdftex.def Info: img/travis.png used on input line 234.
+Package pdftex.def Info: img/travis.png used on input line 237.
 (pdftex.def)             Requested size: 469.75502pt x 202.10098pt.
  [8 <./img/interface_weather_api.png> <./img/interface_weather_day.png>]
-Overfull \hbox (47.35492pt too wide) in paragraph at lines 252--253
+Overfull \hbox (47.35492pt too wide) in paragraph at lines 255--256
 []\T1/lmr/m/n/10.95 Feel free to browse the doc-u-men-ta-tion in our git repos-
 i-tory, which can be found at \T1/lmtt/m/n/10.95 docs/html/index.html\T1/lmr/m/
 n/10.95 . 
@@ -722,16 +722,16 @@ n/10.95 .
 <img/tripmaker.png, id=70, 379.4175pt x 669.50125pt>
 File: img/tripmaker.png Graphic file (type png)
  <use img/tripmaker.png>
-Package pdftex.def Info: img/tripmaker.png used on input line 261.
+Package pdftex.def Info: img/tripmaker.png used on input line 264.
 (pdftex.def)             Requested size: 211.38832pt x 373.0078pt.
 
 <img/profile.png, id=71, 378.41376pt x 669.50125pt>
 File: img/profile.png Graphic file (type png)
  <use img/profile.png>
-Package pdftex.def Info: img/profile.png used on input line 267.
+Package pdftex.def Info: img/profile.png used on input line 270.
 (pdftex.def)             Requested size: 211.38832pt x 373.99873pt.
 
-Overfull \hbox (1.82332pt too wide) in paragraph at lines 279--280
+Overfull \hbox (1.82332pt too wide) in paragraph at lines 282--283
 \T1/lmr/m/n/10.95 weather API, as well as be-ing a source of knowl-edge on gen-
 eral iOS de-vel-op-ment and Objective-
  []
@@ -755,7 +755,7 @@ al/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive
 c/lm/lmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pf
 b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on final.pdf (12 pages, 780212 bytes).
+Output written on final.pdf (12 pages, 780654 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
