@@ -149,12 +149,15 @@ Another example is someone traveling to an area with which they are unfamiliar w
 
 
 \section{Design}
-    The application is structured using the model-view-controller architecture dictated by the iOS development framework. In an iOS application, the overall flow is defined in storyboards. These files define transitions between panes, hold content. The main storboards for our application is in the \texttt{Main\_iPhone.storypad} file. The storyboards are the views in this framework.
+    The application is structured using the model-view-controller architecture dictated by the iOS development framework. In an iOS application, the overall flow is defined in storyboards. These files define transitions between panes, hold content. The main storyboards for our application is in the \texttt{Main\_iPhone.storypad} file. The storyboards are the views in this framework.
 
     The controllers can be found in the \texttt{Controllers} subdirectory. These files dictate the flow of control within the application; they are the glue between the storyboards and the models, which define how data is stored and manipulated. By carefully separating the concerns between storing and loading data from the user interface logic, we get a clean modular structure that allowed Heather and Alex to both work simultaneously on different aspects of the application. 
 
-    The Weather API is an important and very tricky component of our application. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. This gives us enough data to create a packing list and act as a placeholder. In the future we hope to use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}}, which includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. 
+    The Weather API is an important and very tricky component of our application. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}}, which includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. 
 
+    \subsection{External API Usage}
+    \subsubsection{Google Places API}
+    We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. 
 
 
 
