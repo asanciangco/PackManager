@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,31 +459,134 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count111
 \TX@ftn=\toks32
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
 (/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count112
-\Gm@cntv=\count113
-\c@Gm@tempcnt=\count114
-\Gm@bindingoffset=\dimen173
-\Gm@wd@mp=\dimen174
-\Gm@odd@mp=\dimen175
-\Gm@even@mp=\dimen176
-\Gm@layoutwidth=\dimen177
-\Gm@layoutheight=\dimen178
-\Gm@layouthoffset=\dimen179
-\Gm@layoutvoffset=\dimen180
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen173
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count114
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count115
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen174
+\Fld@menulength=\count116
+\Field@Width=\dimen175
+\Fld@charsize=\dimen176
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count117
+\c@Item=\count118
+\c@Hfootnote=\count119
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count120
+\c@bookmark@seq@number=\count121
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count122
+\Gm@cntv=\count123
+\c@Gm@tempcnt=\count124
+\Gm@bindingoffset=\dimen177
+\Gm@wd@mp=\dimen178
+\Gm@odd@mp=\dimen179
+\Gm@even@mp=\dimen180
+\Gm@layoutwidth=\dimen181
+\Gm@layoutheight=\dimen182
+\Gm@layouthoffset=\dimen183
+\Gm@layoutvoffset=\dimen184
 \Gm@dimlist=\toks33
 )
 (./final.aux)
@@ -501,59 +604,32 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 11.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen181
+\scratchcounter=\count125
+\scratchdimen=\dimen185
 \scratchbox=\box39
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count126
+\nofMParguments=\count127
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen182
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen186
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
 \everyMPtoPDFconversion=\toks35
 ) ABD: EveryShipout initializing macros
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+)
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
@@ -564,7 +640,27 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box40
+Package hyperref Info: Link coloring OFF on input line 11.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count131
+)
+LaTeX Info: Redefining \ref on input line 11.
+LaTeX Info: Redefining \pageref on input line 11.
+LaTeX Info: Redefining \nameref on input line 11.
+
+(./final.out) (./final.out)
+\@outlinefile=\write4
+\openout4 = `final.out'.
+
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -634,131 +730,179 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
 )
-\tf@toc=\write4
-\openout4 = `final.toc'.
+\tf@toc=\write5
+\openout5 = `final.toc'.
 
- [1] [2] [3]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 \newpage
+              [1] [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 156.
+(Font)              <9> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 156.
+(Font)              <5> on input line 159.
 
-<img/inherit_graph_1.png, id=23, 270.00874pt x 381.425pt>
+Overfull \hbox (64.50165pt too wide) in paragraph at lines 159--160
+\T1/lmr/m/n/10.95 The Weather API is an im-por-tant and very tricky com-po-nent
+ of our ap-pli-ca-tion. See \T1/lmtt/m/n/10.95 PackManager/WeatherAPI.m
+ []
+
+[4] <img/inherit_graph_1.png, id=193, 270.00874pt x 381.425pt>
 File: img/inherit_graph_1.png Graphic file (type png)
 
 <use img/inherit_graph_1.png>
-Package pdftex.def Info: img/inherit_graph_1.png used on input line 169.
+Package pdftex.def Info: img/inherit_graph_1.png used on input line 171.
 (pdftex.def)             Requested size: 105.69415pt x 149.30223pt.
 
-<img/inherit_graph_7.png, id=25, 412.54124pt x 232.87pt>
+<img/inherit_graph_7.png, id=195, 412.54124pt x 232.87pt>
 File: img/inherit_graph_7.png Graphic file (type png)
 
 <use img/inherit_graph_7.png>
-Package pdftex.def Info: img/inherit_graph_7.png used on input line 175.
+Package pdftex.def Info: img/inherit_graph_7.png used on input line 177.
 (pdftex.def)             Requested size: 147.97118pt x 83.52754pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--176
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
 []\T1/lmr/m/n/10 (b) |Class di-a-gram of the con-trollers.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--176
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
 \T1/lmr/m/n/10 Each con-troller must in-herit from the
  []
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 176--176
+Underfull \hbox (badness 7116) in paragraph at lines 178--178
 \T1/lmtt/m/n/10 UITableViewController \T1/lmr/m/n/10 class in or-der to
  []
 
-[4] <img/trip_inheritance.png, id=33, 455.7025pt x 765.86125pt>
+<img/trip_inheritance.png, id=200, 455.7025pt x 765.86125pt>
 File: img/trip_inheritance.png Graphic file (type png)
 
 <use img/trip_inheritance.png>
-Package pdftex.def Info: img/trip_inheritance.png used on input line 187.
+Package pdftex.def Info: img/trip_inheritance.png used on input line 189.
 (pdftex.def)             Requested size: 341.77602pt x 574.39453pt.
 
-<img/packable.pdf, id=34, 138.5175pt x 238.8925pt>
+<img/packable.pdf, id=201, 138.5175pt x 238.8925pt>
 File: img/packable.pdf Graphic file (type pdf)
  <use img/packable.pdf>
-Package pdftex.def Info: img/packable.pdf used on input line 194.
+Package pdftex.def Info: img/packable.pdf used on input line 196.
 (pdftex.def)             Requested size: 103.88786pt x 179.16893pt.
 
-<img/interface_packable.png, id=35, 1016.79875pt x 358.33875pt>
+<img/interface_packable.png, id=202, 1016.79875pt x 358.33875pt>
 File: img/interface_packable.png Graphic file (type png)
 
 <use img/interface_packable.png>
-Package pdftex.def Info: img/interface_packable.png used on input line 201.
+Package pdftex.def Info: img/interface_packable.png used on input line 203.
 (pdftex.def)             Requested size: 469.75502pt x 165.54863pt.
 
-<img/interface_weather_api.png, id=36, 187.70125pt x 235.88126pt>
+<img/interface_weather_api.png, id=203, 187.70125pt x 235.88126pt>
 File: img/interface_weather_api.png Graphic file (type png)
 
 <use img/interface_weather_api.png>
-Package pdftex.def Info: img/interface_weather_api.png used on input line 210.
+Package pdftex.def Info: img/interface_weather_api.png used on input line 212.
 (pdftex.def)             Requested size: 105.69415pt x 132.82684pt.
 
-<img/interface_weather_day.png, id=37, 216.81pt x 289.08pt>
+<img/interface_weather_day.png, id=204, 216.81pt x 289.08pt>
 File: img/interface_weather_day.png Graphic file (type png)
 
 <use img/interface_weather_day.png>
-Package pdftex.def Info: img/interface_weather_day.png used on input line 215.
+Package pdftex.def Info: img/interface_weather_day.png used on input line 217.
 (pdftex.def)             Requested size: 147.97118pt x 197.30402pt.
  [5 <./img/inherit_graph_1.png> <./img/inherit_graph_7.png>] [6 <./img/trip_inh
-eritance.png>] [7 <./img/packable.pdf> <./img/interface_packable.png>] <img/tra
-vis.png, id=64, 1042.89626pt x 448.67625pt>
+eritance.png>] [7 <./img/packable.pdf> <./img/interface_packable.png>]
+<img/travis.png, id=243, 1042.89626pt x 448.67625pt>
 File: img/travis.png Graphic file (type png)
-
-<use img/travis.png>
-Package pdftex.def Info: img/travis.png used on input line 237.
+ <use img/travis.png>
+Package pdftex.def Info: img/travis.png used on input line 242.
 (pdftex.def)             Requested size: 469.75502pt x 202.10098pt.
- [8 <./img/interface_weather_api.png> <./img/interface_weather_day.png>]
-Overfull \hbox (47.35492pt too wide) in paragraph at lines 255--256
+
+[8 <./img/interface_weather_api.png> <./img/interface_weather_day.png>]
+Overfull \hbox (47.35492pt too wide) in paragraph at lines 260--261
 []\T1/lmr/m/n/10.95 Feel free to browse the doc-u-men-ta-tion in our git repos-
 i-tory, which can be found at \T1/lmtt/m/n/10.95 docs/html/index.html\T1/lmr/m/
 n/10.95 . 
  []
 
-<img/tripmaker.png, id=70, 379.4175pt x 669.50125pt>
-File: img/tripmaker.png Graphic file (type png)
- <use img/tripmaker.png>
-Package pdftex.def Info: img/tripmaker.png used on input line 264.
-(pdftex.def)             Requested size: 211.38832pt x 373.0078pt.
+<img/ui-2.jpg, id=254, 752.8125pt x 1339.0025pt>
+File: img/ui-2.jpg Graphic file (type jpg)
+ <use img/ui-2.jpg>
+Package pdftex.def Info: img/ui-2.jpg used on input line 268.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/profile.png, id=71, 378.41376pt x 669.50125pt>
-File: img/profile.png Graphic file (type png)
- <use img/profile.png>
-Package pdftex.def Info: img/profile.png used on input line 270.
-(pdftex.def)             Requested size: 211.38832pt x 373.99873pt.
+<img/ui-1.jpg, id=255, 752.8125pt x 1339.0025pt>
+File: img/ui-1.jpg Graphic file (type jpg)
+ <use img/ui-1.jpg>
+Package pdftex.def Info: img/ui-1.jpg used on input line 268.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-Overfull \hbox (1.82332pt too wide) in paragraph at lines 282--283
+<img/ui-7.jpg, id=256, 752.8125pt x 1339.0025pt>
+File: img/ui-7.jpg Graphic file (type jpg)
+ <use img/ui-7.jpg>
+Package pdftex.def Info: img/ui-7.jpg used on input line 268.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+
+<img/ui-5.jpg, id=257, 752.8125pt x 1339.0025pt>
+File: img/ui-5.jpg Graphic file (type jpg)
+ <use img/ui-5.jpg>
+Package pdftex.def Info: img/ui-5.jpg used on input line 269.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+
+<img/ui-6.jpg, id=258, 752.8125pt x 1339.0025pt>
+File: img/ui-6.jpg Graphic file (type jpg)
+ <use img/ui-6.jpg>
+Package pdftex.def Info: img/ui-6.jpg used on input line 269.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+
+<img/ui-4.jpg, id=259, 752.8125pt x 1339.0025pt>
+File: img/ui-4.jpg Graphic file (type jpg)
+ <use img/ui-4.jpg>
+Package pdftex.def Info: img/ui-4.jpg used on input line 269.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+
+Overfull \hbox (17.92447pt too wide) in paragraph at lines 267--271
+ [][] 
+ []
+
+[9 <./img/travis.png>] [10 <./img/ui-2.jpg> <./img/ui-1.jpg> <./img/ui-7.jpg> <
+./img/ui-5.jpg> <./img/ui-6.jpg> <./img/ui-4.jpg>]
+Overfull \hbox (1.82332pt too wide) in paragraph at lines 280--281
 \T1/lmr/m/n/10.95 weather API, as well as be-ing a source of knowl-edge on gen-
 eral iOS de-vel-op-ment and Objective-
  []
 
-[9 <./img/travis.png>] [10 <./img/tripmaker.png> <./img/profile.png>] [11]
-(./final.aux) ) 
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
+ (./final.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
+Package rerunfilecheck Info: File `final.out' has not changed.
+(rerunfilecheck)             Checksum: EB5BF8D799D7DA6084A345E494D0896A;1458.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 295.
+ ) 
 Here is how much of TeX's memory you used:
- 13537 strings out of 493117
- 267429 string characters out of 6135433
- 307454 words of memory out of 5000000
- 16704 multiletter control sequences out of 15000+600000
+ 17097 strings out of 493117
+ 321174 string characters out of 6135433
+ 386244 words of memory out of 5000000
+ 20145 multiletter control sequences out of 15000+600000
  56818 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,1650b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/lm/lmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/lm/lmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pf
-b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on final.pdf (12 pages, 780654 bytes).
+ 55i,13n,54p,1650b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/lm/lmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on final.pdf (12 pages, 888514 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
