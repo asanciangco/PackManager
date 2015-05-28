@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -866,12 +866,12 @@ File: img/ui-2.jpg Graphic file (type jpg)
 <use img/ui-2.jpg>
 Package pdftex.def Info: img/ui-2.jpg used on input line 266.
 (pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
- <img/ui-1.jpg, id=245, 752.8125pt x 1339.0025pt>
-File: img/ui-1.jpg Graphic file (type jpg)
+ <img/ui-8.png, id=245, 378.41376pt x 668.4975pt>
+File: img/ui-8.png Graphic file (type png)
 
-<use img/ui-1.jpg>
-Package pdftex.def Info: img/ui-1.jpg used on input line 266.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+<use img/ui-8.png>
+Package pdftex.def Info: img/ui-8.png used on input line 266.
+(pdftex.def)             Requested size: 151.0pt x 266.75163pt.
  <img/ui-7.jpg, id=246, 752.8125pt x 1339.0025pt>
 File: img/ui-7.jpg Graphic file (type jpg)
 
@@ -897,7 +897,7 @@ File: img/ui-4.jpg Graphic file (type jpg)
 Package pdftex.def Info: img/ui-4.jpg used on input line 267.
 (pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-Overfull \hbox (17.92447pt too wide) in paragraph at lines 265--269
+Overfull \hbox (18.36464pt too wide) in paragraph at lines 265--269
  [][] 
  []
 
@@ -908,7 +908,7 @@ Overfull \hbox (1.82332pt too wide) in paragraph at lines 285--286
 eral iOS de-vel-op-ment and Objective-
  []
 
-[10] [11 <./img/ui-2.jpg> <./img/ui-1.jpg> <./img/ui-7.jpg> <./img/ui-5.jpg> <.
+[10] [11 <./img/ui-2.jpg> <./img/ui-8.png> <./img/ui-7.jpg> <./img/ui-5.jpg> <.
 /img/ui-6.jpg> <./img/ui-4.jpg>] [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
@@ -922,7 +922,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
 Here is how much of TeX's memory you used:
  17334 strings out of 493117
  324779 string characters out of 6135433
- 390775 words of memory out of 5000000
+ 390823 words of memory out of 5000000
  20369 multiletter control sequences out of 15000+600000
  56818 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -936,9 +936,9 @@ ype1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on final.pdf (13 pages, 1322879 bytes).
+Output written on final.pdf (13 pages, 1468671 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
+ 340 PDF objects out of 1000 (max. 8388607)
  285 compressed objects within 3 object streams
  94 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
