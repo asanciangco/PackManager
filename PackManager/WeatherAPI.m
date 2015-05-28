@@ -12,7 +12,8 @@ static WeatherAPI *sharedInstance;
 
 static NSString *HistoricalWeatherAPIKey = @"FgFYQJXIFJwfhPAWbARqFNwPqdokgUeC";
 static NSString *PresentWeatherAPIKey = @"1412e64aff4c8a2d7411980f8568efd2";
-static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";
+//static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA"; // kacey's
+static NSString *GoogleAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 
@@ -149,7 +150,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if(error) {
-        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
+        [NSException raise:@"Error retriving weather data" format:@"Please check your network connection and try again later."];
         return; /* do nothing */
     }
     
@@ -192,7 +193,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
-        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
+        [NSException raise:@"Error retriving weather data" format:@"Please check your network connection and try again later."];
         return;
     }
     
@@ -232,7 +233,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
-        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
+        [NSException raise:@"Error retrieving weather data" format:@"Please check your network connection and try again later."];
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -341,7 +342,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
-        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
+        [NSException raise:@"Error retrieving weather data" format:@"Please check your network connection and try again later."];
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -471,13 +472,16 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         else
         {
             if (obj[HIGH_KEY] == nil) {
-                [NSException raise:@"Incomplete JSON Object" format:@"High Temperature is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+                [NSException raise:@"Error retrieving weather info"
+                            format:@"High Temperature is not available for %@, please check your connection and try again later.", [df stringFromDate:obj[DAY_KEY]]];
             }
             else if (obj[LOW_KEY] == nil){
-                [NSException raise:@"Incomplete JSON Object" format:@"Low Temperature is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+                [NSException raise:@"Error retrieving weather info"
+                            format:@"Low Temperature is not available for %@, please check your connection and try again later.", [df stringFromDate:obj[DAY_KEY]]];
             }
             else{
-                [NSException raise:@"Incomplete JSON Object" format:@"Precipiataion is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+                [NSException raise:@"Error retrieving weather info"
+                            format:@"Precipitation is not available for %@, please check your connection and try again later.", [df stringFromDate:obj[DAY_KEY]]];
             }
             
         }

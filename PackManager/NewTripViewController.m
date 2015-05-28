@@ -14,6 +14,8 @@
 #import "TripSettingsViewController.h"
 #import "GooglePlacesAPI.h"
 
+#import "WeatherAPI.h"
+
 @interface NewTripViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *addStopButton;
@@ -420,10 +422,9 @@
 
 #pragma mark - Navigation
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    // this one unwinds then goes to the packing list
-    if([segue.identifier isEqualToString:@"unwindSegue"])
+    if([identifier isEqualToString:@"unwindSegue"])
     {
         unwindSegue = YES;
         
@@ -438,10 +439,29 @@
             [self.trip.destinations addObject:dest];
         }
         
-        //TODO: change after demo
-        //[self.trip generatePackingList];
-        [self.trip generatePackingListExample];
+        //Generate packing list
         
+        @try
+        {
+            [self generateWeatherReport];
+        }
+        @catch (NSException *exception) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+        }
+        @finally {}
+        
+        [self.trip generatePackingList];
+    }
+    return YES;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // this one unwinds then goes to the packing list
+    if([segue.identifier isEqualToString:@"unwindSegue"])
+    {
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;
         [[TripsData sharedInstance] addTrip:self.trip];
@@ -451,6 +471,29 @@
         TripSettingsViewController *TripSettingsVC = [segue destinationViewController];
         TripSettingsVC.trip = self.trip;
     }
+}
+
+- (void) generateWeatherReport
+{
+    WeatherReport *report;
+    NSInteger dayOffset = 0;
+    
+    for (Destination* dest in self.trip.destinations)
+    {
+        NSDate *startDate = ([self.trip.startDate dateByAddingTimeInterval:60*60*24*dayOffset]);
+        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24*(dest.duration - 1)];
+        
+        WeatherReport *tempReport = [[WeatherAPI sharedInstance] getWeatherReport:dest.name
+                                                                            start:startDate
+                                                                              end:endDate
+                                                                              lat:dest.lat
+                                                                              lon:dest.lon];
+        if (!report)
+            report = tempReport;
+        else
+            [report mergeWeatherReport:tempReport];
+    }
+    self.trip.weatherReport = report;
 }
 
 -(void) enableButtons
