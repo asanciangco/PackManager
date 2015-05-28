@@ -1,0 +1,292 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Enumerate
+Able to pull relevant weather information from Open Weather Map for arbitrary
+ dates.
+ (Related: G2, G4, G6, API1, API3, API4, UX7, UX8)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If no projected weather data, pull historical.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Provide a framework for accepting and using user preferences.
+ (Related: G5, G8)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+User preferences must be consistent between sessions.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Must be able to export preferences.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Plan for eventual transition to decentralized storage (move to cloud).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Create packing lists for vacations of arbitrary durations.
+ (Related: G7)
+\end_layout
+
+\begin_layout Enumerate
+Provide a framework for trip preferences.
+ (Related: G2, UX2)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Availability of laundry machines Level of cleanliness (“I don’t care about
+ wearing underwear 13 times”) 
+\end_layout
+
+\begin_layout Enumerate
+Specific activities Purpose (business, leisure, etc.) 
+\end_layout
+
+\begin_layout Enumerate
+These options affect the packing lists but are optional with customizable
+ defaults.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sends user a push notification if weather changes in destination will affect
+ packing list, or a critical weather alert is issued.
+ (Related: G1, API4)
+\end_layout
+
+\begin_layout Enumerate
+Ability to modify already created packing list.
+ (Related: G4, G8)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Add items, remove items, reevaluate (pull weather again) 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Ability to create an itemized list of clothing and other essentials for
+ travel.
+ (Related: G2, G7, UX1, UX4, UX6, API2)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+List can be customized after suggestion by user.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Allow the user to login through Facebook.
+ (Related: API3, API6)
+\end_layout
+
+\begin_layout Standard
+User Experience:
+\end_layout
+
+\begin_layout Enumerate
+3 user input (minimum) to get to a packing list: start date, duration, location.
+ (Related: G5, G8)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Additional options available if necessary
+\end_layout
+
+\begin_layout Enumerate
+Duration must be nonnegative
+\end_layout
+
+\begin_layout Enumerate
+Destination: zip code or city, state/country
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Prompt for user preferences on first launch.
+ (Related: G3, G5)
+\end_layout
+
+\begin_layout Enumerate
+Obtain user feedback after a trip to adjust user temperature preferences.
+ (Related: API4)
+\end_layout
+
+\begin_layout Enumerate
+User can store packing lists upon save (Related: G8, UX5, API2)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Possibly autosave
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Export lists to other apps (reminders, calendar) (Related: UX4)
+\end_layout
+
+\begin_layout Enumerate
+Packing lists formatted as a table.
+ Each row composed of item and quantity (e.g.
+ T-Shirt x3, Socks x4, Suntan Lotion x1, Umbrella x1) (Related: G8)
+\end_layout
+
+\begin_layout Enumerate
+Error Reporting: If network unavailable, prompt user for solution (Related:
+ API1, API4, G1)
+\end_layout
+
+\begin_layout Enumerate
+Error Reporting: No relevant weather information for provided destination
+ (Related: API1, API4)
+\end_layout
+
+\begin_layout Standard
+API Interactions and Extensibility
+\end_layout
+
+\begin_layout Enumerate
+Application has a single point of failure for interacting with external
+ APIs (Related: G1, API3, API6)
+\end_layout
+
+\begin_layout Enumerate
+Packing and destination information can be exported in JSON format (Related:
+ G8, UX4)
+\end_layout
+
+\begin_layout Enumerate
+Build a wrapper around Open Weather API and Facebook for easy API usage
+ (Related: G1, G9, API1)
+\end_layout
+
+\begin_layout Enumerate
+Build a push notification framework for communicating with users in a device-agn
+ostic way (Related: G6)
+\end_layout
+
+\begin_layout Enumerate
+The system must have the capability to be localized (allow for arbitrary
+ languages and character sets to be used)
+\end_layout
+
+\begin_layout Enumerate
+Facebook API is used for login and identity management.
+ (Related: G9, API1)
+\end_layout
+
+\begin_layout Standard
+Non-Functional Requirements:
+\end_layout
+
+\begin_layout Enumerate
+Test coverage and automated building 
+\end_layout
+
+\begin_layout Enumerate
+Free to download 
+\end_layout
+
+\begin_layout Enumerate
+Security Outside 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+user cannot see your packing lists 
+\end_layout
+
+\begin_layout Enumerate
+Outside users cannot modify your packing lists through any API 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+iOS Application targeted for iOS 8 and above 
+\end_layout
+
+\end_body
+\end_document

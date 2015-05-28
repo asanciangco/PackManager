@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tikz,graphics,color,fullpage,float,epsf,caption,subcaption,tabularx}
+
+
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+  \begin{titlepage}
+    \centering
+    \vspace*{11\baselineskip}
+    \large
+    \bfseries
+    {\LARGE Pack Manager}\\[5\baselineskip]
+    \normalfont
+    \small
+    CS130: Software Development\\
+    Computer Science Department\\
+    University of California, Los Angeles\\
+    Spring 2015\\
+    Git repository: \texttt{https://github.com/asanciangco/PackManager}
+
+    \vfill
+    {\large
+	Alex Sanciangco\\
+	Nick Westman\\
+	Steven Holtzen\\
+	Mitchell Binning\\
+	Kacey Ryan\\
+	Heather Blockhus\\}
+  \end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduction and Motivation}
+Pack Manager is a tool for helping you pack. It gives you a wardrobe list based on the weather of where you're going. It takes your (1) location, (2) time of travel, (3) personal dressing preferences, and gives you a set of clothes for you to wear and necessities that you can't forget. The goal is to make packing for an outing simple and fast. The application will have a very clean user interface; since its function is simple, its use must be equally simple. The application must be extensible, which means that adding new features must be a well-defined process that is easy.
+
+\subsection{User Benefits}
+Some examples of when a user may benefit from using our application is if they are frequent travelers. It is very difficult to track what to bring when traveling, especially if travel arrangements frequently change or users travel to many locations in sequence. Our application can update them on changing weather patterns for arbitrarily complex trips spanning many days and destinations. 
+
+Another example is someone traveling to an area with which they are unfamiliar with its weather patterns. This makes it difficult to predict what would be necessary to bring. This user would simply enter their information into our application, which would automatically keep them up to date regardless of whether or not they know about monsoon season in Indonesia.
+
+\section{Feature Overview} % this could use beefing up
+    When the user first starts the application, he or she will be presented with a login screen where they can choose to log in with Facebook. Once logged in, the user will enter their preferences, at which point the application is ready to make packing suggestions. Once this initial login is complete, the preferences will be assigned to their account, making future trip planning seamless. A packing list is suggested after the user enters their destination, which can include multiple stops, date of departure, duration, and takes into account preferences and trip parameters. From the ``My Trips'' tab, the user can view and modify this packing list. The application will notify the user in case of weather changes; this will require updates to the packing list.
+
+    \subsection{Requirements}
+        \subsubsection{General Requirements (G)}
+        \begin{enumerate}
+        \item Able to pull relevant weather information from Open Weather Map for
+        arbitrary dates. (Related: G2, G4, G6, API1, API3, API4, UX7, UX8)
+
+        \begin{enumerate}
+        \item If no projected weather data, pull historical.
+        \end{enumerate}
+        \item Provide a framework for accepting and using user preferences. (Related:
+        G5, G8)
+
+        \begin{enumerate}
+        \item User preferences must be consistent between sessions. 
+        \item Must be able to export preferences. 
+        \item Plan for eventual transition to decentralized storage (move to cloud).
+        \end{enumerate}
+        \item Create packing lists for vacations of arbitrary durations. (Related:
+        G7)
+        \item Provide a framework for trip preferences. (Related: G2, UX2)
+
+        \begin{enumerate}
+        \item Availability of laundry machines Level of cleanliness (\textquotedblleft I
+        don\textquoteright t care about wearing underwear 13 times\textquotedblright ) 
+        \item Specific activities Purpose (business, leisure, etc.) 
+        \item These options affect the packing lists but are optional with customizable
+        defaults.
+        \end{enumerate}
+        \item Sends user a push notification if weather changes in destination will
+        affect packing list, or a critical weather alert is issued. (Related:
+        G1, API4)
+        \item Ability to modify already created packing list. (Related: G4, G8)
+
+        \begin{enumerate}
+        \item Add items, remove items, reevaluate (pull weather again) 
+        \end{enumerate}
+        \item Ability to create an itemized list of clothing and other essentials
+        for travel. (Related: G2, G7, UX1, UX4, UX6, API2)
+
+        \begin{enumerate}
+        \item List can be customized after suggestion by user.
+        \end{enumerate}
+        \item Allow the user to login through Facebook. (Related: API3, API6)
+        \end{enumerate}
+        \subsubsection{User Experience (UX)}
+        User Experience:
+        \begin{enumerate}
+        \item 3 user input (minimum) to get to a packing list: start date, duration,
+        location. (Related: G5, G8)
+
+        \begin{enumerate}
+        \item Additional options available if necessary
+        \item Duration must be nonnegative
+        \item Destination: zip code or city, state/country
+        \end{enumerate}
+        \item Prompt for user preferences on first launch. (Related: G3, G5)
+        \item Obtain user feedback after a trip to adjust user temperature preferences.
+        (Related: API4)
+        \item User can store packing lists upon save (Related: G8, UX5, API2)
+
+        \begin{enumerate}
+        \item Possibly autosave
+        \end{enumerate}
+        \item Export lists to other apps (reminders, calendar) (Related: UX4)
+        \item Packing lists formatted as a table. Each row composed of item and
+        quantity (e.g. T-Shirt x3, Socks x4, Suntan Lotion x1, Umbrella x1)
+        (Related: G8)
+        \item Error Reporting: If network unavailable, prompt user for solution
+        (Related: API1, API4, G1)
+        \item Error Reporting: No relevant weather information for provided destination
+        (Related: API1, API4)
+        \end{enumerate}
+        \subsubsection{API Interactions and Extensibility (API)}
+        \begin{enumerate}
+        \item Application has a single point of failure for interacting with external
+        APIs (Related: G1, API3, API6)
+        \item Packing and destination information can be exported in JSON format
+        (Related: G8, UX4)
+        \item Build a wrapper around Open Weather API and Facebook for easy API
+        usage (Related: G1, G9, API1)
+        \item Build a push notification framework for communicating with users in
+        a device-agnostic way (Related: G6)
+        \item The system must have the capability to be localized (allow for arbitrary
+        languages and character sets to be used)
+        \item Facebook API is used for login and identity management. (Related:
+        G9, API1)
+        \end{enumerate}
+
+        \subsubsection{Non-Functional Requirements (NF)}
+        \begin{enumerate}
+        \item Test coverage and automated building 
+        \item Free to download 
+        \item Security Outside 
+
+        \begin{enumerate}
+        \item user cannot see your packing lists 
+        \item Outside users cannot modify your packing lists through any API 
+        \end{enumerate}
+        \item iOS Application targeted for iOS 8 and above \end{enumerate}
+
+
+\section{Design}
+    The application is structured using the model-view-controller architecture dictated by the iOS development framework. In an iOS application, the overall flow is defined in storyboards. These files define transitions between panes, hold content. The main storboards for our application is in the \texttt{Main\_iPhone.storypad} file. The storyboards are the views in this framework.
+
+    The controllers can be found in the \texttt{Controllers} subdirectory. These files dictate the flow of control within the application; they are the glue between the storyboards and the models, which define how data is stored and manipulated. By carefully separating the concerns between storing and loading data from the user interface logic, we get a clean modular structure that allowed Heather and Alex to both work simultaneously on different aspects of the application. 
+
+    The Weather API is an important and very tricky component of our application. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. This gives us enough data to create a packing list and act as a placeholder. In the future we hope to use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}}, which includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. 
+
+
+
+
+    \subsection{Class Diagram}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/inherit_graph_1.png}
+            \caption{Class diagram of the models. An \texttt{NSObject} is the root object in Objective-C; the \texttt{NSCoding} interface allows a class to be encoded (serialized).}
+        \end{subfigure}%
+        ~ 
+        \begin{subfigure}[t]{0.45\textwidth} 
+            \centering
+            \includegraphics[width=0.7\textwidth]{img/inherit_graph_7.png}
+            \caption{Class diagram of the controllers. Each controller must inherit from the \texttt{UITableViewController} class in order to interface with the storyboards.}
+        \end{subfigure}
+        \caption{General class hierarchy for Pack Manager.}
+        \label{fig:classdiagram1}
+    \end{figure}
+
+
+    The general structure of our classes can be found in can be found in Fig.\ref{fig:classdiagram1}. This figure lays out the general class hierarchy for quick reference. See Fig.\ref{fig:tripclass}, Fig.\ref{fig:packable}, Fig.\ref{fig:weather-api} for an overview of our class design decisions. 
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.75]{img/trip_inheritance.png}
+        \caption{The \texttt{Trip} class is the core structure for holding details related to an individual trip. Currently trip attributes are stored as booleans within this structure; we have plans to make these easier to change in the future.}
+        \label{fig:tripclass}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.75]{img/packable.pdf}
+        \caption{The packable interface defines the basic methods that are necessary to make an individual object packable. All articles of clothing will inherit this interface; it will likely need to be expanded as more required functionality is discovered.}
+        \label{fig:packable}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{img/interface_packable.png}
+        \caption{Packing lists are made up of packables and this diagram shows the packable class and the multiple types of packable items.}
+        \label{fig:packable-interface}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/interface_weather_api.png}
+        \end{subfigure}%
+        ~ 
+        \begin{subfigure}[t]{0.45\textwidth} 
+            \centering
+            \includegraphics[width=0.7\textwidth]{img/interface_weather_day.png}
+        \end{subfigure}
+        \caption{As shown in the first figure, the trip takes into account the weather report, which is generated by the Weather API shown above. Additionally the weather report consists of weather days, shown above.}
+        \label{fig:weather-api}
+    \end{figure}
+
+    \subsection{Clothes Selection Algorithm}
+    In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. 
+
+
+\section{Quality Assurance}
+
+\subsection{Testing}
+We set up a test harness using Travis CI\footnote{See \texttt{https://travis-ci.org/}}. Travis CI is a continuous integration suite that automatically runs our tests whenever a pull request is performed on Github. Before a change is merged all the tests are run in order to guarantee that all code that gets checked in passes all the tests. See Fig.\ref{fig:travis} for an example Travis CI output.
+
+
+Travis CI configured in the \texttt{.travis.yml} file, which specifies the language framework as well as the test harness. Our tests can be found in the \texttt{PackManagerTests} directory. We are cataloging our test coverage manually; at the time of this writing there are minimal tests, but it is our goal by the final project to have 90\% branch coverage. % is this too high?
+
+% talk about testing style... unit tests or integration tests? hopefully both!
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{img/travis.png}
+\caption{Output of Travis CI. It shows the status of all branches as well as whether or not they are currently passing the tests that are specified in \texttt{.travis.yml}. This will prevent ever merging a branch that does not pass tests, which will prevent regressions.}
+\label{fig:travis}
+\end{figure}
+
+\subsection{Change Analysis}
+Some potential change scenarios we considered were:
+
+\begin{enumerate}
+\item Porting the project to other mobile operating systems like Android. This would be a very large-scale transition and would require rewriting much of our code, but the essential components would be reusable. The user preferences and trip objects are serializable in a generic way (including XML or JSON formats), allowing for cross-device synchronization.
+\item Once a packing list is automatically generated, a user may want to further refine the automatically generated suggestions by providing additional input. This would require some additional user interface, like an edit pane, as well as a flexible packing list object that allows for both automated and user-generated content.
+\item User accounts could be useful for synchronizing information across many devices or even a web service. Due to how we serialized the essential information our application produces in a generic way, these can also be supported.
+\end{enumerate}
+
+
+\subsection{Documentation}
+For documentation we are using Doxygen\footnote{See \texttt{http://www.stack.nl/\~dimitri/doxygen/}}. The documentation is automatically generated whenever we build by Travis CI. It includes automatically generated UML documents (as seen in iour Class Diagram section), as well as parsing descriptions for classes, parameters, returned values, and properties. We simply include a small specially formatted comment before the desired code block. These formatted comments integrate with Xcode, allowing us to refer to our documentation as we write our code, further decreasing the chance of errors. 
+
+Feel free to browse the documentation in our git repository, which can be found at \texttt{docs/html/index.html}. 
+
+\section{User Interface}
+See Fig.\ref{fig:ui} for some screen shots of the current state of the user interface.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/tripmaker.png}
+        \caption{The trip designing frame. Here we see the various options a user can select while making a trip.}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/profile.png}
+        \caption{The user profile creation screen. There are many options (some not shown here).}
+    \end{subfigure}
+    \caption{The two main user interface panes designed so far.}
+    \label{fig:ui}
+\end{figure}
+
+
+
+\section{Contributions}
+\begin{enumerate}
+\item Heather worked on the user interface. She worked on developing flow of the application, working closely with Alex. Heather is experienced with designing user interfaces for iOS.
+\item Alex is the lead programmer. He worked on integrating Heather's user interface with Kacey's weather API, as well as being a source of knowledge on general iOS development and Objective-C, which many group members were not familiar with.
+\item Steven worked on writing the report and the documentation. He added Doxygen and used \LaTeX to write the paper. 
+\item Kacey worked on the weather API, doing research and wrapping it to make it accessible and easy to use. 
+\item Mitchell worked on the presentation as well as general programming tasks.
+\item Nick was in charge of build management, integrating Travis-CI and managing the test infrastructure.
+\end{enumerate}
+
+\section{Conclusion and Future Work}
+So far we have completed the major skeleton of our project. The main user interface elements, including making a trip, filling out a user profile, and selecting your current trip, are completed. 
+
+Our future work includes developing the algorithm for actually choosing which clothes to include in a packing list. We plan to use a simple rule-based algorithm based on user preferences; for example, every day has a minimum set of clothes that are required (at least one complete outfit), there are certain clothes that must always be included in a packing list (like socks and underwear), and there must be spare clothes depending on the length of the stay. The rules will be defined in an extensible way that will allow for easy fine-tuning.
+
+We would also like to implement an edit feature so that users can change trip settings from the application. This will require an additional UI panel and scaffolding.
+
+
+\end{document}
