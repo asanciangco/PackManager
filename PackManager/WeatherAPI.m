@@ -150,6 +150,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if(error) {
+        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
         return; /* do nothing */
     }
     
@@ -192,7 +193,8 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
-        return; // Make a boolean to return an error
+        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
+        return;
     }
     
     NSArray *addresses = [addressesFromLatLong objectForKey:@"results"];
@@ -231,6 +233,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
+        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -251,10 +254,6 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSMutableArray *weatherArray = [NSMutableArray array];
     NSMutableDictionary *weatherEntry = [NSMutableDictionary dictionary];
     
-    CGFloat high = 0;
-    CGFloat low = 0;
-    CGFloat prec = 0;
-    
     NSArray *results = [weather objectForKey:@"list"];
     
     NSDate *dateplus1 = start;
@@ -264,11 +263,20 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     for (NSInteger i = dateOffset; i <= dateRange + dateOffset; i++)
     {
+        CGFloat high = NSIntegerMin;
+        CGFloat low = NSIntegerMin;
+        CGFloat prec = 0;
         NSDictionary *weatherdict = [results objectAtIndex:i];
         
         if (weatherdict[@"temp"]) {
             low = [weatherdict[@"temp"][@"min"] floatValue];
+            if(low != NSIntegerMin) {
+                [weatherEntry setObject:@(low) forKey:LOW_KEY];
+            }
             high = [weatherdict[@"temp"][@"max"] floatValue];
+            if(high != NSIntegerMin) {
+                [weatherEntry setObject:@(high) forKey:HIGH_KEY];
+            }
         }
         
         if (weatherdict[@"rain"]) {
@@ -293,18 +301,12 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
         }
         
         //Add weather entry to array
-        [weatherEntry setObject:@(high) forKey:HIGH_KEY];
-        [weatherEntry setObject:@(low) forKey:LOW_KEY];
         [weatherEntry setObject:@(prec) forKey:PREC_KEY];
         [weatherEntry setObject:dateplus1 forKey:DAY_KEY];
-        
         [weatherArray addObject:[weatherEntry copy]];
         
         //Increase Date
         dateplus1 = [self dayFromDate:dateplus1 andDays:1];
-        //RESET PARAMETERS
-        prec = 0;
-        
     }
     
     return weatherArray;
@@ -340,6 +342,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
+        [NSException raise:@"Malformed JSON Object" format:@"JSON returned as a malformed object"];
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -362,6 +365,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     __block CGFloat value = 0;
     __block NSString* type = @"";
     __block NSString *last_date = @"";
+    
     
     NSArray *results = [weather objectForKey:@"results"];
     
@@ -453,13 +457,32 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 - (WeatherReport *) handleWeatherDictionary:(NSMutableArray*) array
 {
     WeatherReport *weatherReport = [[WeatherReport alloc] init];
+    NSDateFormatter* df = [[NSDateFormatter alloc]init];
+    [df setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [df setDateFormat:@"yyyy-MM-dd"];
     
     for (id obj in array) {
-        [weatherReport addDay:[[WeatherDay alloc]
+        if (obj[HIGH_KEY] != nil && obj[LOW_KEY] != nil && obj[PREC_KEY] != nil) {
+            [weatherReport addDay:[[WeatherDay alloc]
                                initWithHigh: [obj[HIGH_KEY] floatValue]
                                low: [obj[LOW_KEY] floatValue]
                                precipitation: [obj[PREC_KEY] floatValue]
                                date: obj[DAY_KEY]]];
+        }
+        else
+        {
+            if (obj[HIGH_KEY] == nil) {
+                [NSException raise:@"Incomplete JSON Object" format:@"High Temperature is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+            }
+            else if (obj[LOW_KEY] == nil){
+                [NSException raise:@"Incomplete JSON Object" format:@"Low Temperature is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+            }
+            else{
+                [NSException raise:@"Incomplete JSON Object" format:@"Precipiataion is null for day %@", [df stringFromDate:obj[DAY_KEY]]];
+            }
+            
+        }
+        
     }
     
     return weatherReport;
