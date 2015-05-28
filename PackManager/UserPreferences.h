@@ -195,4 +195,10 @@ typedef enum
 */
 - (void) setTempFormat:(TempFormat)format;
 
+/**
+ Return the parameters as a JSON formatted string
+ @returns string of json formatted preferences
+ */
+-(NSString *) JSONForPreferences;
+
 @end

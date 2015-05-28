@@ -290,4 +290,33 @@ NSInteger defaultColdTemp   = 50;
     }
 }
 
+-(NSString *) JSONForPreferences{
+    NSString *jsonString;
+    NSDictionary *prefDict = @{
+                                  @"HotTemp": @([self getHotTemp]),
+                                  @"WarmTemp": @([self getWarmTemp]),
+                                  @"NormalTemp": @([self getNormalTemp]),
+                                  @"CoolTemp": @([self getCoolTemp]),
+                                  @"ColdTemp": @([self getColdTemp]),
+                                  @"Swimming": @([self getSwimmingPreference]),
+                                  @"Formal": @([self getFormalPreference]),
+                                  @"Jeans": @([self getRewearJeansPreference]),
+                                  @"Laundry": @([self getAccessToLaundryPreference]),
+                                  @"TempFormat": @([self getTempFormat]),
+                                  @"Gender": @([self getGender])
+                                  };
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:prefDict
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
+
 @end
