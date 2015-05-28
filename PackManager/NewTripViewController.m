@@ -12,7 +12,6 @@
 #import "TripsData.h"
 #import "TripsViewController.h"
 #import "TripSettingsViewController.h"
-#import "GooglePlacesAPI.h"
 
 @interface NewTripViewController ()
 
@@ -21,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *tripNameTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *currLocationTextField;
-@property (weak, nonatomic) IBOutlet UITableView *locationSuggestionsTableView;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *currDurationTextField;
 
 - (IBAction)startDatePicked:(id)sender;
@@ -35,17 +32,9 @@
     NSIndexPath *startDateIndexPath;
     NSIndexPath *startDatePickerIndexPath;
     NSIndexPath *currLocationIndexPath;
-    NSIndexPath *locationSuggestionsIndexPath;
-    NSIndexPath *mapIndexPath;
     NSIndexPath *currDurationIndexPath;
     NSInteger numStopsPossible;
-    NSArray *searchResults;
-    NSString *currSearch;
-    CGFloat lat;
-    CGFloat lng;
     BOOL startDatePickerShowing;
-    BOOL locationSuggestionsShowing;
-    BOOL mapShowing;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -73,15 +62,9 @@
     startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
     numStopsPossible = 5;
     currLocationIndexPath = [NSIndexPath indexPathForRow:2+numStopsPossible*2 inSection:0];
-    locationSuggestionsIndexPath = [NSIndexPath indexPathForRow:3+numStopsPossible*2 inSection:0];
-    mapIndexPath = [NSIndexPath indexPathForRow:4+numStopsPossible*2 inSection:0];
-    currDurationIndexPath = [NSIndexPath indexPathForRow:5+numStopsPossible*2 inSection:0];
+    currDurationIndexPath = [NSIndexPath indexPathForRow:3+numStopsPossible*2 inSection:0];
     
     startDatePickerShowing = NO;
-    locationSuggestionsShowing = NO;
-    mapShowing = NO;
-    lat = 200;
-    lng = 200;
     
     //both buttons start off non-operational
     self.addStopButton.enabled = NO;
@@ -106,156 +89,101 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if(tableView == self.locationSuggestionsTableView)
-        return [searchResults count];
-    else
-        return [super tableView:tableView numberOfRowsInSection:section];
+    return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == self.locationSuggestionsTableView)
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if([indexPath isEqual:startDateIndexPath])
     {
-        UITableViewCell *cell = [self.locationSuggestionsTableView dequeueReusableCellWithIdentifier:@"SugesstionCell"];
-        cell.textLabel.text = searchResults[indexPath.row][@"name"];
-        return cell;
+        //get date string for date cell
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+        cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
     }
-    else
+    else if([indexPath isEqual:startDatePickerIndexPath])
     {
-        UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-        
-        if([indexPath isEqual:startDateIndexPath])
+        cell.hidden = !startDatePickerShowing;
+    }
+    else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
+    {
+        if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
         {
-            //get date string for date cell
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-            cell.detailTextLabel.text = [dateFormatter stringFromDate:self.trip.startDate];
-        }
-        else if([indexPath isEqual:startDatePickerIndexPath])
-        {
-            cell.hidden = !startDatePickerShowing;
-        }
-        else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
-        {
-            if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
+            cell.hidden = NO;
+            
+            // Index relative to date picker, so relativeIndex=0 is the first cell below datePicker
+            NSInteger relativeIndex = indexPath.row - startDatePickerIndexPath.row - 1;
+            // The index for the destination related to any cell
+            NSInteger destinationIndex = (relativeIndex) / 2;
+            
+            // If a destination exists for the given cell...
+            if (destinationIndex < [self.trip.destinations count] && destinationIndex >=0)
             {
-                cell.hidden = NO;
+                Destination *dest = [self.trip.destinations objectAtIndex:destinationIndex];
                 
-                // Index relative to date picker, so relativeIndex=0 is the first cell below datePicker
-                NSInteger relativeIndex = indexPath.row - startDatePickerIndexPath.row - 1;
-                // The index for the destination related to any cell
-                NSInteger destinationIndex = (relativeIndex) / 2;
-                
-                // If a destination exists for the given cell...
-                if (destinationIndex < [self.trip.destinations count] && destinationIndex >=0)
-                {
-                    Destination *dest = [self.trip.destinations objectAtIndex:destinationIndex];
-                    
-                    if (relativeIndex % 2 == 0)
-                        cell.detailTextLabel.text = dest.name;
-                    else
-                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
-                }
-            }
-            else
-            {
-                cell.hidden = YES;
+                if (relativeIndex % 2 == 0)
+                    cell.detailTextLabel.text = dest.name;
+                else
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
             }
         }
-        else if([indexPath isEqual:locationSuggestionsIndexPath])
+        else
         {
-            cell.hidden = !locationSuggestionsShowing;
+            cell.hidden = YES;
         }
-        else if([indexPath isEqual:mapIndexPath])
-        {
-            //trying to remove cell separator for map (only does below
-            //cell.separatorInset = UIEdgeInsetsMake(0.f, cell.bounds.size.width, 0.f, 0.f);
-            cell.hidden = !mapShowing;
-        }
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == self.locationSuggestionsTableView)
+    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    if([indexPath isEqual:startDatePickerIndexPath])
     {
-        return 44.0f;
+        height = startDatePickerShowing ? 162.0f : 0.0f;
     }
-    else
+    else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
     {
-        CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-        if([indexPath isEqual:startDatePickerIndexPath])
-        {
-            height = startDatePickerShowing ? 162.0f : 0.0f;
-        }
-        else if(indexPath.row > startDatePickerIndexPath.row && indexPath.row < currLocationIndexPath.row)
-        {
-            //TODO use [self.trip.duration count] to decide when to show
-            if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
-                height = 44.0f;
-            else
-                height = 0.0f;
-        }
-        else if([indexPath isEqual:locationSuggestionsIndexPath])
-        {
-            height = locationSuggestionsShowing ? 200.0f : 0.0f;
-        }
-        else if([indexPath isEqual:mapIndexPath])
-        {
-            height = mapShowing ? 100.0f : 0.0f;
-        }
-        return height;
+        //TODO use [self.trip.duration count] to decide when to show
+        if ((indexPath.row - startDateIndexPath.row) < ([self.trip.destinations count] + 1) * 2)
+            height = 44.0f;
+        else
+            height = 0.0f;
     }
+    return height;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == self.locationSuggestionsTableView)
+    if(![indexPath isEqual:startDatePickerIndexPath] && ![indexPath isEqual:startDateIndexPath])
     {
-        //TODO: show map, stop showing results
-        if(searchResults[indexPath.row][@"lat"] && searchResults[indexPath.row][@"lng"])
-        {
-            lat = [searchResults[indexPath.row][@"lat"] floatValue];
-            lng = [searchResults[indexPath.row][@"lng"] floatValue];
-        }
-        mapShowing = (lat != 200 && lng != 200);
-        locationSuggestionsShowing = NO;
-        self.currLocationTextField.text = searchResults[indexPath.row][@"name"];
+        startDatePickerShowing = NO;
         [self.tableView reloadData];
-        [self updateMapViewToLat:lat Long:lng];
     }
-    else
+    else if([indexPath isEqual:startDateIndexPath])
     {
-        if(![indexPath isEqual:startDatePickerIndexPath] && ![indexPath isEqual:startDateIndexPath])
-        {
-            startDatePickerShowing = NO;
-            [self.tableView reloadData];
-        }
-        else if([indexPath isEqual:startDateIndexPath])
-        {
-            startDatePickerShowing = !startDatePickerShowing;
-            [self.tableView reloadData];
-        }
-        else if([indexPath isEqual:tripNameIndexPath])
-        {
-            [self textFieldShouldBeginEditing:self.currDurationTextField];
-        }
-        else if([indexPath isEqual:currLocationIndexPath])
-        {
-            [self textFieldShouldBeginEditing:self.currDurationTextField];
-        }
-        else if([indexPath isEqual:currDurationIndexPath])
-        {
-            [self textFieldShouldBeginEditing:self.currDurationTextField];
-        }
-        
-        [self enableButtons];
+        startDatePickerShowing = !startDatePickerShowing;
+        [self.tableView reloadData];
     }
+    else if([indexPath isEqual:tripNameIndexPath])
+    {
+        [self textFieldShouldBeginEditing:self.currDurationTextField];
+    }
+    else if([indexPath isEqual:currLocationIndexPath])
+    {
+        [self textFieldShouldBeginEditing:self.currDurationTextField];
+    }
+    else if([indexPath isEqual:currDurationIndexPath])
+    {
+        [self textFieldShouldBeginEditing:self.currDurationTextField];
+    }
+    
+    [self enableButtons];
 }
 
 #pragma mark - textfield methods
@@ -265,54 +193,6 @@
     {
         startDatePickerShowing = NO;
         [self.tableView reloadData];
-    }
-    return YES;
-}
-
--(void) hideSearch
-{
-    locationSuggestionsShowing = NO;
-    [self.tableView beginUpdates];
-    [self.tableView reloadRowsAtIndexPaths:@[locationSuggestionsIndexPath] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
-}
-
--(void) showSearch
-{
-    locationSuggestionsShowing = YES;
-    [self.tableView reloadData];
-    self.currLocationTextField.text = currSearch;
-    [self.currLocationTextField performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
-    [self.locationSuggestionsTableView reloadData];
-}
-
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if(textField == self.currLocationTextField)
-    {
-        NSString *searchString = [NSString stringWithString:textField.text];
-        searchString = [searchString stringByReplacingCharactersInRange:range withString:string];
-        searchString = [searchString stringByReplacingOccurrencesOfString:@"\u00a0" withString:@" "];
-        currSearch = searchString;
-        searchString = [searchString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-
-        //when to show results
-        if(searchString.length > 0)
-        {
-            [self.tableView scrollToRowAtIndexPath:currLocationIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-            searchResults = [[GooglePlacesAPI sharedInstance] getLocationSuggestions:searchString];
-            if(!locationSuggestionsShowing && [searchResults count])
-                [self showSearch];
-            else if([searchResults count])
-                [self.locationSuggestionsTableView reloadData];
-                
-        }
-        else if(locationSuggestionsShowing)
-        {
-            [self hideSearch];
-            [self.currLocationTextField becomeFirstResponder];
-        }
     }
     return YES;
 }
@@ -343,19 +223,6 @@
     self.currLocationTextField.text = @"";
     self.currDurationTextField.text = @"";
     [self.tableView reloadData];
-}
-
-- (void)updateMapViewToLat:(CLLocationDegrees)latitude Long:(CLLocationDegrees)longetide{
-    
-    // create a region and pass it to the Map View
-    mapShowing = YES;
-    MKCoordinateRegion region;
-    region.center.latitude = latitude;
-    region.center.longitude = longetide;
-    region.span.latitudeDelta = 0.00005;
-    region.span.longitudeDelta = 0.00005;
-    
-    [self.mapView setRegion:region animated:NO];
 }
 
 #pragma mark - Navigation
