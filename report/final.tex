@@ -51,6 +51,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
     When the user first starts the application, he or she will be presented with a login screen where they can choose to log in with Facebook. Once logged in, the user will enter their preferences, at which point the application is ready to make packing suggestions. Once this initial login is complete, the preferences will be assigned to their account, making future trip planning seamless. A packing list is suggested after the user enters their destination, which can include multiple stops, date of departure, duration, and takes into account preferences and trip parameters. From the ``My Trips'' tab, the user can view and modify this packing list. The application will notify the user in case of weather changes; this will require updates to the packing list.
 
     \subsection{Requirements}
+        The following are the requirements that we initially set out to fulfill. 
         \subsubsection{General Requirements (G)}
         \begin{enumerate}
         \item Able to pull relevant weather information from Open Weather Map for
@@ -228,7 +229,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
     In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. 
 
     \subsection{API Description}
-    Our API description can be found inside of our documentation, in \texttt{doc/html/index.html}. An example of our documentation can be found in Fig.\ref{fig:doc}. Overall, all API accesses flow through the \texttt{WeatherAPI} and \texttt{GoogleAPI} classes; these classes act as mediators, filtering information and handling de-bouncing of frequent requests. 
+    Our API description can be found inside of our documentation, in \texttt{doc/html/index.html}. We took care to document most of our classes and functions in the Doxygen style, allowing for automatically generated formatted descriptions. An example of our documentation can be found in Fig.\ref{fig:doc}. Overall, all API accesses flow through the \texttt{WeatherAPI} and \texttt{GoogleAPI} classes; these classes act as mediators, filtering information and handling de-bouncing of frequent requests. 
 
     \begin{figure}
     \centering
@@ -256,21 +257,6 @@ Travis CI configured in the \texttt{.travis.yml} file, which specifies the langu
 \label{fig:travis}
 \end{figure}
 
-\subsection{Change Analysis}
-Some potential change scenarios we considered were:
-
-\begin{enumerate}
-\item Porting the project to other mobile operating systems like Android. This would be a very large-scale transition and would require rewriting much of our code, but the essential components would be reusable. The user preferences and trip objects are serializable in a generic way (including XML or JSON formats), allowing for cross-device synchronization.
-\item Once a packing list is automatically generated, a user may want to further refine the automatically generated suggestions by providing additional input. This would require some additional user interface, like an edit pane, as well as a flexible packing list object that allows for both automated and user-generated content.
-\item User accounts could be useful for synchronizing information across many devices or even a web service. Due to how we serialized the essential information our application produces in a generic way, these can also be supported.
-\end{enumerate}
-
-
-\subsection{Documentation}
-For documentation we are using Doxygen\footnote{See \texttt{http://www.stack.nl/\textasciitilde dimitri/doxygen/}}. The documentation is automatically generated whenever we build by Travis CI. It includes automatically generated UML documents (as seen in iour Class Diagram section), as well as parsing descriptions for classes, parameters, returned values, and properties. We simply include a small specially formatted comment before the desired code block. These formatted comments integrate with Xcode, allowing us to refer to our documentation as we write our code, further decreasing the chance of errors. 
-
-Feel free to browse the documentation in our git repository, which can be found at \texttt{docs/html/index.html}. 
-
 \section{User Interface}
 See Fig.\ref{fig:ui} for some screen shots of the user interface.
 
@@ -280,11 +266,18 @@ See Fig.\ref{fig:ui} for some screen shots of the user interface.
     \includegraphics[scale=0.2]{img/ui-2.jpg} & \includegraphics[scale=0.2]{img/ui-1.jpg} & \includegraphics[scale=0.2]{img/ui-7.jpg}\\
     \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[scale=0.2]{img/ui-4.jpg}
     \end{tabular}
-    \caption{User interface snapshots. Top left, a generated packing list; top middle, an option to delete a packing item; top right, an ; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile.}
+    \caption{User interface snapshots. Top left, a generated packing list; top middle, an option to delete a packing item; top right, an option to enter a specific number of shorts; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile.}
     \label{fig:ui}
 \end{figure}
 
+\section{Design Revisions}
+We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
 
+We decided to omit some of the requirements that were less important. Exporting user data to other applications, prompting users for the preferences on the initial launch of the application, and gathering user feedback were deemed unnecessary to completing a functioning application. We do not have a consuming application for user data, so it is difficult to design a format for them to consume. The initial prompt for user preference is unnecessary because it is easy to add your preferences; it makes more sense from a UX perspective to gather user preferences from the home screen. User feedback is unnecessary for the initial version of the application because we can simply ask our users what they think of our work.
+
+% added autocompleting forms
+% display map based on where you are going to go
+% 
 
 \section{Contributions}
 \begin{enumerate}
