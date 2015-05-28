@@ -170,6 +170,7 @@
 		4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		4CFD9D531B163C3C007EFAC2 /* openWeatherMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */; };
 		4CFD9D551B164006007EFAC2 /* historical.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD9D541B164006007EFAC2 /* historical.json */; };
+		A89248A51B16983800898817 /* BackgroundUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A89248A41B16983800898817 /* BackgroundUpdate.m */; };
 		E21273CF1AF80F010063BA5D /* Packable.m in Sources */ = {isa = PBXBuildFile; fileRef = E21273CE1AF80F010063BA5D /* Packable.m */; };
 		E29254941AFAA9ED00007394 /* NSCodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E29254931AFAA9ED00007394 /* NSCodingHelper.m */; };
 		E2B80F9D1AF6D303003B6281 /* WeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B80F9C1AF6D303003B6281 /* WeatherDay.m */; };
@@ -394,6 +395,8 @@
 		4C7D9DB71B157D260005C522 /* googlemaps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = googlemaps.json; path = SampleJSON/googlemaps.json; sourceTree = "<group>"; };
 		4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openWeatherMap.json; path = SampleJSON/openWeatherMap.json; sourceTree = "<group>"; };
 		4CFD9D541B164006007EFAC2 /* historical.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = historical.json; path = SampleJSON/historical.json; sourceTree = "<group>"; };
+		A89248A31B16983800898817 /* BackgroundUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundUpdate.h; sourceTree = "<group>"; };
+		A89248A41B16983800898817 /* BackgroundUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundUpdate.m; sourceTree = "<group>"; };
 		C6800C54CEF5E5CD715CF33C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E21273CE1AF80F010063BA5D /* Packable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packable.m; sourceTree = "<group>"; };
 		E29254921AFAA9ED00007394 /* NSCodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCodingHelper.h; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 		212724911AF18F4A00F61AAA /* Wrapper / Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A89248A31B16983800898817 /* BackgroundUpdate.h */,
+				A89248A41B16983800898817 /* BackgroundUpdate.m */,
 				21A1546B1AE6FABB002F76BE /* UserPreferences.h */,
 				21A1546C1AE6FABB002F76BE /* UserPreferences.m */,
 				E2B80F9E1AF6D52D003B6281 /* WeatherAPI.h */,
@@ -1208,6 +1213,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					21D1F2FD1ADF3B71003024B7 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					21D1F3241ADF3B71003024B7 = {
 						TestTargetID = 21D1F2FD1ADF3B71003024B7;
 					};
@@ -1445,6 +1457,7 @@
 				2175AD051AF1A36F0033ECE4 /* WeatherReport.m in Sources */,
 				E21273CF1AF80F010063BA5D /* Packable.m in Sources */,
 				FA3B859D1B0D2D67009E06F4 /* Jacket.m in Sources */,
+				A89248A51B16983800898817 /* BackgroundUpdate.m in Sources */,
 				21A1546D1AE6FABB002F76BE /* UserPreferences.m in Sources */,
 				21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */,
 				21D1F33E1ADF3EAC003024B7 /* NewTripViewController.m in Sources */,
