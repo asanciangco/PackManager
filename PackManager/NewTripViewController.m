@@ -422,6 +422,41 @@
 
 #pragma mark - Navigation
 
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"unwindSegue"])
+    {
+        unwindSegue = YES;
+        
+        self.trip.name = self.tripNameTextField.text;
+        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
+        {
+            Destination *dest = [[Destination alloc] init];
+            dest.name = self.currLocationTextField.text;
+            dest.duration = [self.currDurationTextField.text integerValue];
+            dest.lat = lat;
+            dest.lon = lng;
+            [self.trip.destinations addObject:dest];
+        }
+        
+        //Generate packing list
+        
+        @try {
+            [self generateWeatherReport];
+            [NSException raise:@"TEST" format:@"HELLO"];
+        }
+        @catch (NSException *exception) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+        }
+        @finally {}
+        
+        [self.trip generatePackingList];
+    }
+    return YES;
+}
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // this one unwinds then goes to the packing list
@@ -440,13 +475,21 @@
             [self.trip.destinations addObject:dest];
         }
         
-        //TODO: change after demo
-        //[self.trip generatePackingList];
-        
         //Generate packing list
-        [self generateWeatherReport];
+        
+        @try {
+            [self generateWeatherReport];
+            [NSException raise:@"TEST" format:@"HELLO"];
+        }
+        @catch (NSException *exception) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        @finally {
+            
+        }
+        
         [self.trip generatePackingList];
-//        [self.trip generatePackingListExample];
         
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;

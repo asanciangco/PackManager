@@ -28,11 +28,6 @@
     return (0.80 * self.high) + (0.20 * self.low);
 }
 
-//- (NSInteger) weightedAverageTemp
-//{
-//    return (0.80 * self.high) + (0.20 * self.low);
-//}
-
 - (NSInteger) range
 {
     return self.high - self.low;
