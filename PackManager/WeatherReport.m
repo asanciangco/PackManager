@@ -100,7 +100,7 @@
 - (NSInteger) getAverageForDay: (NSInteger)day;
 {
     WeatherDay *weatherDay = [self getDayAtIndex:day];
-    return weatherDay.averageTemp;
+    return [weatherDay weightedAverageTemp];
 }
 
 - (NSInteger) getRangeForDay: (NSInteger)day;

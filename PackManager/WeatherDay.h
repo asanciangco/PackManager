@@ -31,7 +31,7 @@
 /**
     Custom getter
  */
-@property (nonatomic) NSInteger averageTemp;
+@property (nonatomic) NSInteger weightedAverageTemp;
 
 /**
     Custom getter 
