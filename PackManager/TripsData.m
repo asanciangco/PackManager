@@ -93,6 +93,7 @@ static TripsData *sharedInstance;
     if (index < 0 || index >= [self.trips count])
         return;
     [self.trips removeObjectAtIndex:index];
+    [self saveList];
 }
 
 #pragma mark - Save list

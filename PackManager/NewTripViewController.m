@@ -441,9 +441,9 @@
         
         //Generate packing list
         
-        @try {
+        @try
+        {
             [self generateWeatherReport];
-            [NSException raise:@"TEST" format:@"HELLO"];
         }
         @catch (NSException *exception) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -462,35 +462,6 @@
     // this one unwinds then goes to the packing list
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
-        unwindSegue = YES;
-        
-        self.trip.name = self.tripNameTextField.text;
-        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
-        {
-            Destination *dest = [[Destination alloc] init];
-            dest.name = self.currLocationTextField.text;
-            dest.duration = [self.currDurationTextField.text integerValue];
-            dest.lat = lat;
-            dest.lon = lng;
-            [self.trip.destinations addObject:dest];
-        }
-        
-        //Generate packing list
-        
-        @try {
-            [self generateWeatherReport];
-            [NSException raise:@"TEST" format:@"HELLO"];
-        }
-        @catch (NSException *exception) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-        }
-        @finally {
-            
-        }
-        
-        [self.trip generatePackingList];
-        
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;
         [[TripsData sharedInstance] addTrip:self.trip];
