@@ -249,12 +249,21 @@
     }
     else
     {
+        BOOL needToReload = NO;
         if(![indexPath isEqual:startDatePickerIndexPath] && ![indexPath isEqual:startDateIndexPath])
         {
             startDatePickerShowing = NO;
-            [self.tableView reloadData];
+            needToReload = YES;
         }
-        else if([indexPath isEqual:startDateIndexPath])
+        if(![indexPath isEqual:currLocationIndexPath] && locationSuggestionsShowing)
+        {
+            locationSuggestionsShowing = NO;
+            needToReload = YES;
+        }
+        if(needToReload)
+            [self.tableView reloadData];
+        
+        if([indexPath isEqual:startDateIndexPath])
         {
             startDatePickerShowing = !startDatePickerShowing;
             [self.tableView reloadData];
@@ -279,11 +288,20 @@
 #pragma mark - textfield methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    BOOL needToReload = NO;
     if(startDatePickerShowing)
     {
         startDatePickerShowing = NO;
-        [self.tableView reloadData];
+        needToReload = YES;
     }
+    if(locationSuggestionsShowing && textField != self.currLocationTextField)
+    {
+        locationSuggestionsShowing = NO;
+        needToReload = YES;
+    }
+    if(needToReload)
+        [self.tableView reloadData];
+    
     return YES;
 }
 
