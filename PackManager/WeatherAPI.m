@@ -89,11 +89,16 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 	@returns The date a year ago from the provided date
  */
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
+    NSDate *currentDate = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSYearCalendarUnit
+                                               fromDate:currentDate];
+    
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:-1];
+    [offsetComponents setYear:[components year]-1];
     
     return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
 }
@@ -493,6 +498,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 }
 
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
+    if ([start compare:[NSDate date]] == NSOrderedAscending)
+    {
+        [NSException raise:@"Invalid Date" format:@"Please select a date in the future"];
+    }
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     
