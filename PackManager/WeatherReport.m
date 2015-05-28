@@ -142,6 +142,11 @@
     return self;
 }
 
+- (void) mergeWeatherReport:(WeatherReport *)other
+{
+    [self.weatherDays addObjectsFromArray:other.weatherDays];
+}
+
 
 
 @end
