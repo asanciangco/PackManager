@@ -160,6 +160,7 @@
 		21D1F3441ADF4933003024B7 /* PackingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3431ADF4933003024B7 /* PackingListViewController.m */; };
 		21D1F3471ADF49DF003024B7 /* WeatherReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3461ADF49DF003024B7 /* WeatherReportViewController.m */; };
 		21D1F34A1ADF4A0E003024B7 /* TripSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D1F3491ADF4A0E003024B7 /* TripSettingsViewController.m */; };
+		396C6FD6D7288AECD36BAB2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6800C54CEF5E5CD715CF33C /* libPods.a */; };
 		4C085AAA1B0D194F00795767 /* PackingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AA91B0D194F00795767 /* PackingListTests.m */; };
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
@@ -437,7 +438,7 @@
 				21D1F3041ADF3B71003024B7 /* CoreGraphics.framework in Frameworks */,
 				21D1F3061ADF3B71003024B7 /* UIKit.framework in Frameworks */,
 				21D1F3021ADF3B71003024B7 /* Foundation.framework in Frameworks */,
-				04B8C77480164F10962BD99F /* libPods.a in Frameworks */,
+				396C6FD6D7288AECD36BAB2E /* libPods.a in Frameworks */,7
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
