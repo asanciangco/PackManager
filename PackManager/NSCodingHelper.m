@@ -10,7 +10,7 @@
 
 @implementation NSCodingHelper
 
-+ (NSData *) dataForArray:(NSArray*)array
++ (NSData *) dataForArray:(NSMutableArray*)array
 {
     return [NSKeyedArchiver archivedDataWithRootObject:array];
 }

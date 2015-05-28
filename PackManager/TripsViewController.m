@@ -80,6 +80,23 @@
     [self performSegueWithIdentifier:@"showPackingList" sender:self];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [[TripsData sharedInstance] removeTripAtIndex:indexPath.row];
+        [self.tableView reloadData];
+    }
+}
+
 #pragma mark - Navagation
 -(IBAction)UnwindOnGenerateList:(UIStoryboardSegue *)segue {
     

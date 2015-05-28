@@ -15,7 +15,7 @@
  @param array The array you want to convert
  @returns data object
  */
-+ (NSData *) dataForArray:(NSArray*)array;
++ (NSData *) dataForArray:(NSMutableArray*)array;
 
 /**
  Converts NSData object from NSUserDefaults back to an NSMutableArray. If there's a problem with the conversion (e.g. the resulting array is null), an empty mutable array is returned.

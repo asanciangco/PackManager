@@ -67,23 +67,24 @@ static TripsData *sharedInstance;
 // TODO: test this
 - (void) addTrip:(Trip *)newTrip
 {
-    if ([self.trips count] == 0)
-    {
-        [self.trips addObject:newTrip];
-        [self saveList];
-        return;
-    }
-    if ([self.trips containsObject:newTrip])
-        return;
+//    if ([self.trips count] == 0)
+//    {
+//        [self.trips addObject:newTrip];
+//        [self saveList];
+//        return;
+//    }
+//    if ([self.trips containsObject:newTrip])
+//        return;
     
-    for (NSInteger i = 0; i < [self.trips count]; i++)
-    {
-        Trip *trip = [self.trips objectAtIndex:i];
-        if ([trip.startDate compare:newTrip.startDate] == NSOrderedDescending)
-        {
-            [self.trips insertObject:newTrip atIndex:i];
-        }
-    }
+//    for (NSInteger i = 0; i < [self.trips count]; i++)
+//    {
+//        Trip *trip = [self.trips objectAtIndex:i];
+//        if ([trip.startDate compare:newTrip.startDate] == NSOrderedDescending)
+//        {
+//            [self.trips insertObject:newTrip atIndex:i];
+//        }
+//    }
+    [self.trips addObject:newTrip];
     [self saveList];
 }
 
@@ -97,15 +98,14 @@ static TripsData *sharedInstance;
 #pragma mark - Save list
 - (void) saveList
 {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.trips];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"tripsData"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSCodingHelper dataForArray:self.trips] forKey:@"tripsData"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[NSCodingHelper dataForArray:self.trips] forKey:@"tripsData"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.trips] forKey:@"trips"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder

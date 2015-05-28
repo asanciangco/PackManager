@@ -46,7 +46,11 @@
     BOOL startDatePickerShowing;
     BOOL locationSuggestionsShowing;
     BOOL mapShowing;
+    
+    BOOL unwindSegue;
 }
+
+#pragma mark - Initializer
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +61,7 @@
     return self;
 }
 
+#pragma mark - view load / disappear
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,6 +86,8 @@
         self.trip = [[Trip alloc] initNewTrip];
     }
     
+    unwindSegue = NO;
+    
     tripNameIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
     startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
@@ -103,7 +110,7 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""])
+    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""] && !unwindSegue)
     {
         Destination *dest = [[Destination alloc] init];
         dest.name = self.currLocationTextField.text;
@@ -114,6 +121,8 @@
         
         lat = NSIntegerMin;
         lng = NSIntegerMin;
+        
+        unwindSegue = NO;
     }
 }
 
@@ -416,14 +425,18 @@
     // this one unwinds then goes to the packing list
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
+        unwindSegue = YES;
+        
         self.trip.name = self.tripNameTextField.text;
-//        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
-//        {
-//            Destination *dest = [[Destination alloc] init];
-//            dest.name = self.currLocationTextField.text;
-//            dest.duration = [self.currDurationTextField.text integerValue];
-//            [self.trip.destinations addObject:dest];
-//        }
+        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
+        {
+            Destination *dest = [[Destination alloc] init];
+            dest.name = self.currLocationTextField.text;
+            dest.duration = [self.currDurationTextField.text integerValue];
+            dest.lat = lat;
+            dest.lon = lng;
+            [self.trip.destinations addObject:dest];
+        }
         
         //TODO: change after demo
         //[self.trip generatePackingList];
