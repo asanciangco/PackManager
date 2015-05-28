@@ -42,8 +42,17 @@
  */
 - (Packable *) getPackableForIndex:(NSInteger)index;
 
+/**
+ Deletes a packing list item from the list
+ @param index The index of a packable in the PackingList you wish to delete
+ */
 - (void) removeItemForIndex:(NSInteger)index;
 
+/**
+ Updates the quantiy for the packable at a certain index
+ @param index The index of a packable in the PackingList you wish to change
+ @param q The updated quantity for the packable
+ */
 - (void) changeQuantityForIndex:(NSInteger)index to:(NSInteger)q;
 
 /**
