@@ -65,10 +65,6 @@ static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/
     
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
-    if(error) {
-        return @[];/* do nothing */
-    }
-    
     NSArray *results = [jsonResult objectForKey:@"results"];
     
     for( NSDictionary *r in results)

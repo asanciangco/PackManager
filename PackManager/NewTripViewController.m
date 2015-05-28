@@ -46,7 +46,11 @@
     BOOL startDatePickerShowing;
     BOOL locationSuggestionsShowing;
     BOOL mapShowing;
+    
+    BOOL unwindSegue;
 }
+
+#pragma mark - Initializer
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +61,7 @@
     return self;
 }
 
+#pragma mark - view load / disappear
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -64,9 +69,24 @@
     if(self.trip)
     {
         self.tripNameTextField.text = self.trip.name;
+        if ([self.trip.destinations count] > 0)
+        {
+            Destination *dest = [self.trip.destinations objectAtIndex:[self.trip.destinations count] -1];
+            self.currLocationTextField.text = dest.name;
+            self.currDurationTextField.text = [NSString stringWithFormat:@"%li", (long)dest.duration];
+            lat = dest.lat;
+            lng = dest.lon;
+            [self.trip.destinations removeLastObject];
+        }
     }
     else
+    {
+        lat = NSIntegerMin;
+        lng = NSIntegerMin;
         self.trip = [[Trip alloc] initNewTrip];
+    }
+    
+    unwindSegue = NO;
     
     tripNameIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
@@ -80,14 +100,30 @@
     startDatePickerShowing = NO;
     locationSuggestionsShowing = NO;
     mapShowing = NO;
-    lat = 200;
-    lng = 200;
     
     //both buttons start off non-operational
     self.addStopButton.enabled = NO;
     self.generateListButton.enabled = NO;
 
     // Do any additional setup after loading the view.
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""] && !unwindSegue)
+    {
+        Destination *dest = [[Destination alloc] init];
+        dest.name = self.currLocationTextField.text;
+        dest.duration = self.currDurationTextField.text.integerValue;
+        dest.lat = lat;
+        dest.lon = lng;
+        [self.trip.destinations addObject:dest];
+        
+        lat = NSIntegerMin;
+        lng = NSIntegerMin;
+        
+        unwindSegue = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -231,12 +267,21 @@
     }
     else
     {
+        BOOL needToReload = NO;
         if(![indexPath isEqual:startDatePickerIndexPath] && ![indexPath isEqual:startDateIndexPath])
         {
             startDatePickerShowing = NO;
-            [self.tableView reloadData];
+            needToReload = YES;
         }
-        else if([indexPath isEqual:startDateIndexPath])
+        if(![indexPath isEqual:currLocationIndexPath] && locationSuggestionsShowing)
+        {
+            locationSuggestionsShowing = NO;
+            needToReload = YES;
+        }
+        if(needToReload)
+            [self.tableView reloadData];
+        
+        if([indexPath isEqual:startDateIndexPath])
         {
             startDatePickerShowing = !startDatePickerShowing;
             [self.tableView reloadData];
@@ -261,11 +306,20 @@
 #pragma mark - textfield methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    BOOL needToReload = NO;
     if(startDatePickerShowing)
     {
         startDatePickerShowing = NO;
-        [self.tableView reloadData];
+        needToReload = YES;
     }
+    if(locationSuggestionsShowing && textField != self.currLocationTextField)
+    {
+        locationSuggestionsShowing = NO;
+        needToReload = YES;
+    }
+    if(needToReload)
+        [self.tableView reloadData];
+    
     return YES;
 }
 
@@ -339,9 +393,15 @@
     Destination *dest = [[Destination alloc] init];
     dest.name = self.currLocationTextField.text;
     dest.duration = [self.currDurationTextField.text integerValue];
+    dest.lat = lat;
+    dest.lon = lng;
     [self.trip.destinations addObject:dest];
+    
     self.currLocationTextField.text = @"";
     self.currDurationTextField.text = @"";
+    lat = NSIntegerMin;
+    lng = NSIntegerMin;
+    
     [self.tableView reloadData];
 }
 
@@ -362,14 +422,19 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // this one unwinds then goes to the packing list
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
+        unwindSegue = YES;
+        
         self.trip.name = self.tripNameTextField.text;
         if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
         {
             Destination *dest = [[Destination alloc] init];
             dest.name = self.currLocationTextField.text;
             dest.duration = [self.currDurationTextField.text integerValue];
+            dest.lat = lat;
+            dest.lon = lng;
             [self.trip.destinations addObject:dest];
         }
         

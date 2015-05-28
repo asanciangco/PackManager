@@ -26,6 +26,10 @@
 // TODO: Establish consistent naming scheme, perhaps store country / state code separately?
 @property (nonatomic, strong) NSString *name;
 
+
+@property CGFloat lat;
+@property CGFloat lon;
+
 /** 
  Tests to see if a destination is a valid location
  @Return returns TRUE if location is a valid place (i.e. it exists), otherwise returns FALSE

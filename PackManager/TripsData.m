@@ -8,6 +8,7 @@
 
 #import "TripsData.h"
 #import "Trip.h"
+#import "NSCodingHelper.h"
 
 static TripsData *sharedInstance;
 
@@ -38,7 +39,8 @@ static TripsData *sharedInstance;
         NSData *rawData = [[NSUserDefaults standardUserDefaults] dataForKey:@"tripsData"];
         if (rawData)
         {
-            data = [NSKeyedUnarchiver unarchiveObjectWithData:rawData];
+            data.trips = [NSKeyedUnarchiver unarchiveObjectWithData:rawData];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         else
         {
@@ -65,20 +67,25 @@ static TripsData *sharedInstance;
 // TODO: test this
 - (void) addTrip:(Trip *)newTrip
 {
-    if ([self.trips count] == 0)
-    {
-        [self.trips addObject:newTrip];
-        return;
-    }
+//    if ([self.trips count] == 0)
+//    {
+//        [self.trips addObject:newTrip];
+//        [self saveList];
+//        return;
+//    }
+//    if ([self.trips containsObject:newTrip])
+//        return;
     
-    for (NSInteger i = 0; i < [self.trips count]; i++)
-    {
-        Trip *trip = [self.trips objectAtIndex:i];
-        if ([trip.startDate compare:newTrip.startDate] == NSOrderedDescending)
-        {
-            [self.trips insertObject:newTrip atIndex:i];
-        }
-    }
+//    for (NSInteger i = 0; i < [self.trips count]; i++)
+//    {
+//        Trip *trip = [self.trips objectAtIndex:i];
+//        if ([trip.startDate compare:newTrip.startDate] == NSOrderedDescending)
+//        {
+//            [self.trips insertObject:newTrip atIndex:i];
+//        }
+//    }
+    [self.trips addObject:newTrip];
+    [self saveList];
 }
 
 - (void) removeTripAtIndex:(NSInteger)index
@@ -88,23 +95,24 @@ static TripsData *sharedInstance;
     [self.trips removeObjectAtIndex:index];
 }
 
+#pragma mark - Save list
+- (void) saveList
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSCodingHelper dataForArray:self.trips] forKey:@"tripsData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 #pragma mark - Encoding / Decoding
 - (void) encodeWithCoder:(NSCoder *)aCoder
 {
-    NSData *encodedTrips = [NSKeyedArchiver archivedDataWithRootObject:self.trips];
-    [aCoder encodeObject:encodedTrips forKey:@"trips"];
+    [aCoder encodeObject:[NSCodingHelper dataForArray:self.trips] forKey:@"trips"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        NSData *tripsData = [aDecoder decodeObjectForKey:@"trips"];
-        NSMutableArray *tripsArray = [NSKeyedUnarchiver unarchiveObjectWithData:tripsData];
-        if (tripsArray)
-            self.trips = tripsArray;
-        else
-            self.trips = [NSMutableArray array];
+        self.trips = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"trips"]];
     }
     return self;
 }
