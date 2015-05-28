@@ -168,6 +168,7 @@
 		4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAB1B0D22F200795767 /* WeatherDayTests.m */; };
 		4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C085AAD1B0D273E00795767 /* WeatherReportTests.m */; };
 		4C0BA6241B162F6700907525 /* googlemaps2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C0BA6231B162F6700907525 /* googlemaps2.json */; };
+		4C20D0EE1B16DF8F004CD291 /* GooglePlacesAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20D0ED1B16DF8F004CD291 /* GooglePlacesAPITests.m */; };
 		4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */; };
 		4C7D9DB81B157D260005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
 		4C7D9DB91B157DFD0005C522 /* googlemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D9DB71B157D260005C522 /* googlemaps.json */; };
@@ -397,6 +398,7 @@
 		4C085AAB1B0D22F200795767 /* WeatherDayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDayTests.m; sourceTree = "<group>"; };
 		4C085AAD1B0D273E00795767 /* WeatherReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherReportTests.m; sourceTree = "<group>"; };
 		4C0BA6231B162F6700907525 /* googlemaps2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = googlemaps2.json; path = SampleJSON/googlemaps2.json; sourceTree = "<group>"; };
+		4C20D0ED1B16DF8F004CD291 /* GooglePlacesAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlacesAPITests.m; sourceTree = "<group>"; };
 		4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
 		4C7D9DB71B157D260005C522 /* googlemaps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = googlemaps.json; path = SampleJSON/googlemaps.json; sourceTree = "<group>"; };
 		4CFD9D521B163C3C007EFAC2 /* openWeatherMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = openWeatherMap.json; path = SampleJSON/openWeatherMap.json; sourceTree = "<group>"; };
@@ -1091,6 +1093,7 @@
 				4C085AAB1B0D22F200795767 /* WeatherDayTests.m */,
 				4C085AAD1B0D273E00795767 /* WeatherReportTests.m */,
 				4C7D9DAA1B1523040005C522 /* WeatherAPITests.m */,
+				4C20D0ED1B16DF8F004CD291 /* GooglePlacesAPITests.m */,
 			);
 			path = PackManagerTests;
 			sourceTree = "<group>";
@@ -1495,6 +1498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C085AAC1B0D22F200795767 /* WeatherDayTests.m in Sources */,
+				4C20D0EE1B16DF8F004CD291 /* GooglePlacesAPITests.m in Sources */,
 				4C7D9DAB1B1523040005C522 /* WeatherAPITests.m in Sources */,
 				21D1F3331ADF3B71003024B7 /* PackManagerTests.m in Sources */,
 				4C085AAE1B0D273E00795767 /* WeatherReportTests.m in Sources */,

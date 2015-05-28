@@ -45,21 +45,22 @@ static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/
 {
     NSMutableArray *retVal = [[NSMutableArray alloc] init];
     
-    NSString *queryURL = [NSString stringWithFormat:@"%@query=%@&key=%@", googlePlacesURL, query, googlePlacesAPIKey];
+    NSString *escapedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSString *queryURL = [NSString stringWithFormat:@"%@query=%@&key=%@", googlePlacesURL, escapedQuery, googlePlacesAPIKey];
     
     //Check which API to use based on number of days until end of trip. Should me moved out.
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:queryURL]];
     [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:3.0];
     
     NSURLResponse* response;
     NSError* error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     
-    if(error)
-    {
-        return @[];/* do nothing */
+    if (error || (result == nil)) {
+        return @[];
     }
     
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
