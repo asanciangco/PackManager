@@ -877,9 +877,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="loginButtonPressed:" destination="X02-xe-oUH" eventType="touchUpInside" id="CFj-AD-BNY"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1276,7 +1273,6 @@
                         <outlet property="genderSegmentedControl" destination="O9n-Mj-hNb" id="EHV-Gk-uQF"/>
                         <outlet property="hotTempLabel" destination="GJT-yM-eZj" id="mvo-jl-Zch"/>
                         <outlet property="hotTempSlider" destination="Y53-8I-HKA" id="6zJ-PB-LoM"/>
-                        <outlet property="loginButton" destination="CIW-tB-a52" id="BQ8-SL-4NM"/>
                         <outlet property="normalTempLabel" destination="QX6-Lt-ivZ" id="hwI-zQ-rRt"/>
                         <outlet property="normalTempSlider" destination="esC-K0-9i9" id="ftw-Lg-bcI"/>
                         <outlet property="rewearJeansPreferenceSwitch" destination="Mno-ei-UZY" id="kxv-2S-zlS"/>
