@@ -297,10 +297,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             {
                 prec = .8;
             }
-            [weatherEntry setObject:@(prec) forKey:PREC_KEY];
         }
         
         //Add weather entry to array
+        [weatherEntry setObject:@(prec) forKey:PREC_KEY];
         [weatherEntry setObject:dateplus1 forKey:DAY_KEY];
         [weatherArray addObject:[weatherEntry copy]];
         
