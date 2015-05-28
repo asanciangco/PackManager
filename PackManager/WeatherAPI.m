@@ -50,6 +50,79 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+#pragma mark - Helper Functions
+
+/**
+	Given a date add days and return new date
+	@param date The date to start
+	@param numDays the number of days to be added
+	@returns NSDate = start date  + numDays
+ */
+- (NSDate *)dayFromDate:(NSDate *) date andDays:(NSInteger) numDays
+{
+    return [date dateByAddingTimeInterval:60*60*24*numDays];
+}
+
+/**
+	Given a date tell me if it falls between two other dates
+	@param date The date to check
+	@param beginDate The start date
+ @param endDate The end date
+	@returns bool of whether it is within the bounds or not
+ */
+
+- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
+{
+    if ([date compare:beginDate] == NSOrderedAscending)
+        return NO;
+    
+    if ([date compare:endDate] == NSOrderedDescending)
+        return NO;
+    
+    return YES;
+}
+
+/**
+	Given a date tell me the logical date one year ago
+	@param from The start date
+	@returns The date a year ago from the provided date
+ */
+- (NSDate *)logicalOneYearAgo:(NSDate *)from {
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:-1];
+    
+    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+}
+
+/**
+	Given two dates tell me the number of days between the two
+	@param fromDateTime The first date
+	@param toDateTime The second date
+	@returns integer of the number of days difference between two dates
+ */
+- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
+}
+
+
 #pragma mark - Core Fuctions
 
 - (void) getLatLongFromAddress:(NSString*)address lat:(CGFloat *)lat lon:(CGFloat *)lon
@@ -63,12 +136,18 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:LatLongUrl]];
     [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:3.0];
     
     NSURLResponse* response;
     NSError* error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
     
+    if (error || (result == nil)) {
+        return;
+    }
+    
     NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
+    
     if(error) {
         //TODO: HANDLE ERROR
         return; /* do nothing */
@@ -95,9 +174,9 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
-    request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:URLString]];
     [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:3.0];
     
     NSURLResponse* response;
     NSError* error = nil;
@@ -105,6 +184,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     response = nil;
     error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    if (error || (result == nil)) {
+        return;
+    }
+    
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
@@ -134,13 +218,18 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     [request setURL:[NSURL URLWithString:WeatherUrl]];
     [request setHTTPMethod:@"GET"];
     [request addValue:PresentWeatherAPIKey forHTTPHeaderField:@"x-api-key"];
+    [request setTimeoutInterval:3.0];
     
     NSURLResponse* response;
     NSError* error = nil;
-    NSData* data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    if (error || (result == nil)) {
+        return nil;
+    }
     
         // handle response
-    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
+    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
         //TODO: handle error
@@ -225,75 +314,6 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherArray;
 }
 
-/**
-	Given two dates tell me the number of days between the two
-	@param fromDateTime The first date
-	@param toDateTime The second date
-	@returns integer of the number of days difference between two dates
- */
-- (NSInteger)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
-{
-    NSDate *fromDate;
-    NSDate *toDate;
-    
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
-                 interval:NULL forDate:fromDateTime];
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
-                 interval:NULL forDate:toDateTime];
-    
-    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
-                                               fromDate:fromDate toDate:toDate options:0];
-    
-    return [difference day];
-}
-
-/**
-	Given a date add days and return new date
-	@param date The date to start
-	@param numDays the number of days to be added
-	@returns NSDate = start date  + numDays
- */
-- (NSDate *)dayFromDate:(NSDate *) date andDays:(NSInteger) numDays
-{
-    return [date dateByAddingTimeInterval:60*60*24*numDays];
-}
-
-/**
-	Given a date tell me if it falls between two other dates
-	@param date The date to check
-	@param beginDate The start date
-    @param endDate The end date
-	@returns bool of whether it is within the bounds or not
- */
-
-- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
-{
-    if ([date compare:beginDate] == NSOrderedAscending)
-        return NO;
-    
-    if ([date compare:endDate] == NSOrderedDescending)
-        return NO;
-    
-    return YES;
-}
-
-/**
-	Given a date tell me the logical date one year ago
-	@param from The start date
-	@returns The date a year ago from the provided date
- */
-- (NSDate *)logicalOneYearAgo:(NSDate *)from {
-    
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:-1];
-    
-    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
-    
-}
 
 - (NSMutableArray *) getWeatherFromHistorical:(NSString *)zip start:(NSDate *)start end:(NSDate *)end{
     
@@ -310,13 +330,18 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     [request setURL:[NSURL URLWithString:WeatherUrl]];
     [request setHTTPMethod:@"GET"];
     [request addValue:HistoricalWeatherAPIKey forHTTPHeaderField:@"token"];
+    [request setTimeoutInterval:3.0];
     
     NSURLResponse* response;
     NSError* error = nil;
-    NSData* data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
+    
+    if (error || (result == nil)) {
+        return nil;
+    }
     
     // handle response
-    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
+    NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData:result options:0 error:&error];
     
     if(error) {
         //TODO: hanndle error
