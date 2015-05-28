@@ -533,6 +533,7 @@
     if (self = [super init])
     {
         self.list = [NSCodingHelper mutableArrayFromData:[aDecoder decodeObjectForKey:@"list"]];
+        
     }
     return self;
 }
