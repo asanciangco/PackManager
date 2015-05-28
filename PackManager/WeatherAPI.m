@@ -70,6 +70,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     NSDictionary *cityLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     if(error) {
+        //TODO: HANDLE ERROR
         return; /* do nothing */
     }
     
@@ -107,6 +108,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *addressesFromLatLong = [NSJSONSerialization JSONObjectWithData:result options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
+        //TODO: Handle error
         return; // Make a boolean to return an error
     }
     
@@ -141,6 +143,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
     
     if(error) {
+        //TODO: handle error
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -171,6 +174,8 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     NSInteger dateRange = [self daysBetweenDate:start andDate:end];
     NSInteger dateOffset = [self daysBetweenDate:[NSDate date] andDate:start];
+    
+    //TODO: Check that each value is added, low high and prec before the entry is added to the array otherwise throw error
     
     for (NSInteger i = dateOffset; i <= dateRange + dateOffset; i++)
     {
@@ -314,6 +319,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSDictionary *cityWeatherFeatures = [NSJSONSerialization JSONObjectWithData: data options:0 error:&error];
     
     if(error) {
+        //TODO: hanndle error
         return nil; /* JSON was malformed, act appropriately here */
     }
     
@@ -336,6 +342,10 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     __block CGFloat value = 0;
     __block NSString* type = @"";
     __block NSString *last_date = @"";
+    __block BOOL hasHigh = false;
+    __block BOOL hasLow = false;
+    __block BOOL hasPrec = false;
+    
     
     NSArray *results = [weather objectForKey:@"results"];
     
@@ -374,7 +384,17 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             date_obj = [df dateFromString:last_date];
             
             [weatherEntry setObject:date_obj forKey:DAY_KEY];
-            [weatherArray addObject:[weatherEntry copy]];
+            if (hasLow && hasHigh && hasPrec) {
+                [weatherArray addObject:[weatherEntry copy]];
+                hasHigh = false;
+                hasLow = false;
+                hasPrec = false;
+            }
+            else
+            {
+              //TODO: Handle incomplete JSON error
+            }
+            
         }
         if ([type isEqualToString:@"PRCP"]) {
             if(value > 0 && value <= 1)
@@ -393,12 +413,15 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
             {
                 prec = .8;
             }
+            hasPrec = true;
             [weatherEntry setObject:@(prec) forKey:PREC_KEY];
         }
         if ([type isEqualToString:@"TMIN"]) {
+            hasHigh = true;
             [weatherEntry setObject:@((((value/10) * 9) / 5) + 32) forKey:LOW_KEY];
         }
         if ([type isEqualToString:@"TMAX"]) {
+            hasLow = true;
             [weatherEntry setObject:@((((value/10) * 9) / 5) + 32) forKey:HIGH_KEY];
         }
         
@@ -414,7 +437,16 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     date_obj = [df dateFromString:last_date];
     
     [weatherEntry setObject:date_obj forKey:DAY_KEY];
-    [weatherArray addObject:[weatherEntry copy]];
+    if (hasLow && hasHigh && hasPrec) {
+        [weatherArray addObject:[weatherEntry copy]];
+        hasHigh = false;
+        hasLow = false;
+        hasPrec = false;
+    }
+    else
+    {
+        //TODO: Handle incomplete JSON error
+    }
     
     return weatherArray;
 }
