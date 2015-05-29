@@ -446,7 +446,22 @@
             [self generateWeatherReport];
         }
         @catch (NSException *exception) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:exception.name message:exception.reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            NSString *name = @"";
+            NSString *reason = @"";
+            
+            if ([exception.name containsString:@"NSInvalid"])
+            {
+                name = @"Oops!";
+                reason = @"Something went wrong when trying to contact the interwebz. Please check your internet connect and trip parameters and try again";
+            }
+            else
+            {
+                name = exception.name;
+                reason = exception.reason;
+            }
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:name message:reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             return NO;
         }
@@ -492,6 +507,8 @@
             report = tempReport;
         else
             [report mergeWeatherReport:tempReport];
+        
+        dayOffset += dest.duration;
     }
     self.trip.weatherReport = report;
 }
