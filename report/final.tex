@@ -154,7 +154,7 @@ Another example is someone traveling to an area with unfamiliar weather patterns
     \subsection{Requirements Revisions}
     We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
 
-    We decided to omit some of the requirements that were less important. Exporting user data to other applications, prompting users for the preferences on the initial launch of the application, and gathering user feedback were deemed unnecessary to completing a functioning application. We do not have a consuming application for user data, so it is difficult to design a format for them to consume. The initial prompt for user preference is unnecessary because it is easy to add your preferences; it makes more sense from a UX perspective to gather user preferences from the home screen. User feedback is unnecessary for the initial version of the application because we can simply ask our users what they think of our work.
+    We decided to omit some of the requirements that were less important. We decided not to export user data to other applications such as calendar and reminders because as we were designing our application we realized that i) exporting to the calendars app wouldn't be particularly useful, and ii) we would rather have the to-do list features of the reminders app remain within our app. We also realized that we didn't want to prompt users for the preferences on the initial launch of the application since this made for an obtrusive and confusing UX; we would rather get the users right into the functionality immediately, then allow them to change settings if they so desired. We decided against gathering user feedback after their trips also for UX reasons: we realized that users likely wouldn't open our application immediately after a trip since our app is intended to be used before a trip. Our application does not currently export packing information to JSON because at this time it is not necessary. However, the data structure that stores the packing list can easily exported to JSON if that functionality ever become relevant. Lastly, we did not end up implementing push notifications because that would require usage of Apple Push Notification Service (APNS), which would require us to develop a server to send the notifications.
 
 
 \section{Design}
@@ -241,7 +241,7 @@ We make extensive use of swizzling, which is a built-in utility for iOS that let
 
 
  
-\begin{figure}
+\begin{figure} 
 \centering
 \includegraphics[width=\linewidth]{img/travis.png}
 \caption{Output of Travis CI. It shows the status of all branches as well as whether or not they are currently passing the tests that are specified in \texttt{.travis.yml}. This will prevent ever merging a branch that does not pass tests, which will prevent regressions.}
