@@ -16,6 +16,6 @@
 \contentsline {section}{\numberline {4}Quality Assurance}{9}{section.4}
 \contentsline {subsection}{\numberline {4.1}Testing}{9}{subsection.4.1}
 \contentsline {section}{\numberline {5}User Interface}{9}{section.5}
-\contentsline {section}{\numberline {6}Design Revisions}{9}{section.6}
+\contentsline {section}{\numberline {6}Design Revisions}{11}{section.6}
 \contentsline {section}{\numberline {7}Contributions}{11}{section.7}
-\contentsline {section}{\numberline {8}Conclusion and Future Work}{11}{section.8}
+\contentsline {section}{\numberline {8}Conclusion}{11}{section.8}

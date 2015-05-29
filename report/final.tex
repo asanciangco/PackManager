@@ -227,9 +227,14 @@ Another example is someone traveling to an area with which they are unfamiliar w
 \subsection{Testing}
 We set up a test harness using Travis CI\footnote{See \texttt{https://travis-ci.org/}}. Travis CI is a continuous integration suite that automatically runs our tests whenever a pull request is performed on Github. Before a change is merged all the tests are run in order to guarantee that all code that gets checked in passes all the tests. See Fig.\ref{fig:travis} for an example Travis CI output.
 
-Travis CI configured in the \texttt{.travis.yml} file, which specifies the language framework as well as the test harness. Our tests can be found in the \texttt{PackManagerTests} directory. 
+Travis CI configured in the \texttt{.travis.yml} file, which specifies the language framework as well as the test harness. Our tests can be found in the \texttt{PackManagerTests} directory. We used Nocilla\footnote{See \texttt{https://github.com/luisobo/Nocilla}} in order to create mock HTTP requests to simulate the weather API behavior. This lets us test the Weather API without making HTTP calls. We then use these same mock API calls throughout the rest of our tests. We test much of our application in isolation of the Internet, which allows our tests to be reproducible with expected outcomes, letting us use assertions.
 
-% talk about testing style... unit tests or integration tests? hopefully both!
+We used testing in order to validate our application; the goal is not to achieve ultra high reliability, since our application is likely to rapidly change. In line with this goal, we have isolated unit tests for the core functionality, including tests for the weather API, Google APIs, the packing algorithm, and the integration between these components. These tests can be found in \texttt{PackManagerTests}. 
+
+We make extensive use of swizzling, which is a built-in utility for iOS that lets us swap out implementations of individual methods for stub methods. For example, when the \texttt{getDate} method is called, we return a specific date for use in assertions (for example, Jan. 1 1970). This lets us make assertions regardless of what day of the week it is.
+
+
+
 
 \begin{figure}
 \centering
@@ -267,15 +272,10 @@ We decided to omit some of the requirements that were less important. Exporting 
 \item Steven worked on writing the report and the documentation. He added Doxygen and used \LaTeX to write the paper. 
 \item Kacey worked on the weather API, doing research and wrapping it to make it accessible and easy to use. 
 \item Mitchell worked on the presentation as well as general programming tasks.
-\item Nick was in charge of build management, integrating Travis-CI and managing the test infrastructure.
+\item Nick was in charge of build management and testing, integrating Travis-CI and managing the test infrastructure.
 \end{enumerate}
 
-\section{Conclusion and Future Work}
-So far we have completed the major skeleton of our project. The main user interface elements, including making a trip, filling out a user profile, and selecting your current trip, are completed. 
-
-Our future work includes developing the algorithm for actually choosing which clothes to include in a packing list. We plan to use a simple rule-based algorithm based on user preferences; for example, every day has a minimum set of clothes that are required (at least one complete outfit), there are certain clothes that must always be included in a packing list (like socks and underwear), and there must be spare clothes depending on the length of the stay. The rules will be defined in an extensible way that will allow for easy fine-tuning.
-
-We would also like to implement an edit feature so that users can change trip settings from the application. This will require an additional UI panel and scaffolding.
-
+\section{Conclusion}
+We completed almost all of the requirements that we listed for our application on time, in addition to some extra requirements that we felt were necessary as we were developing. In total the project is over 3000 lines of Objective-C and over 1300 lines of comments, with major commits and contributions from every group member, even the ones that were not initially familiar with Objective-C. 
 
 \end{document}
