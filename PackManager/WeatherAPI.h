@@ -53,15 +53,6 @@ static NSString *DAY_KEY = @"day";
 #pragma mark Helper Functions
 
 /**
-	Collect the a weather report for a trip
-	@param location The trip location
-    @param start The start date of the trip
-    @param end The end date of the trip
-	@returns WeatherReport for the trip to use
- */
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end;
-
-/**
 	Collect a weather report for a trip
     @param location The trip location
     @param start The start date of the trip
