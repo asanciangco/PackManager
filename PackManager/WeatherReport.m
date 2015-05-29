@@ -109,19 +109,6 @@
     return weatherDay.range;
 }
 
-#pragma mark - WeatherDay logic
-- (BOOL) daysAreInOrder
-{
-    // TODO: Implement me.
-    
-    return NO;
-}
-
-- (void) putDaysInOrder
-{
-    // TODO: Implement me.
-}
-
 - (void) addDay:(WeatherDay *)day
 {
     [self.weatherDays addObject:day];
@@ -147,6 +134,9 @@
     [self.weatherDays addObjectsFromArray:other.weatherDays];
 }
 
-
+- (NSDate *) dateForDay:(NSInteger)day
+{
+    return ((WeatherDay *)[self.weatherDays objectAtIndex:day]).date;
+}
 
 @end
