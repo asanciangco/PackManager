@@ -94,4 +94,11 @@
  */
 - (void) mergeWeatherReport:(WeatherReport *)other;
 
+/**
+ Get a date object for a specific day of the report.
+ @param day the index of the day requested
+ @returns NSDate of the corresponding day
+ */
+- (NSDate *) dateForDay:(NSInteger)day;
+
 @end

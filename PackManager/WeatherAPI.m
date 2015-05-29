@@ -7,13 +7,9 @@
 //
 
 #import "WeatherAPI.h"
+#import "APIKeys.h"
 
 static WeatherAPI *sharedInstance;
-
-static NSString *HistoricalWeatherAPIKey = @"FgFYQJXIFJwfhPAWbARqFNwPqdokgUeC";
-static NSString *PresentWeatherAPIKey = @"1412e64aff4c8a2d7411980f8568efd2";
-//static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA"; // kacey's
-static NSString *GoogleAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 
@@ -90,13 +86,21 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 	@returns The date a year ago from the provided date
  */
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
+    NSDate *currentDate = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* currentComponents = [calendar components:NSYearCalendarUnit
+                                               fromDate:currentDate];
+    NSDateComponents* fromComponents = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                                      fromDate:from];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:-1];
+    NSDateComponents *newComponents = [[NSDateComponents alloc] init];
+    [newComponents setYear:[currentComponents year]-1];
+    [newComponents setMonth:[fromComponents month]];
+    [newComponents setDay:[fromComponents day]];
     
-    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    return [gregorian dateFromComponents:newComponents];
 }
 
 /**
@@ -130,7 +134,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
+    NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GOOGLE_API_KEY];
     
     //Check which API to use based on number of days until end of trip. Should me moved out.
 
@@ -174,7 +178,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 - (void) getZipFromLatLong:(CGFloat *)lat lon:(CGFloat *)lon zip:(NSString **)zip
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
+    NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GOOGLE_API_KEY];
     [request setURL:[NSURL URLWithString:URLString]];
     [request setHTTPMethod:@"GET"];
     [request setTimeoutInterval:3.0];
@@ -491,12 +495,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherReport;
 }
 
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end
-{
-    return [self getWeatherReport:location start:start end:end lat:NSIntegerMin lon:NSIntegerMin];
-}
-
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
+    if ([start compare:[NSDate date]] == NSOrderedAscending)
+    {
+        [NSException raise:@"Invalid Date" format:@"Please select a date in the future"];
+    }
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     

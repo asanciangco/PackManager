@@ -45,8 +45,7 @@
     [[LSNocilla sharedInstance] clearStubs];
     
     stubRequest(@"GET", @"http://www.google.com").andReturn(201).withBody(@"Hello Mocks");
-    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?address=Los+Angeles&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
-    stubRequest(@"GET", @"https://maps.googleapis.com/maps/api/geocode/json?latlng=34.052235,-118.243683&key=AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA").andReturn(200).withBody([self getSampleJSON:@"googlemaps2"]);
+    stubRequest(@"GET", @"https://maps.googleapis.com/.*".regex).andReturn(200).withBody([self getSampleJSON:@"googlemaps"]);
     stubRequest(@"GET", @"http://api.openweathermap.org/.*".regex).andReturn(200).withBody([self getSampleJSON:@"openWeatherMap"]);
     stubRequest(@"GET", @"http://www.ncdc.noaa.gov/.*".regex).andReturn(200).withBody([self getSampleJSON:@"historical"]);
 }
@@ -103,7 +102,8 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"http://www.google.com"]];
     [request setHTTPMethod:@"GET"];
-
+    [request setTimeoutInterval:3.0];
+    
     NSURLResponse* response;
     NSError* error = nil;
     NSData* result = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response error:&error];
@@ -179,7 +179,7 @@
  * tests to see if we get a weather report based on the future.
  */
 - (void)testGetWeatherReportPresentOnly {
-    WeatherReport *report = [self.instance getWeatherReport:@"Los Angeles" start:self.start end:self.end];
+    WeatherReport *report = [self.instance getWeatherReport:@"Los Angeles" start:self.start end:self.end lat:34.05 lon:-118.25];
     
     GLfloat high = [report getOverallHigh];
     GLfloat low = [report getOverallLow];
