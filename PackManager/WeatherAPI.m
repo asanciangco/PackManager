@@ -503,8 +503,8 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     
-    bool presentForecast = daysToStart <= 15;
-    bool historicalForecast = daysToEnd >= 15;
+    bool presentForecast = daysToStart <= 13;
+    bool historicalForecast = daysToEnd >= 13;
     
     NSString *zip;
     
@@ -514,7 +514,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     
     if (presentForecast && historicalForecast) {
         [self getZipFromLatLong:&lat lon:&lon zip:&zip];
-        NSDate * mid = [self dayFromDate:start andDays:(15-daysToStart)];
+        NSDate * mid = [self dayFromDate:start andDays:(13-daysToStart)];
         NSMutableArray *weather = [self getWeatherFromPresent:lat lng:lon start:start end:mid];
         [weather addObjectsFromArray:[self getWeatherFromHistorical:zip start:[self dayFromDate:mid andDays:1] end:end]];
         return [self handleWeatherDictionary:weather];
