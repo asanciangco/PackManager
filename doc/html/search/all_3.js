@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['data',['data',['../interface_f_b_s_d_k_graph_request_data_attachment.html#add74d6b28d7630f13c711afbfed387c6',1,'FBSDKGraphRequestDataAttachment::data()'],['../interface_f_b_s_d_k_game_request_content.html#a5842159d850c0e701d7753d64e1e22be',1,'FBSDKGameRequestContent::data()']]],
+  ['dataforarray_3a',['dataForArray:',['../interface_n_s_coding_helper.html#a2633e358a2336515ed6bb8e914da612a',1,'NSCodingHelper']]],
+  ['daysareinorder',['daysAreInOrder',['../interface_weather_report.html#a40763395e5e7eb7dc1b5c42e6f23c83a',1,'WeatherReport']]],
+  ['declinedpermissions',['declinedPermissions',['../interface_f_b_s_d_k_access_token.html#ab4956044ecf71be910f37f3309431d9d',1,'FBSDKAccessToken::declinedPermissions()'],['../interface_f_b_s_d_k_login_manager_login_result.html#ae64209439a8f3d962ce548d9581af510',1,'FBSDKLoginManagerLoginResult::declinedPermissions()']]],
+  ['defaultattributesfortype_3a',['defaultAttributesForType:',['../interface_f_b_native_ad_view_attributes.html#a7b3d079ff9b4fd2c0359fee0c06ce313',1,'FBNativeAdViewAttributes']]],
+  ['defaultaudience',['defaultAudience',['../interface_f_b_s_d_k_login_button.html#a27d7d78187d38c367957bac4b28c7ab6',1,'FBSDKLoginButton::defaultAudience()'],['../interface_f_b_s_d_k_login_manager.html#a4f662c89be174bb577acf75f95aefbc0',1,'FBSDKLoginManager::defaultAudience()']]],
+  ['defaultexecutor',['defaultExecutor',['../interface_b_f_executor.html#a81eae8cce462b2611cbf9a8117f11f9b',1,'BFExecutor']]],
+  ['defaultresolver',['defaultResolver',['../interface_b_f_app_link_navigation.html#aa56e24f30585083b4b962743a8b9a148',1,'BFAppLinkNavigation']]],
+  ['delegate',['delegate',['../interface_b_f_app_link_return_to_referer_controller.html#a314cd7219fab9e64981a67e3bf99c6d6',1,'BFAppLinkReturnToRefererController::delegate()'],['../interface_b_f_app_link_return_to_referer_view.html#aca2022c4be7763b7450d2a39df24b95a',1,'BFAppLinkReturnToRefererView::delegate()'],['../interface_f_b_s_d_k_graph_error_recovery_processor.html#a3028da88a3e241fed8b263d99c207092',1,'FBSDKGraphErrorRecoveryProcessor::delegate()'],['../interface_f_b_s_d_k_graph_request_connection.html#ac52bf8613194e0184e5ac33806dd6f7c',1,'FBSDKGraphRequestConnection::delegate()'],['../interface_f_b_s_d_k_login_button.html#a9334392431c0fb78a08fe4038a2a30fb',1,'FBSDKLoginButton::delegate()'],['../interface_f_b_s_d_k_login_tooltip_view.html#a8f0879fab37905fb4b8f29515a055c00',1,'FBSDKLoginTooltipView::delegate()'],['../interface_f_b_s_d_k_app_group_add_dialog.html#a0a92aa54b858fdf0f62b6d98bc09ab80',1,'FBSDKAppGroupAddDialog::delegate()'],['../interface_f_b_s_d_k_app_group_join_dialog.html#a3ee58c32085dab11678cbd1805d62231',1,'FBSDKAppGroupJoinDialog::delegate()'],['../interface_f_b_s_d_k_app_invite_dialog.html#afd09a07b729c7263d4c3d9e5b0b62ada',1,'FBSDKAppInviteDialog::delegate()'],['../interface_f_b_s_d_k_game_request_dialog.html#ac33aec2227f6156213a0f8a734d040b2',1,'FBSDKGameRequestDialog::delegate()'],['../protocol_f_b_s_d_k_sharing-p.html#a310585baeb89d309bda3879aaa1be72d',1,'FBSDKSharing-p::delegate()']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
+  ['destination',['Destination',['../interface_destination.html',1,'']]],
+  ['destinations',['destinations',['../interface_trip.html#a396ca8de2ed1b20c1255cbb5e9b524ed',1,'Trip']]],
+  ['dictionarywithquerystring_3a',['dictionaryWithQueryString:',['../interface_f_b_s_d_k_utility.html#a2db20496809c545b0488a2034b6d9ddf',1,'FBSDKUtility']]],
+  ['didpresenterrorwithrecovery_3acontextinfo_3a',['didPresentErrorWithRecovery:contextInfo:',['../interface_f_b_s_d_k_graph_error_recovery_processor.html#a2b4fe67a50c150f8b5fc0e664d92c552',1,'FBSDKGraphErrorRecoveryProcessor']]],
+  ['disableautorefresh',['disableAutoRefresh',['../interface_f_b_ad_view.html#a58fb951b1562f0d295a08134462b4f3c',1,'FBAdView::disableAutoRefresh()'],['../interface_f_b_native_ads_manager.html#a1115556ad57b2876047b54ffac41e42d',1,'FBNativeAdsManager::disableAutoRefresh()']]],
+  ['disableloggingbehavior_3a',['disableLoggingBehavior:',['../interface_f_b_s_d_k_settings.html#a06c278bb98ac67a63d49d7a218ea020c',1,'FBSDKSettings']]],
+  ['dismiss',['dismiss',['../interface_f_b_s_d_k_tooltip_view.html#ad4d16e66754fef6dcb08a3f1d29ebca6',1,'FBSDKTooltipView']]],
+  ['displayduration',['displayDuration',['../interface_f_b_s_d_k_tooltip_view.html#ac94d81890eb496c7afc56277586f938f',1,'FBSDKTooltipView']]],
+  ['displayname',['displayName',['../interface_f_b_s_d_k_settings.html#a6d772f95f3d504de70d1066be50c3991',1,'FBSDKSettings']]],
+  ['duration',['duration',['../interface_destination.html#a83a4c63fc216c137f29aadaa4be1fda2',1,'Destination']]]
+];

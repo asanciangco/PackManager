@@ -1,0 +1,78 @@
+\hypertarget{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p}{\section{$<$F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_af555ae9c334da574281481928575bd28}{processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_a03db93d774a8a33632faf1e32d458da9}{processor\-Will\-Process\-Error\-:error\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a delegate for {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor}{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}}. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_af555ae9c334da574281481928575bd28}{\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p}!processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:@{processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:}}
+\index{processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:@{processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:}!FBSDKGraphErrorRecoveryProcessorDelegate-p@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p}}
+\subsubsection[{processor\-Did\-Attempt\-Recovery\-:did\-Recover\-:error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) processor\-Did\-Attempt\-Recovery\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor} $\ast$)}]{processor}
+\item[{didRecover:(B\-O\-O\-L)}]{did\-Recover}
+\item[{error:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_af555ae9c334da574281481928575bd28}
+Indicates the error recovery has been attempted. 
+\begin{DoxyParams}{Parameters}
+{\em processor} & the processor instance. \\
+\hline
+{\em did\-Recover} & Y\-E\-S if the recovery was successful. \\
+\hline
+{\em error} & the error that that was attempted to be recovered from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_a03db93d774a8a33632faf1e32d458da9}{\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p}!processor\-Will\-Process\-Error\-:error\-:@{processor\-Will\-Process\-Error\-:error\-:}}
+\index{processor\-Will\-Process\-Error\-:error\-:@{processor\-Will\-Process\-Error\-:error\-:}!FBSDKGraphErrorRecoveryProcessorDelegate-p@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate-\/p}}
+\subsubsection[{processor\-Will\-Process\-Error\-:error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) processor\-Will\-Process\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor} $\ast$)}]{processor}
+\item[{error:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p_a03db93d774a8a33632faf1e32d458da9}
+Indicates the processor is about to process the error. 
+\begin{DoxyParams}{Parameters}
+{\em processor} & the processor instance. \\
+\hline
+{\em error} & the error is about to be processed.  return N\-O if the processor should not process the error. For example, if you want to prevent alerts of localized messages but otherwise perform retries and recoveries, you could return N\-O for errors where user\-Info\mbox{[}F\-B\-S\-D\-K\-Graph\-Request\-Error\-Category\-Key\mbox{]} equal to F\-B\-S\-D\-K\-Graph\-Request\-Error\-Category\-Other \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor.\-h\end{DoxyCompactItemize}

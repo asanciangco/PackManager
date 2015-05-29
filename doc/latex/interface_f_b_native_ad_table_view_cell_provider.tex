@@ -1,0 +1,112 @@
+\hypertarget{interface_f_b_native_ad_table_view_cell_provider}{\section{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider Class Reference}
+\label{interface_f_b_native_ad_table_view_cell_provider}\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{interface_f_b_native_ad_table_view_cell_provider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{interface_f_b_native_ad_table_view_cell_provider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_table_view_cell_provider_abec48dac2d107c6e6ae2248274fb4cb4}{init\-With\-Manager\-:for\-Type\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_table_view_cell_provider_a8af26c558eb2151d384e52528374d057}{init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:}
+\item 
+(U\-I\-Table\-View\-Cell $\ast$) -\/ \hyperlink{interface_f_b_native_ad_table_view_cell_provider_a58ca9b665cb351a303dfd0b274fd9d28}{table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:}
+\item 
+(C\-G\-Float) -\/ \hyperlink{interface_f_b_native_ad_table_view_cell_provider_afc2cdceb47109e42beacf4eb0ebd56cd}{table\-View\-:height\-For\-Row\-At\-Index\-Path\-:}
+\item 
+(C\-G\-Float) -\/ \hyperlink{interface_f_b_native_ad_table_view_cell_provider_a340a12052bafe499391911874000550b}{table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which assists in putting F\-B\-Native\-Ad\-Views into U\-I\-Table\-Views. This class manages the creation of U\-I\-Table\-View\-Cells which host native ad views. Functionality is provided to create U\-I\-Table\-Cell\-Views as needed for a given index\-Path as well as computing the height of the cells. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_native_ad_table_view_cell_provider_abec48dac2d107c6e6ae2248274fb4cb4}{\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}!init\-With\-Manager\-:for\-Type\-:@{init\-With\-Manager\-:for\-Type\-:}}
+\index{init\-With\-Manager\-:for\-Type\-:@{init\-With\-Manager\-:for\-Type\-:}!FBNativeAdTableViewCellProvider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+\subsubsection[{init\-With\-Manager\-:for\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) {\bf init\-With\-Manager\-:} 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{forType:(F\-B\-Native\-Ad\-View\-Type)}]{type}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_cell_provider_abec48dac2d107c6e6ae2248274fb4cb4}
+Method to create a \hyperlink{interface_f_b_native_ad_table_view_cell_provider}{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The naitve ad manager consumed by this provider \\
+\hline
+{\em type} & The type of this native ad template. For more information, consult F\-B\-Native\-Ad\-View\-Type. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_table_view_cell_provider_a8af26c558eb2151d384e52528374d057}{\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}!init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:@{init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:}}
+\index{init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:@{init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:}!FBNativeAdTableViewCellProvider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+\subsubsection[{init\-With\-Manager\-:for\-Type\-:for\-Attributes\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) {\bf init\-With\-Manager\-:} 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\item[{forType:(F\-B\-Native\-Ad\-View\-Type)}]{type}
+\item[{forAttributes:({\bf F\-B\-Native\-Ad\-View\-Attributes} $\ast$)}]{attributes}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_cell_provider_a8af26c558eb2151d384e52528374d057}
+Method to create a \hyperlink{interface_f_b_native_ad_table_view_cell_provider}{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The naitve ad manager consumed by this provider \\
+\hline
+{\em type} & The type of this native ad template. For more information, consult F\-B\-Native\-Ad\-View\-Type. \\
+\hline
+{\em attributes} & The layout of this native ad template. For more information, consult \hyperlink{class_f_b_native_ad_view_layout}{F\-B\-Native\-Ad\-View\-Layout}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_table_view_cell_provider_a58ca9b665cb351a303dfd0b274fd9d28}{\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}!table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:}}
+\index{table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:}!FBNativeAdTableViewCellProvider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+\subsubsection[{table\-View\-:cell\-For\-Row\-At\-Index\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-Table\-View\-Cell $\ast$) table\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Table\-View $\ast$)}]{table\-View}
+\item[{cellForRowAtIndexPath:(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_cell_provider_a58ca9b665cb351a303dfd0b274fd9d28}
+Helper method for implementors of U\-I\-Table\-View\-Data\-Source who would like to host native ad U\-I\-Table\-View\-Cells in their table view. \hypertarget{interface_f_b_native_ad_table_view_cell_provider_a340a12052bafe499391911874000550b}{\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}!table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:}}
+\index{table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:}!FBNativeAdTableViewCellProvider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+\subsubsection[{table\-View\-:estimated\-Height\-For\-Row\-At\-Index\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-G\-Float) table\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Table\-View $\ast$)}]{table\-View}
+\item[{estimatedHeightForRowAtIndexPath:(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_cell_provider_a340a12052bafe499391911874000550b}
+Helper method for implementors of U\-I\-Table\-View\-Delegate who would like to host native ad U\-I\-Table\-View\-Cells in their table view. \hypertarget{interface_f_b_native_ad_table_view_cell_provider_afc2cdceb47109e42beacf4eb0ebd56cd}{\index{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}!table\-View\-:height\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:height\-For\-Row\-At\-Index\-Path\-:}}
+\index{table\-View\-:height\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:height\-For\-Row\-At\-Index\-Path\-:}!FBNativeAdTableViewCellProvider@{F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider}}
+\subsubsection[{table\-View\-:height\-For\-Row\-At\-Index\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-G\-Float) table\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Table\-View $\ast$)}]{table\-View}
+\item[{heightForRowAtIndexPath:(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_cell_provider_afc2cdceb47109e42beacf4eb0ebd56cd}
+Helper method for implementors of U\-I\-Table\-View\-Delegate who would like to host native ad U\-I\-Table\-View\-Cells in their table view. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad\-Table\-View\-Cell\-Provider.\-h\end{DoxyCompactItemize}

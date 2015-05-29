@@ -1,0 +1,276 @@
+\hypertarget{interface_b_f_task}{\section{B\-F\-Task Class Reference}
+\label{interface_b_f_task}\index{B\-F\-Task@{B\-F\-Task}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-Task.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-Task\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interface_b_f_task__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-Task\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interface_b_f_task__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_b_f_task_a2a365f99ecb75cc9309ec06bc0486340}{continue\-With\-Block\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_b_f_task_ac54630598ad15d751cc8a541c71043a9}{continue\-With\-Executor\-:with\-Block\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_b_f_task_ad898327275b645d21c9c06dfb1f05d83}{continue\-With\-Success\-Block\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_b_f_task_a350a8b82dfce94182299c94a7ec6eba4}{continue\-With\-Executor\-:with\-Success\-Block\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_f_task_af2a6abc83d1dac02cb7ee49265a5eeed}{wait\-Until\-Finished}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_a1a89407ba3e0385c315d394a51e5e1ea}{task\-With\-Result\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_af6294f939d1f7391eb8d43019f8d7419}{task\-With\-Error\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_ab16e7e6dc835e7bb4cb907564a61d013}{task\-With\-Exception\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_ab08b49566c850f4688fad77834310578}{cancelled\-Task}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_a6e9060779200dcd7cf065eb7b8369bf4}{task\-For\-Completion\-Of\-All\-Tasks\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_ab054e692c68c8e83f73f2f8d6af46bb8}{task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_a94918174b80126af993dfcb595c78a7b}{task\-With\-Delay\-:}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_abb1d5df203902da74b05929e4904fa91}{task\-From\-Executor\-:with\-Block\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id \hyperlink{interface_b_f_task_a4b748e2af91631b135ca3e324a9fac2e}{result}
+\item 
+N\-S\-Error $\ast$ \hyperlink{interface_b_f_task_a9e3b5f8fc6e1754500bc7241a04c2cc6}{error}
+\item 
+N\-S\-Exception $\ast$ \hyperlink{interface_b_f_task_ab21a391a52929bd83d374c32c1b54ebf}{exception}
+\item 
+B\-O\-O\-L \hyperlink{interface_b_f_task_a0519b52112586cbfcccffca6bade7bc1}{cancelled}
+\item 
+B\-O\-O\-L \hyperlink{interface_b_f_task_a8b36396022612bbb109bb26e097874be}{faulted}
+\item 
+B\-O\-O\-L \hyperlink{interface_b_f_task_a8c0d88b65b10e8f6dd5378ad3d9bc6c3}{completed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The consumer view of a Task. A \hyperlink{interface_b_f_task}{B\-F\-Task} has methods to inspect the state of the task, and to add continuations to be run once the task is complete. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_f_task_ab08b49566c850f4688fad77834310578}{\index{B\-F\-Task@{B\-F\-Task}!cancelled\-Task@{cancelled\-Task}}
+\index{cancelled\-Task@{cancelled\-Task}!BFTask@{B\-F\-Task}}
+\subsubsection[{cancelled\-Task}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) cancelled\-Task 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_ab08b49566c850f4688fad77834310578}
+Creates a task that is already cancelled. \hypertarget{interface_b_f_task_a2a365f99ecb75cc9309ec06bc0486340}{\index{B\-F\-Task@{B\-F\-Task}!continue\-With\-Block\-:@{continue\-With\-Block\-:}}
+\index{continue\-With\-Block\-:@{continue\-With\-Block\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{continue\-With\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) continue\-With\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-F\-Continuation\-Block)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_a2a365f99ecb75cc9309ec06bc0486340}
+Enqueues the given block to be run once this task is complete. This method uses a default execution strategy. The block will be run on the thread where the previous task completes, unless the the stack depth is too deep, in which case it will be run on a dispatch queue with default priority. 
+\begin{DoxyParams}{Parameters}
+{\em block} & The block to be run once this task is complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that will be completed after block has run. If block returns a \hyperlink{interface_b_f_task}{B\-F\-Task}, then the task returned from this method will not be completed until that task is completed. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_ac54630598ad15d751cc8a541c71043a9}{\index{B\-F\-Task@{B\-F\-Task}!continue\-With\-Executor\-:with\-Block\-:@{continue\-With\-Executor\-:with\-Block\-:}}
+\index{continue\-With\-Executor\-:with\-Block\-:@{continue\-With\-Executor\-:with\-Block\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{continue\-With\-Executor\-:with\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) continue\-With\-Executor\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-Executor} $\ast$)}]{executor}
+\item[{withBlock:(B\-F\-Continuation\-Block)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_ac54630598ad15d751cc8a541c71043a9}
+Enqueues the given block to be run once this task is complete. 
+\begin{DoxyParams}{Parameters}
+{\em executor} & A \hyperlink{interface_b_f_executor}{B\-F\-Executor} responsible for determining how the continuation block will be run. \\
+\hline
+{\em block} & The block to be run once this task is complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that will be completed after block has run. If block returns a \hyperlink{interface_b_f_task}{B\-F\-Task}, then the task returned from this method will not be completed until that task is completed. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_a350a8b82dfce94182299c94a7ec6eba4}{\index{B\-F\-Task@{B\-F\-Task}!continue\-With\-Executor\-:with\-Success\-Block\-:@{continue\-With\-Executor\-:with\-Success\-Block\-:}}
+\index{continue\-With\-Executor\-:with\-Success\-Block\-:@{continue\-With\-Executor\-:with\-Success\-Block\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{continue\-With\-Executor\-:with\-Success\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) continue\-With\-Executor\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-Executor} $\ast$)}]{executor}
+\item[{withSuccessBlock:(B\-F\-Continuation\-Block)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_a350a8b82dfce94182299c94a7ec6eba4}
+Identical to continue\-With\-Executor\-:with\-Block\-:, except that the block is only run if this task did not produce a cancellation, error, or exception. If it did, then the failure will be propagated to the returned task. 
+\begin{DoxyParams}{Parameters}
+{\em executor} & A \hyperlink{interface_b_f_executor}{B\-F\-Executor} responsible for determining how the continuation block will be run. \\
+\hline
+{\em block} & The block to be run once this task is complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that will be completed after block has run. If block returns a \hyperlink{interface_b_f_task}{B\-F\-Task}, then the task returned from this method will not be completed until that task is completed. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_ad898327275b645d21c9c06dfb1f05d83}{\index{B\-F\-Task@{B\-F\-Task}!continue\-With\-Success\-Block\-:@{continue\-With\-Success\-Block\-:}}
+\index{continue\-With\-Success\-Block\-:@{continue\-With\-Success\-Block\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{continue\-With\-Success\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) continue\-With\-Success\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-F\-Continuation\-Block)}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_ad898327275b645d21c9c06dfb1f05d83}
+Identical to continue\-With\-Block\-:, except that the block is only run if this task did not produce a cancellation, error, or exception. If it did, then the failure will be propagated to the returned task. 
+\begin{DoxyParams}{Parameters}
+{\em block} & The block to be run once this task is complete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that will be completed after block has run. If block returns a \hyperlink{interface_b_f_task}{B\-F\-Task}, then the task returned from this method will not be completed until that task is completed. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_a6e9060779200dcd7cf065eb7b8369bf4}{\index{B\-F\-Task@{B\-F\-Task}!task\-For\-Completion\-Of\-All\-Tasks\-:@{task\-For\-Completion\-Of\-All\-Tasks\-:}}
+\index{task\-For\-Completion\-Of\-All\-Tasks\-:@{task\-For\-Completion\-Of\-All\-Tasks\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-For\-Completion\-Of\-All\-Tasks\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-For\-Completion\-Of\-All\-Tasks\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{tasks}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_a6e9060779200dcd7cf065eb7b8369bf4}
+Returns a task that will be completed (with result == nil) once all of the input tasks have completed. 
+\begin{DoxyParams}{Parameters}
+{\em tasks} & An {\ttfamily N\-S\-Array} of the tasks to use as an input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_ab054e692c68c8e83f73f2f8d6af46bb8}{\index{B\-F\-Task@{B\-F\-Task}!task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:@{task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:}}
+\index{task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:@{task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-For\-Completion\-Of\-All\-Tasks\-With\-Results\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{tasks}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_ab054e692c68c8e83f73f2f8d6af46bb8}
+Returns a task that will be completed once all of the input tasks have completed. If all tasks complete successfully without being faulted or cancelled the result will be an {\ttfamily N\-S\-Array} of all task results in the order they were provided. 
+\begin{DoxyParams}{Parameters}
+{\em tasks} & An {\ttfamily N\-S\-Array} of the tasks to use as an input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_abb1d5df203902da74b05929e4904fa91}{\index{B\-F\-Task@{B\-F\-Task}!task\-From\-Executor\-:with\-Block\-:@{task\-From\-Executor\-:with\-Block\-:}}
+\index{task\-From\-Executor\-:with\-Block\-:@{task\-From\-Executor\-:with\-Block\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-From\-Executor\-:with\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-From\-Executor\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-Executor} $\ast$)}]{executor}
+\item[{withBlock:(id($^\wedge$)())}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_abb1d5df203902da74b05929e4904fa91}
+Returns a task that will be completed after the given block completes with the specified executor. 
+\begin{DoxyParams}{Parameters}
+{\em executor} & A \hyperlink{interface_b_f_executor}{B\-F\-Executor} responsible for determining how the continuation block will be run. \\
+\hline
+{\em block} & The block to immediately schedule to run with the given executor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that will be completed after block has run. If block returns a \hyperlink{interface_b_f_task}{B\-F\-Task}, then the task returned from this method will not be completed until that task is completed. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_a94918174b80126af993dfcb595c78a7b}{\index{B\-F\-Task@{B\-F\-Task}!task\-With\-Delay\-:@{task\-With\-Delay\-:}}
+\index{task\-With\-Delay\-:@{task\-With\-Delay\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-With\-Delay\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-With\-Delay\-: 
+\begin{DoxyParamCaption}
+\item[{(int)}]{millis}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_a94918174b80126af993dfcb595c78a7b}
+Returns a task that will be completed a certain amount of time in the future. 
+\begin{DoxyParams}{Parameters}
+{\em millis} & The approximate number of milliseconds to wait before the task will be finished (with result == nil). \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_af6294f939d1f7391eb8d43019f8d7419}{\index{B\-F\-Task@{B\-F\-Task}!task\-With\-Error\-:@{task\-With\-Error\-:}}
+\index{task\-With\-Error\-:@{task\-With\-Error\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-With\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_af6294f939d1f7391eb8d43019f8d7419}
+Creates a task that is already completed with the given error. 
+\begin{DoxyParams}{Parameters}
+{\em error} & The error for the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_ab16e7e6dc835e7bb4cb907564a61d013}{\index{B\-F\-Task@{B\-F\-Task}!task\-With\-Exception\-:@{task\-With\-Exception\-:}}
+\index{task\-With\-Exception\-:@{task\-With\-Exception\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-With\-Exception\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-With\-Exception\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Exception $\ast$)}]{exception}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_ab16e7e6dc835e7bb4cb907564a61d013}
+Creates a task that is already completed with the given exception. 
+\begin{DoxyParams}{Parameters}
+{\em exception} & The exception for the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_a1a89407ba3e0385c315d394a51e5e1ea}{\index{B\-F\-Task@{B\-F\-Task}!task\-With\-Result\-:@{task\-With\-Result\-:}}
+\index{task\-With\-Result\-:@{task\-With\-Result\-:}!BFTask@{B\-F\-Task}}
+\subsubsection[{task\-With\-Result\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-With\-Result\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{result}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_a1a89407ba3e0385c315d394a51e5e1ea}
+Creates a task that is already completed with the given result. 
+\begin{DoxyParams}{Parameters}
+{\em result} & The result for the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_af2a6abc83d1dac02cb7ee49265a5eeed}{\index{B\-F\-Task@{B\-F\-Task}!wait\-Until\-Finished@{wait\-Until\-Finished}}
+\index{wait\-Until\-Finished@{wait\-Until\-Finished}!BFTask@{B\-F\-Task}}
+\subsubsection[{wait\-Until\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) wait\-Until\-Finished 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_af2a6abc83d1dac02cb7ee49265a5eeed}
+Waits until this operation is completed. This method is inefficient and consumes a thread resource while it's running. It should be avoided. This method logs a warning message if it is used on the main thread. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_b_f_task_a0519b52112586cbfcccffca6bade7bc1}{\index{B\-F\-Task@{B\-F\-Task}!cancelled@{cancelled}}
+\index{cancelled@{cancelled}!BFTask@{B\-F\-Task}}
+\subsubsection[{cancelled}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) cancelled\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_b_f_task_a0519b52112586cbfcccffca6bade7bc1}
+Whether this task has been cancelled. \hypertarget{interface_b_f_task_a8c0d88b65b10e8f6dd5378ad3d9bc6c3}{\index{B\-F\-Task@{B\-F\-Task}!completed@{completed}}
+\index{completed@{completed}!BFTask@{B\-F\-Task}}
+\subsubsection[{completed}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) completed\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_b_f_task_a8c0d88b65b10e8f6dd5378ad3d9bc6c3}
+Whether this task has completed. \hypertarget{interface_b_f_task_a9e3b5f8fc6e1754500bc7241a04c2cc6}{\index{B\-F\-Task@{B\-F\-Task}!error@{error}}
+\index{error@{error}!BFTask@{B\-F\-Task}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Error$\ast$) error\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_task_a9e3b5f8fc6e1754500bc7241a04c2cc6}
+The error of a failed task. \hypertarget{interface_b_f_task_ab21a391a52929bd83d374c32c1b54ebf}{\index{B\-F\-Task@{B\-F\-Task}!exception@{exception}}
+\index{exception@{exception}!BFTask@{B\-F\-Task}}
+\subsubsection[{exception}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Exception$\ast$) exception\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_task_ab21a391a52929bd83d374c32c1b54ebf}
+The exception of a failed task. \hypertarget{interface_b_f_task_a8b36396022612bbb109bb26e097874be}{\index{B\-F\-Task@{B\-F\-Task}!faulted@{faulted}}
+\index{faulted@{faulted}!BFTask@{B\-F\-Task}}
+\subsubsection[{faulted}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) faulted\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_b_f_task_a8b36396022612bbb109bb26e097874be}
+Whether this task has completed due to an error or exception. \hypertarget{interface_b_f_task_a4b748e2af91631b135ca3e324a9fac2e}{\index{B\-F\-Task@{B\-F\-Task}!result@{result}}
+\index{result@{result}!BFTask@{B\-F\-Task}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) result\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_task_a4b748e2af91631b135ca3e324a9fac2e}
+The result of a successful task. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-Task.\-h\end{DoxyCompactItemize}

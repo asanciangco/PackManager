@@ -1,0 +1,4 @@
+<map id="&lt;FBSDKBridgeAPIProtocol&gt;" name="&lt;FBSDKBridgeAPIProtocol&gt;">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_bridge_a_p_i_protocol_native_v1.html" title="{FBSDKBridgeAPIProtocolNativeV1\n|+ appScheme\l+ dataLengthThreshold\l+ includeAppIcon\l+ pasteboard\l|+ initWithAppScheme:\l+ initWithAppScheme:pasteboard\l:dataLengthThreshold:includeAppIcon:\l}" alt="" coords="5,305,253,445"/>
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_bridge_a_p_i_protocol_web_v1.html" title="{FBSDKBridgeAPIProtocolWebV1\n||}" alt="" coords="278,338,495,411"/>
+</map>

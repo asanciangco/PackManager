@@ -1,0 +1,7 @@
+<map id="&lt;FBSDKSharingContent&gt;" name="&lt;FBSDKSharingContent&gt;">
+<area shape="rect" id="node6" href="$interface_f_b_s_d_k_share_link_content.html" title="{FBSDKShareLinkContent\n|+ contentDescription\l+ contentTitle\l+ imageURL\l|+ isEqualToShareLinkContent:\l}" alt="" coords="5,414,205,514"/>
+<area shape="rect" id="node7" href="$interface_f_b_s_d_k_share_open_graph_content.html" title="{FBSDKShareOpenGraphContent\n|+ action\l+ previewPropertyName\l|+ isEqualToShareOpenGraphContent:\l}" alt="" coords="230,421,476,507"/>
+<area shape="rect" id="node8" href="$interface_f_b_s_d_k_share_photo_content.html" title="{FBSDKSharePhotoContent\n|+ photos\l|+ isEqualToSharePhotoContent:\l}" alt="" coords="501,427,712,501"/>
+<area shape="rect" id="node9" href="$interface_f_b_s_d_k_share_video_content.html" title="{FBSDKShareVideoContent\n|+ previewPhoto\l+ video\l|+ isEqualToShareVideoContent:\l}" alt="" coords="736,421,945,507"/>
+<area shape="rect" id="node2" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="336,129,465,202"/>
+</map>

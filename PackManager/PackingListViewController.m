@@ -126,7 +126,7 @@
     else{
         self.selectedIndex = indexPath.row-1;
         Packable *item = [self.trip.packingList getPackableForIndex:(indexPath.row-1)];
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:item.name message:@"change quantity to:" delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Change", nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:item.name message:@"change quantity to:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Change", nil];
         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
         UITextField * alertTextField = [alert textFieldAtIndex:0];
         alertTextField.keyboardType = UIKeyboardTypeNumberPad;

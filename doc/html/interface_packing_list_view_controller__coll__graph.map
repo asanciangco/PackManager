@@ -1,0 +1,5 @@
+<map id="PackingListViewController" name="PackingListViewController">
+<area shape="rect" id="node4" href="$interface_trip.html" title="{Trip\n|+ startDate\l+ destinations\l+ name\l+ swimmingPreference\l+ formalPreference\l+ rewearJeansPreference\l+ accessToLaundryPreference\l|+ initWithStartDate:name:\l+ initNewTrip\l+ endDate\l+ totalDuration\l+ generatePackingList\l+ generatePackingListExample\l}" alt="" coords="420,414,625,634"/>
+<area shape="rect" id="node8" href="$interface_packing_list.html" title="{PackingList\n||+ initPackingListForTrip:\l+ initExamplePackingListFor\lTrip:\l+ getPackableForIndex:\l+ removeItemForIndex:\l+ changeQuantityForIndex:to:\l+ getNumberOfUniqueItems\l+ quantityForItemAtIndex:\l+ printList\l}" alt="" coords="433,697,631,877"/>
+<area shape="rect" id="node7" href="$interface_weather_report.html" title="{WeatherReport\n|+ weatherDays\l|+ initExampleReport\l+ getOverallHigh\l+ getOverallLow\l+ numberOfDays\l+ getHighForDay:\l+ getLowForDay:\l+ getAverageForDay:\l+ getRangeForDay:\l+ daysAreInOrder\l+ putDaysInOrder\l+ addDay:\l+ mergeWeatherReport:\l}" alt="" coords="466,131,629,351"/>
+</map>

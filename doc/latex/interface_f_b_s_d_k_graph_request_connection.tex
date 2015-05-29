@@ -1,0 +1,192 @@
+\hypertarget{interface_f_b_s_d_k_graph_request_connection}{\section{F\-B\-S\-D\-K\-Graph\-Request\-Connection Class Reference}
+\label{interface_f_b_s_d_k_graph_request_connection}\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Graph\-Request\-Connection.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Graph\-Request\-Connection\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{interface_f_b_s_d_k_graph_request_connection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Graph\-Request\-Connection\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{interface_f_b_s_d_k_graph_request_connection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a78390d62d921d5b8a9019b1122b9bfec}{add\-Request\-:completion\-Handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a546ecc3c0023510c0497308a5d7a20ea}{add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a8c7f18d5ddc46547234e82f92048cdc0}{add\-Request\-:completion\-Handler\-:batch\-Parameters\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_ac837293e8959c4aa67fb691c8ac6fbb7}{cancel}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a9801b9b73d40cd2768e4bc9ba85f6686}{start}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a9ac67d71dfa9612c653c34376f7a3196}{set\-Delegate\-Queue\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_connection_ade83903924f937d9685b757c1285590f}{override\-Version\-Part\-With\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id\\*
+$<$ \hyperlink{protocol_f_b_s_d_k_graph_request_connection_delegate-p}{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate} $>$ \hyperlink{interface_f_b_s_d_k_graph_request_connection_ac52bf8613194e0184e5ac33806dd6f7c}{delegate}
+\item 
+N\-S\-Time\-Interval \hyperlink{interface_f_b_s_d_k_graph_request_connection_ad70caeba73b8f5c748d2f34b0bec74e0}{timeout}
+\item 
+N\-S\-H\-T\-T\-P\-U\-R\-L\-Response $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_connection_a5179644ed8074f7e45e664c6ec5b17ab}{U\-R\-L\-Response}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} represents a single connection to Facebook to service a request.
+
+The request settings are encapsulated in a reusable $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ object. The {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} object encapsulates the concerns of a single communication e.\-g. starting a connection, canceling a connection, or batching requests. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_request_connection_a78390d62d921d5b8a9019b1122b9bfec}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!add\-Request\-:completion\-Handler\-:@{add\-Request\-:completion\-Handler\-:}}
+\index{add\-Request\-:completion\-Handler\-:@{add\-Request\-:completion\-Handler\-:}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{add\-Request\-:completion\-Handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request} $\ast$)}]{request}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Graph\-Request\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_a78390d62d921d5b8a9019b1122b9bfec}
+Adding requests
+
+This method adds an $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ object to this connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & A request to be included in the round-\/trip when start is called. \\
+\hline
+{\em handler} & A handler to call back when the round-\/trip completes or times out.\\
+\hline
+\end{DoxyParams}
+The completion handler is retained until the block is called upon the completion or cancellation of the connection. \hypertarget{interface_f_b_s_d_k_graph_request_connection_a546ecc3c0023510c0497308a5d7a20ea}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:@{add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:}}
+\index{add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:@{add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{add\-Request\-:completion\-Handler\-:batch\-Entry\-Name\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request} $\ast$)}]{request}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Graph\-Request\-Handler)}]{handler}
+\item[{batchEntryName:(N\-S\-String $\ast$)}]{name}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_a546ecc3c0023510c0497308a5d7a20ea}
+This method adds an $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ object to this connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & A request to be included in the round-\/trip when start is called.\\
+\hline
+{\em handler} & A handler to call back when the round-\/trip completes or times out. The handler will be invoked on the main thread.\\
+\hline
+{\em name} & An optional name for this request. This can be used to feed the results of one request to the input of another $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ in the same {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} as described in \href{https://developers.facebook.com/docs/reference/api/batch/}{\tt Graph A\-P\-I Batch Requests}.\\
+\hline
+\end{DoxyParams}
+The completion handler is retained until the block is called upon the completion or cancellation of the connection. This request can be named to allow for using the request's response in a subsequent request. \hypertarget{interface_f_b_s_d_k_graph_request_connection_a8c7f18d5ddc46547234e82f92048cdc0}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!add\-Request\-:completion\-Handler\-:batch\-Parameters\-:@{add\-Request\-:completion\-Handler\-:batch\-Parameters\-:}}
+\index{add\-Request\-:completion\-Handler\-:batch\-Parameters\-:@{add\-Request\-:completion\-Handler\-:batch\-Parameters\-:}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{add\-Request\-:completion\-Handler\-:batch\-Parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Request\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request} $\ast$)}]{request}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Graph\-Request\-Handler)}]{handler}
+\item[{batchParameters:(N\-S\-Dictionary $\ast$)}]{batch\-Parameters}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_a8c7f18d5ddc46547234e82f92048cdc0}
+This method adds an $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ object to this connection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & A request to be included in the round-\/trip when start is called.\\
+\hline
+{\em handler} & A handler to call back when the round-\/trip completes or times out.\\
+\hline
+{\em batch\-Parameters} & The optional dictionary of parameters to include for this request as described in \href{https://developers.facebook.com/docs/reference/api/batch/}{\tt Graph A\-P\-I Batch Requests}. Examples include \char`\"{}depends\-\_\-on\char`\"{}, \char`\"{}name\char`\"{}, or \char`\"{}omit\-\_\-response\-\_\-on\-\_\-success\char`\"{}.\\
+\hline
+\end{DoxyParams}
+The completion handler is retained until the block is called upon the completion or cancellation of the connection. This request can be named to allow for using the request's response in a subsequent request. \hypertarget{interface_f_b_s_d_k_graph_request_connection_ac837293e8959c4aa67fb691c8ac6fbb7}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!cancel@{cancel}}
+\index{cancel@{cancel}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{cancel}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) cancel 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_ac837293e8959c4aa67fb691c8ac6fbb7}
+Instance methods
+
+Signals that a connection should be logically terminated as the application is no longer interested in a response.
+
+Synchronously calls any handlers indicating the request was cancelled. Cancel does not guarantee that the request-\/related processing will cease. It does promise that all handlers will complete before the cancel returns. A call to cancel prior to a start implies a cancellation of all requests associated with the connection. \hypertarget{interface_f_b_s_d_k_graph_request_connection_ade83903924f937d9685b757c1285590f}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!override\-Version\-Part\-With\-:@{override\-Version\-Part\-With\-:}}
+\index{override\-Version\-Part\-With\-:@{override\-Version\-Part\-With\-:}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{override\-Version\-Part\-With\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) override\-Version\-Part\-With\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{version}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_ade83903924f937d9685b757c1285590f}
+Overrides the default version for a batch request
+
+The S\-D\-K automatically prepends a version part, such as \char`\"{}v2.\-0\char`\"{} to A\-P\-I paths in order to simplify A\-P\-I versioning for applications. If you want to override the version part while using batch requests on the connection, call this method to set the version for the batch request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & This is a string in the form "v2.\-0" which will be used for the version part of an A\-P\-I path \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_graph_request_connection_a9ac67d71dfa9612c653c34376f7a3196}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!set\-Delegate\-Queue\-:@{set\-Delegate\-Queue\-:}}
+\index{set\-Delegate\-Queue\-:@{set\-Delegate\-Queue\-:}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{set\-Delegate\-Queue\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Delegate\-Queue\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Operation\-Queue $\ast$)}]{queue}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_a9ac67d71dfa9612c653c34376f7a3196}
+Determines the operation queue that is used to call methods on the connection's delegate. 
+\begin{DoxyParams}{Parameters}
+{\em queue} & The operation queue to use when calling delegate methods.  By default, a connection is scheduled on the current thread in the default mode when it is created. You cannot reschedule a connection after it has started.\\
+\hline
+\end{DoxyParams}
+This is very similar to {\ttfamily \mbox{[}N\-S\-U\-R\-L\-Connection set\-Delegate\-Queue\-:\mbox{]}}. \hypertarget{interface_f_b_s_d_k_graph_request_connection_a9801b9b73d40cd2768e4bc9ba85f6686}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!start@{start}}
+\index{start@{start}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) start 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_connection_a9801b9b73d40cd2768e4bc9ba85f6686}
+This method starts a connection with the server and is capable of handling all of the requests that were added to the connection.
+
+By default, a connection is scheduled on the current thread in the default mode when it is created. See {\ttfamily set\-Delegate\-Queue\-:} for other options.
+
+This method cannot be called twice for an {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} instance. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_request_connection_ac52bf8613194e0184e5ac33806dd6f7c}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_graph_request_connection_ac52bf8613194e0184e5ac33806dd6f7c}
+The delegate object that receives updates. \hypertarget{interface_f_b_s_d_k_graph_request_connection_ad70caeba73b8f5c748d2f34b0bec74e0}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!timeout@{timeout}}
+\index{timeout@{timeout}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Time\-Interval) timeout\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_graph_request_connection_ad70caeba73b8f5c748d2f34b0bec74e0}
+Gets or sets the timeout interval to wait for a response before giving up. \hypertarget{interface_f_b_s_d_k_graph_request_connection_a5179644ed8074f7e45e664c6ec5b17ab}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}!U\-R\-L\-Response@{U\-R\-L\-Response}}
+\index{U\-R\-L\-Response@{U\-R\-L\-Response}!FBSDKGraphRequestConnection@{F\-B\-S\-D\-K\-Graph\-Request\-Connection}}
+\subsubsection[{U\-R\-L\-Response}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-H\-T\-T\-P\-U\-R\-L\-Response$\ast$) U\-R\-L\-Response\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_f_b_s_d_k_graph_request_connection_a5179644ed8074f7e45e664c6ec5b17ab}
+The raw response that was returned from the server. (readonly)
+
+This property can be used to inspect H\-T\-T\-P headers that were returned from the server.
+
+The property is nil until the request completes. If there was a response then this property will be non-\/nil during the F\-B\-S\-D\-K\-Graph\-Request\-Handler callback. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Graph\-Request\-Connection.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="FBSDKShareVideoContent" name="FBSDKShareVideoContent">
+<area shape="rect" id="node8" href="$interface_f_b_s_d_k_share_photo.html" title="{FBSDKSharePhoto\n|+ image\l+ imageURL\l+ userGenerated\l+ caption\l|+ isEqualToSharePhoto:\l+ photoWithImage:userGenerated:\l+ photoWithImageURL:userGenerated:\l}" alt="" coords="227,257,479,397"/>
+<area shape="rect" id="node9" href="$interface_f_b_s_d_k_share_video.html" title="{FBSDKShareVideo\n|+ videoURL\l|+ isEqualToShareVideo:\l+ videoWithVideoURL:\l}" alt="" coords="39,283,203,370"/>
+<area shape="rect" id="node3" href="$protocol_f_b_s_d_k_sharing_content-p.html" title="{\&lt;FBSDKSharingContent\&gt;\n|+ contentURL\l+ peopleIDs\l+ placeID\l+ ref\l|}" alt="" coords="504,270,677,383"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="185,131,315,205"/>
+</map>

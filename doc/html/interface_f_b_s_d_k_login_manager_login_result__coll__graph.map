@@ -1,0 +1,4 @@
+<map id="FBSDKLoginManagerLoginResult" name="FBSDKLoginManagerLoginResult">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_access_token.html" title="{FBSDKAccessToken\n|+ appID\l+ declinedPermissions\l+ expirationDate\l+ permissions\l+ refreshDate\l+ tokenString\l+ userID\l|+ initWithTokenString\l:permissions:declinedPermissions\l:appID:userID:expirationDate\l:refreshDate:\l+ hasGranted:\l+ isEqualToAccessToken:\l+ currentAccessToken\l+ setCurrentAccessToken:\l+ refreshCurrentAccessToken:\l}" alt="" coords="130,257,352,517"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="171,131,300,205"/>
+</map>

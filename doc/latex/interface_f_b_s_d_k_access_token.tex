@@ -1,0 +1,185 @@
+\hypertarget{interface_f_b_s_d_k_access_token}{\section{F\-B\-S\-D\-K\-Access\-Token Class Reference}
+\label{interface_f_b_s_d_k_access_token}\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Access\-Token.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Access\-Token\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_access_token__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Access\-Token\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_access_token__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_access_token_ab498348bc81a7f9735316386a4e3f497}{init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_access_token_a5cb28a32a0b0598feaa4695e14751898}{has\-Granted\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_access_token_a08f16c50056958fc749ad372f74c0063}{is\-Equal\-To\-Access\-Token\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} $\ast$) + \hyperlink{interface_f_b_s_d_k_access_token_a245bde98fb3133bce397d2934b420da8}{current\-Access\-Token}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_access_token_a001ba021b6297da1a52c1c0e0b089ef2}{set\-Current\-Access\-Token\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_access_token_aec2f48a718581096649c2ca88d16f1ac}{refresh\-Current\-Access\-Token\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_a421ecb43a439e88824ec8053b39d34c6}{app\-I\-D}
+\item 
+N\-S\-Set $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_ab4956044ecf71be910f37f3309431d9d}{declined\-Permissions}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_aea6bd2db9834ca1610f2ed47a3e28c2f}{expiration\-Date}
+\item 
+N\-S\-Set $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_a2149ed50b338301f93c4ff43915076d3}{permissions}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_a97b06b3694130f8d29761fe98e19e94f}{refresh\-Date}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_a03b123d10be809c697973673cd805b22}{token\-String}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_access_token_ab8217b11468a826310a27ffe1e79ac7e}{user\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an immutable access token for using Facebook services. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_access_token_a245bde98fb3133bce397d2934b420da8}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!current\-Access\-Token@{current\-Access\-Token}}
+\index{current\-Access\-Token@{current\-Access\-Token}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{current\-Access\-Token}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$) current\-Access\-Token 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_a245bde98fb3133bce397d2934b420da8}
+Returns the \char`\"{}global\char`\"{} access token that represents the currently logged in user.  The {\ttfamily current\-Access\-Token} is a convenient representation of the token of the current user and is used by other S\-D\-K components (like {\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}}). \hypertarget{interface_f_b_s_d_k_access_token_a5cb28a32a0b0598feaa4695e14751898}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!has\-Granted\-:@{has\-Granted\-:}}
+\index{has\-Granted\-:@{has\-Granted\-:}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{has\-Granted\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) has\-Granted\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{permission}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_a5cb28a32a0b0598feaa4695e14751898}
+Convenience getter to determine if a permission has been granted 
+\begin{DoxyParams}{Parameters}
+{\em permission} & The permission to check. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_access_token_ab498348bc81a7f9735316386a4e3f497}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:@{init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:}}
+\index{init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:@{init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{init\-With\-Token\-String\-:permissions\-:declined\-Permissions\-:app\-I\-D\-:user\-I\-D\-:expiration\-Date\-:refresh\-Date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Token\-String\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{token\-String}
+\item[{permissions:(N\-S\-Array $\ast$)}]{permissions}
+\item[{declinedPermissions:(N\-S\-Array $\ast$)}]{declined\-Permissions}
+\item[{appID:(N\-S\-String $\ast$)}]{app\-I\-D}
+\item[{userID:(N\-S\-String $\ast$)}]{user\-I\-D}
+\item[{expirationDate:(N\-S\-Date $\ast$)}]{expiration\-Date}
+\item[{refreshDate:(N\-S\-Date $\ast$)}]{N\-S\-\_\-\-D\-E\-S\-I\-G\-N\-A\-T\-E\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_ab498348bc81a7f9735316386a4e3f497}
+Initializes a new instance. 
+\begin{DoxyParams}{Parameters}
+{\em token\-String} & the opaque token string. \\
+\hline
+{\em permissions} & the granted permissions. Note this is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \\
+\hline
+{\em declined\-Permissions} & the declined permissions. Note this is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \\
+\hline
+{\em app\-I\-D} & the app I\-D. \\
+\hline
+{\em user\-I\-D} & the user I\-D. \\
+\hline
+{\em expiration\-Date} & the optional expiration date (defaults to distant\-Future). \\
+\hline
+{\em refresh\-Date} & the optional date the token was last refreshed (defaults to today).  This initializer should only be used for advanced apps that manage tokens explicitly. Typical login flows only need to use {\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}} along with {\ttfamily +current\-Access\-Token}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_access_token_a08f16c50056958fc749ad372f74c0063}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!is\-Equal\-To\-Access\-Token\-:@{is\-Equal\-To\-Access\-Token\-:}}
+\index{is\-Equal\-To\-Access\-Token\-:@{is\-Equal\-To\-Access\-Token\-:}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{is\-Equal\-To\-Access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Equal\-To\-Access\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{token}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_a08f16c50056958fc749ad372f74c0063}
+Compares the receiver to another \hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} 
+\begin{DoxyParams}{Parameters}
+{\em token} & The other token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver's values are equal to the other token's values; otherwise N\-O 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_access_token_aec2f48a718581096649c2ca88d16f1ac}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!refresh\-Current\-Access\-Token\-:@{refresh\-Current\-Access\-Token\-:}}
+\index{refresh\-Current\-Access\-Token\-:@{refresh\-Current\-Access\-Token\-:}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{refresh\-Current\-Access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) refresh\-Current\-Access\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-S\-D\-K\-Graph\-Request\-Handler)}]{completion\-Handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_aec2f48a718581096649c2ca88d16f1ac}
+Refresh the current access token's permission state and extend the token's expiration date, if possible. 
+\begin{DoxyParams}{Parameters}
+{\em completion\-Handler} & an optional callback handler that can surface any errors related to permission refreshing.  On a successful refresh, the current\-Access\-Token will be updated so you typically only need to observe the {\ttfamily F\-B\-S\-D\-K\-Access\-Token\-Did\-Change\-Notification} notification.\\
+\hline
+\end{DoxyParams}
+If a token is already expired, it cannot be refreshed. \hypertarget{interface_f_b_s_d_k_access_token_a001ba021b6297da1a52c1c0e0b089ef2}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!set\-Current\-Access\-Token\-:@{set\-Current\-Access\-Token\-:}}
+\index{set\-Current\-Access\-Token\-:@{set\-Current\-Access\-Token\-:}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{set\-Current\-Access\-Token\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Current\-Access\-Token\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{token}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_access_token_a001ba021b6297da1a52c1c0e0b089ef2}
+Sets the \char`\"{}global\char`\"{} access token that represents the currently logged in user. 
+\begin{DoxyParams}{Parameters}
+{\em token} & The access token to set.  This will broadcast a notification and save the token to the app keychain. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_access_token_a421ecb43a439e88824ec8053b39d34c6}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!app\-I\-D@{app\-I\-D}}
+\index{app\-I\-D@{app\-I\-D}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{app\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) app\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_a421ecb43a439e88824ec8053b39d34c6}
+Returns the app I\-D. \hypertarget{interface_f_b_s_d_k_access_token_ab4956044ecf71be910f37f3309431d9d}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!declined\-Permissions@{declined\-Permissions}}
+\index{declined\-Permissions@{declined\-Permissions}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{declined\-Permissions}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Set$\ast$) declined\-Permissions\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_ab4956044ecf71be910f37f3309431d9d}
+Returns the known declined permissions. \hypertarget{interface_f_b_s_d_k_access_token_aea6bd2db9834ca1610f2ed47a3e28c2f}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!expiration\-Date@{expiration\-Date}}
+\index{expiration\-Date@{expiration\-Date}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{expiration\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) expiration\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_aea6bd2db9834ca1610f2ed47a3e28c2f}
+Returns the expiration date. \hypertarget{interface_f_b_s_d_k_access_token_a2149ed50b338301f93c4ff43915076d3}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!permissions@{permissions}}
+\index{permissions@{permissions}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{permissions}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Set$\ast$) permissions\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_a2149ed50b338301f93c4ff43915076d3}
+Returns the known granted permissions. \hypertarget{interface_f_b_s_d_k_access_token_a97b06b3694130f8d29761fe98e19e94f}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!refresh\-Date@{refresh\-Date}}
+\index{refresh\-Date@{refresh\-Date}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{refresh\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) refresh\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_a97b06b3694130f8d29761fe98e19e94f}
+Returns the date the token was last refreshed. \hypertarget{interface_f_b_s_d_k_access_token_a03b123d10be809c697973673cd805b22}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!token\-String@{token\-String}}
+\index{token\-String@{token\-String}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{token\-String}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) token\-String\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_a03b123d10be809c697973673cd805b22}
+Returns the opaque token string. \hypertarget{interface_f_b_s_d_k_access_token_ab8217b11468a826310a27ffe1e79ac7e}{\index{F\-B\-S\-D\-K\-Access\-Token@{F\-B\-S\-D\-K\-Access\-Token}!user\-I\-D@{user\-I\-D}}
+\index{user\-I\-D@{user\-I\-D}!FBSDKAccessToken@{F\-B\-S\-D\-K\-Access\-Token}}
+\subsubsection[{user\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) user\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_access_token_ab8217b11468a826310a27ffe1e79ac7e}
+Returns the user I\-D. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Access\-Token.\-h\end{DoxyCompactItemize}

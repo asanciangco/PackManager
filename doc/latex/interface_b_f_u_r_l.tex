@@ -1,0 +1,113 @@
+\hypertarget{interface_b_f_u_r_l}{\section{B\-F\-U\-R\-L Class Reference}
+\label{interface_b_f_u_r_l}\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-U\-R\-L.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-U\-R\-L\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{interface_b_f_u_r_l__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-U\-R\-L\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{interface_b_f_u_r_l__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L} $\ast$) + \hyperlink{interface_b_f_u_r_l_a0b209ec98da7b4e1f41a94c301fce3f8}{U\-R\-L\-With\-U\-R\-L\-:}
+\item 
+(\hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L} $\ast$) + \hyperlink{interface_b_f_u_r_l_a376fbc94419b0c0d496b08a395c98ab2}{U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-U\-R\-L $\ast$ \hyperlink{interface_b_f_u_r_l_aa83698fb8e97cde89f07f2a27dd453b9}{target\-U\-R\-L}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_u_r_l_a874bc9b6e197567616676e7c35882312}{target\-Query\-Parameters}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_u_r_l_a7f41095ee721d9b4beae17f9fd9aafe5}{app\-Link\-Data}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_u_r_l_a47ef1fbe340b610c07b6f80e0c3c16ab}{app\-Link\-Extras}
+\item 
+\hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} $\ast$ \hyperlink{interface_b_f_u_r_l_a0256b0b7763ce81aa3556c13d2363f57}{app\-Link\-Referer}
+\item 
+N\-S\-U\-R\-L $\ast$ \hyperlink{interface_b_f_u_r_l_a588a05e6eaedf5f9b17ce0f85edbef20}{input\-U\-R\-L}
+\item 
+N\-S\-Dictionary $\ast$ \hyperlink{interface_b_f_u_r_l_a03a744a57286fa44530dcfc5528fa49d}{input\-Query\-Parameters}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a set of utilities for working with N\-S\-U\-R\-Ls, such as parsing of query parameters and handling for App Link requests. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_f_u_r_l_a376fbc94419b0c0d496b08a395c98ab2}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:@{U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:}}
+\index{U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:@{U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-U\-R\-L} $\ast$) U\-R\-L\-With\-Inbound\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\item[{sourceApplication:(N\-S\-String $\ast$)}]{source\-Application}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_u_r_l_a376fbc94419b0c0d496b08a395c98ab2}
+Creates a link target from a raw U\-R\-L received from an external application. This is typically called from the app delegate's application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-: and will post the B\-F\-App\-Link\-Navigate\-In\-Event\-Name measurement event. 
+\begin{DoxyParams}{Parameters}
+{\em url} & The instance of {\ttfamily N\-S\-U\-R\-L} to create \hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L} from. \\
+\hline
+{\em source\-Application} & the bundle I\-D of the app that is requesting your app to open the U\-R\-L. The same source\-Application in application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-: \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_u_r_l_a0b209ec98da7b4e1f41a94c301fce3f8}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!U\-R\-L\-With\-U\-R\-L\-:@{U\-R\-L\-With\-U\-R\-L\-:}}
+\index{U\-R\-L\-With\-U\-R\-L\-:@{U\-R\-L\-With\-U\-R\-L\-:}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{U\-R\-L\-With\-U\-R\-L\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf B\-F\-U\-R\-L} $\ast$) U\-R\-L\-With\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_u_r_l_a0b209ec98da7b4e1f41a94c301fce3f8}
+Creates a link target from a raw U\-R\-L. On success, this posts the B\-F\-App\-Link\-Parse\-Event\-Name measurement event. If you are constructing the \hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L} within your application delegate's application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:, you should instead use U\-R\-L\-With\-Inbound\-U\-R\-L\-:source\-Application\-: to support better \hyperlink{interface_b_f_measurement_event}{B\-F\-Measurement\-Event} notifications 
+\begin{DoxyParams}{Parameters}
+{\em url} & The instance of {\ttfamily N\-S\-U\-R\-L} to create \hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L} from. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_b_f_u_r_l_a7f41095ee721d9b4beae17f9fd9aafe5}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!app\-Link\-Data@{app\-Link\-Data}}
+\index{app\-Link\-Data@{app\-Link\-Data}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{app\-Link\-Data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) app\-Link\-Data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a7f41095ee721d9b4beae17f9fd9aafe5}
+If this link target is an App Link, this is the data found in al\-\_\-applink\-\_\-data. Otherwise, it is nil. \hypertarget{interface_b_f_u_r_l_a47ef1fbe340b610c07b6f80e0c3c16ab}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!app\-Link\-Extras@{app\-Link\-Extras}}
+\index{app\-Link\-Extras@{app\-Link\-Extras}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{app\-Link\-Extras}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) app\-Link\-Extras\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a47ef1fbe340b610c07b6f80e0c3c16ab}
+If this link target is an App Link, this is the data found in extras. \hypertarget{interface_b_f_u_r_l_a0256b0b7763ce81aa3556c13d2363f57}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!app\-Link\-Referer@{app\-Link\-Referer}}
+\index{app\-Link\-Referer@{app\-Link\-Referer}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{app\-Link\-Referer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-App\-Link}$\ast$) app\-Link\-Referer\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a0256b0b7763ce81aa3556c13d2363f57}
+The App Link indicating how to navigate back to the referer app, if any. \hypertarget{interface_b_f_u_r_l_a03a744a57286fa44530dcfc5528fa49d}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!input\-Query\-Parameters@{input\-Query\-Parameters}}
+\index{input\-Query\-Parameters@{input\-Query\-Parameters}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{input\-Query\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) input\-Query\-Parameters\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a03a744a57286fa44530dcfc5528fa49d}
+The query parameters of the input\-U\-R\-L, parsed into an N\-S\-Dictionary. \hypertarget{interface_b_f_u_r_l_a588a05e6eaedf5f9b17ce0f85edbef20}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!input\-U\-R\-L@{input\-U\-R\-L}}
+\index{input\-U\-R\-L@{input\-U\-R\-L}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{input\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L$\ast$) input\-U\-R\-L\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a588a05e6eaedf5f9b17ce0f85edbef20}
+The U\-R\-L that was used to create this \hyperlink{interface_b_f_u_r_l}{B\-F\-U\-R\-L}. \hypertarget{interface_b_f_u_r_l_a874bc9b6e197567616676e7c35882312}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!target\-Query\-Parameters@{target\-Query\-Parameters}}
+\index{target\-Query\-Parameters@{target\-Query\-Parameters}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{target\-Query\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary$\ast$) target\-Query\-Parameters\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_a874bc9b6e197567616676e7c35882312}
+Gets the query parameters for the target, parsed into an N\-S\-Dictionary. \hypertarget{interface_b_f_u_r_l_aa83698fb8e97cde89f07f2a27dd453b9}{\index{B\-F\-U\-R\-L@{B\-F\-U\-R\-L}!target\-U\-R\-L@{target\-U\-R\-L}}
+\index{target\-U\-R\-L@{target\-U\-R\-L}!BFURL@{B\-F\-U\-R\-L}}
+\subsubsection[{target\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L$\ast$) target\-U\-R\-L\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_u_r_l_aa83698fb8e97cde89f07f2a27dd453b9}
+Gets the target U\-R\-L. If the link is an App Link, this is the target of the App Link. Otherwise, it is the url that created the target. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-U\-R\-L.\-h\end{DoxyCompactItemize}

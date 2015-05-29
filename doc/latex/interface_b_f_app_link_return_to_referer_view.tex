@@ -1,0 +1,65 @@
+\hypertarget{interface_b_f_app_link_return_to_referer_view}{\section{B\-F\-App\-Link\-Return\-To\-Referer\-View Class Reference}
+\label{interface_b_f_app_link_return_to_referer_view}\index{B\-F\-App\-Link\-Return\-To\-Referer\-View@{B\-F\-App\-Link\-Return\-To\-Referer\-View}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-App\-Link\-Return\-To\-Referer\-View.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-App\-Link\-Return\-To\-Referer\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interface_b_f_app_link_return_to_referer_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-App\-Link\-Return\-To\-Referer\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{interface_b_f_app_link_return_to_referer_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id\\*
+$<$ \hyperlink{protocol_b_f_app_link_return_to_referer_view_delegate-p}{B\-F\-App\-Link\-Return\-To\-Referer\-View\-Delegate} $>$ \hyperlink{interface_b_f_app_link_return_to_referer_view_aca2022c4be7763b7450d2a39df24b95a}{delegate}
+\item 
+U\-I\-Color $\ast$ \hyperlink{interface_b_f_app_link_return_to_referer_view_acef579105c567f8f22a2604ea388a37b}{text\-Color}
+\item 
+\hypertarget{interface_b_f_app_link_return_to_referer_view_ab4a55f394888bd423c01532a9c6dafef}{\hyperlink{interface_b_f_app_link}{B\-F\-App\-Link} $\ast$ {\bfseries referer\-App\-Link}}\label{interface_b_f_app_link_return_to_referer_view_ab4a55f394888bd423c01532a9c6dafef}
+
+\item 
+B\-F\-Include\-Status\-Bar\-In\-Size \hyperlink{interface_b_f_app_link_return_to_referer_view_a640b53f5c49f1bfb5f11a81a8f7381af}{include\-Status\-Bar\-In\-Size}
+\item 
+B\-O\-O\-L \hyperlink{interface_b_f_app_link_return_to_referer_view_acb041d67e8a2f626ae99a788aa8d1da4}{closed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a U\-I\-View that displays a button allowing users to navigate back to the application that launched the App Link currently being handled, if the App Link contained referer data. The user can also close the view by clicking a close button rather than navigating away. If the view is provided an App Link that does not contain referer data, it will have zero size and no U\-I will be displayed. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_b_f_app_link_return_to_referer_view_acb041d67e8a2f626ae99a788aa8d1da4}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-View@{B\-F\-App\-Link\-Return\-To\-Referer\-View}!closed@{closed}}
+\index{closed@{closed}!BFAppLinkReturnToRefererView@{B\-F\-App\-Link\-Return\-To\-Referer\-View}}
+\subsubsection[{closed}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) closed\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_b_f_app_link_return_to_referer_view_acb041d67e8a2f626ae99a788aa8d1da4}
+Indicates whether the user has closed the view by clicking the close button. \hypertarget{interface_b_f_app_link_return_to_referer_view_aca2022c4be7763b7450d2a39df24b95a}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-View@{B\-F\-App\-Link\-Return\-To\-Referer\-View}!delegate@{delegate}}
+\index{delegate@{delegate}!BFAppLinkReturnToRefererView@{B\-F\-App\-Link\-Return\-To\-Referer\-View}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf B\-F\-App\-Link\-Return\-To\-Referer\-View\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{interface_b_f_app_link_return_to_referer_view_aca2022c4be7763b7450d2a39df24b95a}
+The delegate that will be notified when the user navigates back to the referer. \hypertarget{interface_b_f_app_link_return_to_referer_view_a640b53f5c49f1bfb5f11a81a8f7381af}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-View@{B\-F\-App\-Link\-Return\-To\-Referer\-View}!include\-Status\-Bar\-In\-Size@{include\-Status\-Bar\-In\-Size}}
+\index{include\-Status\-Bar\-In\-Size@{include\-Status\-Bar\-In\-Size}!BFAppLinkReturnToRefererView@{B\-F\-App\-Link\-Return\-To\-Referer\-View}}
+\subsubsection[{include\-Status\-Bar\-In\-Size}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-F\-Include\-Status\-Bar\-In\-Size) include\-Status\-Bar\-In\-Size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_b_f_app_link_return_to_referer_view_a640b53f5c49f1bfb5f11a81a8f7381af}
+Indicates whether to extend the size of the view to include the current status bar size, for use in scenarios where the view might extend under the status bar on i\-O\-S 7 and above; this property has no effect on earlier versions of i\-O\-S. \hypertarget{interface_b_f_app_link_return_to_referer_view_acef579105c567f8f22a2604ea388a37b}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-View@{B\-F\-App\-Link\-Return\-To\-Referer\-View}!text\-Color@{text\-Color}}
+\index{text\-Color@{text\-Color}!BFAppLinkReturnToRefererView@{B\-F\-App\-Link\-Return\-To\-Referer\-View}}
+\subsubsection[{text\-Color}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-Color$\ast$) text\-Color\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_b_f_app_link_return_to_referer_view_acef579105c567f8f22a2604ea388a37b}
+The color of the text label and close button. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-App\-Link\-Return\-To\-Referer\-View.\-h\end{DoxyCompactItemize}

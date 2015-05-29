@@ -86,16 +86,26 @@
     return YES;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b9a646db5cf6356fe43c9d775f024548b048dd36
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+<<<<<<< HEAD
         
         [[TripsData sharedInstance] removeTripAtIndex:indexPath.row];
         [self.tableView reloadData];
         
+=======
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [[TripsData sharedInstance] removeTripAtIndex:indexPath.row];
+        [self.tableView reloadData];
+>>>>>>> b9a646db5cf6356fe43c9d775f024548b048dd36
     }
 }
 

@@ -1,0 +1,129 @@
+\hypertarget{interface_f_b_s_d_k_login_manager}{\section{F\-B\-S\-D\-K\-Login\-Manager Class Reference}
+\label{interface_f_b_s_d_k_login_manager}\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Login\-Manager.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Login\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{interface_f_b_s_d_k_login_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Login\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{interface_f_b_s_d_k_login_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_login_manager_a1bdaae27d9f264a26994bf49c36d0e6d}{log\-In\-With\-Read\-Permissions\-:handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_login_manager_aa2035dddc4457dfe8f1cda68d29a7106}{log\-In\-With\-Publish\-Permissions\-:handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_login_manager_a4fa13ba37d31c17cc1f1f1f32d309bec}{log\-Out}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_login_manager_af200973975f71cc6c74926f5f3f4aac6}{renew\-System\-Credentials\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+F\-B\-S\-D\-K\-Default\-Audience \hyperlink{interface_f_b_s_d_k_login_manager_a4f662c89be174bb577acf75f95aefbc0}{default\-Audience}
+\item 
+F\-B\-S\-D\-K\-Login\-Behavior \hyperlink{interface_f_b_s_d_k_login_manager_a6380b50840262848d8fd3e224de9f520}{login\-Behavior}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}} provides methods for logging the user in and out.  {\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}} works directly with {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} and sets the \char`\"{}current\-Access\-Token\char`\"{} upon successful authorizations (or sets {\ttfamily nil} in case of {\ttfamily log\-Out}).
+
+You should check {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} before calling log\-In$\ast$ to see if there is a cached token available (typically in your view\-Did\-Load).
+
+If you are managing your own token instances outside of \char`\"{}current\-Access\-Token\char`\"{}, you will need to set \char`\"{}current\-Access\-Token\char`\"{} before calling log\-In$\ast$ to authorize futher permissions on your tokens. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_login_manager_aa2035dddc4457dfe8f1cda68d29a7106}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!log\-In\-With\-Publish\-Permissions\-:handler\-:@{log\-In\-With\-Publish\-Permissions\-:handler\-:}}
+\index{log\-In\-With\-Publish\-Permissions\-:handler\-:@{log\-In\-With\-Publish\-Permissions\-:handler\-:}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{log\-In\-With\-Publish\-Permissions\-:handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) log\-In\-With\-Publish\-Permissions\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{permissions}
+\item[{handler:(F\-B\-S\-D\-K\-Login\-Manager\-Request\-Token\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_login_manager_aa2035dddc4457dfe8f1cda68d29a7106}
+Logs the user in or authorizes additional permissions. 
+\begin{DoxyParams}{Parameters}
+{\em permissions} & the optional array of permissions. Note this is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \\
+\hline
+{\em handler} & the callback.  Use this method when asking for publish permissions. You should only ask for permissions when they are needed and explain the value to the user. You can inspect the result.\-declined\-Permissions to also provide more information to the user if they decline permissions.\\
+\hline
+\end{DoxyParams}
+If {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} is not nil, it will be treated as a reauthorization for that user and will pass the \char`\"{}rerequest\char`\"{} flag to the login dialog.
+
+This method will present U\-I the user. You typically should check if {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} already contains the permissions you need before asking to reduce unnecessary app switching. For example, you could make that check at view\-Did\-Load. \hypertarget{interface_f_b_s_d_k_login_manager_a1bdaae27d9f264a26994bf49c36d0e6d}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!log\-In\-With\-Read\-Permissions\-:handler\-:@{log\-In\-With\-Read\-Permissions\-:handler\-:}}
+\index{log\-In\-With\-Read\-Permissions\-:handler\-:@{log\-In\-With\-Read\-Permissions\-:handler\-:}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{log\-In\-With\-Read\-Permissions\-:handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) log\-In\-With\-Read\-Permissions\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{permissions}
+\item[{handler:(F\-B\-S\-D\-K\-Login\-Manager\-Request\-Token\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_login_manager_a1bdaae27d9f264a26994bf49c36d0e6d}
+Logs the user in or authorizes additional permissions. 
+\begin{DoxyParams}{Parameters}
+{\em permissions} & the optional array of permissions. Note this is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \\
+\hline
+{\em handler} & the callback.  Use this method when asking for read permissions. You should only ask for permissions when they are needed and explain the value to the user. You can inspect the result.\-declined\-Permissions to also provide more information to the user if they decline permissions.\\
+\hline
+\end{DoxyParams}
+If {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} is not nil, it will be treated as a reauthorization for that user and will pass the \char`\"{}rerequest\char`\"{} flag to the login dialog.
+
+This method will present U\-I the user. You typically should check if {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} already contains the permissions you need before asking to reduce unnecessary app switching. For example, you could make that check at view\-Did\-Load. \hypertarget{interface_f_b_s_d_k_login_manager_a4fa13ba37d31c17cc1f1f1f32d309bec}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!log\-Out@{log\-Out}}
+\index{log\-Out@{log\-Out}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{log\-Out}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) log\-Out 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_login_manager_a4fa13ba37d31c17cc1f1f1f32d309bec}
+Logs the user out  This calls \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} set\-Current\-Access\-Token\-:nil\mbox{]} and \mbox{[}\hyperlink{interface_f_b_s_d_k_profile}{F\-B\-S\-D\-K\-Profile} set\-Current\-Profile\-:nil\mbox{]}. \hypertarget{interface_f_b_s_d_k_login_manager_af200973975f71cc6c74926f5f3f4aac6}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!renew\-System\-Credentials\-:@{renew\-System\-Credentials\-:}}
+\index{renew\-System\-Credentials\-:@{renew\-System\-Credentials\-:}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{renew\-System\-Credentials\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) renew\-System\-Credentials\-: 
+\begin{DoxyParamCaption}
+\item[{(void($^\wedge$)(A\-C\-Account\-Credential\-Renew\-Result result, N\-S\-Error $\ast$error))}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_login_manager_af200973975f71cc6c74926f5f3f4aac6}
+Issues an asychronous renew\-Credentials\-For\-Account call to the device's Facebook account store.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & The completion handler to call when the renewal is completed. This can be invoked on an arbitrary thread.\\
+\hline
+\end{DoxyParams}
+This can be used to explicitly renew account credentials and is provided as a convenience wrapper around {\ttfamily \mbox{[}A\-C\-Account\-Store renew\-Credentials\-For\-Account\-:completion\mbox{]}}. Note the method will not issue the renewal call if the the Facebook account has not been set on the device, or if access had not been granted to the account (though the handler wil receive an error).
+
+If the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} was from the account store, a succesful renewal will also set a new \char`\"{}current\-Access\-Token\char`\"{}. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_login_manager_a4f662c89be174bb577acf75f95aefbc0}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!default\-Audience@{default\-Audience}}
+\index{default\-Audience@{default\-Audience}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{default\-Audience}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Default\-Audience) default\-Audience\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_manager_a4f662c89be174bb577acf75f95aefbc0}
+the default audience.  you should set this if you intend to ask for publish permissions. \hypertarget{interface_f_b_s_d_k_login_manager_a6380b50840262848d8fd3e224de9f520}{\index{F\-B\-S\-D\-K\-Login\-Manager@{F\-B\-S\-D\-K\-Login\-Manager}!login\-Behavior@{login\-Behavior}}
+\index{login\-Behavior@{login\-Behavior}!FBSDKLoginManager@{F\-B\-S\-D\-K\-Login\-Manager}}
+\subsubsection[{login\-Behavior}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Login\-Behavior) login\-Behavior\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_manager_a6380b50840262848d8fd3e224de9f520}
+the login behavior  you should only set this if you want an explicit login flow; otherwise, the S\-D\-K will automatically determine the best flow available. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Login\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Login\-Manager.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="BFAppLinkReturnToRefererController" name="BFAppLinkReturnToRefererController">
+<area shape="rect" id="node7" href="$interface_b_f_app_link.html" title="{BFAppLink\n|+ sourceURL\l+ targets\l+ webURL\l|+ appLinkWithSourceURL\l:targets:webURL:\l}" alt="" coords="43,131,217,245"/>
+<area shape="rect" id="node3" href="$protocol_b_f_app_link_return_to_referer_view_delegate-p.html" title="{\&lt;BFAppLinkReturnToReferer\lViewDelegate\&gt;\n||+ returnToRefererViewDidTap\lInsideCloseButton:\l+ returnToRefererViewDidTap\lInsideLink:link:\l}" alt="" coords="280,307,476,434"/>
+<area shape="rect" id="node5" href="$interface_b_f_app_link_return_to_referer_view.html" title="{BFAppLinkReturnToRefererView\n|+ delegate\l+ textColor\l+ includeStatusBarInSize\l+ closed\l|}" alt="" coords="43,314,255,427"/>
+</map>

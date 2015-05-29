@@ -1,0 +1,207 @@
+\contentsline {chapter}{\numberline {1}Nocilla \unhbox \voidb@x \hbox {[}!\unhbox \voidb@x \hbox {[}C\discretionary {-}{}{}I Status\unhbox \voidb@x \hbox {]}(http\discretionary {-}{}{}://img.shields.\discretionary {-}{}{}io/travis/luisobo/\discretionary {-}{}{}Nocilla.svg?style=flat\&branch=master)\unhbox \voidb@x \hbox {]}(https\discretionary {-}{}{}://travis-\/ci.org/luisobo/\discretionary {-}{}{}Nocilla)\unhbox \voidb@x \hbox {[}!\unhbox \voidb@x \hbox {[}Version\unhbox \voidb@x \hbox {]}(https\discretionary {-}{}{}://img.shields.\discretionary {-}{}{}io/cocoapods/v/\discretionary {-}{}{}Nocilla.svg?style=flat)\unhbox \voidb@x \hbox {]}(http\discretionary {-}{}{}://cocoadocs.org/docsets/\discretionary {-}{}{}Nocilla)\unhbox \voidb@x \hbox {[}!\unhbox \voidb@x \hbox {[}License\unhbox \voidb@x \hbox {]}(https\discretionary {-}{}{}://img.shields.\discretionary {-}{}{}io/cocoapods/l/\discretionary {-}{}{}Nocilla.svg?style=flat)\unhbox \voidb@x \hbox {]}(http\discretionary {-}{}{}://cocoadocs.org/docsets/\discretionary {-}{}{}Nocilla)\unhbox \voidb@x \hbox {[}!\unhbox \voidb@x \hbox {[}Platform\unhbox \voidb@x \hbox {]}(https\discretionary {-}{}{}://img.shields.\discretionary {-}{}{}io/cocoapods/p/\discretionary {-}{}{}Nocilla.svg?style=flat)\unhbox \voidb@x \hbox {]}(http\discretionary {-}{}{}://cocoadocs.org/docsets/\discretionary {-}{}{}Nocilla)}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Acknowledgements}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E}{7}{chapter.3}
+\contentsline {chapter}{\numberline {4}Hierarchical Index}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Class Hierarchy}{9}{section.4.1}
+\contentsline {chapter}{\numberline {5}Class Index}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}Class List}{13}{section.5.1}
+\contentsline {chapter}{\numberline {6}Class Documentation}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}App\discretionary {-}{}{}Delegate Class Reference}{15}{section.6.1}
+\contentsline {section}{\numberline {6.2}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request Class Reference}{16}{section.6.2}
+\contentsline {section}{\numberline {6.3}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub Class Reference}{17}{section.6.3}
+\contentsline {section}{\numberline {6.4}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub() Category Reference}{19}{section.6.4}
+\contentsline {section}{\numberline {6.5}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub(Private) Category Reference}{20}{section.6.5}
+\contentsline {section}{\numberline {6.6}Background\discretionary {-}{}{}Update Class Reference}{21}{section.6.6}
+\contentsline {section}{\numberline {6.7}Destination Class Reference}{21}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{23}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Method Documentation}{23}{subsection.6.7.2}
+\contentsline {subsubsection}{\numberline {6.7.2.1}is\discretionary {-}{}{}Valid\discretionary {-}{}{}Z\discretionary {-}{}{}I\discretionary {-}{}{}P\discretionary {-}{}{}:}{23}{subsubsection.6.7.2.1}
+\contentsline {subsubsection}{\numberline {6.7.2.2}valid}{23}{subsubsection.6.7.2.2}
+\contentsline {subsection}{\numberline {6.7.3}Property Documentation}{23}{subsection.6.7.3}
+\contentsline {subsubsection}{\numberline {6.7.3.1}duration}{23}{subsubsection.6.7.3.1}
+\contentsline {subsubsection}{\numberline {6.7.3.2}zip}{23}{subsubsection.6.7.3.2}
+\contentsline {section}{\numberline {6.8}Google\discretionary {-}{}{}Places\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I Class Reference}{24}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Method Documentation}{25}{subsection.6.8.1}
+\contentsline {subsubsection}{\numberline {6.8.1.1}shared\discretionary {-}{}{}Instance}{25}{subsubsection.6.8.1.1}
+\contentsline {section}{\numberline {6.9}Google\discretionary {-}{}{}Places\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}Tests Class Reference}{25}{section.6.9}
+\contentsline {section}{\numberline {6.10}Jacket Class Reference}{27}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Member Typedef Documentation}{28}{subsection.6.10.1}
+\contentsline {subsubsection}{\numberline {6.10.1.1}Jacket\discretionary {-}{}{}Type}{28}{subsubsection.6.10.1.1}
+\contentsline {subsection}{\numberline {6.10.2}Member Enumeration Documentation}{28}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}Jacket\discretionary {-}{}{}Type}{29}{subsubsection.6.10.2.1}
+\contentsline {subsection}{\numberline {6.10.3}Method Documentation}{29}{subsection.6.10.3}
+\contentsline {subsubsection}{\numberline {6.10.3.1}init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}{29}{subsubsection.6.10.3.1}
+\contentsline {subsection}{\numberline {6.10.4}Property Documentation}{29}{subsection.6.10.4}
+\contentsline {subsubsection}{\numberline {6.10.4.1}jacket\discretionary {-}{}{}Type}{29}{subsubsection.6.10.4.1}
+\contentsline {section}{\numberline {6.11}Layered\discretionary {-}{}{}Right\discretionary {-}{}{}Detail\discretionary {-}{}{}Cell Class Reference}{29}{section.6.11}
+\contentsline {section}{\numberline {6.12}L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Adapter Class Reference}{31}{section.6.12}
+\contentsline {section}{\numberline {6.13}L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Adapter() Category Reference}{33}{section.6.13}
+\contentsline {section}{\numberline {6.14}L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Hook Class Reference}{34}{section.6.14}
+\contentsline {section}{\numberline {6.15}L\discretionary {-}{}{}S\discretionary {-}{}{}Data\discretionary {-}{}{}Matcher Class Reference}{36}{section.6.15}
+\contentsline {section}{\numberline {6.16}L\discretionary {-}{}{}S\discretionary {-}{}{}Data\discretionary {-}{}{}Matcher() Category Reference}{38}{section.6.16}
+\contentsline {section}{\numberline {6.17}$<$L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Body$>$ Protocol Reference}{39}{section.6.17}
+\contentsline {section}{\numberline {6.18}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Client\discretionary {-}{}{}Hook Class Reference}{41}{section.6.18}
+\contentsline {section}{\numberline {6.19}$<$L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request$>$ Protocol Reference}{42}{section.6.19}
+\contentsline {section}{\numberline {6.20}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Diff Class Reference}{44}{section.6.20}
+\contentsline {section}{\numberline {6.21}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Diff() Category Reference}{45}{section.6.21}
+\contentsline {section}{\numberline {6.22}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L\discretionary {-}{}{}Representation Class Reference}{46}{section.6.22}
+\contentsline {section}{\numberline {6.23}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L\discretionary {-}{}{}Representation() Category Reference}{47}{section.6.23}
+\contentsline {section}{\numberline {6.24}$<$L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Response$>$ Protocol Reference}{48}{section.6.24}
+\contentsline {section}{\numberline {6.25}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Stub\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Protocol Class Reference}{50}{section.6.25}
+\contentsline {section}{\numberline {6.26}$<$L\discretionary {-}{}{}S\discretionary {-}{}{}Matcheable$>$ Protocol Reference}{51}{section.6.26}
+\contentsline {section}{\numberline {6.27}L\discretionary {-}{}{}S\discretionary {-}{}{}Matcher Class Reference}{52}{section.6.27}
+\contentsline {section}{\numberline {6.28}L\discretionary {-}{}{}S\discretionary {-}{}{}Nocilla Class Reference}{54}{section.6.28}
+\contentsline {section}{\numberline {6.29}L\discretionary {-}{}{}S\discretionary {-}{}{}Nocilla() Category Reference}{56}{section.6.29}
+\contentsline {section}{\numberline {6.30}L\discretionary {-}{}{}S\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Hook Class Reference}{57}{section.6.30}
+\contentsline {section}{\numberline {6.31}L\discretionary {-}{}{}S\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Session\discretionary {-}{}{}Hook Class Reference}{59}{section.6.31}
+\contentsline {section}{\numberline {6.32}L\discretionary {-}{}{}S\discretionary {-}{}{}Regex\discretionary {-}{}{}Matcher Class Reference}{61}{section.6.32}
+\contentsline {section}{\numberline {6.33}L\discretionary {-}{}{}S\discretionary {-}{}{}Regex\discretionary {-}{}{}Matcher() Category Reference}{63}{section.6.33}
+\contentsline {section}{\numberline {6.34}L\discretionary {-}{}{}S\discretionary {-}{}{}String\discretionary {-}{}{}Matcher Class Reference}{64}{section.6.34}
+\contentsline {section}{\numberline {6.35}L\discretionary {-}{}{}S\discretionary {-}{}{}String\discretionary {-}{}{}Matcher() Category Reference}{66}{section.6.35}
+\contentsline {section}{\numberline {6.36}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request Class Reference}{67}{section.6.36}
+\contentsline {section}{\numberline {6.37}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request() Category Reference}{69}{section.6.37}
+\contentsline {section}{\numberline {6.38}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L Class Reference}{70}{section.6.38}
+\contentsline {section}{\numberline {6.39}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L() Category Reference}{72}{section.6.39}
+\contentsline {section}{\numberline {6.40}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response Class Reference}{73}{section.6.40}
+\contentsline {section}{\numberline {6.41}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response() Category Reference}{75}{section.6.41}
+\contentsline {section}{\numberline {6.42}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L Class Reference}{76}{section.6.42}
+\contentsline {section}{\numberline {6.43}L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L() Category Reference}{78}{section.6.43}
+\contentsline {section}{\numberline {6.44}New\discretionary {-}{}{}Trip\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{79}{section.6.44}
+\contentsline {section}{\numberline {6.45}New\discretionary {-}{}{}Trip\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{80}{section.6.45}
+\contentsline {section}{\numberline {6.46}N\discretionary {-}{}{}S\discretionary {-}{}{}Coding\discretionary {-}{}{}Helper Class Reference}{81}{section.6.46}
+\contentsline {subsection}{\numberline {6.46.1}Method Documentation}{81}{subsection.6.46.1}
+\contentsline {subsubsection}{\numberline {6.46.1.1}data\discretionary {-}{}{}For\discretionary {-}{}{}Array\discretionary {-}{}{}:}{82}{subsubsection.6.46.1.1}
+\contentsline {subsubsection}{\numberline {6.46.1.2}mutable\discretionary {-}{}{}Array\discretionary {-}{}{}From\discretionary {-}{}{}Data\discretionary {-}{}{}:}{83}{subsubsection.6.46.1.2}
+\contentsline {section}{\numberline {6.47}N\discretionary {-}{}{}S\discretionary {-}{}{}Data(Matcheable) Category Reference}{84}{section.6.47}
+\contentsline {section}{\numberline {6.48}N\discretionary {-}{}{}S\discretionary {-}{}{}Data(Nocilla) Category Reference}{86}{section.6.48}
+\contentsline {section}{\numberline {6.49}N\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Response(Undocumented\discretionary {-}{}{}Initializer) Category Reference}{87}{section.6.49}
+\contentsline {section}{\numberline {6.50}N\discretionary {-}{}{}S\discretionary {-}{}{}Regular\discretionary {-}{}{}Expression(Matcheable) Category Reference}{88}{section.6.50}
+\contentsline {section}{\numberline {6.51}N\discretionary {-}{}{}S\discretionary {-}{}{}String(Matcheable) Category Reference}{90}{section.6.51}
+\contentsline {section}{\numberline {6.52}N\discretionary {-}{}{}S\discretionary {-}{}{}String(Nocilla) Category Reference}{92}{section.6.52}
+\contentsline {section}{\numberline {6.53}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Request(D\discretionary {-}{}{}S\discretionary {-}{}{}L) Category Reference}{94}{section.6.53}
+\contentsline {section}{\numberline {6.54}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Request(L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request) Category Reference}{95}{section.6.54}
+\contentsline {section}{\numberline {6.55}Packable Class Reference}{96}{section.6.55}
+\contentsline {subsection}{\numberline {6.55.1}Detailed Description}{97}{subsection.6.55.1}
+\contentsline {subsection}{\numberline {6.55.2}Method Documentation}{98}{subsection.6.55.2}
+\contentsline {subsubsection}{\numberline {6.55.2.1}init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:}{98}{subsubsection.6.55.2.1}
+\contentsline {subsection}{\numberline {6.55.3}Property Documentation}{98}{subsection.6.55.3}
+\contentsline {subsubsection}{\numberline {6.55.3.1}image\discretionary {-}{}{}Name}{98}{subsubsection.6.55.3.1}
+\contentsline {subsubsection}{\numberline {6.55.3.2}name}{98}{subsubsection.6.55.3.2}
+\contentsline {subsubsection}{\numberline {6.55.3.3}quantity}{98}{subsubsection.6.55.3.3}
+\contentsline {section}{\numberline {6.56}Packing\discretionary {-}{}{}List Class Reference}{98}{section.6.56}
+\contentsline {subsection}{\numberline {6.56.1}Detailed Description}{101}{subsection.6.56.1}
+\contentsline {subsection}{\numberline {6.56.2}Method Documentation}{101}{subsection.6.56.2}
+\contentsline {subsubsection}{\numberline {6.56.2.1}change\discretionary {-}{}{}Quantity\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:to\discretionary {-}{}{}:}{101}{subsubsection.6.56.2.1}
+\contentsline {subsubsection}{\numberline {6.56.2.2}get\discretionary {-}{}{}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Unique\discretionary {-}{}{}Items}{101}{subsubsection.6.56.2.2}
+\contentsline {subsubsection}{\numberline {6.56.2.3}get\discretionary {-}{}{}Packable\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}{101}{subsubsection.6.56.2.3}
+\contentsline {subsubsection}{\numberline {6.56.2.4}init\discretionary {-}{}{}Example\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}{101}{subsubsection.6.56.2.4}
+\contentsline {subsubsection}{\numberline {6.56.2.5}init\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}{101}{subsubsection.6.56.2.5}
+\contentsline {subsubsection}{\numberline {6.56.2.6}print\discretionary {-}{}{}List}{101}{subsubsection.6.56.2.6}
+\contentsline {subsubsection}{\numberline {6.56.2.7}quantity\discretionary {-}{}{}For\discretionary {-}{}{}Item\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}{102}{subsubsection.6.56.2.7}
+\contentsline {subsubsection}{\numberline {6.56.2.8}remove\discretionary {-}{}{}Item\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}{102}{subsubsection.6.56.2.8}
+\contentsline {subsection}{\numberline {6.56.3}Property Documentation}{102}{subsection.6.56.3}
+\contentsline {subsubsection}{\numberline {6.56.3.1}trip}{102}{subsubsection.6.56.3.1}
+\contentsline {section}{\numberline {6.57}Packing\discretionary {-}{}{}List() Category Reference}{102}{section.6.57}
+\contentsline {section}{\numberline {6.58}Packing\discretionary {-}{}{}List\discretionary {-}{}{}Item\discretionary {-}{}{}Cell Class Reference}{103}{section.6.58}
+\contentsline {section}{\numberline {6.59}Packing\discretionary {-}{}{}List\discretionary {-}{}{}Tests Class Reference}{103}{section.6.59}
+\contentsline {section}{\numberline {6.60}Packing\discretionary {-}{}{}List\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{104}{section.6.60}
+\contentsline {section}{\numberline {6.61}Packing\discretionary {-}{}{}List\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{106}{section.6.61}
+\contentsline {section}{\numberline {6.62}Pack\discretionary {-}{}{}Manager\discretionary {-}{}{}Tests Class Reference}{106}{section.6.62}
+\contentsline {section}{\numberline {6.63}Pant Class Reference}{108}{section.6.63}
+\contentsline {subsection}{\numberline {6.63.1}Member Typedef Documentation}{109}{subsection.6.63.1}
+\contentsline {subsubsection}{\numberline {6.63.1.1}Pant\discretionary {-}{}{}Type}{109}{subsubsection.6.63.1.1}
+\contentsline {subsection}{\numberline {6.63.2}Member Enumeration Documentation}{109}{subsection.6.63.2}
+\contentsline {subsubsection}{\numberline {6.63.2.1}Pant\discretionary {-}{}{}Type}{110}{subsubsection.6.63.2.1}
+\contentsline {subsection}{\numberline {6.63.3}Method Documentation}{110}{subsection.6.63.3}
+\contentsline {subsubsection}{\numberline {6.63.3.1}init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}{110}{subsubsection.6.63.3.1}
+\contentsline {subsection}{\numberline {6.63.4}Property Documentation}{110}{subsection.6.63.4}
+\contentsline {subsubsection}{\numberline {6.63.4.1}pant\discretionary {-}{}{}Type}{110}{subsubsection.6.63.4.1}
+\contentsline {section}{\numberline {6.64}Pods\discretionary {-}{}{}Dummy\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Pods Class Reference}{110}{section.6.64}
+\contentsline {section}{\numberline {6.65}Pods\discretionary {-}{}{}Dummy\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Pods\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Nocilla Class Reference}{111}{section.6.65}
+\contentsline {section}{\numberline {6.66}Profile\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{112}{section.6.66}
+\contentsline {section}{\numberline {6.67}Profile\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{113}{section.6.67}
+\contentsline {section}{\numberline {6.68}Shirt Class Reference}{114}{section.6.68}
+\contentsline {subsection}{\numberline {6.68.1}Member Typedef Documentation}{115}{subsection.6.68.1}
+\contentsline {subsubsection}{\numberline {6.68.1.1}Shirt\discretionary {-}{}{}Type}{115}{subsubsection.6.68.1.1}
+\contentsline {subsection}{\numberline {6.68.2}Member Enumeration Documentation}{115}{subsection.6.68.2}
+\contentsline {subsubsection}{\numberline {6.68.2.1}Shirt\discretionary {-}{}{}Type}{116}{subsubsection.6.68.2.1}
+\contentsline {subsection}{\numberline {6.68.3}Method Documentation}{116}{subsection.6.68.3}
+\contentsline {subsubsection}{\numberline {6.68.3.1}init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}{116}{subsubsection.6.68.3.1}
+\contentsline {subsection}{\numberline {6.68.4}Property Documentation}{116}{subsection.6.68.4}
+\contentsline {subsubsection}{\numberline {6.68.4.1}shirt\discretionary {-}{}{}Type}{116}{subsubsection.6.68.4.1}
+\contentsline {section}{\numberline {6.69}Shoe Class Reference}{117}{section.6.69}
+\contentsline {section}{\numberline {6.70}Socks Class Reference}{119}{section.6.70}
+\contentsline {section}{\numberline {6.71}Sunscreen Class Reference}{121}{section.6.71}
+\contentsline {section}{\numberline {6.72}Trip Class Reference}{122}{section.6.72}
+\contentsline {subsection}{\numberline {6.72.1}Detailed Description}{125}{subsection.6.72.1}
+\contentsline {subsection}{\numberline {6.72.2}Method Documentation}{125}{subsection.6.72.2}
+\contentsline {subsubsection}{\numberline {6.72.2.1}end\discretionary {-}{}{}Date}{125}{subsubsection.6.72.2.1}
+\contentsline {subsubsection}{\numberline {6.72.2.2}generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List}{125}{subsubsection.6.72.2.2}
+\contentsline {subsubsection}{\numberline {6.72.2.3}generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}Example}{125}{subsubsection.6.72.2.3}
+\contentsline {subsubsection}{\numberline {6.72.2.4}init\discretionary {-}{}{}New\discretionary {-}{}{}Trip}{126}{subsubsection.6.72.2.4}
+\contentsline {subsubsection}{\numberline {6.72.2.5}init\discretionary {-}{}{}With\discretionary {-}{}{}Start\discretionary {-}{}{}Date\discretionary {-}{}{}:name\discretionary {-}{}{}:}{126}{subsubsection.6.72.2.5}
+\contentsline {subsubsection}{\numberline {6.72.2.6}total\discretionary {-}{}{}Duration}{126}{subsubsection.6.72.2.6}
+\contentsline {subsection}{\numberline {6.72.3}Property Documentation}{126}{subsection.6.72.3}
+\contentsline {subsubsection}{\numberline {6.72.3.1}access\discretionary {-}{}{}To\discretionary {-}{}{}Laundry\discretionary {-}{}{}Preference}{126}{subsubsection.6.72.3.1}
+\contentsline {subsubsection}{\numberline {6.72.3.2}destinations}{126}{subsubsection.6.72.3.2}
+\contentsline {subsubsection}{\numberline {6.72.3.3}formal\discretionary {-}{}{}Preference}{126}{subsubsection.6.72.3.3}
+\contentsline {subsubsection}{\numberline {6.72.3.4}name}{126}{subsubsection.6.72.3.4}
+\contentsline {subsubsection}{\numberline {6.72.3.5}packing\discretionary {-}{}{}List}{126}{subsubsection.6.72.3.5}
+\contentsline {subsubsection}{\numberline {6.72.3.6}rewear\discretionary {-}{}{}Jeans\discretionary {-}{}{}Preference}{127}{subsubsection.6.72.3.6}
+\contentsline {subsubsection}{\numberline {6.72.3.7}start\discretionary {-}{}{}Date}{127}{subsubsection.6.72.3.7}
+\contentsline {subsubsection}{\numberline {6.72.3.8}swimming\discretionary {-}{}{}Preference}{127}{subsubsection.6.72.3.8}
+\contentsline {subsubsection}{\numberline {6.72.3.9}weather\discretionary {-}{}{}Report}{127}{subsubsection.6.72.3.9}
+\contentsline {section}{\numberline {6.73}Trips\discretionary {-}{}{}Data Class Reference}{127}{section.6.73}
+\contentsline {subsection}{\numberline {6.73.1}Detailed Description}{128}{subsection.6.73.1}
+\contentsline {subsection}{\numberline {6.73.2}Method Documentation}{128}{subsection.6.73.2}
+\contentsline {subsubsection}{\numberline {6.73.2.1}add\discretionary {-}{}{}Trip\discretionary {-}{}{}:}{128}{subsubsection.6.73.2.1}
+\contentsline {subsubsection}{\numberline {6.73.2.2}get\discretionary {-}{}{}Trip\discretionary {-}{}{}:}{128}{subsubsection.6.73.2.2}
+\contentsline {subsubsection}{\numberline {6.73.2.3}number\discretionary {-}{}{}Of\discretionary {-}{}{}Trips}{129}{subsubsection.6.73.2.3}
+\contentsline {subsubsection}{\numberline {6.73.2.4}remove\discretionary {-}{}{}Trip\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}{129}{subsubsection.6.73.2.4}
+\contentsline {subsubsection}{\numberline {6.73.2.5}shared\discretionary {-}{}{}Instance}{129}{subsubsection.6.73.2.5}
+\contentsline {section}{\numberline {6.74}Trips\discretionary {-}{}{}Data() Category Reference}{129}{section.6.74}
+\contentsline {section}{\numberline {6.75}Trip\discretionary {-}{}{}Settings\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{130}{section.6.75}
+\contentsline {section}{\numberline {6.76}Trip\discretionary {-}{}{}Settings\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{132}{section.6.76}
+\contentsline {section}{\numberline {6.77}Trips\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{132}{section.6.77}
+\contentsline {section}{\numberline {6.78}Trips\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{134}{section.6.78}
+\contentsline {section}{\numberline {6.79}Umbrella Class Reference}{134}{section.6.79}
+\contentsline {section}{\numberline {6.80}Underwear Class Reference}{136}{section.6.80}
+\contentsline {section}{\numberline {6.81}Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I Class Reference}{138}{section.6.81}
+\contentsline {subsection}{\numberline {6.81.1}Method Documentation}{139}{subsection.6.81.1}
+\contentsline {subsubsection}{\numberline {6.81.1.1}get\discretionary {-}{}{}Lat\discretionary {-}{}{}Long\discretionary {-}{}{}From\discretionary {-}{}{}Address\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}{139}{subsubsection.6.81.1.1}
+\contentsline {subsubsection}{\numberline {6.81.1.2}get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Historical\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}{140}{subsubsection.6.81.1.2}
+\contentsline {subsubsection}{\numberline {6.81.1.3}get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Present\discretionary {-}{}{}:lng\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}{140}{subsubsection.6.81.1.3}
+\contentsline {subsubsection}{\numberline {6.81.1.4}get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}{140}{subsubsection.6.81.1.4}
+\contentsline {subsubsection}{\numberline {6.81.1.5}get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}{140}{subsubsection.6.81.1.5}
+\contentsline {subsubsection}{\numberline {6.81.1.6}shared\discretionary {-}{}{}Instance}{141}{subsubsection.6.81.1.6}
+\contentsline {section}{\numberline {6.82}Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}Tests Class Reference}{141}{section.6.82}
+\contentsline {section}{\numberline {6.83}Weather\discretionary {-}{}{}Day Class Reference}{143}{section.6.83}
+\contentsline {subsection}{\numberline {6.83.1}Detailed Description}{144}{subsection.6.83.1}
+\contentsline {subsection}{\numberline {6.83.2}Method Documentation}{144}{subsection.6.83.2}
+\contentsline {subsubsection}{\numberline {6.83.2.1}init\discretionary {-}{}{}With\discretionary {-}{}{}High\discretionary {-}{}{}:low\discretionary {-}{}{}:precipitation\discretionary {-}{}{}:date\discretionary {-}{}{}:}{144}{subsubsection.6.83.2.1}
+\contentsline {subsection}{\numberline {6.83.3}Property Documentation}{145}{subsection.6.83.3}
+\contentsline {subsubsection}{\numberline {6.83.3.1}average\discretionary {-}{}{}Temp}{145}{subsubsection.6.83.3.1}
+\contentsline {subsubsection}{\numberline {6.83.3.2}high}{145}{subsubsection.6.83.3.2}
+\contentsline {subsubsection}{\numberline {6.83.3.3}low}{145}{subsubsection.6.83.3.3}
+\contentsline {subsubsection}{\numberline {6.83.3.4}precipitaion}{145}{subsubsection.6.83.3.4}
+\contentsline {subsubsection}{\numberline {6.83.3.5}range}{145}{subsubsection.6.83.3.5}
+\contentsline {section}{\numberline {6.84}Weather\discretionary {-}{}{}Day\discretionary {-}{}{}Tests Class Reference}{146}{section.6.84}
+\contentsline {section}{\numberline {6.85}Weather\discretionary {-}{}{}Report Class Reference}{147}{section.6.85}
+\contentsline {subsection}{\numberline {6.85.1}Detailed Description}{149}{subsection.6.85.1}
+\contentsline {subsection}{\numberline {6.85.2}Method Documentation}{150}{subsection.6.85.2}
+\contentsline {subsubsection}{\numberline {6.85.2.1}add\discretionary {-}{}{}Day\discretionary {-}{}{}:}{150}{subsubsection.6.85.2.1}
+\contentsline {subsubsection}{\numberline {6.85.2.2}days\discretionary {-}{}{}Are\discretionary {-}{}{}In\discretionary {-}{}{}Order}{151}{subsubsection.6.85.2.2}
+\contentsline {subsubsection}{\numberline {6.85.2.3}get\discretionary {-}{}{}Average\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}{151}{subsubsection.6.85.2.3}
+\contentsline {subsubsection}{\numberline {6.85.2.4}get\discretionary {-}{}{}High\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}{151}{subsubsection.6.85.2.4}
+\contentsline {subsubsection}{\numberline {6.85.2.5}get\discretionary {-}{}{}Low\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}{151}{subsubsection.6.85.2.5}
+\contentsline {subsubsection}{\numberline {6.85.2.6}get\discretionary {-}{}{}Overall\discretionary {-}{}{}High}{151}{subsubsection.6.85.2.6}
+\contentsline {subsubsection}{\numberline {6.85.2.7}get\discretionary {-}{}{}Overall\discretionary {-}{}{}Low}{152}{subsubsection.6.85.2.7}
+\contentsline {subsubsection}{\numberline {6.85.2.8}get\discretionary {-}{}{}Range\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}{152}{subsubsection.6.85.2.8}
+\contentsline {subsubsection}{\numberline {6.85.2.9}init\discretionary {-}{}{}Example\discretionary {-}{}{}Report}{152}{subsubsection.6.85.2.9}
+\contentsline {subsubsection}{\numberline {6.85.2.10}number\discretionary {-}{}{}Of\discretionary {-}{}{}Days}{152}{subsubsection.6.85.2.10}
+\contentsline {subsubsection}{\numberline {6.85.2.11}put\discretionary {-}{}{}Days\discretionary {-}{}{}In\discretionary {-}{}{}Order}{152}{subsubsection.6.85.2.11}
+\contentsline {section}{\numberline {6.86}Weather\discretionary {-}{}{}Report() Category Reference}{153}{section.6.86}
+\contentsline {section}{\numberline {6.87}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}Tests Class Reference}{153}{section.6.87}
+\contentsline {section}{\numberline {6.88}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}View\discretionary {-}{}{}Controller Class Reference}{154}{section.6.88}
+\contentsline {section}{\numberline {6.89}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}View\discretionary {-}{}{}Controller() Category Reference}{156}{section.6.89}
+\contentsline {chapter}{Index}{157}{section*.133}

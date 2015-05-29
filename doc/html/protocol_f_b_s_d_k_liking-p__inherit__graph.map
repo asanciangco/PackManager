@@ -1,0 +1,4 @@
+<map id="&lt;FBSDKLiking&gt;" name="&lt;FBSDKLiking&gt;">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_like_button.html" title="{FBSDKLikeButton\n|+ soundEnabled\l|}" alt="" coords="5,298,133,371"/>
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_like_control.html" title="{FBSDKLikeControl\n|+ foregroundColor\l+ likeControlAuxiliaryPosition\l+ likeControlHorizontalAlignment\l+ likeControlStyle\l+ preferredMaxLayoutWidth\l+ soundEnabled\l|}" alt="" coords="158,265,372,405"/>
+</map>

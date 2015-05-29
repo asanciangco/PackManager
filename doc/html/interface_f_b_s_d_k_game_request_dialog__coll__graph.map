@@ -1,0 +1,4 @@
+<map id="FBSDKGameRequestDialog" name="FBSDKGameRequestDialog">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_game_request_content.html" title="{FBSDKGameRequestContent\n|+ actionType\l+ data\l+ filters\l+ message\l+ objectID\l+ to\l+ suggestions\l+ title\l|+ isEqualToGameRequestContent:\l}" alt="" coords="94,257,321,423"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="136,131,265,205"/>
+</map>

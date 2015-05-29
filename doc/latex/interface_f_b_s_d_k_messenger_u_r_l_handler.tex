@@ -1,0 +1,92 @@
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler}{\section{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler Class Reference}
+\label{interface_f_b_s_d_k_messenger_u_r_l_handler}\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{interface_f_b_s_d_k_messenger_u_r_l_handler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{interface_f_b_s_d_k_messenger_u_r_l_handler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler_a060d742ac76d48fb08a51761c997cf2a}{can\-Open\-U\-R\-L\-:source\-Application\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler_ab1af9ca06f46d9d92c3c36b24f42f189}{open\-U\-R\-L\-:source\-Application\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_af5b440260a6e4ec1afd003cb0311a49c}{id\\*
+$<$ \hyperlink{protocol_f_b_s_d_k_messenger_u_r_l_handler_delegate-p}{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_s_d_k_messenger_u_r_l_handler_af5b440260a6e4ec1afd003cb0311a49c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{interface_f_b_s_d_k_messenger_u_r_l_handler}{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler} is used to handle incoming U\-R\-Ls from Messenger. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_a060d742ac76d48fb08a51761c997cf2a}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler}!can\-Open\-U\-R\-L\-:source\-Application\-:@{can\-Open\-U\-R\-L\-:source\-Application\-:}}
+\index{can\-Open\-U\-R\-L\-:source\-Application\-:@{can\-Open\-U\-R\-L\-:source\-Application\-:}!FBSDKMessengerURLHandler@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler}}
+\subsubsection[{can\-Open\-U\-R\-L\-:source\-Application\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) can\-Open\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\item[{sourceApplication:(N\-S\-String $\ast$)}]{source\-Application}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_u_r_l_handler_a060d742ac76d48fb08a51761c997cf2a}
+Determines whether an incoming U\-R\-L can be handled by this class
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L passed in from the source application \\
+\hline
+{\em source\-Application} & The bundle id representing the source application\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if this U\-R\-L can be handled 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_messenger_u_r_l_handler_ab1af9ca06f46d9d92c3c36b24f42f189}{\index{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler}!open\-U\-R\-L\-:source\-Application\-:@{open\-U\-R\-L\-:source\-Application\-:}}
+\index{open\-U\-R\-L\-:source\-Application\-:@{open\-U\-R\-L\-:source\-Application\-:}!FBSDKMessengerURLHandler@{F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler}}
+\subsubsection[{open\-U\-R\-L\-:source\-Application\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) open\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\item[{sourceApplication:(N\-S\-String $\ast$)}]{source\-Application}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_u_r_l_handler_ab1af9ca06f46d9d92c3c36b24f42f189}
+Attempts to handle the Messenger U\-R\-L and returns Y\-E\-S if and only if successful. This should be called from the \hyperlink{interface_app_delegate}{App\-Delegate}'s -\/open\-U\-R\-L\-: method
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\-R\-L passed in from the source application \\
+\hline
+{\em source\-Application} & The bundle id representing the source application\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if this successfully handled the U\-R\-L 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Messenger\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Messenger\-U\-R\-L\-Handler.\-h\end{DoxyCompactItemize}

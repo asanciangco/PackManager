@@ -1,0 +1,89 @@
+\hypertarget{protocol_f_b_s_d_k_game_request_dialog_delegate-p}{\section{$<$F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_game_request_dialog_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Game\-Request\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{protocol_f_b_s_d_k_game_request_dialog_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{protocol_f_b_s_d_k_game_request_dialog_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_game_request_dialog_delegate-p_afedbb044e8be74848fb18286f1e29ebc}{game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_game_request_dialog_delegate-p_a6a5f81ed9ea90d242df2c6ee75911d4b}{game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_game_request_dialog_delegate-p_ab88e9ddb51341468fca4c4131f614b69}{game\-Request\-Dialog\-Did\-Cancel\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A delegate for \hyperlink{interface_f_b_s_d_k_game_request_dialog}{F\-B\-S\-D\-K\-Game\-Request\-Dialog}.  The delegate is notified with the results of the game request as long as the application has permissions to receive the information. For example, if the person is not signed into the containing app, the shower may not be able to distinguish between completion of a game request and cancellation. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_game_request_dialog_delegate-p_afedbb044e8be74848fb18286f1e29ebc}{\index{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}!game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:@{game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:}}
+\index{game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:@{game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:}!FBSDKGameRequestDialogDelegate-p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}}
+\subsubsection[{game\-Request\-Dialog\-:did\-Complete\-With\-Results\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) game\-Request\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Game\-Request\-Dialog} $\ast$)}]{game\-Request\-Dialog}
+\item[{didCompleteWithResults:(N\-S\-Dictionary $\ast$)}]{results}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_game_request_dialog_delegate-p_afedbb044e8be74848fb18286f1e29ebc}
+Sent to the delegate when the game request completes without error. 
+\begin{DoxyParams}{Parameters}
+{\em game\-Request\-Dialog} & The \hyperlink{interface_f_b_s_d_k_game_request_dialog}{F\-B\-S\-D\-K\-Game\-Request\-Dialog} that completed. \\
+\hline
+{\em results} & The results from the dialog. This may be nil or empty. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_game_request_dialog_delegate-p_a6a5f81ed9ea90d242df2c6ee75911d4b}{\index{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}!game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:@{game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:}}
+\index{game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:@{game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:}!FBSDKGameRequestDialogDelegate-p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}}
+\subsubsection[{game\-Request\-Dialog\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) game\-Request\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Game\-Request\-Dialog} $\ast$)}]{game\-Request\-Dialog}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_game_request_dialog_delegate-p_a6a5f81ed9ea90d242df2c6ee75911d4b}
+Sent to the delegate when the game request encounters an error. 
+\begin{DoxyParams}{Parameters}
+{\em game\-Request\-Dialog} & The \hyperlink{interface_f_b_s_d_k_game_request_dialog}{F\-B\-S\-D\-K\-Game\-Request\-Dialog} that completed. \\
+\hline
+{\em error} & The error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_game_request_dialog_delegate-p_ab88e9ddb51341468fca4c4131f614b69}{\index{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}!game\-Request\-Dialog\-Did\-Cancel\-:@{game\-Request\-Dialog\-Did\-Cancel\-:}}
+\index{game\-Request\-Dialog\-Did\-Cancel\-:@{game\-Request\-Dialog\-Did\-Cancel\-:}!FBSDKGameRequestDialogDelegate-p@{F\-B\-S\-D\-K\-Game\-Request\-Dialog\-Delegate-\/p}}
+\subsubsection[{game\-Request\-Dialog\-Did\-Cancel\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) game\-Request\-Dialog\-Did\-Cancel\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Game\-Request\-Dialog} $\ast$)}]{game\-Request\-Dialog}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_game_request_dialog_delegate-p_ab88e9ddb51341468fca4c4131f614b69}
+Sent to the delegate when the game request dialog is cancelled. 
+\begin{DoxyParams}{Parameters}
+{\em game\-Request\-Dialog} & The \hyperlink{interface_f_b_s_d_k_game_request_dialog}{F\-B\-S\-D\-K\-Game\-Request\-Dialog} that completed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Game\-Request\-Dialog.\-h\end{DoxyCompactItemize}

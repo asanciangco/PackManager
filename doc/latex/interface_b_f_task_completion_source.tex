@@ -1,0 +1,173 @@
+\hypertarget{interface_b_f_task_completion_source}{\section{B\-F\-Task\-Completion\-Source Class Reference}
+\label{interface_b_f_task_completion_source}\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-Task\-Completion\-Source.\-h$>$}
+
+
+
+Inheritance diagram for B\-F\-Task\-Completion\-Source\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{interface_b_f_task_completion_source__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\-F\-Task\-Completion\-Source\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{interface_b_f_task_completion_source__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_b_f_task_completion_source_abed0b58e2611f5775d1a373c02dd5f39}{set\-Result\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_f_task_completion_source_a01b81813ac47e1f729bb2418102a987e}{set\-Error\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_f_task_completion_source_a40755dcab284b5404bcb896a9e0f3ec7}{set\-Exception\-:}
+\item 
+(void) -\/ \hyperlink{interface_b_f_task_completion_source_a945538d5ef1ea6110ced6a7417955ec5}{cancel}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_b_f_task_completion_source_ab083534e8cadd435953acc8572daf2f7}{try\-Set\-Result\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_b_f_task_completion_source_a65065b1c8dad949e4aea15c8c37b479e}{try\-Set\-Error\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_b_f_task_completion_source_acc07a13997407c9cdb6557917af5c85f}{try\-Set\-Exception\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_b_f_task_completion_source_ac243420ce687eba4233e38726459bb61}{try\-Set\-Cancelled}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_b_f_task_completion_source_a03e74e794abea79ea56c8465b25d519d}{task\-Completion\-Source}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_b_f_task}{B\-F\-Task} $\ast$ \hyperlink{interface_b_f_task_completion_source_ad1f81ce26de7298f4a195a62b595a989}{task}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{interface_b_f_task_completion_source}{B\-F\-Task\-Completion\-Source} represents the producer side of tasks. It is a task that also has methods for changing the state of the task by settings its completion values. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_b_f_task_completion_source_a945538d5ef1ea6110ced6a7417955ec5}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!cancel@{cancel}}
+\index{cancel@{cancel}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{cancel}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) cancel 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_a945538d5ef1ea6110ced6a7417955ec5}
+Completes the task by marking it as cancelled. Attempting to set this for a completed task will raise an exception. \hypertarget{interface_b_f_task_completion_source_a01b81813ac47e1f729bb2418102a987e}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!set\-Error\-:@{set\-Error\-:}}
+\index{set\-Error\-:@{set\-Error\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{set\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_a01b81813ac47e1f729bb2418102a987e}
+Completes the task by setting the error. Attempting to set this for a completed task will raise an exception. 
+\begin{DoxyParams}{Parameters}
+{\em error} & The error for the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_completion_source_a40755dcab284b5404bcb896a9e0f3ec7}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!set\-Exception\-:@{set\-Exception\-:}}
+\index{set\-Exception\-:@{set\-Exception\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{set\-Exception\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Exception\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Exception $\ast$)}]{exception}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_a40755dcab284b5404bcb896a9e0f3ec7}
+Completes the task by setting an exception. Attempting to set this for a completed task will raise an exception. 
+\begin{DoxyParams}{Parameters}
+{\em exception} & The exception for the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_completion_source_abed0b58e2611f5775d1a373c02dd5f39}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!set\-Result\-:@{set\-Result\-:}}
+\index{set\-Result\-:@{set\-Result\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{set\-Result\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Result\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{result}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_abed0b58e2611f5775d1a373c02dd5f39}
+Completes the task by setting the result. Attempting to set this for a completed task will raise an exception. 
+\begin{DoxyParams}{Parameters}
+{\em result} & The result of the task. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_b_f_task_completion_source_a03e74e794abea79ea56c8465b25d519d}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!task\-Completion\-Source@{task\-Completion\-Source}}
+\index{task\-Completion\-Source@{task\-Completion\-Source}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{task\-Completion\-Source}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) task\-Completion\-Source 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_a03e74e794abea79ea56c8465b25d519d}
+Creates a new unfinished task. \hypertarget{interface_b_f_task_completion_source_ac243420ce687eba4233e38726459bb61}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!try\-Set\-Cancelled@{try\-Set\-Cancelled}}
+\index{try\-Set\-Cancelled@{try\-Set\-Cancelled}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{try\-Set\-Cancelled}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) try\-Set\-Cancelled 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_ac243420ce687eba4233e38726459bb61}
+Sets the cancellation state of the task if it wasn't already completed. \begin{DoxyReturn}{Returns}
+whether the new value was set. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_completion_source_a65065b1c8dad949e4aea15c8c37b479e}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!try\-Set\-Error\-:@{try\-Set\-Error\-:}}
+\index{try\-Set\-Error\-:@{try\-Set\-Error\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{try\-Set\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) try\-Set\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_a65065b1c8dad949e4aea15c8c37b479e}
+Sets the error of the task if it wasn't already completed. 
+\begin{DoxyParams}{Parameters}
+{\em error} & The error for the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the new value was set. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_completion_source_acc07a13997407c9cdb6557917af5c85f}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!try\-Set\-Exception\-:@{try\-Set\-Exception\-:}}
+\index{try\-Set\-Exception\-:@{try\-Set\-Exception\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{try\-Set\-Exception\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) try\-Set\-Exception\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Exception $\ast$)}]{exception}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_acc07a13997407c9cdb6557917af5c85f}
+Sets the exception of the task if it wasn't already completed. 
+\begin{DoxyParams}{Parameters}
+{\em exception} & The exception for the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the new value was set. 
+\end{DoxyReturn}
+\hypertarget{interface_b_f_task_completion_source_ab083534e8cadd435953acc8572daf2f7}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!try\-Set\-Result\-:@{try\-Set\-Result\-:}}
+\index{try\-Set\-Result\-:@{try\-Set\-Result\-:}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{try\-Set\-Result\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) try\-Set\-Result\-: 
+\begin{DoxyParamCaption}
+\item[{(id)}]{result}
+\end{DoxyParamCaption}
+}}\label{interface_b_f_task_completion_source_ab083534e8cadd435953acc8572daf2f7}
+Sets the result of the task if it wasn't already completed. \begin{DoxyReturn}{Returns}
+whether the new value was set. 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_b_f_task_completion_source_ad1f81ce26de7298f4a195a62b595a989}{\index{B\-F\-Task\-Completion\-Source@{B\-F\-Task\-Completion\-Source}!task@{task}}
+\index{task@{task}!BFTaskCompletionSource@{B\-F\-Task\-Completion\-Source}}
+\subsubsection[{task}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf B\-F\-Task}$\ast$) task\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [retain]}}}\label{interface_b_f_task_completion_source_ad1f81ce26de7298f4a195a62b595a989}
+The task associated with this Task\-Completion\-Source. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-Task\-Completion\-Source.\-h\end{DoxyCompactItemize}

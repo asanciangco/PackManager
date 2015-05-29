@@ -11,5 +11,12 @@ Pack Manager gives you a wardrobe list based on the weather of where you're goin
 Pack Manager is made using Objective-C in XCode. To run simply:
 
 * Acquire Xcode.
+* Install Nocilla for testing
+    - First install Cocoapods: `$ sudo gem install cocoapods`
+    - Next install dependencies (from root project directory run) `$ pod install`
 * Load the project into Xcode using the `PackManager.xcodeproj` file.
 * Run the project in the iOS emulator using `Run` in Xcode.
+
+# Video Demonstration
+
+See `cs130.mp4` for our video demonstration.

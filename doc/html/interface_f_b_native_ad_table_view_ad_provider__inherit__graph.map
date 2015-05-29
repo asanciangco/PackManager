@@ -1,0 +1,3 @@
+<map id="FBNativeAdTableViewAdProvider" name="FBNativeAdTableViewAdProvider">
+<area shape="rect" id="node3" href="$interface_f_b_native_ad_table_view_cell_provider.html" title="{FBNativeAdTableViewCellProvider\n||+ initWithManager:forType:\l+ initWithManager:forType\l:forAttributes:\l+ tableView:cellForRowAtIndex\lPath:\l+ tableView:heightForRowAt\lIndexPath:\l+ tableView:estimatedHeight\lForRowAtIndexPath:\l}" alt="" coords="5,345,229,525"/>
+</map>

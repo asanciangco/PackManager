@@ -1,0 +1,96 @@
+\hypertarget{interface_f_b_interstitial_ad}{\section{F\-B\-Interstitial\-Ad Class Reference}
+\label{interface_f_b_interstitial_ad}\index{F\-B\-Interstitial\-Ad@{F\-B\-Interstitial\-Ad}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Interstitial\-Ad.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Interstitial\-Ad\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_interstitial_ad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Interstitial\-Ad\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_interstitial_ad__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_interstitial_ad_afb4f482b5ab19d486c77785c7794111d}{init\-With\-Placement\-I\-D\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_interstitial_ad_a4bbd516a1c5f381ab7af76c2e113fd86}{load\-Ad}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_interstitial_ad_ac9c071a5f699e990e1fa65060fe5c1ce}{show\-Ad\-From\-Root\-View\-Controller\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_interstitial_ad_a833042dd194827255d00282f57b64878}{N\-S\-String $\ast$ {\bfseries placement\-I\-D}}\label{interface_f_b_interstitial_ad_a833042dd194827255d00282f57b64878}
+
+\item 
+\hypertarget{interface_f_b_interstitial_ad_a060fb1b24018a3d08db42140eacce244}{id$<$ \hyperlink{protocol_f_b_interstitial_ad_delegate-p}{F\-B\-Interstitial\-Ad\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_interstitial_ad_a060fb1b24018a3d08db42140eacce244}
+
+\item 
+\hypertarget{interface_f_b_interstitial_ad_a42fffe132058ab4233d8e4aa9ad84ee0}{B\-O\-O\-L {\bfseries ad\-Valid}}\label{interface_f_b_interstitial_ad_a42fffe132058ab4233d8e4aa9ad84ee0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A modal view controller to represent a Facebook interstitial ad. This is a full-\/screen ad shown in your application. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_interstitial_ad_afb4f482b5ab19d486c77785c7794111d}{\index{F\-B\-Interstitial\-Ad@{F\-B\-Interstitial\-Ad}!init\-With\-Placement\-I\-D\-:@{init\-With\-Placement\-I\-D\-:}}
+\index{init\-With\-Placement\-I\-D\-:@{init\-With\-Placement\-I\-D\-:}!FBInterstitialAd@{F\-B\-Interstitial\-Ad}}
+\subsubsection[{init\-With\-Placement\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Placement\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{placement\-I\-D}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_interstitial_ad_afb4f482b5ab19d486c77785c7794111d}
+This is a method to initialize an \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} matching the given placement id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em placement\-I\-D} & The id of the ad placement. You can create your placement id from Facebook developers page. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_interstitial_ad_a4bbd516a1c5f381ab7af76c2e113fd86}{\index{F\-B\-Interstitial\-Ad@{F\-B\-Interstitial\-Ad}!load\-Ad@{load\-Ad}}
+\index{load\-Ad@{load\-Ad}!FBInterstitialAd@{F\-B\-Interstitial\-Ad}}
+\subsubsection[{load\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Ad 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_interstitial_ad_a4bbd516a1c5f381ab7af76c2e113fd86}
+Begins loading the \hyperlink{interface_f_b_interstitial_ad}{F\-B\-Interstitial\-Ad} content.
+
+You can implement {\ttfamily interstitial\-Ad\-Did\-Load\-:} and {\ttfamily interstitial\-Ad\-:did\-Fail\-With\-Error\-:} methods of {\ttfamily \hyperlink{protocol_f_b_interstitial_ad_delegate-p}{F\-B\-Interstitial\-Ad\-Delegate}} if you would like to be notified as loading succeeds or fails. \hypertarget{interface_f_b_interstitial_ad_ac9c071a5f699e990e1fa65060fe5c1ce}{\index{F\-B\-Interstitial\-Ad@{F\-B\-Interstitial\-Ad}!show\-Ad\-From\-Root\-View\-Controller\-:@{show\-Ad\-From\-Root\-View\-Controller\-:}}
+\index{show\-Ad\-From\-Root\-View\-Controller\-:@{show\-Ad\-From\-Root\-View\-Controller\-:}!FBInterstitialAd@{F\-B\-Interstitial\-Ad}}
+\subsubsection[{show\-Ad\-From\-Root\-View\-Controller\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) show\-Ad\-From\-Root\-View\-Controller\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View\-Controller $\ast$)}]{root\-View\-Controller}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_interstitial_ad_ac9c071a5f699e990e1fa65060fe5c1ce}
+Presents the interstitial ad modally from the specified view controller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\-View\-Controller} & The view controller that will be used to present the interstitial ad.\\
+\hline
+\end{DoxyParams}
+You can implement {\ttfamily interstitial\-Ad\-Did\-Click\-:}, {\ttfamily interstitial\-Ad\-Will\-Close\-:} and {\ttfamily interstitial\-Ad\-Will\-Close} methods of {\ttfamily \hyperlink{protocol_f_b_interstitial_ad_delegate-p}{F\-B\-Interstitial\-Ad\-Delegate}} if you would like to stay informed for thoses events 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Interstitial\-Ad.\-h\end{DoxyCompactItemize}

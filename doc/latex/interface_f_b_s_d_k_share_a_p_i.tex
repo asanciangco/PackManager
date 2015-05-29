@@ -1,0 +1,121 @@
+\hypertarget{interface_f_b_s_d_k_share_a_p_i}{\section{F\-B\-S\-D\-K\-Share\-A\-P\-I Class Reference}
+\label{interface_f_b_s_d_k_share_a_p_i}\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Share\-A\-P\-I.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Share\-A\-P\-I\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{interface_f_b_s_d_k_share_a_p_i__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Share\-A\-P\-I\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{interface_f_b_s_d_k_share_a_p_i__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_share_a_p_i_a785150525008f6d86334ec4fb0bf51a9}{can\-Share}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_share_a_p_i_a228e7a9168a9c48e19af98236bba89e4}{create\-Open\-Graph\-Object\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_share_a_p_i_ab04f5ec10df40c652e6f3720f50027bd}{share}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_share_a_p_i_a97dd7db2536228ae3015bb9f4a0e84fe}{share\-With\-Content\-:delegate\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-L \hyperlink{interface_f_b_s_d_k_share_a_p_i_ab0a4e1f4162e1fb2b930b0a6fa235779}{create\-Objects\-With\-Client\-Token}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_share_a_p_i_a5ffe34ad98a2a26b3c347600aea194ca}{message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A utility class for sharing through the graph A\-P\-I. Using this class requires an access token in \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]} that has been granted the \char`\"{}publish\-\_\-actions\char`\"{} permission. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_share_a_p_i_a785150525008f6d86334ec4fb0bf51a9}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!can\-Share@{can\-Share}}
+\index{can\-Share@{can\-Share}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{can\-Share}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) can\-Share 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_a_p_i_a785150525008f6d86334ec4fb0bf51a9}
+A Boolean value that indicates whether the receiver can send the share.  May return N\-O if the appropriate Facebook app is not installed and is required or an access token is required but not available. This method does not validate the content on the receiver, so this can be checked before building up the content. \begin{DoxySeeAlso}{See Also}
+\mbox{[}\hyperlink{protocol_f_b_s_d_k_sharing-p}{F\-B\-S\-D\-K\-Sharing} \hyperlink{protocol_f_b_s_d_k_sharing-p_af70f439e9b7caf3671d798c29458fe59}{-\/ validate\-With\-Error\-: (\-F\-B\-S\-D\-K\-Sharing-\/p)}\mbox{]} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver can send, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_share_a_p_i_a228e7a9168a9c48e19af98236bba89e4}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!create\-Open\-Graph\-Object\-:@{create\-Open\-Graph\-Object\-:}}
+\index{create\-Open\-Graph\-Object\-:@{create\-Open\-Graph\-Object\-:}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{create\-Open\-Graph\-Object\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) create\-Open\-Graph\-Object\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Share\-Open\-Graph\-Object} $\ast$)}]{open\-Graph\-Object}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_a_p_i_a228e7a9168a9c48e19af98236bba89e4}
+Creates an Open Graph object without an action. 
+\begin{DoxyParams}{Parameters}
+{\em open\-Graph\-Object} & The open graph object to create.  Use this method to create an object alone, when an action is not going to be posted with the object. If the object will be used within an action, just put the object in the action and share that as the share\-Content and the object will be created in the process. The delegate will be messaged with the results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver was able to send the request to create the object, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_share_a_p_i_ab04f5ec10df40c652e6f3720f50027bd}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!share@{share}}
+\index{share@{share}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{share}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) share 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_a_p_i_ab04f5ec10df40c652e6f3720f50027bd}
+Begins the send from the receiver. \begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver was able to send the share, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_share_a_p_i_a97dd7db2536228ae3015bb9f4a0e84fe}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!share\-With\-Content\-:delegate\-:@{share\-With\-Content\-:delegate\-:}}
+\index{share\-With\-Content\-:delegate\-:@{share\-With\-Content\-:delegate\-:}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{share\-With\-Content\-:delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) share\-With\-Content\-: 
+\begin{DoxyParamCaption}
+\item[{(id$<$ {\bf F\-B\-S\-D\-K\-Sharing\-Content} $>$)}]{content}
+\item[{delegate:(id$<$ {\bf F\-B\-S\-D\-K\-Sharing\-Delegate} $>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_a_p_i_a97dd7db2536228ae3015bb9f4a0e84fe}
+Convenience method to build up a share A\-P\-I with content and a delegate. 
+\begin{DoxyParams}{Parameters}
+{\em content} & The content to be shared. \\
+\hline
+{\em delegate} & The receiver's delegate. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_share_a_p_i_ab0a4e1f4162e1fb2b930b0a6fa235779}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!create\-Objects\-With\-Client\-Token@{create\-Objects\-With\-Client\-Token}}
+\index{create\-Objects\-With\-Client\-Token@{create\-Objects\-With\-Client\-Token}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{create\-Objects\-With\-Client\-Token}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) create\-Objects\-With\-Client\-Token\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_share_a_p_i_ab0a4e1f4162e1fb2b930b0a6fa235779}
+If Y\-E\-S, the objects created through the receiver will be created for app scope with the client token.  N\-O \hypertarget{interface_f_b_s_d_k_share_a_p_i_a5ffe34ad98a2a26b3c347600aea194ca}{\index{F\-B\-S\-D\-K\-Share\-A\-P\-I@{F\-B\-S\-D\-K\-Share\-A\-P\-I}!message@{message}}
+\index{message@{message}!FBSDKShareAPI@{F\-B\-S\-D\-K\-Share\-A\-P\-I}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) message\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_share_a_p_i_a5ffe34ad98a2a26b3c347600aea194ca}
+The message the person has provided through the custom dialog that will accompany the share content. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Share\-A\-P\-I.\-h\end{DoxyCompactItemize}

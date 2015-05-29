@@ -1,0 +1,122 @@
+\hypertarget{protocol_f_b_s_d_k_graph_request_connection_delegate-p}{\section{$<$F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_graph_request_connection_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{protocol_f_b_s_d_k_graph_request_connection_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{protocol_f_b_s_d_k_graph_request_connection_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a54173754894dff5ec20c68afccecdc2e}{request\-Connection\-Will\-Begin\-Loading\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a486441eb843cc4b8e6124e30f6cea3ff}{request\-Connection\-Did\-Finish\-Loading\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a94633c21d5335b826aa4d6fa4082f129}{request\-Connection\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a184a50d9e9b357f1e9a927d810ba4b15}{request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a94633c21d5335b826aa4d6fa4082f129}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}!request\-Connection\-:did\-Fail\-With\-Error\-:@{request\-Connection\-:did\-Fail\-With\-Error\-:}}
+\index{request\-Connection\-:did\-Fail\-With\-Error\-:@{request\-Connection\-:did\-Fail\-With\-Error\-:}!FBSDKGraphRequestConnectionDelegate-p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}}
+\subsubsection[{request\-Connection\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) request\-Connection\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$)}]{connection}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a94633c21d5335b826aa4d6fa4082f129}
+Tells the delegate the request connection failed with an error
+
+If the request connection fails with a network error then this method is called. The {\ttfamily error} argument specifies why the network connection failed. The {\ttfamily N\-S\-Error} object passed to the F\-B\-S\-D\-K\-Graph\-Request\-Handler block may contain additional information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The request connection that successfully completed a network request \\
+\hline
+{\em error} & The {\ttfamily N\-S\-Error} representing the network error that occurred, if any. May be nil in some circumstances. Consult the {\ttfamily N\-S\-Error} for the $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ for reliable failure information. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a184a50d9e9b357f1e9a927d810ba4b15}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}!request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:@{request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:}}
+\index{request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:@{request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:}!FBSDKGraphRequestConnectionDelegate-p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}}
+\subsubsection[{request\-Connection\-:did\-Send\-Body\-Data\-:total\-Bytes\-Written\-:total\-Bytes\-Expected\-To\-Write\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) request\-Connection\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$)}]{connection}
+\item[{didSendBodyData:(N\-S\-Integer)}]{bytes\-Written}
+\item[{totalBytesWritten:(N\-S\-Integer)}]{total\-Bytes\-Written}
+\item[{totalBytesExpectedToWrite:(N\-S\-Integer)}]{total\-Bytes\-Expected\-To\-Write}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a184a50d9e9b357f1e9a927d810ba4b15}
+Tells the delegate how much data has been sent and is planned to send to the remote host
+
+The byte count arguments refer to the aggregated $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ objects, not a particular $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$.
+
+Like {\ttfamily N\-S\-U\-R\-L\-Connection}, the values may change in unexpected ways if data needs to be resent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The request connection transmitting data to a remote host \\
+\hline
+{\em bytes\-Written} & The number of bytes sent in the last transmission \\
+\hline
+{\em total\-Bytes\-Written} & The total number of bytes sent to the remote host \\
+\hline
+{\em total\-Bytes\-Expected\-To\-Write} & The total number of bytes expected to send to the remote host \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a486441eb843cc4b8e6124e30f6cea3ff}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}!request\-Connection\-Did\-Finish\-Loading\-:@{request\-Connection\-Did\-Finish\-Loading\-:}}
+\index{request\-Connection\-Did\-Finish\-Loading\-:@{request\-Connection\-Did\-Finish\-Loading\-:}!FBSDKGraphRequestConnectionDelegate-p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}}
+\subsubsection[{request\-Connection\-Did\-Finish\-Loading\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) request\-Connection\-Did\-Finish\-Loading\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$)}]{connection}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a486441eb843cc4b8e6124e30f6cea3ff}
+Tells the delegate the request connection finished loading
+
+If the request connection completes without a network error occuring then this method is called. Invocation of this method does not indicate success of every $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$ made, only that the request connection has no further activity. Use the error argument passed to the F\-B\-S\-D\-K\-Graph\-Request\-Handler block to determine success or failure of each $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$.
+
+This method is invoked after the completion handler for each $<$\-F\-B\-S\-D\-K\-Graph\-Request$>$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The request connection that successfully completed a network request \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a54173754894dff5ec20c68afccecdc2e}{\index{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}!request\-Connection\-Will\-Begin\-Loading\-:@{request\-Connection\-Will\-Begin\-Loading\-:}}
+\index{request\-Connection\-Will\-Begin\-Loading\-:@{request\-Connection\-Will\-Begin\-Loading\-:}!FBSDKGraphRequestConnectionDelegate-p@{F\-B\-S\-D\-K\-Graph\-Request\-Connection\-Delegate-\/p}}
+\subsubsection[{request\-Connection\-Will\-Begin\-Loading\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) request\-Connection\-Will\-Begin\-Loading\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$)}]{connection}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_graph_request_connection_delegate-p_a54173754894dff5ec20c68afccecdc2e}
+Tells the delegate the request connection will begin loading
+
+If the $<$\-F\-B\-S\-D\-K\-Graph\-Request\-Connection$>$ is created using one of the convenience factory methods prefixed with start, the object returned from the convenience method has already begun loading and this method will not be called when the delegate is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & The request connection that is starting a network request \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Graph\-Request\-Connection.\-h\end{DoxyCompactItemize}

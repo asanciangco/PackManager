@@ -100,26 +100,13 @@
 - (NSInteger) getAverageForDay: (NSInteger)day;
 {
     WeatherDay *weatherDay = [self getDayAtIndex:day];
-    return weatherDay.averageTemp;
+    return [weatherDay weightedAverageTemp];
 }
 
 - (NSInteger) getRangeForDay: (NSInteger)day;
 {
     WeatherDay *weatherDay = [self getDayAtIndex:day];
     return weatherDay.range;
-}
-
-#pragma mark - WeatherDay logic
-- (BOOL) daysAreInOrder
-{
-    // TODO: Implement me.
-    
-    return NO;
-}
-
-- (void) putDaysInOrder
-{
-    // TODO: Implement me.
 }
 
 - (void) addDay:(WeatherDay *)day
@@ -142,6 +129,14 @@
     return self;
 }
 
+- (void) mergeWeatherReport:(WeatherReport *)other
+{
+    [self.weatherDays addObjectsFromArray:other.weatherDays];
+}
 
+- (NSDate *) dateForDay:(NSInteger)day
+{
+    return ((WeatherDay *)[self.weatherDays objectAtIndex:day]).date;
+}
 
 @end

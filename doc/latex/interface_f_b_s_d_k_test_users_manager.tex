@@ -1,0 +1,139 @@
+\hypertarget{interface_f_b_s_d_k_test_users_manager}{\section{F\-B\-S\-D\-K\-Test\-Users\-Manager Class Reference}
+\label{interface_f_b_s_d_k_test_users_manager}\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Test\-Users\-Manager.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Test\-Users\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{interface_f_b_s_d_k_test_users_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Test\-Users\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{interface_f_b_s_d_k_test_users_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_test_users_manager_a112c6b79b6abb30dd84460d20b1e0e52}{request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_test_users_manager_a2b6f759bb6df5a0e48be766249bd39b9}{add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_test_users_manager_a10eedbc811e46c6daa646c1e033a3409}{remove\-Test\-Account\-:completion\-Handler\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_test_users_manager_ab1f541d7dda83422878e8478a76e1ae0}{make\-Friends\-With\-First\-:second\-:callback\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_test_users_manager_a19d2ddda3cf14c5c2969165311cff3e5}{shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides methods for managing test accounts for testing Facebook integration.
+
+Facebook allows developers to create test accounts for testing their applications' Facebook integration (see \href{https://developers.facebook.com/docs/test_users/}{\tt https\-://developers.\-facebook.\-com/docs/test\-\_\-users/}). This class simplifies use of these accounts for writing tests. It is not designed for use in production application code.
+
+This class will make Graph A\-P\-I calls on behalf of your app to manage test accounts and requires an app id and app secret. You will typically use this class to write unit or integration tests. Make sure you N\-E\-V\-E\-R include your app secret in your production app. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_test_users_manager_a2b6f759bb6df5a0e48be766249bd39b9}{\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}!add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:@{add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:}}
+\index{add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:@{add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:}!FBSDKTestUsersManager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+\subsubsection[{add\-Test\-Account\-With\-Permissions\-:completion\-Handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) add\-Test\-Account\-With\-Permissions\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Set $\ast$)}]{permissions}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Test\-Users\-Manager\-Retrieve\-Test\-Account\-Tokens\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_test_users_manager_a2b6f759bb6df5a0e48be766249bd39b9}
+add a test account with the specified permissions 
+\begin{DoxyParams}{Parameters}
+{\em permissions} & the set of permissions, e.\-g., \mbox{[}N\-S\-Set set\-With\-Objects\-:"email\char`\"{}, @\char`\"{}user\-\_\-friends"\mbox{]} \\
+\hline
+{\em handler} & the callback handler \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_test_users_manager_ab1f541d7dda83422878e8478a76e1ae0}{\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}!make\-Friends\-With\-First\-:second\-:callback\-:@{make\-Friends\-With\-First\-:second\-:callback\-:}}
+\index{make\-Friends\-With\-First\-:second\-:callback\-:@{make\-Friends\-With\-First\-:second\-:callback\-:}!FBSDKTestUsersManager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+\subsubsection[{make\-Friends\-With\-First\-:second\-:callback\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) make\-Friends\-With\-First\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{first}
+\item[{second:({\bf F\-B\-S\-D\-K\-Access\-Token} $\ast$)}]{second}
+\item[{callback:(void($^\wedge$)(N\-S\-Error $\ast$))}]{callback}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_test_users_manager_ab1f541d7dda83422878e8478a76e1ae0}
+Make two test users friends with each other. 
+\begin{DoxyParams}{Parameters}
+{\em first} & the token of the first user \\
+\hline
+{\em second} & the token of the second user \\
+\hline
+{\em callback} & the callback handler \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_test_users_manager_a10eedbc811e46c6daa646c1e033a3409}{\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}!remove\-Test\-Account\-:completion\-Handler\-:@{remove\-Test\-Account\-:completion\-Handler\-:}}
+\index{remove\-Test\-Account\-:completion\-Handler\-:@{remove\-Test\-Account\-:completion\-Handler\-:}!FBSDKTestUsersManager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+\subsubsection[{remove\-Test\-Account\-:completion\-Handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) remove\-Test\-Account\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{user\-Id}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Test\-Users\-Manager\-Remove\-Test\-Account\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_test_users_manager_a10eedbc811e46c6daa646c1e033a3409}
+remove a test account for the given user id 
+\begin{DoxyParams}{Parameters}
+{\em user\-Id} & the user id \\
+\hline
+{\em handler} & the callback handler \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_test_users_manager_a112c6b79b6abb30dd84460d20b1e0e52}{\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}!request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:@{request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:}}
+\index{request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:@{request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:}!FBSDKTestUsersManager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+\subsubsection[{request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-:create\-If\-Not\-Found\-:completion\-Handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) request\-Test\-Account\-Tokens\-With\-Arrays\-Of\-Permissions\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Array $\ast$)}]{arrays\-Of\-Permissions}
+\item[{createIfNotFound:(B\-O\-O\-L)}]{create\-If\-Not\-Found}
+\item[{completionHandler:(F\-B\-S\-D\-K\-Test\-Users\-Manager\-Retrieve\-Test\-Account\-Tokens\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_test_users_manager_a112c6b79b6abb30dd84460d20b1e0e52}
+retrieve \hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} instances for test accounts with the specific permissions. 
+\begin{DoxyParams}{Parameters}
+{\em arrays\-Of\-Permissions} & an array of permissions sets, such as @\mbox{[} \mbox{[}N\-S\-Set set\-With\-Object\-:"email\char`\"{}\mbox{]}, \mbox{[}\-N\-S\-Set set\-With\-Object\-:@\char`\"{}user\-\_\-birthday"\mbox{]}\mbox{]} if you needed two test accounts with email and birthday permissions, respectively. You can pass in empty nested sets if you need two arbitrary test accounts. For convenience, passing nil is treated as @\mbox{[} \mbox{[}N\-S\-Set set\mbox{]} \mbox{]} for fetching a single test user. \\
+\hline
+{\em create\-If\-Not\-Found} & if Y\-E\-S, new test accounts are created if no test accounts existed that fit the permissions requirement \\
+\hline
+{\em handler} & the callback to invoke which will return an array of {\ttfamily F\-B\-Access\-Token\-Data} instances or an {\ttfamily N\-S\-Error}. If param {\ttfamily create\-If\-Not\-Found} is N\-O, the array may contain {\ttfamily \mbox{[}N\-S\-Null null\mbox{]}} instances.\\
+\hline
+\end{DoxyParams}
+If you are requesting test accounts with differing number of permissions, try to order {\ttfamily array\-Of\-Permissions\-Arrays} so that the most number of permissions come first to minimize creation of new test accounts. \hypertarget{interface_f_b_s_d_k_test_users_manager_a19d2ddda3cf14c5c2969165311cff3e5}{\index{F\-B\-S\-D\-K\-Test\-Users\-Manager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}!shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:@{shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:}}
+\index{shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:@{shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:}!FBSDKTestUsersManager@{F\-B\-S\-D\-K\-Test\-Users\-Manager}}
+\subsubsection[{shared\-Instance\-For\-App\-I\-D\-:app\-Secret\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) shared\-Instance\-For\-App\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{app\-I\-D}
+\item[{appSecret:(N\-S\-String $\ast$)}]{app\-Secret}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_test_users_manager_a19d2ddda3cf14c5c2969165311cff3e5}
+construct or return the shared instance 
+\begin{DoxyParams}{Parameters}
+{\em app\-I\-D} & the Facebook app id \\
+\hline
+{\em app\-Secret} & the Facebook app secret \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Test\-Users\-Manager.\-h\end{DoxyCompactItemize}

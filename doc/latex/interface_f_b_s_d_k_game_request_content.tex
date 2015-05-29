@@ -1,0 +1,104 @@
+\hypertarget{interface_f_b_s_d_k_game_request_content}{\section{F\-B\-S\-D\-K\-Game\-Request\-Content Class Reference}
+\label{interface_f_b_s_d_k_game_request_content}\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Game\-Request\-Content.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Game\-Request\-Content\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_game_request_content__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Game\-Request\-Content\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_game_request_content__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_game_request_content_a1f622f3da8f3ff8e395b1d4802c96279}{is\-Equal\-To\-Game\-Request\-Content\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+F\-B\-S\-D\-K\-Game\-Request\-Action\-Type \hyperlink{interface_f_b_s_d_k_game_request_content_ac80b1bf36b265614546c38983ea55aa0}{action\-Type}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_a5842159d850c0e701d7753d64e1e22be}{data}
+\item 
+F\-B\-S\-D\-K\-Game\-Request\-Filter \hyperlink{interface_f_b_s_d_k_game_request_content_ae1268dd62ab78042145dd25bc4ef8961}{filters}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_a88accc7b486e626dae7d08e744a9af66}{message}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_a3ea25b3469e4471f3cde2d36fba75127}{object\-I\-D}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_a2598b30779626fd9afdbac65c137b99b}{to}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_affb3cc7aaecddb9dbd1ba01a222e8474}{suggestions}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_game_request_content_ae626589f2d4e7d36444d34a819989cef}{title}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A model for a game request. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_game_request_content_a1f622f3da8f3ff8e395b1d4802c96279}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!is\-Equal\-To\-Game\-Request\-Content\-:@{is\-Equal\-To\-Game\-Request\-Content\-:}}
+\index{is\-Equal\-To\-Game\-Request\-Content\-:@{is\-Equal\-To\-Game\-Request\-Content\-:}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{is\-Equal\-To\-Game\-Request\-Content\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Equal\-To\-Game\-Request\-Content\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Game\-Request\-Content} $\ast$)}]{content}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_game_request_content_a1f622f3da8f3ff8e395b1d4802c96279}
+Compares the receiver to another game request content. 
+\begin{DoxyParams}{Parameters}
+{\em content} & The other content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver's values are equal to the other content's values; otherwise N\-O 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_game_request_content_ac80b1bf36b265614546c38983ea55aa0}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!action\-Type@{action\-Type}}
+\index{action\-Type@{action\-Type}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{action\-Type}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Game\-Request\-Action\-Type) action\-Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_game_request_content_ac80b1bf36b265614546c38983ea55aa0}
+Used when defining additional context about the nature of the request.  The parameter 'object\-I\-D' is required if the action type is either 'F\-B\-S\-D\-K\-Game\-Request\-Send\-Action\-Type' or 'F\-B\-S\-D\-K\-Game\-Request\-Ask\-For\-Action\-Type'.  object\-I\-D \hypertarget{interface_f_b_s_d_k_game_request_content_a5842159d850c0e701d7753d64e1e22be}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!data@{data}}
+\index{data@{data}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) data\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_a5842159d850c0e701d7753d64e1e22be}
+Additional freeform data you may pass for tracking. This will be stored as part of the request objects created. The maximum length is 255 characters. \hypertarget{interface_f_b_s_d_k_game_request_content_ae1268dd62ab78042145dd25bc4ef8961}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!filters@{filters}}
+\index{filters@{filters}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Game\-Request\-Filter) filters\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_game_request_content_ae1268dd62ab78042145dd25bc4ef8961}
+This controls the set of friends someone sees if a multi-\/friend selector is shown. It is F\-B\-S\-D\-K\-Game\-Request\-No\-Filter by default, meaning that all friends can be shown. If specify as F\-B\-S\-D\-K\-Game\-Request\-App\-Users\-Filter, only friends who use the app will be shown. On the other hands, use F\-B\-S\-D\-K\-Game\-Request\-App\-Non\-Users\-Filter to filter only friends who do not use the app.  The parameter name is preserved to be consistent with the counter part on desktop. \hypertarget{interface_f_b_s_d_k_game_request_content_a88accc7b486e626dae7d08e744a9af66}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!message@{message}}
+\index{message@{message}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) message\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_a88accc7b486e626dae7d08e744a9af66}
+A plain-\/text message to be sent as part of the request. This text will surface in the App Center view of the request, but not on the notification jewel. Required parameter. \hypertarget{interface_f_b_s_d_k_game_request_content_a3ea25b3469e4471f3cde2d36fba75127}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!object\-I\-D@{object\-I\-D}}
+\index{object\-I\-D@{object\-I\-D}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{object\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) object\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_a3ea25b3469e4471f3cde2d36fba75127}
+The Open Graph object I\-D of the object being sent.  action\-Type \hypertarget{interface_f_b_s_d_k_game_request_content_affb3cc7aaecddb9dbd1ba01a222e8474}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!suggestions@{suggestions}}
+\index{suggestions@{suggestions}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{suggestions}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array$\ast$) suggestions\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_affb3cc7aaecddb9dbd1ba01a222e8474}
+An array of user I\-Ds that will be included in the dialog as the first suggested friends. Cannot be used together with filters. \hypertarget{interface_f_b_s_d_k_game_request_content_ae626589f2d4e7d36444d34a819989cef}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!title@{title}}
+\index{title@{title}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) title\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_ae626589f2d4e7d36444d34a819989cef}
+The title for the dialog. \hypertarget{interface_f_b_s_d_k_game_request_content_a2598b30779626fd9afdbac65c137b99b}{\index{F\-B\-S\-D\-K\-Game\-Request\-Content@{F\-B\-S\-D\-K\-Game\-Request\-Content}!to@{to}}
+\index{to@{to}!FBSDKGameRequestContent@{F\-B\-S\-D\-K\-Game\-Request\-Content}}
+\subsubsection[{to}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array$\ast$) to\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_game_request_content_a2598b30779626fd9afdbac65c137b99b}
+An array of user I\-Ds, usernames or invite tokens (N\-S\-String) of people to send request.  These may or may not be a friend of the sender. If this is specified by the app, the sender will not have a choice of recipients. If not, the sender will see a multi-\/friend selector 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Game\-Request\-Content.\-h\end{DoxyCompactItemize}

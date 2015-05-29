@@ -1,0 +1,105 @@
+\hypertarget{interface_f_b_s_d_k_application_delegate}{\section{F\-B\-S\-D\-K\-Application\-Delegate Class Reference}
+\label{interface_f_b_s_d_k_application_delegate}\index{F\-B\-S\-D\-K\-Application\-Delegate@{F\-B\-S\-D\-K\-Application\-Delegate}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Application\-Delegate.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Application\-Delegate\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{interface_f_b_s_d_k_application_delegate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Application\-Delegate\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{interface_f_b_s_d_k_application_delegate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_application_delegate_ab2a10892909e3ffa759a8bc854601de6}{application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_application_delegate_aa5477a6512bacb13b5f485027a2b4c53}{application\-:did\-Finish\-Launching\-With\-Options\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_application_delegate_ad9db7fbd72d8cccf675e91ee9fba2ee1}{shared\-Instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{interface_f_b_s_d_k_application_delegate}{F\-B\-S\-D\-K\-Application\-Delegate} is designed to post process the results from Facebook Login or Facebook Dialogs (or any action that requires switching over to the native Facebook app or Safari).
+
+The methods in this class are designed to mirror those in \hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate}, and you should call them in the respective methods in your \hyperlink{interface_app_delegate}{App\-Delegate} implementation. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_application_delegate_aa5477a6512bacb13b5f485027a2b4c53}{\index{F\-B\-S\-D\-K\-Application\-Delegate@{F\-B\-S\-D\-K\-Application\-Delegate}!application\-:did\-Finish\-Launching\-With\-Options\-:@{application\-:did\-Finish\-Launching\-With\-Options\-:}}
+\index{application\-:did\-Finish\-Launching\-With\-Options\-:@{application\-:did\-Finish\-Launching\-With\-Options\-:}!FBSDKApplicationDelegate@{F\-B\-S\-D\-K\-Application\-Delegate}}
+\subsubsection[{application\-:did\-Finish\-Launching\-With\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) application\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Application $\ast$)}]{application}
+\item[{didFinishLaunchingWithOptions:(N\-S\-Dictionary $\ast$)}]{launch\-Options}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_application_delegate_aa5477a6512bacb13b5f485027a2b4c53}
+Call this method from the \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:did\-Finish\-Launching\-With\-Options\-:\mbox{]} method of the \hyperlink{interface_app_delegate}{App\-Delegate} for your app. It should be invoked for the proper use of the Facebook S\-D\-K.
+
+
+\begin{DoxyParams}{Parameters}
+{\em application} & The application as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:did\-Finish\-Launching\-With\-Options\-:\mbox{]}.\\
+\hline
+{\em launch\-Options} & The launch\-Options as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:did\-Finish\-Launching\-With\-Options\-:\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the url was intended for the Facebook S\-D\-K, N\-O if not. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_application_delegate_ab2a10892909e3ffa759a8bc854601de6}{\index{F\-B\-S\-D\-K\-Application\-Delegate@{F\-B\-S\-D\-K\-Application\-Delegate}!application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:@{application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:}}
+\index{application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:@{application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:}!FBSDKApplicationDelegate@{F\-B\-S\-D\-K\-Application\-Delegate}}
+\subsubsection[{application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) application\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Application $\ast$)}]{application}
+\item[{openURL:(N\-S\-U\-R\-L $\ast$)}]{url}
+\item[{sourceApplication:(N\-S\-String $\ast$)}]{source\-Application}
+\item[{annotation:(id)}]{annotation}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_application_delegate_ab2a10892909e3ffa759a8bc854601de6}
+Call this method from the \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:\mbox{]} method of the \hyperlink{interface_app_delegate}{App\-Delegate} for your app. It should be invoked for the proper processing of responses during interaction with the native Facebook app or Safari as part of S\-S\-O authorization flow or Facebook dialogs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em application} & The application as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:\mbox{]}.\\
+\hline
+{\em url} & The U\-R\-L as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:\mbox{]}.\\
+\hline
+{\em source\-Application} & The source\-Application as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:\mbox{]}.\\
+\hline
+{\em annotation} & The annotation as passed to \mbox{[}\hyperlink{class_u_i_application_delegate-p}{U\-I\-Application\-Delegate} application\-:open\-U\-R\-L\-:source\-Application\-:annotation\-:\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the url was intended for the Facebook S\-D\-K, N\-O if not. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_application_delegate_ad9db7fbd72d8cccf675e91ee9fba2ee1}{\index{F\-B\-S\-D\-K\-Application\-Delegate@{F\-B\-S\-D\-K\-Application\-Delegate}!shared\-Instance@{shared\-Instance}}
+\index{shared\-Instance@{shared\-Instance}!FBSDKApplicationDelegate@{F\-B\-S\-D\-K\-Application\-Delegate}}
+\subsubsection[{shared\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) shared\-Instance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_application_delegate_ad9db7fbd72d8cccf675e91ee9fba2ee1}
+Gets the singleton instance. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Application\-Delegate.\-h\end{DoxyCompactItemize}

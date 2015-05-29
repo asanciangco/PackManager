@@ -1,0 +1,99 @@
+\hypertarget{interface_f_b_ad_view}{\section{F\-B\-Ad\-View Class Reference}
+\label{interface_f_b_ad_view}\index{F\-B\-Ad\-View@{F\-B\-Ad\-View}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Ad\-View.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Ad\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{interface_f_b_ad_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Ad\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{interface_f_b_ad_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_ad_view_a18d8d708c909cab8cea3fdad22085b83}{init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_ad_view_acb5962ac98e3645dd53893d98d5b9564}{load\-Ad}
+\item 
+(void) -\/ \hyperlink{interface_f_b_ad_view_a58fb951b1562f0d295a08134462b4f3c}{disable\-Auto\-Refresh}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_ad_view_a79b3c8801ce58b2c094c9b4b8e53ae61}{N\-S\-String $\ast$ {\bfseries placement\-I\-D}}\label{interface_f_b_ad_view_a79b3c8801ce58b2c094c9b4b8e53ae61}
+
+\item 
+\hypertarget{interface_f_b_ad_view_a173345093a26a4f668e005f3a3e5c19a}{U\-I\-View\-Controller $\ast$ {\bfseries root\-View\-Controller}}\label{interface_f_b_ad_view_a173345093a26a4f668e005f3a3e5c19a}
+
+\item 
+\hypertarget{interface_f_b_ad_view_a1e85a3b5844a5e8ba9ea538d538e77c9}{id$<$ \hyperlink{protocol_f_b_ad_view_delegate-p}{F\-B\-Ad\-View\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_ad_view_a1e85a3b5844a5e8ba9ea538d538e77c9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A customized U\-I\-View to represent a Facebook ad (a.\-k.\-a. banner ad). 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_ad_view_a58fb951b1562f0d295a08134462b4f3c}{\index{F\-B\-Ad\-View@{F\-B\-Ad\-View}!disable\-Auto\-Refresh@{disable\-Auto\-Refresh}}
+\index{disable\-Auto\-Refresh@{disable\-Auto\-Refresh}!FBAdView@{F\-B\-Ad\-View}}
+\subsubsection[{disable\-Auto\-Refresh}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) disable\-Auto\-Refresh 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_view_a58fb951b1562f0d295a08134462b4f3c}
+This is a method to disable auto refresh for the \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} instance
+
+By default, we read the refresh interval from the placement setting in your Facebook developers page. Once you call this method, the auto refresh will be disabled for this \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} instance, and you cannot re-\/enable the refresh for this instance. A new created \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} will still use the default behavior.
+
+This method is designed for ad network mediation. We still recommend you to set the placement refresh interval as 'None' if you're using one of the ad network mediation. \hypertarget{interface_f_b_ad_view_a18d8d708c909cab8cea3fdad22085b83}{\index{F\-B\-Ad\-View@{F\-B\-Ad\-View}!init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:@{init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:}}
+\index{init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:@{init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:}!FBAdView@{F\-B\-Ad\-View}}
+\subsubsection[{init\-With\-Placement\-I\-D\-:ad\-Size\-:root\-View\-Controller\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Placement\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{placement\-I\-D}
+\item[{adSize:({\bf F\-B\-Ad\-Size})}]{ad\-Size}
+\item[{rootViewController:(U\-I\-View\-Controller $\ast$)}]{view\-Controller}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_view_a18d8d708c909cab8cea3fdad22085b83}
+This is a method to initialize an \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} matching the given placement id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em placement\-I\-D} & The id of the ad placement. You can create your placement id from Facebook developers page. \\
+\hline
+{\em ad\-Size} & The size of the ad; for example, k\-F\-B\-Ad\-Size\-Height50\-Banner or k\-F\-B\-Ad\-Size\-Height90\-Banner. \\
+\hline
+{\em view\-Controller} & The view controller that will be used to present the ad and the app store view. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_ad_view_acb5962ac98e3645dd53893d98d5b9564}{\index{F\-B\-Ad\-View@{F\-B\-Ad\-View}!load\-Ad@{load\-Ad}}
+\index{load\-Ad@{load\-Ad}!FBAdView@{F\-B\-Ad\-View}}
+\subsubsection[{load\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Ad 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_view_acb5962ac98e3645dd53893d98d5b9564}
+Begins loading the \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} content.
+
+You can implement {\ttfamily ad\-View\-Did\-Load\-:} and {\ttfamily ad\-View\-:did\-Fail\-With\-Error\-:} methods of {\ttfamily \hyperlink{protocol_f_b_ad_view_delegate-p}{F\-B\-Ad\-View\-Delegate}} if you would like to be notified as loading succeeds or fails. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Ad\-View.\-h\end{DoxyCompactItemize}

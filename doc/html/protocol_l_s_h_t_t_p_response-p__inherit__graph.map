@@ -1,0 +1,3 @@
+<map id="&lt;LSHTTPResponse&gt;" name="&lt;LSHTTPResponse&gt;">
+<area shape="rect" id="node3" href="$interface_l_s_stub_response.html" title="{LSStubResponse\n|+ statusCode\l+ body\l+ headers\l+ shouldFail\l+ error\l|+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l}" alt="" coords="5,278,171,525"/>
+</map>

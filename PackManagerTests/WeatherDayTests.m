@@ -29,7 +29,7 @@
 }
 
 - (void)testAverage {
-    XCTAssertEqual(self.bob.averageTemp, 75);
+    XCTAssertEqual([self.bob weightedAverageTemp], 90);
 }
 
 - (void)testRange {

@@ -14,6 +14,8 @@
 #import "TripSettingsViewController.h"
 #import "GooglePlacesAPI.h"
 
+#import "WeatherAPI.h"
+
 @interface NewTripViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *addStopButton;
@@ -46,7 +48,11 @@
     BOOL startDatePickerShowing;
     BOOL locationSuggestionsShowing;
     BOOL mapShowing;
+    
+    BOOL unwindSegue;
 }
+
+#pragma mark - Initializer
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +63,7 @@
     return self;
 }
 
+#pragma mark - view load / disappear
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,6 +88,8 @@
         self.trip = [[Trip alloc] initNewTrip];
     }
     
+    unwindSegue = NO;
+    
     tripNameIndexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     startDateIndexPath = [NSIndexPath indexPathForRow:2 inSection:0];
     startDatePickerIndexPath = [NSIndexPath indexPathForRow:3 inSection:0];
@@ -103,7 +112,7 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""])
+    if (![self.currLocationTextField.text isEqualToString:@""] && ![self.currDurationTextField.text isEqualToString:@""] && !unwindSegue)
     {
         Destination *dest = [[Destination alloc] init];
         dest.name = self.currLocationTextField.text;
@@ -114,6 +123,8 @@
         
         lat = NSIntegerMin;
         lng = NSIntegerMin;
+        
+        unwindSegue = NO;
     }
 }
 
@@ -411,24 +422,61 @@
 
 #pragma mark - Navigation
 
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"unwindSegue"])
+    {
+        unwindSegue = YES;
+        
+        self.trip.name = self.tripNameTextField.text;
+        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
+        {
+            Destination *dest = [[Destination alloc] init];
+            dest.name = self.currLocationTextField.text;
+            dest.duration = [self.currDurationTextField.text integerValue];
+            dest.lat = lat;
+            dest.lon = lng;
+            [self.trip.destinations addObject:dest];
+        }
+        
+        //Generate packing list
+        
+        @try
+        {
+            [self generateWeatherReport];
+        }
+        @catch (NSException *exception) {
+            NSString *name = @"";
+            NSString *reason = @"";
+            
+            if ([exception.name containsString:@"NSInvalid"])
+            {
+                name = @"Oops!";
+                reason = @"Something went wrong when trying to contact the interwebz. Please check your internet connect and trip parameters and try again";
+            }
+            else
+            {
+                name = exception.name;
+                reason = exception.reason;
+            }
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:name message:reason delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+        }
+        @finally {}
+        
+        [self.trip generatePackingList];
+    }
+    return YES;
+}
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // this one unwinds then goes to the packing list
     if([segue.identifier isEqualToString:@"unwindSegue"])
     {
-        self.trip.name = self.tripNameTextField.text;
-//        if(![self.currLocationTextField.text isEqual:@""] && ![self.currDurationTextField.text isEqual:@""])
-//        {
-//            Destination *dest = [[Destination alloc] init];
-//            dest.name = self.currLocationTextField.text;
-//            dest.duration = [self.currDurationTextField.text integerValue];
-//            [self.trip.destinations addObject:dest];
-//        }
-        
-        //TODO: change after demo
-        //[self.trip generatePackingList];
-        [self.trip generatePackingListExample];
-        
         TripsViewController *tripsVC = [segue destinationViewController];
         tripsVC.tripToPass = self.trip;
         [[TripsData sharedInstance] addTrip:self.trip];
@@ -438,6 +486,31 @@
         TripSettingsViewController *TripSettingsVC = [segue destinationViewController];
         TripSettingsVC.trip = self.trip;
     }
+}
+
+- (void) generateWeatherReport
+{
+    WeatherReport *report;
+    NSInteger dayOffset = 0;
+    
+    for (Destination* dest in self.trip.destinations)
+    {
+        NSDate *startDate = ([self.trip.startDate dateByAddingTimeInterval:60*60*24*dayOffset]);
+        NSDate *endDate = [startDate dateByAddingTimeInterval:60*60*24*(dest.duration - 1)];
+        
+        WeatherReport *tempReport = [[WeatherAPI sharedInstance] getWeatherReport:dest.name
+                                                                            start:startDate
+                                                                              end:endDate
+                                                                              lat:dest.lat
+                                                                              lon:dest.lon];
+        if (!report)
+            report = tempReport;
+        else
+            [report mergeWeatherReport:tempReport];
+        
+        dayOffset += dest.duration;
+    }
+    self.trip.weatherReport = report;
 }
 
 -(void) enableButtons

@@ -1,0 +1,69 @@
+\hypertarget{protocol_f_b_s_d_k_sharing_dialog-p}{\section{$<$F\-B\-S\-D\-K\-Sharing\-Dialog$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_sharing_dialog-p}\index{$<$\-F\-B\-S\-D\-K\-Sharing\-Dialog$>$@{$<$\-F\-B\-S\-D\-K\-Sharing\-Dialog$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Sharing.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Sharing\-Dialog$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{protocol_f_b_s_d_k_sharing_dialog-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Sharing\-Dialog$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{protocol_f_b_s_d_k_sharing_dialog-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_f_b_s_d_k_sharing_dialog-p_a68ec3b22db7bf5b908fdc12438d38159}{can\-Show}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_f_b_s_d_k_sharing_dialog-p_a442b2571fe59477a403a9e14a7e9c1f6}{show}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The common interface for dialogs that initiate sharing. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_sharing_dialog-p_a68ec3b22db7bf5b908fdc12438d38159}{\index{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p@{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p}!can\-Show@{can\-Show}}
+\index{can\-Show@{can\-Show}!FBSDKSharingDialog-p@{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p}}
+\subsubsection[{can\-Show}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) can\-Show 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_sharing_dialog-p_a68ec3b22db7bf5b908fdc12438d38159}
+A Boolean value that indicates whether the receiver can initiate a share.  May return N\-O if the appropriate Facebook app is not installed and is required or an access token is required but not available. This method does not validate the content on the receiver, so this can be checked before building up the content. \begin{DoxySeeAlso}{See Also}
+\mbox{[}\hyperlink{protocol_f_b_s_d_k_sharing-p}{F\-B\-S\-D\-K\-Sharing} \hyperlink{protocol_f_b_s_d_k_sharing-p_af70f439e9b7caf3671d798c29458fe59}{-\/ validate\-With\-Error\-: (\-F\-B\-S\-D\-K\-Sharing-\/p)}\mbox{]} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver can share, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{protocol_f_b_s_d_k_sharing_dialog-p_a442b2571fe59477a403a9e14a7e9c1f6}{\index{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p@{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p}!show@{show}}
+\index{show@{show}!FBSDKSharingDialog-p@{F\-B\-S\-D\-K\-Sharing\-Dialog-\/p}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) show 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_sharing_dialog-p_a442b2571fe59477a403a9e14a7e9c1f6}
+Shows the dialog. \begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver was able to begin sharing, otherwise N\-O. 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Sharing.\-h\end{DoxyCompactItemize}

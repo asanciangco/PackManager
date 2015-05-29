@@ -1,0 +1,122 @@
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog}{\section{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog Class Reference}
+\label{interface_f_b_s_d_k_app_group_join_dialog}\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{interface_f_b_s_d_k_app_group_join_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{interface_f_b_s_d_k_app_group_join_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_a3bf5924eb50f3694d7b57c11e723e74c}{can\-Show}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_a700d110bc5ab9e0671551c794a733cd2}{show}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_ac5b458a8ac19314578e773c72ccaf84f}{validate\-With\-Error\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_a0d3ac5886ce882f57393e5e950ea4aa0}{show\-With\-Group\-I\-D\-:delegate\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id\\*
+$<$ \hyperlink{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p}{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate} $>$ \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_a3ee58c32085dab11678cbd1805d62231}{delegate}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_app_group_join_dialog_aceeba0e2821c837cd9ae2caf3d6ea890}{group\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dialog for joining app groups. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog_a3bf5924eb50f3694d7b57c11e723e74c}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!can\-Show@{can\-Show}}
+\index{can\-Show@{can\-Show}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{can\-Show}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) can\-Show 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_group_join_dialog_a3bf5924eb50f3694d7b57c11e723e74c}
+A Boolean value that indicates whether the receiver can initiate an app group dialog.  May return N\-O if the appropriate Facebook app is not installed and is required or an access token is required but not available. This method does not validate the content on the receiver, so this can be checked before building up the content. \begin{DoxySeeAlso}{See Also}
+\hyperlink{interface_f_b_s_d_k_app_group_join_dialog_ac5b458a8ac19314578e773c72ccaf84f}{-\/ validate\-With\-Error\-:} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver can share, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog_a700d110bc5ab9e0671551c794a733cd2}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!show@{show}}
+\index{show@{show}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) show 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_group_join_dialog_a700d110bc5ab9e0671551c794a733cd2}
+Begins the app group dialog from the receiver. \begin{DoxyReturn}{Returns}
+Y\-E\-S if the receiver was able to show the dialog, otherwise N\-O. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog_a0d3ac5886ce882f57393e5e950ea4aa0}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!show\-With\-Group\-I\-D\-:delegate\-:@{show\-With\-Group\-I\-D\-:delegate\-:}}
+\index{show\-With\-Group\-I\-D\-:delegate\-:@{show\-With\-Group\-I\-D\-:delegate\-:}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{show\-With\-Group\-I\-D\-:delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) show\-With\-Group\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{group\-I\-D}
+\item[{delegate:(id$<$ {\bf F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate} $>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_group_join_dialog_a0d3ac5886ce882f57393e5e950ea4aa0}
+Convenience method to build up an app group dialog with content and a delegate. 
+\begin{DoxyParams}{Parameters}
+{\em group\-I\-D} & The I\-D for the group. \\
+\hline
+{\em delegate} & The receiver's delegate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog_ac5b458a8ac19314578e773c72ccaf84f}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!validate\-With\-Error\-:@{validate\-With\-Error\-:}}
+\index{validate\-With\-Error\-:@{validate\-With\-Error\-:}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{validate\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) validate\-With\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$\-\_\-\-\_\-autoreleasing $\ast$)}]{error\-Ref}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_app_group_join_dialog_ac5b458a8ac19314578e773c72ccaf84f}
+Validates the content on the receiver. 
+\begin{DoxyParams}{Parameters}
+{\em error\-Ref} & If an error occurs, upon return contains an N\-S\-Error object that describes the problem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\-E\-S if the content is valid, otherwise N\-O. 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_app_group_join_dialog_a3ee58c32085dab11678cbd1805d62231}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{interface_f_b_s_d_k_app_group_join_dialog_a3ee58c32085dab11678cbd1805d62231}
+The receiver's delegate or nil if it doesn't have a delegate. \hypertarget{interface_f_b_s_d_k_app_group_join_dialog_aceeba0e2821c837cd9ae2caf3d6ea890}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}!group\-I\-D@{group\-I\-D}}
+\index{group\-I\-D@{group\-I\-D}!FBSDKAppGroupJoinDialog@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}}
+\subsubsection[{group\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) group\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_app_group_join_dialog_aceeba0e2821c837cd9ae2caf3d6ea890}
+The I\-D for group. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog.\-h\end{DoxyCompactItemize}
