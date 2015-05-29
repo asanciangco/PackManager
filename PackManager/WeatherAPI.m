@@ -7,13 +7,9 @@
 //
 
 #import "WeatherAPI.h"
+#import "APIKeys.h"
 
 static WeatherAPI *sharedInstance;
-
-static NSString *HistoricalWeatherAPIKey = @"FgFYQJXIFJwfhPAWbARqFNwPqdokgUeC";
-static NSString *PresentWeatherAPIKey = @"1412e64aff4c8a2d7411980f8568efd2";
-//static NSString *GoogleAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA"; // kacey's
-static NSString *GoogleAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
 
 static NSString *HistoricalWeatherURLData = @"http://www.ncdc.noaa.gov/cdo-web/api/v2/data?";
 
@@ -138,7 +134,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 {
     //Get URL search string with + instead of space
     NSString *reformattedAddress = [ address stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GoogleAPIKey];
+    NSString *LatLongUrl = [NSString stringWithFormat:@"%@address=%@&key=%@", GoogleLatLongURL, reformattedAddress, GOOGLE_API_KEY];
     
     //Check which API to use based on number of days until end of trip. Should me moved out.
 
@@ -182,7 +178,7 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 - (void) getZipFromLatLong:(CGFloat *)lat lon:(CGFloat *)lon zip:(NSString **)zip
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GoogleAPIKey];
+    NSString *URLString = [NSString stringWithFormat:@"%@latlng=%f,%f&key=%@", GoogleLatLongURL, *lat, *lon, GOOGLE_API_KEY];
     [request setURL:[NSURL URLWithString:URLString]];
     [request setHTTPMethod:@"GET"];
     [request setTimeoutInterval:3.0];

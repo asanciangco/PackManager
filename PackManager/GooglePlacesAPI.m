@@ -7,12 +7,9 @@
 //
 
 #import "GooglePlacesAPI.h"
+#import "APIKeys.h"
 
 static GooglePlacesAPI *sharedInstance;
-
-//two keys so we can switch back and forth when reach daily limit
-static NSString *googlePlacesAPIKey = @"AIzaSyA7THdVP0SwlyTidfjYeElYCLqtZLQPZ4k"; // someone's
-//static NSString *googlePlacesAPIKey = @"AIzaSyDUwWOuEWRMEHuXuQVwNbUkzXSpxgpyJoA";   // someone else's
 
 static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/textsearch/json?";
 
@@ -46,7 +43,7 @@ static NSString *googlePlacesURL = @"https://maps.googleapis.com/maps/api/place/
     NSMutableArray *retVal = [[NSMutableArray alloc] init];
     
     NSString *escapedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSString *queryURL = [NSString stringWithFormat:@"%@query=%@&key=%@", googlePlacesURL, escapedQuery, googlePlacesAPIKey];
+    NSString *queryURL = [NSString stringWithFormat:@"%@query=%@&key=%@", googlePlacesURL, escapedQuery, GOOGLE_API_KEY];
     
     //Check which API to use based on number of days until end of trip. Should me moved out.
     
