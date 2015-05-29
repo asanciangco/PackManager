@@ -92,16 +92,19 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
     NSDate *currentDate = [NSDate date];
     NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit
+    NSDateComponents* currentComponents = [calendar components:NSYearCalendarUnit
                                                fromDate:currentDate];
-    
+    NSDateComponents* fromComponents = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                                      fromDate:from];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:[components year]-1];
+    NSDateComponents *newComponents = [[NSDateComponents alloc] init];
+    [newComponents setYear:[currentComponents year]-1];
+    [newComponents setMonth:[fromComponents month]];
+    [newComponents setDay:[fromComponents day]];
     
-    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    return [gregorian dateFromComponents:newComponents];
 }
 
 /**
