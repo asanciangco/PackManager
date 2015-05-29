@@ -50,7 +50,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
 \section{Feature Overview} % this could use beefing up
     When the user first starts the application, he or she will be presented with a login screen where they can choose to log in with Facebook. Once logged in, the user will enter their preferences, at which point the application is ready to make packing suggestions. Once this initial login is complete, the preferences will be assigned to their account, making future trip planning seamless. A packing list is suggested after the user enters their destination, which can include multiple stops, date of departure, duration, and takes into account preferences and trip parameters. From the ``My Trips'' tab, the user can view and modify this packing list. The application will notify the user in case of weather changes; this will require updates to the packing list.
 
-    \subsection{Requirements}
+    \subsection{Initial Requirements}
         The following are the requirements that we initially set out to fulfill. 
         \subsubsection{General Requirements (G)}
         \begin{enumerate}
@@ -151,6 +151,11 @@ Another example is someone traveling to an area with which they are unfamiliar w
         \end{enumerate}
         \item iOS Application targeted for iOS 8 and above \end{enumerate}
 
+    \subsection{Requirements Revisions}
+    We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
+
+    We decided to omit some of the requirements that were less important. Exporting user data to other applications, prompting users for the preferences on the initial launch of the application, and gathering user feedback were deemed unnecessary to completing a functioning application. We do not have a consuming application for user data, so it is difficult to design a format for them to consume. The initial prompt for user preference is unnecessary because it is easy to add your preferences; it makes more sense from a UX perspective to gather user preferences from the home screen. User feedback is unnecessary for the initial version of the application because we can simply ask our users what they think of our work.
+
 
 \section{Design}
     The application is structured using the model-view-controller architecture dictated by the iOS development framework. In an iOS application, the overall flow is defined in storyboards. These files define transitions between panes, hold content. The main storyboards for our application is in the \texttt{Main\_iPhone.storypad} file. The storyboards are the views in this framework.
@@ -161,7 +166,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
 
     \subsection{External API Usage}
     \subsubsection{Weather API}
-    The Weather API is an important and very tricky component of our application. See \texttt{PackManager/WeatherAPI.m} for our implementation. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}} for date ranges that are outside of a 16-day weather forecast. This data source includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. Both data sources have completely different output formats (which is why our parsing file is over 500 lines long!).
+    The Weather API is an important and very tricky component of our application. See \texttt{PackManager/WeatherAPI.m} for our implementation. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}} for date ranges that are outside of a 16-day weather forecast. This data source includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. However, we can not get historical weather API for out of the country, since the NOAA is a U.S. government organization. Both data sources have completely different output formats (which is why our parsing file is over 500 lines long!).
 
     \subsubsection{Google Places API}
     We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. Handling this API was tricky, since it has a limited number of requests per day. See \texttt{PackManager/GooglePlacesAPI.m} for implementation.
@@ -256,11 +261,6 @@ See Fig.\ref{fig:ui} for some screen shots of the user interface.
     \label{fig:ui}
 \end{figure}
 
-\section{Design Revisions}
-We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
-
-We decided to omit some of the requirements that were less important. Exporting user data to other applications, prompting users for the preferences on the initial launch of the application, and gathering user feedback were deemed unnecessary to completing a functioning application. We do not have a consuming application for user data, so it is difficult to design a format for them to consume. The initial prompt for user preference is unnecessary because it is easy to add your preferences; it makes more sense from a UX perspective to gather user preferences from the home screen. User feedback is unnecessary for the initial version of the application because we can simply ask our users what they think of our work.
-
 % added autocompleting forms
 % display map based on where you are going to go
 % 
@@ -271,7 +271,7 @@ We decided to omit some of the requirements that were less important. Exporting 
 \item Alex is the lead programmer. He worked on integrating Heather's user interface with Kacey's weather API, as well as being a source of knowledge on general iOS development and Objective-C, which many group members were not familiar with.
 \item Steven worked on writing the report and the documentation. He added Doxygen and used \LaTeX to write the paper. 
 \item Kacey worked on the weather API, doing research and wrapping it to make it accessible and easy to use. 
-\item Mitchell worked on the presentation as well as general programming tasks.
+\item Mitchell worked on the presentation and report as well as general programming tasks.
 \item Nick was in charge of build management and testing, integrating Travis-CI and managing the test infrastructure.
 \end{enumerate}
 
