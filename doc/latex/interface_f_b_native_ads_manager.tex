@@ -1,0 +1,107 @@
+\hypertarget{interface_f_b_native_ads_manager}{\section{F\-B\-Native\-Ads\-Manager Class Reference}
+\label{interface_f_b_native_ads_manager}\index{F\-B\-Native\-Ads\-Manager@{F\-B\-Native\-Ads\-Manager}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Native\-Ads\-Manager.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Native\-Ads\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{interface_f_b_native_ads_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Native\-Ads\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{interface_f_b_native_ads_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ads_manager_a51a39ca77501207f156bd9f6af74c0cb}{init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ads_manager_a13cbdfd0780ab23973c12854d8f60ed0}{load\-Ads}
+\item 
+(void) -\/ \hyperlink{interface_f_b_native_ads_manager_a1115556ad57b2876047b54ffac41e42d}{disable\-Auto\-Refresh}
+\item 
+(\hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} $\ast$) -\/ \hyperlink{interface_f_b_native_ads_manager_ab78e69cc265c33726e700431f8715de5}{next\-Native\-Ad}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_native_ads_manager_a9625b6bb0a8c141b47c56ef491d6c3a4}{id$<$ \hyperlink{protocol_f_b_native_ads_manager_delegate-p}{F\-B\-Native\-Ads\-Manager\-Delegate} $>$ {\bfseries delegate}}\label{interface_f_b_native_ads_manager_a9625b6bb0a8c141b47c56ef491d6c3a4}
+
+\item 
+\hypertarget{interface_f_b_native_ads_manager_a2da7933d3447b600b50bc9187188eea0}{F\-B\-Native\-Ads\-Cache\-Policy {\bfseries media\-Cache\-Policy}}\label{interface_f_b_native_ads_manager_a2da7933d3447b600b50bc9187188eea0}
+
+\item 
+\hypertarget{interface_f_b_native_ads_manager_aad0ce28d953413365f18410d102ea13b}{N\-S\-U\-Integer {\bfseries unique\-Native\-Ad\-Count}}\label{interface_f_b_native_ads_manager_aad0ce28d953413365f18410d102ea13b}
+
+\item 
+\hypertarget{interface_f_b_native_ads_manager_ab8297d57306a41eba6086c25fc8ac2a3}{B\-O\-O\-L {\bfseries valid}}\label{interface_f_b_native_ads_manager_ab8297d57306a41eba6086c25fc8ac2a3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a mechanism to fetch a set of ads and then use them within your application. The recommended usage is to call next\-Native\-Ad\-: at the moment when you are about to render an ad. The native ads manager supports giving out as many ads as needed by cloning over the set of ads it got back from the server which can be useful for feed scenarios. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_native_ads_manager_a1115556ad57b2876047b54ffac41e42d}{\index{F\-B\-Native\-Ads\-Manager@{F\-B\-Native\-Ads\-Manager}!disable\-Auto\-Refresh@{disable\-Auto\-Refresh}}
+\index{disable\-Auto\-Refresh@{disable\-Auto\-Refresh}!FBNativeAdsManager@{F\-B\-Native\-Ads\-Manager}}
+\subsubsection[{disable\-Auto\-Refresh}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) disable\-Auto\-Refresh 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ads_manager_a1115556ad57b2876047b54ffac41e42d}
+By default the native ads manager will refresh its ads periodically. This does not mean that any ads which are shown in the application's U\-I will be refreshed but simply that calling next\-Native\-Ad\-: may return different ads at different times. This method disables that functionality. \hypertarget{interface_f_b_native_ads_manager_a51a39ca77501207f156bd9f6af74c0cb}{\index{F\-B\-Native\-Ads\-Manager@{F\-B\-Native\-Ads\-Manager}!init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:@{init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:}}
+\index{init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:@{init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:}!FBNativeAdsManager@{F\-B\-Native\-Ads\-Manager}}
+\subsubsection[{init\-With\-Placement\-I\-D\-:for\-Num\-Ads\-Requested\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Placement\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{placement\-I\-D}
+\item[{forNumAdsRequested:(N\-S\-U\-Integer)}]{num\-Ads\-Requested}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ads_manager_a51a39ca77501207f156bd9f6af74c0cb}
+Initialize the native ads manager.
+
+
+\begin{DoxyParams}{Parameters}
+{\em placement\-I\-D} & The id of the ad placement. You can create your placement id from Facebook developers page. \\
+\hline
+{\em num\-Ads\-Requested} & The number of ads you would like the native ads manager to retrieve. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ads_manager_a13cbdfd0780ab23973c12854d8f60ed0}{\index{F\-B\-Native\-Ads\-Manager@{F\-B\-Native\-Ads\-Manager}!load\-Ads@{load\-Ads}}
+\index{load\-Ads@{load\-Ads}!FBNativeAdsManager@{F\-B\-Native\-Ads\-Manager}}
+\subsubsection[{load\-Ads}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Ads 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ads_manager_a13cbdfd0780ab23973c12854d8f60ed0}
+The method that kicks off the loading of ads. It may be called again in the future to refresh the ads manually. \hypertarget{interface_f_b_native_ads_manager_ab78e69cc265c33726e700431f8715de5}{\index{F\-B\-Native\-Ads\-Manager@{F\-B\-Native\-Ads\-Manager}!next\-Native\-Ad@{next\-Native\-Ad}}
+\index{next\-Native\-Ad@{next\-Native\-Ad}!FBNativeAdsManager@{F\-B\-Native\-Ads\-Manager}}
+\subsubsection[{next\-Native\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf F\-B\-Native\-Ad} $\ast$) next\-Native\-Ad 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ads_manager_ab78e69cc265c33726e700431f8715de5}
+Retrieve the next native ad to be used from the batch. It is highly recommended that the caller wait until immediately before rendering the ad content to call this method to ensure the best ad for the given context is used. If more than unique\-Native\-Ad\-Count ads are requested cloned ads will be returned. Periodically the native ads manager will refresh and new ads will be returned.
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} which is loaded and ready to be used. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ads\-Manager.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="Packable" name="Packable">
+<area shape="rect" id="node4" href="$interface_jacket.html" title="{Jacket\n|+ jacketType\l|+ initWithQuantity:andType:\l}" alt="" coords="5,278,189,351"/>
+<area shape="rect" id="node5" href="$interface_pant.html" title="{Pant\n|+ pantType\l|+ initWithQuantity:andType:\l}" alt="" coords="214,278,399,351"/>
+<area shape="rect" id="node6" href="$interface_shirt.html" title="{Shirt\n|+ shirtType\l|+ initWithQuantity:andType:\l}" alt="" coords="424,278,608,351"/>
+<area shape="rect" id="node7" href="$interface_socks.html" title="{Socks\n||}" alt="" coords="633,278,689,351"/>
+<area shape="rect" id="node8" href="$interface_sunscreen.html" title="{Sunscreen\n||}" alt="" coords="715,278,799,351"/>
+<area shape="rect" id="node9" href="$interface_umbrella.html" title="{Umbrella\n||}" alt="" coords="824,278,899,351"/>
+<area shape="rect" id="node10" href="$interface_underwear.html" title="{Underwear\n||}" alt="" coords="922,278,1008,351"/>
+</map>

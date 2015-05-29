@@ -1,0 +1,149 @@
+\hypertarget{interface_f_b_s_d_k_tooltip_view}{\section{F\-B\-S\-D\-K\-Tooltip\-View Class Reference}
+\label{interface_f_b_s_d_k_tooltip_view}\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Tooltip\-View.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Tooltip\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_tooltip_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Tooltip\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_tooltip_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_tooltip_view_a43e09351fea51aba22ac6cf935d8e392}{init\-With\-Tagline\-:message\-:color\-Style\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_tooltip_view_a32f5e16fb896d187676e116b9a5f4bc5}{present\-From\-View\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_tooltip_view_ad815d7277fed56b3092ac704dd5c644c}{present\-In\-View\-:with\-Arrow\-Position\-:direction\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_tooltip_view_ad4d16e66754fef6dcb08a3f1d29ebca6}{dismiss}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+C\-F\-Time\-Interval \hyperlink{interface_f_b_s_d_k_tooltip_view_ac94d81890eb496c7afc56277586f938f}{display\-Duration}
+\item 
+F\-B\-S\-D\-K\-Tooltip\-Color\-Style \hyperlink{interface_f_b_s_d_k_tooltip_view_a0c9571339fcc84d808716d3911d504fc}{color\-Style}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_tooltip_view_af6b9bdb1ec818c555c7cde749f22d62c}{message}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_tooltip_view_a48a5512acd97a1af6fbf64e2689e21e2}{tagline}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Tooltip bubble with text in it used to display tips for U\-I elements, with a pointed arrow (to refer to the U\-I element).
+
+The tooltip fades in and will automatically fade out. See {\ttfamily display\-Duration}. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_tooltip_view_ad4d16e66754fef6dcb08a3f1d29ebca6}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!dismiss@{dismiss}}
+\index{dismiss@{dismiss}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{dismiss}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) dismiss 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_tooltip_view_ad4d16e66754fef6dcb08a3f1d29ebca6}
+Remove tooltip manually.
+
+Calling this method isn't necessary -\/ tooltip will dismiss itself automatically after the {\ttfamily display\-Duration}. \hypertarget{interface_f_b_s_d_k_tooltip_view_a43e09351fea51aba22ac6cf935d8e392}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!init\-With\-Tagline\-:message\-:color\-Style\-:@{init\-With\-Tagline\-:message\-:color\-Style\-:}}
+\index{init\-With\-Tagline\-:message\-:color\-Style\-:@{init\-With\-Tagline\-:message\-:color\-Style\-:}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{init\-With\-Tagline\-:message\-:color\-Style\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Tagline\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{tagline}
+\item[{message:(N\-S\-String $\ast$)}]{message}
+\item[{colorStyle:(F\-B\-S\-D\-K\-Tooltip\-Color\-Style)}]{color\-Style}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_tooltip_view_a43e09351fea51aba22ac6cf935d8e392}
+Designated initializer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tagline} & First part of the label, that will be highlighted with different color. Can be nil.\\
+\hline
+{\em message} & Main message to display.\\
+\hline
+{\em color\-Style} & Color style to use for tooltip.\\
+\hline
+\end{DoxyParams}
+If you need to show a tooltip for login, consider using the {\ttfamily \hyperlink{interface_f_b_s_d_k_login_tooltip_view}{F\-B\-S\-D\-K\-Login\-Tooltip\-View}} view.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{interface_f_b_s_d_k_login_tooltip_view}{F\-B\-S\-D\-K\-Login\-Tooltip\-View} 
+\end{DoxySeeAlso}
+\hypertarget{interface_f_b_s_d_k_tooltip_view_a32f5e16fb896d187676e116b9a5f4bc5}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!present\-From\-View\-:@{present\-From\-View\-:}}
+\index{present\-From\-View\-:@{present\-From\-View\-:}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{present\-From\-View\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) present\-From\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View $\ast$)}]{anchor\-View}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_tooltip_view_a32f5e16fb896d187676e116b9a5f4bc5}
+Show tooltip at the top or at the bottom of given view. Tooltip will be added to anchor\-View.\-window.\-root\-View\-Controller.\-view
+
+
+\begin{DoxyParams}{Parameters}
+{\em anchor\-View} & view to show at, must be already added to window view hierarchy, in order to decide where tooltip will be shown. (If there's not enough space at the top of the anchor\-View in window bounds -\/ tooltip will be shown at the bottom of it)\\
+\hline
+\end{DoxyParams}
+Use this method to present the tooltip with automatic positioning or use -\/present\-In\-View\-:with\-Arrow\-Position\-:direction\-: for manual positioning If anchor\-View is nil or has no window -\/ this method does nothing. \hypertarget{interface_f_b_s_d_k_tooltip_view_ad815d7277fed56b3092ac704dd5c644c}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!present\-In\-View\-:with\-Arrow\-Position\-:direction\-:@{present\-In\-View\-:with\-Arrow\-Position\-:direction\-:}}
+\index{present\-In\-View\-:with\-Arrow\-Position\-:direction\-:@{present\-In\-View\-:with\-Arrow\-Position\-:direction\-:}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{present\-In\-View\-:with\-Arrow\-Position\-:direction\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) present\-In\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View $\ast$)}]{view}
+\item[{withArrowPosition:(C\-G\-Point)}]{arrow\-Position}
+\item[{direction:(F\-B\-S\-D\-K\-Tooltip\-View\-Arrow\-Direction)}]{arrow\-Direction}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_tooltip_view_ad815d7277fed56b3092ac704dd5c644c}
+Adds tooltip to given view, with given position and arrow direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & View to be used as superview.\\
+\hline
+{\em arrow\-Position} & Point in view's cordinates, where arrow will be pointing\\
+\hline
+{\em arrow\-Direction} & whenever arrow should be pointing up (message bubble is below the arrow) or down (message bubble is above the arrow). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_tooltip_view_a0c9571339fcc84d808716d3911d504fc}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!color\-Style@{color\-Style}}
+\index{color\-Style@{color\-Style}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{color\-Style}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Tooltip\-Color\-Style) color\-Style\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_tooltip_view_a0c9571339fcc84d808716d3911d504fc}
+Gets or sets the color style after initialization.
+
+Defaults to value passed to -\/init\-With\-Tagline\-:message\-:color\-Style\-:. \hypertarget{interface_f_b_s_d_k_tooltip_view_ac94d81890eb496c7afc56277586f938f}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!display\-Duration@{display\-Duration}}
+\index{display\-Duration@{display\-Duration}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{display\-Duration}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (C\-F\-Time\-Interval) display\-Duration\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_tooltip_view_ac94d81890eb496c7afc56277586f938f}
+Gets or sets the amount of time in seconds the tooltip should be displayed.
+
+Set this to zero to make the display permanent until explicitly dismissed. Defaults to six seconds. \hypertarget{interface_f_b_s_d_k_tooltip_view_af6b9bdb1ec818c555c7cde749f22d62c}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!message@{message}}
+\index{message@{message}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) message\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_tooltip_view_af6b9bdb1ec818c555c7cde749f22d62c}
+Gets or sets the message. \hypertarget{interface_f_b_s_d_k_tooltip_view_a48a5512acd97a1af6fbf64e2689e21e2}{\index{F\-B\-S\-D\-K\-Tooltip\-View@{F\-B\-S\-D\-K\-Tooltip\-View}!tagline@{tagline}}
+\index{tagline@{tagline}!FBSDKTooltipView@{F\-B\-S\-D\-K\-Tooltip\-View}}
+\subsubsection[{tagline}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) tagline\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_tooltip_view_a48a5512acd97a1af6fbf64e2689e21e2}
+Gets or sets the optional phrase that comprises the first part of the label (and is highlighted differently). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Login\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Tooltip\-View.\-h\end{DoxyCompactItemize}

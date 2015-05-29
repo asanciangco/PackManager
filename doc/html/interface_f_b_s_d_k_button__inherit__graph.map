@@ -1,0 +1,6 @@
+<map id="FBSDKButton" name="FBSDKButton">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_like_button.html" title="{FBSDKLikeButton\n|+ soundEnabled\l|}" alt="" coords="5,291,133,365"/>
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_login_button.html" title="{FBSDKLoginButton\n|+ defaultAudience\l+ delegate\l+ loginBehavior\l+ publishPermissions\l+ readPermissions\l+ tooltipBehavior\l+ tooltipColorStyle\l|}" alt="" coords="158,251,305,405"/>
+<area shape="rect" id="node5" href="$interface_f_b_s_d_k_send_button.html" title="{FBSDKSendButton\n||}" alt="" coords="330,291,464,365"/>
+<area shape="rect" id="node6" href="$interface_f_b_s_d_k_share_button.html" title="{FBSDKShareButton\n||}" alt="" coords="489,291,628,365"/>
+</map>

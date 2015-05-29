@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['nativead_3adidfailwitherror_3a',['nativeAd:didFailWithError:',['../protocol_f_b_native_ad_delegate-p.html#a0d57d7031ffc8525b32e688e2ea4d34b',1,'FBNativeAdDelegate-p']]],
+  ['nativeaddidclick_3a',['nativeAdDidClick:',['../protocol_f_b_native_ad_delegate-p.html#a16a06ece90ad67d947c7f872f1c19415',1,'FBNativeAdDelegate-p']]],
+  ['nativeaddidfinishhandlingclick_3a',['nativeAdDidFinishHandlingClick:',['../protocol_f_b_native_ad_delegate-p.html#a5af22b4df48d32e3f69f2c6e2cdcd2aa',1,'FBNativeAdDelegate-p']]],
+  ['nativeaddidload_3a',['nativeAdDidLoad:',['../protocol_f_b_native_ad_delegate-p.html#a528f181d34d692b593aa212a155efe48',1,'FBNativeAdDelegate-p']]],
+  ['nativeadsfailedtoloadwitherror_3a',['nativeAdsFailedToLoadWithError:',['../protocol_f_b_native_ads_manager_delegate-p.html#a66ed8569e0393c4001fe34bb47b04156',1,'FBNativeAdsManagerDelegate-p']]],
+  ['nativeadsloaded',['nativeAdsLoaded',['../protocol_f_b_native_ads_manager_delegate-p.html#ae0defdcc266e48819b2f7eb07eb7fb8d',1,'FBNativeAdsManagerDelegate-p']]],
+  ['nativeadviewwithnativead_3awithtype_3a',['nativeAdViewWithNativeAd:withType:',['../interface_f_b_native_ad_view.html#a60b61b326f99bb6d5133bf69ac68c1de',1,'FBNativeAdView']]],
+  ['nativeadviewwithnativead_3awithtype_3awithattributes_3a',['nativeAdViewWithNativeAd:withType:withAttributes:',['../interface_f_b_native_ad_view.html#acf3de61d2f27f5d8595dd4253ea8e1d9',1,'FBNativeAdView']]],
+  ['nativeadwilllogimpression_3a',['nativeAdWillLogImpression:',['../protocol_f_b_native_ad_delegate-p.html#a1073cc774a1573072c3264ab13f84bb8',1,'FBNativeAdDelegate-p']]],
+  ['navigate_3a',['navigate:',['../interface_b_f_app_link_navigation.html#a5a03d67d7fb455e69907574022316792',1,'BFAppLinkNavigation']]],
+  ['navigatetoapplink_3aerror_3a',['navigateToAppLink:error:',['../interface_b_f_app_link_navigation.html#a605c43d3b1bdb897e4e6e9b475652140',1,'BFAppLinkNavigation']]],
+  ['navigatetourlinbackground_3a',['navigateToURLInBackground:',['../interface_b_f_app_link_navigation.html#a2afa0e9a3c1c1c86b6bb61b413960f05',1,'BFAppLinkNavigation']]],
+  ['navigatetourlinbackground_3aresolver_3a',['navigateToURLInBackground:resolver:',['../interface_b_f_app_link_navigation.html#ad43dd649b3c834977f3d0330bf55766d',1,'BFAppLinkNavigation']]],
+  ['navigationwithapplink_3aextras_3aapplinkdata_3a',['navigationWithAppLink:extras:appLinkData:',['../interface_b_f_app_link_navigation.html#a4427fccd6479cd32aad30a840bbb0367',1,'BFAppLinkNavigation']]],
+  ['nextnativead',['nextNativeAd',['../interface_f_b_native_ads_manager.html#ab78e69cc265c33726e700431f8715de5',1,'FBNativeAdsManager']]],
+  ['ns_5fextension_5funavailable_5fios',['NS_EXTENSION_UNAVAILABLE_IOS',['../interface_f_b_s_d_k_messenger_sharer.html#a65bc2a84f15bfa1cd2454410764ee3f3',1,'FBSDKMessengerSharer']]],
+  ['numberforkey_3a',['numberForKey:',['../protocol_f_b_s_d_k_share_open_graph_value_containing-p.html#a90d69b7b3128d073821f0cc8bb72a8f7',1,'FBSDKShareOpenGraphValueContaining-p']]],
+  ['numberofdays',['numberOfDays',['../interface_weather_report.html#a43c87e18a2a90ba36e4426e066ec1bc0',1,'WeatherReport']]],
+  ['numberoftrips',['numberOfTrips',['../interface_trips_data.html#aaad503ab67656b4e43ad6227fba6fc59',1,'TripsData']]]
+];

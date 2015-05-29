@@ -1,0 +1,103 @@
+\hypertarget{interface_f_b_s_d_k_graph_error_recovery_processor}{\section{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor Class Reference}
+\label{interface_f_b_s_d_k_graph_error_recovery_processor}\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{interface_f_b_s_d_k_graph_error_recovery_processor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{interface_f_b_s_d_k_graph_error_recovery_processor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor_a0073720d8165a9ec12647d370248e343}{process\-Error\-:request\-:delegate\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor_a2b4fe67a50c150f8b5fc0e664d92c552}{did\-Present\-Error\-With\-Recovery\-:context\-Info\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id\\*
+$<$ \hyperlink{protocol_f_b_s_d_k_graph_error_recovery_processor_delegate-p}{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate} $>$ \hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor_a3028da88a3e241fed8b263d99c207092}{delegate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a type that can process Facebook N\-S\-Errors with best practices.  Facebook N\-S\-Errors can contain \hyperlink{protocol_f_b_s_d_k_error_recovery_attempting-p}{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting} instances to recover from errors, or localized messages to present to the user. This class will process the instances as follows\-:
+
+
+\begin{DoxyEnumerate}
+\item If the error is temporary as indicated by F\-B\-S\-D\-K\-Graph\-Request\-Error\-Category\-Key, assume the recovery succeeded and notify the delegate.
+\item If a \hyperlink{protocol_f_b_s_d_k_error_recovery_attempting-p}{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting} instance is available, display an alert (dispatched to main thread) with the recovery options and call the instance's \mbox{[} attempt\-Recovery\-From\-Error\-:option\-Index\-:...\mbox{]}.
+\item If a \hyperlink{protocol_f_b_s_d_k_error_recovery_attempting-p}{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting} is not available, check the user\-Info for F\-B\-S\-D\-K\-Localized\-Error\-Description\-Key and present that in an alert (dispatched to main thread).
+\end{DoxyEnumerate}
+
+By default, F\-B\-S\-D\-K\-Graph\-Requests use this type to process errors and retry the request upon a successful recovery.
+
+Note that Facebook recovery attempters can present U\-I or even cause app switches (such as to login). Any such work is dispatched to the main thread (therefore your request handlers may then run on the main thread).
+
+Login recovery requires F\-B\-S\-D\-K\-Login\-Kit. Login will use F\-B\-S\-D\-K\-Login\-Behavior\-Native and will prompt the user for all permissions last granted. If any are declined on the new request, the recovery is not successful but the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} might still have been updated.
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_error_recovery_processor_a2b4fe67a50c150f8b5fc0e664d92c552}{\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}!did\-Present\-Error\-With\-Recovery\-:context\-Info\-:@{did\-Present\-Error\-With\-Recovery\-:context\-Info\-:}}
+\index{did\-Present\-Error\-With\-Recovery\-:context\-Info\-:@{did\-Present\-Error\-With\-Recovery\-:context\-Info\-:}!FBSDKGraphErrorRecoveryProcessor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}}
+\subsubsection[{did\-Present\-Error\-With\-Recovery\-:context\-Info\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) did\-Present\-Error\-With\-Recovery\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{did\-Recover}
+\item[{contextInfo:(void $\ast$)}]{context\-Info}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_error_recovery_processor_a2b4fe67a50c150f8b5fc0e664d92c552}
+The callback for \hyperlink{protocol_f_b_s_d_k_error_recovery_attempting-p}{F\-B\-S\-D\-K\-Error\-Recovery\-Attempting} 
+\begin{DoxyParams}{Parameters}
+{\em did\-Recover} & if the recovery succeeded \\
+\hline
+{\em context\-Info} & unused \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_graph_error_recovery_processor_a0073720d8165a9ec12647d370248e343}{\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}!process\-Error\-:request\-:delegate\-:@{process\-Error\-:request\-:delegate\-:}}
+\index{process\-Error\-:request\-:delegate\-:@{process\-Error\-:request\-:delegate\-:}!FBSDKGraphErrorRecoveryProcessor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}}
+\subsubsection[{process\-Error\-:request\-:delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) process\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\item[{request:({\bf F\-B\-S\-D\-K\-Graph\-Request} $\ast$)}]{request}
+\item[{delegate:(id$<$ {\bf F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate} $>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_error_recovery_processor_a0073720d8165a9ec12647d370248e343}
+Attempts to process the error, return Y\-E\-S if the error can be processed. 
+\begin{DoxyParams}{Parameters}
+{\em error} & the error to process. \\
+\hline
+{\em request} & the relateed request that may be reissued. \\
+\hline
+{\em delegate} & the delegate that will be retained until recovery is complete. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_error_recovery_processor_a3028da88a3e241fed8b263d99c207092}{\index{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKGraphErrorRecoveryProcessor@{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_f_b_s_d_k_graph_error_recovery_processor_a3028da88a3e241fed8b263d99c207092}
+Gets the delegate. Note this is a strong reference, and is nil'ed out after recovery is complete. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor.\-h\end{DoxyCompactItemize}

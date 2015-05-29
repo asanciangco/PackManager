@@ -1,0 +1,89 @@
+\hypertarget{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p}{\section{$<$F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a809da42b13fb800917b7b96b30ac4341}{app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a317e412e820965fdb565aac33f485172}{app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_af7e3430110b339e8115f3b79f766cfb3}{app\-Group\-Join\-Dialog\-Did\-Cancel\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A delegate for \hyperlink{interface_f_b_s_d_k_app_group_join_dialog}{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog}.  The delegate is notified with the results of the app group request as long as the application has permissions to receive the information. For example, if the person is not signed into the containing app, the shower may not be able to distinguish between completion of an app group request and cancellation. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a809da42b13fb800917b7b96b30ac4341}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}!app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:}}
+\index{app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:@{app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:}!FBSDKAppGroupJoinDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Join\-Dialog\-:did\-Complete\-With\-Results\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Join\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} $\ast$)}]{app\-Group\-Join\-Dialog}
+\item[{didCompleteWithResults:(N\-S\-Dictionary $\ast$)}]{results}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a809da42b13fb800917b7b96b30ac4341}
+Sent to the delegate when the app group request completes without error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Join\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_join_dialog}{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} that completed. \\
+\hline
+{\em results} & The results from the dialog. This may be nil or empty. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a317e412e820965fdb565aac33f485172}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}!app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:}}
+\index{app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:@{app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:}!FBSDKAppGroupJoinDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Join\-Dialog\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Join\-Dialog\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} $\ast$)}]{app\-Group\-Join\-Dialog}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_a317e412e820965fdb565aac33f485172}
+Sent to the delegate when the app group request encounters an error. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Join\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_join_dialog}{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} that completed. \\
+\hline
+{\em error} & The error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_af7e3430110b339e8115f3b79f766cfb3}{\index{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}!app\-Group\-Join\-Dialog\-Did\-Cancel\-:@{app\-Group\-Join\-Dialog\-Did\-Cancel\-:}}
+\index{app\-Group\-Join\-Dialog\-Did\-Cancel\-:@{app\-Group\-Join\-Dialog\-Did\-Cancel\-:}!FBSDKAppGroupJoinDialogDelegate-p@{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog\-Delegate-\/p}}
+\subsubsection[{app\-Group\-Join\-Dialog\-Did\-Cancel\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) app\-Group\-Join\-Dialog\-Did\-Cancel\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} $\ast$)}]{app\-Group\-Join\-Dialog}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_s_d_k_app_group_join_dialog_delegate-p_af7e3430110b339e8115f3b79f766cfb3}
+Sent to the delegate when the app group dialog is cancelled. 
+\begin{DoxyParams}{Parameters}
+{\em app\-Group\-Join\-Dialog} & The \hyperlink{interface_f_b_s_d_k_app_group_join_dialog}{F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog} that completed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-App\-Group\-Join\-Dialog.\-h\end{DoxyCompactItemize}

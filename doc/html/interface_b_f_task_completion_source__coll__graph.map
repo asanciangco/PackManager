@@ -1,0 +1,3 @@
+<map id="BFTaskCompletionSource" name="BFTaskCompletionSource">
+<area shape="rect" id="node3" href="$interface_b_f_task.html" title="{BFTask\n|+ result\l+ error\l+ exception\l+ cancelled\l+ faulted\l+ completed\l|+ continueWithBlock:\l+ continueWithExecutor\l:withBlock:\l+ continueWithSuccessBlock:\l+ continueWithExecutor\l:withSuccessBlock:\l+ waitUntilFinished\l+ taskWithResult:\l+ taskWithError:\l+ taskWithException:\l+ cancelledTask\l+ taskForCompletionOfAllTasks:\l+ taskForCompletionOfAllTasks\lWithResults:\l+ taskWithDelay:\l+ taskFromExecutor:withBlock:\l}" alt="" coords="108,131,319,471"/>
+</map>

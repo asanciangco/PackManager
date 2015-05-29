@@ -1,0 +1,83 @@
+\hypertarget{interface_f_b_s_d_k_login_button}{\section{F\-B\-S\-D\-K\-Login\-Button Class Reference}
+\label{interface_f_b_s_d_k_login_button}\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Login\-Button.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Login\-Button\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{interface_f_b_s_d_k_login_button__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Login\-Button\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{interface_f_b_s_d_k_login_button__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+F\-B\-S\-D\-K\-Default\-Audience \hyperlink{interface_f_b_s_d_k_login_button_a27d7d78187d38c367957bac4b28c7ab6}{default\-Audience}
+\item 
+I\-B\-Outlet id\\*
+$<$ \hyperlink{protocol_f_b_s_d_k_login_button_delegate-p}{F\-B\-S\-D\-K\-Login\-Button\-Delegate} $>$ \hyperlink{interface_f_b_s_d_k_login_button_a9334392431c0fb78a08fe4038a2a30fb}{delegate}
+\item 
+F\-B\-S\-D\-K\-Login\-Behavior \hyperlink{interface_f_b_s_d_k_login_button_afe30ee6f02e53feb1185bea33b5afd8e}{login\-Behavior}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_f_b_s_d_k_login_button_a7b546773564a1961a0e9403e6b48b286}{publish\-Permissions}
+\item 
+N\-S\-Array $\ast$ \hyperlink{interface_f_b_s_d_k_login_button_a4086baec0d0b3203c6dd3b3d65d419f8}{read\-Permissions}
+\item 
+F\-B\-S\-D\-K\-Login\-Button\-Tooltip\-Behavior \hyperlink{interface_f_b_s_d_k_login_button_ad8da738c3ec8c6efbdada9547ef09757}{tooltip\-Behavior}
+\item 
+F\-B\-S\-D\-K\-Tooltip\-Color\-Style \hyperlink{interface_f_b_s_d_k_login_button_af2e1aa50591714452427fc87eade3e5e}{tooltip\-Color\-Style}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A button to simplify login.  {\ttfamily \hyperlink{interface_f_b_s_d_k_login_button}{F\-B\-S\-D\-K\-Login\-Button}} works with {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} to determine what to display. The delegate is only notified when a login flow is initiated by a tapping the button and your app delegate is connected to {\ttfamily \hyperlink{interface_f_b_s_d_k_application_delegate}{F\-B\-S\-D\-K\-Application\-Delegate}} (in the same way when using {\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}}).
+
+{\ttfamily \hyperlink{interface_f_b_s_d_k_login_button}{F\-B\-S\-D\-K\-Login\-Button}} has a fixed height, but you may change the width. {\ttfamily init\-With\-Frame\-:C\-G\-Rect\-Zero} will size the button to its minimum frame. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_login_button_a27d7d78187d38c367957bac4b28c7ab6}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!default\-Audience@{default\-Audience}}
+\index{default\-Audience@{default\-Audience}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{default\-Audience}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Default\-Audience) default\-Audience\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_button_a27d7d78187d38c367957bac4b28c7ab6}
+The default audience to use, if publish permissions are requested at login time. \hypertarget{interface_f_b_s_d_k_login_button_a9334392431c0fb78a08fe4038a2a30fb}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (I\-B\-Outlet id$<${\bf F\-B\-S\-D\-K\-Login\-Button\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{interface_f_b_s_d_k_login_button_a9334392431c0fb78a08fe4038a2a30fb}
+Gets or sets the delegate. \hypertarget{interface_f_b_s_d_k_login_button_afe30ee6f02e53feb1185bea33b5afd8e}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!login\-Behavior@{login\-Behavior}}
+\index{login\-Behavior@{login\-Behavior}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{login\-Behavior}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Login\-Behavior) login\-Behavior\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_button_afe30ee6f02e53feb1185bea33b5afd8e}
+Gets or sets the login behavior to use \hypertarget{interface_f_b_s_d_k_login_button_a7b546773564a1961a0e9403e6b48b286}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!publish\-Permissions@{publish\-Permissions}}
+\index{publish\-Permissions@{publish\-Permissions}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{publish\-Permissions}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array$\ast$) publish\-Permissions\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_login_button_a7b546773564a1961a0e9403e6b48b286}
+The publish permissions to request.
+
+Use {\ttfamily default\-Audience} to specify the default audience to publish to. Note this is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \hypertarget{interface_f_b_s_d_k_login_button_a4086baec0d0b3203c6dd3b3d65d419f8}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!read\-Permissions@{read\-Permissions}}
+\index{read\-Permissions@{read\-Permissions}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{read\-Permissions}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array$\ast$) read\-Permissions\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_login_button_a4086baec0d0b3203c6dd3b3d65d419f8}
+The read permissions to request.
+
+Note, that if read permissions are specified, then publish permissions should not be specified. This is converted to N\-S\-Set and is only an N\-S\-Array for the convenience of literal syntax. \hypertarget{interface_f_b_s_d_k_login_button_ad8da738c3ec8c6efbdada9547ef09757}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!tooltip\-Behavior@{tooltip\-Behavior}}
+\index{tooltip\-Behavior@{tooltip\-Behavior}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{tooltip\-Behavior}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Login\-Button\-Tooltip\-Behavior) tooltip\-Behavior\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_button_ad8da738c3ec8c6efbdada9547ef09757}
+Gets or sets the desired tooltip behavior. \hypertarget{interface_f_b_s_d_k_login_button_af2e1aa50591714452427fc87eade3e5e}{\index{F\-B\-S\-D\-K\-Login\-Button@{F\-B\-S\-D\-K\-Login\-Button}!tooltip\-Color\-Style@{tooltip\-Color\-Style}}
+\index{tooltip\-Color\-Style@{tooltip\-Color\-Style}!FBSDKLoginButton@{F\-B\-S\-D\-K\-Login\-Button}}
+\subsubsection[{tooltip\-Color\-Style}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Tooltip\-Color\-Style) tooltip\-Color\-Style\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_button_af2e1aa50591714452427fc87eade3e5e}
+Gets or sets the desired tooltip color style. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Login\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Login\-Button.\-h\end{DoxyCompactItemize}

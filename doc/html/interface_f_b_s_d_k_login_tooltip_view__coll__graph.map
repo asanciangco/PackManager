@@ -1,0 +1,3 @@
+<map id="FBSDKLoginTooltipView" name="FBSDKLoginTooltipView">
+<area shape="rect" id="node2" href="$interface_f_b_s_d_k_tooltip_view.html" title="{FBSDKTooltipView\n|+ displayDuration\l+ colorStyle\l+ message\l+ tagline\l|+ initWithTagline:message\l:colorStyle:\l+ presentFromView:\l+ presentInView:withArrowPosition\l:direction:\l+ dismiss\l}" alt="" coords="5,129,232,309"/>
+</map>

@@ -1,0 +1,131 @@
+\hypertarget{protocol_f_b_ad_view_delegate-p}{\section{$<$F\-B\-Ad\-View\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_ad_view_delegate-p}\index{$<$\-F\-B\-Ad\-View\-Delegate$>$@{$<$\-F\-B\-Ad\-View\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-Ad\-View\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{protocol_f_b_ad_view_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-Ad\-View\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{protocol_f_b_ad_view_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_aeead31f23215c530a65a8021b60be272}{ad\-View\-Did\-Click\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_afb3e3feef789d7d7869646f921d9bdad}{ad\-View\-Did\-Finish\-Handling\-Click\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_a886052c0c3a43d986e216f1fedd6fed4}{ad\-View\-Did\-Load\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_a77cdc0973aacc3ef566ad0fdf09de358}{ad\-View\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_aa27a11acae34adb3e9f89c066d544f0f}{ad\-View\-Will\-Log\-Impression\-:}
+\item 
+(U\-I\-View\-Controller $\ast$) -\/ \hyperlink{protocol_f_b_ad_view_delegate-p_af7ccf273bfa446223c58402271e27dda}{view\-Controller\-For\-Presenting\-Modal\-View}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_ad_view_delegate-p_a77cdc0973aacc3ef566ad0fdf09de358}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!ad\-View\-:did\-Fail\-With\-Error\-:@{ad\-View\-:did\-Fail\-With\-Error\-:}}
+\index{ad\-View\-:did\-Fail\-With\-Error\-:@{ad\-View\-:did\-Fail\-With\-Error\-:}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{ad\-View\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) ad\-View\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Ad\-View} $\ast$)}]{ad\-View}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_a77cdc0973aacc3ef566ad0fdf09de358}
+Sent after an \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} fails to load the ad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\-View} & An \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object sending the message. \\
+\hline
+{\em error} & An error object containing details of the error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_ad_view_delegate-p_aeead31f23215c530a65a8021b60be272}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!ad\-View\-Did\-Click\-:@{ad\-View\-Did\-Click\-:}}
+\index{ad\-View\-Did\-Click\-:@{ad\-View\-Did\-Click\-:}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{ad\-View\-Did\-Click\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) ad\-View\-Did\-Click\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Ad\-View} $\ast$)}]{ad\-View}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_aeead31f23215c530a65a8021b60be272}
+Sent after an ad has been clicked by the person.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\-View} & An \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_ad_view_delegate-p_afb3e3feef789d7d7869646f921d9bdad}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!ad\-View\-Did\-Finish\-Handling\-Click\-:@{ad\-View\-Did\-Finish\-Handling\-Click\-:}}
+\index{ad\-View\-Did\-Finish\-Handling\-Click\-:@{ad\-View\-Did\-Finish\-Handling\-Click\-:}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{ad\-View\-Did\-Finish\-Handling\-Click\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) ad\-View\-Did\-Finish\-Handling\-Click\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Ad\-View} $\ast$)}]{ad\-View}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_afb3e3feef789d7d7869646f921d9bdad}
+When an ad is clicked, the modal view will be presented. And when the user finishes the interaction with the modal view and dismiss it, this message will be sent, returning control to the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\-View} & An \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_ad_view_delegate-p_a886052c0c3a43d986e216f1fedd6fed4}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!ad\-View\-Did\-Load\-:@{ad\-View\-Did\-Load\-:}}
+\index{ad\-View\-Did\-Load\-:@{ad\-View\-Did\-Load\-:}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{ad\-View\-Did\-Load\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) ad\-View\-Did\-Load\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Ad\-View} $\ast$)}]{ad\-View}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_a886052c0c3a43d986e216f1fedd6fed4}
+Sent when an ad has been successfully loaded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\-View} & An \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_ad_view_delegate-p_aa27a11acae34adb3e9f89c066d544f0f}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!ad\-View\-Will\-Log\-Impression\-:@{ad\-View\-Will\-Log\-Impression\-:}}
+\index{ad\-View\-Will\-Log\-Impression\-:@{ad\-View\-Will\-Log\-Impression\-:}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{ad\-View\-Will\-Log\-Impression\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) ad\-View\-Will\-Log\-Impression\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Ad\-View} $\ast$)}]{ad\-View}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_aa27a11acae34adb3e9f89c066d544f0f}
+Sent immediately before the impression of an \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ad\-View} & An \hyperlink{interface_f_b_ad_view}{F\-B\-Ad\-View} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_ad_view_delegate-p_af7ccf273bfa446223c58402271e27dda}{\index{F\-B\-Ad\-View\-Delegate-\/p@{F\-B\-Ad\-View\-Delegate-\/p}!view\-Controller\-For\-Presenting\-Modal\-View@{view\-Controller\-For\-Presenting\-Modal\-View}}
+\index{view\-Controller\-For\-Presenting\-Modal\-View@{view\-Controller\-For\-Presenting\-Modal\-View}!FBAdViewDelegate-p@{F\-B\-Ad\-View\-Delegate-\/p}}
+\subsubsection[{view\-Controller\-For\-Presenting\-Modal\-View}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-View\-Controller $\ast$) view\-Controller\-For\-Presenting\-Modal\-View 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_ad_view_delegate-p_af7ccf273bfa446223c58402271e27dda}
+Asks the delegate for a view controller to present modal content, such as the in-\/app browser that can appear when an ad is clicked.
+
+\begin{DoxyReturn}{Returns}
+A view controller that is used to present modal content. 
+\end{DoxyReturn}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Ad\-View.\-h\end{DoxyCompactItemize}

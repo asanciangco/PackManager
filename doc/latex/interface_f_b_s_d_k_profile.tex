@@ -1,0 +1,189 @@
+\hypertarget{interface_f_b_s_d_k_profile}{\section{F\-B\-S\-D\-K\-Profile Class Reference}
+\label{interface_f_b_s_d_k_profile}\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Profile.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Profile\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_profile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Profile\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_f_b_s_d_k_profile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_profile_acadd65cc553c1bdf49aceb92a30556b5}{init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:}
+\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_f_b_s_d_k_profile_a61ad2af4fd77ee66b213030c50e5279f}{image\-Path\-For\-Picture\-Mode\-:size\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_s_d_k_profile_ad33c3ef5b9f7875b25319bc5d7b2f360}{is\-Equal\-To\-Profile\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_f_b_s_d_k_profile}{F\-B\-S\-D\-K\-Profile} $\ast$) + \hyperlink{interface_f_b_s_d_k_profile_a38bbb7b3aa2faccef349a8ecca18f78d}{current\-Profile}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_profile_a68a76c246e717b3a9187316295fa1876}{set\-Current\-Profile\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_profile_a2464165f05f9109a0e60af7adc3a5ca8}{enable\-Updates\-On\-Access\-Token\-Change\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_profile_a26a7f698acf093c0d7e2be81532d1d67}{user\-I\-D}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_profile_a31272e40b64d9f34df275b6fcd79fc7b}{first\-Name}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_profile_a27ffc05364ad2ebef222c9fb97a1369b}{middle\-Name}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_profile_ae6eb49fec06e9a53af370a18ab54e4a1}{last\-Name}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_profile_ac9dc573eea0b89119bc6564618cf959f}{name}
+\item 
+N\-S\-U\-R\-L $\ast$ \hyperlink{interface_f_b_s_d_k_profile_ad18140af79f94f03a1317ff4cb1a5b31}{link\-U\-R\-L}
+\item 
+N\-S\-Date $\ast$ \hyperlink{interface_f_b_s_d_k_profile_aef99209a7a849699d65189f37d90cfb7}{refresh\-Date}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an immutable Facebook profile  This class provides a global \char`\"{}current\-Profile\char`\"{} instance to more easily add social context to your application. When the profile changes, a notification is posted so that you can update relevant parts of your U\-I and is persisted to N\-S\-User\-Defaults.
+
+Typically, you will want to call {\ttfamily enable\-Updates\-On\-Access\-Token\-Change\-:Y\-E\-S} so that it automatically observes changes to the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}}.
+
+You can use this class to build your own {\ttfamily \hyperlink{interface_f_b_s_d_k_profile_picture_view}{F\-B\-S\-D\-K\-Profile\-Picture\-View}} or in place of typical requests to \char`\"{}/me\char`\"{}. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_profile_a38bbb7b3aa2faccef349a8ecca18f78d}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!current\-Profile@{current\-Profile}}
+\index{current\-Profile@{current\-Profile}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{current\-Profile}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf F\-B\-S\-D\-K\-Profile} $\ast$) current\-Profile 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_a38bbb7b3aa2faccef349a8ecca18f78d}
+Gets the current \hyperlink{interface_f_b_s_d_k_profile}{F\-B\-S\-D\-K\-Profile} instance. \hypertarget{interface_f_b_s_d_k_profile_a2464165f05f9109a0e60af7adc3a5ca8}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!enable\-Updates\-On\-Access\-Token\-Change\-:@{enable\-Updates\-On\-Access\-Token\-Change\-:}}
+\index{enable\-Updates\-On\-Access\-Token\-Change\-:@{enable\-Updates\-On\-Access\-Token\-Change\-:}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{enable\-Updates\-On\-Access\-Token\-Change\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) enable\-Updates\-On\-Access\-Token\-Change\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{enable}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_a2464165f05f9109a0e60af7adc3a5ca8}
+Indicates if {\ttfamily current\-Profile} will automatically observe {\ttfamily F\-B\-S\-D\-K\-Access\-Token\-Did\-Change\-Notification} notifications 
+\begin{DoxyParams}{Parameters}
+{\em enable} & Y\-E\-S is observing  If observing, this class will issue a graph request for public profile data when the current token's user\-I\-D differs from the current profile. You can observe {\ttfamily F\-B\-S\-D\-K\-Profile\-Did\-Change\-Notification} for when the profile is updated.\\
+\hline
+\end{DoxyParams}
+Note that if {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} is unset, the {\ttfamily current\-Profile} instance remains. It's also possible for {\ttfamily current\-Profile} to return nil until the data is fetched. \hypertarget{interface_f_b_s_d_k_profile_a61ad2af4fd77ee66b213030c50e5279f}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!image\-Path\-For\-Picture\-Mode\-:size\-:@{image\-Path\-For\-Picture\-Mode\-:size\-:}}
+\index{image\-Path\-For\-Picture\-Mode\-:size\-:@{image\-Path\-For\-Picture\-Mode\-:size\-:}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{image\-Path\-For\-Picture\-Mode\-:size\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) image\-Path\-For\-Picture\-Mode\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-S\-D\-K\-Profile\-Picture\-Mode)}]{mode}
+\item[{size:(C\-G\-Size)}]{size}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_a61ad2af4fd77ee66b213030c50e5279f}
+A convenience method for returning a Graph A\-P\-I path for retrieving the user's profile image.  You can pass this to a {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request}{F\-B\-S\-D\-K\-Graph\-Request}} instance to download the image. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & The picture mode \\
+\hline
+{\em size} & The height and width. This will be rounded to integer precision. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_profile_acadd65cc553c1bdf49aceb92a30556b5}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:@{init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:}}
+\index{init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:@{init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{init\-With\-User\-I\-D\-:first\-Name\-:middle\-Name\-:last\-Name\-:name\-:link\-U\-R\-L\-:refresh\-Date\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-User\-I\-D\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{user\-I\-D}
+\item[{firstName:(N\-S\-String $\ast$)}]{first\-Name}
+\item[{middleName:(N\-S\-String $\ast$)}]{middle\-Name}
+\item[{lastName:(N\-S\-String $\ast$)}]{last\-Name}
+\item[{name:(N\-S\-String $\ast$)}]{name}
+\item[{linkURL:(N\-S\-U\-R\-L $\ast$)}]{link\-U\-R\-L}
+\item[{refreshDate:(N\-S\-Date $\ast$)}]{N\-S\-\_\-\-D\-E\-S\-I\-G\-N\-A\-T\-E\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_acadd65cc553c1bdf49aceb92a30556b5}
+initializes a new instance. 
+\begin{DoxyParams}{Parameters}
+{\em user\-I\-D} & the user I\-D \\
+\hline
+{\em first\-Name} & the user's first name \\
+\hline
+{\em middle\-Name} & the user's middle name \\
+\hline
+{\em last\-Name} & the user's last name \\
+\hline
+{\em name} & the user's complete name \\
+\hline
+{\em link\-U\-R\-L} & the link for this profile \\
+\hline
+{\em refresh\-Date} & the optional date this profile was fetched. Defaults to \mbox{[}N\-S\-Date date\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_profile_ad33c3ef5b9f7875b25319bc5d7b2f360}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!is\-Equal\-To\-Profile\-:@{is\-Equal\-To\-Profile\-:}}
+\index{is\-Equal\-To\-Profile\-:@{is\-Equal\-To\-Profile\-:}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{is\-Equal\-To\-Profile\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Equal\-To\-Profile\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Profile} $\ast$)}]{profile}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_ad33c3ef5b9f7875b25319bc5d7b2f360}
+Returns Y\-E\-S if the profile is equivalent to the receiver. 
+\begin{DoxyParams}{Parameters}
+{\em profile} & the profile to compare to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_profile_a68a76c246e717b3a9187316295fa1876}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!set\-Current\-Profile\-:@{set\-Current\-Profile\-:}}
+\index{set\-Current\-Profile\-:@{set\-Current\-Profile\-:}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{set\-Current\-Profile\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) set\-Current\-Profile\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Profile} $\ast$)}]{profile}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_profile_a68a76c246e717b3a9187316295fa1876}
+Sets the current instance and posts the appropriate notification if the profile parameter is different than the receiver. 
+\begin{DoxyParams}{Parameters}
+{\em profile} & the profile to set  This persists the profile to N\-S\-User\-Defaults. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_profile_a31272e40b64d9f34df275b6fcd79fc7b}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!first\-Name@{first\-Name}}
+\index{first\-Name@{first\-Name}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{first\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) first\-Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_a31272e40b64d9f34df275b6fcd79fc7b}
+The user's first name \hypertarget{interface_f_b_s_d_k_profile_ae6eb49fec06e9a53af370a18ab54e4a1}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!last\-Name@{last\-Name}}
+\index{last\-Name@{last\-Name}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{last\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) last\-Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_ae6eb49fec06e9a53af370a18ab54e4a1}
+The user's last name \hypertarget{interface_f_b_s_d_k_profile_ad18140af79f94f03a1317ff4cb1a5b31}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!link\-U\-R\-L@{link\-U\-R\-L}}
+\index{link\-U\-R\-L@{link\-U\-R\-L}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{link\-U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-R\-L$\ast$) link\-U\-R\-L\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_ad18140af79f94f03a1317ff4cb1a5b31}
+A U\-R\-L to the user's profile.  Consider using \hyperlink{interface_bolts}{Bolts} and {\ttfamily \hyperlink{interface_f_b_s_d_k_app_link_resolver}{F\-B\-S\-D\-K\-App\-Link\-Resolver}} to resolve this to an app link to link directly to the user's profile in the Facebook app. \hypertarget{interface_f_b_s_d_k_profile_a27ffc05364ad2ebef222c9fb97a1369b}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!middle\-Name@{middle\-Name}}
+\index{middle\-Name@{middle\-Name}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{middle\-Name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) middle\-Name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_a27ffc05364ad2ebef222c9fb97a1369b}
+The user's middle name \hypertarget{interface_f_b_s_d_k_profile_ac9dc573eea0b89119bc6564618cf959f}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!name@{name}}
+\index{name@{name}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_ac9dc573eea0b89119bc6564618cf959f}
+The user's complete name \hypertarget{interface_f_b_s_d_k_profile_aef99209a7a849699d65189f37d90cfb7}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!refresh\-Date@{refresh\-Date}}
+\index{refresh\-Date@{refresh\-Date}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{refresh\-Date}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Date$\ast$) refresh\-Date\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_aef99209a7a849699d65189f37d90cfb7}
+The last time the profile data was fetched. \hypertarget{interface_f_b_s_d_k_profile_a26a7f698acf093c0d7e2be81532d1d67}{\index{F\-B\-S\-D\-K\-Profile@{F\-B\-S\-D\-K\-Profile}!user\-I\-D@{user\-I\-D}}
+\index{user\-I\-D@{user\-I\-D}!FBSDKProfile@{F\-B\-S\-D\-K\-Profile}}
+\subsubsection[{user\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) user\-I\-D\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_profile_a26a7f698acf093c0d7e2be81532d1d67}
+The user id 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Profile.\-h\end{DoxyCompactItemize}

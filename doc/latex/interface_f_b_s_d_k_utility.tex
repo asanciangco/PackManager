@@ -1,0 +1,112 @@
+\hypertarget{interface_f_b_s_d_k_utility}{\section{F\-B\-S\-D\-K\-Utility Class Reference}
+\label{interface_f_b_s_d_k_utility}\index{F\-B\-S\-D\-K\-Utility@{F\-B\-S\-D\-K\-Utility}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Utility.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Utility\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{interface_f_b_s_d_k_utility__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Utility\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{interface_f_b_s_d_k_utility__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Dictionary $\ast$) + \hyperlink{interface_f_b_s_d_k_utility_a2db20496809c545b0488a2034b6d9ddf}{dictionary\-With\-Query\-String\-:}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_f_b_s_d_k_utility_aec88416ed4a6b25ba45cf25c85d1835d}{query\-String\-With\-Dictionary\-:error\-:}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_f_b_s_d_k_utility_ad228bd3c5c619481fdc05d87c530bcd4}{U\-R\-L\-Decode\-:}
+\item 
+(N\-S\-String $\ast$) + \hyperlink{interface_f_b_s_d_k_utility_a4ca5debbcfbb8dbeeab93fece42cf57a}{U\-R\-L\-Encode\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to contain common utility methods. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_utility_a2db20496809c545b0488a2034b6d9ddf}{\index{F\-B\-S\-D\-K\-Utility@{F\-B\-S\-D\-K\-Utility}!dictionary\-With\-Query\-String\-:@{dictionary\-With\-Query\-String\-:}}
+\index{dictionary\-With\-Query\-String\-:@{dictionary\-With\-Query\-String\-:}!FBSDKUtility@{F\-B\-S\-D\-K\-Utility}}
+\subsubsection[{dictionary\-With\-Query\-String\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-Dictionary $\ast$) dictionary\-With\-Query\-String\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{query\-String}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_utility_a2db20496809c545b0488a2034b6d9ddf}
+Parses a query string into a dictionary. 
+\begin{DoxyParams}{Parameters}
+{\em query\-String} & The query string value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary with the key/value pairs. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_utility_aec88416ed4a6b25ba45cf25c85d1835d}{\index{F\-B\-S\-D\-K\-Utility@{F\-B\-S\-D\-K\-Utility}!query\-String\-With\-Dictionary\-:error\-:@{query\-String\-With\-Dictionary\-:error\-:}}
+\index{query\-String\-With\-Dictionary\-:error\-:@{query\-String\-With\-Dictionary\-:error\-:}!FBSDKUtility@{F\-B\-S\-D\-K\-Utility}}
+\subsubsection[{query\-String\-With\-Dictionary\-:error\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) query\-String\-With\-Dictionary\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Dictionary $\ast$)}]{dictionary}
+\item[{error:(N\-S\-Error $\ast$\-\_\-\-\_\-autoreleasing $\ast$)}]{error\-Ref}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_utility_aec88416ed4a6b25ba45cf25c85d1835d}
+Constructs a query string from a dictionary. 
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & The dictionary with key/value pairs for the query string. \\
+\hline
+{\em error\-Ref} & If an error occurs, upon return contains an N\-S\-Error object that describes the problem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Query string representation of the parameters. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_utility_ad228bd3c5c619481fdc05d87c530bcd4}{\index{F\-B\-S\-D\-K\-Utility@{F\-B\-S\-D\-K\-Utility}!U\-R\-L\-Decode\-:@{U\-R\-L\-Decode\-:}}
+\index{U\-R\-L\-Decode\-:@{U\-R\-L\-Decode\-:}!FBSDKUtility@{F\-B\-S\-D\-K\-Utility}}
+\subsubsection[{U\-R\-L\-Decode\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) U\-R\-L\-Decode\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_utility_ad228bd3c5c619481fdc05d87c530bcd4}
+Decodes a value from an U\-R\-L. 
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to decode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The decoded value. 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_utility_a4ca5debbcfbb8dbeeab93fece42cf57a}{\index{F\-B\-S\-D\-K\-Utility@{F\-B\-S\-D\-K\-Utility}!U\-R\-L\-Encode\-:@{U\-R\-L\-Encode\-:}}
+\index{U\-R\-L\-Encode\-:@{U\-R\-L\-Encode\-:}!FBSDKUtility@{F\-B\-S\-D\-K\-Utility}}
+\subsubsection[{U\-R\-L\-Encode\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\-S\-String $\ast$) U\-R\-L\-Encode\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{value}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_utility_a4ca5debbcfbb8dbeeab93fece42cf57a}
+Encodes a value for an U\-R\-L. 
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to encode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The encoded value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Utility.\-h\end{DoxyCompactItemize}

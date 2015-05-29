@@ -1,0 +1,172 @@
+\hypertarget{interface_weather_a_p_i}{\section{Weather\-A\-P\-I Class Reference}
+\label{interface_weather_a_p_i}\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}}
+}
+
+
+Inheritance diagram for Weather\-A\-P\-I\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{interface_weather_a_p_i__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Weather\-A\-P\-I\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{interface_weather_a_p_i__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_weather_report}{Weather\-Report} $\ast$) -\/ \hyperlink{interface_weather_a_p_i_aec65367ed89cc10d855a561a01819a61}{get\-Weather\-Report\-:start\-:end\-:}
+\item 
+(\hyperlink{interface_weather_report}{Weather\-Report} $\ast$) -\/ \hyperlink{interface_weather_a_p_i_a923043c755894633e58b7d8dbd164a30}{get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:}
+\item 
+(N\-S\-Mutable\-Array $\ast$) -\/ \hyperlink{interface_weather_a_p_i_aa3c918e845c1788e0802e67a1a7fd0d7}{get\-Weather\-From\-Present\-:lng\-:start\-:end\-:}
+\item 
+(N\-S\-Mutable\-Array $\ast$) -\/ \hyperlink{interface_weather_a_p_i_a41a7e428642bb5361e5e4f4ed472ccb5}{get\-Weather\-From\-Historical\-:start\-:end\-:}
+\item 
+(void) -\/ \hyperlink{interface_weather_a_p_i_a289d134b824df2c726779f5da8bd6032}{get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_weather_a_p_i_a140d5b84ad32b8b208e8750882602040}{shared\-Instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_weather_a_p_i_a289d134b824df2c726779f5da8bd6032}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:@{get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:}}
+\index{get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:@{get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{get\-Lat\-Long\-From\-Address\-:lat\-:lon\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) get\-Lat\-Long\-From\-Address\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{address}
+\item[{lat:(C\-G\-Float $\ast$)}]{lat}
+\item[{lon:(C\-G\-Float $\ast$)}]{lon}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_a289d134b824df2c726779f5da8bd6032}
+get\-Lat\-Long\-From\-Address 
+\begin{DoxyParams}{Parameters}
+{\em address} & location query entered by client \\
+\hline
+{\em lat} & latitude of the location \\
+\hline
+{\em lon} & longitude of the location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void after retrieving the lat/long 
+\end{DoxyReturn}
+\hypertarget{interface_weather_a_p_i_a41a7e428642bb5361e5e4f4ed472ccb5}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!get\-Weather\-From\-Historical\-:start\-:end\-:@{get\-Weather\-From\-Historical\-:start\-:end\-:}}
+\index{get\-Weather\-From\-Historical\-:start\-:end\-:@{get\-Weather\-From\-Historical\-:start\-:end\-:}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{get\-Weather\-From\-Historical\-:start\-:end\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Array $\ast$) get\-Weather\-From\-Historical\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{zip}
+\item[{start:(N\-S\-Date $\ast$)}]{start}
+\item[{end:(N\-S\-Date $\ast$)}]{end}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_a41a7e428642bb5361e5e4f4ed472ccb5}
+Collect the weather data for a present forecast from openweathermap A\-P\-I 
+\begin{DoxyParams}{Parameters}
+{\em zip} & The zip code of the location \\
+\hline
+{\em start} & The start date of the trip \\
+\hline
+{\em end} & The end date of the trip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void after creating a weather report 
+\end{DoxyReturn}
+\hypertarget{interface_weather_a_p_i_aa3c918e845c1788e0802e67a1a7fd0d7}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!get\-Weather\-From\-Present\-:lng\-:start\-:end\-:@{get\-Weather\-From\-Present\-:lng\-:start\-:end\-:}}
+\index{get\-Weather\-From\-Present\-:lng\-:start\-:end\-:@{get\-Weather\-From\-Present\-:lng\-:start\-:end\-:}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{get\-Weather\-From\-Present\-:lng\-:start\-:end\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Array $\ast$) get\-Weather\-From\-Present\-: 
+\begin{DoxyParamCaption}
+\item[{(C\-G\-Float)}]{lat}
+\item[{lng:(C\-G\-Float)}]{lng}
+\item[{start:(N\-S\-Date $\ast$)}]{start}
+\item[{end:(N\-S\-Date $\ast$)}]{end}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_aa3c918e845c1788e0802e67a1a7fd0d7}
+Collect the weather data for a present forecast from openweathermap A\-P\-I 
+\begin{DoxyParams}{Parameters}
+{\em lat} & The trip city latitude \\
+\hline
+{\em lng} & The trip city longitude \\
+\hline
+{\em start} & The start date of the trip \\
+\hline
+{\em end} & The end date of the trip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void after creating a weather report 
+\end{DoxyReturn}
+\hypertarget{interface_weather_a_p_i_aec65367ed89cc10d855a561a01819a61}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!get\-Weather\-Report\-:start\-:end\-:@{get\-Weather\-Report\-:start\-:end\-:}}
+\index{get\-Weather\-Report\-:start\-:end\-:@{get\-Weather\-Report\-:start\-:end\-:}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{get\-Weather\-Report\-:start\-:end\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Weather\-Report} $\ast$) get\-Weather\-Report\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{location}
+\item[{start:(N\-S\-Date $\ast$)}]{start}
+\item[{end:(N\-S\-Date $\ast$)}]{end}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_aec65367ed89cc10d855a561a01819a61}
+Collect the a weather report for a trip 
+\begin{DoxyParams}{Parameters}
+{\em location} & The trip location \\
+\hline
+{\em start} & The start date of the trip \\
+\hline
+{\em end} & The end date of the trip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_weather_report}{Weather\-Report} for the trip to use 
+\end{DoxyReturn}
+\hypertarget{interface_weather_a_p_i_a923043c755894633e58b7d8dbd164a30}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:@{get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:}}
+\index{get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:@{get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{get\-Weather\-Report\-:start\-:end\-:lat\-:lon\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Weather\-Report} $\ast$) get\-Weather\-Report\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{location}
+\item[{start:(N\-S\-Date $\ast$)}]{start}
+\item[{end:(N\-S\-Date $\ast$)}]{end}
+\item[{lat:(C\-G\-Float)}]{lat}
+\item[{lon:(C\-G\-Float)}]{lon}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_a923043c755894633e58b7d8dbd164a30}
+Collect a weather report for a trip 
+\begin{DoxyParams}{Parameters}
+{\em location} & The trip location \\
+\hline
+{\em start} & The start date of the trip \\
+\hline
+{\em end} & The end date of the trip \\
+\hline
+{\em lat} & The trip city latitude \\
+\hline
+{\em lon} & The trip city longitude \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_weather_report}{Weather\-Report} for the trip to use 
+\end{DoxyReturn}
+\hypertarget{interface_weather_a_p_i_a140d5b84ad32b8b208e8750882602040}{\index{Weather\-A\-P\-I@{Weather\-A\-P\-I}!shared\-Instance@{shared\-Instance}}
+\index{shared\-Instance@{shared\-Instance}!WeatherAPI@{Weather\-A\-P\-I}}
+\subsubsection[{shared\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) shared\-Instance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_weather_a_p_i_a140d5b84ad32b8b208e8750882602040}
+Get the shared instance \begin{DoxyReturn}{Returns}
+a shared instance of the \hyperlink{interface_weather_a_p_i}{Weather\-A\-P\-I} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+Pack\-Manager/Weather\-A\-P\-I.\-h\item 
+Pack\-Manager/Weather\-A\-P\-I.\-m\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="LSStubRequestDSL()" name="LSStubRequestDSL()">
+<area shape="rect" id="node2" href="$interface_l_s_stub_request.html" title="{LSStubRequest\n|+ method\l+ headers\l|+ initWithMethod:url:\l+ initWithMethod:urlMatcher:\l+ setHeader:value:\l+ matchesRequest:\l+ initWithMethod:url:\l+ initWithMethod:urlMatcher:\l+ setHeader:value:\l+ matchesRequest:\l}" alt="" coords="4,606,195,786"/>
+<area shape="rect" id="node4" href="$interface_l_s_matcher.html" title="{LSMatcher\n||+ matches:\l+ matches:\l+ matches:\l}" alt="" coords="113,357,199,457"/>
+<area shape="rect" id="node5" href="$interface_l_s_stub_response.html" title="{LSStubResponse\n|+ statusCode\l+ body\l+ headers\l+ shouldFail\l+ error\l|+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l+ initWithError:\l+ initWithStatusCode:\l+ initWithRawResponse:\l+ initDefaultResponse\l+ setHeader:value:\l}" alt="" coords="223,283,389,530"/>
+<area shape="rect" id="node6" href="$protocol_l_s_h_t_t_p_response-p.html" title="{\&lt;LSHTTPResponse\&gt;\n|+ statusCode\l+ headers\l+ body\l|}" alt="" coords="233,131,380,231"/>
+</map>

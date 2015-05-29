@@ -1,0 +1,5 @@
+<map id="FBMediaView" name="FBMediaView">
+<area shape="rect" id="node3" href="$interface_f_b_native_ad.html" title="{FBNativeAd\n|+ placementID\l+ title\l+ subtitle\l+ socialContext\l+ callToAction\l+ body\l+ mediaCachePolicy\l+ delegate\l+ adValid\l|+ initWithPlacementID:\l+ registerViewForInteraction\l:withViewController:\l+ registerViewForInteraction\l:withViewController:withClickable\lViews:\l+ unregisterView\l+ loadAd\l}" alt="" coords="92,321,308,594"/>
+<area shape="rect" id="node6" href="$interface_f_b_ad_image.html" title="{FBAdImage\n|+ url\l+ width\l+ height\l|+ initWithURL:width:height:\l+ loadImageAsyncWithBlock:\l}" alt="" coords="103,131,296,245"/>
+<area shape="rect" id="node5" href="$struct_f_b_ad_star_rating.html" title="{FBAdStarRating\n|# value\l# scale\l|}" alt="" coords="321,145,439,231"/>
+</map>

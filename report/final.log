@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,131 +774,131 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.40 \newpage
-              [1] [2] [3]
+              [1] [2] [3] [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 164.
+(Font)              <9> on input line 169.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 164.
+(Font)              <5> on input line 169.
 
-Overfull \hbox (64.50165pt too wide) in paragraph at lines 164--165
+Overfull \hbox (64.50165pt too wide) in paragraph at lines 169--170
 \T1/lmr/m/n/10.95 The Weather API is an im-por-tant and very tricky com-po-nent
  of our ap-pli-ca-tion. See \T1/lmtt/m/n/10.95 PackManager/WeatherAPI.m
  []
 
-[4] <img/trip_inheritance.png, id=194, 462.72874pt x 629.35126pt>
+<img/trip_inheritance.png, id=189, 462.72874pt x 629.35126pt>
 File: img/trip_inheritance.png Graphic file (type png)
 
 <use img/trip_inheritance.png>
-Package pdftex.def Info: img/trip_inheritance.png used on input line 175.
+Package pdftex.def Info: img/trip_inheritance.png used on input line 180.
 (pdftex.def)             Requested size: 347.0457pt x 472.01228pt.
 
-<img/packable.pdf, id=195, 138.5175pt x 238.8925pt>
+<img/packable.pdf, id=190, 138.5175pt x 238.8925pt>
 File: img/packable.pdf Graphic file (type pdf)
  <use img/packable.pdf>
-Package pdftex.def Info: img/packable.pdf used on input line 182.
+Package pdftex.def Info: img/packable.pdf used on input line 187.
 (pdftex.def)             Requested size: 103.88786pt x 179.16893pt.
 
-<img/interface_packable.png, id=196, 1016.79875pt x 358.33875pt>
+<img/interface_packable.png, id=191, 1016.79875pt x 358.33875pt>
 File: img/interface_packable.png Graphic file (type png)
 
 <use img/interface_packable.png>
-Package pdftex.def Info: img/interface_packable.png used on input line 189.
+Package pdftex.def Info: img/interface_packable.png used on input line 194.
 (pdftex.def)             Requested size: 469.75502pt x 165.54863pt.
 
-<img/interface_weather_api.png, id=197, 187.70125pt x 235.88126pt>
+<img/interface_weather_api.png, id=192, 187.70125pt x 235.88126pt>
 File: img/interface_weather_api.png Graphic file (type png)
 
 <use img/interface_weather_api.png>
-Package pdftex.def Info: img/interface_weather_api.png used on input line 198.
+Package pdftex.def Info: img/interface_weather_api.png used on input line 203.
 (pdftex.def)             Requested size: 105.69415pt x 132.82684pt.
 
-<img/interface_weather_day.png, id=198, 216.81pt x 289.08pt>
+<img/interface_weather_day.png, id=193, 216.81pt x 289.08pt>
 File: img/interface_weather_day.png Graphic file (type png)
 
 <use img/interface_weather_day.png>
-Package pdftex.def Info: img/interface_weather_day.png used on input line 203.
+Package pdftex.def Info: img/interface_weather_day.png used on input line 208.
 (pdftex.def)             Requested size: 147.97118pt x 197.30402pt.
-
-<img/doxygen.png, id=200, 554.07pt x 723.70375pt>
+ [5] [6 <./img/trip_inheritance.png>]
+[7 <./img/packable.pdf> <./img/interface_packable.png>]
+<img/doxygen.png, id=233, 554.07pt x 723.70375pt>
 File: img/doxygen.png Graphic file (type png)
  <use img/doxygen.png>
-Package pdftex.def Info: img/doxygen.png used on input line 217.
+Package pdftex.def Info: img/doxygen.png used on input line 222.
 (pdftex.def)             Requested size: 277.03432pt x 361.85098pt.
 
-[5] [6 <./img/trip_inheritance.png>] [7 <./img/packable.pdf> <./img/interface_p
-ackable.png>] [8 <./img/interface_weather_api.png> <./img/interface_weather_day
-.png> <./img/doxygen.png>]
-<img/travis.png, id=244, 1042.89626pt x 448.67625pt>
+[8 <./img/interface_weather_api.png> <./img/interface_weather_day.png>]
+[9 <./img/doxygen.png>] <img/travis.png, id=252, 1042.89626pt x 448.67625pt>
 File: img/travis.png Graphic file (type png)
- <use img/travis.png>
-Package pdftex.def Info: img/travis.png used on input line 236.
+
+<use img/travis.png>
+Package pdftex.def Info: img/travis.png used on input line 246.
 (pdftex.def)             Requested size: 469.75502pt x 202.10098pt.
-
-<img/ui-2.jpg, id=246, 752.8125pt x 1339.0025pt>
+ <img/ui-2.jpg, id=254, 752.8125pt x 1339.0025pt>
 File: img/ui-2.jpg Graphic file (type jpg)
- <use img/ui-2.jpg>
-Package pdftex.def Info: img/ui-2.jpg used on input line 247.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/ui-8.png, id=247, 378.41376pt x 668.4975pt>
+<use img/ui-2.jpg>
+Package pdftex.def Info: img/ui-2.jpg used on input line 257.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+ <img/ui-8.png, id=255, 378.41376pt x 668.4975pt>
 File: img/ui-8.png Graphic file (type png)
- <use img/ui-8.png>
-Package pdftex.def Info: img/ui-8.png used on input line 247.
+
+<use img/ui-8.png>
+Package pdftex.def Info: img/ui-8.png used on input line 257.
 (pdftex.def)             Requested size: 151.0pt x 266.75163pt.
-
-<img/ui-7.jpg, id=248, 752.8125pt x 1339.0025pt>
+ <img/ui-7.jpg, id=256, 752.8125pt x 1339.0025pt>
 File: img/ui-7.jpg Graphic file (type jpg)
- <use img/ui-7.jpg>
-Package pdftex.def Info: img/ui-7.jpg used on input line 247.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/ui-5.jpg, id=249, 752.8125pt x 1339.0025pt>
+<use img/ui-7.jpg>
+Package pdftex.def Info: img/ui-7.jpg used on input line 257.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+ <img/ui-5.jpg, id=257, 752.8125pt x 1339.0025pt>
 File: img/ui-5.jpg Graphic file (type jpg)
- <use img/ui-5.jpg>
-Package pdftex.def Info: img/ui-5.jpg used on input line 248.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/ui-6.jpg, id=250, 752.8125pt x 1339.0025pt>
+<use img/ui-5.jpg>
+Package pdftex.def Info: img/ui-5.jpg used on input line 258.
+(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+ <img/ui-6.jpg, id=258, 752.8125pt x 1339.0025pt>
 File: img/ui-6.jpg Graphic file (type jpg)
- <use img/ui-6.jpg>
-Package pdftex.def Info: img/ui-6.jpg used on input line 248.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/ui-4.jpg, id=251, 752.8125pt x 1339.0025pt>
-File: img/ui-4.jpg Graphic file (type jpg)
- <use img/ui-4.jpg>
-Package pdftex.def Info: img/ui-4.jpg used on input line 248.
+<use img/ui-6.jpg>
+Package pdftex.def Info: img/ui-6.jpg used on input line 258.
 (pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+ <img/ui-4.png, id=259, 376.40625pt x 670.505pt>
+File: img/ui-4.png Graphic file (type png)
 
-Overfull \hbox (18.36464pt too wide) in paragraph at lines 246--250
+<use img/ui-4.png>
+Package pdftex.def Info: img/ui-4.png used on input line 258.
+(pdftex.def)             Requested size: 151.0pt x 268.98505pt.
+
+Overfull \hbox (18.80481pt too wide) in paragraph at lines 256--260
  [][] 
  []
 
-[9 <./img/travis.png>] [10 <./img/ui-2.jpg> <./img/ui-8.png> <./img/ui-7.jpg> <
-./img/ui-5.jpg> <./img/ui-6.jpg> <./img/ui-4.jpg>]
-Overfull \hbox (1.82332pt too wide) in paragraph at lines 266--267
+
+Overfull \hbox (1.82332pt too wide) in paragraph at lines 271--272
 \T1/lmr/m/n/10.95 weather API, as well as be-ing a source of knowl-edge on gen-
 eral iOS de-vel-op-ment and Objective-
  []
 
-[11]
+[10 <./img/travis.png>] [11 <./img/ui-2.jpg> <./img/ui-8.png> <./img/ui-7.jpg> 
+<./img/ui-5.jpg> <./img/ui-6.jpg> <./img/ui-4.png>] [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
  (./final.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
 Package rerunfilecheck Info: File `final.out' has not changed.
-(rerunfilecheck)             Checksum: 708FBFF7FFC882BBCA0C79D408D096C1;1382.
+(rerunfilecheck)             Checksum: EC202F4964B136DCBD6584C82A7A42A5;1394.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
  ) 
 Here is how much of TeX's memory you used:
- 17320 strings out of 493117
- 324463 string characters out of 6135433
- 390751 words of memory out of 5000000
+ 17322 strings out of 493117
+ 324491 string characters out of 6135433
+ 391773 words of memory out of 5000000
  20359 multiletter control sequences out of 15000+600000
  56818 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,54p,1650b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,54p,1651b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
 texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2014/texmf-d
@@ -908,10 +908,10 @@ ype1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on final.pdf (12 pages, 1427332 bytes).
+Output written on final.pdf (13 pages, 1510899 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 337 PDF objects out of 1000 (max. 8388607)
+ 285 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
  251 words of extra memory for PDF output out of 10000 (max. 10000000)
 

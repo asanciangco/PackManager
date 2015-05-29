@@ -1,0 +1,85 @@
+\hypertarget{protocol_f_b_s_d_k_login_tooltip_view_delegate-p}{\section{$<$F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_s_d_k_login_tooltip_view_delegate-p}\index{$<$\-F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate$>$@{$<$\-F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{protocol_f_b_s_d_k_login_tooltip_view_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{protocol_f_b_s_d_k_login_tooltip_view_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a06836f97a9070875bf9f149cb9987eb2}{login\-Tooltip\-View\-:should\-Appear\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a9cac62d13ab2da0643973eabbee90797}{login\-Tooltip\-View\-Will\-Appear\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a0e6a4d3a7dc522fc1ab55e5bacfa0042}{login\-Tooltip\-View\-Will\-Not\-Appear\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a06836f97a9070875bf9f149cb9987eb2}{\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}!login\-Tooltip\-View\-:should\-Appear\-:@{login\-Tooltip\-View\-:should\-Appear\-:}}
+\index{login\-Tooltip\-View\-:should\-Appear\-:@{login\-Tooltip\-View\-:should\-Appear\-:}!FBSDKLoginTooltipViewDelegate-p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}}
+\subsubsection[{login\-Tooltip\-View\-:should\-Appear\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) login\-Tooltip\-View\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Login\-Tooltip\-View} $\ast$)}]{view}
+\item[{shouldAppear:(B\-O\-O\-L)}]{app\-Is\-Eligible}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a06836f97a9070875bf9f149cb9987eb2}
+Asks the delegate if the tooltip view should appear
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The tooltip view. \\
+\hline
+{\em app\-Is\-Eligible} & The value fetched from the server identifying if the app is eligible for the new login experience.\\
+\hline
+\end{DoxyParams}
+Use this method to customize display behavior. \hypertarget{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a9cac62d13ab2da0643973eabbee90797}{\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}!login\-Tooltip\-View\-Will\-Appear\-:@{login\-Tooltip\-View\-Will\-Appear\-:}}
+\index{login\-Tooltip\-View\-Will\-Appear\-:@{login\-Tooltip\-View\-Will\-Appear\-:}!FBSDKLoginTooltipViewDelegate-p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}}
+\subsubsection[{login\-Tooltip\-View\-Will\-Appear\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) login\-Tooltip\-View\-Will\-Appear\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Login\-Tooltip\-View} $\ast$)}]{view}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a9cac62d13ab2da0643973eabbee90797}
+Tells the delegate the tooltip view will appear, specifically after it's been added to the super view but before the fade in animation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The tooltip view. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a0e6a4d3a7dc522fc1ab55e5bacfa0042}{\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}!login\-Tooltip\-View\-Will\-Not\-Appear\-:@{login\-Tooltip\-View\-Will\-Not\-Appear\-:}}
+\index{login\-Tooltip\-View\-Will\-Not\-Appear\-:@{login\-Tooltip\-View\-Will\-Not\-Appear\-:}!FBSDKLoginTooltipViewDelegate-p@{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate-\/p}}
+\subsubsection[{login\-Tooltip\-View\-Will\-Not\-Appear\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) login\-Tooltip\-View\-Will\-Not\-Appear\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-S\-D\-K\-Login\-Tooltip\-View} $\ast$)}]{view}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_s_d_k_login_tooltip_view_delegate-p_a0e6a4d3a7dc522fc1ab55e5bacfa0042}
+Tells the delegate the tooltip view will not appear (i.\-e., was not added to the super view).
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The tooltip view. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Login\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Login\-Tooltip\-View.\-h\end{DoxyCompactItemize}

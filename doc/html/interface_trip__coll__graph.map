@@ -1,0 +1,4 @@
+<map id="Trip" name="Trip">
+<area shape="rect" id="node5" href="$interface_packing_list.html" title="{PackingList\n||+ initPackingListForTrip:\l+ initExamplePackingListFor\lTrip:\l+ getPackableForIndex:\l+ removeItemForIndex:\l+ changeQuantityForIndex:to:\l+ getNumberOfUniqueItems\l+ quantityForItemAtIndex:\l+ printList\l}" alt="" coords="65,697,263,877"/>
+<area shape="rect" id="node4" href="$interface_weather_report.html" title="{WeatherReport\n|+ weatherDays\l|+ initExampleReport\l+ getOverallHigh\l+ getOverallLow\l+ numberOfDays\l+ getHighForDay:\l+ getLowForDay:\l+ getAverageForDay:\l+ getRangeForDay:\l+ daysAreInOrder\l+ putDaysInOrder\l+ addDay:\l+ mergeWeatherReport:\l}" alt="" coords="82,131,245,351"/>
+</map>

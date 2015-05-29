@@ -1,0 +1,145 @@
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider}{\section{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider Class Reference}
+\label{interface_f_b_native_ad_table_view_ad_provider}\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{interface_f_b_native_ad_table_view_ad_provider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{interface_f_b_native_ad_table_view_ad_provider__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_native_ad_table_view_ad_provider_acf925814d15f37162d9f315ff78fdfbe}{init\-With\-Manager\-:}
+\item 
+(\hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} $\ast$) -\/ \hyperlink{interface_f_b_native_ad_table_view_ad_provider_aeab157cdda841471ded7ecab90c55f62}{table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:}
+\item 
+(B\-O\-O\-L) -\/ \hyperlink{interface_f_b_native_ad_table_view_ad_provider_aa976a9c43c00d7ac7e1b0ac212e32f7d}{is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:}
+\item 
+(N\-S\-Index\-Path $\ast$) -\/ \hyperlink{interface_f_b_native_ad_table_view_ad_provider_a3d9edc2d7670073e4e5b2a3b2c2e2dc4}{adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:}
+\item 
+(N\-S\-U\-Integer) -\/ \hyperlink{interface_f_b_native_ad_table_view_ad_provider_ab456a368cd5cd59cd996d11f3d919bfd}{adjust\-Count\-:for\-Stride\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Additional functionality on top of \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager} to assist in using native ads within a U\-I\-Table\-View. This class contains a mechanism to map index\-Paths to native ads in a stable manner as well as helpers which assist in doing the math to include ads at a regular interval within a table view. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider_ab456a368cd5cd59cd996d11f3d919bfd}{\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}!adjust\-Count\-:for\-Stride\-:@{adjust\-Count\-:for\-Stride\-:}}
+\index{adjust\-Count\-:for\-Stride\-:@{adjust\-Count\-:for\-Stride\-:}!FBNativeAdTableViewAdProvider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+\subsubsection[{adjust\-Count\-:for\-Stride\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-U\-Integer) adjust\-Count\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-Integer)}]{count}
+\item[{forStride:(N\-S\-U\-Integer)}]{stride}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_ad_provider_ab456a368cd5cd59cd996d11f3d919bfd}
+Support for evenly distributed native ads within a table view. Adjusts the total count of cells within the table view to account for the ad cells.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The count of cells in the table view not including ads \\
+\hline
+{\em stride} & The frequency that native ads are to appear within the table view \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total count of cells within the table view including both ad and non-\/ad cells 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider_a3d9edc2d7670073e4e5b2a3b2c2e2dc4}{\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}!adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:@{adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:}}
+\index{adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:@{adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:}!FBNativeAdTableViewAdProvider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+\subsubsection[{adjust\-Non\-Ad\-Cell\-Index\-Path\-:for\-Stride\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Index\-Path $\ast$) adjust\-Non\-Ad\-Cell\-Index\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\item[{forStride:(N\-S\-U\-Integer)}]{stride}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_ad_provider_a3d9edc2d7670073e4e5b2a3b2c2e2dc4}
+Support for evenly distributed native ads within a table view. Adjusts a non-\/ad cell index\-Path to the index\-Path it would be in a collection with no ads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-Path} & The index\-Path to of the non-\/ad cell \\
+\hline
+{\em stride} & The frequency that native ads are to appear within the table view \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An index\-Path adjusted to what it would be in a table view with no ads 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider_acf925814d15f37162d9f315ff78fdfbe}{\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}!init\-With\-Manager\-:@{init\-With\-Manager\-:}}
+\index{init\-With\-Manager\-:@{init\-With\-Manager\-:}!FBNativeAdTableViewAdProvider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+\subsubsection[{init\-With\-Manager\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Manager\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ads\-Manager} $\ast$)}]{manager}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_ad_provider_acf925814d15f37162d9f315ff78fdfbe}
+Create a \hyperlink{interface_f_b_native_ad_table_view_ad_provider}{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & The \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager} which is consumed by this class. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider_aa976a9c43c00d7ac7e1b0ac212e32f7d}{\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}!is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:@{is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:}}
+\index{is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:@{is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:}!FBNativeAdTableViewAdProvider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+\subsubsection[{is\-Ad\-Cell\-At\-Index\-Path\-:for\-Stride\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) is\-Ad\-Cell\-At\-Index\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\item[{forStride:(N\-S\-U\-Integer)}]{stride}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_ad_provider_aa976a9c43c00d7ac7e1b0ac212e32f7d}
+Support for evenly distributed native ads within a table view. Computes whether this cell is an ad or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-Path} & The index\-Path of the cell within the table view \\
+\hline
+{\em stride} & The frequency that native ads are to appear within the table view \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating whether the cell at the path is an ad 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_native_ad_table_view_ad_provider_aeab157cdda841471ded7ecab90c55f62}{\index{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}!table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:}}
+\index{table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:@{table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:}!FBNativeAdTableViewAdProvider@{F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider}}
+\subsubsection[{table\-View\-:native\-Ad\-For\-Row\-At\-Index\-Path\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf F\-B\-Native\-Ad} $\ast$) table\-View\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Table\-View $\ast$)}]{table\-View}
+\item[{nativeAdForRowAtIndexPath:(N\-S\-Index\-Path $\ast$)}]{index\-Path}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_native_ad_table_view_ad_provider_aeab157cdda841471ded7ecab90c55f62}
+Retrieve a native ad for an index\-Path, will return the same ad for a given index\-Path until the native ads manager is refreshed. This method is intended for usage with a table view and specifically the caller is recommended to wait until table\-View\-:cell\-For\-Row\-At\-Index\-Path\-: to ensure getting the best native ad for the given table cell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\-View} & The table\-View where native ad will be used \\
+\hline
+{\em index\-Path} & The index\-Path to use as a key for this native ad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} which is loaded and ready to be used. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad\-Table\-View\-Ad\-Provider.\-h\end{DoxyCompactItemize}

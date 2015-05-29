@@ -1,0 +1,62 @@
+\hypertarget{protocol_b_f_app_link_return_to_referer_controller_delegate-p}{\section{$<$B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate$>$ Protocol Reference}
+\label{protocol_b_f_app_link_return_to_referer_controller_delegate-p}\index{$<$\-B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate$>$@{$<$\-B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$B\-F\-App\-Link\-Return\-To\-Referer\-Controller.\-h$>$}
+
+
+
+Inheritance diagram for $<$B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{protocol_b_f_app_link_return_to_referer_controller_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{protocol_b_f_app_link_return_to_referer_controller_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_b_f_app_link_return_to_referer_controller_delegate-p_aaea360a5dbe5f3676c5821fbdcad9913}{return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:}
+\item 
+(void) -\/ \hyperlink{protocol_b_f_app_link_return_to_referer_controller_delegate-p_a204e256c1d32c7906a11662bed988c2a}{return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Protocol that a class can implement in order to be notified when the user has navigated back to the referer of an App Link. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_b_f_app_link_return_to_referer_controller_delegate-p_a204e256c1d32c7906a11662bed988c2a}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p@{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p}!return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:@{return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:}}
+\index{return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:@{return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:}!BFAppLinkReturnToRefererControllerDelegate-p@{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p}}
+\subsubsection[{return\-To\-Referer\-Controller\-:did\-Navigate\-To\-App\-Link\-:type\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) return\-To\-Referer\-Controller\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-App\-Link\-Return\-To\-Referer\-Controller} $\ast$)}]{controller}
+\item[{didNavigateToAppLink:({\bf B\-F\-App\-Link} $\ast$)}]{url}
+\item[{type:(B\-F\-App\-Link\-Navigation\-Type)}]{type}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_b_f_app_link_return_to_referer_controller_delegate-p_a204e256c1d32c7906a11662bed988c2a}
+Called after the navigation has been attempted, with an indication of whether the referer app link was successfully opened. \hypertarget{protocol_b_f_app_link_return_to_referer_controller_delegate-p_aaea360a5dbe5f3676c5821fbdcad9913}{\index{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p@{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p}!return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:@{return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:}}
+\index{return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:@{return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:}!BFAppLinkReturnToRefererControllerDelegate-p@{B\-F\-App\-Link\-Return\-To\-Referer\-Controller\-Delegate-\/p}}
+\subsubsection[{return\-To\-Referer\-Controller\-:will\-Navigate\-To\-App\-Link\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) return\-To\-Referer\-Controller\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf B\-F\-App\-Link\-Return\-To\-Referer\-Controller} $\ast$)}]{controller}
+\item[{willNavigateToAppLink:({\bf B\-F\-App\-Link} $\ast$)}]{app\-Link}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_b_f_app_link_return_to_referer_controller_delegate-p_aaea360a5dbe5f3676c5821fbdcad9913}
+Called when the user has tapped to navigate, but before the navigation has been performed. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-Bolts.\-framework/\-Headers/B\-F\-App\-Link\-Return\-To\-Referer\-Controller.\-h\end{DoxyCompactItemize}

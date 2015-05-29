@@ -1,0 +1,4 @@
+<map id="FBSDKAppInviteDialog" name="FBSDKAppInviteDialog">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_app_invite_content.html" title="{FBSDKAppInviteContent\n|+ appLinkURL\l+ previewImageURL\l|+ isEqualToAppInviteContent:\l}" alt="" coords="96,257,292,343"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="127,131,256,205"/>
+</map>

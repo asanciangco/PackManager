@@ -1,0 +1,4 @@
+<map id="FBSDKAppGroupAddDialog" name="FBSDKAppGroupAddDialog">
+<area shape="rect" id="node3" href="$interface_f_b_s_d_k_app_group_content.html" title="{FBSDKAppGroupContent\n|+ groupDescription\l+ groupID\l+ name\l+ privacy\l|+ isEqualToAppGroupContent:\l}" alt="" coords="95,257,296,370"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="128,131,257,205"/>
+</map>

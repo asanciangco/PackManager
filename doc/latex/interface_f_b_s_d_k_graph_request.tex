@@ -1,0 +1,173 @@
+\hypertarget{interface_f_b_s_d_k_graph_request}{\section{F\-B\-S\-D\-K\-Graph\-Request Class Reference}
+\label{interface_f_b_s_d_k_graph_request}\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Graph\-Request.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Graph\-Request\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_graph_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Graph\-Request\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_graph_request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_a0d2545a6264377a1f51aec7da411c0f6}{init\-With\-Graph\-Path\-:parameters\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_a20fe5c18d67699e74e9596058552aa6a}{init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_a1ab42a8e70025f6f6c6c61b31c35480f}{init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_aa1a0db7fc5b93d4014fb9922580a02eb}{set\-Graph\-Error\-Recovery\-Disabled\-:}
+\item 
+(\hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$) -\/ \hyperlink{interface_f_b_s_d_k_graph_request_a72aac56d84e54366ae37cbc05353fcc0}{start\-With\-Completion\-Handler\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+N\-S\-Mutable\-Dictionary $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_af769aa811f0eb9f2f1e56b4ac6e323e1}{parameters}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_a96c19ad8e7bb79261467b812a70ef2c9}{token\-String}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_a10e91143d0aa1301a527f43c60c53535}{graph\-Path}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_a8a290580d36baf0de7aacf859a13902c}{H\-T\-T\-P\-Method}
+\item 
+N\-S\-String $\ast$ \hyperlink{interface_f_b_s_d_k_graph_request_a651d49b68ef87318eddd8d794843d165}{version}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a request to the Facebook Graph A\-P\-I.
+
+{\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request}{F\-B\-S\-D\-K\-Graph\-Request}} encapsulates the components of a request (the Graph A\-P\-I path, the parameters, error recovery behavior) and should be used in conjunction with {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} to issue the request.
+
+Nearly all Graph A\-P\-Is require an access token. Unless specified, the {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}} is used. Therefore, most requests will require login first (see {\ttfamily \hyperlink{interface_f_b_s_d_k_login_manager}{F\-B\-S\-D\-K\-Login\-Manager}} in F\-B\-S\-D\-K\-Login\-Kit.\-framework).
+
+A {\ttfamily -\/ start} method is provided for convenience for single requests.
+
+By default, \hyperlink{interface_f_b_s_d_k_graph_request}{F\-B\-S\-D\-K\-Graph\-Request} will attempt to recover any errors returned from Facebook. You can disable this via {\ttfamily disable\-Error\-Recovery\-:}. \begin{DoxySeeAlso}{See Also}
+\hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor}{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor} 
+\end{DoxySeeAlso}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_request_a0d2545a6264377a1f51aec7da411c0f6}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!init\-With\-Graph\-Path\-:parameters\-:@{init\-With\-Graph\-Path\-:parameters\-:}}
+\index{init\-With\-Graph\-Path\-:parameters\-:@{init\-With\-Graph\-Path\-:parameters\-:}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{init\-With\-Graph\-Path\-:parameters\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Graph\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{graph\-Path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_a0d2545a6264377a1f51aec7da411c0f6}
+Initializes a new instance that use use {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}}. 
+\begin{DoxyParams}{Parameters}
+{\em graph\-Path} & the graph path (e.\-g., "me"). \\
+\hline
+{\em parameters} & the optional parameters dictionary. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_graph_request_a20fe5c18d67699e74e9596058552aa6a}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:@{init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:}}
+\index{init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:@{init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{init\-With\-Graph\-Path\-:parameters\-:\-H\-T\-T\-P\-Method\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Graph\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{graph\-Path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{HTTPMethod:(N\-S\-String $\ast$)}]{H\-T\-T\-P\-Method}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_a20fe5c18d67699e74e9596058552aa6a}
+Initializes a new instance that use use {\ttfamily \mbox{[}\hyperlink{interface_f_b_s_d_k_access_token}{F\-B\-S\-D\-K\-Access\-Token} current\-Access\-Token\mbox{]}}. 
+\begin{DoxyParams}{Parameters}
+{\em graph\-Path} & the graph path (e.\-g., "me"). \\
+\hline
+{\em parameters} & the optional parameters dictionary. \\
+\hline
+{\em H\-T\-T\-P\-Method} & the optional H\-T\-T\-P method. nil defaults to "G\-E\-T". \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_graph_request_a1ab42a8e70025f6f6c6c61b31c35480f}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:@{init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:}}
+\index{init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:@{init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{init\-With\-Graph\-Path\-:parameters\-:token\-String\-:version\-:\-H\-T\-T\-P\-Method\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-Graph\-Path\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{graph\-Path}
+\item[{parameters:(N\-S\-Dictionary $\ast$)}]{parameters}
+\item[{tokenString:(N\-S\-String $\ast$)}]{token\-String}
+\item[{version:(N\-S\-String $\ast$)}]{version}
+\item[{HTTPMethod:(N\-S\-String $\ast$)}]{N\-S\-\_\-\-D\-E\-S\-I\-G\-N\-A\-T\-E\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_a1ab42a8e70025f6f6c6c61b31c35480f}
+Initializes a new instance. 
+\begin{DoxyParams}{Parameters}
+{\em graph\-Path} & the graph path (e.\-g., "me"). \\
+\hline
+{\em parameters} & the optional parameters dictionary. \\
+\hline
+{\em token\-String} & the token string to use. Specifying nil will cause no token to be used. \\
+\hline
+{\em version} & the optional Graph A\-P\-I version (e.\-g., "v2.\-0\char`\"{}). nil defaults to F\-B\-S\-D\-K\-\_\-\-T\-A\-R\-G\-E\-T\-\_\-\-P\-L\-A\-T\-F\-O\-R\-M\-\_\-\-V\-E\-R\-S\-I\-O\-N.
+@param H\-T\-T\-P\-Method the optional H\-T\-T\-P method (e.\-g., @\char`\"{}P\-O\-S\-T\char`\"{}). nil defaults to @\char`\"{}G\-E\-T". \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_s_d_k_graph_request_aa1a0db7fc5b93d4014fb9922580a02eb}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!set\-Graph\-Error\-Recovery\-Disabled\-:@{set\-Graph\-Error\-Recovery\-Disabled\-:}}
+\index{set\-Graph\-Error\-Recovery\-Disabled\-:@{set\-Graph\-Error\-Recovery\-Disabled\-:}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{set\-Graph\-Error\-Recovery\-Disabled\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Graph\-Error\-Recovery\-Disabled\-: 
+\begin{DoxyParamCaption}
+\item[{(B\-O\-O\-L)}]{disable}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_aa1a0db7fc5b93d4014fb9922580a02eb}
+If set, disables the automatic error recovery mechanism. 
+\begin{DoxyParams}{Parameters}
+{\em disable} & whether to disable the automatic error recovery mechanism  By default, non-\/batched \hyperlink{interface_f_b_s_d_k_graph_request}{F\-B\-S\-D\-K\-Graph\-Request} instances will automatically try to recover from errors by constructing a {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_error_recovery_processor}{F\-B\-S\-D\-K\-Graph\-Error\-Recovery\-Processor}} instance that re-\/issues the request on successful recoveries. The re-\/issued request will call the same handler as the receiver but may occur with a different {\ttfamily \hyperlink{interface_f_b_s_d_k_graph_request_connection}{F\-B\-S\-D\-K\-Graph\-Request\-Connection}} instance.\\
+\hline
+\end{DoxyParams}
+This will override \mbox{[}\hyperlink{interface_f_b_s_d_k_settings}{F\-B\-S\-D\-K\-Settings} set\-Graph\-Error\-Recovery\-Disabled\-:\mbox{]}. \hypertarget{interface_f_b_s_d_k_graph_request_a72aac56d84e54366ae37cbc05353fcc0}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!start\-With\-Completion\-Handler\-:@{start\-With\-Completion\-Handler\-:}}
+\index{start\-With\-Completion\-Handler\-:@{start\-With\-Completion\-Handler\-:}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{start\-With\-Completion\-Handler\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf F\-B\-S\-D\-K\-Graph\-Request\-Connection} $\ast$) start\-With\-Completion\-Handler\-: 
+\begin{DoxyParamCaption}
+\item[{(F\-B\-S\-D\-K\-Graph\-Request\-Handler)}]{handler}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_graph_request_a72aac56d84e54366ae37cbc05353fcc0}
+Starts a connection to the Graph A\-P\-I. 
+\begin{DoxyParams}{Parameters}
+{\em handler} & The handler block to call when the request completes. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_graph_request_a10e91143d0aa1301a527f43c60c53535}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!graph\-Path@{graph\-Path}}
+\index{graph\-Path@{graph\-Path}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{graph\-Path}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) graph\-Path\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_graph_request_a10e91143d0aa1301a527f43c60c53535}
+The Graph A\-P\-I endpoint to use for the request, for example \char`\"{}me\char`\"{}. \hypertarget{interface_f_b_s_d_k_graph_request_a8a290580d36baf0de7aacf859a13902c}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!H\-T\-T\-P\-Method@{H\-T\-T\-P\-Method}}
+\index{H\-T\-T\-P\-Method@{H\-T\-T\-P\-Method}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{H\-T\-T\-P\-Method}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) H\-T\-T\-P\-Method\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_graph_request_a8a290580d36baf0de7aacf859a13902c}
+The H\-T\-T\-P\-Method to use for the request, for example \char`\"{}\-G\-E\-T\char`\"{} or \char`\"{}\-P\-O\-S\-T\char`\"{}. \hypertarget{interface_f_b_s_d_k_graph_request_af769aa811f0eb9f2f1e56b4ac6e323e1}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!parameters@{parameters}}
+\index{parameters@{parameters}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Mutable\-Dictionary$\ast$) parameters\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [strong]}}}\label{interface_f_b_s_d_k_graph_request_af769aa811f0eb9f2f1e56b4ac6e323e1}
+The request parameters. \hypertarget{interface_f_b_s_d_k_graph_request_a96c19ad8e7bb79261467b812a70ef2c9}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!token\-String@{token\-String}}
+\index{token\-String@{token\-String}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{token\-String}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) token\-String\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_graph_request_a96c19ad8e7bb79261467b812a70ef2c9}
+The access token string used by the request. \hypertarget{interface_f_b_s_d_k_graph_request_a651d49b68ef87318eddd8d794843d165}{\index{F\-B\-S\-D\-K\-Graph\-Request@{F\-B\-S\-D\-K\-Graph\-Request}!version@{version}}
+\index{version@{version}!FBSDKGraphRequest@{F\-B\-S\-D\-K\-Graph\-Request}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) version\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [nonatomic]}, {\ttfamily [copy]}}}\label{interface_f_b_s_d_k_graph_request_a651d49b68ef87318eddd8d794843d165}
+The Graph A\-P\-I version to use (e.\-g., \char`\"{}v2.\-0\char`\"{}) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Core\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Graph\-Request.\-h\end{DoxyCompactItemize}

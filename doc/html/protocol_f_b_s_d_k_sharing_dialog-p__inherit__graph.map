@@ -1,0 +1,5 @@
+<map id="&lt;FBSDKSharingDialog&gt;" name="&lt;FBSDKSharingDialog&gt;">
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_message_dialog.html" title="{FBSDKMessageDialog\n||+ showWithContent:delegate:\l}" alt="" coords="5,427,200,501"/>
+<area shape="rect" id="node5" href="$interface_f_b_s_d_k_share_dialog.html" title="{FBSDKShareDialog\n|+ fromViewController\l+ mode\l|+ showFromViewController\l:withContent:delegate:\l}" alt="" coords="225,414,407,514"/>
+<area shape="rect" id="node2" href="$protocol_f_b_s_d_k_sharing-p.html" title="{\&lt;FBSDKSharing\&gt;\n|+ delegate\l+ shareContent\l+ shouldFailOnDataError\l|+ validateWithError:\l}" alt="" coords="125,129,293,229"/>
+</map>

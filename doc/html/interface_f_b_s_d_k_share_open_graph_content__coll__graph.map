@@ -1,0 +1,7 @@
+<map id="FBSDKShareOpenGraphContent" name="FBSDKShareOpenGraphContent">
+<area shape="rect" id="node9" href="$interface_f_b_s_d_k_share_open_graph_value_container.html" title="{FBSDKShareOpenGraphValue\lContainer\n||}" alt="" coords="119,430,323,517"/>
+<area shape="rect" id="node3" href="$protocol_f_b_s_d_k_sharing_content-p.html" title="{\&lt;FBSDKSharingContent\&gt;\n|+ contentURL\l+ peopleIDs\l+ placeID\l+ ref\l|}" alt="" coords="494,417,668,530"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="516,211,645,285"/>
+<area shape="rect" id="node8" href="$interface_f_b_s_d_k_share_open_graph_action.html" title="{FBSDKShareOpenGraphAction\n|+ actionType\l|+ isEqualToShareOpenGraphAction:\l+ actionWithType:object:key:\l+ actionWithType:objectID:key:\l+ actionWithType:objectURL:key:\l}" alt="" coords="255,582,491,695"/>
+<area shape="rect" id="node10" href="$protocol_f_b_s_d_k_share_open_graph_value_containing-p.html" title="{\&lt;FBSDKShareOpenGraphValue\lContaining\&gt;\n||+ arrayForKey:\l+ enumerateKeysAndObjectsUsing\lBlock:\l+ keyEnumerator\l+ numberForKey:\l+ objectEnumerator\l+ objectForKey:\l+ objectForKeyedSubscript:\l+ parseProperties:\l+ photoForKey:\l+ removeObjectForKey:\land 8 more...\l}" alt="" coords="107,131,335,365"/>
+</map>

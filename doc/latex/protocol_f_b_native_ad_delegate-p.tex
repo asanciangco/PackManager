@@ -1,0 +1,117 @@
+\hypertarget{protocol_f_b_native_ad_delegate-p}{\section{$<$F\-B\-Native\-Ad\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_native_ad_delegate-p}\index{$<$\-F\-B\-Native\-Ad\-Delegate$>$@{$<$\-F\-B\-Native\-Ad\-Delegate$>$}}
+}
+
+
+Inheritance diagram for $<$F\-B\-Native\-Ad\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{protocol_f_b_native_ad_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-Native\-Ad\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{protocol_f_b_native_ad_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ad_delegate-p_a528f181d34d692b593aa212a155efe48}{native\-Ad\-Did\-Load\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ad_delegate-p_a1073cc774a1573072c3264ab13f84bb8}{native\-Ad\-Will\-Log\-Impression\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ad_delegate-p_a0d57d7031ffc8525b32e688e2ea4d34b}{native\-Ad\-:did\-Fail\-With\-Error\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ad_delegate-p_a16a06ece90ad67d947c7f872f1c19415}{native\-Ad\-Did\-Click\-:}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ad_delegate-p_a5af22b4df48d32e3f69f2c6e2cdcd2aa}{native\-Ad\-Did\-Finish\-Handling\-Click\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_native_ad_delegate-p_a0d57d7031ffc8525b32e688e2ea4d34b}{\index{F\-B\-Native\-Ad\-Delegate-\/p@{F\-B\-Native\-Ad\-Delegate-\/p}!native\-Ad\-:did\-Fail\-With\-Error\-:@{native\-Ad\-:did\-Fail\-With\-Error\-:}}
+\index{native\-Ad\-:did\-Fail\-With\-Error\-:@{native\-Ad\-:did\-Fail\-With\-Error\-:}!FBNativeAdDelegate-p@{F\-B\-Native\-Ad\-Delegate-\/p}}
+\subsubsection[{native\-Ad\-:did\-Fail\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ad\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ad} $\ast$)}]{native\-Ad}
+\item[{didFailWithError:(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_native_ad_delegate-p_a0d57d7031ffc8525b32e688e2ea4d34b}
+Sent when an \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} is failed to load.
+
+
+\begin{DoxyParams}{Parameters}
+{\em native\-Ad} & An \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object sending the message. \\
+\hline
+{\em error} & An error object containing details of the error. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_native_ad_delegate-p_a16a06ece90ad67d947c7f872f1c19415}{\index{F\-B\-Native\-Ad\-Delegate-\/p@{F\-B\-Native\-Ad\-Delegate-\/p}!native\-Ad\-Did\-Click\-:@{native\-Ad\-Did\-Click\-:}}
+\index{native\-Ad\-Did\-Click\-:@{native\-Ad\-Did\-Click\-:}!FBNativeAdDelegate-p@{F\-B\-Native\-Ad\-Delegate-\/p}}
+\subsubsection[{native\-Ad\-Did\-Click\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ad\-Did\-Click\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ad} $\ast$)}]{native\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_native_ad_delegate-p_a16a06ece90ad67d947c7f872f1c19415}
+Sent after an ad has been clicked by the person.
+
+
+\begin{DoxyParams}{Parameters}
+{\em native\-Ad} & An \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_native_ad_delegate-p_a5af22b4df48d32e3f69f2c6e2cdcd2aa}{\index{F\-B\-Native\-Ad\-Delegate-\/p@{F\-B\-Native\-Ad\-Delegate-\/p}!native\-Ad\-Did\-Finish\-Handling\-Click\-:@{native\-Ad\-Did\-Finish\-Handling\-Click\-:}}
+\index{native\-Ad\-Did\-Finish\-Handling\-Click\-:@{native\-Ad\-Did\-Finish\-Handling\-Click\-:}!FBNativeAdDelegate-p@{F\-B\-Native\-Ad\-Delegate-\/p}}
+\subsubsection[{native\-Ad\-Did\-Finish\-Handling\-Click\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ad\-Did\-Finish\-Handling\-Click\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ad} $\ast$)}]{native\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_native_ad_delegate-p_a5af22b4df48d32e3f69f2c6e2cdcd2aa}
+When an ad is clicked, the modal view will be presented. And when the user finishes the interaction with the modal view and dismiss it, this message will be sent, returning control to the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em native\-Ad} & An \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_native_ad_delegate-p_a528f181d34d692b593aa212a155efe48}{\index{F\-B\-Native\-Ad\-Delegate-\/p@{F\-B\-Native\-Ad\-Delegate-\/p}!native\-Ad\-Did\-Load\-:@{native\-Ad\-Did\-Load\-:}}
+\index{native\-Ad\-Did\-Load\-:@{native\-Ad\-Did\-Load\-:}!FBNativeAdDelegate-p@{F\-B\-Native\-Ad\-Delegate-\/p}}
+\subsubsection[{native\-Ad\-Did\-Load\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ad\-Did\-Load\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ad} $\ast$)}]{native\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_native_ad_delegate-p_a528f181d34d692b593aa212a155efe48}
+Sent when an \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} has been successfully loaded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em native\-Ad} & An \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_native_ad_delegate-p_a1073cc774a1573072c3264ab13f84bb8}{\index{F\-B\-Native\-Ad\-Delegate-\/p@{F\-B\-Native\-Ad\-Delegate-\/p}!native\-Ad\-Will\-Log\-Impression\-:@{native\-Ad\-Will\-Log\-Impression\-:}}
+\index{native\-Ad\-Will\-Log\-Impression\-:@{native\-Ad\-Will\-Log\-Impression\-:}!FBNativeAdDelegate-p@{F\-B\-Native\-Ad\-Delegate-\/p}}
+\subsubsection[{native\-Ad\-Will\-Log\-Impression\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ad\-Will\-Log\-Impression\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-B\-Native\-Ad} $\ast$)}]{native\-Ad}
+\end{DoxyParamCaption}
+\hspace{0.3cm}{\ttfamily [optional]}}}\label{protocol_f_b_native_ad_delegate-p_a1073cc774a1573072c3264ab13f84bb8}
+Sent immediately before the impression of an \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em native\-Ad} & An \hyperlink{interface_f_b_native_ad}{F\-B\-Native\-Ad} object sending the message. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad.\-h\end{DoxyCompactItemize}

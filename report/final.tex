@@ -43,14 +43,14 @@
 Pack Manager is a tool for helping you pack. It gives you a wardrobe list based on the weather of where you're going. It takes your (1) location, (2) time of travel, (3) personal dressing preferences, and gives you a set of clothes for you to wear and necessities that you can't forget. The goal is to make packing for an outing simple and fast. The application will have a very clean user interface; since its function is simple, its use must be equally simple. The application must be extensible, which means that adding new features must be a well-defined process that is easy.
 
 \subsection{User Benefits}
-Some examples of when a user may benefit from using our application is if they are frequent travelers. It is very difficult to track what to bring when traveling, especially if travel arrangements frequently change or users travel to many locations in sequence. Our application can update them on changing weather patterns for arbitrarily complex trips spanning many days and destinations. 
+A user may benefit from using our application if they are frequent travelers. It is very difficult to track what to bring when traveling, especially if travel arrangements frequently change or users travel to many locations in sequence. Our application can update them on changing weather patterns for arbitrarily complex trips spanning many days and destinations. 
 
-Another example is someone traveling to an area with which they are unfamiliar with its weather patterns. This makes it difficult to predict what would be necessary to bring. This user would simply enter their information into our application, which would automatically keep them up to date regardless of whether or not they know about monsoon season in Indonesia.
+Another example is someone traveling to an area with unfamiliar weather patterns. This makes it difficult to predict what would be necessary to bring. This user would simply enter their information into our application, which would automatically keep them up to date regardless of whether or not they know about monsoon season in Indonesia.
 
 \section{Feature Overview} % this could use beefing up
     When the user first starts the application, he or she will be presented with a login screen where they can choose to log in with Facebook. Once logged in, the user will enter their preferences, at which point the application is ready to make packing suggestions. Once this initial login is complete, the preferences will be assigned to their account, making future trip planning seamless. A packing list is suggested after the user enters their destination, which can include multiple stops, date of departure, duration, and takes into account preferences and trip parameters. From the ``My Trips'' tab, the user can view and modify this packing list. The application will notify the user in case of weather changes; this will require updates to the packing list.
 
-    \subsection{Requirements}
+    \subsection{Initial Requirements}
         The following are the requirements that we initially set out to fulfill. 
         \subsubsection{General Requirements (G)}
         \begin{enumerate}
@@ -151,6 +151,11 @@ Another example is someone traveling to an area with which they are unfamiliar w
         \end{enumerate}
         \item iOS Application targeted for iOS 8 and above \end{enumerate}
 
+    \subsection{Requirements Revisions}
+    We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
+
+    We decided to omit some of the requirements that were less important. We decided not to export user data to other applications such as calendar and reminders because as we were designing our application we realized that i) exporting to the calendars app wouldn't be particularly useful, and ii) we would rather have the to-do list features of the reminders app remain within our app. We also realized that we didn't want to prompt users for the preferences on the initial launch of the application since this made for an obtrusive and confusing UX; we would rather get the users right into the functionality immediately, then allow them to change settings if they so desired. We decided against gathering user feedback after their trips also for UX reasons: we realized that users likely wouldn't open our application immediately after a trip since our app is intended to be used before a trip. Our application does not currently export packing information to JSON because at this time it is not necessary. However, the data structure that stores the packing list can easily exported to JSON if that functionality ever become relevant. Lastly, we did not end up implementing push notifications because that would require usage of Apple Push Notification Service (APNS), which would require us to develop a server to send the notifications.
+
 
 \section{Design}
     The application is structured using the model-view-controller architecture dictated by the iOS development framework. In an iOS application, the overall flow is defined in storyboards. These files define transitions between panes, hold content. The main storyboards for our application is in the \texttt{Main\_iPhone.storypad} file. The storyboards are the views in this framework.
@@ -161,7 +166,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
 
     \subsection{External API Usage}
     \subsubsection{Weather API}
-    The Weather API is an important and very tricky component of our application. See \texttt{PackManager/WeatherAPI.m} for our implementation. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}} for date ranges that are outside of a 16-day weather forecast. This data source includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. Both data sources have completely different output formats (which is why our parsing file is over 500 lines long!).
+    The Weather API is an important and very tricky component of our application. See \texttt{PackManager/WeatherAPI.m} for our implementation. We currently use Open Weather Map\footnote{See \texttt{http://openweathermap.org/}} in order to gather weather data, which gives us a 16 day weather forecast for a particular geographic coordinate. We also use the NOAA weather API\footnote{See \texttt{http://www.weather.gov/}} for date ranges that are outside of a 16-day weather forecast. This data source includes historical data and can allow us to make coarse-grained projections over a much greater timespan and in a larger area. However, we can not get historical weather API for out of the country, since the NOAA is a U.S. government organization. Both data sources have completely different output formats (which is why our parsing file is over 500 lines long!).
 
     \subsubsection{Google Places API}
     We used the Google Places API\footnote{See \texttt{https://developers.google.com/places/}} for auto-completion as the user is entering their desired destinations. Handling this API was tricky, since it has a limited number of requests per day. See \texttt{PackManager/GooglePlacesAPI.m} for implementation.
@@ -207,7 +212,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
     \end{figure}
 
     \subsection{Clothes Selection Algorithm}
-    In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. 
+    In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. x
 
     \subsection{API Description}
     Our API description can be found inside of our documentation, in \texttt{doc/html/index.html}. We took care to document most of our classes and functions in the Doxygen style, allowing for automatically generated formatted descriptions. An example of our documentation can be found in Fig.\ref{fig:doc}. Overall, all API accesses flow through the \texttt{WeatherAPI} and \texttt{GoogleAPI} classes; these classes act as mediators, filtering information and handling de-bouncing of frequent requests. 
@@ -227,11 +232,16 @@ Another example is someone traveling to an area with which they are unfamiliar w
 \subsection{Testing}
 We set up a test harness using Travis CI\footnote{See \texttt{https://travis-ci.org/}}. Travis CI is a continuous integration suite that automatically runs our tests whenever a pull request is performed on Github. Before a change is merged all the tests are run in order to guarantee that all code that gets checked in passes all the tests. See Fig.\ref{fig:travis} for an example Travis CI output.
 
-Travis CI configured in the \texttt{.travis.yml} file, which specifies the language framework as well as the test harness. Our tests can be found in the \texttt{PackManagerTests} directory. 
+Travis CI configured in the \texttt{.travis.yml} file, which specifies the language framework as well as the test harness. Our tests can be found in the \texttt{PackManagerTests} directory. We used Nocilla\footnote{See \texttt{https://github.com/luisobo/Nocilla}} in order to create mock HTTP requests to simulate the weather API behavior. This lets us test the Weather API without making HTTP calls. We then use these same mock API calls throughout the rest of our tests. We test much of our application in isolation of the Internet, which allows our tests to be reproducible with expected outcomes, letting us use assertions.
 
-% talk about testing style... unit tests or integration tests? hopefully both!
+We used testing in order to validate our application; the goal is not to achieve ultra high reliability, since our application is likely to rapidly change. In line with this goal, we have isolated unit tests for the core functionality, including tests for the weather API, Google APIs, the packing algorithm, and the integration between these components. These tests can be found in \texttt{PackManagerTests}. 
 
-\begin{figure}
+We make extensive use of swizzling, which is a built-in utility for iOS that lets us swap out implementations of individual methods for stub methods. For example, when the \texttt{getDate} method is called, we return a specific date for use in assertions (for example, Jan. 1 1970). This lets us make assertions regardless of what day of the week it is.
+
+
+
+ 
+\begin{figure} 
 \centering
 \includegraphics[width=\linewidth]{img/travis.png}
 \caption{Output of Travis CI. It shows the status of all branches as well as whether or not they are currently passing the tests that are specified in \texttt{.travis.yml}. This will prevent ever merging a branch that does not pass tests, which will prevent regressions.}
@@ -245,16 +255,11 @@ See Fig.\ref{fig:ui} for some screen shots of the user interface.
     \centering
     \begin{tabular}{ccc}
     \includegraphics[scale=0.2]{img/ui-2.jpg} & \includegraphics[width=151pt]{img/ui-8.png} & \includegraphics[scale=0.2]{img/ui-7.jpg}\\
-    \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[scale=0.2]{img/ui-4.jpg}
+    \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[width=151pt]{img/ui-4.png}
     \end{tabular}
-    \caption{User interface snapshots. Top left, a generated packing list; top middle, the trip creation screen with location auto-complete and Google maps visualization; top right, an option to enter a specific number of shorts; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile.}
+    \caption{User interface snapshots. Top left, a generated packing list; top middle, the trip creation screen with location auto-complete and Google maps visualization; top right, an option to enter a specific number of shorts; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile, with Facebook login.}
     \label{fig:ui}
 \end{figure}
-
-\section{Design Revisions}
-We added several new features that were not initially listed in our design requirements. We added the ability to autocomplete your location using the Google API. We also added a Google Maps visualization, so that users can see their destinations. These features were deemed necessary because it is necessary for a good user experience: without seeing on a map what you typed in, it might be the wrong location. It is also very hard to type in an exact address, so the autocomplete is necessary as well.
-
-We decided to omit some of the requirements that were less important. Exporting user data to other applications, prompting users for the preferences on the initial launch of the application, and gathering user feedback were deemed unnecessary to completing a functioning application. We do not have a consuming application for user data, so it is difficult to design a format for them to consume. The initial prompt for user preference is unnecessary because it is easy to add your preferences; it makes more sense from a UX perspective to gather user preferences from the home screen. User feedback is unnecessary for the initial version of the application because we can simply ask our users what they think of our work.
 
 % added autocompleting forms
 % display map based on where you are going to go
@@ -264,18 +269,13 @@ We decided to omit some of the requirements that were less important. Exporting 
 \begin{enumerate}
 \item Heather worked on the user interface. She worked on developing flow of the application, working closely with Alex. Heather is experienced with designing user interfaces for iOS.
 \item Alex is the lead programmer. He worked on integrating Heather's user interface with Kacey's weather API, as well as being a source of knowledge on general iOS development and Objective-C, which many group members were not familiar with.
-\item Steven worked on writing the report and the documentation. He added Doxygen and used \LaTeX to write the paper. 
+\item Steven worked on writing the report and the documentation. He added Doxygen and used \LaTeX  to write the paper. 
 \item Kacey worked on the weather API, doing research and wrapping it to make it accessible and easy to use. 
-\item Mitchell worked on the presentation as well as general programming tasks.
-\item Nick was in charge of build management, integrating Travis-CI and managing the test infrastructure.
+\item Mitchell worked on the presentation and report as well as general programming tasks.
+\item Nick was in charge of build management and testing, integrating Travis-CI and managing the test infrastructure.
 \end{enumerate}
 
-\section{Conclusion and Future Work}
-So far we have completed the major skeleton of our project. The main user interface elements, including making a trip, filling out a user profile, and selecting your current trip, are completed. 
-
-Our future work includes developing the algorithm for actually choosing which clothes to include in a packing list. We plan to use a simple rule-based algorithm based on user preferences; for example, every day has a minimum set of clothes that are required (at least one complete outfit), there are certain clothes that must always be included in a packing list (like socks and underwear), and there must be spare clothes depending on the length of the stay. The rules will be defined in an extensible way that will allow for easy fine-tuning.
-
-We would also like to implement an edit feature so that users can change trip settings from the application. This will require an additional UI panel and scaffolding.
-
+\section{Conclusion}
+We completed almost all of the requirements that we listed for our application on time, in addition to some extra requirements that we felt were necessary as we were developing. In total the project is over 3000 lines of Objective-C and over 1300 lines of comments, with major commits and contributions from every group member, even the ones that were not initially familiar with Objective-C. 
 
 \end{document}

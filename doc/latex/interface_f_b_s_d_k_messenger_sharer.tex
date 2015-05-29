@@ -1,0 +1,309 @@
+\hypertarget{interface_f_b_s_d_k_messenger_sharer}{\section{F\-B\-S\-D\-K\-Messenger\-Sharer Class Reference}
+\label{interface_f_b_s_d_k_messenger_sharer}\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Messenger\-Sharer.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Messenger\-Sharer\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{interface_f_b_s_d_k_messenger_sharer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Messenger\-Sharer\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{interface_f_b_s_d_k_messenger_sharer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(F\-B\-S\-D\-K\-Messenger\-Platform\-Capability) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a5dd60b0a6217efb79912aff0cd628c55}{messenger\-Platform\-Capabilities}
+\item 
+(\char`\"{}\char`\"{}) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a65bc2a84f15bfa1cd2454410764ee3f3}{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a4af5604db5ffdf36755029085179cf3c}{share\-Image\-:with\-Metadata\-:with\-Context\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a2e2f04f955cd3613017a49db70b5f3fc}{share\-Image\-:with\-Options\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_ae399428b96501fe5101442a23b2087cd}{share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_ac2cc59f11486a868f2bb8d3d77f0f2d4}{share\-Animated\-G\-I\-F\-:with\-Options\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a1af988a75931b6a9a9af919ba950c435}{share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_af6e0d6c7054627f4da231ca60c4b43e5}{share\-Animated\-Web\-P\-:with\-Options\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_ab55e08f8701ece3d8ddae583d766b55a}{share\-Video\-:with\-Metadata\-:with\-Context\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a1c41be0018fc133324f090330bcd3902}{share\-Video\-:with\-Options\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_a9621fb12d18851f45107b71151437715}{share\-Audio\-:with\-Metadata\-:with\-Context\-:}
+\item 
+(void) + \hyperlink{interface_f_b_s_d_k_messenger_sharer_ab0e0b7f8211e384ea0f67baa189a94ea}{share\-Audio\-:with\-Options\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{interface_f_b_s_d_k_messenger_sharer}{F\-B\-S\-D\-K\-Messenger\-Sharer} is used to share media from apps into Messenger. The underlying mechanism used to share data between apps is U\-I\-Pasteboard
+
+
+\begin{DoxyItemize}
+\item Facebook\-App\-I\-D must be set in the your app's Info.\-plist with the Facebook App Id
+\item Any existing data in the system's public pasteboard will get overwritten with the shared media
+\item Once the data is shared in Messenger, the pasteboard with be cleared
+\item The following strings need to be translated in your app\-: N\-S\-Localized\-String("Get Messenger\char`\"{}, @\char`\"{}Alert title telling a user they need to install Messenger\char`\"{})
+   N\-S\-Localized\-String(@\char`\"{}You'll need to install the latest version of Messenger to send this.\char`\"{}, @\char`\"{}Alert message when an old version of messenger is installed\char`\"{})
+   N\-S\-Localized\-String(@\char`\"{}Not Now\char`\"{}, @\char`\"{}Button label when user doesn't want to install Messenger\char`\"{})
+   N\-S\-Localized\-String(@\char`\"{}Install\char`\"{}, @\char`\"{}Button label to install Messenger\char`\"{})
+   N\-S\-Localized\-String(@\char`\"{}Send\char`\"{}, @\char`\"{}Button label for sending a message") 
+\end{DoxyItemize}
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_messenger_sharer_a5dd60b0a6217efb79912aff0cd628c55}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!messenger\-Platform\-Capabilities@{messenger\-Platform\-Capabilities}}
+\index{messenger\-Platform\-Capabilities@{messenger\-Platform\-Capabilities}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{messenger\-Platform\-Capabilities}]{\setlength{\rightskip}{0pt plus 5cm}+ (F\-B\-S\-D\-K\-Messenger\-Platform\-Capability) messenger\-Platform\-Capabilities 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a5dd60b0a6217efb79912aff0cd628c55}
+This method checks the currently installed version of Messenger to see what S\-D\-K capabilities it has
+
+Before sharing any media, first use this bitmask to check to see if it can be shared to Messenger
+
+\begin{DoxyReturn}{Returns}
+bitmask of the Messenger capabilities 
+\end{DoxyReturn}
+\hypertarget{interface_f_b_s_d_k_messenger_sharer_a65bc2a84f15bfa1cd2454410764ee3f3}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S@{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}}
+\index{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S@{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}+ (\char`\"{}\char`\"{}) N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a65bc2a84f15bfa1cd2454410764ee3f3}
+Call this method to open Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_ae399428b96501fe5101442a23b2087cd}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:@{share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:}}
+\index{share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:@{share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Animated\-G\-I\-F\-:with\-Metadata\-:with\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Animated\-G\-I\-F\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{animated\-G\-I\-F\-Data}
+\item[{withMetadata:(N\-S\-String $\ast$)}]{metadata}
+\item[{withContext:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_ae399428b96501fe5101442a23b2087cd}
+Call this method to open Messenger and share an animated G\-I\-F.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000002}{Deprecated}]use share\-Animated\-G\-I\-F\-:with\-Options\-: instead\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated\-G\-I\-F\-Data} & The animated G\-I\-F to be shared in Messenger \\
+\hline
+{\em metadata} & Additional optional information to be sent to Messenger which is sent back to the user's app when they reply to an attributed message. This may be nil. \\
+\hline
+{\em context} & The way the content is to be shared in Messenger. If nil, a standard share will take place.\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_ac2cc59f11486a868f2bb8d3d77f0f2d4}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Animated\-G\-I\-F\-:with\-Options\-:@{share\-Animated\-G\-I\-F\-:with\-Options\-:}}
+\index{share\-Animated\-G\-I\-F\-:with\-Options\-:@{share\-Animated\-G\-I\-F\-:with\-Options\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Animated\-G\-I\-F\-:with\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Animated\-G\-I\-F\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{animated\-G\-I\-F\-Data}
+\item[{withOptions:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_ac2cc59f11486a868f2bb8d3d77f0f2d4}
+Call this method to open Messenger and share an animated G\-I\-F.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated\-G\-I\-F\-Data} & The animated G\-I\-F to be shared in Messenger \\
+\hline
+{\em options} & Additional optional parameters that affect the way the content is shared\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_a1af988a75931b6a9a9af919ba950c435}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:@{share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:}}
+\index{share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:@{share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Animated\-Web\-P\-:with\-Metadata\-:with\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Animated\-Web\-P\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{animated\-Web\-P\-Data}
+\item[{withMetadata:(N\-S\-String $\ast$)}]{metadata}
+\item[{withContext:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a1af988a75931b6a9a9af919ba950c435}
+Call this method to open Messenger and share an animated G\-I\-F.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000003}{Deprecated}]use share\-Animated\-Web\-P\-:with\-Options\-: instead\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated\-Web\-P\-Data} & The animated Web\-P image to be shared in Messenger \\
+\hline
+{\em metadata} & Additional optional information to be sent to Messenger which is sent back to the user's app when they reply to an attributed message. This may be nil. \\
+\hline
+{\em context} & The way the content is to be shared in Messenger. If nil, a standard share will take place.\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_af6e0d6c7054627f4da231ca60c4b43e5}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Animated\-Web\-P\-:with\-Options\-:@{share\-Animated\-Web\-P\-:with\-Options\-:}}
+\index{share\-Animated\-Web\-P\-:with\-Options\-:@{share\-Animated\-Web\-P\-:with\-Options\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Animated\-Web\-P\-:with\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Animated\-Web\-P\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{animated\-Web\-P\-Data}
+\item[{withOptions:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_af6e0d6c7054627f4da231ca60c4b43e5}
+Call this method to open Messenger and share an animated G\-I\-F.
+
+
+\begin{DoxyParams}{Parameters}
+{\em animated\-Web\-P\-Data} & The animated Web\-P image to be shared in Messenger \\
+\hline
+{\em options} & Additional optional parameters that affect the way the content is shared\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_a9621fb12d18851f45107b71151437715}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Audio\-:with\-Metadata\-:with\-Context\-:@{share\-Audio\-:with\-Metadata\-:with\-Context\-:}}
+\index{share\-Audio\-:with\-Metadata\-:with\-Context\-:@{share\-Audio\-:with\-Metadata\-:with\-Context\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Audio\-:with\-Metadata\-:with\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Audio\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{audio\-Data}
+\item[{withMetadata:(N\-S\-String $\ast$)}]{metadata}
+\item[{withContext:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a9621fb12d18851f45107b71151437715}
+Call this method to open Messenger and share an audio file.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]use share\-Audio\-:with\-Options\-: instead\end{DoxyRefDesc}
+
+
+Note that there's no way to send an A\-V\-Asset between apps, so you may need to serialize your A\-V\-Asset to a file, and get an N\-S\-Data representation of the video via \mbox{[}N\-S\-Data data\-With\-Contents\-Of\-File\-:filepath\mbox{]};
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\-Data} & The audio to be shared in Messenger \\
+\hline
+{\em metadata} & Additional optional information to be sent to Messenger\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_ab0e0b7f8211e384ea0f67baa189a94ea}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Audio\-:with\-Options\-:@{share\-Audio\-:with\-Options\-:}}
+\index{share\-Audio\-:with\-Options\-:@{share\-Audio\-:with\-Options\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Audio\-:with\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Audio\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{audio\-Data}
+\item[{withOptions:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_ab0e0b7f8211e384ea0f67baa189a94ea}
+Call this method to open Messenger and share an audio file.
+
+Note that there's no way to send an A\-V\-Asset between apps, so you may need to serialize your A\-V\-Asset to a file, and get an N\-S\-Data representation of the video via \mbox{[}N\-S\-Data data\-With\-Contents\-Of\-File\-:filepath\mbox{]};
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\-Data} & The audio to be shared in Messenger \\
+\hline
+{\em options} & Additional optional parameters that affect the way the content is shared\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_a4af5604db5ffdf36755029085179cf3c}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Image\-:with\-Metadata\-:with\-Context\-:@{share\-Image\-:with\-Metadata\-:with\-Context\-:}}
+\index{share\-Image\-:with\-Metadata\-:with\-Context\-:@{share\-Image\-:with\-Metadata\-:with\-Context\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Image\-:with\-Metadata\-:with\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Image\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Image $\ast$)}]{image}
+\item[{withMetadata:(N\-S\-String $\ast$)}]{metadata}
+\item[{withContext:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a4af5604db5ffdf36755029085179cf3c}
+Call this method to open Messenger and share an image.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]use share\-Image\-:with\-Options\-: instead\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image to be shared in Messenger \\
+\hline
+{\em metadata} & Additional optional information to be sent to Messenger which is sent back to the user's app when they reply to an attributed message. This may be nil. \\
+\hline
+{\em context} & The way the content is to be shared in Messenger. If nil, a standard share will take place.\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_a2e2f04f955cd3613017a49db70b5f3fc}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Image\-:with\-Options\-:@{share\-Image\-:with\-Options\-:}}
+\index{share\-Image\-:with\-Options\-:@{share\-Image\-:with\-Options\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Image\-:with\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Image\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-Image $\ast$)}]{image}
+\item[{withOptions:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a2e2f04f955cd3613017a49db70b5f3fc}
+Call this method to open Messenger and share an image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image to be shared in Messenger \\
+\hline
+{\em options} & Additional optional parameters that affect the way the content is shared\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_ab55e08f8701ece3d8ddae583d766b55a}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Video\-:with\-Metadata\-:with\-Context\-:@{share\-Video\-:with\-Metadata\-:with\-Context\-:}}
+\index{share\-Video\-:with\-Metadata\-:with\-Context\-:@{share\-Video\-:with\-Metadata\-:with\-Context\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Video\-:with\-Metadata\-:with\-Context\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Video\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{video\-Data}
+\item[{withMetadata:(N\-S\-String $\ast$)}]{metadata}
+\item[{withContext:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_ab55e08f8701ece3d8ddae583d766b55a}
+Call this method to open Messenger and share a video.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]use share\-Video\-:with\-Options\-: instead\end{DoxyRefDesc}
+
+
+Note that there's no way to send an A\-V\-Asset between apps, so you may need to serialize your A\-V\-Asset to a file, and get an N\-S\-Data representation of the video via \mbox{[}N\-S\-Data data\-With\-Contents\-Of\-File\-:filepath\mbox{]};
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\-Data} & The image to be shared in Messenger \\
+\hline
+{\em metadata} & Additional optional information to be sent to Messenger which is sent back to the user's app when they reply to an attributed message. This may be nil. \\
+\hline
+{\em context} & The way the content is to be shared in Messenger. If nil, a standard share will take place.\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger \hypertarget{interface_f_b_s_d_k_messenger_sharer_a1c41be0018fc133324f090330bcd3902}{\index{F\-B\-S\-D\-K\-Messenger\-Sharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}!share\-Video\-:with\-Options\-:@{share\-Video\-:with\-Options\-:}}
+\index{share\-Video\-:with\-Options\-:@{share\-Video\-:with\-Options\-:}!FBSDKMessengerSharer@{F\-B\-S\-D\-K\-Messenger\-Sharer}}
+\subsubsection[{share\-Video\-:with\-Options\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) share\-Video\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Data $\ast$)}]{video\-Data}
+\item[{withOptions:(\char`\"{}\char`\"{})}]{N\-S\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E\-\_\-\-I\-O\-S}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_messenger_sharer_a1c41be0018fc133324f090330bcd3902}
+Call this method to open Messenger and share a video.
+
+Note that there's no way to send an A\-V\-Asset between apps, so you may need to serialize your A\-V\-Asset to a file, and get an N\-S\-Data representation of the video via \mbox{[}N\-S\-Data data\-With\-Contents\-Of\-File\-:filepath\mbox{]};
+
+
+\begin{DoxyParams}{Parameters}
+{\em video\-Data} & The image to be shared in Messenger \\
+\hline
+{\em options} & Additional optional parameters that affect the way the content is shared\\
+\hline
+\end{DoxyParams}
+If there is not an installed version of Messenger on the device that supports the share, an alert will be presented to the user to go to the App Store to install the latest version of Messenger 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Messenger\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Messenger\-Sharer.\-h\end{DoxyCompactItemize}

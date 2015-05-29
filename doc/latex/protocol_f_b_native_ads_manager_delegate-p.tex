@@ -1,0 +1,64 @@
+\hypertarget{protocol_f_b_native_ads_manager_delegate-p}{\section{$<$F\-B\-Native\-Ads\-Manager\-Delegate$>$ Protocol Reference}
+\label{protocol_f_b_native_ads_manager_delegate-p}\index{$<$\-F\-B\-Native\-Ads\-Manager\-Delegate$>$@{$<$\-F\-B\-Native\-Ads\-Manager\-Delegate$>$}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Native\-Ads\-Manager.\-h$>$}
+
+
+
+Inheritance diagram for $<$F\-B\-Native\-Ads\-Manager\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{protocol_f_b_native_ads_manager_delegate-p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for $<$F\-B\-Native\-Ads\-Manager\-Delegate$>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{protocol_f_b_native_ads_manager_delegate-p__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ads_manager_delegate-p_ae0defdcc266e48819b2f7eb07eb7fb8d}{native\-Ads\-Loaded}
+\item 
+(void) -\/ \hyperlink{protocol_f_b_native_ads_manager_delegate-p_a66ed8569e0393c4001fe34bb47b04156}{native\-Ads\-Failed\-To\-Load\-With\-Error\-:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Messages from \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager} indicating success or failure loading ads. 
+
+\subsection{Method Documentation}
+\hypertarget{protocol_f_b_native_ads_manager_delegate-p_a66ed8569e0393c4001fe34bb47b04156}{\index{F\-B\-Native\-Ads\-Manager\-Delegate-\/p@{F\-B\-Native\-Ads\-Manager\-Delegate-\/p}!native\-Ads\-Failed\-To\-Load\-With\-Error\-:@{native\-Ads\-Failed\-To\-Load\-With\-Error\-:}}
+\index{native\-Ads\-Failed\-To\-Load\-With\-Error\-:@{native\-Ads\-Failed\-To\-Load\-With\-Error\-:}!FBNativeAdsManagerDelegate-p@{F\-B\-Native\-Ads\-Manager\-Delegate-\/p}}
+\subsubsection[{native\-Ads\-Failed\-To\-Load\-With\-Error\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ads\-Failed\-To\-Load\-With\-Error\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Error $\ast$)}]{error}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_native_ads_manager_delegate-p_a66ed8569e0393c4001fe34bb47b04156}
+When the \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager} has reached a failure while attempting to load a batch of ads this message will be sent to the application. 
+\begin{DoxyParams}{Parameters}
+{\em error} & An N\-S\-Error object with information about the failure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{protocol_f_b_native_ads_manager_delegate-p_ae0defdcc266e48819b2f7eb07eb7fb8d}{\index{F\-B\-Native\-Ads\-Manager\-Delegate-\/p@{F\-B\-Native\-Ads\-Manager\-Delegate-\/p}!native\-Ads\-Loaded@{native\-Ads\-Loaded}}
+\index{native\-Ads\-Loaded@{native\-Ads\-Loaded}!FBNativeAdsManagerDelegate-p@{F\-B\-Native\-Ads\-Manager\-Delegate-\/p}}
+\subsubsection[{native\-Ads\-Loaded}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) native\-Ads\-Loaded 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{protocol_f_b_native_ads_manager_delegate-p_ae0defdcc266e48819b2f7eb07eb7fb8d}
+When the \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager} has finished loading a batch of ads this message will be sent. A batch of ads may be loaded in response to calling load\-Ads or due to an automatic refresh by the \hyperlink{interface_f_b_native_ads_manager}{F\-B\-Native\-Ads\-Manager}. At the point this message is fired all of the native ads will already be loaded and will not hence send their own native\-Ad\-Load\-: or native\-Ad\-:did\-Fail\-With\-Error\-: message. 
+
+The documentation for this protocol was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ads\-Manager.\-h\end{DoxyCompactItemize}

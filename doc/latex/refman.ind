@@ -1,0 +1,490 @@
+\begin{theindex}
+
+  \item {$<$\discretionary {-}{}{}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Body$>$}, 
+		\hyperpage{39}
+  \item {$<$\discretionary {-}{}{}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request$>$}, 
+		\hyperpage{42}
+  \item {$<$\discretionary {-}{}{}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Response$>$}, 
+		\hyperpage{48}
+  \item {$<$\discretionary {-}{}{}L\discretionary {-}{}{}S\discretionary {-}{}{}Matcheable$>$}, 
+		\hyperpage{51}
+
+  \indexspace
+
+  \item {A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request}, 
+		\hyperpage{16}
+  \item {A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub}, 
+		\hyperpage{17}
+  \item {A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub()}, 
+		\hyperpage{19}
+  \item {A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Stub(\discretionary {-}{}{}Private)}, 
+		\hyperpage{20}
+  \item {access\discretionary {-}{}{}To\discretionary {-}{}{}Laundry\discretionary {-}{}{}Preference}
+    \subitem {Trip}, \hyperpage{126}
+  \item {add\discretionary {-}{}{}Day\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{150}
+  \item {add\discretionary {-}{}{}Trip\discretionary {-}{}{}:}
+    \subitem {Trips\discretionary {-}{}{}Data}, \hyperpage{128}
+  \item {App\discretionary {-}{}{}Delegate}, \hyperpage{15}
+  \item {average\discretionary {-}{}{}Temp}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{145}
+
+  \indexspace
+
+  \item {Background\discretionary {-}{}{}Update}, \hyperpage{21}
+
+  \indexspace
+
+  \item {change\discretionary {-}{}{}Quantity\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:to\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+
+  \indexspace
+
+  \item {data\discretionary {-}{}{}For\discretionary {-}{}{}Array\discretionary {-}{}{}:}
+    \subitem {N\discretionary {-}{}{}S\discretionary {-}{}{}Coding\discretionary {-}{}{}Helper}, 
+		\hyperpage{81}
+  \item {days\discretionary {-}{}{}Are\discretionary {-}{}{}In\discretionary {-}{}{}Order}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {Destination}, \hyperpage{21}
+    \subitem {duration}, \hyperpage{23}
+    \subitem {is\discretionary {-}{}{}Valid\discretionary {-}{}{}Z\discretionary {-}{}{}I\discretionary {-}{}{}P\discretionary {-}{}{}:}, 
+		\hyperpage{23}
+    \subitem {valid}, \hyperpage{23}
+    \subitem {zip}, \hyperpage{23}
+  \item {destinations}
+    \subitem {Trip}, \hyperpage{126}
+  \item {duration}
+    \subitem {Destination}, \hyperpage{23}
+
+  \indexspace
+
+  \item {end\discretionary {-}{}{}Date}
+    \subitem {Trip}, \hyperpage{125}
+
+  \indexspace
+
+  \item {formal\discretionary {-}{}{}Preference}
+    \subitem {Trip}, \hyperpage{126}
+
+  \indexspace
+
+  \item {generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List}
+    \subitem {Trip}, \hyperpage{125}
+  \item {generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}Example}
+    \subitem {Trip}, \hyperpage{125}
+  \item {get\discretionary {-}{}{}Average\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {get\discretionary {-}{}{}High\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {get\discretionary {-}{}{}Lat\discretionary {-}{}{}Long\discretionary {-}{}{}From\discretionary {-}{}{}Address\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{139}
+  \item {get\discretionary {-}{}{}Low\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {get\discretionary {-}{}{}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Unique\discretionary {-}{}{}Items}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+  \item {get\discretionary {-}{}{}Overall\discretionary {-}{}{}High}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {get\discretionary {-}{}{}Overall\discretionary {-}{}{}Low}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{151}
+  \item {get\discretionary {-}{}{}Packable\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+  \item {get\discretionary {-}{}{}Range\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{152}
+  \item {get\discretionary {-}{}{}Trip\discretionary {-}{}{}:}
+    \subitem {Trips\discretionary {-}{}{}Data}, \hyperpage{128}
+  \item {get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Historical\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{140}
+  \item {get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Present\discretionary {-}{}{}:lng\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{140}
+  \item {get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{140}
+  \item {get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{140}
+  \item {Google\discretionary {-}{}{}Places\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{24}
+    \subitem {shared\discretionary {-}{}{}Instance}, \hyperpage{25}
+  \item {Google\discretionary {-}{}{}Places\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}Tests}, 
+		\hyperpage{25}
+
+  \indexspace
+
+  \item {high}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{145}
+
+  \indexspace
+
+  \item {image\discretionary {-}{}{}Name}
+    \subitem {Packable}, \hyperpage{98}
+  \item {init\discretionary {-}{}{}Example\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+  \item {init\discretionary {-}{}{}Example\discretionary {-}{}{}Report}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{152}
+  \item {init\discretionary {-}{}{}New\discretionary {-}{}{}Trip}
+    \subitem {Trip}, \hyperpage{125}
+  \item {init\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+  \item {init\discretionary {-}{}{}With\discretionary {-}{}{}High\discretionary {-}{}{}:low\discretionary {-}{}{}:precipitation\discretionary {-}{}{}:date\discretionary {-}{}{}:}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{144}
+  \item {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:}
+    \subitem {Packable}, \hyperpage{98}
+  \item {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}
+    \subitem {Jacket}, \hyperpage{29}
+    \subitem {Pant}, \hyperpage{110}
+    \subitem {Shirt}, \hyperpage{116}
+  \item {init\discretionary {-}{}{}With\discretionary {-}{}{}Start\discretionary {-}{}{}Date\discretionary {-}{}{}:name\discretionary {-}{}{}:}
+    \subitem {Trip}, \hyperpage{126}
+  \item {is\discretionary {-}{}{}Valid\discretionary {-}{}{}Z\discretionary {-}{}{}I\discretionary {-}{}{}P\discretionary {-}{}{}:}
+    \subitem {Destination}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Jacket}, \hyperpage{27}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}, 
+		\hyperpage{29}
+    \subitem {Jacket\discretionary {-}{}{}Type}, \hyperpage{28}
+    \subitem {jacket\discretionary {-}{}{}Type}, \hyperpage{29}
+  \item {Jacket\discretionary {-}{}{}Type}
+    \subitem {Jacket}, \hyperpage{28}
+  \item {jacket\discretionary {-}{}{}Type}
+    \subitem {Jacket}, \hyperpage{29}
+
+  \indexspace
+
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Adapter}, 
+		\hyperpage{31}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Adapter()}, 
+		\hyperpage{33}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Hook}, 
+		\hyperpage{34}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Data\discretionary {-}{}{}Matcher}, 
+		\hyperpage{36}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Data\discretionary {-}{}{}Matcher()}, 
+		\hyperpage{38}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Client\discretionary {-}{}{}Hook}, 
+		\hyperpage{41}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L\discretionary {-}{}{}Representation}, 
+		\hyperpage{46}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L\discretionary {-}{}{}Representation()}, 
+		\hyperpage{47}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Diff}, 
+		\hyperpage{44}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request\discretionary {-}{}{}Diff()}, 
+		\hyperpage{45}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Stub\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Protocol}, 
+		\hyperpage{50}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Matcher}, 
+		\hyperpage{52}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Hook}, 
+		\hyperpage{57}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Session\discretionary {-}{}{}Hook}, 
+		\hyperpage{59}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Nocilla}, 
+		\hyperpage{54}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Nocilla()}, 
+		\hyperpage{56}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Regex\discretionary {-}{}{}Matcher}, 
+		\hyperpage{61}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Regex\discretionary {-}{}{}Matcher()}, 
+		\hyperpage{63}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}String\discretionary {-}{}{}Matcher}, 
+		\hyperpage{64}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}String\discretionary {-}{}{}Matcher()}, 
+		\hyperpage{66}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request}, 
+		\hyperpage{67}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request()}, 
+		\hyperpage{69}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L}, 
+		\hyperpage{70}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Request\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L()}, 
+		\hyperpage{72}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response}, 
+		\hyperpage{73}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response()}, 
+		\hyperpage{75}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L}, 
+		\hyperpage{76}
+  \item {L\discretionary {-}{}{}S\discretionary {-}{}{}Stub\discretionary {-}{}{}Response\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L()}, 
+		\hyperpage{78}
+  \item {Layered\discretionary {-}{}{}Right\discretionary {-}{}{}Detail\discretionary {-}{}{}Cell}, 
+		\hyperpage{29}
+  \item {low}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{145}
+
+  \indexspace
+
+  \item {mutable\discretionary {-}{}{}Array\discretionary {-}{}{}From\discretionary {-}{}{}Data\discretionary {-}{}{}:}
+    \subitem {N\discretionary {-}{}{}S\discretionary {-}{}{}Coding\discretionary {-}{}{}Helper}, 
+		\hyperpage{83}
+
+  \indexspace
+
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}Coding\discretionary {-}{}{}Helper}, 
+		\hyperpage{81}
+    \subitem {data\discretionary {-}{}{}For\discretionary {-}{}{}Array\discretionary {-}{}{}:}, 
+		\hyperpage{81}
+    \subitem {mutable\discretionary {-}{}{}Array\discretionary {-}{}{}From\discretionary {-}{}{}Data\discretionary {-}{}{}:}, 
+		\hyperpage{83}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}Data(\discretionary {-}{}{}Matcheable)}, 
+		\hyperpage{84}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}Data(\discretionary {-}{}{}Nocilla)}, 
+		\hyperpage{86}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Response(\discretionary {-}{}{}Undocumented\discretionary {-}{}{}Initializer)}, 
+		\hyperpage{87}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}Regular\discretionary {-}{}{}Expression(\discretionary {-}{}{}Matcheable)}, 
+		\hyperpage{88}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}String(\discretionary {-}{}{}Matcheable)}, 
+		\hyperpage{90}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}String(\discretionary {-}{}{}Nocilla)}, 
+		\hyperpage{92}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Request(\discretionary {-}{}{}D\discretionary {-}{}{}S\discretionary {-}{}{}L)}, 
+		\hyperpage{94}
+  \item {N\discretionary {-}{}{}S\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}L\discretionary {-}{}{}Request(\discretionary {-}{}{}L\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}P\discretionary {-}{}{}Request)}, 
+		\hyperpage{95}
+  \item {name}
+    \subitem {Packable}, \hyperpage{98}
+    \subitem {Trip}, \hyperpage{126}
+  \item {New\discretionary {-}{}{}Trip\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{79}
+  \item {New\discretionary {-}{}{}Trip\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{80}
+  \item {number\discretionary {-}{}{}Of\discretionary {-}{}{}Days}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{152}
+  \item {number\discretionary {-}{}{}Of\discretionary {-}{}{}Trips}
+    \subitem {Trips\discretionary {-}{}{}Data}, \hyperpage{129}
+
+  \indexspace
+
+  \item {Pack\discretionary {-}{}{}Manager\discretionary {-}{}{}Tests}, 
+		\hyperpage{106}
+  \item {Packable}, \hyperpage{96}
+    \subitem {image\discretionary {-}{}{}Name}, \hyperpage{98}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:}, 
+		\hyperpage{98}
+    \subitem {name}, \hyperpage{98}
+    \subitem {quantity}, \hyperpage{98}
+  \item {Packing\discretionary {-}{}{}List}, \hyperpage{98}
+    \subitem {change\discretionary {-}{}{}Quantity\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:to\discretionary {-}{}{}:}, 
+		\hyperpage{101}
+    \subitem {get\discretionary {-}{}{}Number\discretionary {-}{}{}Of\discretionary {-}{}{}Unique\discretionary {-}{}{}Items}, 
+		\hyperpage{101}
+    \subitem {get\discretionary {-}{}{}Packable\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}, 
+		\hyperpage{101}
+    \subitem {init\discretionary {-}{}{}Example\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}, 
+		\hyperpage{101}
+    \subitem {init\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}For\discretionary {-}{}{}Trip\discretionary {-}{}{}:}, 
+		\hyperpage{101}
+    \subitem {print\discretionary {-}{}{}List}, \hyperpage{101}
+    \subitem {quantity\discretionary {-}{}{}For\discretionary {-}{}{}Item\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}, 
+		\hyperpage{102}
+    \subitem {remove\discretionary {-}{}{}Item\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}, 
+		\hyperpage{102}
+    \subitem {trip}, \hyperpage{102}
+  \item {packing\discretionary {-}{}{}List}
+    \subitem {Trip}, \hyperpage{126}
+  \item {Packing\discretionary {-}{}{}List()}, \hyperpage{102}
+  \item {Packing\discretionary {-}{}{}List\discretionary {-}{}{}Item\discretionary {-}{}{}Cell}, 
+		\hyperpage{103}
+  \item {Packing\discretionary {-}{}{}List\discretionary {-}{}{}Tests}, 
+		\hyperpage{103}
+  \item {Packing\discretionary {-}{}{}List\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{104}
+  \item {Packing\discretionary {-}{}{}List\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{106}
+  \item {Pant}, \hyperpage{108}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}, 
+		\hyperpage{110}
+    \subitem {Pant\discretionary {-}{}{}Type}, \hyperpage{109}
+    \subitem {pant\discretionary {-}{}{}Type}, \hyperpage{110}
+  \item {Pant\discretionary {-}{}{}Type}
+    \subitem {Pant}, \hyperpage{109}
+  \item {pant\discretionary {-}{}{}Type}
+    \subitem {Pant}, \hyperpage{110}
+  \item {Pods\discretionary {-}{}{}Dummy\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Pods}, 
+		\hyperpage{110}
+  \item {Pods\discretionary {-}{}{}Dummy\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Pods\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Nocilla}, 
+		\hyperpage{111}
+  \item {precipitaion}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{145}
+  \item {print\discretionary {-}{}{}List}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{101}
+  \item {Profile\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{112}
+  \item {Profile\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{113}
+  \item {put\discretionary {-}{}{}Days\discretionary {-}{}{}In\discretionary {-}{}{}Order}
+    \subitem {Weather\discretionary {-}{}{}Report}, \hyperpage{152}
+
+  \indexspace
+
+  \item {quantity}
+    \subitem {Packable}, \hyperpage{98}
+  \item {quantity\discretionary {-}{}{}For\discretionary {-}{}{}Item\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{102}
+
+  \indexspace
+
+  \item {range}
+    \subitem {Weather\discretionary {-}{}{}Day}, \hyperpage{145}
+  \item {remove\discretionary {-}{}{}Item\discretionary {-}{}{}For\discretionary {-}{}{}Index\discretionary {-}{}{}:}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{102}
+  \item {remove\discretionary {-}{}{}Trip\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}
+    \subitem {Trips\discretionary {-}{}{}Data}, \hyperpage{129}
+  \item {rewear\discretionary {-}{}{}Jeans\discretionary {-}{}{}Preference}
+    \subitem {Trip}, \hyperpage{126}
+
+  \indexspace
+
+  \item {shared\discretionary {-}{}{}Instance}
+    \subitem {Google\discretionary {-}{}{}Places\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{25}
+    \subitem {Trips\discretionary {-}{}{}Data}, \hyperpage{129}
+    \subitem {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{141}
+  \item {Shirt}, \hyperpage{114}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}Quantity\discretionary {-}{}{}:and\discretionary {-}{}{}Type\discretionary {-}{}{}:}, 
+		\hyperpage{116}
+    \subitem {Shirt\discretionary {-}{}{}Type}, \hyperpage{115}
+    \subitem {shirt\discretionary {-}{}{}Type}, \hyperpage{116}
+  \item {Shirt\discretionary {-}{}{}Type}
+    \subitem {Shirt}, \hyperpage{115}
+  \item {shirt\discretionary {-}{}{}Type}
+    \subitem {Shirt}, \hyperpage{116}
+  \item {Shoe}, \hyperpage{117}
+  \item {Socks}, \hyperpage{119}
+  \item {start\discretionary {-}{}{}Date}
+    \subitem {Trip}, \hyperpage{127}
+  \item {Sunscreen}, \hyperpage{121}
+  \item {swimming\discretionary {-}{}{}Preference}
+    \subitem {Trip}, \hyperpage{127}
+
+  \indexspace
+
+  \item {total\discretionary {-}{}{}Duration}
+    \subitem {Trip}, \hyperpage{126}
+  \item {Trip}, \hyperpage{122}
+    \subitem {access\discretionary {-}{}{}To\discretionary {-}{}{}Laundry\discretionary {-}{}{}Preference}, 
+		\hyperpage{126}
+    \subitem {destinations}, \hyperpage{126}
+    \subitem {end\discretionary {-}{}{}Date}, \hyperpage{125}
+    \subitem {formal\discretionary {-}{}{}Preference}, \hyperpage{126}
+    \subitem {generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List}, 
+		\hyperpage{125}
+    \subitem {generate\discretionary {-}{}{}Packing\discretionary {-}{}{}List\discretionary {-}{}{}Example}, 
+		\hyperpage{125}
+    \subitem {init\discretionary {-}{}{}New\discretionary {-}{}{}Trip}, 
+		\hyperpage{125}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}Start\discretionary {-}{}{}Date\discretionary {-}{}{}:name\discretionary {-}{}{}:}, 
+		\hyperpage{126}
+    \subitem {name}, \hyperpage{126}
+    \subitem {packing\discretionary {-}{}{}List}, \hyperpage{126}
+    \subitem {rewear\discretionary {-}{}{}Jeans\discretionary {-}{}{}Preference}, 
+		\hyperpage{126}
+    \subitem {start\discretionary {-}{}{}Date}, \hyperpage{127}
+    \subitem {swimming\discretionary {-}{}{}Preference}, 
+		\hyperpage{127}
+    \subitem {total\discretionary {-}{}{}Duration}, \hyperpage{126}
+    \subitem {weather\discretionary {-}{}{}Report}, \hyperpage{127}
+  \item {trip}
+    \subitem {Packing\discretionary {-}{}{}List}, \hyperpage{102}
+  \item {Trip\discretionary {-}{}{}Settings\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{130}
+  \item {Trip\discretionary {-}{}{}Settings\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{132}
+  \item {Trips\discretionary {-}{}{}Data}, \hyperpage{127}
+    \subitem {add\discretionary {-}{}{}Trip\discretionary {-}{}{}:}, 
+		\hyperpage{128}
+    \subitem {get\discretionary {-}{}{}Trip\discretionary {-}{}{}:}, 
+		\hyperpage{128}
+    \subitem {number\discretionary {-}{}{}Of\discretionary {-}{}{}Trips}, 
+		\hyperpage{129}
+    \subitem {remove\discretionary {-}{}{}Trip\discretionary {-}{}{}At\discretionary {-}{}{}Index\discretionary {-}{}{}:}, 
+		\hyperpage{129}
+    \subitem {shared\discretionary {-}{}{}Instance}, \hyperpage{129}
+  \item {Trips\discretionary {-}{}{}Data()}, \hyperpage{129}
+  \item {Trips\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{132}
+  \item {Trips\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{134}
+
+  \indexspace
+
+  \item {Umbrella}, \hyperpage{134}
+  \item {Underwear}, \hyperpage{136}
+
+  \indexspace
+
+  \item {valid}
+    \subitem {Destination}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{138}
+    \subitem {get\discretionary {-}{}{}Lat\discretionary {-}{}{}Long\discretionary {-}{}{}From\discretionary {-}{}{}Address\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}, 
+		\hyperpage{139}
+    \subitem {get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Historical\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}, 
+		\hyperpage{140}
+    \subitem {get\discretionary {-}{}{}Weather\discretionary {-}{}{}From\discretionary {-}{}{}Present\discretionary {-}{}{}:lng\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}, 
+		\hyperpage{140}
+    \subitem {get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:}, 
+		\hyperpage{140}
+    \subitem {get\discretionary {-}{}{}Weather\discretionary {-}{}{}Report\discretionary {-}{}{}:start\discretionary {-}{}{}:end\discretionary {-}{}{}:lat\discretionary {-}{}{}:lon\discretionary {-}{}{}:}, 
+		\hyperpage{140}
+    \subitem {shared\discretionary {-}{}{}Instance}, \hyperpage{141}
+  \item {Weather\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}Tests}, 
+		\hyperpage{141}
+  \item {Weather\discretionary {-}{}{}Day}, \hyperpage{143}
+    \subitem {average\discretionary {-}{}{}Temp}, \hyperpage{145}
+    \subitem {high}, \hyperpage{145}
+    \subitem {init\discretionary {-}{}{}With\discretionary {-}{}{}High\discretionary {-}{}{}:low\discretionary {-}{}{}:precipitation\discretionary {-}{}{}:date\discretionary {-}{}{}:}, 
+		\hyperpage{144}
+    \subitem {low}, \hyperpage{145}
+    \subitem {precipitaion}, \hyperpage{145}
+    \subitem {range}, \hyperpage{145}
+  \item {Weather\discretionary {-}{}{}Day\discretionary {-}{}{}Tests}, 
+		\hyperpage{146}
+  \item {Weather\discretionary {-}{}{}Report}, \hyperpage{147}
+    \subitem {add\discretionary {-}{}{}Day\discretionary {-}{}{}:}, 
+		\hyperpage{150}
+    \subitem {days\discretionary {-}{}{}Are\discretionary {-}{}{}In\discretionary {-}{}{}Order}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Average\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}High\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Low\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Overall\discretionary {-}{}{}High}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Overall\discretionary {-}{}{}Low}, 
+		\hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Range\discretionary {-}{}{}For\discretionary {-}{}{}Day\discretionary {-}{}{}:}, 
+		\hyperpage{152}
+    \subitem {init\discretionary {-}{}{}Example\discretionary {-}{}{}Report}, 
+		\hyperpage{152}
+    \subitem {number\discretionary {-}{}{}Of\discretionary {-}{}{}Days}, 
+		\hyperpage{152}
+    \subitem {put\discretionary {-}{}{}Days\discretionary {-}{}{}In\discretionary {-}{}{}Order}, 
+		\hyperpage{152}
+  \item {weather\discretionary {-}{}{}Report}
+    \subitem {Trip}, \hyperpage{127}
+  \item {Weather\discretionary {-}{}{}Report()}, \hyperpage{153}
+  \item {Weather\discretionary {-}{}{}Report\discretionary {-}{}{}Tests}, 
+		\hyperpage{153}
+  \item {Weather\discretionary {-}{}{}Report\discretionary {-}{}{}View\discretionary {-}{}{}Controller}, 
+		\hyperpage{154}
+  \item {Weather\discretionary {-}{}{}Report\discretionary {-}{}{}View\discretionary {-}{}{}Controller()}, 
+		\hyperpage{156}
+
+  \indexspace
+
+  \item {zip}
+    \subitem {Destination}, \hyperpage{23}
+
+\end{theindex}

@@ -1,0 +1,56 @@
+\hypertarget{interface_f_b_s_d_k_login_tooltip_view}{\section{F\-B\-S\-D\-K\-Login\-Tooltip\-View Class Reference}
+\label{interface_f_b_s_d_k_login_tooltip_view}\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View@{F\-B\-S\-D\-K\-Login\-Tooltip\-View}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Login\-Tooltip\-View.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Login\-Tooltip\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_login_tooltip_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Login\-Tooltip\-View\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{interface_f_b_s_d_k_login_tooltip_view__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+id$<$ \hyperlink{protocol_f_b_s_d_k_login_tooltip_view_delegate-p}{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate} $>$ \hyperlink{interface_f_b_s_d_k_login_tooltip_view_a8f0879fab37905fb4b8f29515a055c00}{delegate}
+\item 
+B\-O\-O\-L \hyperlink{interface_f_b_s_d_k_login_tooltip_view_a5d7116f500f006d7d1d0d5c826b0b493}{force\-Display}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a tooltip to be displayed next to a Facebook login button to highlight features for new users.
+
+The {\ttfamily \hyperlink{interface_f_b_s_d_k_login_button}{F\-B\-S\-D\-K\-Login\-Button}} may display this view automatically. If you do not use the {\ttfamily \hyperlink{interface_f_b_s_d_k_login_button}{F\-B\-S\-D\-K\-Login\-Button}}, you can manually call one of the {\ttfamily present$\ast$} methods as appropriate and customize behavior via {\ttfamily \hyperlink{protocol_f_b_s_d_k_login_tooltip_view_delegate-p}{F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate}} delegate.
+
+By default, the {\ttfamily \hyperlink{interface_f_b_s_d_k_login_tooltip_view}{F\-B\-S\-D\-K\-Login\-Tooltip\-View}} is not added to the superview until it is determined the app has migrated to the new login experience. You can override this (e.\-g., to test the U\-I layout) by implementing the delegate or setting {\ttfamily force\-Display} to Y\-E\-S. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_login_tooltip_view_a8f0879fab37905fb4b8f29515a055c00}{\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View@{F\-B\-S\-D\-K\-Login\-Tooltip\-View}!delegate@{delegate}}
+\index{delegate@{delegate}!FBSDKLoginTooltipView@{F\-B\-S\-D\-K\-Login\-Tooltip\-View}}
+\subsubsection[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id$<${\bf F\-B\-S\-D\-K\-Login\-Tooltip\-View\-Delegate}$>$) delegate\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_tooltip_view_a8f0879fab37905fb4b8f29515a055c00}
+the delegate \hypertarget{interface_f_b_s_d_k_login_tooltip_view_a5d7116f500f006d7d1d0d5c826b0b493}{\index{F\-B\-S\-D\-K\-Login\-Tooltip\-View@{F\-B\-S\-D\-K\-Login\-Tooltip\-View}!force\-Display@{force\-Display}}
+\index{force\-Display@{force\-Display}!FBSDKLoginTooltipView@{F\-B\-S\-D\-K\-Login\-Tooltip\-View}}
+\subsubsection[{force\-Display}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\-O\-O\-L) force\-Display\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_login_tooltip_view_a5d7116f500f006d7d1d0d5c826b0b493}
+if set to Y\-E\-S, the view will always be displayed and the delegate's {\ttfamily login\-Tooltip\-View\-:should\-Appear\-:} will N\-O\-T be called. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Login\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Login\-Tooltip\-View.\-h\end{DoxyCompactItemize}

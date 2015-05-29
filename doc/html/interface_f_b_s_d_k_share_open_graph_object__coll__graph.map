@@ -1,0 +1,5 @@
+<map id="FBSDKShareOpenGraphObject" name="FBSDKShareOpenGraphObject">
+<area shape="rect" id="node2" href="$interface_f_b_s_d_k_share_open_graph_value_container.html" title="{FBSDKShareOpenGraphValue\lContainer\n||}" alt="" coords="231,411,435,498"/>
+<area shape="rect" id="node4" href="$protocol_f_b_s_d_k_share_open_graph_value_containing-p.html" title="{\&lt;FBSDKShareOpenGraphValue\lContaining\&gt;\n||+ arrayForKey:\l+ enumerateKeysAndObjectsUsing\lBlock:\l+ keyEnumerator\l+ numberForKey:\l+ objectEnumerator\l+ objectForKey:\l+ objectForKeyedSubscript:\l+ parseProperties:\l+ photoForKey:\l+ removeObjectForKey:\land 8 more...\l}" alt="" coords="260,129,488,362"/>
+<area shape="rect" id="node7" href="$protocol_f_b_s_d_k_copying-p.html" title="{\&lt;FBSDKCopying\&gt;\n||+ copy\l}" alt="" coords="4,209,133,282"/>
+</map>

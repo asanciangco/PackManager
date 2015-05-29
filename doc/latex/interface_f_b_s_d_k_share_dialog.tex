@@ -1,0 +1,78 @@
+\hypertarget{interface_f_b_s_d_k_share_dialog}{\section{F\-B\-S\-D\-K\-Share\-Dialog Class Reference}
+\label{interface_f_b_s_d_k_share_dialog}\index{F\-B\-S\-D\-K\-Share\-Dialog@{F\-B\-S\-D\-K\-Share\-Dialog}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-S\-D\-K\-Share\-Dialog.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-S\-D\-K\-Share\-Dialog\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{interface_f_b_s_d_k_share_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-S\-D\-K\-Share\-Dialog\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{interface_f_b_s_d_k_share_dialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_f_b_s_d_k_share_dialog_a782dfa1147814c5769cdb7b9d32e058d}{show\-From\-View\-Controller\-:with\-Content\-:delegate\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+U\-I\-View\-Controller $\ast$ \hyperlink{interface_f_b_s_d_k_share_dialog_a1319782aa7ce9db59c35ac6a9bb9a2c9}{from\-View\-Controller}
+\item 
+F\-B\-S\-D\-K\-Share\-Dialog\-Mode \hyperlink{interface_f_b_s_d_k_share_dialog_a2fa09cba91a90a644c2cd8dd26de372d}{mode}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A dialog for sharing content on Facebook. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_s_d_k_share_dialog_a782dfa1147814c5769cdb7b9d32e058d}{\index{F\-B\-S\-D\-K\-Share\-Dialog@{F\-B\-S\-D\-K\-Share\-Dialog}!show\-From\-View\-Controller\-:with\-Content\-:delegate\-:@{show\-From\-View\-Controller\-:with\-Content\-:delegate\-:}}
+\index{show\-From\-View\-Controller\-:with\-Content\-:delegate\-:@{show\-From\-View\-Controller\-:with\-Content\-:delegate\-:}!FBSDKShareDialog@{F\-B\-S\-D\-K\-Share\-Dialog}}
+\subsubsection[{show\-From\-View\-Controller\-:with\-Content\-:delegate\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (instancetype) show\-From\-View\-Controller\-: 
+\begin{DoxyParamCaption}
+\item[{(U\-I\-View\-Controller $\ast$)}]{view\-Controller}
+\item[{withContent:(id$<$ {\bf F\-B\-S\-D\-K\-Sharing\-Content} $>$)}]{content}
+\item[{delegate:(id$<$ {\bf F\-B\-S\-D\-K\-Sharing\-Delegate} $>$)}]{delegate}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_s_d_k_share_dialog_a782dfa1147814c5769cdb7b9d32e058d}
+Convenience method to show an \hyperlink{interface_f_b_s_d_k_share_dialog}{F\-B\-S\-D\-K\-Share\-Dialog} with a from\-View\-Controller, content and a delegate. 
+\begin{DoxyParams}{Parameters}
+{\em view\-Controller} & A U\-I\-View\-Controller to present the dialog from, if appropriate. \\
+\hline
+{\em content} & The content to be shared. \\
+\hline
+{\em delegate} & The receiver's delegate. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_f_b_s_d_k_share_dialog_a1319782aa7ce9db59c35ac6a9bb9a2c9}{\index{F\-B\-S\-D\-K\-Share\-Dialog@{F\-B\-S\-D\-K\-Share\-Dialog}!from\-View\-Controller@{from\-View\-Controller}}
+\index{from\-View\-Controller@{from\-View\-Controller}!FBSDKShareDialog@{F\-B\-S\-D\-K\-Share\-Dialog}}
+\subsubsection[{from\-View\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (U\-I\-View\-Controller$\ast$) from\-View\-Controller\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [weak]}}}\label{interface_f_b_s_d_k_share_dialog_a1319782aa7ce9db59c35ac6a9bb9a2c9}
+A U\-I\-View\-Controller to present the dialog from, if appropriate.  This value is required for F\-B\-S\-D\-K\-Share\-Dialog\-Mode\-Share\-Sheet. \hypertarget{interface_f_b_s_d_k_share_dialog_a2fa09cba91a90a644c2cd8dd26de372d}{\index{F\-B\-S\-D\-K\-Share\-Dialog@{F\-B\-S\-D\-K\-Share\-Dialog}!mode@{mode}}
+\index{mode@{mode}!FBSDKShareDialog@{F\-B\-S\-D\-K\-Share\-Dialog}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (F\-B\-S\-D\-K\-Share\-Dialog\-Mode) mode\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}, {\ttfamily [nonatomic]}, {\ttfamily [assign]}}}\label{interface_f_b_s_d_k_share_dialog_a2fa09cba91a90a644c2cd8dd26de372d}
+The mode with which to display the dialog.  Defaults to F\-B\-S\-D\-K\-Share\-Dialog\-Mode\-Automatic, which will automatically choose the best available mode. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-S\-D\-K\-Share\-Kit.\-framework/\-Headers/F\-B\-S\-D\-K\-Share\-Dialog.\-h\end{DoxyCompactItemize}

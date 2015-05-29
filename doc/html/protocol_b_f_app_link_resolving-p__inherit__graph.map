@@ -1,0 +1,4 @@
+<map id="&lt;BFAppLinkResolving&gt;" name="&lt;BFAppLinkResolving&gt;">
+<area shape="rect" id="node3" href="$interface_b_f_web_view_app_link_resolver.html" title="{BFWebViewAppLinkResolver\n||+ sharedInstance\l}" alt="" coords="5,271,200,345"/>
+<area shape="rect" id="node4" href="$interface_f_b_s_d_k_app_link_resolver.html" title="{FBSDKAppLinkResolver\n||+ appLinksFromURLsInBackground:\l+ resolver\l}" alt="" coords="224,265,460,351"/>
+</map>

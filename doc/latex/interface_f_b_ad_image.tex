@@ -1,0 +1,91 @@
+\hypertarget{interface_f_b_ad_image}{\section{F\-B\-Ad\-Image Class Reference}
+\label{interface_f_b_ad_image}\index{F\-B\-Ad\-Image@{F\-B\-Ad\-Image}}
+}
+
+
+{\ttfamily \#import $<$F\-B\-Native\-Ad.\-h$>$}
+
+
+
+Inheritance diagram for F\-B\-Ad\-Image\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_f_b_ad_image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for F\-B\-Ad\-Image\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interface_f_b_ad_image__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) -\/ \hyperlink{interface_f_b_ad_image_a9c3ac84702a27cf8e70648dde37de67f}{init\-With\-U\-R\-L\-:width\-:height\-:}
+\item 
+(void) -\/ \hyperlink{interface_f_b_ad_image_ad31ea304124f0f7f698018152a413789}{load\-Image\-Async\-With\-Block\-:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_f_b_ad_image_a467e58f11377dcc2887a2baa317a2634}{N\-S\-U\-R\-L $\ast$ {\bfseries url}}\label{interface_f_b_ad_image_a467e58f11377dcc2887a2baa317a2634}
+
+\item 
+\hypertarget{interface_f_b_ad_image_ae629999a10c7edb0f87cb0e6dca327ab}{N\-S\-Integer {\bfseries width}}\label{interface_f_b_ad_image_ae629999a10c7edb0f87cb0e6dca327ab}
+
+\item 
+\hypertarget{interface_f_b_ad_image_a782a6ddd7f673a8ea078c08ca9cae474}{N\-S\-Integer {\bfseries height}}\label{interface_f_b_ad_image_a782a6ddd7f673a8ea078c08ca9cae474}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an image creative. 
+
+\subsection{Method Documentation}
+\hypertarget{interface_f_b_ad_image_a9c3ac84702a27cf8e70648dde37de67f}{\index{F\-B\-Ad\-Image@{F\-B\-Ad\-Image}!init\-With\-U\-R\-L\-:width\-:height\-:@{init\-With\-U\-R\-L\-:width\-:height\-:}}
+\index{init\-With\-U\-R\-L\-:width\-:height\-:@{init\-With\-U\-R\-L\-:width\-:height\-:}!FBAdImage@{F\-B\-Ad\-Image}}
+\subsubsection[{init\-With\-U\-R\-L\-:width\-:height\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (instancetype) init\-With\-U\-R\-L\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-U\-R\-L $\ast$)}]{url}
+\item[{width:(N\-S\-Integer)}]{width}
+\item[{height:(N\-S\-Integer)}]{N\-S\-\_\-\-D\-E\-S\-I\-G\-N\-A\-T\-E\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_image_a9c3ac84702a27cf8e70648dde37de67f}
+This is a method to initialize an \hyperlink{interface_f_b_ad_image}{F\-B\-Ad\-Image}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & the image url. \\
+\hline
+{\em width} & the image width. \\
+\hline
+{\em height} & the image height. \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_f_b_ad_image_ad31ea304124f0f7f698018152a413789}{\index{F\-B\-Ad\-Image@{F\-B\-Ad\-Image}!load\-Image\-Async\-With\-Block\-:@{load\-Image\-Async\-With\-Block\-:}}
+\index{load\-Image\-Async\-With\-Block\-:@{load\-Image\-Async\-With\-Block\-:}!FBAdImage@{F\-B\-Ad\-Image}}
+\subsubsection[{load\-Image\-Async\-With\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) load\-Image\-Async\-With\-Block\-: 
+\begin{DoxyParamCaption}
+\item[{(void($^\wedge$)(U\-I\-Image $\ast$image))}]{block}
+\end{DoxyParamCaption}
+}}\label{interface_f_b_ad_image_ad31ea304124f0f7f698018152a413789}
+Loads an image from self.\-url over the network, or returns the cached image immediately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & Block to handle the loaded image. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Facebook\-S\-D\-K/\-F\-B\-Audience\-Network.\-framework/\-Headers/F\-B\-Native\-Ad.\-h\end{DoxyCompactItemize}
