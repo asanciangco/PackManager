@@ -90,13 +90,21 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
 	@returns The date a year ago from the provided date
  */
 - (NSDate *)logicalOneYearAgo:(NSDate *)from {
+    NSDate *currentDate = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* currentComponents = [calendar components:NSYearCalendarUnit
+                                               fromDate:currentDate];
+    NSDateComponents* fromComponents = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                                      fromDate:from];
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setYear:-1];
+    NSDateComponents *newComponents = [[NSDateComponents alloc] init];
+    [newComponents setYear:[currentComponents year]-1];
+    [newComponents setMonth:[fromComponents month]];
+    [newComponents setDay:[fromComponents day]];
     
-    return [gregorian dateByAddingComponents:offsetComponents toDate:from options:0];
+    return [gregorian dateFromComponents:newComponents];
 }
 
 /**
@@ -491,12 +499,11 @@ static NSString *GoogleLatLongURL = @"https://maps.googleapis.com/maps/api/geoco
     return weatherReport;
 }
 
-- (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end
-{
-    return [self getWeatherReport:location start:start end:end lat:NSIntegerMin lon:NSIntegerMin];
-}
-
 - (WeatherReport *) getWeatherReport:(NSString *)location start:(NSDate *)start end:(NSDate *)end lat:(CGFloat)lat lon:(CGFloat)lon {
+    if ([start compare:[NSDate date]] == NSOrderedAscending)
+    {
+        [NSException raise:@"Invalid Date" format:@"Please select a date in the future"];
+    }
     NSInteger daysToStart = [self daysBetweenDate:[NSDate date] andDate:start];
     NSInteger daysToEnd = [self daysBetweenDate:[NSDate date] andDate:end];
     
