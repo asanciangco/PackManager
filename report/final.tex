@@ -207,7 +207,7 @@ Another example is someone traveling to an area with which they are unfamiliar w
     \end{figure}
 
     \subsection{Clothes Selection Algorithm}
-    In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. 
+    In order to generate a list of items one should bring on their trip we needed to come up with an algorithm. The packing algorithm would have to account for the trip's duration, each day's weather, and a number of user preferences (i.e. re-wearing jeans, access to laundry, their hot cold preferences, etc). Our algorithm first initializes a packing list, checks each day's weather and appropriately increments clothing, and finally produces estimates based on user preferences. The initialization creates a packing list that contains the bare essentials such as toiletries. Additionally, the initialization will check if the user has marked if they will be swimming or need formal attire. If they checked swimming then it will include swimwear as a function of days. Next, for each day in the trip the algorithm calls several incrementing functions, one for each type of clothing (tops, bottoms, etc). Each of these incrementing functions have a simple interface that hides its implementation details from its caller, exercising the information hiding principle. Each function checks the day's average temperature against the user's temperature preference and perform different clothing increments based on what the user thinks of that day weather (hot, warm, normal, cool, cold). Finally, now that the algorithm has produced a maximal list, it checks the user's preferences for things like access to laundry and rewearable jeans and reduces the list's numbers. For example, if laundry is checked it will cap the max number for each type of clothing article. Similarly, re-wearing jeans would cap just the bottoms category. x
 
     \subsection{API Description}
     Our API description can be found inside of our documentation, in \texttt{doc/html/index.html}. We took care to document most of our classes and functions in the Doxygen style, allowing for automatically generated formatted descriptions. An example of our documentation can be found in Fig.\ref{fig:doc}. Overall, all API accesses flow through the \texttt{WeatherAPI} and \texttt{GoogleAPI} classes; these classes act as mediators, filtering information and handling de-bouncing of frequent requests. 
@@ -235,7 +235,7 @@ We make extensive use of swizzling, which is a built-in utility for iOS that let
 
 
 
-
+ 
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{img/travis.png}
@@ -250,9 +250,9 @@ See Fig.\ref{fig:ui} for some screen shots of the user interface.
     \centering
     \begin{tabular}{ccc}
     \includegraphics[scale=0.2]{img/ui-2.jpg} & \includegraphics[width=151pt]{img/ui-8.png} & \includegraphics[scale=0.2]{img/ui-7.jpg}\\
-    \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[scale=0.2]{img/ui-4.jpg}
+    \includegraphics[scale=0.2]{img/ui-5.jpg} & \includegraphics[scale=0.2]{img/ui-6.jpg} & \includegraphics[width=151pt]{img/ui-4.png}
     \end{tabular}
-    \caption{User interface snapshots. Top left, a generated packing list; top middle, the trip creation screen with location auto-complete and Google maps visualization; top right, an option to enter a specific number of shorts; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile.}
+    \caption{User interface snapshots. Top left, a generated packing list; top middle, the trip creation screen with location auto-complete and Google maps visualization; top right, an option to enter a specific number of shorts; bottom left, example weather forecast for a trip; bottom middle, selecting between multiple pre-made trips; bottom right, the user profile, with Facebook login.}
     \label{fig:ui}
 \end{figure}
 

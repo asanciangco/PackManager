@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  28 MAY 2015 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,18 +864,18 @@ File: img/ui-6.jpg Graphic file (type jpg)
 Package pdftex.def Info: img/ui-6.jpg used on input line 253.
 (pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
 
-<img/ui-4.jpg, id=252, 752.8125pt x 1339.0025pt>
-File: img/ui-4.jpg Graphic file (type jpg)
- <use img/ui-4.jpg>
-Package pdftex.def Info: img/ui-4.jpg used on input line 253.
-(pdftex.def)             Requested size: 150.55983pt x 267.79576pt.
+<img/ui-4.png, id=252, 376.40625pt x 670.505pt>
+File: img/ui-4.png Graphic file (type png)
+ <use img/ui-4.png>
+Package pdftex.def Info: img/ui-4.png used on input line 253.
+(pdftex.def)             Requested size: 151.0pt x 268.98505pt.
 
-Overfull \hbox (18.36464pt too wide) in paragraph at lines 251--255
+Overfull \hbox (18.80481pt too wide) in paragraph at lines 251--255
  [][] 
  []
 
 [9 <./img/travis.png>] [10 <./img/ui-2.jpg> <./img/ui-8.png> <./img/ui-7.jpg> <
-./img/ui-5.jpg> <./img/ui-6.jpg> <./img/ui-4.jpg>]
+./img/ui-5.jpg> <./img/ui-6.jpg> <./img/ui-4.png>]
 Overfull \hbox (1.82332pt too wide) in paragraph at lines 271--272
 \T1/lmr/m/n/10.95 weather API, as well as be-ing a source of knowl-edge on gen-
 eral iOS de-vel-op-ment and Objective-
@@ -898,7 +898,7 @@ Here is how much of TeX's memory you used:
  20359 multiletter control sequences out of 15000+600000
  56818 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,54p,1650b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,54p,1651b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
 texlive/2014/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2014/texmf-d
@@ -908,9 +908,9 @@ ype1/public/lm/lmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local
 /texlive/2014/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on final.pdf (12 pages, 1440269 bytes).
+Output written on final.pdf (12 pages, 1499840 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
+ 332 PDF objects out of 1000 (max. 8388607)
  281 compressed objects within 3 object streams
  93 named destinations out of 1000 (max. 500000)
  251 words of extra memory for PDF output out of 10000 (max. 10000000)
